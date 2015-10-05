@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Reflection;
+using System.Diagnostics;
 
 namespace CPU_OS_Simulator
 {
@@ -28,7 +29,20 @@ namespace CPU_OS_Simulator
 
         private void MainWindowGrid_Loaded(object sender, RoutedEventArgs e)
         {
-            
+            this.Title += " " + GetProgramVersion();
+            #if DEBUG
+            this.Title += " DEBUG BUILD ";
+            #endif
+        }
+        /// <summary>
+        /// Geta the build number of the running program
+        /// </summary>
+        /// <returns> The build number of the running program</returns>
+        private string GetProgramVersion()
+        {
+            Assembly ExecutingAssembly = Assembly.GetExecutingAssembly();
+            FileVersionInfo VersionInfo = FileVersionInfo.GetVersionInfo(ExecutingAssembly.Location);
+            return VersionInfo.FileVersion;
         }
     }
 }
