@@ -44,8 +44,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="EnumOpcodesDataTransfer.cs" />
+    <Compile Include="EnumOpcodes.cs" />
+    <Compile Include="EnumOperandType.cs" />
     <Compile Include="Instruction.cs" />
+    <Compile Include="Operand.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

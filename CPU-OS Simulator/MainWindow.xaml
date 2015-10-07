@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:CPU_OS_Simulator"
         xmlns:System="clr-namespace:System;assembly=mscorlib" x:Name="MainWindow2" x:Class="CPU_OS_Simulator.MainWindow"
         mc:Ignorable="d"
-        Title="CPU-OS Simulator" Height="768" Width="1280" Icon="CPU-OS Simulator 7-5-50_1.ico" ResizeMode="NoResize">
+        Title="CPU-OS Simulator" Height="768" Width="1280" Icon="CPU-OS Simulator 7-5-50_1.ico" ResizeMode="NoResize" Closing="MainWindow2_Closing">
     <Grid x:Name="MainWindowGrid" Cursor="Arrow" Loaded="MainWindowGrid_Loaded">
         <Grid x:Name="InstructionsGrid" HorizontalAlignment="Left" Height="479" Margin="10,10,0,0" VerticalAlignment="Top" Width="436">
             <GroupBox x:Name="grp_InstructionsBox" Header="CPU INSTRUCTIONS IM MEMORY (RAM)" HorizontalAlignment="Left" VerticalAlignment="Top" Height="479" Width="436">

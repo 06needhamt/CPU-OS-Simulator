@@ -31,13 +31,24 @@ namespace CPU_OS_Simulator
         }
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
-        { 
-            int MemberCount = Enum.GetNames(typeof(EnumOpcodesDataTransfer)).Length;
-            for(int i = -0; i < MemberCount; i++)
+        {
+            InstructionTabs.SelectedItem = DataTransferTab;
+        }
+
+        private void InstructionTabs_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            TabItem Selected = (TabItem) InstructionTabs.SelectedItem;
+            if(Selected.Header.Equals("Data Transfer"))
             {
-                string opcode = ( (EnumOpcodesDataTransfer) i ).ToString();
-                lst_Opcodes.Items.Add(opcode);
-            }
+                lst_OpcodeListDataTransfer.Items.Clear();
+                int MemberCount = Enum.GetNames(typeof(EnumOpcodes)).Length;
+                for (int i = -0; i < MemberCount; i++)
+                {
+                    string opcode = ((EnumOpcodes)i).ToString();
+                    lst_OpcodeListDataTransfer.Items.Add(opcode);
+                }
+            } 
+            
         }
     }
 }

@@ -91,5 +91,20 @@ namespace CPU_OS_Simulator
             InstructionsWindow iw = new InstructionsWindow();
             iw.Show();
         }
+
+        private void MainWindow2_Closing(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            MessageBoxResult result = MessageBox.Show("Stopping the Simulator Continue?", "Stopping", MessageBoxButton.YesNo, MessageBoxImage.Information);
+            if(result == MessageBoxResult.Yes)
+            {
+                e.Cancel = true;
+                this.Close();
+            }
+            else
+            {
+                e.Cancel = false;
+                return;
+            }
+        }
     }
 }

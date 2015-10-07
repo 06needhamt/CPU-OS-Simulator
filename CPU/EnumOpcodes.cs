@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CPU_OS_Simulator.CPU
 {
-    public enum EnumOpcodesDataTransfer
+    public enum EnumOpcodes
     {
         MOV = 0,
         MVS = 1,
@@ -25,5 +25,10 @@ namespace CPU_OS_Simulator.CPU
         PUSH = 14,
         POP = 15,
         SWP = 16,
+        AND = 17,
+        OR = 18,
+        NOT = 19,
+        SHL = 20,
+        SHR = 21,
     }
 }
