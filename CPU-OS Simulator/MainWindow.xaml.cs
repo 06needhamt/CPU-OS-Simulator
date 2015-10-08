@@ -33,7 +33,7 @@ namespace CPU_OS_Simulator
             programList = new LinkedList<SimulatorProgram>();
         }
 
-        private void MainWindowGrid_Loaded(object sender, RoutedEventArgs e)
+        private void MainWindow2_Loaded(object sender, RoutedEventArgs e)
         {
             this.Title += " " + GetProgramVersion();
             #if DEBUG

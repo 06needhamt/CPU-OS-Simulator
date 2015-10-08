@@ -139,6 +139,7 @@ namespace CPU_OS_Simulator.CPU
         #region Instruction Execution Functions
         private void Add(Operand lhs, Operand rhs)
         {
+            //TODO Allow for memory operands
             result = lhs.Value + rhs.Value;
         }
         #endregion

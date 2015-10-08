@@ -1,9 +1,5 @@
 var files =
 [
-    [ "App.xaml.cs", "_app_8xaml_8cs.html", [
-      [ "App", "class_c_p_u___o_s___simulator_1_1_app.html", null ]
-    ] ],
-    [ "MainWindow.xaml.cs", "_main_window_8xaml_8cs.html", [
-      [ "MainWindow", "class_c_p_u___o_s___simulator_1_1_main_window.html", "class_c_p_u___o_s___simulator_1_1_main_window" ]
-    ] ]
+    [ "CPU", "dir_3e504b0d3bcf24da5cd743a5b933950b.html", "dir_3e504b0d3bcf24da5cd743a5b933950b" ],
+    [ "CPU-OS Simulator", "dir_4daeced4ad15aeb075514baefd311898.html", "dir_4daeced4ad15aeb075514baefd311898" ]
 ];
