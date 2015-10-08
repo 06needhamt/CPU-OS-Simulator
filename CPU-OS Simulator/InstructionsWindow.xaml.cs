@@ -106,48 +106,87 @@ namespace CPU_OS_Simulator
         {
             Console.WriteLine("Instruction Window closing");
             TabItem SelectedTab = (TabItem) InstructionTabs.SelectedItem;
-            string opcode;
+            EnumOpcodes opcode;
+            Operand op1;
+            Operand op2;
             switch (SelectedTab.Header.ToString())
             {    
                 case "Data Transfer":
                     {
-                        opcode = lst_OpcodeListDataTransfer.SelectedItem.ToString();
+                        opcode = (EnumOpcodes) Enum.Parse(typeof(EnumOpcodes),lst_OpcodeListDataTransfer.SelectedItem.ToString());
+                        if (rdb_SourceValueDataTransfer.IsChecked.Value)
+                        {
+                            op1 = new Operand(Convert.ToInt32(txtSourceValueDataTransfer.Text),EnumOperandType.VALUE);
+                        }
+                        else if (rdb_SourceRegisterDataTransfer.IsChecked.Value)
+                        {
+                            string selectedRegister = (string)cmb_SourceRegisterDataTransfer.SelectedItem;
+                            Register reg = FindRegister(selectedRegister);
+                            op1 = new Operand(reg.Value,reg.Type);
+                        }
+
+                        if (rdb_DestinationValueDataTransfer.IsChecked.Value)
+                        {
+                            op2 = new Operand(Convert.ToInt32(txtDestinationValueDataTransfer.Text), EnumOperandType.VALUE);
+                        }
+                        else if (rdb_DestinationRegisterDataTransfer.IsChecked.Value)
+                        {
+                            string selectedRegister = (string)cmb_DestinationRegisterDataTransfer.SelectedItem;
+                            Register reg = FindRegister(selectedRegister);
+                            op2 = new Operand(reg.Value, reg.Type);
+                        }
                         break;
+                    }
+            }
+        }
+
+        private Register FindRegister(string selectedItem)
+        {
+            switch (selectedItem)
+            {
+                case "R00":
+                    {
+                        return Register.R00;
+                        break;
+                    }
+                default:
+                    {
+                        return null;
                     }
             }
         }
 
         // TODO FIX Commented out due to strange null pointer when checking unchecking radio buttons
 
-        //private void rdb_SourceValueDataTransfer_Checked(object sender, RoutedEventArgs e)
-        //{
-        //    rdb_SourceRegisterDataTransfer.IsChecked = false;
-        //    cmb_SourceRegisterDataTransfer.IsEnabled = false;
-        //    txtSourceValueDataTransfer.IsEnabled = true;
-        //}
+        private void rdb_SourceValueDataTransfer_Checked(object sender, RoutedEventArgs e)
+        {
+            //rdb_SourceRegisterDataTransfer.IsChecked = false;
+            //cmb_SourceRegisterDataTransfer.IsEnabled = false;
+            //txtSourceValueDataTransfer.IsEnabled = true;
+        }
 
-        //private void rdb_SourceRegisterDataTransfer_Checked(object sender, RoutedEventArgs e)
-        //{
-        //    rdb_SourceValueDataTransfer.IsChecked = false;
-        //    //cmb_SourceRegisterDataTransfer.IsEnabled = true;
-        //    txtSourceValueDataTransfer.IsEnabled = false;
+        private void rdb_SourceRegisterDataTransfer_Checked(object sender, RoutedEventArgs e)
+        {
+            //rdb_SourceValueDataTransfer.IsChecked = false;
+            //cmb_SourceRegisterDataTransfer.IsEnabled = true;
+            //txtSourceValueDataTransfer.IsEnabled = false;
 
-        //}
+        }
 
-        //private void rdb_DestinationValueDataTransfer_Checked(object sender, RoutedEventArgs e)
-        //{
-        //    rdb_DestinationRegisterDataTransfer.IsChecked = false;
-        //    cmb_DestinationRegisterDataTransfer.IsEnabled = false;
-        //    txtDestinationValueDataTransfer.IsEnabled = true;
-        //}
+        private void rdb_DestinationValueDataTransfer_Checked(object sender, RoutedEventArgs e)
+        {
+            //rdb_DestinationRegisterDataTransfer.IsChecked = false;
+            //cmb_DestinationRegisterDataTransfer.IsEnabled = false;
+            //txtDestinationValueDataTransfer.IsEnabled = true;
+        }
 
-        //private void rdb_DestinationRegisterDataTransfer_Checked(object sender, RoutedEventArgs e)
-        //{
-        //    rdb_DestinationValueDataTransfer.IsChecked = false;
-        //    cmb_DestinationRegisterDataTransfer.IsEnabled = true;
-        //    txtDestinationValueDataTransfer.IsEnabled = false;
+        private void rdb_DestinationRegisterDataTransfer_Checked(object sender, RoutedEventArgs e)
+        {
+            //rdb_DestinationValueDataTransfer.IsChecked = false;
+            //cmb_DestinationRegisterDataTransfer.IsEnabled = true;
+            //txtDestinationValueDataTransfer.IsEnabled = false;
 
-        //}
+        }
 
     }
 }

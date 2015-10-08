@@ -20,6 +20,11 @@ namespace CPU_OS_Simulator.CPU
             this.value = value;
             this.type = type;
         }
+        public Operand(Register reg, EnumOperandType type)
+        {
+            this.value = reg.Value;
+            this.type = type;
+        }
         #endregion
 
         #region Properties

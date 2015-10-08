@@ -19,9 +19,9 @@
                         <Grid x:Name="SourceOperandGrid" HorizontalAlignment="Left" Height="151" Margin="145,53,0,0" VerticalAlignment="Top" Width="150">
                             <GroupBox x:Name="grp_SourceOperand" Header="Source Operand" HorizontalAlignment="Left" VerticalAlignment="Top" Height="151" Width="150" Margin="0,-29,0,0">
                                 <Grid HorizontalAlignment="Left" Height="141" VerticalAlignment="Top" Width="140" Margin="0,0,-2,-12">
-                                    <RadioButton x:Name="rdb_SourceValueDataTransfer" Content="Value" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" GroupName="SourceOperand" IsChecked="True"/>
+                                    <RadioButton x:Name="rdb_SourceValueDataTransfer" Content="Value" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" GroupName="SourceOperand" IsChecked="True" Checked="rdb_SourceValueDataTransfer_Checked"/>
                                     <TextBox x:Name="txtSourceValueDataTransfer" HorizontalAlignment="Left" Height="23" Margin="75,10,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="55" Background="#FFBEFCFF"/>
-                                    <RadioButton x:Name="rdb_SourceRegisterDataTransfer" Content="Register" HorizontalAlignment="Left" Margin="10,79,0,0" VerticalAlignment="Top" GroupName="SourceOperand" IsChecked="True"/>
+                                    <RadioButton x:Name="rdb_SourceRegisterDataTransfer" Content="Register" HorizontalAlignment="Left" Margin="10,79,0,0" VerticalAlignment="Top" GroupName="SourceOperand" IsChecked="True" Checked="rdb_SourceRegisterDataTransfer_Checked"/>
                                     <ComboBox x:Name="cmb_SourceRegisterDataTransfer" HorizontalAlignment="Left" Margin="75,79,0,0" VerticalAlignment="Top" Width="55">
                                         <System:String>R00</System:String>
                                         <System:String>R01</System:String>
@@ -52,9 +52,9 @@
                         <Grid x:Name="SourceOperandGrid_Copy" HorizontalAlignment="Left" Height="151" Margin="145,209,0,0" VerticalAlignment="Top" Width="150">
                             <GroupBox x:Name="grp_DestinationOperand" Header="Destination Operand" HorizontalAlignment="Left" VerticalAlignment="Top" Height="151" Width="150" Margin="0,-29,0,0">
                                 <Grid HorizontalAlignment="Left" Height="141" VerticalAlignment="Top" Width="140" Margin="0,0,-2,-12">
-                                    <RadioButton x:Name="rdb_DestinationValueDataTransfer" Content="Value" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" GroupName="DestinationOperand" IsChecked="True" />
+                                    <RadioButton x:Name="rdb_DestinationValueDataTransfer" Content="Value" HorizontalAlignment="Left" Margin="10,12,0,0" VerticalAlignment="Top" GroupName="DestinationOperand" IsChecked="True" Checked="rdb_DestinationValueDataTransfer_Checked" />
                                     <TextBox x:Name="txtDestinationValueDataTransfer" HorizontalAlignment="Left" Height="23" Margin="75,10,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="55" Background="#FFBEFCFF"/>
-                                    <RadioButton x:Name="rdb_DestinationRegisterDataTransfer" Content="Register" HorizontalAlignment="Left" Margin="10,79,0,0" VerticalAlignment="Top" GroupName="DestinationOperand" IsChecked="True" />
+                                    <RadioButton x:Name="rdb_DestinationRegisterDataTransfer" Content="Register" HorizontalAlignment="Left" Margin="10,79,0,0" VerticalAlignment="Top" GroupName="DestinationOperand" IsChecked="True" Checked="rdb_DestinationRegisterDataTransfer_Checked" />
                                     <ComboBox x:Name="cmb_DestinationRegisterDataTransfer" HorizontalAlignment="Left" Margin="77,79,0,0" VerticalAlignment="Top" Width="53">
                                         <System:String>R00</System:String>
                                         <System:String>R01</System:String>

@@ -25,6 +25,17 @@ namespace CPU_OS_Simulator.CPU
             this.operand1 = null;
             this.operand2 = null;
         }
+        public Instruction(Int32 opcode, Operand op1)
+        {
+            this.opcode = opcode;
+            this.operand1 = op1;
+        }
+        public Instruction(Int32 opcode, Operand op1, Operand op2)
+        {
+            this.opcode = opcode;
+            this.operand1 = op1;
+            this.operand2 = op2;
+        }
         #endregion
 
         #region Properties

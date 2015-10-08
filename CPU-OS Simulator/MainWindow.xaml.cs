@@ -90,7 +90,7 @@ namespace CPU_OS_Simulator
         private void btn_Show_Click(object sender, RoutedEventArgs e)
         {
             InstructionMode = "Show";
-            InstructionsWindow iw = new InstructionsWindow();
+            InstructionsWindow iw = new InstructionsWindow(this);
             iw.Show();
         }
 
@@ -108,10 +108,23 @@ namespace CPU_OS_Simulator
                 return;
             }
         }
-
         public void SayHello()
         {
             Console.WriteLine("Hello From Main Window");
+        }
+
+        public Instruction CreateInstruction(EnumOpcodes opcode, Operand op1, Operand op2)
+        {
+            return new Instruction((int) opcode, op1, op2);
+        }
+        public Instruction CreateInstruction(EnumOpcodes opcode, Operand op1)
+        {
+            return new Instruction((int)opcode, op1);
+        }
+
+        public Instruction CreateInstruction(EnumOpcodes opcode)
+        {
+            return new Instruction((int)opcode);
         }
     }
 }

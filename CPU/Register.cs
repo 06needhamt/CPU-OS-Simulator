@@ -10,7 +10,7 @@ namespace CPU_OS_Simulator.CPU
     {
         private string name;
         private Int32 value;
-        private bool isMemory;
+        private EnumOperandType type;
 
         public static Register R00 = new Register("R00");
         public static Register R01 = new Register("R01");
@@ -38,6 +38,8 @@ namespace CPU_OS_Simulator.CPU
         private Register(string name)
         {
             this.name = name;
+            this.value = 0;
+            this.type = EnumOperandType.VALUE;
         }
 
         public string Name
@@ -66,23 +68,23 @@ namespace CPU_OS_Simulator.CPU
             }
         }
 
-        public bool IsMemory
+        public EnumOperandType Type
         {
             get
             {
-                return isMemory;
+                return type;
             }
 
             set
             {
-                isMemory = value;
+                type = value;
             }
         }
 
-        public void setRegisterValue(int value, bool ismem)
+        public void setRegisterValue(int value, EnumOperandType ismem)
         {
             Value = value;
-            IsMemory = ismem;
+            type = ismem;
         }
     }
 }
