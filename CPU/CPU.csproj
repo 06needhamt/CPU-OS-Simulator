@@ -46,9 +46,11 @@
   <ItemGroup>
     <Compile Include="EnumOpcodes.cs" />
     <Compile Include="EnumOperandType.cs" />
+    <Compile Include="Extentions.cs" />
     <Compile Include="Instruction.cs" />
     <Compile Include="Operand.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Register.cs" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="CPU-OS Simulator 7-5-50_1.ico" />

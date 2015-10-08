@@ -9,14 +9,20 @@ namespace CPU_OS_Simulator.CPU
     [Serializable]
     public class Operand
     {
+        #region Global Variables
         private Int32 value;
         private EnumOperandType type;
+        #endregion
 
+        #region Constructors
         public Operand(Int32 value, EnumOperandType type)
         {
             this.value = value;
             this.type = type;
         }
+        #endregion
+
+        #region Properties
         public int Value
         {
             get
@@ -42,5 +48,6 @@ namespace CPU_OS_Simulator.CPU
                 type = value;
             }
         }
+        #endregion
     }
 }

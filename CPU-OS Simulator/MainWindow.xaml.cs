@@ -25,6 +25,7 @@ namespace CPU_OS_Simulator
     public partial class MainWindow : Window
     {
         LinkedList<SimulatorProgram> programList;
+        string InstructionMode;
 
         public MainWindow()
         {
@@ -88,6 +89,7 @@ namespace CPU_OS_Simulator
 
         private void btn_Show_Click(object sender, RoutedEventArgs e)
         {
+            InstructionMode = "Show";
             InstructionsWindow iw = new InstructionsWindow();
             iw.Show();
         }
@@ -105,6 +107,11 @@ namespace CPU_OS_Simulator
                 e.Cancel = false;
                 return;
             }
+        }
+
+        public void SayHello()
+        {
+            Console.WriteLine("Hello From Main Window");
         }
     }
 }

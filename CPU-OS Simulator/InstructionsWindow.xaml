@@ -1,19 +1,20 @@
-﻿<Window x:Class="CPU_OS_Simulator.InstructionsWindow"
+﻿<Window
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CPU_OS_Simulator"
+        xmlns:System="clr-namespace:System;assembly=mscorlib" x:Name="InstructionsWindow1" x:Class="CPU_OS_Simulator.InstructionsWindow"
         mc:Ignorable="d"
-        Title="InstructionsWindow" Height="500" Width="600" Icon="CPU-OS Simulator 7-5-50_1.ico" ResizeMode="NoResize" Loaded="Window_Loaded">
+        Title="InstructionsWindow" Height="500" Width="600" Icon="CPU-OS Simulator 7-5-50_1.ico" ResizeMode="NoResize" Loaded="Window_Loaded" Closing="InstructionsWindow1_Closing">
     <Grid>
         <Grid x:Name="grid_Main" HorizontalAlignment="Left" Height="466" VerticalAlignment="Top" Width="598" Margin="0,5,-4,0">
-            <TabControl x:Name="InstructionTabs" HorizontalAlignment="Left" Height="446" Margin="10,10,0,0" VerticalAlignment="Top" Width="578" SelectionChanged="InstructionTabs_SelectionChanged">
+            <TabControl x:Name="InstructionTabs" HorizontalAlignment="Left" Height="446" Margin="10,10,0,0" VerticalAlignment="Top" Width="578">
                 <TabItem x:Name="DataTransferTab" Header="Data Transfer" Margin="0,0,-4,-2">
                     <Grid x:Name="TabGrid" Background="#FFE5E5E5" Margin="0,0,0,31">
                         <Label x:Name="label" Content="Opcode" HorizontalAlignment="Left" Margin="48,22,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
                         <Grid x:Name="InstructionListGrid" HorizontalAlignment="Left" Height="277" Margin="25,53,0,0" VerticalAlignment="Top" Width="100">
-                            <ListBox x:Name="lst_OpcodeListDataTransfer" HorizontalAlignment="Left" Height="277" VerticalAlignment="Top" Width="100" Background="#FFFFFCC3"/>
+                            <ListBox x:Name="lst_OpcodeListDataTransfer" HorizontalAlignment="Left" Height="277" VerticalAlignment="Top" Width="100" Background="#FFFFFCC3" SelectionChanged="lst_OpcodeListDataTransfer_SelectionChanged"/>
                         </Grid>
                         <Grid x:Name="SourceOperandGrid" HorizontalAlignment="Left" Height="151" Margin="145,53,0,0" VerticalAlignment="Top" Width="150">
                             <GroupBox x:Name="grp_SourceOperand" Header="Source Operand" HorizontalAlignment="Left" VerticalAlignment="Top" Height="151" Width="150" Margin="0,-29,0,0">
@@ -21,7 +22,29 @@
                                     <RadioButton x:Name="rdb_SourceValueDataTransfer" Content="Value" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" GroupName="SourceOperand" IsChecked="True"/>
                                     <TextBox x:Name="txtSourceValueDataTransfer" HorizontalAlignment="Left" Height="23" Margin="75,10,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="55" Background="#FFBEFCFF"/>
                                     <RadioButton x:Name="rdb_SourceRegisterDataTransfer" Content="Register" HorizontalAlignment="Left" Margin="10,79,0,0" VerticalAlignment="Top" GroupName="SourceOperand" IsChecked="True"/>
-                                    <ComboBox x:Name="cmb_SourceRegisterDataTransfer" HorizontalAlignment="Left" Margin="75,79,0,0" VerticalAlignment="Top" Width="55"/>
+                                    <ComboBox x:Name="cmb_SourceRegisterDataTransfer" HorizontalAlignment="Left" Margin="75,79,0,0" VerticalAlignment="Top" Width="55">
+                                        <System:String>R00</System:String>
+                                        <System:String>R01</System:String>
+                                        <System:String>R02</System:String>
+                                        <System:String>R03</System:String>
+                                        <System:String>R04</System:String>
+                                        <System:String>R05</System:String>
+                                        <System:String>R06</System:String>
+                                        <System:String>R07</System:String>
+                                        <System:String>R08</System:String>
+                                        <System:String>R09</System:String>
+                                        <System:String>R10</System:String>
+                                        <System:String>R11</System:String>
+                                        <System:String>R12</System:String>
+                                        <System:String>R13</System:String>
+                                        <System:String>R14</System:String>
+                                        <System:String>R15</System:String>
+                                        <System:String>R16</System:String>
+                                        <System:String>R17</System:String>
+                                        <System:String>R18</System:String>
+                                        <System:String>R19</System:String>
+                                        <System:String>R20</System:String>
+                                    </ComboBox>
                                     <!--<ComboBox x:Name="comboBox_Copy" HorizontalAlignment="Left" Margin="75,229,0,-110" VerticalAlignment="Top" Width="58"/> -->
                                 </Grid>
                             </GroupBox>
@@ -29,10 +52,32 @@
                         <Grid x:Name="SourceOperandGrid_Copy" HorizontalAlignment="Left" Height="151" Margin="145,209,0,0" VerticalAlignment="Top" Width="150">
                             <GroupBox x:Name="grp_DestinationOperand" Header="Destination Operand" HorizontalAlignment="Left" VerticalAlignment="Top" Height="151" Width="150" Margin="0,-29,0,0">
                                 <Grid HorizontalAlignment="Left" Height="141" VerticalAlignment="Top" Width="140" Margin="0,0,-2,-12">
-                                    <RadioButton x:Name="rdb_DestinationValueDataTransfer" Content="Value" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" GroupName="DestinationOperand" IsChecked="True"/>
+                                    <RadioButton x:Name="rdb_DestinationValueDataTransfer" Content="Value" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" GroupName="DestinationOperand" IsChecked="True" />
                                     <TextBox x:Name="txtDestinationValueDataTransfer" HorizontalAlignment="Left" Height="23" Margin="75,10,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="55" Background="#FFBEFCFF"/>
-                                    <RadioButton x:Name="rdb_DestinationRegisterDataTransfer" Content="Register" HorizontalAlignment="Left" Margin="10,79,0,0" VerticalAlignment="Top" GroupName="DestinationOperand" IsChecked="True"/>
-                                    <ComboBox x:Name="cmb_DestinationRegisterDataTransfer" HorizontalAlignment="Left" Margin="77,79,0,0" VerticalAlignment="Top" Width="53"/>
+                                    <RadioButton x:Name="rdb_DestinationRegisterDataTransfer" Content="Register" HorizontalAlignment="Left" Margin="10,79,0,0" VerticalAlignment="Top" GroupName="DestinationOperand" IsChecked="True" />
+                                    <ComboBox x:Name="cmb_DestinationRegisterDataTransfer" HorizontalAlignment="Left" Margin="77,79,0,0" VerticalAlignment="Top" Width="53">
+                                        <System:String>R00</System:String>
+                                        <System:String>R01</System:String>
+                                        <System:String>R02</System:String>
+                                        <System:String>R03</System:String>
+                                        <System:String>R04</System:String>
+                                        <System:String>R05</System:String>
+                                        <System:String>R06</System:String>
+                                        <System:String>R07</System:String>
+                                        <System:String>R08</System:String>
+                                        <System:String>R09</System:String>
+                                        <System:String>R10</System:String>
+                                        <System:String>R11</System:String>
+                                        <System:String>R12</System:String>
+                                        <System:String>R13</System:String>
+                                        <System:String>R14</System:String>
+                                        <System:String>R15</System:String>
+                                        <System:String>R16</System:String>
+                                        <System:String>R17</System:String>
+                                        <System:String>R18</System:String>
+                                        <System:String>R19</System:String>
+                                        <System:String>R20</System:String>
+                                    </ComboBox>
                                 </Grid>
                             </GroupBox>
                         </Grid>
@@ -52,7 +97,7 @@
                             </Grid.ColumnDefinitions>
                             <Label x:Name="label1" Content="Opcode" HorizontalAlignment="Left" Margin="48,22,0,0" VerticalAlignment="Top" FontWeight="Bold" Grid.ColumnSpan="2"/>
                             <Grid x:Name="InstructionListGrid1" HorizontalAlignment="Left" Height="277" Margin="25,53,0,0" VerticalAlignment="Top" Width="100" Grid.ColumnSpan="2">
-                                <ListBox x:Name="lst_OpcodeListLogical" HorizontalAlignment="Left" Height="277" VerticalAlignment="Top" Width="100" Background="#FFFFFCC3"/>
+                                <ListBox x:Name="lst_OpcodeListLogical" HorizontalAlignment="Left" Height="277" VerticalAlignment="Top" Width="100" Background="#FFFFFCC3" SelectionChanged="lst_OpcodeListLogical_SelectionChanged"/>
                             </Grid>
                             <Grid x:Name="SourceOperandGrid1" HorizontalAlignment="Left" Height="151" Margin="96,53,0,0" VerticalAlignment="Top" Width="150" Grid.Column="1">
                                 <GroupBox x:Name="grp_SourceOperand1" Header="Source Operand" HorizontalAlignment="Left" VerticalAlignment="Top" Height="151" Width="150" Margin="0,-29,0,0">
@@ -60,7 +105,29 @@
                                         <RadioButton x:Name="rdb_SourceValueLogical" Content="Value" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" GroupName="SourceOperand" IsChecked="True"/>
                                         <TextBox x:Name="txtSourceValueLogical" HorizontalAlignment="Left" Height="23" Margin="75,10,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="55" Background="#FFBEFCFF"/>
                                         <RadioButton x:Name="rdb_SourceRegisterLogical" Content="Register" HorizontalAlignment="Left" Margin="10,79,0,0" VerticalAlignment="Top" GroupName="SourceOperand" IsChecked="True"/>
-                                        <ComboBox x:Name="cmb_SourceRegisterLogical" HorizontalAlignment="Left" Margin="75,79,0,0" VerticalAlignment="Top" Width="55"/>
+                                        <ComboBox x:Name="cmb_SourceRegisterLogical" HorizontalAlignment="Left" Margin="75,79,0,0" VerticalAlignment="Top" Width="55">
+                                            <System:String>R00</System:String>
+                                            <System:String>R01</System:String>
+                                            <System:String>R02</System:String>
+                                            <System:String>R03</System:String>
+                                            <System:String>R04</System:String>
+                                            <System:String>R05</System:String>
+                                            <System:String>R06</System:String>
+                                            <System:String>R07</System:String>
+                                            <System:String>R08</System:String>
+                                            <System:String>R09</System:String>
+                                            <System:String>R10</System:String>
+                                            <System:String>R11</System:String>
+                                            <System:String>R12</System:String>
+                                            <System:String>R13</System:String>
+                                            <System:String>R14</System:String>
+                                            <System:String>R15</System:String>
+                                            <System:String>R16</System:String>
+                                            <System:String>R17</System:String>
+                                            <System:String>R18</System:String>
+                                            <System:String>R19</System:String>
+                                            <System:String>R20</System:String>
+                                        </ComboBox>
                                         <!--<ComboBox x:Name="comboBox_Copy" HorizontalAlignment="Left" Margin="75,229,0,-110" VerticalAlignment="Top" Width="58"/> -->
                                     </Grid>
                                 </GroupBox>
@@ -71,7 +138,29 @@
                                         <RadioButton x:Name="rdb_DestinationValueLogical" Content="Value" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" GroupName="DestinationOperand" IsChecked="True"/>
                                         <TextBox x:Name="txtDestinationValueLogical" HorizontalAlignment="Left" Height="23" Margin="75,10,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="55" Background="#FFBEFCFF"/>
                                         <RadioButton x:Name="rdb_DestinationRegisterLogical" Content="Register" HorizontalAlignment="Left" Margin="10,79,0,0" VerticalAlignment="Top" GroupName="DestinationOperand" IsChecked="True"/>
-                                        <ComboBox x:Name="cmb_DestinationRegisterLogical" HorizontalAlignment="Left" Margin="77,79,0,0" VerticalAlignment="Top" Width="53"/>
+                                        <ComboBox x:Name="cmb_DestinationRegisterLogical" HorizontalAlignment="Left" Margin="77,79,0,0" VerticalAlignment="Top" Width="53">
+                                            <System:String>R00</System:String>
+                                            <System:String>R01</System:String>
+                                            <System:String>R02</System:String>
+                                            <System:String>R03</System:String>
+                                            <System:String>R04</System:String>
+                                            <System:String>R05</System:String>
+                                            <System:String>R06</System:String>
+                                            <System:String>R07</System:String>
+                                            <System:String>R08</System:String>
+                                            <System:String>R09</System:String>
+                                            <System:String>R10</System:String>
+                                            <System:String>R11</System:String>
+                                            <System:String>R12</System:String>
+                                            <System:String>R13</System:String>
+                                            <System:String>R14</System:String>
+                                            <System:String>R15</System:String>
+                                            <System:String>R16</System:String>
+                                            <System:String>R17</System:String>
+                                            <System:String>R18</System:String>
+                                            <System:String>R19</System:String>
+                                            <System:String>R20</System:String>
+                                        </ComboBox>
                                     </Grid>
                                 </GroupBox>
                             </Grid>
@@ -87,7 +176,7 @@
                     <Grid x:Name="TabGrid_Copy1" Background="#FFE5E5E5" Margin="0,0,0,31">
                         <Label x:Name="label2" Content="Opcode" HorizontalAlignment="Left" Margin="48,22,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
                         <Grid x:Name="InstructionListGrid2" HorizontalAlignment="Left" Height="277" Margin="25,53,0,0" VerticalAlignment="Top" Width="100">
-                            <ListBox x:Name="lst_OpcodeListArithmetic" HorizontalAlignment="Left" Height="277" VerticalAlignment="Top" Width="100" Background="#FFFFFCC3"/>
+                            <ListBox x:Name="lst_OpcodeListArithmetic" HorizontalAlignment="Left" Height="277" VerticalAlignment="Top" Width="100" Background="#FFFFFCC3" SelectionChanged="lst_OpcodeListArithmetic_SelectionChanged"/>
                         </Grid>
                         <Grid x:Name="SourceOperandGrid2" HorizontalAlignment="Left" Height="151" Margin="145,53,0,0" VerticalAlignment="Top" Width="150">
                             <GroupBox x:Name="grp_SourceOperand2" Header="Source Operand" HorizontalAlignment="Left" VerticalAlignment="Top" Height="151" Width="150" Margin="0,-29,0,0">
@@ -95,7 +184,29 @@
                                     <RadioButton x:Name="rdb_SourceValueArithmetic" Content="Value" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" GroupName="SourceOperand" IsChecked="True"/>
                                     <TextBox x:Name="txtSourceValueArithmetic" HorizontalAlignment="Left" Height="23" Margin="75,10,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="55" Background="#FFBEFCFF"/>
                                     <RadioButton x:Name="rdb_SourceRegisterArithmetic" Content="Register" HorizontalAlignment="Left" Margin="10,79,0,0" VerticalAlignment="Top" GroupName="SourceOperand" IsChecked="True"/>
-                                    <ComboBox x:Name="cmb_SourceRegisterArithmetic" HorizontalAlignment="Left" Margin="75,79,0,0" VerticalAlignment="Top" Width="55"/>
+                                    <ComboBox x:Name="cmb_SourceRegisterArithmetic" HorizontalAlignment="Left" Margin="75,79,0,0" VerticalAlignment="Top" Width="55">
+                                        <System:String>R00</System:String>
+                                        <System:String>R01</System:String>
+                                        <System:String>R02</System:String>
+                                        <System:String>R03</System:String>
+                                        <System:String>R04</System:String>
+                                        <System:String>R05</System:String>
+                                        <System:String>R06</System:String>
+                                        <System:String>R07</System:String>
+                                        <System:String>R08</System:String>
+                                        <System:String>R09</System:String>
+                                        <System:String>R10</System:String>
+                                        <System:String>R11</System:String>
+                                        <System:String>R12</System:String>
+                                        <System:String>R13</System:String>
+                                        <System:String>R14</System:String>
+                                        <System:String>R15</System:String>
+                                        <System:String>R16</System:String>
+                                        <System:String>R17</System:String>
+                                        <System:String>R18</System:String>
+                                        <System:String>R19</System:String>
+                                        <System:String>R20</System:String>
+                                    </ComboBox>
                                     <!--<ComboBox x:Name="comboBox_Copy" HorizontalAlignment="Left" Margin="75,229,0,-110" VerticalAlignment="Top" Width="58"/> -->
                                 </Grid>
                             </GroupBox>
@@ -106,7 +217,29 @@
                                     <RadioButton x:Name="rdb_DestinationValueArithmetic" Content="Value" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" GroupName="DestinationOperand" IsChecked="True"/>
                                     <TextBox x:Name="txtDestinationValueArithmetic" HorizontalAlignment="Left" Height="23" Margin="75,10,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="55" Background="#FFBEFCFF"/>
                                     <RadioButton x:Name="rdb_DestinationRegisterArithmetic" Content="Register" HorizontalAlignment="Left" Margin="10,79,0,0" VerticalAlignment="Top" GroupName="DestinationOperand" IsChecked="True"/>
-                                    <ComboBox x:Name="cmb_DestinationRegisterArithmetic" HorizontalAlignment="Left" Margin="77,79,0,0" VerticalAlignment="Top" Width="53"/>
+                                    <ComboBox x:Name="cmb_DestinationRegisterArithmetic" HorizontalAlignment="Left" Margin="77,79,0,0" VerticalAlignment="Top" Width="53">
+                                        <System:String>R00</System:String>
+                                        <System:String>R01</System:String>
+                                        <System:String>R02</System:String>
+                                        <System:String>R03</System:String>
+                                        <System:String>R04</System:String>
+                                        <System:String>R05</System:String>
+                                        <System:String>R06</System:String>
+                                        <System:String>R07</System:String>
+                                        <System:String>R08</System:String>
+                                        <System:String>R09</System:String>
+                                        <System:String>R10</System:String>
+                                        <System:String>R11</System:String>
+                                        <System:String>R12</System:String>
+                                        <System:String>R13</System:String>
+                                        <System:String>R14</System:String>
+                                        <System:String>R15</System:String>
+                                        <System:String>R16</System:String>
+                                        <System:String>R17</System:String>
+                                        <System:String>R18</System:String>
+                                        <System:String>R19</System:String>
+                                        <System:String>R20</System:String>
+                                    </ComboBox>
                                 </Grid>
                             </GroupBox>
                         </Grid>
@@ -129,7 +262,29 @@
                                     <RadioButton x:Name="rdb_SourceValueControlTransfer" Content="Value" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" GroupName="SourceOperand" IsChecked="True"/>
                                     <TextBox x:Name="txtSourceValueControlTransfer" HorizontalAlignment="Left" Height="23" Margin="75,10,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="55" Background="#FFBEFCFF"/>
                                     <RadioButton x:Name="rdb_SourceRegisterControlTransfer" Content="Register" HorizontalAlignment="Left" Margin="10,79,0,0" VerticalAlignment="Top" GroupName="SourceOperand" IsChecked="True"/>
-                                    <ComboBox x:Name="cmb_SourceRegisterControlTransfer" HorizontalAlignment="Left" Margin="75,79,0,0" VerticalAlignment="Top" Width="55"/>
+                                    <ComboBox x:Name="cmb_SourceRegisterControlTransfer" HorizontalAlignment="Left" Margin="75,79,0,0" VerticalAlignment="Top" Width="55">
+                                        <System:String>R00</System:String>
+                                        <System:String>R01</System:String>
+                                        <System:String>R02</System:String>
+                                        <System:String>R03</System:String>
+                                        <System:String>R04</System:String>
+                                        <System:String>R05</System:String>
+                                        <System:String>R06</System:String>
+                                        <System:String>R07</System:String>
+                                        <System:String>R08</System:String>
+                                        <System:String>R09</System:String>
+                                        <System:String>R10</System:String>
+                                        <System:String>R11</System:String>
+                                        <System:String>R12</System:String>
+                                        <System:String>R13</System:String>
+                                        <System:String>R14</System:String>
+                                        <System:String>R15</System:String>
+                                        <System:String>R16</System:String>
+                                        <System:String>R17</System:String>
+                                        <System:String>R18</System:String>
+                                        <System:String>R19</System:String>
+                                        <System:String>R20</System:String>
+                                    </ComboBox>
                                     <!--<ComboBox x:Name="comboBox_Copy" HorizontalAlignment="Left" Margin="75,229,0,-110" VerticalAlignment="Top" Width="58"/> -->
                                 </Grid>
                             </GroupBox>
@@ -140,7 +295,29 @@
                                     <RadioButton x:Name="rdb_DestinationValueControlTransfer" Content="Value" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" GroupName="DestinationOperand" IsChecked="True"/>
                                     <TextBox x:Name="txtDestinationValueControlTransfer" HorizontalAlignment="Left" Height="23" Margin="75,10,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="55" Background="#FFBEFCFF"/>
                                     <RadioButton x:Name="rdb_DestinationRegisterControlTransfer" Content="Register" HorizontalAlignment="Left" Margin="10,79,0,0" VerticalAlignment="Top" GroupName="DestinationOperand" IsChecked="True"/>
-                                    <ComboBox x:Name="cmb_DestinationRegisterControlTransfer" HorizontalAlignment="Left" Margin="77,79,0,0" VerticalAlignment="Top" Width="53"/>
+                                    <ComboBox x:Name="cmb_DestinationRegisterControlTransfer" HorizontalAlignment="Left" Margin="77,79,0,0" VerticalAlignment="Top" Width="53">
+                                        <System:String>R00</System:String>
+                                        <System:String>R01</System:String>
+                                        <System:String>R02</System:String>
+                                        <System:String>R03</System:String>
+                                        <System:String>R04</System:String>
+                                        <System:String>R05</System:String>
+                                        <System:String>R06</System:String>
+                                        <System:String>R07</System:String>
+                                        <System:String>R08</System:String>
+                                        <System:String>R09</System:String>
+                                        <System:String>R10</System:String>
+                                        <System:String>R11</System:String>
+                                        <System:String>R12</System:String>
+                                        <System:String>R13</System:String>
+                                        <System:String>R14</System:String>
+                                        <System:String>R15</System:String>
+                                        <System:String>R16</System:String>
+                                        <System:String>R17</System:String>
+                                        <System:String>R18</System:String>
+                                        <System:String>R19</System:String>
+                                        <System:String>R20</System:String>
+                                    </ComboBox>
                                 </Grid>
                             </GroupBox>
                         </Grid>
@@ -163,7 +340,29 @@
                                     <RadioButton x:Name="rdb_SourceValueComparison" Content="Value" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" GroupName="SourceOperand" IsChecked="True"/>
                                     <TextBox x:Name="txtSourceValueComparison" HorizontalAlignment="Left" Height="23" Margin="75,10,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="55" Background="#FFBEFCFF"/>
                                     <RadioButton x:Name="rdb_SourceRegisterComparison" Content="Register" HorizontalAlignment="Left" Margin="10,79,0,0" VerticalAlignment="Top" GroupName="SourceOperand" IsChecked="True"/>
-                                    <ComboBox x:Name="cmb_SourceRegisterComparison" HorizontalAlignment="Left" Margin="75,79,0,0" VerticalAlignment="Top" Width="55"/>
+                                    <ComboBox x:Name="cmb_SourceRegisterComparison" HorizontalAlignment="Left" Margin="75,79,0,0" VerticalAlignment="Top" Width="55">
+                                        <System:String>R00</System:String>
+                                        <System:String>R01</System:String>
+                                        <System:String>R02</System:String>
+                                        <System:String>R03</System:String>
+                                        <System:String>R04</System:String>
+                                        <System:String>R05</System:String>
+                                        <System:String>R06</System:String>
+                                        <System:String>R07</System:String>
+                                        <System:String>R08</System:String>
+                                        <System:String>R09</System:String>
+                                        <System:String>R10</System:String>
+                                        <System:String>R11</System:String>
+                                        <System:String>R12</System:String>
+                                        <System:String>R13</System:String>
+                                        <System:String>R14</System:String>
+                                        <System:String>R15</System:String>
+                                        <System:String>R16</System:String>
+                                        <System:String>R17</System:String>
+                                        <System:String>R18</System:String>
+                                        <System:String>R19</System:String>
+                                        <System:String>R20</System:String>
+                                    </ComboBox>
                                     <!--<ComboBox x:Name="comboBox_Copy" HorizontalAlignment="Left" Margin="75,229,0,-110" VerticalAlignment="Top" Width="58"/> -->
                                 </Grid>
                             </GroupBox>
@@ -174,7 +373,29 @@
                                     <RadioButton x:Name="rdb_DestinationValueComparison" Content="Value" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" GroupName="DestinationOperand" IsChecked="True"/>
                                     <TextBox x:Name="txtDestinationValueComparison" HorizontalAlignment="Left" Height="23" Margin="75,10,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="55" Background="#FFBEFCFF"/>
                                     <RadioButton x:Name="rdb_DestinationRegisterComparison" Content="Register" HorizontalAlignment="Left" Margin="10,79,0,0" VerticalAlignment="Top" GroupName="DestinationOperand" IsChecked="True"/>
-                                    <ComboBox x:Name="cmb_DestinationRegisterComparison" HorizontalAlignment="Left" Margin="77,79,0,0" VerticalAlignment="Top" Width="53"/>
+                                    <ComboBox x:Name="cmb_DestinationRegisterComparison" HorizontalAlignment="Left" Margin="77,79,0,0" VerticalAlignment="Top" Width="53">
+                                        <System:String>R00</System:String>
+                                        <System:String>R01</System:String>
+                                        <System:String>R02</System:String>
+                                        <System:String>R03</System:String>
+                                        <System:String>R04</System:String>
+                                        <System:String>R05</System:String>
+                                        <System:String>R06</System:String>
+                                        <System:String>R07</System:String>
+                                        <System:String>R08</System:String>
+                                        <System:String>R09</System:String>
+                                        <System:String>R10</System:String>
+                                        <System:String>R11</System:String>
+                                        <System:String>R12</System:String>
+                                        <System:String>R13</System:String>
+                                        <System:String>R14</System:String>
+                                        <System:String>R15</System:String>
+                                        <System:String>R16</System:String>
+                                        <System:String>R17</System:String>
+                                        <System:String>R18</System:String>
+                                        <System:String>R19</System:String>
+                                        <System:String>R20</System:String>
+                                    </ComboBox>
                                 </Grid>
                             </GroupBox>
                         </Grid>
@@ -197,7 +418,29 @@
                                     <RadioButton x:Name="rdb_SourceValueIO" Content="Value" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" GroupName="SourceOperand" IsChecked="True"/>
                                     <TextBox x:Name="txtSourceValueIO" HorizontalAlignment="Left" Height="23" Margin="75,10,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="55" Background="#FFBEFCFF"/>
                                     <RadioButton x:Name="rdb_SourceRegisterIO" Content="Register" HorizontalAlignment="Left" Margin="10,79,0,0" VerticalAlignment="Top" GroupName="SourceOperand" IsChecked="True"/>
-                                    <ComboBox x:Name="cmb_SourceRegisterIO" HorizontalAlignment="Left" Margin="75,79,0,0" VerticalAlignment="Top" Width="55"/>
+                                    <ComboBox x:Name="cmb_SourceRegisterIO" HorizontalAlignment="Left" Margin="75,79,0,0" VerticalAlignment="Top" Width="55">
+                                        <System:String>R00</System:String>
+                                        <System:String>R01</System:String>
+                                        <System:String>R02</System:String>
+                                        <System:String>R03</System:String>
+                                        <System:String>R04</System:String>
+                                        <System:String>R05</System:String>
+                                        <System:String>R06</System:String>
+                                        <System:String>R07</System:String>
+                                        <System:String>R08</System:String>
+                                        <System:String>R09</System:String>
+                                        <System:String>R10</System:String>
+                                        <System:String>R11</System:String>
+                                        <System:String>R12</System:String>
+                                        <System:String>R13</System:String>
+                                        <System:String>R14</System:String>
+                                        <System:String>R15</System:String>
+                                        <System:String>R16</System:String>
+                                        <System:String>R17</System:String>
+                                        <System:String>R18</System:String>
+                                        <System:String>R19</System:String>
+                                        <System:String>R20</System:String>
+                                    </ComboBox>
                                     <!--<ComboBox x:Name="comboBox_Copy" HorizontalAlignment="Left" Margin="75,229,0,-110" VerticalAlignment="Top" Width="58"/> -->
                                 </Grid>
                             </GroupBox>
@@ -208,7 +451,29 @@
                                     <RadioButton x:Name="rdb_DestinationValueIO" Content="Value" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" GroupName="DestinationOperand" IsChecked="True"/>
                                     <TextBox x:Name="txtDestinationValueIO" HorizontalAlignment="Left" Height="23" Margin="75,10,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="55" Background="#FFBEFCFF"/>
                                     <RadioButton x:Name="rdb_DestinationRegisterIO" Content="Register" HorizontalAlignment="Left" Margin="10,79,0,0" VerticalAlignment="Top" GroupName="DestinationOperand" IsChecked="True"/>
-                                    <ComboBox x:Name="cmb_DestinationRegisterIO" HorizontalAlignment="Left" Margin="77,79,0,0" VerticalAlignment="Top" Width="53"/>
+                                    <ComboBox x:Name="cmb_DestinationRegisterIO" HorizontalAlignment="Left" Margin="77,79,0,0" VerticalAlignment="Top" Width="53">
+                                        <System:String>R00</System:String>
+                                        <System:String>R01</System:String>
+                                        <System:String>R02</System:String>
+                                        <System:String>R03</System:String>
+                                        <System:String>R04</System:String>
+                                        <System:String>R05</System:String>
+                                        <System:String>R06</System:String>
+                                        <System:String>R07</System:String>
+                                        <System:String>R08</System:String>
+                                        <System:String>R09</System:String>
+                                        <System:String>R10</System:String>
+                                        <System:String>R11</System:String>
+                                        <System:String>R12</System:String>
+                                        <System:String>R13</System:String>
+                                        <System:String>R14</System:String>
+                                        <System:String>R15</System:String>
+                                        <System:String>R16</System:String>
+                                        <System:String>R17</System:String>
+                                        <System:String>R18</System:String>
+                                        <System:String>R19</System:String>
+                                        <System:String>R20</System:String>
+                                    </ComboBox>
                                 </Grid>
                             </GroupBox>
                         </Grid>
@@ -228,10 +493,32 @@
                         <Grid x:Name="SourceOperandGrid6" HorizontalAlignment="Left" Height="151" Margin="145,53,0,0" VerticalAlignment="Top" Width="150">
                             <GroupBox x:Name="grp_SourceOperand6" Header="Source Operand" HorizontalAlignment="Left" VerticalAlignment="Top" Height="151" Width="150" Margin="0,-29,0,0">
                                 <Grid HorizontalAlignment="Left" Height="141" VerticalAlignment="Top" Width="140" Margin="0,0,-2,-12">
-                                    <RadioButton x:Name="rdb_SourceValueMiscellaneous" Content="Value" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" GroupName="SourceOperand" IsChecked="True"/>
+                                    <RadioButton x:Name="rdb_SourceValueMiscellaneous" Content="Value" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" GroupName="SourceOperand"/>
                                     <TextBox x:Name="txtSourceValueMiscellaneous" HorizontalAlignment="Left" Height="23" Margin="75,10,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="55" Background="#FFBEFCFF"/>
-                                    <RadioButton x:Name="rdb_SourceRegisterMiscellaneous" Content="Register" HorizontalAlignment="Left" Margin="10,79,0,0" VerticalAlignment="Top" GroupName="SourceOperand" IsChecked="True"/>
-                                    <ComboBox x:Name="cmb_SourceRegisterMiscellaneous" HorizontalAlignment="Left" Margin="75,79,0,0" VerticalAlignment="Top" Width="55"/>
+                                    <RadioButton x:Name="rdb_SourceRegisterMiscellaneous" Content="Register" HorizontalAlignment="Left" Margin="10,79,0,0" VerticalAlignment="Top" GroupName="SourceOperand"/>
+                                    <ComboBox x:Name="cmb_SourceRegisterMiscellaneous" HorizontalAlignment="Left" Margin="75,79,0,0" VerticalAlignment="Top" Width="55">
+                                        <System:String>R00</System:String>
+                                        <System:String>R01</System:String>
+                                        <System:String>R02</System:String>
+                                        <System:String>R03</System:String>
+                                        <System:String>R04</System:String>
+                                        <System:String>R05</System:String>
+                                        <System:String>R06</System:String>
+                                        <System:String>R07</System:String>
+                                        <System:String>R08</System:String>
+                                        <System:String>R09</System:String>
+                                        <System:String>R10</System:String>
+                                        <System:String>R11</System:String>
+                                        <System:String>R12</System:String>
+                                        <System:String>R13</System:String>
+                                        <System:String>R14</System:String>
+                                        <System:String>R15</System:String>
+                                        <System:String>R16</System:String>
+                                        <System:String>R17</System:String>
+                                        <System:String>R18</System:String>
+                                        <System:String>R19</System:String>
+                                        <System:String>R20</System:String>
+                                    </ComboBox>
                                     <!--<ComboBox x:Name="comboBox_Copy" HorizontalAlignment="Left" Margin="75,229,0,-110" VerticalAlignment="Top" Width="58"/> -->
                                 </Grid>
                             </GroupBox>
@@ -239,10 +526,32 @@
                         <Grid x:Name="SourceOperandGrid_Copy6" HorizontalAlignment="Left" Height="151" Margin="145,209,0,0" VerticalAlignment="Top" Width="150">
                             <GroupBox x:Name="grp_DestinationOperand6" Header="Destination Operand" HorizontalAlignment="Left" VerticalAlignment="Top" Height="151" Width="150" Margin="0,-29,0,0">
                                 <Grid HorizontalAlignment="Left" Height="141" VerticalAlignment="Top" Width="140" Margin="0,0,-2,-12">
-                                    <RadioButton x:Name="rdb_DestinationValueMiscellaneous" Content="Value" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" GroupName="DestinationOperand" IsChecked="True"/>
+                                    <RadioButton x:Name="rdb_DestinationValueMiscellaneous" Content="Value" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" GroupName="DestinationOperand"/>
                                     <TextBox x:Name="txtDestinationValueMiscellaneous" HorizontalAlignment="Left" Height="23" Margin="75,10,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="55" Background="#FFBEFCFF"/>
-                                    <RadioButton x:Name="rdb_DestinationRegisterMiscellaneous" Content="Register" HorizontalAlignment="Left" Margin="10,79,0,0" VerticalAlignment="Top" GroupName="DestinationOperand" IsChecked="True"/>
-                                    <ComboBox x:Name="cmb_DestinationRegisterMiscellaneous" HorizontalAlignment="Left" Margin="77,79,0,0" VerticalAlignment="Top" Width="53"/>
+                                    <RadioButton x:Name="rdb_DestinationRegisterMiscellaneous" Content="Register" HorizontalAlignment="Left" Margin="10,79,0,0" VerticalAlignment="Top" GroupName="DestinationOperand"/>
+                                    <ComboBox x:Name="cmb_DestinationRegisterMiscellaneous" HorizontalAlignment="Left" Margin="77,79,0,0" VerticalAlignment="Top" Width="53">
+                                        <System:String>R00</System:String>
+                                        <System:String>R01</System:String>
+                                        <System:String>R02</System:String>
+                                        <System:String>R03</System:String>
+                                        <System:String>R04</System:String>
+                                        <System:String>R05</System:String>
+                                        <System:String>R06</System:String>
+                                        <System:String>R07</System:String>
+                                        <System:String>R08</System:String>
+                                        <System:String>R09</System:String>
+                                        <System:String>R10</System:String>
+                                        <System:String>R11</System:String>
+                                        <System:String>R12</System:String>
+                                        <System:String>R13</System:String>
+                                        <System:String>R14</System:String>
+                                        <System:String>R15</System:String>
+                                        <System:String>R16</System:String>
+                                        <System:String>R17</System:String>
+                                        <System:String>R18</System:String>
+                                        <System:String>R19</System:String>
+                                        <System:String>R20</System:String>
+                                    </ComboBox>
                                 </Grid>
                             </GroupBox>
                         </Grid>
