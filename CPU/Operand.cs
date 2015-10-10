@@ -12,6 +12,8 @@ namespace CPU_OS_Simulator.CPU
         #region Global Variables
         private Int32 value;
         private EnumOperandType type;
+        private bool isRegister;
+        private Register register;
         #endregion
 
         #region Constructors
@@ -22,6 +24,8 @@ namespace CPU_OS_Simulator.CPU
         }
         public Operand(Register reg, EnumOperandType type)
         {
+            this.isRegister = true;
+            this.register = reg;
             this.value = reg.Value;
             this.type = type;
         }
@@ -51,6 +55,32 @@ namespace CPU_OS_Simulator.CPU
             set
             {
                 type = value;
+            }
+        }
+
+        public bool IsRegister
+        {
+            get
+            {
+                return isRegister;
+            }
+
+            set
+            {
+                isRegister = value;
+            }
+        }
+
+        public Register Register
+        {
+            get
+            {
+                return register;
+            }
+
+            set
+            {
+                register = value;
             }
         }
         #endregion

@@ -16,6 +16,7 @@ namespace CPU_OS_Simulator
     {
         private string name;
         private Int32 baseAddress;
+        private Int32 startAddress;
         private Int32 pages;
         private LinkedList<Instruction> instructions;
 
@@ -35,6 +36,7 @@ namespace CPU_OS_Simulator
             }
             this.pages = pages;
             this.instructions = new LinkedList<Instruction>();
+            this.startAddress = baseAddress;
             Console.WriteLine("Program Created");
         }
         /// <summary>
@@ -97,6 +99,19 @@ namespace CPU_OS_Simulator
             set
             {
                 instructions = value;
+            }
+        }
+
+        public int StartAddress
+        {
+            get
+            {
+                return startAddress;
+            }
+
+            set
+            {
+                startAddress = value;
             }
         }
     }

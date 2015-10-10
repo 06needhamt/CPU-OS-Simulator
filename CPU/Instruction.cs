@@ -15,6 +15,8 @@ namespace CPU_OS_Simulator.CPU
         private Action execute;
         private Operand operand1;
         private Operand operand2;
+        private Int32 size;
+        private Int32 address;
         private Int32 result;
         #endregion
 
@@ -116,6 +118,32 @@ namespace CPU_OS_Simulator.CPU
                 result = value;
             }
         }
+
+        public int Size
+        {
+            get
+            {
+                return size;
+            }
+
+            set
+            {
+                size = value;
+            }
+        }
+
+        public int Address
+        {
+            get
+            {
+                return address;
+            }
+
+            set
+            {
+                address = value;
+            }
+        }
         #endregion
 
         #region Methods
@@ -141,6 +169,10 @@ namespace CPU_OS_Simulator.CPU
         {
             //TODO Allow for memory operands
             result = lhs.Value + rhs.Value;
+            if (lhs.IsRegister)
+            {
+                lhs.Register.Value = result;
+            }
         }
         #endregion
     }

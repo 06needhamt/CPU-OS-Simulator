@@ -83,6 +83,8 @@ namespace CPU_OS_Simulator
             Int32 baseAddress = Convert.ToInt32(txtBaseAddress.Text);
             Int32 pages = Convert.ToInt32(cmb_Pages.Text);
             SimulatorProgram program = new SimulatorProgram(programName, baseAddress, pages);
+            lst_ProgramList.Items.Add(program);
+            programList.AddLast(program);
             Console.WriteLine("Program " + program.Name + " Created");
             return program;
         }
@@ -99,12 +101,11 @@ namespace CPU_OS_Simulator
             MessageBoxResult result = MessageBox.Show("Stopping the Simulator Continue?", "Stopping", MessageBoxButton.YesNo, MessageBoxImage.Information);
             if(result == MessageBoxResult.Yes)
             {
-                e.Cancel = true;
-                this.Close();
+                e.Cancel = false;
             }
             else
             {
-                e.Cancel = false;
+                e.Cancel = true;
                 return;
             }
         }
