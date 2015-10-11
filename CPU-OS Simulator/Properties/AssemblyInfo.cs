@@ -8,11 +8,11 @@ using System.Windows;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("CPU-OS Simulator")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyDescription("CPU-OS Simulator Main Executable")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
 [assembly: AssemblyProduct("CPU-OS Simulator")]
-[assembly: AssemblyCopyright("Copyright ©  2015")]
+[assembly: AssemblyCopyright("Copyright © Thomas Needham 2015")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
@@ -51,5 +51,7 @@ using System.Windows;
 // You can specify all the values or you can default the Build and Revision Numbers 
 // by using the '*' as shown below:
 // [assembly: AssemblyVersion("1.0.*")]
-[assembly: AssemblyVersion("2015.10.10.1810")]
-[assembly: AssemblyFileVersion("2015.10.10.1810")]
+[assembly: AssemblyVersion("2015.10.11.1645")]
+[assembly: AssemblyFileVersion("2015.10.11.1645")]
+[assembly: NeutralResourcesLanguage("en-GB")]
+

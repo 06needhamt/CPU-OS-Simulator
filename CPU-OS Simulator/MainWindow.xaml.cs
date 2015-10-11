@@ -114,18 +114,18 @@ namespace CPU_OS_Simulator
             Console.WriteLine("Hello From Main Window");
         }
 
-        public Instruction CreateInstruction(EnumOpcodes opcode, Operand op1, Operand op2)
+        public Instruction CreateInstruction(EnumOpcodes opcode, Operand op1, Operand op2, Int32 Address)
         {
-            return new Instruction((int) opcode, op1, op2);
+            return new Instruction((int) opcode, op1, op2,Address);
         }
-        public Instruction CreateInstruction(EnumOpcodes opcode, Operand op1)
+        public Instruction CreateInstruction(EnumOpcodes opcode, Operand op1, Int32 Address)
         {
-            return new Instruction((int)opcode, op1);
+            return new Instruction((int)opcode, op1,Address);
         }
 
-        public Instruction CreateInstruction(EnumOpcodes opcode)
+        public Instruction CreateInstruction(EnumOpcodes opcode, Int32 Address)
         {
-            return new Instruction((int)opcode);
+            return new Instruction((int)opcode, Address);
         }
     }
 }

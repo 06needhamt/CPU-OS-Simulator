@@ -14,12 +14,14 @@ namespace CPU_OS_Simulator
     [Serializable]
     public class SimulatorProgram
     {
+        #region Global Variables
         private string name;
         private Int32 baseAddress;
         private Int32 startAddress;
         private Int32 pages;
         private LinkedList<Instruction> instructions;
-
+        #endregion
+        #region Constructors
         /// <summary>
         /// Constructor for simulator program
         /// </summary>
@@ -39,6 +41,8 @@ namespace CPU_OS_Simulator
             this.startAddress = baseAddress;
             Console.WriteLine("Program Created");
         }
+        #endregion
+        #region Properties
         /// <summary>
         /// Property for the name of the program
         /// </summary>
@@ -114,5 +118,12 @@ namespace CPU_OS_Simulator
                 startAddress = value;
             }
         }
+        #endregion
+        #region Methods
+        public void AddInstruction()
+        {
+
+        }
+        #endregion
     }
 }

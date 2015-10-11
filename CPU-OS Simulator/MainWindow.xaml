@@ -14,9 +14,9 @@
                     <ListView x:Name="lst_InstructionsList" HorizontalAlignment="Left" Height="459" VerticalAlignment="Top" Width="426" Background="#FF8BF4FF">
                         <ListView.View>
                             <GridView>
-                                <GridViewColumn Header="PAdd" DisplayMemberBinding="{Binding LAdd}" Width="100"/>
-                                <GridViewColumn Header="LAdd" DisplayMemberBinding="{Binding LAdd}" Width="100"/>
-                                <GridViewColumn Header="Instruction" DisplayMemberBinding="{Binding Test3}" Width="200"/>
+                                <GridViewColumn Header="PAdd" DisplayMemberBinding="{Binding Address}" Width="100"/>
+                                <GridViewColumn Header="LAdd" DisplayMemberBinding="{Binding Address}" Width="100"/>
+                                <GridViewColumn Header="Instruction" DisplayMemberBinding="{Binding InstructionString}" Width="200"/>
                                 <GridViewColumn Header="Base" DisplayMemberBinding="{Binding Test1}" Width="50"/>
                                 <GridViewColumn Header="T" DisplayMemberBinding="{Binding Test1}" Width="20"/>
                                 <GridViewColumn/>
