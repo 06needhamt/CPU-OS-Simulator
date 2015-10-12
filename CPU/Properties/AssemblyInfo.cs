@@ -6,7 +6,7 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("CPU")]
+[assembly: AssemblyTitle("CPU-OS Simulator CPU Module")]
 [assembly: AssemblyDescription("CPU-OS Simulator CPU Module")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
@@ -33,7 +33,7 @@ using System.Runtime.InteropServices;
 // You can specify all the values or you can default the Build and Revision Numbers 
 // by using the '*' as shown below:
 // [assembly: AssemblyVersion("1.0.*")]
-[assembly: AssemblyVersion("2015.10.12.1739")]
-[assembly: AssemblyFileVersion("2015.10.12.1739")]
+[assembly: AssemblyVersion("2015.10.12.1803")]
+[assembly: AssemblyFileVersion("2015.10.12.1803")]
 [assembly: NeutralResourcesLanguage("en-GB")]
 

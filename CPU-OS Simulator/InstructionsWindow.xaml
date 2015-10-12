@@ -102,9 +102,9 @@
                             <Grid x:Name="SourceOperandGrid1" HorizontalAlignment="Left" Height="151" Margin="96,53,0,0" VerticalAlignment="Top" Width="150" Grid.Column="1">
                                 <GroupBox x:Name="grp_SourceOperand1" Header="Source Operand" HorizontalAlignment="Left" VerticalAlignment="Top" Height="151" Width="150" Margin="0,-29,0,0">
                                     <Grid HorizontalAlignment="Left" Height="141" VerticalAlignment="Top" Width="140" Margin="0,0,-2,-12">
-                                        <RadioButton x:Name="rdb_SourceValueLogical" Content="Value" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" GroupName="SourceOperand" />
+                                        <RadioButton x:Name="rdb_SourceValueLogical" Content="Value" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" GroupName="SourceOperand" Checked="rdb_SourceValueLogical_Checked" />
                                         <TextBox x:Name="txtSourceValueLogical" HorizontalAlignment="Left" Height="23" Margin="75,10,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="55" Background="#FFBEFCFF" GotFocus="txtSourceValueLogical_GotFocus"/>
-                                        <RadioButton x:Name="rdb_SourceRegisterLogical" Content="Register" HorizontalAlignment="Left" Margin="10,79,0,0" VerticalAlignment="Top" GroupName="SourceOperand" />
+                                        <RadioButton x:Name="rdb_SourceRegisterLogical" Content="Register" HorizontalAlignment="Left" Margin="10,79,0,0" VerticalAlignment="Top" GroupName="SourceOperand" Checked="rdb_SourceRegisterLogical_Checked" />
                                         <ComboBox x:Name="cmb_SourceRegisterLogical" HorizontalAlignment="Left" Margin="75,79,0,0" VerticalAlignment="Top" Width="55" SelectedIndex="0">
                                             <System:String>R00</System:String>
                                             <System:String>R01</System:String>
@@ -135,9 +135,9 @@
                             <Grid x:Name="SourceOperandGrid_Copy1" HorizontalAlignment="Left" Height="151" Margin="96,209,0,0" VerticalAlignment="Top" Width="150" Grid.Column="1">
                                 <GroupBox x:Name="grp_DestinationOperand1" Header="Destination Operand" HorizontalAlignment="Left" VerticalAlignment="Top" Height="151" Width="150" Margin="0,-29,0,0">
                                     <Grid HorizontalAlignment="Left" Height="141" VerticalAlignment="Top" Width="140" Margin="0,0,-2,-12">
-                                        <RadioButton x:Name="rdb_DestinationValueLogical" Content="Value" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" GroupName="DestinationOperand" />
+                                        <RadioButton x:Name="rdb_DestinationValueLogical" Content="Value" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" GroupName="DestinationOperand" Checked="rdb_DestinationValueLogical_Checked" />
                                         <TextBox x:Name="txtDestinationValueLogical" HorizontalAlignment="Left" Height="23" Margin="75,10,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="55" Background="#FFBEFCFF"/>
-                                        <RadioButton x:Name="rdb_DestinationRegisterLogical" Content="Register" HorizontalAlignment="Left" Margin="10,79,0,0" VerticalAlignment="Top" GroupName="DestinationOperand" />
+                                        <RadioButton x:Name="rdb_DestinationRegisterLogical" Content="Register" HorizontalAlignment="Left" Margin="10,79,0,0" VerticalAlignment="Top" GroupName="DestinationOperand" Checked="rdb_DestinationRegisterLogical_Checked" />
                                         <ComboBox x:Name="cmb_DestinationRegisterLogical" HorizontalAlignment="Left" Margin="77,79,0,0" VerticalAlignment="Top" Width="53" GotFocus="cmb_DestinationRegisterLogical_GotFocus" SelectedIndex="0">
                                             <System:String>R00</System:String>
                                             <System:String>R01</System:String>
@@ -181,9 +181,9 @@
                         <Grid x:Name="SourceOperandGrid2" HorizontalAlignment="Left" Height="151" Margin="145,53,0,0" VerticalAlignment="Top" Width="150">
                             <GroupBox x:Name="grp_SourceOperand2" Header="Source Operand" HorizontalAlignment="Left" VerticalAlignment="Top" Height="151" Width="150" Margin="0,-29,0,0">
                                 <Grid HorizontalAlignment="Left" Height="141" VerticalAlignment="Top" Width="140" Margin="0,0,-2,-12">
-                                    <RadioButton x:Name="rdb_SourceValueArithmetic" Content="Value" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" GroupName="SourceOperand" />
+                                    <RadioButton x:Name="rdb_SourceValueArithmetic" Content="Value" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" GroupName="SourceOperand" Checked="rdb_SourceValueArithmetic_Checked" />
                                     <TextBox x:Name="txtSourceValueArithmetic" HorizontalAlignment="Left" Height="23" Margin="75,10,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="55" Background="#FFBEFCFF"/>
-                                    <RadioButton x:Name="rdb_SourceRegisterArithmetic" Content="Register" HorizontalAlignment="Left" Margin="10,79,0,0" VerticalAlignment="Top" GroupName="SourceOperand" />
+                                    <RadioButton x:Name="rdb_SourceRegisterArithmetic" Content="Register" HorizontalAlignment="Left" Margin="10,79,0,0" VerticalAlignment="Top" GroupName="SourceOperand" Checked="rdb_SourceRegisterArithmetic_Checked" />
                                     <ComboBox x:Name="cmb_SourceRegisterArithmetic" HorizontalAlignment="Left" Margin="75,79,0,0" VerticalAlignment="Top" Width="55" SelectedIndex="0">
                                         <System:String>R00</System:String>
                                         <System:String>R01</System:String>
@@ -214,9 +214,9 @@
                         <Grid x:Name="SourceOperandGrid_Copy2" HorizontalAlignment="Left" Height="151" Margin="145,209,0,0" VerticalAlignment="Top" Width="150">
                             <GroupBox x:Name="grp_DestinationOperand2" Header="Destination Operand" HorizontalAlignment="Left" VerticalAlignment="Top" Height="151" Width="150" Margin="0,-29,0,0">
                                 <Grid HorizontalAlignment="Left" Height="141" VerticalAlignment="Top" Width="140" Margin="0,0,-2,-12">
-                                    <RadioButton x:Name="rdb_DestinationValueArithmetic" Content="Value" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" GroupName="DestinationOperand" />
+                                    <RadioButton x:Name="rdb_DestinationValueArithmetic" Content="Value" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" GroupName="DestinationOperand" Checked="rdb_DestinationValueArithmetic_Checked" />
                                     <TextBox x:Name="txtDestinationValueArithmetic" HorizontalAlignment="Left" Height="23" Margin="75,10,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="55" Background="#FFBEFCFF"/>
-                                    <RadioButton x:Name="rdb_DestinationRegisterArithmetic" Content="Register" HorizontalAlignment="Left" Margin="10,79,0,0" VerticalAlignment="Top" GroupName="DestinationOperand" />
+                                    <RadioButton x:Name="rdb_DestinationRegisterArithmetic" Content="Register" HorizontalAlignment="Left" Margin="10,79,0,0" VerticalAlignment="Top" GroupName="DestinationOperand" Checked="rdb_DestinationRegisterArithmetic_Checked" />
                                     <ComboBox x:Name="cmb_DestinationRegisterArithmetic" HorizontalAlignment="Left" Margin="77,79,0,0" VerticalAlignment="Top" Width="53" SelectedIndex="0">
                                         <System:String>R00</System:String>
                                         <System:String>R01</System:String>
@@ -259,9 +259,9 @@
                         <Grid x:Name="SourceOperandGrid3" HorizontalAlignment="Left" Height="151" Margin="145,53,0,0" VerticalAlignment="Top" Width="150">
                             <GroupBox x:Name="grp_SourceOperand3" Header="Source Operand" HorizontalAlignment="Left" VerticalAlignment="Top" Height="151" Width="150" Margin="0,-29,0,0">
                                 <Grid HorizontalAlignment="Left" Height="141" VerticalAlignment="Top" Width="140" Margin="0,0,-2,-12">
-                                    <RadioButton x:Name="rdb_SourceValueControlTransfer" Content="Value" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" GroupName="SourceOperand" />
+                                    <RadioButton x:Name="rdb_SourceValueControlTransfer" Content="Value" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" GroupName="SourceOperand" Checked="rdb_SourceValueControlTransfer_Checked" />
                                     <TextBox x:Name="txtSourceValueControlTransfer" HorizontalAlignment="Left" Height="23" Margin="75,10,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="55" Background="#FFBEFCFF"/>
-                                    <RadioButton x:Name="rdb_SourceRegisterControlTransfer" Content="Register" HorizontalAlignment="Left" Margin="10,79,0,0" VerticalAlignment="Top" GroupName="SourceOperand" />
+                                    <RadioButton x:Name="rdb_SourceRegisterControlTransfer" Content="Register" HorizontalAlignment="Left" Margin="10,79,0,0" VerticalAlignment="Top" GroupName="SourceOperand" Checked="rdb_SourceRegisterControlTransfer_Checked" />
                                     <ComboBox x:Name="cmb_SourceRegisterControlTransfer" HorizontalAlignment="Left" Margin="75,79,0,0" VerticalAlignment="Top" Width="55" SelectedIndex="0">
                                         <System:String>R00</System:String>
                                         <System:String>R01</System:String>
@@ -292,9 +292,9 @@
                         <Grid x:Name="SourceOperandGrid_Copy3" HorizontalAlignment="Left" Height="151" Margin="145,209,0,0" VerticalAlignment="Top" Width="150">
                             <GroupBox x:Name="grp_DestinationOperand3" Header="Destination Operand" HorizontalAlignment="Left" VerticalAlignment="Top" Height="151" Width="150" Margin="0,-29,0,0">
                                 <Grid HorizontalAlignment="Left" Height="141" VerticalAlignment="Top" Width="140" Margin="0,0,-2,-12">
-                                    <RadioButton x:Name="rdb_DestinationValueControlTransfer" Content="Value" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" GroupName="DestinationOperand" />
+                                    <RadioButton x:Name="rdb_DestinationValueControlTransfer" Content="Value" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" GroupName="DestinationOperand" Checked="rdb_DestinationValueControlTransfer_Checked" />
                                     <TextBox x:Name="txtDestinationValueControlTransfer" HorizontalAlignment="Left" Height="23" Margin="75,10,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="55" Background="#FFBEFCFF"/>
-                                    <RadioButton x:Name="rdb_DestinationRegisterControlTransfer" Content="Register" HorizontalAlignment="Left" Margin="10,79,0,0" VerticalAlignment="Top" GroupName="DestinationOperand" />
+                                    <RadioButton x:Name="rdb_DestinationRegisterControlTransfer" Content="Register" HorizontalAlignment="Left" Margin="10,79,0,0" VerticalAlignment="Top" GroupName="DestinationOperand" Checked="rdb_DestinationRegisterControlTransfer_Checked" />
                                     <ComboBox x:Name="cmb_DestinationRegisterControlTransfer" HorizontalAlignment="Left" Margin="77,79,0,0" VerticalAlignment="Top" Width="53" SelectedIndex="0">
                                         <System:String>R00</System:String>
                                         <System:String>R01</System:String>
@@ -337,9 +337,9 @@
                         <Grid x:Name="SourceOperandGrid4" HorizontalAlignment="Left" Height="151" Margin="145,53,0,0" VerticalAlignment="Top" Width="150">
                             <GroupBox x:Name="grp_SourceOperand4" Header="Source Operand" HorizontalAlignment="Left" VerticalAlignment="Top" Height="151" Width="150" Margin="0,-29,0,0">
                                 <Grid HorizontalAlignment="Left" Height="141" VerticalAlignment="Top" Width="140" Margin="0,0,-2,-12">
-                                    <RadioButton x:Name="rdb_SourceValueComparison" Content="Value" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" GroupName="SourceOperand" />
+                                    <RadioButton x:Name="rdb_SourceValueComparison" Content="Value" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" GroupName="SourceOperand" Checked="rdb_SourceValueComparison_Checked" />
                                     <TextBox x:Name="txtSourceValueComparison" HorizontalAlignment="Left" Height="23" Margin="75,10,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="55" Background="#FFBEFCFF"/>
-                                    <RadioButton x:Name="rdb_SourceRegisterComparison" Content="Register" HorizontalAlignment="Left" Margin="10,79,0,0" VerticalAlignment="Top" GroupName="SourceOperand" />
+                                    <RadioButton x:Name="rdb_SourceRegisterComparison" Content="Register" HorizontalAlignment="Left" Margin="10,79,0,0" VerticalAlignment="Top" GroupName="SourceOperand" Checked="rdb_SourceRegisterComparison_Checked" />
                                     <ComboBox x:Name="cmb_SourceRegisterComparison" HorizontalAlignment="Left" Margin="75,79,0,0" VerticalAlignment="Top" Width="55" SelectedIndex="0">
                                         <System:String>R00</System:String>
                                         <System:String>R01</System:String>
@@ -370,9 +370,9 @@
                         <Grid x:Name="SourceOperandGrid_Copy4" HorizontalAlignment="Left" Height="151" Margin="145,209,0,0" VerticalAlignment="Top" Width="150">
                             <GroupBox x:Name="grp_DestinationOperand4" Header="Destination Operand" HorizontalAlignment="Left" VerticalAlignment="Top" Height="151" Width="150" Margin="0,-29,0,0">
                                 <Grid HorizontalAlignment="Left" Height="141" VerticalAlignment="Top" Width="140" Margin="0,0,-2,-12">
-                                    <RadioButton x:Name="rdb_DestinationValueComparison" Content="Value" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" GroupName="DestinationOperand" />
+                                    <RadioButton x:Name="rdb_DestinationValueComparison" Content="Value" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" GroupName="DestinationOperand" Checked="rdb_DestinationValueComparison_Checked" />
                                     <TextBox x:Name="txtDestinationValueComparison" HorizontalAlignment="Left" Height="23" Margin="75,10,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="55" Background="#FFBEFCFF"/>
-                                    <RadioButton x:Name="rdb_DestinationRegisterComparison" Content="Register" HorizontalAlignment="Left" Margin="10,79,0,0" VerticalAlignment="Top" GroupName="DestinationOperand" />
+                                    <RadioButton x:Name="rdb_DestinationRegisterComparison" Content="Register" HorizontalAlignment="Left" Margin="10,79,0,0" VerticalAlignment="Top" GroupName="DestinationOperand" Checked="rdb_DestinationRegisterComparison_Checked" />
                                     <ComboBox x:Name="cmb_DestinationRegisterComparison" HorizontalAlignment="Left" Margin="77,79,0,0" VerticalAlignment="Top" Width="53" SelectedIndex="0">
                                         <System:String>R00</System:String>
                                         <System:String>R01</System:String>
@@ -415,9 +415,9 @@
                         <Grid x:Name="SourceOperandGrid5" HorizontalAlignment="Left" Height="151" Margin="145,53,0,0" VerticalAlignment="Top" Width="150">
                             <GroupBox x:Name="grp_SourceOperand5" Header="Source Operand" HorizontalAlignment="Left" VerticalAlignment="Top" Height="151" Width="150" Margin="0,-29,0,0">
                                 <Grid HorizontalAlignment="Left" Height="141" VerticalAlignment="Top" Width="140" Margin="0,0,-2,-12">
-                                    <RadioButton x:Name="rdb_SourceValueIO" Content="Value" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" GroupName="SourceOperand" />
+                                    <RadioButton x:Name="rdb_SourceValueIO" Content="Value" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" GroupName="SourceOperand" Checked="rdb_SourceValueIO_Checked" />
                                     <TextBox x:Name="txtSourceValueIO" HorizontalAlignment="Left" Height="23" Margin="75,10,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="55" Background="#FFBEFCFF"/>
-                                    <RadioButton x:Name="rdb_SourceRegisterIO" Content="Register" HorizontalAlignment="Left" Margin="10,79,0,0" VerticalAlignment="Top" GroupName="SourceOperand" />
+                                    <RadioButton x:Name="rdb_SourceRegisterIO" Content="Register" HorizontalAlignment="Left" Margin="10,79,0,0" VerticalAlignment="Top" GroupName="SourceOperand" Checked="rdb_SourceRegisterIO_Checked" />
                                     <ComboBox x:Name="cmb_SourceRegisterIO" HorizontalAlignment="Left" Margin="75,79,0,0" VerticalAlignment="Top" Width="55" SelectedIndex="0">
                                         <System:String>R00</System:String>
                                         <System:String>R01</System:String>
@@ -448,9 +448,9 @@
                         <Grid x:Name="SourceOperandGrid_Copy5" HorizontalAlignment="Left" Height="151" Margin="145,209,0,0" VerticalAlignment="Top" Width="150">
                             <GroupBox x:Name="grp_DestinationOperand5" Header="Destination Operand" HorizontalAlignment="Left" VerticalAlignment="Top" Height="151" Width="150" Margin="0,-29,0,0">
                                 <Grid HorizontalAlignment="Left" Height="141" VerticalAlignment="Top" Width="140" Margin="0,0,-2,-12">
-                                    <RadioButton x:Name="rdb_DestinationValueIO" Content="Value" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" GroupName="DestinationOperand" />
+                                    <RadioButton x:Name="rdb_DestinationValueIO" Content="Value" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" GroupName="DestinationOperand" Checked="rdb_DestinationValueIO_Checked" />
                                     <TextBox x:Name="txtDestinationValueIO" HorizontalAlignment="Left" Height="23" Margin="75,10,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="55" Background="#FFBEFCFF"/>
-                                    <RadioButton x:Name="rdb_DestinationRegisterIO" Content="Register" HorizontalAlignment="Left" Margin="10,79,0,0" VerticalAlignment="Top" GroupName="DestinationOperand" />
+                                    <RadioButton x:Name="rdb_DestinationRegisterIO" Content="Register" HorizontalAlignment="Left" Margin="10,79,0,0" VerticalAlignment="Top" GroupName="DestinationOperand" Checked="rdb_DestinationRegisterIO_Checked" />
                                     <ComboBox x:Name="cmb_DestinationRegisterIO" HorizontalAlignment="Left" Margin="77,79,0,0" VerticalAlignment="Top" Width="53" SelectedIndex="0">
                                         <System:String>R00</System:String>
                                         <System:String>R01</System:String>
@@ -493,9 +493,9 @@
                         <Grid x:Name="SourceOperandGrid6" HorizontalAlignment="Left" Height="151" Margin="145,53,0,0" VerticalAlignment="Top" Width="150">
                             <GroupBox x:Name="grp_SourceOperand6" Header="Source Operand" HorizontalAlignment="Left" VerticalAlignment="Top" Height="151" Width="150" Margin="0,-29,0,0">
                                 <Grid HorizontalAlignment="Left" Height="141" VerticalAlignment="Top" Width="140" Margin="0,0,-2,-12">
-                                    <RadioButton x:Name="rdb_SourceValueMiscellaneous" Content="Value" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" GroupName="SourceOperand" />
+                                    <RadioButton x:Name="rdb_SourceValueMiscellaneous" Content="Value" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" GroupName="SourceOperand" Checked="rdb_SourceValueMiscellaneous_Checked" />
                                     <TextBox x:Name="txtSourceValueMiscellaneous" HorizontalAlignment="Left" Height="23" Margin="75,10,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="55" Background="#FFBEFCFF"/>
-                                    <RadioButton x:Name="rdb_SourceRegisterMiscellaneous" Content="Register" HorizontalAlignment="Left" Margin="10,79,0,0" VerticalAlignment="Top" GroupName="SourceOperand"/>
+                                    <RadioButton x:Name="rdb_SourceRegisterMiscellaneous" Content="Register" HorizontalAlignment="Left" Margin="10,79,0,0" VerticalAlignment="Top" GroupName="SourceOperand" Checked="rdb_SourceRegisterMiscellaneous_Checked"/>
                                     <ComboBox x:Name="cmb_SourceRegisterMiscellaneous" HorizontalAlignment="Left" Margin="75,79,0,0" VerticalAlignment="Top" Width="55" SelectedIndex="0">
                                         <System:String>R00</System:String>
                                         <System:String>R01</System:String>
@@ -526,9 +526,9 @@
                         <Grid x:Name="SourceOperandGrid_Copy6" HorizontalAlignment="Left" Height="151" Margin="145,209,0,0" VerticalAlignment="Top" Width="150">
                             <GroupBox x:Name="grp_DestinationOperand6" Header="Destination Operand" HorizontalAlignment="Left" VerticalAlignment="Top" Height="151" Width="150" Margin="0,-29,0,0">
                                 <Grid HorizontalAlignment="Left" Height="141" VerticalAlignment="Top" Width="140" Margin="0,0,-2,-12">
-                                    <RadioButton x:Name="rdb_DestinationValueMiscellaneous" Content="Value" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" GroupName="DestinationOperand"/>
+                                    <RadioButton x:Name="rdb_DestinationValueMiscellaneous" Content="Value" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" GroupName="DestinationOperand" Checked="rdb_DestinationValueMiscellaneous_Checked"/>
                                     <TextBox x:Name="txtDestinationValueMiscellaneous" HorizontalAlignment="Left" Height="23" Margin="75,10,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="55" Background="#FFBEFCFF"/>
-                                    <RadioButton x:Name="rdb_DestinationRegisterMiscellaneous" Content="Register" HorizontalAlignment="Left" Margin="10,79,0,0" VerticalAlignment="Top" GroupName="DestinationOperand" />
+                                    <RadioButton x:Name="rdb_DestinationRegisterMiscellaneous" Content="Register" HorizontalAlignment="Left" Margin="10,79,0,0" VerticalAlignment="Top" GroupName="DestinationOperand" Checked="rdb_DestinationRegisterMiscellaneous_Checked" />
                                     <ComboBox x:Name="cmb_DestinationRegisterMiscellaneous" HorizontalAlignment="Left" Margin="77,79,0,0" VerticalAlignment="Top" Width="53" SelectedIndex="0">
                                         <System:String>R00</System:String>
                                         <System:String>R01</System:String>

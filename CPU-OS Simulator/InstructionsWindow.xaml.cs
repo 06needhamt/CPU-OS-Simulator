@@ -497,7 +497,187 @@ namespace CPU_OS_Simulator
             txtDestinationValueDataTransfer.IsEnabled = false;
 
         }
-       
+
+        private void rdb_SourceValueLogical_Checked(object sender, RoutedEventArgs e)
+        {
+            rdb_SourceRegisterLogical.IsChecked = false;
+            cmb_SourceRegisterLogical.IsEnabled = false;
+            txtSourceValueLogical.IsEnabled = true;
+        }
+
+        private void rdb_SourceRegisterLogical_Checked(object sender, RoutedEventArgs e)
+        {
+            rdb_SourceValueLogical.IsChecked = false;
+            cmb_SourceRegisterLogical.IsEnabled = true;
+            txtSourceValueLogical.IsEnabled = false;
+
+        }
+
+        private void rdb_DestinationValueLogical_Checked(object sender, RoutedEventArgs e)
+        {
+            rdb_DestinationRegisterLogical.IsChecked = false;
+            cmb_DestinationRegisterLogical.IsEnabled = false;
+            txtDestinationValueLogical.IsEnabled = true;
+        }
+
+        private void rdb_DestinationRegisterLogical_Checked(object sender, RoutedEventArgs e)
+        {
+            rdb_DestinationValueLogical.IsChecked = false;
+            cmb_DestinationRegisterLogical.IsEnabled = true;
+            txtDestinationValueLogical.IsEnabled = false;
+
+        }
+
+        private void rdb_SourceValueArithmetic_Checked(object sender, RoutedEventArgs e)
+        {
+            rdb_SourceRegisterArithmetic.IsChecked = false;
+            cmb_SourceRegisterArithmetic.IsEnabled = false;
+            txtSourceValueArithmetic.IsEnabled = true;
+        }
+
+        private void rdb_SourceRegisterArithmetic_Checked(object sender, RoutedEventArgs e)
+        {
+            rdb_SourceValueArithmetic.IsChecked = false;
+            cmb_SourceRegisterArithmetic.IsEnabled = true;
+            txtSourceValueArithmetic.IsEnabled = false;
+
+        }
+
+        private void rdb_DestinationValueArithmetic_Checked(object sender, RoutedEventArgs e)
+        {
+            rdb_DestinationRegisterArithmetic.IsChecked = false;
+            cmb_DestinationRegisterArithmetic.IsEnabled = false;
+            txtDestinationValueArithmetic.IsEnabled = true;
+        }
+
+        private void rdb_DestinationRegisterArithmetic_Checked(object sender, RoutedEventArgs e)
+        {
+            rdb_DestinationValueArithmetic.IsChecked = false;
+            cmb_DestinationRegisterArithmetic.IsEnabled = true;
+            txtDestinationValueArithmetic.IsEnabled = false;
+
+        }
+
+        private void rdb_SourceValueControlTransfer_Checked(object sender, RoutedEventArgs e)
+        {
+            rdb_SourceRegisterControlTransfer.IsChecked = false;
+            cmb_SourceRegisterControlTransfer.IsEnabled = false;
+            txtSourceValueControlTransfer.IsEnabled = true;
+        }
+
+        private void rdb_SourceRegisterControlTransfer_Checked(object sender, RoutedEventArgs e)
+        {
+            rdb_SourceValueControlTransfer.IsChecked = false;
+            cmb_SourceRegisterControlTransfer.IsEnabled = true;
+            txtSourceValueControlTransfer.IsEnabled = false;
+
+        }
+
+        private void rdb_DestinationValueControlTransfer_Checked(object sender, RoutedEventArgs e)
+        {
+            rdb_DestinationRegisterControlTransfer.IsChecked = false;
+            cmb_DestinationRegisterControlTransfer.IsEnabled = false;
+            txtDestinationValueControlTransfer.IsEnabled = true;
+        }
+
+        private void rdb_DestinationRegisterControlTransfer_Checked(object sender, RoutedEventArgs e)
+        {
+            rdb_DestinationValueControlTransfer.IsChecked = false;
+            cmb_DestinationRegisterControlTransfer.IsEnabled = true;
+            txtDestinationValueControlTransfer.IsEnabled = false;
+
+        }
+
+        private void rdb_SourceValueComparison_Checked(object sender, RoutedEventArgs e)
+        {
+            rdb_SourceRegisterComparison.IsChecked = false;
+            cmb_SourceRegisterComparison.IsEnabled = false;
+            txtSourceValueComparison.IsEnabled = true;
+        }
+
+        private void rdb_SourceRegisterComparison_Checked(object sender, RoutedEventArgs e)
+        {
+            rdb_SourceValueComparison.IsChecked = false;
+            cmb_SourceRegisterComparison.IsEnabled = true;
+            txtSourceValueComparison.IsEnabled = false;
+
+        }
+
+        private void rdb_DestinationValueComparison_Checked(object sender, RoutedEventArgs e)
+        {
+            rdb_DestinationRegisterComparison.IsChecked = false;
+            cmb_DestinationRegisterComparison.IsEnabled = false;
+            txtDestinationValueComparison.IsEnabled = true;
+        }
+
+        private void rdb_DestinationRegisterComparison_Checked(object sender, RoutedEventArgs e)
+        {
+            rdb_DestinationValueComparison.IsChecked = false;
+            cmb_DestinationRegisterComparison.IsEnabled = true;
+            txtDestinationValueComparison.IsEnabled = false;
+
+        }
+
+        private void rdb_SourceValueIO_Checked(object sender, RoutedEventArgs e)
+        {
+            rdb_SourceRegisterIO.IsChecked = false;
+            cmb_SourceRegisterIO.IsEnabled = false;
+            txtSourceValueIO.IsEnabled = true;
+        }
+
+        private void rdb_SourceRegisterIO_Checked(object sender, RoutedEventArgs e)
+        {
+            rdb_SourceValueIO.IsChecked = false;
+            cmb_SourceRegisterIO.IsEnabled = true;
+            txtSourceValueIO.IsEnabled = false;
+
+        }
+
+        private void rdb_DestinationValueIO_Checked(object sender, RoutedEventArgs e)
+        {
+            rdb_DestinationRegisterIO.IsChecked = false;
+            cmb_DestinationRegisterIO.IsEnabled = false;
+            txtDestinationValueIO.IsEnabled = true;
+        }
+
+        private void rdb_DestinationRegisterIO_Checked(object sender, RoutedEventArgs e)
+        {
+            rdb_DestinationValueIO.IsChecked = false;
+            cmb_DestinationRegisterIO.IsEnabled = true;
+            txtDestinationValueIO.IsEnabled = false;
+
+        }
+
+        private void rdb_SourceValueMiscellaneous_Checked(object sender, RoutedEventArgs e)
+        {
+            rdb_SourceRegisterMiscellaneous.IsChecked = false;
+            cmb_SourceRegisterMiscellaneous.IsEnabled = false;
+            txtSourceValueMiscellaneous.IsEnabled = true;
+        }
+
+        private void rdb_SourceRegisterMiscellaneous_Checked(object sender, RoutedEventArgs e)
+        {
+            rdb_SourceValueMiscellaneous.IsChecked = false;
+            cmb_SourceRegisterMiscellaneous.IsEnabled = true;
+            txtSourceValueMiscellaneous.IsEnabled = false;
+
+        }
+
+        private void rdb_DestinationValueMiscellaneous_Checked(object sender, RoutedEventArgs e)
+        {
+            rdb_DestinationRegisterMiscellaneous.IsChecked = false;
+            cmb_DestinationRegisterMiscellaneous.IsEnabled = false;
+            txtDestinationValueMiscellaneous.IsEnabled = true;
+        }
+
+        private void rdb_DestinationRegisterMiscellaneous_Checked(object sender, RoutedEventArgs e)
+        {
+            rdb_DestinationValueMiscellaneous.IsChecked = false;
+            cmb_DestinationRegisterMiscellaneous.IsEnabled = true;
+            txtDestinationValueMiscellaneous.IsEnabled = false;
+
+        }
+
         private void cmb_DestinationRegisterLogical_GotFocus(object sender, RoutedEventArgs e)
         {
             rdb_DestinationRegisterLogical.IsChecked = true;
