@@ -11,7 +11,7 @@
         <Grid x:Name="InstructionsGrid" HorizontalAlignment="Left" Height="479" Margin="10,10,0,0" VerticalAlignment="Top" Width="436">
             <GroupBox x:Name="grp_InstructionsBox" Header="CPU INSTRUCTIONS IM MEMORY (RAM)" HorizontalAlignment="Left" VerticalAlignment="Top" Height="479" Width="436">
                 <Grid x:Name="InstructionsInnerGrid" HorizontalAlignment="Left" Height="469" VerticalAlignment="Top" Width="426" Margin="0,0,-2,-12">
-                    <ListView x:Name="lst_InstructionsList" HorizontalAlignment="Left" Height="459" VerticalAlignment="Top" Width="426" Background="#FF8BF4FF">
+                    <ListView x:Name="lst_InstructionsList" HorizontalAlignment="Left" Height="459" VerticalAlignment="Top" Width="426" Background="#FF8BF4FF" SelectionChanged="lst_InstructionsList_SelectionChanged">
                         <ListView.View>
                             <GridView>
                                 <GridViewColumn Header="PAdd" DisplayMemberBinding="{Binding Address}" Width="100"/>
@@ -93,7 +93,7 @@
         <Grid x:Name="ProgramListGrid" HorizontalAlignment="Left" Height="289" Margin="464,200,0,0" VerticalAlignment="Top" Width="249">
             <GroupBox x:Name="grp_ProgramList" Header="PROGRAM LIST" HorizontalAlignment="Left" VerticalAlignment="Top" Height="282" Width="249" Margin="0,0,0,-66">
                 <Grid x:Name="ProgramListViewGrid" HorizontalAlignment="Left" Height="272" VerticalAlignment="Top" Width="239" Margin="0,0,-2,-12">
-                    <ListView x:Name="lst_ProgramList" HorizontalAlignment="Left" Height="140" VerticalAlignment="Top" Width="239" Background="#FFFFFBAC">
+                    <ListView x:Name="lst_ProgramList" HorizontalAlignment="Left" Height="140" VerticalAlignment="Top" Width="239" Background="#FFFFFBAC" SelectionChanged="lst_ProgramList_SelectionChanged">
                         <ListView.View>
                             <GridView>
                                 <GridViewColumn Header="Name" DisplayMemberBinding="{Binding Name}" Width="100"/>

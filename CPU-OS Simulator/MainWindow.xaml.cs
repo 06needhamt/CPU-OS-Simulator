@@ -26,6 +26,7 @@ namespace CPU_OS_Simulator
     {
         LinkedList<SimulatorProgram> programList;
         string InstructionMode;
+        string currentProgram = null;
 
         public MainWindow()
         {
@@ -85,6 +86,7 @@ namespace CPU_OS_Simulator
             SimulatorProgram program = new SimulatorProgram(programName, baseAddress, pages);
             lst_ProgramList.Items.Add(program);
             programList.AddLast(program);
+            currentProgram = program.Name;
             Console.WriteLine("Program " + program.Name + " Created");
             return program;
         }
@@ -114,18 +116,62 @@ namespace CPU_OS_Simulator
             Console.WriteLine("Hello From Main Window");
         }
 
-        public Instruction CreateInstruction(EnumOpcodes opcode, Operand op1, Operand op2, Int32 Address)
+        public Instruction CreateInstruction(EnumOpcodes opcode, Operand op1, Operand op2, Int32 Size)
         {
-            return new Instruction((int) opcode, op1, op2,Address);
+            return new Instruction((int) opcode, op1, op2,Size);
         }
-        public Instruction CreateInstruction(EnumOpcodes opcode, Operand op1, Int32 Address)
+        public Instruction CreateInstruction(EnumOpcodes opcode, Operand op1, Int32 Size)
         {
-            return new Instruction((int)opcode, op1,Address);
+            return new Instruction((int)opcode, op1,Size);
         }
 
-        public Instruction CreateInstruction(EnumOpcodes opcode, Int32 Address)
+        public Instruction CreateInstruction(EnumOpcodes opcode, Int32 Size)
         {
-            return new Instruction((int)opcode, Address);
+            return new Instruction((int)opcode, Size);
+        }
+
+        public void AddInstruction(Instruction ins)
+        {
+            if (ins != null)
+            {
+                //string currentProgramName = ((SimulatorProgram) lst_ProgramList.SelectedItem).Name;
+                if(lst_ProgramList.Items.Count == 0)
+                {
+                    MessageBox.Show("Please Create a program before adding instructions");
+                    return;
+                }
+                LinkedListNode<SimulatorProgram> node = programList.Find(programList.Where(x => x.Name.Equals(currentProgram)).FirstOrDefault());
+                node.Value.Instructions.AddLast(ins);
+                //Console.WriteLine(node.Value.Instructions.Count);
+                UpdateIntructions();
+            }
+        }
+
+        private void lst_InstructionsList_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            
+        }
+
+        private void lst_ProgramList_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            UpdateIntructions();
+        }
+
+        private void UpdateIntructions()
+        {
+            lst_InstructionsList.Items.Clear();
+            if ((lst_ProgramList.SelectedItem) == null)
+            {
+                currentProgram = ((SimulatorProgram)lst_ProgramList.Items.GetItemAt(0)).Name;
+            }
+            else
+            {
+                currentProgram = ((SimulatorProgram)lst_ProgramList.SelectedItem).Name;
+            }
+            LinkedListNode<SimulatorProgram> node = programList.Find(programList.Where(x => x.Name.Equals(currentProgram)).FirstOrDefault());
+            //lst_InstructionsList.ItemsSource.
+            lst_InstructionsList.ItemsSource = node.Value.Instructions;
+            Console.WriteLine(lst_InstructionsList.Items.Count);
         }
     }
 }

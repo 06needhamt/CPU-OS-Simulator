@@ -15,35 +15,35 @@ namespace CPU_OS_Simulator.CPU
         private Action execute;
         private Operand operand1;
         private Operand operand2;
-        private Int32 size;
         private Int32 address;
+        private Int32 size;
         private Int32 result;
         private string instructionString;
         #endregion
 
         #region Constructors
-        public Instruction(Int32 opcode, Int32 Address)
+        public Instruction(Int32 opcode, Int32 size)
         {
             this.opcode = opcode;
             this.operand1 = null;
             this.operand2 = null;
-            this.address = Address;
+            this.size = size;
             instructionString = this.ToString();
         }
-        public Instruction(Int32 opcode, Operand op1, Int32 Address)
+        public Instruction(Int32 opcode, Operand op1, Int32 size)
         {
             this.opcode = opcode;
             this.operand1 = op1;
             this.operand2 = null;
-            this.address = Address;
+            this.size = size;
             instructionString = this.ToString();
         }
-        public Instruction(Int32 opcode, Operand op1, Operand op2, Int32 Address)
+        public Instruction(Int32 opcode, Operand op1, Operand op2, Int32 size)
         {
             this.opcode = opcode;
             this.operand1 = op1;
             this.operand2 = op2;
-            this.address = Address;
+            this.size = size;
             instructionString = this.ToString();
         }
         #endregion
@@ -144,12 +144,12 @@ namespace CPU_OS_Simulator.CPU
         {
             get
             {
-                return address;
+                return size;
             }
 
             set
             {
-                address = value;
+                size = value;
             }
         }
 
@@ -186,25 +186,31 @@ namespace CPU_OS_Simulator.CPU
         public override string ToString()
         {
             string parsedOpcode = Enum.GetName(typeof(EnumOpcodes), opcode);
-            string op1;
-            string op2;
-            if (operand1.IsRegister)
+            string op1 = "";
+            string op2 = "";
+            if (operand1 != null)
             {
-                op1 = Operand1.Register.Name;
+                if (operand1.IsRegister)
+                {
+                    op1 = Operand1.Register.Name;
+                }
+                else
+                {
+                    op1 = Operand1.Value.ToString();
+                }
             }
-            else
+            if (operand2 != null)
             {
-                op1 = Operand1.Value.ToString();
+                if (Operand2.IsRegister)
+                {
+                    op2 = Operand2.Register.Name;
+                }
+                else
+                {
+                    op2 = Operand2.Value.ToString();
+                }
             }
-            if (Operand2.IsRegister)
-            {
-                op2 = Operand2.Register.Name;
-            }
-            else
-            {
-               op2 = Operand2.Value.ToString();
-            }
-            return parsedOpcode.ToUpper() + " " + op1.ToUpper() + "," + op2.ToUpper();
+            return parsedOpcode.ToUpper() + " " + op1.ToUpper() + " " + op2.ToUpper();
         }
         #endregion
 

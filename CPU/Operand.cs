@@ -21,6 +21,8 @@ namespace CPU_OS_Simulator.CPU
         {
             this.value = value;
             this.type = type;
+            IsRegister = false;
+            this.register = null;
         }
         public Operand(Register reg, EnumOperandType type)
         {

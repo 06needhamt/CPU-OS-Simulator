@@ -120,9 +120,22 @@ namespace CPU_OS_Simulator
         }
         #endregion
         #region Methods
-        public void AddInstruction()
+        public void AddInstruction(Instruction ins)
         {
+            int address = CalculateAddress(ins);
+            ins.Address = address;
+            instructions.AddLast(ins);
+        }
 
+        private int CalculateAddress(Instruction instruction)
+        {
+            int address = baseAddress;
+            foreach(Instruction ins in instructions)
+            {
+                address += ins.Size; // calculate address of the next intruction
+            }
+            address += instruction.Size;
+            return address;
         }
         #endregion
     }

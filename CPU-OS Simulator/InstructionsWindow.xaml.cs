@@ -133,27 +133,35 @@ namespace CPU_OS_Simulator
         /// <param name="e"> the eventargs associated with this event</param>
         private void InstructionsWindow1_Closing(object sender, CancelEventArgs e)
         {
+            CreateInstruction();
+        }
+
+        private void CreateInstruction()
+        {
             Console.WriteLine("Instruction Window closing");
-            TabItem SelectedTab = (TabItem) InstructionTabs.SelectedItem;
+            TabItem SelectedTab = (TabItem)InstructionTabs.SelectedItem;
             EnumOpcodes opcode;
             Operand op1;
             Operand op2;
             switch (SelectedTab.Header.ToString())
-            {    
+            {
                 case "Data Transfer":
                     {
-                        opcode = (EnumOpcodes) Enum.Parse(typeof(EnumOpcodes),lst_OpcodeListDataTransfer.SelectedItem.ToString());
+                        opcode = (EnumOpcodes)Enum.Parse(typeof(EnumOpcodes), lst_OpcodeListDataTransfer.SelectedItem.ToString());
                         if (rdb_SourceValueDataTransfer.IsChecked.Value)
                         {
-                            op1 = new Operand(Convert.ToInt32(txtSourceValueDataTransfer.Text),EnumOperandType.VALUE);
+                            op1 = new Operand(Convert.ToInt32(txtSourceValueDataTransfer.Text), EnumOperandType.VALUE);
                         }
                         else if (rdb_SourceRegisterDataTransfer.IsChecked.Value)
                         {
                             string selectedRegister = (string)cmb_SourceRegisterDataTransfer.SelectedItem;
                             Register reg = FindRegister(selectedRegister);
-                            op1 = new Operand(reg.Value,reg.Type);
+                            op1 = new Operand(reg, reg.Type);
                         }
-
+                        else
+                        {
+                            op1 = null;
+                        }
                         if (rdb_DestinationValueDataTransfer.IsChecked.Value)
                         {
                             op2 = new Operand(Convert.ToInt32(txtDestinationValueDataTransfer.Text), EnumOperandType.VALUE);
@@ -162,8 +170,14 @@ namespace CPU_OS_Simulator
                         {
                             string selectedRegister = (string)cmb_DestinationRegisterDataTransfer.SelectedItem;
                             Register reg = FindRegister(selectedRegister);
-                            op2 = new Operand(reg.Value, reg.Type);
+                            op2 = new Operand(reg, reg.Type);
                         }
+                        else
+                        {
+                            op2 = null;
+                        }
+                        Instruction i = owner.CreateInstruction(opcode, op1, op2, 4);
+                        owner.AddInstruction(i);
                         break;
                     }
                 case "Logical":
@@ -177,9 +191,12 @@ namespace CPU_OS_Simulator
                         {
                             string selectedRegister = (string)cmb_SourceRegisterLogical.SelectedItem;
                             Register reg = FindRegister(selectedRegister);
-                            op1 = new Operand(reg.Value, reg.Type);
+                            op1 = new Operand(reg, reg.Type);
                         }
-
+                        else
+                        {
+                            op1 = null;
+                        }
                         if (rdb_DestinationValueLogical.IsChecked.Value)
                         {
                             op2 = new Operand(Convert.ToInt32(txtDestinationValueLogical.Text), EnumOperandType.VALUE);
@@ -188,8 +205,14 @@ namespace CPU_OS_Simulator
                         {
                             string selectedRegister = (string)cmb_DestinationRegisterLogical.SelectedItem;
                             Register reg = FindRegister(selectedRegister);
-                            op2 = new Operand(reg.Value, reg.Type);
+                            op2 = new Operand(reg, reg.Type);
                         }
+                        else
+                        {
+                            op2 = null;
+                        }
+                        Instruction i = owner.CreateInstruction(opcode, op1, op2, 4);
+                        owner.AddInstruction(i);
                         break;
                     }
                 case "Arithmetic":
@@ -203,9 +226,12 @@ namespace CPU_OS_Simulator
                         {
                             string selectedRegister = (string)cmb_SourceRegisterArithmetic.SelectedItem;
                             Register reg = FindRegister(selectedRegister);
-                            op1 = new Operand(reg.Value, reg.Type);
+                            op1 = new Operand(reg, reg.Type);
                         }
-
+                        else
+                        {
+                            op1 = null;
+                        }
                         if (rdb_DestinationValueArithmetic.IsChecked.Value)
                         {
                             op2 = new Operand(Convert.ToInt32(txtDestinationValueArithmetic.Text), EnumOperandType.VALUE);
@@ -214,8 +240,14 @@ namespace CPU_OS_Simulator
                         {
                             string selectedRegister = (string)cmb_DestinationRegisterArithmetic.SelectedItem;
                             Register reg = FindRegister(selectedRegister);
-                            op2 = new Operand(reg.Value, reg.Type);
+                            op2 = new Operand(reg, reg.Type);
                         }
+                        else
+                        {
+                            op2 = null;
+                        }
+                        Instruction i = owner.CreateInstruction(opcode, op1, op2, 4);
+                        owner.AddInstruction(i);
                         break;
                     }
                 case "Control Transfer":
@@ -229,7 +261,11 @@ namespace CPU_OS_Simulator
                         {
                             string selectedRegister = (string)cmb_SourceRegisterControlTransfer.SelectedItem;
                             Register reg = FindRegister(selectedRegister);
-                            op1 = new Operand(reg.Value, reg.Type);
+                            op1 = new Operand(reg, reg.Type);
+                        }
+                        else
+                        {
+                            op1 = null;
                         }
 
                         if (rdb_DestinationValueControlTransfer.IsChecked.Value)
@@ -240,8 +276,14 @@ namespace CPU_OS_Simulator
                         {
                             string selectedRegister = (string)cmb_DestinationRegisterControlTransfer.SelectedItem;
                             Register reg = FindRegister(selectedRegister);
-                            op2 = new Operand(reg.Value, reg.Type);
+                            op2 = new Operand(reg, reg.Type);
                         }
+                        else
+                        {
+                            op2 = null;
+                        }
+                        Instruction i = owner.CreateInstruction(opcode, op1, op2, 4);
+                        owner.AddInstruction(i);
                         break;
                     }
 
@@ -256,9 +298,12 @@ namespace CPU_OS_Simulator
                         {
                             string selectedRegister = (string)cmb_SourceRegisterIO.SelectedItem;
                             Register reg = FindRegister(selectedRegister);
-                            op1 = new Operand(reg.Value, reg.Type);
+                            op1 = new Operand(reg, reg.Type);
                         }
-
+                        else
+                        {
+                            op1 = null;
+                        }
                         if (rdb_DestinationValueIO.IsChecked.Value)
                         {
                             op2 = new Operand(Convert.ToInt32(txtDestinationValueIO.Text), EnumOperandType.VALUE);
@@ -267,8 +312,14 @@ namespace CPU_OS_Simulator
                         {
                             string selectedRegister = (string)cmb_DestinationRegisterIO.SelectedItem;
                             Register reg = FindRegister(selectedRegister);
-                            op2 = new Operand(reg.Value, reg.Type);
+                            op2 = new Operand(reg, reg.Type);
                         }
+                        else
+                        {
+                            op2 = null;
+                        }
+                        Instruction i = owner.CreateInstruction(opcode, op1, op2, 4);
+                        owner.AddInstruction(i);
                         break;
                     }
                 case "Miscellaneous":
@@ -282,9 +333,12 @@ namespace CPU_OS_Simulator
                         {
                             string selectedRegister = (string)cmb_SourceRegisterMiscellaneous.SelectedItem;
                             Register reg = FindRegister(selectedRegister);
-                            op1 = new Operand(reg.Value, reg.Type);
+                            op1 = new Operand(reg, reg.Type);
                         }
-
+                        else
+                        {
+                            op1 = null;
+                        }
                         if (rdb_DestinationValueMiscellaneous.IsChecked.Value)
                         {
                             op2 = new Operand(Convert.ToInt32(txtDestinationValueMiscellaneous.Text), EnumOperandType.VALUE);
@@ -293,8 +347,14 @@ namespace CPU_OS_Simulator
                         {
                             string selectedRegister = (string)cmb_DestinationRegisterMiscellaneous.SelectedItem;
                             Register reg = FindRegister(selectedRegister);
-                            op2 = new Operand(reg.Value, reg.Type);
+                            op2 = new Operand(reg, reg.Type);
                         }
+                        else
+                        {
+                            op2 = null;
+                        }
+                        Instruction i = owner.CreateInstruction(opcode, op1, op2, 4);
+                        owner.AddInstruction(i);
                         break;
                     }
                 default:
@@ -303,6 +363,7 @@ namespace CPU_OS_Simulator
                     }
             }
         }
+
         /// <summary>
         /// Finds the register object for the selected register
         /// </summary>
@@ -406,37 +467,45 @@ namespace CPU_OS_Simulator
             }
         }
 
-        // TODO FIX Commented out due to strange null pointer when checking unchecking radio buttons
 
         private void rdb_SourceValueDataTransfer_Checked(object sender, RoutedEventArgs e)
         {
-            //rdb_SourceRegisterDataTransfer.IsChecked = false;
-            //cmb_SourceRegisterDataTransfer.IsEnabled = false;
-            //txtSourceValueDataTransfer.IsEnabled = true;
+            rdb_SourceRegisterDataTransfer.IsChecked = false;
+            cmb_SourceRegisterDataTransfer.IsEnabled = false;
+            txtSourceValueDataTransfer.IsEnabled = true;
         }
 
         private void rdb_SourceRegisterDataTransfer_Checked(object sender, RoutedEventArgs e)
         {
-            //rdb_SourceValueDataTransfer.IsChecked = false;
-            //cmb_SourceRegisterDataTransfer.IsEnabled = true;
-            //txtSourceValueDataTransfer.IsEnabled = false;
+            rdb_SourceValueDataTransfer.IsChecked = false;
+            cmb_SourceRegisterDataTransfer.IsEnabled = true;
+            txtSourceValueDataTransfer.IsEnabled = false;
 
         }
 
         private void rdb_DestinationValueDataTransfer_Checked(object sender, RoutedEventArgs e)
         {
-            //rdb_DestinationRegisterDataTransfer.IsChecked = false;
-            //cmb_DestinationRegisterDataTransfer.IsEnabled = false;
-            //txtDestinationValueDataTransfer.IsEnabled = true;
+            rdb_DestinationRegisterDataTransfer.IsChecked = false;
+            cmb_DestinationRegisterDataTransfer.IsEnabled = false;
+            txtDestinationValueDataTransfer.IsEnabled = true;
         }
 
         private void rdb_DestinationRegisterDataTransfer_Checked(object sender, RoutedEventArgs e)
         {
-            //rdb_DestinationValueDataTransfer.IsChecked = false;
-            //cmb_DestinationRegisterDataTransfer.IsEnabled = true;
-            //txtDestinationValueDataTransfer.IsEnabled = false;
+            rdb_DestinationValueDataTransfer.IsChecked = false;
+            cmb_DestinationRegisterDataTransfer.IsEnabled = true;
+            txtDestinationValueDataTransfer.IsEnabled = false;
 
         }
+       
+        private void cmb_DestinationRegisterLogical_GotFocus(object sender, RoutedEventArgs e)
+        {
+            rdb_DestinationRegisterLogical.IsChecked = true;
+        }
 
+        private void txtSourceValueLogical_GotFocus(object sender, RoutedEventArgs e)
+        {
+            rdb_SourceValueLogical.IsChecked = true;
+        }
     }
 }
