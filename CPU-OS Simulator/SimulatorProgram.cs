@@ -19,9 +19,13 @@ namespace CPU_OS_Simulator
         private Int32 baseAddress;
         private Int32 startAddress;
         private Int32 pages;
-        private LinkedList<Instruction> instructions;
+        private List<Instruction> instructions;
         #endregion
         #region Constructors
+        public SimulatorProgram()
+        {
+
+        }
         /// <summary>
         /// Constructor for simulator program
         /// </summary>
@@ -37,7 +41,7 @@ namespace CPU_OS_Simulator
                 MessageBox.Show("Invalid Number of pages, Amount must be between 1 and 10");
             }
             this.pages = pages;
-            this.instructions = new LinkedList<Instruction>();
+            this.instructions = new List<Instruction>();
             this.startAddress = baseAddress;
             Console.WriteLine("Program Created");
         }
@@ -93,7 +97,7 @@ namespace CPU_OS_Simulator
         /// <summary>
         /// Property for the linked list of instructions that make up the program
         /// </summary>
-        public LinkedList<Instruction> Instructions
+        public List<Instruction> Instructions
         {
             get
             {
@@ -124,7 +128,7 @@ namespace CPU_OS_Simulator
         {
             int address = CalculateAddress(ins);
             ins.Address = address;
-            instructions.AddLast(ins);
+            instructions.Add(ins);
         }
 
         private int CalculateAddress(Instruction instruction)

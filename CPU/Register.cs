@@ -34,7 +34,10 @@ namespace CPU_OS_Simulator.CPU
         public static Register R19 = new Register("R19");
         public static Register R20 = new Register("R20");
 
+        public Register()
+        {
 
+        }
         private Register(string name)
         {
             this.name = name;

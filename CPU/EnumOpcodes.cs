@@ -71,7 +71,55 @@ namespace CPU_OS_Simulator.CPU
         [Description("Arithmetic: INC Increments values in registers")]
         INC = 27,
         [Description("Arithmetic: DEC Decrements values in registers")]
-        DEC = 28
+        DEC = 28,
+        #endregion
+        #region Control Transfer
+        [Description("Control Transfer: JMP Jumps unconditionally")]
+        JMP = 29,
+        [Description("Control Transfer: JEQ Jumps if equal")]
+        JEQ = 30,
+        [Description("Control Transfer: JNE Jumps if not equal")]
+        JNE = 31,
+        [Description("Control Transfer: JGT Jumps if greater than")]
+        JGT = 32,
+        [Description("Control Transfer: JGE Jumps if greater than or equal")]
+        JGE = 33,
+        [Description("Control Transfer: JLT Jumps if less than")]
+        JLT = 34,
+        [Description("Control Transfer: JNZ Jumps if not zero")]
+        JNZ = 35,
+        [Description("Control Transfer: JZR Jumps if Z status flag is set")]
+        JZR = 36,
+        [Description("Control Transfer: CALL Calls subroutine")]
+        CALL = 37,
+        [Description("Control Transfer: LOOP Loops if register value is greater than 0")]
+        LOOP = 38,
+        [Description("Control Transfer: JSEL Not currently used")]
+        JSEL = 39,
+        [Description("Control Transfer: TABE Not currently used")]
+        TABE = 40,
+        [Description("Control Transfer: TABI Not currently used")]
+        TABI = 41,
+        [Description("Control Transfer: MSF Mark stack frame")]
+        MSF = 42,
+        [Description("Control Transfer: RET Returns from subroutine")]
+        RET = 43,
+        [Description("Control Transfer: IRET Returns from interrupt routine")]
+        IRET = 44,
+        [Description("Control Transfer: SWI Software interrupt - used in OS system calls")]
+        SWI = 45,
+        [Description("Control Transfer: HLT Halts the simulator")]
+        HLT = 46,
+        [Description("Comparison: CMP Compares two numeric values")]
+        CMP = 47,
+        [Description("Comparison: CPS Compares two string values")]
+        CPS = 48,
+        [Description("I/O: IN Gets input into register or memory")]
+        IN = 49,
+        [Description("I/O: OUT Puts output from register or memory")]
+        OUT = 50,
+        [Description("Miscellaneous: NOP No operation (or null operation)")]
+        NOP = 51
         #endregion
     }
 }

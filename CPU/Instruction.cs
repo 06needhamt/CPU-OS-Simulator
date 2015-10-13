@@ -22,6 +22,10 @@ namespace CPU_OS_Simulator.CPU
         #endregion
 
         #region Constructors
+        public Instruction()
+        {
+
+        }
         public Instruction(Int32 opcode, Int32 size)
         {
             this.opcode = opcode;

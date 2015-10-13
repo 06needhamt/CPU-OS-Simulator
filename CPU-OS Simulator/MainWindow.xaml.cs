@@ -15,6 +15,10 @@ using System.Windows.Shapes;
 using System.Reflection;
 using System.Diagnostics;
 using CPU_OS_Simulator.CPU;
+using System.Xml;
+using System.IO;
+using System.Web.Script.Serialization;
+using Microsoft.Win32;
 
 namespace CPU_OS_Simulator
 {
@@ -24,14 +28,14 @@ namespace CPU_OS_Simulator
     /// 
     public partial class MainWindow : Window
     {
-        LinkedList<SimulatorProgram> programList;
+        List<SimulatorProgram> programList;
         string InstructionMode;
-        string currentProgram = null;
+        string currentProgram = string.Empty;
 
         public MainWindow()
         {
             InitializeComponent();
-            programList = new LinkedList<SimulatorProgram>();
+            programList = new List<SimulatorProgram>();
         }
 
         private void MainWindow2_Loaded(object sender, RoutedEventArgs e)
@@ -61,7 +65,7 @@ namespace CPU_OS_Simulator
            SimulatorProgram prog = CreateNewProgram();
             if (prog != null)
             {
-                programList.AddLast(prog);
+                programList.Add(prog);
             }
         }
         /// <summary>
@@ -85,7 +89,7 @@ namespace CPU_OS_Simulator
             Int32 pages = Convert.ToInt32(cmb_Pages.Text);
             SimulatorProgram program = new SimulatorProgram(programName, baseAddress, pages);
             lst_ProgramList.Items.Add(program);
-            programList.AddLast(program);
+            programList.Add(program);
             currentProgram = program.Name;
             Console.WriteLine("Program " + program.Name + " Created");
             return program;
@@ -140,8 +144,8 @@ namespace CPU_OS_Simulator
                     MessageBox.Show("Please Create a program before adding instructions");
                     return;
                 }
-                LinkedListNode<SimulatorProgram> node = programList.Find(programList.Where(x => x.Name.Equals(currentProgram)).FirstOrDefault());
-                node.Value.Instructions.AddLast(ins);
+                SimulatorProgram prog = programList.Where(x => x.Name.Equals(currentProgram)).FirstOrDefault();
+                prog.Instructions.Add(ins);
                 //Console.WriteLine(node.Value.Instructions.Count);
                 UpdateIntructions();
             }
@@ -159,6 +163,12 @@ namespace CPU_OS_Simulator
 
         private void UpdateIntructions()
         {
+            if (currentProgram.Equals(string.Empty))
+            {
+                programList = lst_ProgramList.Items.OfType<SimulatorProgram>().ToList();
+                Console.WriteLine(programList.Count);
+                currentProgram = programList.First().Name;
+            }
             lst_InstructionsList.Items.Clear();
             if ((lst_ProgramList.SelectedItem) == null)
             {
@@ -168,10 +178,108 @@ namespace CPU_OS_Simulator
             {
                 currentProgram = ((SimulatorProgram)lst_ProgramList.SelectedItem).Name;
             }
-            LinkedListNode<SimulatorProgram> node = programList.Find(programList.Where(x => x.Name.Equals(currentProgram)).FirstOrDefault());
+            SimulatorProgram prog = programList.Where(x => x.Name.Equals(currentProgram)).FirstOrDefault();
             //lst_InstructionsList.ItemsSource.
-            lst_InstructionsList.ItemsSource = node.Value.Instructions;
+            lst_InstructionsList.ItemsSource = prog.Instructions;
             Console.WriteLine(lst_InstructionsList.Items.Count);
         }
+
+        private void btn_Load_Click(object sender, RoutedEventArgs e)
+        {
+            bool loaded = LoadProgram();
+            if (!loaded)
+            {
+                throw new Exception("An error occured while loading the program");
+            }
+            Console.WriteLine("Program Loaded Successfully");
+        }
+        private void btn_Save_Click(object sender, RoutedEventArgs e)
+        {
+            bool saved = SaveProgram();
+            if (!saved)
+            {
+                throw new Exception("An error occured while saving the program");
+            }
+            Console.WriteLine("Program Saved Successfully");
+        }
+
+        private bool SaveProgram()
+        {
+            SaveFileDialog dlg = new SaveFileDialog();
+            dlg.FileName = "Program";
+            dlg.DefaultExt = "*.sas";
+            dlg.Filter = "Simulator Programs (.sas)|*.sas"; // Filter files by extension
+            Nullable<bool> result = dlg.ShowDialog();
+            if (result.Value == true)
+            {
+                SimulatorProgram[] progs = programList.ToArray();
+                for(int i = 0; i < progs.Length; i++)
+                {
+                    SerializeObject<SimulatorProgram>(progs[i], dlg.FileName);
+                }
+            }
+            return true;
+        }
+
+        private bool LoadProgram()
+        {
+            OpenFileDialog ofd = new OpenFileDialog();
+            ofd.FileName = "Program";
+            ofd.DefaultExt = "*.sas";
+            ofd.Filter = "Simulator Programs (.sas)|*.sas"; // Filter files by extension
+            Nullable<bool> result = ofd.ShowDialog();
+            if (result.Value == true)
+            {
+                DeSerializeObject<SimulatorProgram>(ofd.FileName);
+            }
+            return true;
+        }
+
+        /// <summary>
+        /// Serializes an object.
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="serializableObject"></param>
+        /// <param name="fileName"></param>
+        public void SerializeObject<T>(T serializableObject, string filePath)
+        {
+            if (serializableObject == null) { return; }
+            if (File.Exists(filePath))
+            {
+                File.Delete(filePath);
+            }
+            StreamWriter writer = new StreamWriter(filePath, true);
+            JavaScriptSerializer serializer = new JavaScriptSerializer();
+            string json = serializer.Serialize(serializableObject);
+            writer.WriteLine(json);
+            writer.Flush();
+            writer.Close();
+            writer.Dispose();
+        }
+
+
+        /// <summary>
+        /// Deserializes an xml file into an object list
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="fileName"></param>
+        /// <returns></returns>
+        public T DeSerializeObject<T>(string fileName)
+        {
+            if (string.IsNullOrEmpty(fileName)) { return default(T); }
+            JavaScriptSerializer deserializer = new JavaScriptSerializer();
+            StreamReader reader = new StreamReader(fileName);
+            string json;
+
+            while ((json = reader.ReadLine()) != null)
+            {
+                SimulatorProgram prog = deserializer.Deserialize<SimulatorProgram>(json);
+                lst_ProgramList.Items.Add(prog);
+            }
+            
+            return default(T);
+        }
+
+    
     }
 }

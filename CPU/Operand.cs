@@ -17,6 +17,10 @@ namespace CPU_OS_Simulator.CPU
         #endregion
 
         #region Constructors
+        public Operand()
+        {
+
+        }
         public Operand(Int32 value, EnumOperandType type)
         {
             this.value = value;

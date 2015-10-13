@@ -81,6 +81,26 @@ namespace CPU_OS_Simulator
                             lst_OpcodeListArithmetic.Items.Add(opcode); //populate aritmetic instructions
                             break;
                         }
+                    case "Control Transfer":
+                        {
+                            lst_OpcodeListControlTransfer.Items.Add(opcode); // populate control transfer instructions
+                            break;
+                        }
+                    case "Comparison":
+                        {
+                            lst_OpcodeListComparison.Items.Add(opcode); // populate comparison instructions
+                            break;
+                        }
+                    case "I/O":
+                        {
+                            lst_OpcodeListIO.Items.Add(opcode); // populate I/O instructions
+                            break;
+                        }
+                    case "Miscellaneous":
+                        {
+                            lst_OpcodeListMiscellaneous.Items.Add(opcode);
+                            break;
+                        }
                     default:
                         {
                             throw new Exception("Unknown instruction category"); // we should never get here
