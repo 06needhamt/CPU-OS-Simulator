@@ -46,7 +46,9 @@ namespace CPU_OS_Simulator
         {
             InitializeComponent();
             this.owner = owner;
+            #if DEBUG
             owner.SayHello();
+            #endif
         }
         /// <summary>
         /// this function populates each of the instruction list boxes with the correct instructions
@@ -98,7 +100,7 @@ namespace CPU_OS_Simulator
                         }
                     case "Miscellaneous":
                         {
-                            lst_OpcodeListMiscellaneous.Items.Add(opcode);
+                            lst_OpcodeListMiscellaneous.Items.Add(opcode); // populate Miscellaneous instructions
                             break;
                         }
                     default:
@@ -128,7 +130,7 @@ namespace CPU_OS_Simulator
             PopulateInstructions();
 
         }
-
+        #region Populate Instruction Descriptions
         private void lst_OpcodeListDataTransfer_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             EnumOpcodes selected = (EnumOpcodes) Enum.Parse(typeof(EnumOpcodes), lst_OpcodeListDataTransfer.SelectedItem.ToString());
@@ -146,6 +148,7 @@ namespace CPU_OS_Simulator
             EnumOpcodes selected = (EnumOpcodes)Enum.Parse(typeof(EnumOpcodes), lst_OpcodeListArithmetic.SelectedItem.ToString());
             txtDescriptionArithmetic.Text = instructionDescriptions.ElementAt<string>((int)selected);
         }
+        #endregion
         /// <summary>
         /// This event handler is called when the window is closing
         /// </summary>
@@ -153,12 +156,14 @@ namespace CPU_OS_Simulator
         /// <param name="e"> the eventargs associated with this event</param>
         private void InstructionsWindow1_Closing(object sender, CancelEventArgs e)
         {
+            Console.WriteLine("Instruction Window closing");
             CreateInstruction();
         }
-
+        /// <summary>
+        /// Creates an instruction based on selected options
+        /// </summary>
         private void CreateInstruction()
         {
-            Console.WriteLine("Instruction Window closing");
             TabItem SelectedTab = (TabItem)InstructionTabs.SelectedItem;
             EnumOpcodes opcode;
             Operand op1;
@@ -487,7 +492,7 @@ namespace CPU_OS_Simulator
             }
         }
 
-
+        #region UI control
         private void rdb_SourceValueDataTransfer_Checked(object sender, RoutedEventArgs e)
         {
             rdb_SourceRegisterDataTransfer.IsChecked = false;
@@ -707,5 +712,6 @@ namespace CPU_OS_Simulator
         {
             rdb_SourceValueLogical.IsChecked = true;
         }
+        #endregion
     }
 }

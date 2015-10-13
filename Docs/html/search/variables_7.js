@@ -9,10 +9,13 @@ var searchData=
   ['instructionlistgrid5',['InstructionListGrid5',['../class_c_p_u___o_s___simulator_1_1_instructions_window.html#a335e8ec02a78ffc483900745de96b602',1,'CPU_OS_Simulator::InstructionsWindow']]],
   ['instructionlistgrid6',['InstructionListGrid6',['../class_c_p_u___o_s___simulator_1_1_instructions_window.html#a6c86a044f242ee64f312f0105bac6d36',1,'CPU_OS_Simulator::InstructionsWindow']]],
   ['instructionmode',['InstructionMode',['../class_c_p_u___o_s___simulator_1_1_main_window.html#a47960653966067f60d901b0dc1897154',1,'CPU_OS_Simulator::MainWindow']]],
-  ['instructions',['instructions',['../class_c_p_u___o_s___simulator_1_1_simulator_program.html#a4d86a3917943becde655119ffb2daf9b',1,'CPU_OS_Simulator::SimulatorProgram']]],
+  ['instructions',['instructions',['../class_c_p_u___o_s___simulator_1_1_simulator_program.html#ae4303a418ecb85dc6c88c9899fd81bc5',1,'CPU_OS_Simulator::SimulatorProgram']]],
   ['instructionsgrid',['InstructionsGrid',['../class_c_p_u___o_s___simulator_1_1_main_window.html#a2e6841673af413e8a8f8ba8aa0d7c80b',1,'CPU_OS_Simulator::MainWindow']]],
+  ['instructionsinnergrid',['InstructionsInnerGrid',['../class_c_p_u___o_s___simulator_1_1_main_window.html#a94a99eeb7f5fcfcfbdc375937d5439e7',1,'CPU_OS_Simulator::MainWindow']]],
+  ['instructionstring',['instructionString',['../class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_instruction.html#ab58373ca153de047b36c1036e07db7a8',1,'CPU_OS_Simulator::CPU::Instruction']]],
   ['instructionswindow1',['InstructionsWindow1',['../class_c_p_u___o_s___simulator_1_1_instructions_window.html#ab7cd84f5ba064256327f6b1b1cdbc525',1,'CPU_OS_Simulator::InstructionsWindow']]],
   ['instructiontab',['InstructionTab',['../class_c_p_u___o_s___simulator_1_1_main_window.html#a4fe9f6d97eb1f2c45b9e5a0363e61557',1,'CPU_OS_Simulator::MainWindow']]],
   ['instructiontabs',['InstructionTabs',['../class_c_p_u___o_s___simulator_1_1_instructions_window.html#a2e3784c64a40e14586270c1ebfe8bf3d',1,'CPU_OS_Simulator::InstructionsWindow']]],
-  ['iotab',['IOTab',['../class_c_p_u___o_s___simulator_1_1_instructions_window.html#aaf736178464d8313c866ab6efeae19c5',1,'CPU_OS_Simulator::InstructionsWindow']]]
+  ['iotab',['IOTab',['../class_c_p_u___o_s___simulator_1_1_instructions_window.html#aaf736178464d8313c866ab6efeae19c5',1,'CPU_OS_Simulator::InstructionsWindow']]],
+  ['isregister',['isRegister',['../class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_operand.html#a16cc03d0d4c600b864d9c189529a473d',1,'CPU_OS_Simulator::CPU::Operand']]]
 ];

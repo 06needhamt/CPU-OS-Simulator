@@ -17,5 +17,6 @@ var searchData=
   ['lst_5fopcodelistdatatransfer',['lst_OpcodeListDataTransfer',['../class_c_p_u___o_s___simulator_1_1_instructions_window.html#a03052f893a09b459e840597cf98baffc',1,'CPU_OS_Simulator::InstructionsWindow']]],
   ['lst_5fopcodelistio',['lst_OpcodeListIO',['../class_c_p_u___o_s___simulator_1_1_instructions_window.html#aa8ccd453237503f0e15aff22975cea68',1,'CPU_OS_Simulator::InstructionsWindow']]],
   ['lst_5fopcodelistlogical',['lst_OpcodeListLogical',['../class_c_p_u___o_s___simulator_1_1_instructions_window.html#a61ee2cb0ba7197963b1138848778cd3c',1,'CPU_OS_Simulator::InstructionsWindow']]],
-  ['lst_5fopcodelistmiscellaneous',['lst_OpcodeListMiscellaneous',['../class_c_p_u___o_s___simulator_1_1_instructions_window.html#a3ac59be147d3323d2b485551b3a3640a',1,'CPU_OS_Simulator::InstructionsWindow']]]
+  ['lst_5fopcodelistmiscellaneous',['lst_OpcodeListMiscellaneous',['../class_c_p_u___o_s___simulator_1_1_instructions_window.html#a3ac59be147d3323d2b485551b3a3640a',1,'CPU_OS_Simulator::InstructionsWindow']]],
+  ['lst_5fprogramlist',['lst_ProgramList',['../class_c_p_u___o_s___simulator_1_1_main_window.html#ab33f21e0f19eab104e6f67f44d89daeb',1,'CPU_OS_Simulator::MainWindow']]]
 ];

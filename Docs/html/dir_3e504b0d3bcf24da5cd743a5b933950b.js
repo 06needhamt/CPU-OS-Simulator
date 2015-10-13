@@ -2,6 +2,7 @@ var dir_3e504b0d3bcf24da5cd743a5b933950b =
 [
     [ "obj", "dir_a94f3f98c4a8f7b4eddc9f29dad256e3.html", "dir_a94f3f98c4a8f7b4eddc9f29dad256e3" ],
     [ "Properties", "dir_5679f26579aacde5a731c543d778f67b.html", "dir_5679f26579aacde5a731c543d778f67b" ],
+    [ "EnumInstructionSize.cs", "_enum_instruction_size_8cs.html", "_enum_instruction_size_8cs" ],
     [ "EnumOpcodes.cs", "_enum_opcodes_8cs.html", "_enum_opcodes_8cs" ],
     [ "EnumOperandType.cs", "_enum_operand_type_8cs.html", "_enum_operand_type_8cs" ],
     [ "Extentions.cs", "_extentions_8cs.html", [

@@ -49,6 +49,7 @@ var searchData=
   ['rdb_5fsourcevalueio',['rdb_SourceValueIO',['../class_c_p_u___o_s___simulator_1_1_instructions_window.html#ad7bb114a6f948e79e55a44943ecf660a',1,'CPU_OS_Simulator::InstructionsWindow']]],
   ['rdb_5fsourcevaluelogical',['rdb_SourceValueLogical',['../class_c_p_u___o_s___simulator_1_1_instructions_window.html#ad0e882b0d6d067460309ae6f1dda5d56',1,'CPU_OS_Simulator::InstructionsWindow']]],
   ['rdb_5fsourcevaluemiscellaneous',['rdb_SourceValueMiscellaneous',['../class_c_p_u___o_s___simulator_1_1_instructions_window.html#ae6e33f7879251b63282f5d3eaa693507',1,'CPU_OS_Simulator::InstructionsWindow']]],
+  ['register',['register',['../class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_operand.html#a55d446765a50844fcbbc56b757b1b679',1,'CPU_OS_Simulator::CPU::Operand']]],
   ['resourceculture',['resourceCulture',['../class_c_p_u___o_s___simulator_1_1_properties_1_1_resources.html#a08c56eb92abfbde7a18635199c6f28cf',1,'CPU_OS_Simulator::Properties::Resources']]],
   ['resourceman',['resourceMan',['../class_c_p_u___o_s___simulator_1_1_properties_1_1_resources.html#abc80953d3d68ed223e07e8efabc17b79',1,'CPU_OS_Simulator::Properties::Resources']]],
   ['result',['result',['../class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_instruction.html#a8fb993dcebcd127a335a7d068a6e9de4',1,'CPU_OS_Simulator::CPU::Instruction']]]

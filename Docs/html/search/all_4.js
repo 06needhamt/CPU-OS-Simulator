@@ -5,5 +5,6 @@ var searchData=
   ['default',['Default',['../class_c_p_u___o_s___simulator_1_1_properties_1_1_settings.html#a423993327c18a4dfede5f73981018fca',1,'CPU_OS_Simulator::Properties::Settings']]],
   ['defaultinstance',['defaultInstance',['../class_c_p_u___o_s___simulator_1_1_properties_1_1_settings.html#a9016562ea46f792bf8dc8d3e79dd36ae',1,'CPU_OS_Simulator::Properties::Settings']]],
   ['descriptionattr_3c_20t_20_3e',['DescriptionAttr&lt; T &gt;',['../class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_extentions.html#a57b9eeabb06f5b69160698e7106b2193',1,'CPU_OS_Simulator::CPU::Extentions']]],
+  ['deserializeobject_3c_20t_20_3e',['DeSerializeObject&lt; T &gt;',['../class_c_p_u___o_s___simulator_1_1_main_window.html#a44e09f35524cd53ddab77488989c5833',1,'CPU_OS_Simulator::MainWindow']]],
   ['div',['DIV',['../namespace_c_p_u___o_s___simulator_1_1_c_p_u.html#ac29c87bff87ad404c953b2581024043ea29bbf66f7f8529ec47e394fb5a36c646',1,'CPU_OS_Simulator::CPU']]]
 ];

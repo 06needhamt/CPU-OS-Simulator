@@ -13,6 +13,7 @@ var searchData=
   ['grp_5fdestinationoperand6',['grp_DestinationOperand6',['../class_c_p_u___o_s___simulator_1_1_instructions_window.html#a8e457b3503625b5e837320ad9eb439c6',1,'CPU_OS_Simulator::InstructionsWindow']]],
   ['grp_5finstructionsbox',['grp_InstructionsBox',['../class_c_p_u___o_s___simulator_1_1_main_window.html#aebc1256b654d001b7c4ce2bc08522667',1,'CPU_OS_Simulator::MainWindow']]],
   ['grp_5fnewprogram',['grp_NewProgram',['../class_c_p_u___o_s___simulator_1_1_main_window.html#a1e75e7af485b229372a6aafb84c2ffe0',1,'CPU_OS_Simulator::MainWindow']]],
+  ['grp_5fprogramlist',['grp_ProgramList',['../class_c_p_u___o_s___simulator_1_1_main_window.html#a0ccd227c10c9a0878095ef10c0ff92b7',1,'CPU_OS_Simulator::MainWindow']]],
   ['grp_5fprograms',['grp_Programs',['../class_c_p_u___o_s___simulator_1_1_main_window.html#a2cafe5a8b54ae3e95a770abc594519a0',1,'CPU_OS_Simulator::MainWindow']]],
   ['grp_5fsourceoperand',['grp_SourceOperand',['../class_c_p_u___o_s___simulator_1_1_instructions_window.html#ace26d2d0e3de3715d755e91ab04a054a',1,'CPU_OS_Simulator::InstructionsWindow']]],
   ['grp_5fsourceoperand1',['grp_SourceOperand1',['../class_c_p_u___o_s___simulator_1_1_instructions_window.html#a74e13776576d1a6ee5767e3fc8f6ec7f',1,'CPU_OS_Simulator::InstructionsWindow']]],

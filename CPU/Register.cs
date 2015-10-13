@@ -83,11 +83,15 @@ namespace CPU_OS_Simulator.CPU
                 type = value;
             }
         }
-
-        public void setRegisterValue(int value, EnumOperandType ismem)
+        /// <summary>
+        /// Sets the value in a register
+        /// </summary>
+        /// <param name="value"> the value to store in the register</param>
+        /// <param name="type">the type of data memory or value</param>
+        public void setRegisterValue(int value, EnumOperandType type)
         {
-            Value = value;
-            type = ismem;
+            this.value = value;
+            this.type = type;
         }
     }
 }

@@ -1,6 +1,8 @@
 var searchData=
 [
   ['schemacontextfield',['schemaContextField',['../class_xaml_static_helper_namespace_1_1___xaml_static_helper.html#a4a6305e6ff660caf4aea99a620f62961',1,'XamlStaticHelperNamespace::_XamlStaticHelper']]],
+  ['scrollbar1',['scrollBar1',['../class_c_p_u___o_s___simulator_1_1_main_window.html#a014812a0e9cd159be05250d94d9a5a8b',1,'CPU_OS_Simulator::MainWindow']]],
+  ['size',['size',['../class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_instruction.html#ac8c820f3e522e4fefaa510856ed11fb0',1,'CPU_OS_Simulator::CPU::Instruction']]],
   ['sourceoperandgrid',['SourceOperandGrid',['../class_c_p_u___o_s___simulator_1_1_instructions_window.html#a6e37ff7da499bab3f5b0037d2b4c68cd',1,'CPU_OS_Simulator::InstructionsWindow']]],
   ['sourceoperandgrid1',['SourceOperandGrid1',['../class_c_p_u___o_s___simulator_1_1_instructions_window.html#a3f9d1afc4455fa6b06c6fab3cdb6aeec',1,'CPU_OS_Simulator::InstructionsWindow']]],
   ['sourceoperandgrid2',['SourceOperandGrid2',['../class_c_p_u___o_s___simulator_1_1_instructions_window.html#a715ed01337540f316f39fe42c373c602',1,'CPU_OS_Simulator::InstructionsWindow']]],
@@ -14,5 +16,6 @@ var searchData=
   ['sourceoperandgrid_5fcopy3',['SourceOperandGrid_Copy3',['../class_c_p_u___o_s___simulator_1_1_instructions_window.html#ac37123264ae139f4abc30841da21cd23',1,'CPU_OS_Simulator::InstructionsWindow']]],
   ['sourceoperandgrid_5fcopy4',['SourceOperandGrid_Copy4',['../class_c_p_u___o_s___simulator_1_1_instructions_window.html#aa8c70305e3c77644ac312df74b0696b7',1,'CPU_OS_Simulator::InstructionsWindow']]],
   ['sourceoperandgrid_5fcopy5',['SourceOperandGrid_Copy5',['../class_c_p_u___o_s___simulator_1_1_instructions_window.html#a5a43b8933f014dffe28d3aa610518a94',1,'CPU_OS_Simulator::InstructionsWindow']]],
-  ['sourceoperandgrid_5fcopy6',['SourceOperandGrid_Copy6',['../class_c_p_u___o_s___simulator_1_1_instructions_window.html#a3dfdd68ad6b08fb1612fd43a420e5193',1,'CPU_OS_Simulator::InstructionsWindow']]]
+  ['sourceoperandgrid_5fcopy6',['SourceOperandGrid_Copy6',['../class_c_p_u___o_s___simulator_1_1_instructions_window.html#a3dfdd68ad6b08fb1612fd43a420e5193',1,'CPU_OS_Simulator::InstructionsWindow']]],
+  ['startaddress',['startAddress',['../class_c_p_u___o_s___simulator_1_1_simulator_program.html#ab9a0f3e642c0e7cb844dcd2e26a9b0bc',1,'CPU_OS_Simulator::SimulatorProgram']]]
 ];

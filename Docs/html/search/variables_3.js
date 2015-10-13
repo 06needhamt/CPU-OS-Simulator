@@ -19,5 +19,6 @@ var searchData=
   ['cmb_5fsourceregisterlogical',['cmb_SourceRegisterLogical',['../class_c_p_u___o_s___simulator_1_1_instructions_window.html#a46a9647a5a6e661afb789b1faa95a15a',1,'CPU_OS_Simulator::InstructionsWindow']]],
   ['cmb_5fsourceregistermiscellaneous',['cmb_SourceRegisterMiscellaneous',['../class_c_p_u___o_s___simulator_1_1_instructions_window.html#a98245ef6ca4796b7f59fe4b9937a388e',1,'CPU_OS_Simulator::InstructionsWindow']]],
   ['comparisontab',['ComparisonTab',['../class_c_p_u___o_s___simulator_1_1_instructions_window.html#ab807abcf9c3955ae2ff78e1d667820b2',1,'CPU_OS_Simulator::InstructionsWindow']]],
-  ['controltranfertab',['ControlTranferTab',['../class_c_p_u___o_s___simulator_1_1_instructions_window.html#a52cb165b57f01928c088b3052de70b5b',1,'CPU_OS_Simulator::InstructionsWindow']]]
+  ['controltranfertab',['ControlTranferTab',['../class_c_p_u___o_s___simulator_1_1_instructions_window.html#a52cb165b57f01928c088b3052de70b5b',1,'CPU_OS_Simulator::InstructionsWindow']]],
+  ['currentprogram',['currentProgram',['../class_c_p_u___o_s___simulator_1_1_main_window.html#a91f063d9cf776004dc74e719ef942907',1,'CPU_OS_Simulator::MainWindow']]]
 ];

@@ -94,14 +94,22 @@ namespace CPU_OS_Simulator
             Console.WriteLine("Program " + program.Name + " Created");
             return program;
         }
-
+        /// <summary>
+        /// Called when the show button is clicked
+        /// </summary>
+        /// <param name="sender">the object that initiated the event</param>
+        /// <param name="e"> the eventargs</param>
         private void btn_Show_Click(object sender, RoutedEventArgs e)
         {
             InstructionMode = "Show";
             InstructionsWindow iw = new InstructionsWindow(this);
             iw.Show();
         }
-
+        /// <summary>
+        /// Called when the window is closing
+        /// </summary>
+        /// <param name="sender">the object that initiated the event</param>
+        /// <param name="e"> the eventargs</param>
         private void MainWindow2_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
             MessageBoxResult result = MessageBox.Show("Stopping the Simulator Continue?", "Stopping", MessageBoxButton.YesNo, MessageBoxImage.Information);
@@ -115,25 +123,49 @@ namespace CPU_OS_Simulator
                 return;
             }
         }
+    #if DEBUG
+
         public void SayHello()
         {
             Console.WriteLine("Hello From Main Window");
         }
-
+    #endif
+        /// <summary>
+        /// Creates an instruction with 2 operands
+        /// </summary>
+        /// <param name="opcode"> the instruction opcode</param>
+        /// <param name="op1"> the first operand</param>
+        /// <param name="op2"> the second operand</param>
+        /// <param name="Size"> the size of the instruction</param>
+        /// <returns></returns>
         public Instruction CreateInstruction(EnumOpcodes opcode, Operand op1, Operand op2, Int32 Size)
         {
             return new Instruction((int) opcode, op1, op2,Size);
         }
+        /// <summary>
+        /// Creates an instruction with 1 operand
+        /// </summary>
+        /// <param name="opcode"> the instruction opcode</param>
+        /// <param name="op1"> the first operand</param>
+        /// <param name="Size"> the size of the instruction</param>
         public Instruction CreateInstruction(EnumOpcodes opcode, Operand op1, Int32 Size)
         {
             return new Instruction((int)opcode, op1,Size);
         }
-
+        /// <summary>
+        /// Creates an instruction with no operands
+        /// </summary>
+        /// <param name="opcode"> the instruction opcode</param>
+        /// <param name="Size"> the size of the instruction</param>
         public Instruction CreateInstruction(EnumOpcodes opcode, Int32 Size)
         {
             return new Instruction((int)opcode, Size);
         }
 
+        /// <summary>
+        /// Adds an instruction to the currently loaded program
+        /// </summary>
+        /// <param name="ins"> the instruction to add</param>
         public void AddInstruction(Instruction ins)
         {
             if (ins != null)
@@ -144,10 +176,10 @@ namespace CPU_OS_Simulator
                     MessageBox.Show("Please Create a program before adding instructions");
                     return;
                 }
-                SimulatorProgram prog = programList.Where(x => x.Name.Equals(currentProgram)).FirstOrDefault();
-                prog.Instructions.Add(ins);
+                SimulatorProgram prog = programList.Where(x => x.Name.Equals(currentProgram)).FirstOrDefault(); // find the currently active program
+                prog.Instructions.Add(ins); // add the instruction
                 //Console.WriteLine(node.Value.Instructions.Count);
-                UpdateIntructions();
+                UpdateIntructions(); // update the instruction list
             }
         }
 
@@ -160,33 +192,37 @@ namespace CPU_OS_Simulator
         {
             UpdateIntructions();
         }
-
+        /// <summary>
+        /// Updates the list of instructions
+        /// </summary>
         private void UpdateIntructions()
         {
-            if (currentProgram.Equals(string.Empty))
+            if (currentProgram.Equals(string.Empty)) // if a program has been loaded from a file
             {
-                programList = lst_ProgramList.Items.OfType<SimulatorProgram>().ToList();
+                programList = lst_ProgramList.Items.OfType<SimulatorProgram>().ToList(); // populate the program list with the loaded programs
                 Console.WriteLine(programList.Count);
-                currentProgram = programList.First().Name;
+                currentProgram = programList.First().Name; // load the first program in the list
             }
-            lst_InstructionsList.Items.Clear();
-            if ((lst_ProgramList.SelectedItem) == null)
+            lst_InstructionsList.ItemsSource = null; // WHY item source must be set to null when modifying the items within the list
+            lst_InstructionsList.Items.Clear(); // clear the item list
+            if ((lst_ProgramList.SelectedItem) == null) // if no program is selected 
             {
-                currentProgram = ((SimulatorProgram)lst_ProgramList.Items.GetItemAt(0)).Name;
+                lst_InstructionsList.SelectedIndex = 0;
+                currentProgram = ((SimulatorProgram)lst_ProgramList.Items.GetItemAt(0)).Name; // select and load the first item
             }
             else
             {
-                currentProgram = ((SimulatorProgram)lst_ProgramList.SelectedItem).Name;
+                currentProgram = ((SimulatorProgram)lst_ProgramList.SelectedItem).Name; // load the selected item
             }
-            SimulatorProgram prog = programList.Where(x => x.Name.Equals(currentProgram)).FirstOrDefault();
+            SimulatorProgram prog = programList.Where(x => x.Name.Equals(currentProgram)).FirstOrDefault(); // find the selected program in the program list
             //lst_InstructionsList.ItemsSource.
-            lst_InstructionsList.ItemsSource = prog.Instructions;
+            lst_InstructionsList.ItemsSource = prog.Instructions; // load the instructions into the instruction list
             Console.WriteLine(lst_InstructionsList.Items.Count);
         }
 
         private void btn_Load_Click(object sender, RoutedEventArgs e)
         {
-            bool loaded = LoadProgram();
+            bool loaded = LoadProgram(); // load a program file 
             if (!loaded)
             {
                 throw new Exception("An error occured while loading the program");
@@ -195,14 +231,17 @@ namespace CPU_OS_Simulator
         }
         private void btn_Save_Click(object sender, RoutedEventArgs e)
         {
-            bool saved = SaveProgram();
+            bool saved = SaveProgram(); //save a program file
             if (!saved)
             {
                 throw new Exception("An error occured while saving the program");
             }
             Console.WriteLine("Program Saved Successfully");
         }
-
+        /// <summary>
+        /// Saves the program list to a file
+        /// </summary>
+        /// <returns>True if succeeded false if not</returns>
         private bool SaveProgram()
         {
             SaveFileDialog dlg = new SaveFileDialog();
@@ -215,12 +254,15 @@ namespace CPU_OS_Simulator
                 SimulatorProgram[] progs = programList.ToArray();
                 for(int i = 0; i < progs.Length; i++)
                 {
-                    SerializeObject<SimulatorProgram>(progs[i], dlg.FileName);
+                    SerializeObject<SimulatorProgram>(progs[i], dlg.FileName); // save all programs in the program list
                 }
             }
             return true;
         }
-
+        /// <summary>
+        /// Loads a program list from a file 
+        /// </summary>
+        /// <returns> true if succeeded false if not</returns>
         private bool LoadProgram()
         {
             OpenFileDialog ofd = new OpenFileDialog();
@@ -230,54 +272,53 @@ namespace CPU_OS_Simulator
             Nullable<bool> result = ofd.ShowDialog();
             if (result.Value == true)
             {
-                DeSerializeObject<SimulatorProgram>(ofd.FileName);
+                DeSerializeObject<SimulatorProgram>(ofd.FileName); // load all programs from the file
             }
             return true;
         }
 
         /// <summary>
-        /// Serializes an object.
+        /// Serializes a program List.
         /// </summary>
-        /// <typeparam name="T"></typeparam>
-        /// <param name="serializableObject"></param>
-        /// <param name="fileName"></param>
+        /// <typeparam name="T">The type of program</typeparam>
+        /// <param name="serializableObject"> the object to serialise</param>
+        /// <param name="fileName">the file to save the objects to</param>
         public void SerializeObject<T>(T serializableObject, string filePath)
         {
             if (serializableObject == null) { return; }
             if (File.Exists(filePath))
             {
-                File.Delete(filePath);
+                File.Delete(filePath); // ensure we create a new file when we overwrite
             }
-            StreamWriter writer = new StreamWriter(filePath, true);
-            JavaScriptSerializer serializer = new JavaScriptSerializer();
-            string json = serializer.Serialize(serializableObject);
-            writer.WriteLine(json);
+            StreamWriter writer = new StreamWriter(filePath, true); // initialise a file writer
+            JavaScriptSerializer serializer = new JavaScriptSerializer(); // initialise a serializer
+            string json = serializer.Serialize(serializableObject); // serialise the object
+            writer.WriteLine(json); // write the object to the file
             writer.Flush();
             writer.Close();
-            writer.Dispose();
+            writer.Dispose(); // flush close and dispose of the writer
         }
 
 
         /// <summary>
-        /// Deserializes an xml file into an object list
+        /// Deserializes an .sas file into a program list
         /// </summary>
-        /// <typeparam name="T"></typeparam>
-        /// <param name="fileName"></param>
-        /// <returns></returns>
-        public T DeSerializeObject<T>(string fileName)
+        /// <typeparam name="T">The type to deserialise</typeparam>
+        /// <param name="fileName"> the name of the file to load the objects from</param>
+        public void DeSerializeObject<T>(string fileName)
         {
-            if (string.IsNullOrEmpty(fileName)) { return default(T); }
-            JavaScriptSerializer deserializer = new JavaScriptSerializer();
-            StreamReader reader = new StreamReader(fileName);
+            if (string.IsNullOrEmpty(fileName)) { return; }
+            JavaScriptSerializer deserializer = new JavaScriptSerializer(); // initialise the deserializer
+            StreamReader reader = new StreamReader(fileName); // initialise file reader
             string json;
 
-            while ((json = reader.ReadLine()) != null)
+            while ((json = reader.ReadLine()) != null) // while there are lines to read
             {
-                SimulatorProgram prog = deserializer.Deserialize<SimulatorProgram>(json);
-                lst_ProgramList.Items.Add(prog);
+                SimulatorProgram prog = deserializer.Deserialize<SimulatorProgram>(json); // deserialise the line into a object
+                lst_ProgramList.Items.Add(prog); // add the object to the program list
             }
-            
-            return default(T);
+
+            return;
         }
 
     
