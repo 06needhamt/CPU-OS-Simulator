@@ -65,7 +65,9 @@ namespace CPU_OS_Simulator
            SimulatorProgram prog = CreateNewProgram();
             if (prog != null)
             {
+                lst_ProgramList.Items.Add(prog);
                 programList.Add(prog);
+                currentProgram = prog.Name;
             }
         }
         /// <summary>
@@ -88,9 +90,9 @@ namespace CPU_OS_Simulator
             Int32 baseAddress = Convert.ToInt32(txtBaseAddress.Text);
             Int32 pages = Convert.ToInt32(cmb_Pages.Text);
             SimulatorProgram program = new SimulatorProgram(programName, baseAddress, pages);
-            lst_ProgramList.Items.Add(program);
-            programList.Add(program);
-            currentProgram = program.Name;
+            //lst_ProgramList.Items.Add(program);
+            //programList.Add(program);
+            //currentProgram = program.Name;
             Console.WriteLine("Program " + program.Name + " Created");
             return program;
         }
@@ -216,7 +218,14 @@ namespace CPU_OS_Simulator
             }
             SimulatorProgram prog = programList.Where(x => x.Name.Equals(currentProgram)).FirstOrDefault(); // find the selected program in the program list
             //lst_InstructionsList.ItemsSource.
-            lst_InstructionsList.ItemsSource = prog.Instructions; // load the instructions into the instruction list
+            if (prog.Instructions != null)
+            {
+                lst_InstructionsList.ItemsSource = prog.Instructions; // load the instructions into the instruction list
+            }
+            else
+            {
+                lst_InstructionsList.ItemsSource = null;
+            }
             Console.WriteLine(lst_InstructionsList.Items.Count);
         }
 
@@ -251,6 +260,10 @@ namespace CPU_OS_Simulator
             Nullable<bool> result = dlg.ShowDialog();
             if (result.Value == true)
             {
+                if (File.Exists(dlg.FileName))
+                {
+                    File.Delete(dlg.FileName); // ensure we create a new file when we overwrite
+                }
                 SimulatorProgram[] progs = programList.ToArray();
                 for(int i = 0; i < progs.Length; i++)
                 {
@@ -286,10 +299,7 @@ namespace CPU_OS_Simulator
         public void SerializeObject<T>(T serializableObject, string filePath)
         {
             if (serializableObject == null) { return; }
-            if (File.Exists(filePath))
-            {
-                File.Delete(filePath); // ensure we create a new file when we overwrite
-            }
+            
             StreamWriter writer = new StreamWriter(filePath, true); // initialise a file writer
             JavaScriptSerializer serializer = new JavaScriptSerializer(); // initialise a serializer
             string json = serializer.Serialize(serializableObject); // serialise the object
@@ -311,10 +321,12 @@ namespace CPU_OS_Simulator
             JavaScriptSerializer deserializer = new JavaScriptSerializer(); // initialise the deserializer
             StreamReader reader = new StreamReader(fileName); // initialise file reader
             string json;
-
+            programList.Clear();
+            lst_ProgramList.Items.Clear();
             while ((json = reader.ReadLine()) != null) // while there are lines to read
             {
                 SimulatorProgram prog = deserializer.Deserialize<SimulatorProgram>(json); // deserialise the line into a object
+                programList.Add(prog);
                 lst_ProgramList.Items.Add(prog); // add the object to the program list
             }
 
