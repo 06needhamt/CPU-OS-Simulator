@@ -90,7 +90,7 @@
                 </TabItem>
             </TabControl>
         </Grid>
-        <Grid x:Name="ProgramListGrid" HorizontalAlignment="Left" Height="289" Margin="464,200,0,0" VerticalAlignment="Top" Width="249">
+        <Grid x:Name="ProgramListGrid" HorizontalAlignment="Left" Height="289" Margin="474,232,0,0" VerticalAlignment="Top" Width="249">
             <GroupBox x:Name="grp_ProgramList" Header="PROGRAM LIST" HorizontalAlignment="Left" VerticalAlignment="Top" Height="282" Width="249" Margin="0,0,0,-66">
                 <Grid x:Name="ProgramListViewGrid" HorizontalAlignment="Left" Height="272" VerticalAlignment="Top" Width="239" Margin="0,0,-2,-12">
                     <ListView x:Name="lst_ProgramList" HorizontalAlignment="Left" Height="140" VerticalAlignment="Top" Width="239" Background="#FFFFFBAC" SelectionChanged="lst_ProgramList_SelectionChanged">
@@ -100,6 +100,41 @@
                                 <GridViewColumn Header="Base" DisplayMemberBinding="{Binding BaseAddress}" Width="50"/>
                                 <GridViewColumn Header="Start" DisplayMemberBinding="{Binding StartAddress}" Width="50"/>
                                 <GridViewColumn Header="Type" DisplayMemberBinding="{Binding Type}" Width="50"/>
+                            </GridView>
+                        </ListView.View>
+                    </ListView>
+                </Grid>
+            </GroupBox>
+        </Grid>
+        <Grid x:Name="RegisterGrid" HorizontalAlignment="Left" Height="479" Margin="971,10,0,0" VerticalAlignment="Top" Width="293">
+            <GroupBox x:Name="grp_Registers" Header="GENERAL PURPOSE CPU REGISTERS" HorizontalAlignment="Left" VerticalAlignment="Top" Height="479" Width="283" Margin="10,0,0,0">
+                <Grid x:Name="RegisterInnerGrid" HorizontalAlignment="Left" Height="469" VerticalAlignment="Top" Width="273" Margin="0,0,-2,-12">
+                    <ListView x:Name="lst_Registers" HorizontalAlignment="Left" Height="459" VerticalAlignment="Top" Width="273" Background="#FFDCD9D9">
+                        <ListView.View>
+                            <GridView>
+                                <GridViewColumn Header="Register" DisplayMemberBinding="{Binding Name}" Width="125"/>
+                                <GridViewColumn Header="Value" DisplayMemberBinding="{Binding Value}" Width="125"/>
+                            </GridView>
+                        </ListView.View>
+
+                    </ListView>
+
+                </Grid>
+            </GroupBox>
+        </Grid>
+        <Grid x:Name="SpecialRegistersGrid" HorizontalAlignment="Left" Height="205" Margin="738,10,0,0" VerticalAlignment="Top" Width="233">
+            <GroupBox x:Name="grp_SpecialRegisters" Header="SPECIAL CPU REGISTERS" HorizontalAlignment="Left" VerticalAlignment="Top" Height="205" Width="233"/>
+        </Grid>
+        <Grid x:Name="ProgramStackGrid" HorizontalAlignment="Left" Height="291" Margin="738,230,0,0" VerticalAlignment="Top" Width="233">
+            <GroupBox x:Name="grp_ProgramStack" Header="PROGRAM STACK (RAM)" HorizontalAlignment="Left" VerticalAlignment="Top" Height="291" Width="233">
+                <Grid x:Name="ProgramStackInnerGrid" HorizontalAlignment="Left" Height="291" VerticalAlignment="Top" Width="223" Margin="0,0,-2,-3">
+                    <ListView x:Name="lst_Stack" HorizontalAlignment="Left" Height="266" VerticalAlignment="Top" Width="223" Background="#FFFFFCC1" Margin="0,0,0,-35">
+                        <ListView.View>
+                            <GridView>
+                                <GridViewColumn Header="" Width="60"/>
+                                <GridViewColumn Header="Pos" DisplayMemberBinding="{Binding Position}" Width="30"/>
+                                <GridViewColumn Header="Value" DisplayMemberBinding="{Binding Value}" Width="60"/>
+                                <GridViewColumn Header="Address" DisplayMemberBinding="{Binding Address}" Width="60"/>
                             </GridView>
                         </ListView.View>
                     </ListView>

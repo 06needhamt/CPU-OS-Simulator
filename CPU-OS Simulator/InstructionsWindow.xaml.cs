@@ -180,7 +180,7 @@ namespace CPU_OS_Simulator
                         else if (rdb_SourceRegisterDataTransfer.IsChecked.Value)
                         {
                             string selectedRegister = (string)cmb_SourceRegisterDataTransfer.SelectedItem;
-                            Register reg = FindRegister(selectedRegister);
+                            Register reg = Register.FindRegister(selectedRegister);
                             op1 = new Operand(reg, reg.Type);
                         }
                         else
@@ -194,7 +194,7 @@ namespace CPU_OS_Simulator
                         else if (rdb_DestinationRegisterDataTransfer.IsChecked.Value)
                         {
                             string selectedRegister = (string)cmb_DestinationRegisterDataTransfer.SelectedItem;
-                            Register reg = FindRegister(selectedRegister);
+                            Register reg = Register.FindRegister(selectedRegister);
                             op2 = new Operand(reg, reg.Type);
                         }
                         else
@@ -215,7 +215,7 @@ namespace CPU_OS_Simulator
                         else if (rdb_SourceRegisterLogical.IsChecked.Value)
                         {
                             string selectedRegister = (string)cmb_SourceRegisterLogical.SelectedItem;
-                            Register reg = FindRegister(selectedRegister);
+                            Register reg = Register.FindRegister(selectedRegister);
                             op1 = new Operand(reg, reg.Type);
                         }
                         else
@@ -229,7 +229,7 @@ namespace CPU_OS_Simulator
                         else if (rdb_DestinationRegisterLogical.IsChecked.Value)
                         {
                             string selectedRegister = (string)cmb_DestinationRegisterLogical.SelectedItem;
-                            Register reg = FindRegister(selectedRegister);
+                            Register reg = Register.FindRegister(selectedRegister);
                             op2 = new Operand(reg, reg.Type);
                         }
                         else
@@ -250,7 +250,7 @@ namespace CPU_OS_Simulator
                         else if (rdb_SourceRegisterArithmetic.IsChecked.Value)
                         {
                             string selectedRegister = (string)cmb_SourceRegisterArithmetic.SelectedItem;
-                            Register reg = FindRegister(selectedRegister);
+                            Register reg = Register.FindRegister(selectedRegister);
                             op1 = new Operand(reg, reg.Type);
                         }
                         else
@@ -264,7 +264,7 @@ namespace CPU_OS_Simulator
                         else if (rdb_DestinationRegisterArithmetic.IsChecked.Value)
                         {
                             string selectedRegister = (string)cmb_DestinationRegisterArithmetic.SelectedItem;
-                            Register reg = FindRegister(selectedRegister);
+                            Register reg = Register.FindRegister(selectedRegister);
                             op2 = new Operand(reg, reg.Type);
                         }
                         else
@@ -285,7 +285,7 @@ namespace CPU_OS_Simulator
                         else if (rdb_SourceRegisterControlTransfer.IsChecked.Value)
                         {
                             string selectedRegister = (string)cmb_SourceRegisterControlTransfer.SelectedItem;
-                            Register reg = FindRegister(selectedRegister);
+                            Register reg = Register.FindRegister(selectedRegister);
                             op1 = new Operand(reg, reg.Type);
                         }
                         else
@@ -300,7 +300,7 @@ namespace CPU_OS_Simulator
                         else if (rdb_DestinationRegisterControlTransfer.IsChecked.Value)
                         {
                             string selectedRegister = (string)cmb_DestinationRegisterControlTransfer.SelectedItem;
-                            Register reg = FindRegister(selectedRegister);
+                            Register reg = Register.FindRegister(selectedRegister);
                             op2 = new Operand(reg, reg.Type);
                         }
                         else
@@ -322,7 +322,7 @@ namespace CPU_OS_Simulator
                         else if (rdb_SourceRegisterIO.IsChecked.Value)
                         {
                             string selectedRegister = (string)cmb_SourceRegisterIO.SelectedItem;
-                            Register reg = FindRegister(selectedRegister);
+                            Register reg = Register.FindRegister(selectedRegister);
                             op1 = new Operand(reg, reg.Type);
                         }
                         else
@@ -336,7 +336,7 @@ namespace CPU_OS_Simulator
                         else if (rdb_DestinationRegisterIO.IsChecked.Value)
                         {
                             string selectedRegister = (string)cmb_DestinationRegisterIO.SelectedItem;
-                            Register reg = FindRegister(selectedRegister);
+                            Register reg = Register.FindRegister(selectedRegister);
                             op2 = new Operand(reg, reg.Type);
                         }
                         else
@@ -357,7 +357,7 @@ namespace CPU_OS_Simulator
                         else if (rdb_SourceRegisterMiscellaneous.IsChecked.Value)
                         {
                             string selectedRegister = (string)cmb_SourceRegisterMiscellaneous.SelectedItem;
-                            Register reg = FindRegister(selectedRegister);
+                            Register reg = Register.FindRegister(selectedRegister);
                             op1 = new Operand(reg, reg.Type);
                         }
                         else
@@ -371,7 +371,7 @@ namespace CPU_OS_Simulator
                         else if (rdb_DestinationRegisterMiscellaneous.IsChecked.Value)
                         {
                             string selectedRegister = (string)cmb_DestinationRegisterMiscellaneous.SelectedItem;
-                            Register reg = FindRegister(selectedRegister);
+                            Register reg = Register.FindRegister(selectedRegister);
                             op2 = new Operand(reg, reg.Type);
                         }
                         else
@@ -394,103 +394,7 @@ namespace CPU_OS_Simulator
         /// </summary>
         /// <param name="selectedItem"> the selected register</param>
         /// <returns>The register object of the selected register</returns> 
-        private Register FindRegister(string selectedItem)
-        {
-            switch (selectedItem)
-            {
-                //TODO add other registers
-                case "R00":
-                    {
-                        return Register.R00;
-                        break;
-                    }
-                case "R01":
-                    {
-                        return Register.R01;
-                    }
-                case "R02":
-                    {
-                        return Register.R02;
-                    }
-                case "R03":
-                    {
-                        return Register.R03;
-                    }
-                case "R04":
-                    {
-                        return Register.R04;
-                    }
-                case "R05":
-                    {
-                        return Register.R05;
-                    }
-                case "R06":
-                    {
-                        return Register.R06;
-                    }
-                case "R07":
-                    {
-                        return Register.R07;
-                    }
-                case "R08":
-                    {
-                        return Register.R08;
-                    }
-                case "R09":
-                    {
-                        return Register.R09;
-                    }
-                case "R10":
-                    {
-                        return Register.R10;
-                    }
-                case "R11":
-                    {
-                        return Register.R11;
-                    }
-                case "R12":
-                    {
-                        return Register.R12;
-                    }
-                case "R13":
-                    {
-                        return Register.R13;
-                    }
-                case "R14":
-                    {
-                        return Register.R14;
-                    }
-                case "R15":
-                    {
-                        return Register.R15;
-                    }
-                case "R16":
-                    {
-                        return Register.R16;
-                    }
-                case "R17":
-                    {
-                        return Register.R17;
-                    }
-                case "R18":
-                    {
-                        return Register.R18;
-                    }
-                case "R19":
-                    {
-                        return Register.R19;
-                    }
-                case "R20":
-                    {
-                        return Register.R20;
-                    }
-
-                default:
-                    {
-                        return null;
-                    }
-            }
-        }
+       
 
         #region UI control
         private void rdb_SourceValueDataTransfer_Checked(object sender, RoutedEventArgs e)
@@ -703,14 +607,144 @@ namespace CPU_OS_Simulator
 
         }
 
-        private void cmb_DestinationRegisterLogical_GotFocus(object sender, RoutedEventArgs e)
+        private void txtSourceValueDataTransfer_GotFocus(object sender, RoutedEventArgs e)
         {
-            rdb_DestinationRegisterLogical.IsChecked = true;
+            rdb_SourceValueDataTransfer.IsChecked = true;
+        }
+
+        private void cmb_SourceRegisterDataTransfer_GotFocus(object sender, RoutedEventArgs e)
+        {
+            rdb_SourceRegisterDataTransfer.IsChecked = true;
+        }
+
+        private void txtDestinationValueDataTransfer_GotFocus(object sender, RoutedEventArgs e)
+        {
+            rdb_DestinationValueDataTransfer.IsChecked = true;
+        }
+
+        private void cmb_DestinationRegisterDataTransfer_GotFocus(object sender, RoutedEventArgs e)
+        {
+            rdb_DestinationRegisterDataTransfer.IsChecked = true;
         }
 
         private void txtSourceValueLogical_GotFocus(object sender, RoutedEventArgs e)
         {
             rdb_SourceValueLogical.IsChecked = true;
+        }
+
+        private void cmb_SourceRegisterLogical_GotFocus(object sender, RoutedEventArgs e)
+        {
+            rdb_SourceRegisterLogical.IsChecked = true;
+        }
+
+        private void txtDestinationValueLogical_GotFocus(object sender, RoutedEventArgs e)
+        {
+            rdb_DestinationValueLogical.IsChecked = true;
+        }
+
+        private void cmb_DestinationRegisterLogical_GotFocus(object sender, RoutedEventArgs e)
+        {
+            rdb_DestinationValueLogical.IsChecked = true;
+        }
+
+        private void txtSourceValueArithmetic_GotFocus(object sender, RoutedEventArgs e)
+        {
+            rdb_SourceValueArithmetic.IsChecked = true;
+        }
+
+        private void cmb_SourceRegisterArithmetic_GotFocus(object sender, RoutedEventArgs e)
+        {
+            rdb_SourceRegisterArithmetic.IsChecked = true;
+        }
+
+        private void txtDestinationValueArithmetic_GotFocus(object sender, RoutedEventArgs e)
+        {
+            rdb_DestinationValueArithmetic.IsChecked = true;
+        }
+
+        private void cmb_DestinationRegisterArithmetic_GotFocus(object sender, RoutedEventArgs e)
+        {
+            rdb_DestinationRegisterArithmetic.IsChecked = true;
+        }
+
+        private void txtSourceValueControlTransfer_GotFocus(object sender, RoutedEventArgs e)
+        {
+            rdb_SourceValueControlTransfer.IsChecked = true;
+        }
+
+        private void cmb_SourceRegisterControlTransfer_GotFocus(object sender, RoutedEventArgs e)
+        {
+            rdb_SourceRegisterControlTransfer.IsChecked = true;
+        }
+
+        private void txtDestinationValueControlTransfer_GotFocus(object sender, RoutedEventArgs e)
+        {
+            rdb_DestinationValueControlTransfer.IsChecked = true;
+        }
+
+        private void cmb_DestinationRegisterControlTransfer_GotFocus(object sender, RoutedEventArgs e)
+        {
+            rdb_DestinationRegisterControlTransfer.IsChecked = true;
+        }
+
+        private void txtSourceValueComparison_GotFocus(object sender, RoutedEventArgs e)
+        {
+            rdb_SourceValueComparison.IsChecked = true;
+        }
+
+        private void cmb_SourceRegisterComparison_GotFocus(object sender, RoutedEventArgs e)
+        {
+            rdb_SourceRegisterComparison.IsChecked = true;
+        }
+
+        private void txtDestinationValueComparison_GotFocus(object sender, RoutedEventArgs e)
+        {
+            rdb_DestinationValueControlTransfer.IsChecked = true;
+        }
+
+        private void cmb_DestinationRegisterComparison_GotFocus(object sender, RoutedEventArgs e)
+        {
+            rdb_DestinationRegisterComparison.IsChecked = true;
+        }
+
+        private void txtSourceValueIO_GotFocus(object sender, RoutedEventArgs e)
+        {
+            rdb_SourceValueIO.IsChecked = true;
+        }
+
+        private void cmb_SourceRegisterIO_GotFocus(object sender, RoutedEventArgs e)
+        {
+            rdb_SourceRegisterIO.IsChecked = true;
+        }
+
+        private void txtDestinationValueIO_GotFocus(object sender, RoutedEventArgs e)
+        {
+            rdb_DestinationValueIO.IsChecked = true;
+        }
+
+        private void cmb_DestinationRegisterIO_GotFocus(object sender, RoutedEventArgs e)
+        {
+            rdb_DestinationRegisterIO.IsChecked = true;
+        }
+
+        private void txtSourceValueMiscellaneous_GotFocus(object sender, RoutedEventArgs e)
+        {
+            rdb_SourceValueMiscellaneous.IsChecked = true;
+        }
+
+        private void cmb_SourceRegisterMiscellaneous_GotFocus(object sender, RoutedEventArgs e)
+        {
+            rdb_SourceRegisterMiscellaneous.IsChecked = true;
+        }
+
+        private void txtDestinationValueMiscellaneous_GotFocus(object sender, RoutedEventArgs e)
+        {
+            rdb_DestinationValueMiscellaneous.IsChecked = true;
+        }
+
+        private void cmb_DestinationRegisterMiscellaneous_GotFocus(object sender, RoutedEventArgs e)
+        {
+            rdb_DestinationRegisterMiscellaneous.IsChecked = true;
         }
         #endregion
     }

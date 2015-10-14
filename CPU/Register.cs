@@ -93,5 +93,103 @@ namespace CPU_OS_Simulator.CPU
             this.value = value;
             this.type = type;
         }
+
+        public static Register FindRegister(string selectedItem)
+        {
+            switch (selectedItem)
+            {
+                //TODO add other registers
+                case "R00":
+                    {
+                        return Register.R00;
+                        break;
+                    }
+                case "R01":
+                    {
+                        return Register.R01;
+                    }
+                case "R02":
+                    {
+                        return Register.R02;
+                    }
+                case "R03":
+                    {
+                        return Register.R03;
+                    }
+                case "R04":
+                    {
+                        return Register.R04;
+                    }
+                case "R05":
+                    {
+                        return Register.R05;
+                    }
+                case "R06":
+                    {
+                        return Register.R06;
+                    }
+                case "R07":
+                    {
+                        return Register.R07;
+                    }
+                case "R08":
+                    {
+                        return Register.R08;
+                    }
+                case "R09":
+                    {
+                        return Register.R09;
+                    }
+                case "R10":
+                    {
+                        return Register.R10;
+                    }
+                case "R11":
+                    {
+                        return Register.R11;
+                    }
+                case "R12":
+                    {
+                        return Register.R12;
+                    }
+                case "R13":
+                    {
+                        return Register.R13;
+                    }
+                case "R14":
+                    {
+                        return Register.R14;
+                    }
+                case "R15":
+                    {
+                        return Register.R15;
+                    }
+                case "R16":
+                    {
+                        return Register.R16;
+                    }
+                case "R17":
+                    {
+                        return Register.R17;
+                    }
+                case "R18":
+                    {
+                        return Register.R18;
+                    }
+                case "R19":
+                    {
+                        return Register.R19;
+                    }
+                case "R20":
+                    {
+                        return Register.R20;
+                    }
+
+                default:
+                    {
+                        return null;
+                    }
+            }
+        }
     }
 }

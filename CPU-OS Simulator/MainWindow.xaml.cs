@@ -36,6 +36,24 @@ namespace CPU_OS_Simulator
         {
             InitializeComponent();
             programList = new List<SimulatorProgram>();
+            PopulateRegisters();
+        }
+
+        private void PopulateRegisters()
+        {
+            for (int i = 0; i < 21; i++)
+            {
+                string registerString = "R";
+                if( i < 10)
+                {
+                    registerString += "0" + i;
+                }
+                else
+                {
+                    registerString += i;
+                }
+                lst_Registers.Items.Add(Register.FindRegister(registerString));
+            }
         }
 
         private void MainWindow2_Loaded(object sender, RoutedEventArgs e)
