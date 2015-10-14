@@ -123,7 +123,38 @@
             </GroupBox>
         </Grid>
         <Grid x:Name="SpecialRegistersGrid" HorizontalAlignment="Left" Height="205" Margin="738,10,0,0" VerticalAlignment="Top" Width="233">
-            <GroupBox x:Name="grp_SpecialRegisters" Header="SPECIAL CPU REGISTERS" HorizontalAlignment="Left" VerticalAlignment="Top" Height="205" Width="233"/>
+            <GroupBox x:Name="grp_SpecialRegisters" Header="SPECIAL CPU REGISTERS" HorizontalAlignment="Left" VerticalAlignment="Top" Height="205" Width="233">
+                <Grid x:Name="SpecialRegistersInnerGrid" HorizontalAlignment="Left" Height="195" VerticalAlignment="Top" Width="223" Margin="0,0,-2,-12">
+                    <Label x:Name="label3" Content="PC" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
+                    <TextBox x:Name="txt_PC" HorizontalAlignment="Left" Height="23" Margin="39,14,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="59" Background="#FF8BF4FF"/>
+                    <Label x:Name="label4" Content="SR" HorizontalAlignment="Left" Margin="112,10,0,0" VerticalAlignment="Top"/>
+                    <TextBox x:Name="txt_SR" HorizontalAlignment="Left" Height="23" Margin="141,14,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="59" Background="#FF8BF4FF"/>
+                    <Label x:Name="label5" Content="SP" HorizontalAlignment="Left" Margin="10,35,0,0" VerticalAlignment="Top" Width="24"/>
+                    <TextBox x:Name="txt_SP" HorizontalAlignment="Left" Height="23" Margin="39,39,0,0" TextWrapping="Wrap" Text="8096" VerticalAlignment="Top" Width="59" Background="#FF8BF4FF"/>
+                    <Label x:Name="label5_Copy" Content="BR" HorizontalAlignment="Left" Margin="112,35,0,0" VerticalAlignment="Top" Width="24"/>
+                    <TextBox x:Name="txt_BR" HorizontalAlignment="Left" Height="23" Margin="141,39,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="59" Background="#FFFFFBAC"/>
+                    <GroupBox x:Name="grp_StatusFlags" Header="SR Status Flags" HorizontalAlignment="Left" Margin="10,65,0,0" VerticalAlignment="Top" Height="54" Width="126">
+                        <Grid x:Name="StatusFlagsGrid" HorizontalAlignment="Left" Height="42" Margin="0,-10,-2,-12" VerticalAlignment="Top" Width="116">
+                            <CheckBox x:Name="chk_OV" Content="OV" HorizontalAlignment="Left" Margin="5,19,0,0" VerticalAlignment="Top"/>
+                            <CheckBox x:Name="chk_Z" Content="Z" HorizontalAlignment="Left" Margin="46,19,0,0" VerticalAlignment="Top"/>
+                            <CheckBox x:Name="chk_N" Content="N" HorizontalAlignment="Left" Margin="80,19,0,0" VerticalAlignment="Top"/>
+                        </Grid>
+                    </GroupBox>
+                    <GroupBox x:Name="grp_CPUMode" Header="CPU Mode" HorizontalAlignment="Left" Margin="142,65,0,0" VerticalAlignment="Top" Height="54" Width="75">
+                        <Grid x:Name="CPUModeGrid" HorizontalAlignment="Left" Height="34" Margin="-3,0,-4,-2" VerticalAlignment="Top" Width="70">
+                            <RadioButton x:Name="rdb_User" Content="User" HorizontalAlignment="Left" VerticalAlignment="Top" GroupName="CPU Mode" IsChecked="True"/>
+                            <RadioButton x:Name="rdb_Kernel" Content="Kernel" HorizontalAlignment="Left" VerticalAlignment="Top" GroupName="CPU Mode" Margin="0,14,0,0"/>
+                        </Grid>
+                        <!-- <Grid HorizontalAlignment="Left" Height="10" Margin="896,122,0,0" VerticalAlignment="Top" Width="8"/> -->
+                    </GroupBox>
+                    <Label x:Name="label6" Content="IR" HorizontalAlignment="Left" Margin="6,124,0,0" VerticalAlignment="Top"/>
+                    <TextBox x:Name="txt_IR" HorizontalAlignment="Left" Height="23" Margin="31,127,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="81" Background="#FFFFDA99"/>
+                    <Label x:Name="label6_Copy" Content="MAR" HorizontalAlignment="Left" Margin="-3,151,0,0" VerticalAlignment="Top"/>
+                    <TextBox x:Name="txt_MAR" HorizontalAlignment="Left" Height="23" Margin="32,154,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="81" Background="#FFFFDA99" Text="0"/>
+                    <Label x:Name="label6_Copy1" Content="MDR" HorizontalAlignment="Left" Margin="108,124,0,0" VerticalAlignment="Top"/>
+                    <TextBox x:Name="txt_MDR" HorizontalAlignment="Left" Height="23" Margin="142,127,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="81" Background="#FFFFDA99"/>
+                </Grid>
+            </GroupBox>
         </Grid>
         <Grid x:Name="ProgramStackGrid" HorizontalAlignment="Left" Height="291" Margin="738,230,0,0" VerticalAlignment="Top" Width="233">
             <GroupBox x:Name="grp_ProgramStack" Header="PROGRAM STACK (RAM)" HorizontalAlignment="Left" VerticalAlignment="Top" Height="291" Width="233">
@@ -141,5 +172,6 @@
                 </Grid>
             </GroupBox>
         </Grid>
+
     </Grid>
 </Window>
