@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{6EBCF9CD-C6A9-4535-9154-2FC7E303BFC4}</ProjectGuid>
+    <ProjectGuid>{2FBA6A60-9499-4C9E-8B43-ABB459A9C0B6}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>CPU_OS_Simulator.CPU</RootNamespace>
-    <AssemblyName>CPU-OS Simulator.CPU</AssemblyName>
+    <RootNamespace>CPU_OS_Simulator.Memory</RootNamespace>
+    <AssemblyName>CPU_OS_Simulator.Memory</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />
@@ -32,12 +32,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
-    <Reference Include="System.Activities" />
     <Reference Include="System.Core" />
-    <Reference Include="System.ServiceModel" />
-    <Reference Include="System.ServiceModel.Activities" />
-    <Reference Include="System.Windows" />
-    <Reference Include="System.Xaml" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -46,19 +41,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="EnumInstructionSize.cs" />
-    <Compile Include="EnumOpcodes.cs" />
-    <Compile Include="EnumOperandType.cs" />
-    <Compile Include="ExecutionUnit.cs" />
-    <Compile Include="Extentions.cs" />
-    <Compile Include="Instruction.cs" />
-    <Compile Include="Operand.cs" />
+    <Compile Include="MemoryPage.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Register.cs" />
-    <Compile Include="SimulatorProgram.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="CPU-OS Simulator 7-5-50_1.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

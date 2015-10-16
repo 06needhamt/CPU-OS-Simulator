@@ -30,6 +30,12 @@ namespace CPU_OS_Simulator
         /// The window that owns this window
         /// </summary>
         private MainWindow owner;
+
+        /// <summary>
+        /// How We should add the instruction to the program
+        /// </summary>
+        private EnumInstructionMode instructionMode;
+
         /// <summary>
         /// Default Constructor for Instruction Window
         /// </summary>
@@ -42,14 +48,20 @@ namespace CPU_OS_Simulator
         /// PLEASE NOTE: This constructor should always be used so data can be passed back to the main window
         /// </summary>
         /// <param name="owner">The window that is creating this window </param>
-        public InstructionsWindow(MainWindow owner)
+        public InstructionsWindow(MainWindow owner) : this()
         {
-            InitializeComponent();
+            //InitializeComponent();
             this.owner = owner;
             #if DEBUG
             owner.SayHello();
             #endif
         }
+
+        public InstructionsWindow(MainWindow owner, EnumInstructionMode instructionMode) : this(owner)
+        {
+            this.instructionMode = instructionMode;
+        }
+
         /// <summary>
         /// this function populates each of the instruction list boxes with the correct instructions
         /// </summary>
@@ -67,7 +79,6 @@ namespace CPU_OS_Simulator
                 instructionDescriptions.Add(description); // add the description to the list
                 switch (category)
                 {
-                    //TODO Add other instruction Types
                     case "Data Transfer":
                         {
                             lst_OpcodeListDataTransfer.Items.Add(opcode); // populate data transfer instructions
@@ -157,7 +168,15 @@ namespace CPU_OS_Simulator
         private void InstructionsWindow1_Closing(object sender, CancelEventArgs e)
         {
             Console.WriteLine("Instruction Window closing");
-            CreateInstruction();
+            if (instructionMode.Equals(EnumInstructionMode.SHOW))
+            {
+                return;
+            }
+            else
+            {
+                CreateInstruction();
+            }
+            
         }
         /// <summary>
         /// Creates an instruction based on selected options
@@ -168,11 +187,13 @@ namespace CPU_OS_Simulator
             EnumOpcodes opcode;
             Operand op1;
             Operand op2;
+            int index = owner.lst_InstructionsList.SelectedIndex;
             switch (SelectedTab.Header.ToString())
             {
                 case "Data Transfer":
                     {
                         opcode = (EnumOpcodes)Enum.Parse(typeof(EnumOpcodes), lst_OpcodeListDataTransfer.SelectedItem.ToString());
+                        
                         if (rdb_SourceValueDataTransfer.IsChecked.Value)
                         {
                             op1 = new Operand(Convert.ToInt32(txtSourceValueDataTransfer.Text), EnumOperandType.VALUE);
@@ -202,7 +223,7 @@ namespace CPU_OS_Simulator
                             op2 = null;
                         }
                         Instruction i = owner.CreateInstruction(opcode, op1, op2, 4);
-                        owner.AddInstruction(i);
+                        owner.AddInstruction(i,index);
                         break;
                     }
                 case "Logical":
@@ -237,7 +258,7 @@ namespace CPU_OS_Simulator
                             op2 = null;
                         }
                         Instruction i = owner.CreateInstruction(opcode, op1, op2, 4);
-                        owner.AddInstruction(i);
+                        owner.AddInstruction(i,index);
                         break;
                     }
                 case "Arithmetic":
@@ -272,7 +293,7 @@ namespace CPU_OS_Simulator
                             op2 = null;
                         }
                         Instruction i = owner.CreateInstruction(opcode, op1, op2, 4);
-                        owner.AddInstruction(i);
+                        owner.AddInstruction(i,index);
                         break;
                     }
                 case "Control Transfer":
@@ -308,7 +329,7 @@ namespace CPU_OS_Simulator
                             op2 = null;
                         }
                         Instruction i = owner.CreateInstruction(opcode, op1, op2, 4);
-                        owner.AddInstruction(i);
+                        owner.AddInstruction(i,index);
                         break;
                     }
 
@@ -344,7 +365,7 @@ namespace CPU_OS_Simulator
                             op2 = null;
                         }
                         Instruction i = owner.CreateInstruction(opcode, op1, op2, 4);
-                        owner.AddInstruction(i);
+                        owner.AddInstruction(i,index);
                         break;
                     }
                 case "Miscellaneous":
@@ -379,7 +400,7 @@ namespace CPU_OS_Simulator
                             op2 = null;
                         }
                         Instruction i = owner.CreateInstruction(opcode, op1, op2, 4);
-                        owner.AddInstruction(i);
+                        owner.AddInstruction(i,index);
                         break;
                     }
                 default:

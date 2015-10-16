@@ -9,7 +9,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>CPU_OS_Simulator</RootNamespace>
     <AssemblyName>CPU-OS Simulator</AssemblyName>
-    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <WarningLevel>4</WarningLevel>
@@ -30,6 +30,7 @@
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
     <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -88,10 +89,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="EnumInstructionMode.cs" />
     <Compile Include="InstructionsWindow.xaml.cs">
       <DependentUpon>InstructionsWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="SimulatorProgram.cs" />
     <Page Include="InstructionsWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -155,6 +156,10 @@
     <ProjectReference Include="..\CPU\CPU.csproj">
       <Project>{6ebcf9cd-c6a9-4535-9154-2fc7e303bfc4}</Project>
       <Name>CPU</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Memory\Memory.csproj">
+      <Project>{2fba6a60-9499-4c9e-8b43-abb459a9c0b6}</Project>
+      <Name>Memory</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

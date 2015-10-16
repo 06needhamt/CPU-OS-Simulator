@@ -4,9 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
-using CPU_OS_Simulator.CPU;
 
-namespace CPU_OS_Simulator
+namespace CPU_OS_Simulator.CPU
 {
     /// <summary>
     /// This class represents a program that can be run within the simulator
@@ -36,10 +35,6 @@ namespace CPU_OS_Simulator
         {
             this.name = name;
             this.baseAddress = baseAddress;
-            if(pages < 0 || pages > 10)
-            {
-                MessageBox.Show("Invalid Number of pages, Amount must be between 1 and 10");
-            }
             this.pages = pages;
             this.instructions = new List<Instruction>();
             this.startAddress = baseAddress;
@@ -124,7 +119,7 @@ namespace CPU_OS_Simulator
         }
         #endregion
         #region Methods
-        public void AddInstruction(Instruction ins)
+        public void AddInstruction(ref Instruction ins)
         {
             int address = CalculateAddress(ins);
             ins.Address = address;

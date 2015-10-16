@@ -29,7 +29,7 @@ namespace CPU_OS_Simulator
     public partial class MainWindow : Window
     {
         List<SimulatorProgram> programList;
-        string InstructionMode;
+        EnumInstructionMode InstructionMode;
         string currentProgram = string.Empty;
 
         public MainWindow()
@@ -121,9 +121,53 @@ namespace CPU_OS_Simulator
         /// <param name="e"> the eventargs</param>
         private void btn_Show_Click(object sender, RoutedEventArgs e)
         {
-            InstructionMode = "Show";
-            InstructionsWindow iw = new InstructionsWindow(this);
+            InstructionMode = EnumInstructionMode.SHOW;
+            InstructionsWindow iw = new InstructionsWindow(this,InstructionMode);
             iw.Show();
+        }
+        /// <summary>
+        /// TODO Fill in
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btn_AddNew_Click(object sender, RoutedEventArgs e)
+        {
+            InstructionMode = EnumInstructionMode.ADD_NEW;
+            InstructionsWindow iw = new InstructionsWindow(this, InstructionMode);
+            iw.Show();
+        }
+        /// <summary>
+        /// TODO Fill in
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btn_InsertAbove_Click(object sender, RoutedEventArgs e)
+        {
+            InstructionMode = EnumInstructionMode.INSERT_ABOVE;
+            InstructionsWindow iw = new InstructionsWindow(this, InstructionMode);
+            iw.Show();
+        }
+        /// <summary>
+        /// TODO Fill in
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btn_InsertBelow_Click(object sender, RoutedEventArgs e)
+        {
+            InstructionMode = EnumInstructionMode.INSERT_BELOW;
+            InstructionsWindow iw = new InstructionsWindow(this, InstructionMode);
+            iw.Show();
+        }
+        /// <summary>
+        /// TODO Fill in
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btn_Delete_Click(object sender, RoutedEventArgs e)
+        {
+            int index = lst_InstructionsList.SelectedIndex;
+            //TODO BUG can not remove items from the list while in use
+            lst_InstructionsList.Items.RemoveAt(index);
         }
         /// <summary>
         /// Called when the window is closing
@@ -186,20 +230,63 @@ namespace CPU_OS_Simulator
         /// Adds an instruction to the currently loaded program
         /// </summary>
         /// <param name="ins"> the instruction to add</param>
-        public void AddInstruction(Instruction ins)
+        /// <param name="index"> the index in the program to add the instruction</param>
+        public void AddInstruction(Instruction ins,int index)
         {
             if (ins != null)
             {
-                //string currentProgramName = ((SimulatorProgram) lst_ProgramList.SelectedItem).Name;
-                if(lst_ProgramList.Items.Count == 0)
+                if (lst_ProgramList.Items.Count == 0)
                 {
                     MessageBox.Show("Please Create a program before adding instructions");
                     return;
                 }
-                SimulatorProgram prog = programList.Where(x => x.Name.Equals(currentProgram)).FirstOrDefault(); // find the currently active program
-                prog.Instructions.Add(ins); // add the instruction
-                //Console.WriteLine(node.Value.Instructions.Count);
-                UpdateIntructions(); // update the instruction list
+
+                if (InstructionMode.Equals(EnumInstructionMode.ADD_NEW))
+                {
+                    SimulatorProgram prog = programList.Where(x => x.Name.Equals(currentProgram)).FirstOrDefault(); // find the currently active program
+                    prog.Instructions.Add(ins); // add the instruction
+                }
+                else if (InstructionMode.Equals(EnumInstructionMode.INSERT_ABOVE))
+                {
+
+                    SimulatorProgram prog = programList.Where(x => x.Name.Equals(currentProgram)).FirstOrDefault(); // find the currently active program
+                    if (index == -1)
+                    {
+                        prog.Instructions.Add(ins);
+                    }
+                    else if (index == 0)
+                    {
+                        prog.Instructions.Insert(0, ins);
+                    }
+                    else
+                    {
+                        prog.Instructions.Insert(index, ins); // add the instruction
+                    }
+                    //prog.Instructions.Insert(index, ins); 
+                }
+                else if (InstructionMode.Equals(EnumInstructionMode.INSERT_BELOW))
+                {
+
+                    SimulatorProgram prog = programList.Where(x => x.Name.Equals(currentProgram)).FirstOrDefault(); // find the currently active program
+                    if (index == -1)
+                    {
+                        prog.Instructions.Add(ins);
+                    }
+                    else if (index == 0)
+                    {
+                        prog.Instructions.Insert(0, ins);
+                    }
+                    else
+                    {
+                        prog.Instructions.Insert(index, ins); // add the instruction
+                    }
+                    //prog.Instructions.Insert(index, ins); 
+                }
+                else
+                {
+                    throw new ArgumentOutOfRangeException("Unknown instruction insertion mode");
+                }
+                UpdateIntructions();
             }
         }
 
@@ -351,6 +438,9 @@ namespace CPU_OS_Simulator
             return;
         }
 
-    
+        private void sld_ClockSpeed_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
+        {
+            Console.WriteLine(sld_ClockSpeed.Value);
+        }
     }
 }

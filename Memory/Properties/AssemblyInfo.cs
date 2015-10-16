@@ -6,11 +6,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("CPU-OS Simulator CPU Module")]
-[assembly: AssemblyDescription("CPU-OS Simulator CPU Module")]
+[assembly: AssemblyTitle("CPU-OS Simulator Memory Module")]
+[assembly: AssemblyDescription("CPU-OS Simulator Memory Module")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("CPU")]
+[assembly: AssemblyProduct("CPU-OS Simulator")]
 [assembly: AssemblyCopyright("Copyright © Thomas Needham 2015")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -21,7 +21,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("6ebcf9cd-c6a9-4535-9154-2fc7e303bfc4")]
+[assembly: Guid("2fba6a60-9499-4c9e-8b43-abb459a9c0b6")]
 
 // Version information for an assembly consists of the following four values:
 //
@@ -33,7 +33,7 @@ using System.Runtime.InteropServices;
 // You can specify all the values or you can default the Build and Revision Numbers 
 // by using the '*' as shown below:
 // [assembly: AssemblyVersion("1.0.*")]
-[assembly: AssemblyVersion("2015.10.16.1948")]
-[assembly: AssemblyFileVersion("2015.10.16.1948")]
+[assembly: AssemblyVersion("2015.10.16.1827")]
+[assembly: AssemblyFileVersion("2015.10.16.1827")]
 [assembly: NeutralResourcesLanguage("en-GB")]
 

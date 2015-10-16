@@ -71,15 +71,15 @@
                 </TabItem>
                 <TabItem x:Name="InstructionTab" Header="Instructions" HorizontalAlignment="Left" Height="20" VerticalAlignment="Top" Width="82" Margin="-2,-2,-26,0">
                     <Grid x:Name="grid_Instructions" Background="White">
-                        <Button x:Name="btn_AddNew" Content="ADD NEW" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="83"/>
+                        <Button x:Name="btn_AddNew" Content="ADD NEW" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="83" Click="btn_AddNew_Click"/>
                         <Button x:Name="btn_Show" Content="SHOW" HorizontalAlignment="Left" Margin="94,10,0,0" VerticalAlignment="Top" Width="76" Click="btn_Show_Click"/>
                         <Button x:Name="btn_Undo" Content="UNDO" HorizontalAlignment="Left" Margin="171,10,0,0" VerticalAlignment="Top" Width="79"/>
-                        <Button x:Name="btn_InsertAbove" Content="INSERT ABOVE" HorizontalAlignment="Left" Margin="10,44,0,0" VerticalAlignment="Top" Width="83"/>
+                        <Button x:Name="btn_InsertAbove" Content="INSERT ABOVE" HorizontalAlignment="Left" Margin="10,44,0,0" VerticalAlignment="Top" Width="83" Click="btn_InsertAbove_Click"/>
                         <Button x:Name="btnMoveDown" Content="MOVE DOWN" HorizontalAlignment="Left" Margin="94,44,0,0" VerticalAlignment="Top" Width="75"/>
                         <Button x:Name="btn_Edit" Content="EDIT" HorizontalAlignment="Left" Margin="171,44,0,0" VerticalAlignment="Top" Width="79"/>
-                        <Button x:Name="btn_InsertBelow" Content="INSERT BELOW" HorizontalAlignment="Left" Margin="10,75,0,0" VerticalAlignment="Top" Width="83"/>
+                        <Button x:Name="btn_InsertBelow" Content="INSERT BELOW" HorizontalAlignment="Left" Margin="10,75,0,0" VerticalAlignment="Top" Width="83" Click="btn_InsertBelow_Click"/>
                         <Button x:Name="btnMoveUp" Content="MOVE UP" HorizontalAlignment="Left" Margin="94,75,0,0" VerticalAlignment="Top" Width="75"/>
-                        <Button x:Name="btn_Delete" Content="DELETE" HorizontalAlignment="Left" Margin="171,75,0,0" VerticalAlignment="Top" Width="79"/>
+                        <Button x:Name="btn_Delete" Content="DELETE" HorizontalAlignment="Left" Margin="171,75,0,0" VerticalAlignment="Top" Width="79" Click="btn_Delete_Click"/>
                         <Button x:Name="btn_Copy" Content="COPY" HorizontalAlignment="Left" Margin="10,108,0,0" VerticalAlignment="Top" Width="83"/>
                         <Button x:Name="btnPasteAbove" Content="PASTE ABOVE" HorizontalAlignment="Left" Margin="94,108,0,0" VerticalAlignment="Top" Width="75"/>
                         <Button x:Name="btn_PasteBelow" Content="PASTE BELOW" HorizontalAlignment="Left" Margin="171,108,0,0" VerticalAlignment="Top" Width="79"/>
@@ -171,6 +171,26 @@
                     </ListView>
                 </Grid>
             </GroupBox>
+        </Grid>
+        <Grid x:Name="ControlUnitGrid" HorizontalAlignment="Left" Height="201" Margin="474,526,0,0" VerticalAlignment="Top" Width="249">
+            <TabControl x:Name="ControlTabs" HorizontalAlignment="Left" Height="201" VerticalAlignment="Top" Width="249">
+                <TabItem Header="Control Unit">
+                    <Grid x:Name="ControlUnitInnerGrid" Background="White" Margin="0,0,0,0">
+                        <Button x:Name="btn_Step" Content="STEP" HorizontalAlignment="Left" Margin="10,19,0,0" VerticalAlignment="Top" Width="75" Height="40"/>
+                        <Button x:Name="btn_Run" Content="RUN" HorizontalAlignment="Left" Margin="10,70,0,0" VerticalAlignment="Top" Width="75" Height="40"/>
+                        <Button x:Name="btn_Stop" Content="STOP" HorizontalAlignment="Left" Margin="10,119,0,0" VerticalAlignment="Top" Width="75" Height="40"/>
+                        <RadioButton x:Name="rdb_ByInstruction" Content="By Instruction" HorizontalAlignment="Left" Margin="90,32,0,0" VerticalAlignment="Top" GroupName="StepType" IsChecked="True"/>
+                        <RadioButton x:Name="rdb_BySingleTick" Content="By Single Tick" HorizontalAlignment="Left" Margin="90,58,0,0" VerticalAlignment="Top"/>
+                        <Slider x:Name="sld_ClockSpeed" HorizontalAlignment="Left" Margin="90,78,0,0" VerticalAlignment="Top" Height="85" Width="71" Orientation="Vertical" Maximum="1000" Minimum="10" SmallChange="10" TickFrequency="100" LargeChange="100" TickPlacement="BottomRight" ValueChanged="sld_ClockSpeed_ValueChanged" IsDirectionReversed="True" Value="1000"/>
+                        <Label x:Name="label7" Content="Slow" HorizontalAlignment="Left" Margin="123,141,0,0" VerticalAlignment="Top"/>
+                        <Label x:Name="label8" Content="Fast" HorizontalAlignment="Left" Margin="123,77,0,0" VerticalAlignment="Top"/>
+                        <Button x:Name="btn_ResetProgram"  HorizontalAlignment="Left" Margin="163,75,0,0" VerticalAlignment="Top" Width="75" Height="40">
+                            <TextBlock Text="RESET PROGRAM" TextWrapping="Wrap" HorizontalAlignment="Center" VerticalAlignment="Center"/>        
+                        </Button>
+                        <Button x:Name="btn_ShowPCB" Content="SHOW PCB" HorizontalAlignment="Left" Margin="162,120,0,0" VerticalAlignment="Top" Width="75" Height="40"/>
+                    </Grid>
+                </TabItem>
+            </TabControl>
         </Grid>
 
     </Grid>
