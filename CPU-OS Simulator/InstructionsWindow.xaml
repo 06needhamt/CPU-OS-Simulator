@@ -12,16 +12,16 @@
             <TabControl x:Name="InstructionTabs" HorizontalAlignment="Left" Height="446" Margin="10,10,0,0" VerticalAlignment="Top" Width="578">
                 <TabItem x:Name="DataTransferTab" Header="Data Transfer" Margin="0,0,-4,-2">
                     <Grid x:Name="TabGrid" Background="#FFE5E5E5" Margin="0,0,0,31">
-                        <Label x:Name="label" Content="Opcode" HorizontalAlignment="Left" Margin="48,22,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
+                        <Label x:Name="label" Content="Opcode" HorizontalAlignment="Left" Margin="48,22,0,0" VerticalAlignment="Top" FontWeight="Bold" />
                         <Grid x:Name="InstructionListGrid" HorizontalAlignment="Left" Height="277" Margin="25,53,0,0" VerticalAlignment="Top" Width="100">
-                            <ListBox x:Name="lst_OpcodeListDataTransfer" HorizontalAlignment="Left" Height="277" VerticalAlignment="Top" Width="100" Background="#FFFFFCC3" SelectionChanged="lst_OpcodeListDataTransfer_SelectionChanged" SelectedIndex="0"/>
+                            <ListBox x:Name="lst_OpcodeListDataTransfer" HorizontalAlignment="Left" Height="277" VerticalAlignment="Top" Width="100" Background="#FFFFFCC3" SelectionChanged="lst_OpcodeListDataTransfer_SelectionChanged" SelectedIndex="0" />
                         </Grid>
                         <Grid x:Name="SourceOperandGrid" HorizontalAlignment="Left" Height="151" Margin="145,53,0,0" VerticalAlignment="Top" Width="150">
                             <GroupBox x:Name="grp_SourceOperand" Header="Source Operand" HorizontalAlignment="Left" VerticalAlignment="Top" Height="151" Width="150" Margin="0,-29,0,0">
                                 <Grid HorizontalAlignment="Left" Height="141" VerticalAlignment="Top" Width="140" Margin="0,0,-2,-12">
-                                    <RadioButton x:Name="rdb_SourceValueDataTransfer" Content="Value" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" GroupName="SourceOperand"  Checked="rdb_SourceValueDataTransfer_Checked"/>
-                                    <TextBox x:Name="txtSourceValueDataTransfer" HorizontalAlignment="Left" Height="23" Margin="75,10,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="55" Background="#FFBEFCFF" GotFocus="txtSourceValueDataTransfer_GotFocus"/>
-                                    <RadioButton x:Name="rdb_SourceRegisterDataTransfer" Content="Register" HorizontalAlignment="Left" Margin="10,79,0,0" VerticalAlignment="Top" GroupName="SourceOperand"  Checked="rdb_SourceRegisterDataTransfer_Checked"/>
+                                    <RadioButton x:Name="rdb_SourceValueDataTransfer" Content="Value" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" GroupName="SourceOperand"  Checked="rdb_SourceValueDataTransfer_Checked" />
+                                    <TextBox x:Name="txtSourceValueDataTransfer" HorizontalAlignment="Left" Height="23" Margin="75,10,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="55" Background="#FFBEFCFF" GotFocus="txtSourceValueDataTransfer_GotFocus" />
+                                    <RadioButton x:Name="rdb_SourceRegisterDataTransfer" Content="Register" HorizontalAlignment="Left" Margin="10,79,0,0" VerticalAlignment="Top" GroupName="SourceOperand"  Checked="rdb_SourceRegisterDataTransfer_Checked" />
                                     <ComboBox x:Name="cmb_SourceRegisterDataTransfer" HorizontalAlignment="Left" Margin="75,79,0,0" VerticalAlignment="Top" Width="55" SelectedIndex="0" GotFocus="cmb_SourceRegisterDataTransfer_GotFocus">
                                         <System:String>R00</System:String>
                                         <System:String>R01</System:String>
@@ -45,7 +45,7 @@
                                         <System:String>R19</System:String>
                                         <System:String>R20</System:String>
                                     </ComboBox>
-                                    <!--<ComboBox x:Name="comboBox_Copy" HorizontalAlignment="Left" Margin="75,229,0,-110" VerticalAlignment="Top" Width="58"/> -->
+                                    <!--<ComboBox x:Name="comboBox_Copy" HorizontalAlignment="Left" Margin="75,229,0,-110" VerticalAlignment="Top" Width="58" /> -->
                                 </Grid>
                             </GroupBox>
                         </Grid>
@@ -53,7 +53,7 @@
                             <GroupBox x:Name="grp_DestinationOperand" Header="Destination Operand" HorizontalAlignment="Left" VerticalAlignment="Top" Height="151" Width="150" Margin="0,-29,0,0">
                                 <Grid HorizontalAlignment="Left" Height="141" VerticalAlignment="Top" Width="140" Margin="0,0,-2,-12">
                                     <RadioButton x:Name="rdb_DestinationValueDataTransfer" Content="Value" HorizontalAlignment="Left" Margin="10,12,0,0" VerticalAlignment="Top" GroupName="DestinationOperand"  Checked="rdb_DestinationValueDataTransfer_Checked" />
-                                    <TextBox x:Name="txtDestinationValueDataTransfer" HorizontalAlignment="Left" Height="23" Margin="75,10,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="55" Background="#FFBEFCFF" GotFocus="txtDestinationValueDataTransfer_GotFocus"/>
+                                    <TextBox x:Name="txtDestinationValueDataTransfer" HorizontalAlignment="Left" Height="23" Margin="75,10,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="55" Background="#FFBEFCFF" GotFocus="txtDestinationValueDataTransfer_GotFocus" />
                                     <RadioButton x:Name="rdb_DestinationRegisterDataTransfer" Content="Register" HorizontalAlignment="Left" Margin="10,79,0,0" VerticalAlignment="Top" GroupName="DestinationOperand"  Checked="rdb_DestinationRegisterDataTransfer_Checked" />
                                     <ComboBox x:Name="cmb_DestinationRegisterDataTransfer" HorizontalAlignment="Left" Margin="77,79,0,0" VerticalAlignment="Top" Width="53" SelectedIndex="0" GotFocus="cmb_DestinationRegisterDataTransfer_GotFocus">
                                         <System:String>R00</System:String>
@@ -81,29 +81,29 @@
                                 </Grid>
                             </GroupBox>
                         </Grid>
-                        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="70" Margin="317,34,0,0" VerticalAlignment="Top" Width="230"/>
-                        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="69" Margin="317,109,0,0" VerticalAlignment="Top" Width="230"/>
-                        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="68" Margin="317,194,0,0" VerticalAlignment="Top" Width="230"/>
-                        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="62" Margin="317,268,0,0" VerticalAlignment="Top" Width="230"/>
-                        <TextBox x:Name="txtDescriptionDataTransfer" HorizontalAlignment="Center" Height="23" Margin="10,356,12,8" TextWrapping="Wrap" VerticalAlignment="Center" Width="550" Focusable="False" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Background="#FFFFFCC3"/>
+                        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="70" Margin="317,34,0,0" VerticalAlignment="Top" Width="230" />
+                        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="69" Margin="317,109,0,0" VerticalAlignment="Top" Width="230" />
+                        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="68" Margin="317,194,0,0" VerticalAlignment="Top" Width="230" />
+                        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="62" Margin="317,268,0,0" VerticalAlignment="Top" Width="230" />
+                        <TextBox x:Name="txtDescriptionDataTransfer" HorizontalAlignment="Center" Height="23" Margin="10,356,12,8" TextWrapping="Wrap" VerticalAlignment="Center" Width="550" Focusable="False" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Background="#FFFFFCC3" />
                     </Grid>
                 </TabItem>
                 <TabItem x:Name="LogicalTab" Header="Logical" HorizontalAlignment="Left" Height="20" VerticalAlignment="Top" Width="54">
                     <Grid Background="#FFE5E5E5">
                         <Grid x:Name="TabGrid_Copy" Background="#FFE5E5E5" Margin="0,0,0,31">
                             <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="49*"/>
-                                <ColumnDefinition Width="523*"/>
+                                <ColumnDefinition Width="49*" />
+                                <ColumnDefinition Width="523*" />
                             </Grid.ColumnDefinitions>
-                            <Label x:Name="label1" Content="Opcode" HorizontalAlignment="Left" Margin="48,22,0,0" VerticalAlignment="Top" FontWeight="Bold" Grid.ColumnSpan="2"/>
+                            <Label x:Name="label1" Content="Opcode" HorizontalAlignment="Left" Margin="48,22,0,0" VerticalAlignment="Top" FontWeight="Bold" Grid.ColumnSpan="2" />
                             <Grid x:Name="InstructionListGrid1" HorizontalAlignment="Left" Height="277" Margin="25,53,0,0" VerticalAlignment="Top" Width="100" Grid.ColumnSpan="2">
-                                <ListBox x:Name="lst_OpcodeListLogical" HorizontalAlignment="Left" Height="277" VerticalAlignment="Top" Width="100" Background="#FFFFFCC3" SelectionChanged="lst_OpcodeListLogical_SelectionChanged" SelectedIndex="0"/>
+                                <ListBox x:Name="lst_OpcodeListLogical" HorizontalAlignment="Left" Height="277" VerticalAlignment="Top" Width="100" Background="#FFFFFCC3" SelectionChanged="lst_OpcodeListLogical_SelectionChanged" SelectedIndex="0" />
                             </Grid>
                             <Grid x:Name="SourceOperandGrid1" HorizontalAlignment="Left" Height="151" Margin="96,53,0,0" VerticalAlignment="Top" Width="150" Grid.Column="1">
                                 <GroupBox x:Name="grp_SourceOperand1" Header="Source Operand" HorizontalAlignment="Left" VerticalAlignment="Top" Height="151" Width="150" Margin="0,-29,0,0">
                                     <Grid HorizontalAlignment="Left" Height="141" VerticalAlignment="Top" Width="140" Margin="0,0,-2,-12">
                                         <RadioButton x:Name="rdb_SourceValueLogical" Content="Value" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" GroupName="SourceOperand" Checked="rdb_SourceValueLogical_Checked" />
-                                        <TextBox x:Name="txtSourceValueLogical" HorizontalAlignment="Left" Height="23" Margin="75,10,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="55" Background="#FFBEFCFF" GotFocus="txtSourceValueLogical_GotFocus"/>
+                                        <TextBox x:Name="txtSourceValueLogical" HorizontalAlignment="Left" Height="23" Margin="75,10,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="55" Background="#FFBEFCFF" GotFocus="txtSourceValueLogical_GotFocus" />
                                         <RadioButton x:Name="rdb_SourceRegisterLogical" Content="Register" HorizontalAlignment="Left" Margin="10,79,0,0" VerticalAlignment="Top" GroupName="SourceOperand" Checked="rdb_SourceRegisterLogical_Checked" />
                                         <ComboBox x:Name="cmb_SourceRegisterLogical" HorizontalAlignment="Left" Margin="75,79,0,0" VerticalAlignment="Top" Width="55" SelectedIndex="0" GotFocus="cmb_SourceRegisterLogical_GotFocus">
                                             <System:String>R00</System:String>
@@ -128,7 +128,7 @@
                                             <System:String>R19</System:String>
                                             <System:String>R20</System:String>
                                         </ComboBox>
-                                        <!--<ComboBox x:Name="comboBox_Copy" HorizontalAlignment="Left" Margin="75,229,0,-110" VerticalAlignment="Top" Width="58"/> -->
+                                        <!--<ComboBox x:Name="comboBox_Copy" HorizontalAlignment="Left" Margin="75,229,0,-110" VerticalAlignment="Top" Width="58" /> -->
                                     </Grid>
                                 </GroupBox>
                             </Grid>
@@ -136,7 +136,7 @@
                                 <GroupBox x:Name="grp_DestinationOperand1" Header="Destination Operand" HorizontalAlignment="Left" VerticalAlignment="Top" Height="151" Width="150" Margin="0,-29,0,0">
                                     <Grid HorizontalAlignment="Left" Height="141" VerticalAlignment="Top" Width="140" Margin="0,0,-2,-12">
                                         <RadioButton x:Name="rdb_DestinationValueLogical" Content="Value" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" GroupName="DestinationOperand" Checked="rdb_DestinationValueLogical_Checked" />
-                                        <TextBox x:Name="txtDestinationValueLogical" HorizontalAlignment="Left" Height="23" Margin="75,10,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="55" Background="#FFBEFCFF" GotFocus="txtDestinationValueLogical_GotFocus"/>
+                                        <TextBox x:Name="txtDestinationValueLogical" HorizontalAlignment="Left" Height="23" Margin="75,10,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="55" Background="#FFBEFCFF" GotFocus="txtDestinationValueLogical_GotFocus" />
                                         <RadioButton x:Name="rdb_DestinationRegisterLogical" Content="Register" HorizontalAlignment="Left" Margin="10,79,0,0" VerticalAlignment="Top" GroupName="DestinationOperand" Checked="rdb_DestinationRegisterLogical_Checked" />
                                         <ComboBox x:Name="cmb_DestinationRegisterLogical" HorizontalAlignment="Left" Margin="77,79,0,0" VerticalAlignment="Top" Width="53" SelectedIndex="0" GotFocus="cmb_DestinationRegisterLogical_GotFocus">
                                             <System:String>R00</System:String>
@@ -164,25 +164,25 @@
                                     </Grid>
                                 </GroupBox>
                             </Grid>
-                            <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="70" Margin="268,34,0,0" VerticalAlignment="Top" Width="230" Grid.Column="1"/>
-                            <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="69" Margin="268,109,0,0" VerticalAlignment="Top" Width="230" Grid.Column="1"/>
-                            <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="68" Margin="268,194,0,0" VerticalAlignment="Top" Width="230" Grid.Column="1"/>
-                            <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="62" Margin="268,268,0,0" VerticalAlignment="Top" Width="230" Grid.Column="1"/>
-                            <TextBox x:Name="txtDescriptionLogical" HorizontalAlignment="Center" Height="23" Margin="10,356,12,8" TextWrapping="Wrap" VerticalAlignment="Center" Width="550" Focusable="False" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Background="#FFFFFCC3" Grid.ColumnSpan="2"/>
+                            <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="70" Margin="268,34,0,0" VerticalAlignment="Top" Width="230" Grid.Column="1" />
+                            <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="69" Margin="268,109,0,0" VerticalAlignment="Top" Width="230" Grid.Column="1" />
+                            <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="68" Margin="268,194,0,0" VerticalAlignment="Top" Width="230" Grid.Column="1" />
+                            <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="62" Margin="268,268,0,0" VerticalAlignment="Top" Width="230" Grid.Column="1" />
+                            <TextBox x:Name="txtDescriptionLogical" HorizontalAlignment="Center" Height="23" Margin="10,356,12,8" TextWrapping="Wrap" VerticalAlignment="Center" Width="550" Focusable="False" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Background="#FFFFFCC3" Grid.ColumnSpan="2" />
                         </Grid>
                     </Grid>
                 </TabItem>
                 <TabItem x:Name="ArithmeticTab" Header="Arithmetic" HorizontalAlignment="Left" Height="20" VerticalAlignment="Top" Width="73" Margin="-2,-2,-17,0">
                     <Grid x:Name="TabGrid_Copy1" Background="#FFE5E5E5" Margin="0,0,0,31">
-                        <Label x:Name="label2" Content="Opcode" HorizontalAlignment="Left" Margin="48,22,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
+                        <Label x:Name="label2" Content="Opcode" HorizontalAlignment="Left" Margin="48,22,0,0" VerticalAlignment="Top" FontWeight="Bold" />
                         <Grid x:Name="InstructionListGrid2" HorizontalAlignment="Left" Height="277" Margin="25,53,0,0" VerticalAlignment="Top" Width="100">
-                            <ListBox x:Name="lst_OpcodeListArithmetic" HorizontalAlignment="Left" Height="277" VerticalAlignment="Top" Width="100" Background="#FFFFFCC3" SelectionChanged="lst_OpcodeListArithmetic_SelectionChanged" SelectedIndex="0"/>
+                            <ListBox x:Name="lst_OpcodeListArithmetic" HorizontalAlignment="Left" Height="277" VerticalAlignment="Top" Width="100" Background="#FFFFFCC3" SelectionChanged="lst_OpcodeListArithmetic_SelectionChanged" SelectedIndex="0" />
                         </Grid>
                         <Grid x:Name="SourceOperandGrid2" HorizontalAlignment="Left" Height="151" Margin="145,53,0,0" VerticalAlignment="Top" Width="150">
                             <GroupBox x:Name="grp_SourceOperand2" Header="Source Operand" HorizontalAlignment="Left" VerticalAlignment="Top" Height="151" Width="150" Margin="0,-29,0,0">
                                 <Grid HorizontalAlignment="Left" Height="141" VerticalAlignment="Top" Width="140" Margin="0,0,-2,-12">
                                     <RadioButton x:Name="rdb_SourceValueArithmetic" Content="Value" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" GroupName="SourceOperand" Checked="rdb_SourceValueArithmetic_Checked" />
-                                    <TextBox x:Name="txtSourceValueArithmetic" HorizontalAlignment="Left" Height="23" Margin="75,10,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="55" Background="#FFBEFCFF" GotFocus="txtSourceValueArithmetic_GotFocus"/>
+                                    <TextBox x:Name="txtSourceValueArithmetic" HorizontalAlignment="Left" Height="23" Margin="75,10,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="55" Background="#FFBEFCFF" GotFocus="txtSourceValueArithmetic_GotFocus" />
                                     <RadioButton x:Name="rdb_SourceRegisterArithmetic" Content="Register" HorizontalAlignment="Left" Margin="10,79,0,0" VerticalAlignment="Top" GroupName="SourceOperand" Checked="rdb_SourceRegisterArithmetic_Checked" />
                                     <ComboBox x:Name="cmb_SourceRegisterArithmetic" HorizontalAlignment="Left" Margin="75,79,0,0" VerticalAlignment="Top" Width="55" SelectedIndex="0" GotFocus="cmb_SourceRegisterArithmetic_GotFocus">
                                         <System:String>R00</System:String>
@@ -207,7 +207,7 @@
                                         <System:String>R19</System:String>
                                         <System:String>R20</System:String>
                                     </ComboBox>
-                                    <!--<ComboBox x:Name="comboBox_Copy" HorizontalAlignment="Left" Margin="75,229,0,-110" VerticalAlignment="Top" Width="58"/> -->
+                                    <!--<ComboBox x:Name="comboBox_Copy" HorizontalAlignment="Left" Margin="75,229,0,-110" VerticalAlignment="Top" Width="58" /> -->
                                 </Grid>
                             </GroupBox>
                         </Grid>
@@ -215,7 +215,7 @@
                             <GroupBox x:Name="grp_DestinationOperand2" Header="Destination Operand" HorizontalAlignment="Left" VerticalAlignment="Top" Height="151" Width="150" Margin="0,-29,0,0">
                                 <Grid HorizontalAlignment="Left" Height="141" VerticalAlignment="Top" Width="140" Margin="0,0,-2,-12">
                                     <RadioButton x:Name="rdb_DestinationValueArithmetic" Content="Value" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" GroupName="DestinationOperand" Checked="rdb_DestinationValueArithmetic_Checked" />
-                                    <TextBox x:Name="txtDestinationValueArithmetic" HorizontalAlignment="Left" Height="23" Margin="75,10,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="55" Background="#FFBEFCFF" GotFocus="txtDestinationValueArithmetic_GotFocus"/>
+                                    <TextBox x:Name="txtDestinationValueArithmetic" HorizontalAlignment="Left" Height="23" Margin="75,10,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="55" Background="#FFBEFCFF" GotFocus="txtDestinationValueArithmetic_GotFocus" />
                                     <RadioButton x:Name="rdb_DestinationRegisterArithmetic" Content="Register" HorizontalAlignment="Left" Margin="10,79,0,0" VerticalAlignment="Top" GroupName="DestinationOperand" Checked="rdb_DestinationRegisterArithmetic_Checked" />
                                     <ComboBox x:Name="cmb_DestinationRegisterArithmetic" HorizontalAlignment="Left" Margin="77,79,0,0" VerticalAlignment="Top" Width="53" SelectedIndex="0" GotFocus="cmb_DestinationRegisterArithmetic_GotFocus">
                                         <System:String>R00</System:String>
@@ -243,24 +243,24 @@
                                 </Grid>
                             </GroupBox>
                         </Grid>
-                        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="70" Margin="317,34,0,0" VerticalAlignment="Top" Width="230"/>
-                        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="69" Margin="317,109,0,0" VerticalAlignment="Top" Width="230"/>
-                        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="68" Margin="317,194,0,0" VerticalAlignment="Top" Width="230"/>
-                        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="62" Margin="317,268,0,0" VerticalAlignment="Top" Width="230"/>
-                        <TextBox x:Name="txtDescriptionArithmetic" HorizontalAlignment="Center" Height="23" Margin="10,356,12,8" TextWrapping="Wrap" VerticalAlignment="Center" Width="550" Focusable="False" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Background="#FFFFFCC3"/>
+                        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="70" Margin="317,34,0,0" VerticalAlignment="Top" Width="230" />
+                        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="69" Margin="317,109,0,0" VerticalAlignment="Top" Width="230" />
+                        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="68" Margin="317,194,0,0" VerticalAlignment="Top" Width="230" />
+                        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="62" Margin="317,268,0,0" VerticalAlignment="Top" Width="230" />
+                        <TextBox x:Name="txtDescriptionArithmetic" HorizontalAlignment="Center" Height="23" Margin="10,356,12,8" TextWrapping="Wrap" VerticalAlignment="Center" Width="550" Focusable="False" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Background="#FFFFFCC3" />
                     </Grid>
                 </TabItem>
                 <TabItem x:Name="ControlTranferTab" Header="Control Transfer" HorizontalAlignment="Left" Height="20" VerticalAlignment="Top" Width="102" Margin="-2,-2,-46,0">
                     <Grid x:Name="TabGrid_Copy2" Background="#FFE5E5E5" Margin="0,0,0,31">
-                        <Label x:Name="label3" Content="Opcode" HorizontalAlignment="Left" Margin="48,22,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
+                        <Label x:Name="label3" Content="Opcode" HorizontalAlignment="Left" Margin="48,22,0,0" VerticalAlignment="Top" FontWeight="Bold" />
                         <Grid x:Name="InstructionListGrid3" HorizontalAlignment="Left" Height="277" Margin="25,53,0,0" VerticalAlignment="Top" Width="100">
-                            <ListBox x:Name="lst_OpcodeListControlTransfer" HorizontalAlignment="Left" Height="277" VerticalAlignment="Top" Width="100" Background="#FFFFFCC3" SelectedIndex="0"/>
+                            <ListBox x:Name="lst_OpcodeListControlTransfer" HorizontalAlignment="Left" Height="277" VerticalAlignment="Top" Width="100" Background="#FFFFFCC3" SelectedIndex="0" />
                         </Grid>
                         <Grid x:Name="SourceOperandGrid3" HorizontalAlignment="Left" Height="151" Margin="145,53,0,0" VerticalAlignment="Top" Width="150">
                             <GroupBox x:Name="grp_SourceOperand3" Header="Source Operand" HorizontalAlignment="Left" VerticalAlignment="Top" Height="151" Width="150" Margin="0,-29,0,0">
                                 <Grid HorizontalAlignment="Left" Height="141" VerticalAlignment="Top" Width="140" Margin="0,0,-2,-12">
                                     <RadioButton x:Name="rdb_SourceValueControlTransfer" Content="Value" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" GroupName="SourceOperand" Checked="rdb_SourceValueControlTransfer_Checked" />
-                                    <TextBox x:Name="txtSourceValueControlTransfer" HorizontalAlignment="Left" Height="23" Margin="75,10,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="55" Background="#FFBEFCFF" GotFocus="txtSourceValueControlTransfer_GotFocus"/>
+                                    <TextBox x:Name="txtSourceValueControlTransfer" HorizontalAlignment="Left" Height="23" Margin="75,10,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="55" Background="#FFBEFCFF" GotFocus="txtSourceValueControlTransfer_GotFocus" />
                                     <RadioButton x:Name="rdb_SourceRegisterControlTransfer" Content="Register" HorizontalAlignment="Left" Margin="10,79,0,0" VerticalAlignment="Top" GroupName="SourceOperand" Checked="rdb_SourceRegisterControlTransfer_Checked" />
                                     <ComboBox x:Name="cmb_SourceRegisterControlTransfer" HorizontalAlignment="Left" Margin="75,79,0,0" VerticalAlignment="Top" Width="55" SelectedIndex="0" GotFocus="cmb_SourceRegisterControlTransfer_GotFocus">
                                         <System:String>R00</System:String>
@@ -285,7 +285,7 @@
                                         <System:String>R19</System:String>
                                         <System:String>R20</System:String>
                                     </ComboBox>
-                                    <!--<ComboBox x:Name="comboBox_Copy" HorizontalAlignment="Left" Margin="75,229,0,-110" VerticalAlignment="Top" Width="58"/> -->
+                                    <!--<ComboBox x:Name="comboBox_Copy" HorizontalAlignment="Left" Margin="75,229,0,-110" VerticalAlignment="Top" Width="58" /> -->
                                 </Grid>
                             </GroupBox>
                         </Grid>
@@ -293,7 +293,7 @@
                             <GroupBox x:Name="grp_DestinationOperand3" Header="Destination Operand" HorizontalAlignment="Left" VerticalAlignment="Top" Height="151" Width="150" Margin="0,-29,0,0">
                                 <Grid HorizontalAlignment="Left" Height="141" VerticalAlignment="Top" Width="140" Margin="0,0,-2,-12">
                                     <RadioButton x:Name="rdb_DestinationValueControlTransfer" Content="Value" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" GroupName="DestinationOperand" Checked="rdb_DestinationValueControlTransfer_Checked" />
-                                    <TextBox x:Name="txtDestinationValueControlTransfer" HorizontalAlignment="Left" Height="23" Margin="75,10,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="55" Background="#FFBEFCFF" GotFocus="txtDestinationValueControlTransfer_GotFocus"/>
+                                    <TextBox x:Name="txtDestinationValueControlTransfer" HorizontalAlignment="Left" Height="23" Margin="75,10,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="55" Background="#FFBEFCFF" GotFocus="txtDestinationValueControlTransfer_GotFocus" />
                                     <RadioButton x:Name="rdb_DestinationRegisterControlTransfer" Content="Register" HorizontalAlignment="Left" Margin="10,79,0,0" VerticalAlignment="Top" GroupName="DestinationOperand" Checked="rdb_DestinationRegisterControlTransfer_Checked" />
                                     <ComboBox x:Name="cmb_DestinationRegisterControlTransfer" HorizontalAlignment="Left" Margin="77,79,0,0" VerticalAlignment="Top" Width="53" SelectedIndex="0" GotFocus="cmb_DestinationRegisterControlTransfer_GotFocus">
                                         <System:String>R00</System:String>
@@ -321,24 +321,24 @@
                                 </Grid>
                             </GroupBox>
                         </Grid>
-                        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="70" Margin="317,34,0,0" VerticalAlignment="Top" Width="230"/>
-                        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="69" Margin="317,109,0,0" VerticalAlignment="Top" Width="230"/>
-                        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="68" Margin="317,194,0,0" VerticalAlignment="Top" Width="230"/>
-                        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="62" Margin="317,268,0,0" VerticalAlignment="Top" Width="230"/>
-                        <TextBox x:Name="txtDescriptionControlTransfer" HorizontalAlignment="Center" Height="23" Margin="10,356,12,8" TextWrapping="Wrap" VerticalAlignment="Center" Width="550" Focusable="False" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Background="#FFFFFCC3"/>
+                        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="70" Margin="317,34,0,0" VerticalAlignment="Top" Width="230" />
+                        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="69" Margin="317,109,0,0" VerticalAlignment="Top" Width="230" />
+                        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="68" Margin="317,194,0,0" VerticalAlignment="Top" Width="230" />
+                        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="62" Margin="317,268,0,0" VerticalAlignment="Top" Width="230" />
+                        <TextBox x:Name="txtDescriptionControlTransfer" HorizontalAlignment="Center" Height="23" Margin="10,356,12,8" TextWrapping="Wrap" VerticalAlignment="Center" Width="550" Focusable="False" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Background="#FFFFFCC3" />
                     </Grid>
                 </TabItem>
                 <TabItem x:Name="ComparisonTab" Header="Comparison" HorizontalAlignment="Left" Height="20" VerticalAlignment="Top" Width="82" Margin="-2,-2,-26,0">
                     <Grid x:Name="TabGrid_Copy3" Background="#FFE5E5E5" Margin="0,0,0,31">
-                        <Label x:Name="label4" Content="Opcode" HorizontalAlignment="Left" Margin="48,22,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
+                        <Label x:Name="label4" Content="Opcode" HorizontalAlignment="Left" Margin="48,22,0,0" VerticalAlignment="Top" FontWeight="Bold" />
                         <Grid x:Name="InstructionListGrid4" HorizontalAlignment="Left" Height="277" Margin="25,53,0,0" VerticalAlignment="Top" Width="100">
-                            <ListBox x:Name="lst_OpcodeListComparison" HorizontalAlignment="Left" Height="277" VerticalAlignment="Top" Width="100" Background="#FFFFFCC3" SelectedIndex="0"/>
+                            <ListBox x:Name="lst_OpcodeListComparison" HorizontalAlignment="Left" Height="277" VerticalAlignment="Top" Width="100" Background="#FFFFFCC3" SelectedIndex="0" />
                         </Grid>
                         <Grid x:Name="SourceOperandGrid4" HorizontalAlignment="Left" Height="151" Margin="145,53,0,0" VerticalAlignment="Top" Width="150">
                             <GroupBox x:Name="grp_SourceOperand4" Header="Source Operand" HorizontalAlignment="Left" VerticalAlignment="Top" Height="151" Width="150" Margin="0,-29,0,0">
                                 <Grid HorizontalAlignment="Left" Height="141" VerticalAlignment="Top" Width="140" Margin="0,0,-2,-12">
                                     <RadioButton x:Name="rdb_SourceValueComparison" Content="Value" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" GroupName="SourceOperand" Checked="rdb_SourceValueComparison_Checked" />
-                                    <TextBox x:Name="txtSourceValueComparison" HorizontalAlignment="Left" Height="23" Margin="75,10,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="55" Background="#FFBEFCFF" GotFocus="txtSourceValueComparison_GotFocus"/>
+                                    <TextBox x:Name="txtSourceValueComparison" HorizontalAlignment="Left" Height="23" Margin="75,10,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="55" Background="#FFBEFCFF" GotFocus="txtSourceValueComparison_GotFocus" />
                                     <RadioButton x:Name="rdb_SourceRegisterComparison" Content="Register" HorizontalAlignment="Left" Margin="10,79,0,0" VerticalAlignment="Top" GroupName="SourceOperand" Checked="rdb_SourceRegisterComparison_Checked" />
                                     <ComboBox x:Name="cmb_SourceRegisterComparison" HorizontalAlignment="Left" Margin="75,79,0,0" VerticalAlignment="Top" Width="55" SelectedIndex="0" GotFocus="cmb_SourceRegisterComparison_GotFocus">
                                         <System:String>R00</System:String>
@@ -363,7 +363,7 @@
                                         <System:String>R19</System:String>
                                         <System:String>R20</System:String>
                                     </ComboBox>
-                                    <!--<ComboBox x:Name="comboBox_Copy" HorizontalAlignment="Left" Margin="75,229,0,-110" VerticalAlignment="Top" Width="58"/> -->
+                                    <!--<ComboBox x:Name="comboBox_Copy" HorizontalAlignment="Left" Margin="75,229,0,-110" VerticalAlignment="Top" Width="58" /> -->
                                 </Grid>
                             </GroupBox>
                         </Grid>
@@ -371,7 +371,7 @@
                             <GroupBox x:Name="grp_DestinationOperand4" Header="Destination Operand" HorizontalAlignment="Left" VerticalAlignment="Top" Height="151" Width="150" Margin="0,-29,0,0">
                                 <Grid HorizontalAlignment="Left" Height="141" VerticalAlignment="Top" Width="140" Margin="0,0,-2,-12">
                                     <RadioButton x:Name="rdb_DestinationValueComparison" Content="Value" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" GroupName="DestinationOperand" Checked="rdb_DestinationValueComparison_Checked" />
-                                    <TextBox x:Name="txtDestinationValueComparison" HorizontalAlignment="Left" Height="23" Margin="75,10,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="55" Background="#FFBEFCFF" GotFocus="txtDestinationValueComparison_GotFocus"/>
+                                    <TextBox x:Name="txtDestinationValueComparison" HorizontalAlignment="Left" Height="23" Margin="75,10,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="55" Background="#FFBEFCFF" GotFocus="txtDestinationValueComparison_GotFocus" />
                                     <RadioButton x:Name="rdb_DestinationRegisterComparison" Content="Register" HorizontalAlignment="Left" Margin="10,79,0,0" VerticalAlignment="Top" GroupName="DestinationOperand" Checked="rdb_DestinationRegisterComparison_Checked" />
                                     <ComboBox x:Name="cmb_DestinationRegisterComparison" HorizontalAlignment="Left" Margin="77,79,0,0" VerticalAlignment="Top" Width="53" SelectedIndex="0" GotFocus="cmb_DestinationRegisterComparison_GotFocus">
                                         <System:String>R00</System:String>
@@ -399,24 +399,24 @@
                                 </Grid>
                             </GroupBox>
                         </Grid>
-                        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="70" Margin="317,34,0,0" VerticalAlignment="Top" Width="230"/>
-                        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="69" Margin="317,109,0,0" VerticalAlignment="Top" Width="230"/>
-                        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="68" Margin="317,194,0,0" VerticalAlignment="Top" Width="230"/>
-                        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="62" Margin="317,268,0,0" VerticalAlignment="Top" Width="230"/>
-                        <TextBox x:Name="txtDescriptionComparison" HorizontalAlignment="Center" Height="23" Margin="10,356,12,8" TextWrapping="Wrap" VerticalAlignment="Center" Width="550" Focusable="False" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Background="#FFFFFCC3"/>
+                        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="70" Margin="317,34,0,0" VerticalAlignment="Top" Width="230" />
+                        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="69" Margin="317,109,0,0" VerticalAlignment="Top" Width="230" />
+                        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="68" Margin="317,194,0,0" VerticalAlignment="Top" Width="230" />
+                        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="62" Margin="317,268,0,0" VerticalAlignment="Top" Width="230" />
+                        <TextBox x:Name="txtDescriptionComparison" HorizontalAlignment="Center" Height="23" Margin="10,356,12,8" TextWrapping="Wrap" VerticalAlignment="Center" Width="550" Focusable="False" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Background="#FFFFFCC3" />
                     </Grid>
                 </TabItem>
                 <TabItem x:Name="IOTab" Header="I/O" HorizontalAlignment="Left" Height="20" VerticalAlignment="Top" Width="54">
                     <Grid x:Name="TabGrid_Copy4" Background="#FFE5E5E5" Margin="0,0,0,31">
-                        <Label x:Name="label5" Content="Opcode" HorizontalAlignment="Left" Margin="48,22,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
+                        <Label x:Name="label5" Content="Opcode" HorizontalAlignment="Left" Margin="48,22,0,0" VerticalAlignment="Top" FontWeight="Bold" />
                         <Grid x:Name="InstructionListGrid5" HorizontalAlignment="Left" Height="277" Margin="25,53,0,0" VerticalAlignment="Top" Width="100">
-                            <ListBox x:Name="lst_OpcodeListIO" HorizontalAlignment="Left" Height="277" VerticalAlignment="Top" Width="100" Background="#FFFFFCC3" SelectedIndex="0"/>
+                            <ListBox x:Name="lst_OpcodeListIO" HorizontalAlignment="Left" Height="277" VerticalAlignment="Top" Width="100" Background="#FFFFFCC3" SelectedIndex="0" />
                         </Grid>
                         <Grid x:Name="SourceOperandGrid5" HorizontalAlignment="Left" Height="151" Margin="145,53,0,0" VerticalAlignment="Top" Width="150">
                             <GroupBox x:Name="grp_SourceOperand5" Header="Source Operand" HorizontalAlignment="Left" VerticalAlignment="Top" Height="151" Width="150" Margin="0,-29,0,0">
                                 <Grid HorizontalAlignment="Left" Height="141" VerticalAlignment="Top" Width="140" Margin="0,0,-2,-12">
                                     <RadioButton x:Name="rdb_SourceValueIO" Content="Value" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" GroupName="SourceOperand" Checked="rdb_SourceValueIO_Checked" />
-                                    <TextBox x:Name="txtSourceValueIO" HorizontalAlignment="Left" Height="23" Margin="75,10,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="55" Background="#FFBEFCFF" GotFocus="txtSourceValueIO_GotFocus"/>
+                                    <TextBox x:Name="txtSourceValueIO" HorizontalAlignment="Left" Height="23" Margin="75,10,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="55" Background="#FFBEFCFF" GotFocus="txtSourceValueIO_GotFocus" />
                                     <RadioButton x:Name="rdb_SourceRegisterIO" Content="Register" HorizontalAlignment="Left" Margin="10,79,0,0" VerticalAlignment="Top" GroupName="SourceOperand" Checked="rdb_SourceRegisterIO_Checked" />
                                     <ComboBox x:Name="cmb_SourceRegisterIO" HorizontalAlignment="Left" Margin="75,79,0,0" VerticalAlignment="Top" Width="55" SelectedIndex="0" GotFocus="cmb_SourceRegisterIO_GotFocus">
                                         <System:String>R00</System:String>
@@ -441,7 +441,7 @@
                                         <System:String>R19</System:String>
                                         <System:String>R20</System:String>
                                     </ComboBox>
-                                    <!--<ComboBox x:Name="comboBox_Copy" HorizontalAlignment="Left" Margin="75,229,0,-110" VerticalAlignment="Top" Width="58"/> -->
+                                    <!--<ComboBox x:Name="comboBox_Copy" HorizontalAlignment="Left" Margin="75,229,0,-110" VerticalAlignment="Top" Width="58" /> -->
                                 </Grid>
                             </GroupBox>
                         </Grid>
@@ -449,7 +449,7 @@
                             <GroupBox x:Name="grp_DestinationOperand5" Header="Destination Operand" HorizontalAlignment="Left" VerticalAlignment="Top" Height="151" Width="150" Margin="0,-29,0,0">
                                 <Grid HorizontalAlignment="Left" Height="141" VerticalAlignment="Top" Width="140" Margin="0,0,-2,-12">
                                     <RadioButton x:Name="rdb_DestinationValueIO" Content="Value" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" GroupName="DestinationOperand" Checked="rdb_DestinationValueIO_Checked" />
-                                    <TextBox x:Name="txtDestinationValueIO" HorizontalAlignment="Left" Height="23" Margin="75,10,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="55" Background="#FFBEFCFF" GotFocus="txtDestinationValueIO_GotFocus"/>
+                                    <TextBox x:Name="txtDestinationValueIO" HorizontalAlignment="Left" Height="23" Margin="75,10,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="55" Background="#FFBEFCFF" GotFocus="txtDestinationValueIO_GotFocus" />
                                     <RadioButton x:Name="rdb_DestinationRegisterIO" Content="Register" HorizontalAlignment="Left" Margin="10,79,0,0" VerticalAlignment="Top" GroupName="DestinationOperand" Checked="rdb_DestinationRegisterIO_Checked" />
                                     <ComboBox x:Name="cmb_DestinationRegisterIO" HorizontalAlignment="Left" Margin="77,79,0,0" VerticalAlignment="Top" Width="53" SelectedIndex="0" GotFocus="cmb_DestinationRegisterIO_GotFocus">
                                         <System:String>R00</System:String>
@@ -477,25 +477,25 @@
                                 </Grid>
                             </GroupBox>
                         </Grid>
-                        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="70" Margin="317,34,0,0" VerticalAlignment="Top" Width="230"/>
-                        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="69" Margin="317,109,0,0" VerticalAlignment="Top" Width="230"/>
-                        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="68" Margin="317,194,0,0" VerticalAlignment="Top" Width="230"/>
-                        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="62" Margin="317,268,0,0" VerticalAlignment="Top" Width="230"/>
-                        <TextBox x:Name="txtDescriptionIO" HorizontalAlignment="Center" Height="23" Margin="10,356,12,8" TextWrapping="Wrap" VerticalAlignment="Center" Width="550" Focusable="False" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Background="#FFFFFCC3"/>
+                        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="70" Margin="317,34,0,0" VerticalAlignment="Top" Width="230" />
+                        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="69" Margin="317,109,0,0" VerticalAlignment="Top" Width="230" />
+                        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="68" Margin="317,194,0,0" VerticalAlignment="Top" Width="230" />
+                        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="62" Margin="317,268,0,0" VerticalAlignment="Top" Width="230" />
+                        <TextBox x:Name="txtDescriptionIO" HorizontalAlignment="Center" Height="23" Margin="10,356,12,8" TextWrapping="Wrap" VerticalAlignment="Center" Width="550" Focusable="False" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Background="#FFFFFCC3" />
                     </Grid>
                 </TabItem>
                 <TabItem x:Name="MiscellaneousTab" Header="Miscellaneous" HorizontalAlignment="Left" Height="20" VerticalAlignment="Top" Width="98" Margin="-2,-2,-42,0">
                     <Grid x:Name="TabGrid_Copy5" Background="#FFE5E5E5" Margin="0,0,0,31">
-                        <Label x:Name="label6" Content="Opcode" HorizontalAlignment="Left" Margin="48,22,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
+                        <Label x:Name="label6" Content="Opcode" HorizontalAlignment="Left" Margin="48,22,0,0" VerticalAlignment="Top" FontWeight="Bold" />
                         <Grid x:Name="InstructionListGrid6" HorizontalAlignment="Left" Height="277" Margin="25,53,0,0" VerticalAlignment="Top" Width="100">
-                            <ListBox x:Name="lst_OpcodeListMiscellaneous" HorizontalAlignment="Left" Height="277" VerticalAlignment="Top" Width="100" Background="#FFFFFCC3" SelectedIndex="0"/>
+                            <ListBox x:Name="lst_OpcodeListMiscellaneous" HorizontalAlignment="Left" Height="277" VerticalAlignment="Top" Width="100" Background="#FFFFFCC3" SelectedIndex="0" />
                         </Grid>
                         <Grid x:Name="SourceOperandGrid6" HorizontalAlignment="Left" Height="151" Margin="145,53,0,0" VerticalAlignment="Top" Width="150">
                             <GroupBox x:Name="grp_SourceOperand6" Header="Source Operand" HorizontalAlignment="Left" VerticalAlignment="Top" Height="151" Width="150" Margin="0,-29,0,0">
                                 <Grid HorizontalAlignment="Left" Height="141" VerticalAlignment="Top" Width="140" Margin="0,0,-2,-12">
                                     <RadioButton x:Name="rdb_SourceValueMiscellaneous" Content="Value" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" GroupName="SourceOperand" Checked="rdb_SourceValueMiscellaneous_Checked" />
-                                    <TextBox x:Name="txtSourceValueMiscellaneous" HorizontalAlignment="Left" Height="23" Margin="75,10,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="55" Background="#FFBEFCFF" GotFocus="txtSourceValueMiscellaneous_GotFocus"/>
-                                    <RadioButton x:Name="rdb_SourceRegisterMiscellaneous" Content="Register" HorizontalAlignment="Left" Margin="10,79,0,0" VerticalAlignment="Top" GroupName="SourceOperand" Checked="rdb_SourceRegisterMiscellaneous_Checked"/>
+                                    <TextBox x:Name="txtSourceValueMiscellaneous" HorizontalAlignment="Left" Height="23" Margin="75,10,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="55" Background="#FFBEFCFF" GotFocus="txtSourceValueMiscellaneous_GotFocus" />
+                                    <RadioButton x:Name="rdb_SourceRegisterMiscellaneous" Content="Register" HorizontalAlignment="Left" Margin="10,79,0,0" VerticalAlignment="Top" GroupName="SourceOperand" Checked="rdb_SourceRegisterMiscellaneous_Checked" />
                                     <ComboBox x:Name="cmb_SourceRegisterMiscellaneous" HorizontalAlignment="Left" Margin="75,79,0,0" VerticalAlignment="Top" Width="55" SelectedIndex="0" GotFocus="cmb_SourceRegisterMiscellaneous_GotFocus">
                                         <System:String>R00</System:String>
                                         <System:String>R01</System:String>
@@ -519,15 +519,15 @@
                                         <System:String>R19</System:String>
                                         <System:String>R20</System:String>
                                     </ComboBox>
-                                    <!--<ComboBox x:Name="comboBox_Copy" HorizontalAlignment="Left" Margin="75,229,0,-110" VerticalAlignment="Top" Width="58"/> -->
+                                    <!--<ComboBox x:Name="comboBox_Copy" HorizontalAlignment="Left" Margin="75,229,0,-110" VerticalAlignment="Top" Width="58" /> -->
                                 </Grid>
                             </GroupBox>
                         </Grid>
                         <Grid x:Name="SourceOperandGrid_Copy6" HorizontalAlignment="Left" Height="151" Margin="145,209,0,0" VerticalAlignment="Top" Width="150">
                             <GroupBox x:Name="grp_DestinationOperand6" Header="Destination Operand" HorizontalAlignment="Left" VerticalAlignment="Top" Height="151" Width="150" Margin="0,-29,0,0">
                                 <Grid HorizontalAlignment="Left" Height="141" VerticalAlignment="Top" Width="140" Margin="0,0,-2,-12">
-                                    <RadioButton x:Name="rdb_DestinationValueMiscellaneous" Content="Value" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" GroupName="DestinationOperand" Checked="rdb_DestinationValueMiscellaneous_Checked"/>
-                                    <TextBox x:Name="txtDestinationValueMiscellaneous" HorizontalAlignment="Left" Height="23" Margin="75,10,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="55" Background="#FFBEFCFF" GotFocus="txtDestinationValueMiscellaneous_GotFocus"/>
+                                    <RadioButton x:Name="rdb_DestinationValueMiscellaneous" Content="Value" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" GroupName="DestinationOperand" Checked="rdb_DestinationValueMiscellaneous_Checked" />
+                                    <TextBox x:Name="txtDestinationValueMiscellaneous" HorizontalAlignment="Left" Height="23" Margin="75,10,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="55" Background="#FFBEFCFF" GotFocus="txtDestinationValueMiscellaneous_GotFocus" />
                                     <RadioButton x:Name="rdb_DestinationRegisterMiscellaneous" Content="Register" HorizontalAlignment="Left" Margin="10,79,0,0" VerticalAlignment="Top" GroupName="DestinationOperand" Checked="rdb_DestinationRegisterMiscellaneous_Checked" />
                                     <ComboBox x:Name="cmb_DestinationRegisterMiscellaneous" HorizontalAlignment="Left" Margin="77,79,0,0" VerticalAlignment="Top" Width="53" SelectedIndex="0" GotFocus="cmb_DestinationRegisterMiscellaneous_GotFocus">
                                         <System:String>R00</System:String>
@@ -555,17 +555,15 @@
                                 </Grid>
                             </GroupBox>
                         </Grid>
-                        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="70" Margin="317,34,0,0" VerticalAlignment="Top" Width="230"/>
-                        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="69" Margin="317,109,0,0" VerticalAlignment="Top" Width="230"/>
-                        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="68" Margin="317,194,0,0" VerticalAlignment="Top" Width="230"/>
-                        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="62" Margin="317,268,0,0" VerticalAlignment="Top" Width="230"/>
-                        <TextBox x:Name="txtDescriptionMiscellaneous" HorizontalAlignment="Center" Height="23" Margin="10,356,12,8" TextWrapping="Wrap" VerticalAlignment="Center" Width="550" Focusable="False" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Background="#FFFFFCC3"/>
+                        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="70" Margin="317,34,0,0" VerticalAlignment="Top" Width="230" />
+                        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="69" Margin="317,109,0,0" VerticalAlignment="Top" Width="230" />
+                        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="68" Margin="317,194,0,0" VerticalAlignment="Top" Width="230" />
+                        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="62" Margin="317,268,0,0" VerticalAlignment="Top" Width="230" />
+                        <TextBox x:Name="txtDescriptionMiscellaneous" HorizontalAlignment="Center" Height="23" Margin="10,356,12,8" TextWrapping="Wrap" VerticalAlignment="Center" Width="550" Focusable="False" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Background="#FFFFFCC3" />
                     </Grid>
                 </TabItem>
             </TabControl>
-            <Button x:Name="btn_Close" Content="CLOSE" HorizontalAlignment="Left" Margin="493,423,0,0" VerticalAlignment="Top" Width="95" Height="33" Click="btn_Close_Click"/>
-
+            <Button x:Name="btn_Close" Content="CLOSE" HorizontalAlignment="Left" Margin="493,423,0,0" VerticalAlignment="Top" Width="95" Height="33" Click="btn_Close_Click" />
         </Grid>
-
     </Grid>
 </Window>

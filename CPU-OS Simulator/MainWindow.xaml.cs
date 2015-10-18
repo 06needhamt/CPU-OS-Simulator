@@ -1,36 +1,26 @@
-﻿using System;
+﻿using CPU_OS_Simulator.CPU;
+using Microsoft.Win32;
+using System;
 using System.Collections.Generic;
+using System.Diagnostics;
+using System.IO;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Reflection;
+using System.Web.Script.Serialization;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
-using System.Reflection;
-using System.Diagnostics;
-using CPU_OS_Simulator.CPU;
-using System.Xml;
-using System.IO;
-using System.Web.Script.Serialization;
-using Microsoft.Win32;
 
 namespace CPU_OS_Simulator
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
-    /// 
+    ///
     public partial class MainWindow : Window
     {
-        List<SimulatorProgram> programList;
-        EnumInstructionMode InstructionMode;
-        string currentProgram = string.Empty;
+        private List<SimulatorProgram> programList;
+        private EnumInstructionMode InstructionMode;
+        private string currentProgram = string.Empty;
 
         public MainWindow()
         {
@@ -44,7 +34,7 @@ namespace CPU_OS_Simulator
             for (int i = 0; i < 21; i++)
             {
                 string registerString = "R";
-                if( i < 10)
+                if (i < 10)
                 {
                     registerString += "0" + i;
                 }
@@ -59,10 +49,11 @@ namespace CPU_OS_Simulator
         private void MainWindow2_Loaded(object sender, RoutedEventArgs e)
         {
             this.Title += " " + GetProgramVersion();
-            #if DEBUG
+#if DEBUG
             this.Title += " DEBUG BUILD ";
-            #endif
+#endif
         }
+
         /// <summary>
         /// Geta the build number of the running program
         /// </summary>
@@ -73,6 +64,7 @@ namespace CPU_OS_Simulator
             FileVersionInfo VersionInfo = FileVersionInfo.GetVersionInfo(ExecutingAssembly.Location);
             return VersionInfo.FileVersion;
         }
+
         /// <summary>
         /// Creates and adds a program to the program list
         /// </summary>
@@ -80,7 +72,7 @@ namespace CPU_OS_Simulator
         /// <param name="e">the event args</param>
         private void btn_ProgramAdd_Click(object sender, RoutedEventArgs e)
         {
-           SimulatorProgram prog = CreateNewProgram();
+            SimulatorProgram prog = CreateNewProgram();
             if (prog != null)
             {
                 lst_ProgramList.Items.Add(prog);
@@ -88,18 +80,19 @@ namespace CPU_OS_Simulator
                 currentProgram = prog.Name;
             }
         }
+
         /// <summary>
         /// Creates a new program based on entered data
         /// </summary>
         /// <returns>the created program</returns>
         private SimulatorProgram CreateNewProgram()
         {
-            if(txtProgramName.Text == "")
+            if (txtProgramName.Text == "")
             {
                 MessageBox.Show("Please Enter a Program Name");
                 return null;
             }
-            else if(txtBaseAddress.Text == "")
+            else if (txtBaseAddress.Text == "")
             {
                 MessageBox.Show("Please Enter a Base Address");
                 return null;
@@ -114,6 +107,7 @@ namespace CPU_OS_Simulator
             Console.WriteLine("Program " + program.Name + " Created");
             return program;
         }
+
         /// <summary>
         /// Called when the show button is clicked
         /// </summary>
@@ -122,9 +116,10 @@ namespace CPU_OS_Simulator
         private void btn_Show_Click(object sender, RoutedEventArgs e)
         {
             InstructionMode = EnumInstructionMode.SHOW;
-            InstructionsWindow iw = new InstructionsWindow(this,InstructionMode);
+            InstructionsWindow iw = new InstructionsWindow(this, InstructionMode);
             iw.Show();
         }
+
         /// <summary>
         /// TODO Fill in
         /// </summary>
@@ -136,6 +131,7 @@ namespace CPU_OS_Simulator
             InstructionsWindow iw = new InstructionsWindow(this, InstructionMode);
             iw.Show();
         }
+
         /// <summary>
         /// TODO Fill in
         /// </summary>
@@ -147,6 +143,7 @@ namespace CPU_OS_Simulator
             InstructionsWindow iw = new InstructionsWindow(this, InstructionMode);
             iw.Show();
         }
+
         /// <summary>
         /// TODO Fill in
         /// </summary>
@@ -158,6 +155,7 @@ namespace CPU_OS_Simulator
             InstructionsWindow iw = new InstructionsWindow(this, InstructionMode);
             iw.Show();
         }
+
         /// <summary>
         /// TODO Fill in
         /// </summary>
@@ -169,6 +167,7 @@ namespace CPU_OS_Simulator
             //TODO BUG can not remove items from the list while in use
             lst_InstructionsList.Items.RemoveAt(index);
         }
+
         /// <summary>
         /// Called when the window is closing
         /// </summary>
@@ -177,7 +176,7 @@ namespace CPU_OS_Simulator
         private void MainWindow2_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
             MessageBoxResult result = MessageBox.Show("Stopping the Simulator Continue?", "Stopping", MessageBoxButton.YesNo, MessageBoxImage.Information);
-            if(result == MessageBoxResult.Yes)
+            if (result == MessageBoxResult.Yes)
             {
                 e.Cancel = false;
             }
@@ -187,13 +186,16 @@ namespace CPU_OS_Simulator
                 return;
             }
         }
-    #if DEBUG
+
+#if DEBUG
 
         public void SayHello()
         {
             Console.WriteLine("Hello From Main Window");
         }
-    #endif
+
+#endif
+
         /// <summary>
         /// Creates an instruction with 2 operands
         /// </summary>
@@ -204,8 +206,9 @@ namespace CPU_OS_Simulator
         /// <returns></returns>
         public Instruction CreateInstruction(EnumOpcodes opcode, Operand op1, Operand op2, Int32 Size)
         {
-            return new Instruction((int) opcode, op1, op2,Size);
+            return new Instruction((int)opcode, op1, op2, Size);
         }
+
         /// <summary>
         /// Creates an instruction with 1 operand
         /// </summary>
@@ -214,8 +217,9 @@ namespace CPU_OS_Simulator
         /// <param name="Size"> the size of the instruction</param>
         public Instruction CreateInstruction(EnumOpcodes opcode, Operand op1, Int32 Size)
         {
-            return new Instruction((int)opcode, op1,Size);
+            return new Instruction((int)opcode, op1, Size);
         }
+
         /// <summary>
         /// Creates an instruction with no operands
         /// </summary>
@@ -231,7 +235,7 @@ namespace CPU_OS_Simulator
         /// </summary>
         /// <param name="ins"> the instruction to add</param>
         /// <param name="index"> the index in the program to add the instruction</param>
-        public void AddInstruction(Instruction ins,int index)
+        public void AddInstruction(Instruction ins, int index)
         {
             if (ins != null)
             {
@@ -248,7 +252,6 @@ namespace CPU_OS_Simulator
                 }
                 else if (InstructionMode.Equals(EnumInstructionMode.INSERT_ABOVE))
                 {
-
                     SimulatorProgram prog = programList.Where(x => x.Name.Equals(currentProgram)).FirstOrDefault(); // find the currently active program
                     if (index == -1)
                     {
@@ -262,11 +265,10 @@ namespace CPU_OS_Simulator
                     {
                         prog.Instructions.Insert(index, ins); // add the instruction
                     }
-                    //prog.Instructions.Insert(index, ins); 
+                    //prog.Instructions.Insert(index, ins);
                 }
                 else if (InstructionMode.Equals(EnumInstructionMode.INSERT_BELOW))
                 {
-
                     SimulatorProgram prog = programList.Where(x => x.Name.Equals(currentProgram)).FirstOrDefault(); // find the currently active program
                     if (index == -1)
                     {
@@ -280,7 +282,7 @@ namespace CPU_OS_Simulator
                     {
                         prog.Instructions.Insert(index, ins); // add the instruction
                     }
-                    //prog.Instructions.Insert(index, ins); 
+                    //prog.Instructions.Insert(index, ins);
                 }
                 else
                 {
@@ -292,13 +294,13 @@ namespace CPU_OS_Simulator
 
         private void lst_InstructionsList_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            
         }
 
         private void lst_ProgramList_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             UpdateIntructions();
         }
+
         /// <summary>
         /// Updates the list of instructions
         /// </summary>
@@ -312,7 +314,7 @@ namespace CPU_OS_Simulator
             }
             lst_InstructionsList.ItemsSource = null; // WHY item source must be set to null when modifying the items within the list
             lst_InstructionsList.Items.Clear(); // clear the item list
-            if ((lst_ProgramList.SelectedItem) == null) // if no program is selected 
+            if ((lst_ProgramList.SelectedItem) == null) // if no program is selected
             {
                 lst_InstructionsList.SelectedIndex = 0;
                 currentProgram = ((SimulatorProgram)lst_ProgramList.Items.GetItemAt(0)).Name; // select and load the first item
@@ -336,13 +338,14 @@ namespace CPU_OS_Simulator
 
         private void btn_Load_Click(object sender, RoutedEventArgs e)
         {
-            bool loaded = LoadProgram(); // load a program file 
+            bool loaded = LoadProgram(); // load a program file
             if (!loaded)
             {
                 throw new Exception("An error occured while loading the program");
             }
             Console.WriteLine("Program Loaded Successfully");
         }
+
         private void btn_Save_Click(object sender, RoutedEventArgs e)
         {
             bool saved = SaveProgram(); //save a program file
@@ -352,6 +355,7 @@ namespace CPU_OS_Simulator
             }
             Console.WriteLine("Program Saved Successfully");
         }
+
         /// <summary>
         /// Saves the program list to a file
         /// </summary>
@@ -370,15 +374,16 @@ namespace CPU_OS_Simulator
                     File.Delete(dlg.FileName); // ensure we create a new file when we overwrite
                 }
                 SimulatorProgram[] progs = programList.ToArray();
-                for(int i = 0; i < progs.Length; i++)
+                for (int i = 0; i < progs.Length; i++)
                 {
                     SerializeObject<SimulatorProgram>(progs[i], dlg.FileName); // save all programs in the program list
                 }
             }
             return true;
         }
+
         /// <summary>
-        /// Loads a program list from a file 
+        /// Loads a program list from a file
         /// </summary>
         /// <returns> true if succeeded false if not</returns>
         private bool LoadProgram()
@@ -404,7 +409,7 @@ namespace CPU_OS_Simulator
         public void SerializeObject<T>(T serializableObject, string filePath)
         {
             if (serializableObject == null) { return; }
-            
+
             StreamWriter writer = new StreamWriter(filePath, true); // initialise a file writer
             JavaScriptSerializer serializer = new JavaScriptSerializer(); // initialise a serializer
             string json = serializer.Serialize(serializableObject); // serialise the object
@@ -413,7 +418,6 @@ namespace CPU_OS_Simulator
             writer.Close();
             writer.Dispose(); // flush close and dispose of the writer
         }
-
 
         /// <summary>
         /// Deserializes an .sas file into a program list

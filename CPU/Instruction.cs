@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace CPU_OS_Simulator.CPU
 {
@@ -10,6 +6,7 @@ namespace CPU_OS_Simulator.CPU
     public class Instruction
     {
         #region Global Variables
+
         private Int32 opcode;
         private string category;
         private Action execute;
@@ -19,13 +16,15 @@ namespace CPU_OS_Simulator.CPU
         private Int32 size;
         private Int32 result;
         private string instructionString;
-        #endregion
+
+        #endregion Global Variables
 
         #region Constructors
+
         public Instruction()
         {
-
         }
+
         public Instruction(Int32 opcode, Int32 size)
         {
             this.opcode = opcode;
@@ -34,6 +33,7 @@ namespace CPU_OS_Simulator.CPU
             this.size = size;
             instructionString = this.ToString();
         }
+
         public Instruction(Int32 opcode, Operand op1, Int32 size)
         {
             this.opcode = opcode;
@@ -42,6 +42,7 @@ namespace CPU_OS_Simulator.CPU
             this.size = size;
             instructionString = this.ToString();
         }
+
         public Instruction(Int32 opcode, Operand op1, Operand op2, Int32 size)
         {
             this.opcode = opcode;
@@ -50,9 +51,11 @@ namespace CPU_OS_Simulator.CPU
             this.size = size;
             instructionString = this.ToString();
         }
-        #endregion
+
+        #endregion Constructors
 
         #region Properties
+
         public int Opcode
         {
             get
@@ -169,9 +172,11 @@ namespace CPU_OS_Simulator.CPU
                 instructionString = value;
             }
         }
-        #endregion
+
+        #endregion Properties
 
         #region Methods
+
         public void BindDelegate()
         {
             switch (opcode)
@@ -187,6 +192,7 @@ namespace CPU_OS_Simulator.CPU
                     }
             }
         }
+
         public override string ToString()
         {
             string parsedOpcode = Enum.GetName(typeof(EnumOpcodes), opcode);
@@ -216,9 +222,11 @@ namespace CPU_OS_Simulator.CPU
             }
             return parsedOpcode.ToUpper() + " " + op1.ToUpper() + " " + op2.ToUpper();
         }
-        #endregion
+
+        #endregion Methods
 
         #region Instruction Execution Functions
+
         private void Add(Operand lhs, Operand rhs)
         {
             //TODO Allow for memory operands
@@ -228,6 +236,7 @@ namespace CPU_OS_Simulator.CPU
                 lhs.Register.Value = result;
             }
         }
-        #endregion
+
+        #endregion Instruction Execution Functions
     }
 }

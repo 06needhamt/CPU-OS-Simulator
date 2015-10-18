@@ -1,19 +1,10 @@
-﻿using System;
+﻿using CPU_OS_Simulator.CPU;
+using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
-using CPU_OS_Simulator.CPU;
-using System.Reflection;
-using System.ComponentModel;
 
 namespace CPU_OS_Simulator
 {
@@ -26,6 +17,7 @@ namespace CPU_OS_Simulator
         /// List to hold the descriptions of each instruction
         /// </summary>
         private List<string> instructionDescriptions = new List<string>();
+
         /// <summary>
         /// The window that owns this window
         /// </summary>
@@ -43,6 +35,7 @@ namespace CPU_OS_Simulator
         {
             InitializeComponent();
         }
+
         /// <summary>
         /// Constructor for instruction window that takes the window instance that is creating this window
         /// PLEASE NOTE: This constructor should always be used so data can be passed back to the main window
@@ -52,9 +45,9 @@ namespace CPU_OS_Simulator
         {
             //InitializeComponent();
             this.owner = owner;
-            #if DEBUG
+#if DEBUG
             owner.SayHello();
-            #endif
+#endif
         }
 
         public InstructionsWindow(MainWindow owner, EnumInstructionMode instructionMode) : this(owner)
@@ -121,6 +114,7 @@ namespace CPU_OS_Simulator
                 }
             }
         }
+
         /// <summary>
         /// This event handler is called when the close button is clicked
         /// </summary>
@@ -130,6 +124,7 @@ namespace CPU_OS_Simulator
         {
             this.Close();
         }
+
         /// <summary>
         /// This event handler is called when the window first loads
         /// </summary>
@@ -139,12 +134,13 @@ namespace CPU_OS_Simulator
         {
             InstructionTabs.SelectedItem = DataTransferTab;
             PopulateInstructions();
-
         }
+
         #region Populate Instruction Descriptions
+
         private void lst_OpcodeListDataTransfer_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            EnumOpcodes selected = (EnumOpcodes) Enum.Parse(typeof(EnumOpcodes), lst_OpcodeListDataTransfer.SelectedItem.ToString());
+            EnumOpcodes selected = (EnumOpcodes)Enum.Parse(typeof(EnumOpcodes), lst_OpcodeListDataTransfer.SelectedItem.ToString());
             txtDescriptionDataTransfer.Text = instructionDescriptions.ElementAt<string>((int)selected);
         }
 
@@ -159,7 +155,9 @@ namespace CPU_OS_Simulator
             EnumOpcodes selected = (EnumOpcodes)Enum.Parse(typeof(EnumOpcodes), lst_OpcodeListArithmetic.SelectedItem.ToString());
             txtDescriptionArithmetic.Text = instructionDescriptions.ElementAt<string>((int)selected);
         }
-        #endregion
+
+        #endregion Populate Instruction Descriptions
+
         /// <summary>
         /// This event handler is called when the window is closing
         /// </summary>
@@ -176,8 +174,8 @@ namespace CPU_OS_Simulator
             {
                 CreateInstruction();
             }
-            
         }
+
         /// <summary>
         /// Creates an instruction based on selected options
         /// </summary>
@@ -193,7 +191,7 @@ namespace CPU_OS_Simulator
                 case "Data Transfer":
                     {
                         opcode = (EnumOpcodes)Enum.Parse(typeof(EnumOpcodes), lst_OpcodeListDataTransfer.SelectedItem.ToString());
-                        
+
                         if (rdb_SourceValueDataTransfer.IsChecked.Value)
                         {
                             op1 = new Operand(Convert.ToInt32(txtSourceValueDataTransfer.Text), EnumOperandType.VALUE);
@@ -223,7 +221,7 @@ namespace CPU_OS_Simulator
                             op2 = null;
                         }
                         Instruction i = owner.CreateInstruction(opcode, op1, op2, 4);
-                        owner.AddInstruction(i,index);
+                        owner.AddInstruction(i, index);
                         break;
                     }
                 case "Logical":
@@ -258,7 +256,7 @@ namespace CPU_OS_Simulator
                             op2 = null;
                         }
                         Instruction i = owner.CreateInstruction(opcode, op1, op2, 4);
-                        owner.AddInstruction(i,index);
+                        owner.AddInstruction(i, index);
                         break;
                     }
                 case "Arithmetic":
@@ -293,7 +291,7 @@ namespace CPU_OS_Simulator
                             op2 = null;
                         }
                         Instruction i = owner.CreateInstruction(opcode, op1, op2, 4);
-                        owner.AddInstruction(i,index);
+                        owner.AddInstruction(i, index);
                         break;
                     }
                 case "Control Transfer":
@@ -329,7 +327,7 @@ namespace CPU_OS_Simulator
                             op2 = null;
                         }
                         Instruction i = owner.CreateInstruction(opcode, op1, op2, 4);
-                        owner.AddInstruction(i,index);
+                        owner.AddInstruction(i, index);
                         break;
                     }
 
@@ -365,7 +363,7 @@ namespace CPU_OS_Simulator
                             op2 = null;
                         }
                         Instruction i = owner.CreateInstruction(opcode, op1, op2, 4);
-                        owner.AddInstruction(i,index);
+                        owner.AddInstruction(i, index);
                         break;
                     }
                 case "Miscellaneous":
@@ -400,7 +398,7 @@ namespace CPU_OS_Simulator
                             op2 = null;
                         }
                         Instruction i = owner.CreateInstruction(opcode, op1, op2, 4);
-                        owner.AddInstruction(i,index);
+                        owner.AddInstruction(i, index);
                         break;
                     }
                 default:
@@ -414,10 +412,10 @@ namespace CPU_OS_Simulator
         /// Finds the register object for the selected register
         /// </summary>
         /// <param name="selectedItem"> the selected register</param>
-        /// <returns>The register object of the selected register</returns> 
-       
+        /// <returns>The register object of the selected register</returns>
 
         #region UI control
+
         private void rdb_SourceValueDataTransfer_Checked(object sender, RoutedEventArgs e)
         {
             rdb_SourceRegisterDataTransfer.IsChecked = false;
@@ -430,7 +428,6 @@ namespace CPU_OS_Simulator
             rdb_SourceValueDataTransfer.IsChecked = false;
             cmb_SourceRegisterDataTransfer.IsEnabled = true;
             txtSourceValueDataTransfer.IsEnabled = false;
-
         }
 
         private void rdb_DestinationValueDataTransfer_Checked(object sender, RoutedEventArgs e)
@@ -445,7 +442,6 @@ namespace CPU_OS_Simulator
             rdb_DestinationValueDataTransfer.IsChecked = false;
             cmb_DestinationRegisterDataTransfer.IsEnabled = true;
             txtDestinationValueDataTransfer.IsEnabled = false;
-
         }
 
         private void rdb_SourceValueLogical_Checked(object sender, RoutedEventArgs e)
@@ -460,7 +456,6 @@ namespace CPU_OS_Simulator
             rdb_SourceValueLogical.IsChecked = false;
             cmb_SourceRegisterLogical.IsEnabled = true;
             txtSourceValueLogical.IsEnabled = false;
-
         }
 
         private void rdb_DestinationValueLogical_Checked(object sender, RoutedEventArgs e)
@@ -475,7 +470,6 @@ namespace CPU_OS_Simulator
             rdb_DestinationValueLogical.IsChecked = false;
             cmb_DestinationRegisterLogical.IsEnabled = true;
             txtDestinationValueLogical.IsEnabled = false;
-
         }
 
         private void rdb_SourceValueArithmetic_Checked(object sender, RoutedEventArgs e)
@@ -490,7 +484,6 @@ namespace CPU_OS_Simulator
             rdb_SourceValueArithmetic.IsChecked = false;
             cmb_SourceRegisterArithmetic.IsEnabled = true;
             txtSourceValueArithmetic.IsEnabled = false;
-
         }
 
         private void rdb_DestinationValueArithmetic_Checked(object sender, RoutedEventArgs e)
@@ -505,7 +498,6 @@ namespace CPU_OS_Simulator
             rdb_DestinationValueArithmetic.IsChecked = false;
             cmb_DestinationRegisterArithmetic.IsEnabled = true;
             txtDestinationValueArithmetic.IsEnabled = false;
-
         }
 
         private void rdb_SourceValueControlTransfer_Checked(object sender, RoutedEventArgs e)
@@ -520,7 +512,6 @@ namespace CPU_OS_Simulator
             rdb_SourceValueControlTransfer.IsChecked = false;
             cmb_SourceRegisterControlTransfer.IsEnabled = true;
             txtSourceValueControlTransfer.IsEnabled = false;
-
         }
 
         private void rdb_DestinationValueControlTransfer_Checked(object sender, RoutedEventArgs e)
@@ -535,7 +526,6 @@ namespace CPU_OS_Simulator
             rdb_DestinationValueControlTransfer.IsChecked = false;
             cmb_DestinationRegisterControlTransfer.IsEnabled = true;
             txtDestinationValueControlTransfer.IsEnabled = false;
-
         }
 
         private void rdb_SourceValueComparison_Checked(object sender, RoutedEventArgs e)
@@ -550,7 +540,6 @@ namespace CPU_OS_Simulator
             rdb_SourceValueComparison.IsChecked = false;
             cmb_SourceRegisterComparison.IsEnabled = true;
             txtSourceValueComparison.IsEnabled = false;
-
         }
 
         private void rdb_DestinationValueComparison_Checked(object sender, RoutedEventArgs e)
@@ -565,7 +554,6 @@ namespace CPU_OS_Simulator
             rdb_DestinationValueComparison.IsChecked = false;
             cmb_DestinationRegisterComparison.IsEnabled = true;
             txtDestinationValueComparison.IsEnabled = false;
-
         }
 
         private void rdb_SourceValueIO_Checked(object sender, RoutedEventArgs e)
@@ -580,7 +568,6 @@ namespace CPU_OS_Simulator
             rdb_SourceValueIO.IsChecked = false;
             cmb_SourceRegisterIO.IsEnabled = true;
             txtSourceValueIO.IsEnabled = false;
-
         }
 
         private void rdb_DestinationValueIO_Checked(object sender, RoutedEventArgs e)
@@ -595,7 +582,6 @@ namespace CPU_OS_Simulator
             rdb_DestinationValueIO.IsChecked = false;
             cmb_DestinationRegisterIO.IsEnabled = true;
             txtDestinationValueIO.IsEnabled = false;
-
         }
 
         private void rdb_SourceValueMiscellaneous_Checked(object sender, RoutedEventArgs e)
@@ -610,7 +596,6 @@ namespace CPU_OS_Simulator
             rdb_SourceValueMiscellaneous.IsChecked = false;
             cmb_SourceRegisterMiscellaneous.IsEnabled = true;
             txtSourceValueMiscellaneous.IsEnabled = false;
-
         }
 
         private void rdb_DestinationValueMiscellaneous_Checked(object sender, RoutedEventArgs e)
@@ -625,7 +610,6 @@ namespace CPU_OS_Simulator
             rdb_DestinationValueMiscellaneous.IsChecked = false;
             cmb_DestinationRegisterMiscellaneous.IsEnabled = true;
             txtDestinationValueMiscellaneous.IsEnabled = false;
-
         }
 
         private void txtSourceValueDataTransfer_GotFocus(object sender, RoutedEventArgs e)
@@ -767,6 +751,7 @@ namespace CPU_OS_Simulator
         {
             rdb_DestinationRegisterMiscellaneous.IsChecked = true;
         }
-        #endregion
+
+        #endregion UI control
     }
 }

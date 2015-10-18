@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace CPU_OS_Simulator.CPU
 {
@@ -36,8 +32,8 @@ namespace CPU_OS_Simulator.CPU
 
         public Register()
         {
-
         }
+
         private Register(string name)
         {
             this.name = name;
@@ -83,6 +79,7 @@ namespace CPU_OS_Simulator.CPU
                 type = value;
             }
         }
+
         /// <summary>
         /// Sets the value in a register
         /// </summary>

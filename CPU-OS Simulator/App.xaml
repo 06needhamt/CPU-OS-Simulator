@@ -4,6 +4,5 @@
              xmlns:local="clr-namespace:CPU_OS_Simulator"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-         
     </Application.Resources>
 </Application>

@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace CPU_OS_Simulator.CPU
 {
@@ -10,17 +6,20 @@ namespace CPU_OS_Simulator.CPU
     public class Operand
     {
         #region Global Variables
+
         private Int32 value;
         private EnumOperandType type;
         private bool isRegister;
         private Register register;
-        #endregion
+
+        #endregion Global Variables
 
         #region Constructors
+
         public Operand()
         {
-
         }
+
         public Operand(Int32 value, EnumOperandType type)
         {
             this.value = value;
@@ -28,6 +27,7 @@ namespace CPU_OS_Simulator.CPU
             IsRegister = false;
             this.register = null;
         }
+
         public Operand(Register reg, EnumOperandType type)
         {
             this.isRegister = true;
@@ -35,9 +35,11 @@ namespace CPU_OS_Simulator.CPU
             this.value = reg.Value;
             this.type = type;
         }
-        #endregion
+
+        #endregion Constructors
 
         #region Properties
+
         public int Value
         {
             get
@@ -89,6 +91,7 @@ namespace CPU_OS_Simulator.CPU
                 register = value;
             }
         }
-        #endregion
+
+        #endregion Properties
     }
 }

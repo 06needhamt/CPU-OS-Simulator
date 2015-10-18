@@ -14,15 +14,15 @@
                     <ListView x:Name="lst_InstructionsList" HorizontalAlignment="Left" Height="459" VerticalAlignment="Top" Width="426" Background="#FF8BF4FF" SelectionChanged="lst_InstructionsList_SelectionChanged">
                         <ListView.View>
                             <GridView>
-                                <GridViewColumn Header="PAdd" DisplayMemberBinding="{Binding Address}" Width="100"/>
-                                <GridViewColumn Header="LAdd" DisplayMemberBinding="{Binding Address}" Width="100"/>
-                                <GridViewColumn Header="Instruction" DisplayMemberBinding="{Binding InstructionString}" Width="200"/>
-                                <GridViewColumn Header="Base" DisplayMemberBinding="{Binding Test1}" Width="50"/>
-                                <GridViewColumn Header="T" DisplayMemberBinding="{Binding Test1}" Width="20"/>
-                                <GridViewColumn/>
+                                <GridViewColumn Header="PAdd" DisplayMemberBinding="{Binding Address}" Width="100" />
+                                <GridViewColumn Header="LAdd" DisplayMemberBinding="{Binding Address}" Width="100" />
+                                <GridViewColumn Header="Instruction" DisplayMemberBinding="{Binding InstructionString}" Width="200" />
+                                <GridViewColumn Header="Base" DisplayMemberBinding="{Binding Test1}" Width="50" />
+                                <GridViewColumn Header="T" DisplayMemberBinding="{Binding Test1}" Width="20" />
+                                <GridViewColumn />
                             </GridView>
                         </ListView.View>
-                        <ScrollBar x:Name="scrollBar1"/>
+                        <ScrollBar x:Name="scrollBar1" />
                     </ListView>
                 </Grid>
             </GroupBox>
@@ -32,12 +32,12 @@
                 <TabItem Header="Program">
                     <Grid Background="White">
                         <GroupBox x:Name="grp_NewProgram"  HorizontalAlignment="Left" VerticalAlignment="Top" Height="195" Width="206" Header="New Program">
-                            <Grid x:Name="grid_NewProgram" HorizontalAlignment="Left" Height="176" VerticalAlignment="Top" Width="200" Margin="-4,0,-2,-3" >
-                                <Label x:Name="label" Content="Program Name" HorizontalAlignment="Left" VerticalAlignment="Top" Width="Auto" Height="Auto" Margin="8,0,0,0"/>
-                                <TextBox x:Name="txtProgramName" Height="24" TextWrapping="Wrap" Margin="8,26,112,126"/>
-                                <Label x:Name="label1" Content="Base Address" HorizontalAlignment="Left" Margin="8,55,0,0" VerticalAlignment="Top"/>
-                                <TextBox x:Name="txtBaseAddress" HorizontalAlignment="Left" Height="23" Margin="8,86,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="84"/>
-                                <Label x:Name="label2" Content="Pages" HorizontalAlignment="Left" Margin="114,0,0,0" VerticalAlignment="Top"/>
+                            <Grid x:Name="grid_NewProgram" HorizontalAlignment="Left" Height="176" VerticalAlignment="Top" Width="200" Margin="-4,0,-2,-3">
+                                <Label x:Name="label" Content="Program Name" HorizontalAlignment="Left" VerticalAlignment="Top" Width="Auto" Height="Auto" Margin="8,0,0,0" />
+                                <TextBox x:Name="txtProgramName" Height="24" TextWrapping="Wrap" Margin="8,26,112,126" />
+                                <Label x:Name="label1" Content="Base Address" HorizontalAlignment="Left" Margin="8,55,0,0" VerticalAlignment="Top" />
+                                <TextBox x:Name="txtBaseAddress" HorizontalAlignment="Left" Height="23" Margin="8,86,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="84" />
+                                <Label x:Name="label2" Content="Pages" HorizontalAlignment="Left" Margin="114,0,0,0" VerticalAlignment="Top" />
                                 <ComboBox x:Name="cmb_Pages" HorizontalAlignment="Left" Margin="114,26,0,0" VerticalAlignment="Top" Width="50" SelectedIndex="0">
                                     <System:Int32>1</System:Int32>
                                     <System:Int32>2</System:Int32>
@@ -50,43 +50,43 @@
                                     <System:Int32>9</System:Int32>
                                     <System:Int32>10</System:Int32>
                                 </ComboBox>
-                                <Button x:Name="btn_ProgramAdd" Content="ADD" HorizontalAlignment="Left" Margin="114,80,0,0" VerticalAlignment="Top" Width="47" Click="btn_ProgramAdd_Click" Height="31"/>
+                                <Button x:Name="btn_ProgramAdd" Content="ADD" HorizontalAlignment="Left" Margin="114,80,0,0" VerticalAlignment="Top" Width="47" Click="btn_ProgramAdd_Click" Height="31" />
                             </Grid>
                         </GroupBox>
                         <GroupBox x:Name="grp_Programs" Header="Programs" HorizontalAlignment="Left" VerticalAlignment="Top" Height="195" Width="206" Margin="211,0,0,0">
                             <Grid x:Name="grid_Programs" HorizontalAlignment="Left" Height="174" Margin="0,0,-2,-1" VerticalAlignment="Top" Width="196">
-                                <Button x:Name="btn_Save" Content="SAVE" HorizontalAlignment="Left" Margin="10,27,0,0" VerticalAlignment="Top" Width="47" Height="31" Click="btn_Save_Click"/>
-                                <Button x:Name="btn_Load" Content="LOAD" HorizontalAlignment="Left" Margin="10,81,0,0" VerticalAlignment="Top" Width="47" Height="30" Click="btn_Load_Click"/>
-                                <Button x:Name="btn_CopyToClipboard" Content="COPY TO CLIPBOARD" HorizontalAlignment="Left" Margin="10,134,0,0" VerticalAlignment="Top" Width="168"/>
-                                <Label x:Name="lblProgramList" Content="Program List" HorizontalAlignment="Left" Margin="96,10,0,0" VerticalAlignment="Top"/>
+                                <Button x:Name="btn_Save" Content="SAVE" HorizontalAlignment="Left" Margin="10,27,0,0" VerticalAlignment="Top" Width="47" Height="31" Click="btn_Save_Click" />
+                                <Button x:Name="btn_Load" Content="LOAD" HorizontalAlignment="Left" Margin="10,81,0,0" VerticalAlignment="Top" Width="47" Height="30" Click="btn_Load_Click" />
+                                <Button x:Name="btn_CopyToClipboard" Content="COPY TO CLIPBOARD" HorizontalAlignment="Left" Margin="10,134,0,0" VerticalAlignment="Top" Width="168" />
+                                <Label x:Name="lblProgramList" Content="Program List" HorizontalAlignment="Left" Margin="96,10,0,0" VerticalAlignment="Top" />
                                 <ComboBox x:Name="cmb_ProgramList" HorizontalAlignment="Left" Margin="96,36,0,0" VerticalAlignment="Top" Width="77" SelectedIndex="0">
                                     <System:String>ALL</System:String>
                                 </ComboBox>
-                                <Label x:Name="lbl_BaseAddress" Content="Base Address" HorizontalAlignment="Left" Margin="96,63,0,0" VerticalAlignment="Top"/>
-                                <TextBox x:Name="txtLoadBaseAddress" HorizontalAlignment="Left" Height="23" Margin="96,94,0,0" TextWrapping="Wrap" Text="-1" VerticalAlignment="Top" Width="60"/>
-                                <CheckBox x:Name="chk_LoadBaseAddress" Content="" HorizontalAlignment="Left" Margin="163,96,0,0" VerticalAlignment="Top"/>
+                                <Label x:Name="lbl_BaseAddress" Content="Base Address" HorizontalAlignment="Left" Margin="96,63,0,0" VerticalAlignment="Top" />
+                                <TextBox x:Name="txtLoadBaseAddress" HorizontalAlignment="Left" Height="23" Margin="96,94,0,0" TextWrapping="Wrap" Text="-1" VerticalAlignment="Top" Width="60" />
+                                <CheckBox x:Name="chk_LoadBaseAddress" Content="" HorizontalAlignment="Left" Margin="163,96,0,0" VerticalAlignment="Top" />
                             </Grid>
                         </GroupBox>
                     </Grid>
                 </TabItem>
                 <TabItem x:Name="InstructionTab" Header="Instructions" HorizontalAlignment="Left" Height="20" VerticalAlignment="Top" Width="82" Margin="-2,-2,-26,0">
                     <Grid x:Name="grid_Instructions" Background="White">
-                        <Button x:Name="btn_AddNew" Content="ADD NEW" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="83" Click="btn_AddNew_Click"/>
-                        <Button x:Name="btn_Show" Content="SHOW" HorizontalAlignment="Left" Margin="94,10,0,0" VerticalAlignment="Top" Width="76" Click="btn_Show_Click"/>
-                        <Button x:Name="btn_Undo" Content="UNDO" HorizontalAlignment="Left" Margin="171,10,0,0" VerticalAlignment="Top" Width="79"/>
-                        <Button x:Name="btn_InsertAbove" Content="INSERT ABOVE" HorizontalAlignment="Left" Margin="10,44,0,0" VerticalAlignment="Top" Width="83" Click="btn_InsertAbove_Click"/>
-                        <Button x:Name="btnMoveDown" Content="MOVE DOWN" HorizontalAlignment="Left" Margin="94,44,0,0" VerticalAlignment="Top" Width="75"/>
-                        <Button x:Name="btn_Edit" Content="EDIT" HorizontalAlignment="Left" Margin="171,44,0,0" VerticalAlignment="Top" Width="79"/>
-                        <Button x:Name="btn_InsertBelow" Content="INSERT BELOW" HorizontalAlignment="Left" Margin="10,75,0,0" VerticalAlignment="Top" Width="83" Click="btn_InsertBelow_Click"/>
-                        <Button x:Name="btnMoveUp" Content="MOVE UP" HorizontalAlignment="Left" Margin="94,75,0,0" VerticalAlignment="Top" Width="75"/>
-                        <Button x:Name="btn_Delete" Content="DELETE" HorizontalAlignment="Left" Margin="171,75,0,0" VerticalAlignment="Top" Width="79" Click="btn_Delete_Click"/>
-                        <Button x:Name="btn_Copy" Content="COPY" HorizontalAlignment="Left" Margin="10,108,0,0" VerticalAlignment="Top" Width="83"/>
-                        <Button x:Name="btnPasteAbove" Content="PASTE ABOVE" HorizontalAlignment="Left" Margin="94,108,0,0" VerticalAlignment="Top" Width="75"/>
-                        <Button x:Name="btn_PasteBelow" Content="PASTE BELOW" HorizontalAlignment="Left" Margin="171,108,0,0" VerticalAlignment="Top" Width="79"/>
+                        <Button x:Name="btn_AddNew" Content="ADD NEW" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="83" Click="btn_AddNew_Click" />
+                        <Button x:Name="btn_Show" Content="SHOW" HorizontalAlignment="Left" Margin="94,10,0,0" VerticalAlignment="Top" Width="76" Click="btn_Show_Click" />
+                        <Button x:Name="btn_Undo" Content="UNDO" HorizontalAlignment="Left" Margin="171,10,0,0" VerticalAlignment="Top" Width="79" />
+                        <Button x:Name="btn_InsertAbove" Content="INSERT ABOVE" HorizontalAlignment="Left" Margin="10,44,0,0" VerticalAlignment="Top" Width="83" Click="btn_InsertAbove_Click" />
+                        <Button x:Name="btnMoveDown" Content="MOVE DOWN" HorizontalAlignment="Left" Margin="94,44,0,0" VerticalAlignment="Top" Width="75" />
+                        <Button x:Name="btn_Edit" Content="EDIT" HorizontalAlignment="Left" Margin="171,44,0,0" VerticalAlignment="Top" Width="79" />
+                        <Button x:Name="btn_InsertBelow" Content="INSERT BELOW" HorizontalAlignment="Left" Margin="10,75,0,0" VerticalAlignment="Top" Width="83" Click="btn_InsertBelow_Click" />
+                        <Button x:Name="btnMoveUp" Content="MOVE UP" HorizontalAlignment="Left" Margin="94,75,0,0" VerticalAlignment="Top" Width="75" />
+                        <Button x:Name="btn_Delete" Content="DELETE" HorizontalAlignment="Left" Margin="171,75,0,0" VerticalAlignment="Top" Width="79" Click="btn_Delete_Click" />
+                        <Button x:Name="btn_Copy" Content="COPY" HorizontalAlignment="Left" Margin="10,108,0,0" VerticalAlignment="Top" Width="83" />
+                        <Button x:Name="btnPasteAbove" Content="PASTE ABOVE" HorizontalAlignment="Left" Margin="94,108,0,0" VerticalAlignment="Top" Width="75" />
+                        <Button x:Name="btn_PasteBelow" Content="PASTE BELOW" HorizontalAlignment="Left" Margin="171,108,0,0" VerticalAlignment="Top" Width="79" />
                     </Grid>
                 </TabItem>
                 <TabItem x:Name="OptimizeTab" Header="Optimize - Assemble" HorizontalAlignment="Left" Height="20" VerticalAlignment="Top" Width="126" Margin="-2,-2,-62,0">
-                    <Grid Background="White"/>
+                    <Grid Background="White" />
                 </TabItem>
             </TabControl>
         </Grid>
@@ -96,10 +96,10 @@
                     <ListView x:Name="lst_ProgramList" HorizontalAlignment="Left" Height="140" VerticalAlignment="Top" Width="239" Background="#FFFFFBAC" SelectionChanged="lst_ProgramList_SelectionChanged">
                         <ListView.View>
                             <GridView>
-                                <GridViewColumn Header="Name" DisplayMemberBinding="{Binding Name}" Width="100"/>
-                                <GridViewColumn Header="Base" DisplayMemberBinding="{Binding BaseAddress}" Width="50"/>
-                                <GridViewColumn Header="Start" DisplayMemberBinding="{Binding StartAddress}" Width="50"/>
-                                <GridViewColumn Header="Type" DisplayMemberBinding="{Binding Type}" Width="50"/>
+                                <GridViewColumn Header="Name" DisplayMemberBinding="{Binding Name}" Width="100" />
+                                <GridViewColumn Header="Base" DisplayMemberBinding="{Binding BaseAddress}" Width="50" />
+                                <GridViewColumn Header="Start" DisplayMemberBinding="{Binding StartAddress}" Width="50" />
+                                <GridViewColumn Header="Type" DisplayMemberBinding="{Binding Type}" Width="50" />
                             </GridView>
                         </ListView.View>
                     </ListView>
@@ -112,47 +112,45 @@
                     <ListView x:Name="lst_Registers" HorizontalAlignment="Left" Height="459" VerticalAlignment="Top" Width="273" Background="#FFDCD9D9">
                         <ListView.View>
                             <GridView>
-                                <GridViewColumn Header="Register" DisplayMemberBinding="{Binding Name}" Width="125"/>
-                                <GridViewColumn Header="Value" DisplayMemberBinding="{Binding Value}" Width="125"/>
+                                <GridViewColumn Header="Register" DisplayMemberBinding="{Binding Name}" Width="125" />
+                                <GridViewColumn Header="Value" DisplayMemberBinding="{Binding Value}" Width="125" />
                             </GridView>
                         </ListView.View>
-
                     </ListView>
-
                 </Grid>
             </GroupBox>
         </Grid>
         <Grid x:Name="SpecialRegistersGrid" HorizontalAlignment="Left" Height="205" Margin="738,10,0,0" VerticalAlignment="Top" Width="233">
             <GroupBox x:Name="grp_SpecialRegisters" Header="SPECIAL CPU REGISTERS" HorizontalAlignment="Left" VerticalAlignment="Top" Height="205" Width="233">
                 <Grid x:Name="SpecialRegistersInnerGrid" HorizontalAlignment="Left" Height="195" VerticalAlignment="Top" Width="223" Margin="0,0,-2,-12">
-                    <Label x:Name="label3" Content="PC" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
-                    <TextBox x:Name="txt_PC" HorizontalAlignment="Left" Height="23" Margin="39,14,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="59" Background="#FF8BF4FF"/>
-                    <Label x:Name="label4" Content="SR" HorizontalAlignment="Left" Margin="112,10,0,0" VerticalAlignment="Top"/>
-                    <TextBox x:Name="txt_SR" HorizontalAlignment="Left" Height="23" Margin="141,14,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="59" Background="#FF8BF4FF"/>
-                    <Label x:Name="label5" Content="SP" HorizontalAlignment="Left" Margin="10,35,0,0" VerticalAlignment="Top" Width="24"/>
-                    <TextBox x:Name="txt_SP" HorizontalAlignment="Left" Height="23" Margin="39,39,0,0" TextWrapping="Wrap" Text="8096" VerticalAlignment="Top" Width="59" Background="#FF8BF4FF"/>
-                    <Label x:Name="label5_Copy" Content="BR" HorizontalAlignment="Left" Margin="112,35,0,0" VerticalAlignment="Top" Width="24"/>
-                    <TextBox x:Name="txt_BR" HorizontalAlignment="Left" Height="23" Margin="141,39,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="59" Background="#FFFFFBAC"/>
+                    <Label x:Name="label3" Content="PC" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" />
+                    <TextBox x:Name="txt_PC" HorizontalAlignment="Left" Height="23" Margin="39,14,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="59" Background="#FF8BF4FF" />
+                    <Label x:Name="label4" Content="SR" HorizontalAlignment="Left" Margin="112,10,0,0" VerticalAlignment="Top" />
+                    <TextBox x:Name="txt_SR" HorizontalAlignment="Left" Height="23" Margin="141,14,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="59" Background="#FF8BF4FF" />
+                    <Label x:Name="label5" Content="SP" HorizontalAlignment="Left" Margin="10,35,0,0" VerticalAlignment="Top" Width="24" />
+                    <TextBox x:Name="txt_SP" HorizontalAlignment="Left" Height="23" Margin="39,39,0,0" TextWrapping="Wrap" Text="8096" VerticalAlignment="Top" Width="59" Background="#FF8BF4FF" />
+                    <Label x:Name="label5_Copy" Content="BR" HorizontalAlignment="Left" Margin="112,35,0,0" VerticalAlignment="Top" Width="24" />
+                    <TextBox x:Name="txt_BR" HorizontalAlignment="Left" Height="23" Margin="141,39,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="59" Background="#FFFFFBAC" />
                     <GroupBox x:Name="grp_StatusFlags" Header="SR Status Flags" HorizontalAlignment="Left" Margin="10,65,0,0" VerticalAlignment="Top" Height="54" Width="126">
                         <Grid x:Name="StatusFlagsGrid" HorizontalAlignment="Left" Height="42" Margin="0,-10,-2,-12" VerticalAlignment="Top" Width="116">
-                            <CheckBox x:Name="chk_OV" Content="OV" HorizontalAlignment="Left" Margin="5,19,0,0" VerticalAlignment="Top"/>
-                            <CheckBox x:Name="chk_Z" Content="Z" HorizontalAlignment="Left" Margin="46,19,0,0" VerticalAlignment="Top"/>
-                            <CheckBox x:Name="chk_N" Content="N" HorizontalAlignment="Left" Margin="80,19,0,0" VerticalAlignment="Top"/>
+                            <CheckBox x:Name="chk_OV" Content="OV" HorizontalAlignment="Left" Margin="5,19,0,0" VerticalAlignment="Top" />
+                            <CheckBox x:Name="chk_Z" Content="Z" HorizontalAlignment="Left" Margin="46,19,0,0" VerticalAlignment="Top" />
+                            <CheckBox x:Name="chk_N" Content="N" HorizontalAlignment="Left" Margin="80,19,0,0" VerticalAlignment="Top" />
                         </Grid>
                     </GroupBox>
                     <GroupBox x:Name="grp_CPUMode" Header="CPU Mode" HorizontalAlignment="Left" Margin="142,65,0,0" VerticalAlignment="Top" Height="54" Width="75">
                         <Grid x:Name="CPUModeGrid" HorizontalAlignment="Left" Height="34" Margin="-3,0,-4,-2" VerticalAlignment="Top" Width="70">
-                            <RadioButton x:Name="rdb_User" Content="User" HorizontalAlignment="Left" VerticalAlignment="Top" GroupName="CPU Mode" IsChecked="True"/>
-                            <RadioButton x:Name="rdb_Kernel" Content="Kernel" HorizontalAlignment="Left" VerticalAlignment="Top" GroupName="CPU Mode" Margin="0,14,0,0"/>
+                            <RadioButton x:Name="rdb_User" Content="User" HorizontalAlignment="Left" VerticalAlignment="Top" GroupName="CPU Mode" IsChecked="True" />
+                            <RadioButton x:Name="rdb_Kernel" Content="Kernel" HorizontalAlignment="Left" VerticalAlignment="Top" GroupName="CPU Mode" Margin="0,14,0,0" />
                         </Grid>
-                        <!-- <Grid HorizontalAlignment="Left" Height="10" Margin="896,122,0,0" VerticalAlignment="Top" Width="8"/> -->
+                        <!-- <Grid HorizontalAlignment="Left" Height="10" Margin="896,122,0,0" VerticalAlignment="Top" Width="8" /> -->
                     </GroupBox>
-                    <Label x:Name="label6" Content="IR" HorizontalAlignment="Left" Margin="6,124,0,0" VerticalAlignment="Top"/>
-                    <TextBox x:Name="txt_IR" HorizontalAlignment="Left" Height="23" Margin="31,127,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="81" Background="#FFFFDA99"/>
-                    <Label x:Name="label6_Copy" Content="MAR" HorizontalAlignment="Left" Margin="-3,151,0,0" VerticalAlignment="Top"/>
-                    <TextBox x:Name="txt_MAR" HorizontalAlignment="Left" Height="23" Margin="32,154,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="81" Background="#FFFFDA99" Text="0"/>
-                    <Label x:Name="label6_Copy1" Content="MDR" HorizontalAlignment="Left" Margin="108,124,0,0" VerticalAlignment="Top"/>
-                    <TextBox x:Name="txt_MDR" HorizontalAlignment="Left" Height="23" Margin="142,127,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="81" Background="#FFFFDA99"/>
+                    <Label x:Name="label6" Content="IR" HorizontalAlignment="Left" Margin="6,124,0,0" VerticalAlignment="Top" />
+                    <TextBox x:Name="txt_IR" HorizontalAlignment="Left" Height="23" Margin="31,127,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="81" Background="#FFFFDA99" />
+                    <Label x:Name="label6_Copy" Content="MAR" HorizontalAlignment="Left" Margin="-3,151,0,0" VerticalAlignment="Top" />
+                    <TextBox x:Name="txt_MAR" HorizontalAlignment="Left" Height="23" Margin="32,154,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="81" Background="#FFFFDA99" Text="0" />
+                    <Label x:Name="label6_Copy1" Content="MDR" HorizontalAlignment="Left" Margin="108,124,0,0" VerticalAlignment="Top" />
+                    <TextBox x:Name="txt_MDR" HorizontalAlignment="Left" Height="23" Margin="142,127,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="81" Background="#FFFFDA99" />
                 </Grid>
             </GroupBox>
         </Grid>
@@ -162,10 +160,10 @@
                     <ListView x:Name="lst_Stack" HorizontalAlignment="Left" Height="266" VerticalAlignment="Top" Width="223" Background="#FFFFFCC1" Margin="0,0,0,-35">
                         <ListView.View>
                             <GridView>
-                                <GridViewColumn Header="" Width="60"/>
-                                <GridViewColumn Header="Pos" DisplayMemberBinding="{Binding Position}" Width="30"/>
-                                <GridViewColumn Header="Value" DisplayMemberBinding="{Binding Value}" Width="60"/>
-                                <GridViewColumn Header="Address" DisplayMemberBinding="{Binding Address}" Width="60"/>
+                                <GridViewColumn Header="" Width="60" />
+                                <GridViewColumn Header="Pos" DisplayMemberBinding="{Binding Position}" Width="30" />
+                                <GridViewColumn Header="Value" DisplayMemberBinding="{Binding Value}" Width="60" />
+                                <GridViewColumn Header="Address" DisplayMemberBinding="{Binding Address}" Width="60" />
                             </GridView>
                         </ListView.View>
                     </ListView>
@@ -176,22 +174,21 @@
             <TabControl x:Name="ControlTabs" HorizontalAlignment="Left" Height="201" VerticalAlignment="Top" Width="249">
                 <TabItem Header="Control Unit">
                     <Grid x:Name="ControlUnitInnerGrid" Background="White" Margin="0,0,0,0">
-                        <Button x:Name="btn_Step" Content="STEP" HorizontalAlignment="Left" Margin="10,19,0,0" VerticalAlignment="Top" Width="75" Height="40"/>
-                        <Button x:Name="btn_Run" Content="RUN" HorizontalAlignment="Left" Margin="10,70,0,0" VerticalAlignment="Top" Width="75" Height="40"/>
-                        <Button x:Name="btn_Stop" Content="STOP" HorizontalAlignment="Left" Margin="10,119,0,0" VerticalAlignment="Top" Width="75" Height="40"/>
-                        <RadioButton x:Name="rdb_ByInstruction" Content="By Instruction" HorizontalAlignment="Left" Margin="90,32,0,0" VerticalAlignment="Top" GroupName="StepType" IsChecked="True"/>
-                        <RadioButton x:Name="rdb_BySingleTick" Content="By Single Tick" HorizontalAlignment="Left" Margin="90,58,0,0" VerticalAlignment="Top"/>
-                        <Slider x:Name="sld_ClockSpeed" HorizontalAlignment="Left" Margin="90,78,0,0" VerticalAlignment="Top" Height="85" Width="71" Orientation="Vertical" Maximum="1000" Minimum="10" SmallChange="10" TickFrequency="100" LargeChange="100" TickPlacement="BottomRight" ValueChanged="sld_ClockSpeed_ValueChanged" IsDirectionReversed="True" Value="1000"/>
-                        <Label x:Name="label7" Content="Slow" HorizontalAlignment="Left" Margin="123,141,0,0" VerticalAlignment="Top"/>
-                        <Label x:Name="label8" Content="Fast" HorizontalAlignment="Left" Margin="123,77,0,0" VerticalAlignment="Top"/>
+                        <Button x:Name="btn_Step" Content="STEP" HorizontalAlignment="Left" Margin="10,19,0,0" VerticalAlignment="Top" Width="75" Height="40" />
+                        <Button x:Name="btn_Run" Content="RUN" HorizontalAlignment="Left" Margin="10,70,0,0" VerticalAlignment="Top" Width="75" Height="40" />
+                        <Button x:Name="btn_Stop" Content="STOP" HorizontalAlignment="Left" Margin="10,119,0,0" VerticalAlignment="Top" Width="75" Height="40" />
+                        <RadioButton x:Name="rdb_ByInstruction" Content="By Instruction" HorizontalAlignment="Left" Margin="90,32,0,0" VerticalAlignment="Top" GroupName="StepType" IsChecked="True" />
+                        <RadioButton x:Name="rdb_BySingleTick" Content="By Single Tick" HorizontalAlignment="Left" Margin="90,58,0,0" VerticalAlignment="Top" />
+                        <Slider x:Name="sld_ClockSpeed" HorizontalAlignment="Left" Margin="90,78,0,0" VerticalAlignment="Top" Height="85" Width="71" Orientation="Vertical" Maximum="1000" Minimum="10" SmallChange="10" TickFrequency="100" LargeChange="100" TickPlacement="BottomRight" ValueChanged="sld_ClockSpeed_ValueChanged" IsDirectionReversed="True" Value="1000" />
+                        <Label x:Name="label7" Content="Slow" HorizontalAlignment="Left" Margin="123,141,0,0" VerticalAlignment="Top" />
+                        <Label x:Name="label8" Content="Fast" HorizontalAlignment="Left" Margin="123,77,0,0" VerticalAlignment="Top" />
                         <Button x:Name="btn_ResetProgram"  HorizontalAlignment="Left" Margin="163,75,0,0" VerticalAlignment="Top" Width="75" Height="40">
-                            <TextBlock Text="RESET PROGRAM" TextWrapping="Wrap" HorizontalAlignment="Center" VerticalAlignment="Center"/>        
+                            <TextBlock Text="RESET PROGRAM" TextWrapping="Wrap" HorizontalAlignment="Center" VerticalAlignment="Center" />
                         </Button>
-                        <Button x:Name="btn_ShowPCB" Content="SHOW PCB" HorizontalAlignment="Left" Margin="162,120,0,0" VerticalAlignment="Top" Width="75" Height="40"/>
+                        <Button x:Name="btn_ShowPCB" Content="SHOW PCB" HorizontalAlignment="Left" Margin="162,120,0,0" VerticalAlignment="Top" Width="75" Height="40" />
                     </Grid>
                 </TabItem>
             </TabControl>
         </Grid>
-
     </Grid>
 </Window>

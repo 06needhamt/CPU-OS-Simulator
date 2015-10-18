@@ -1,9 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Threading;
-using System.Threading.Tasks;
 
 namespace CPU_OS_Simulator.CPU
 {
@@ -19,20 +16,22 @@ namespace CPU_OS_Simulator.CPU
             this.clockSpeed = clockSpeed;
             this.currentIndex = 0;
         }
+
         public ExecutionUnit(SimulatorProgram program, int clockSpeed, int currentIndex) : this(program, clockSpeed)
         {
             this.currentIndex = currentIndex;
         }
 
-        public bool ExecuteProgram(bool step)
+        public IEnumerable<int> ExecuteProgram(bool step)
         {
-            for(int i = currentIndex; i < program.Instructions.Count; i++)
+            for (int i = currentIndex; i < program.Instructions.Count; i++)
             {
                 program.Instructions.ElementAt(i).Execute();
                 Thread.Sleep(clockSpeed);
+                yield return i;
             }
-            return true;
         }
+
         public SimulatorProgram Program
         {
             get
@@ -58,7 +57,5 @@ namespace CPU_OS_Simulator.CPU
                 clockSpeed = value;
             }
         }
-
-     
     }
 }

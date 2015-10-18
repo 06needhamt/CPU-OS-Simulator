@@ -1,9 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
 
 namespace CPU_OS_Simulator.CPU
 {
@@ -14,17 +10,21 @@ namespace CPU_OS_Simulator.CPU
     public class SimulatorProgram
     {
         #region Global Variables
+
         private string name;
         private Int32 baseAddress;
         private Int32 startAddress;
         private Int32 pages;
         private List<Instruction> instructions;
-        #endregion
+
+        #endregion Global Variables
+
         #region Constructors
+
         public SimulatorProgram()
         {
-
         }
+
         /// <summary>
         /// Constructor for simulator program
         /// </summary>
@@ -40,8 +40,11 @@ namespace CPU_OS_Simulator.CPU
             this.startAddress = baseAddress;
             Console.WriteLine("Program Created");
         }
-        #endregion
+
+        #endregion Constructors
+
         #region Properties
+
         /// <summary>
         /// Property for the name of the program
         /// </summary>
@@ -57,6 +60,7 @@ namespace CPU_OS_Simulator.CPU
                 name = value;
             }
         }
+
         /// <summary>
         /// Property for the base address of the program
         /// </summary>
@@ -72,6 +76,7 @@ namespace CPU_OS_Simulator.CPU
                 baseAddress = value;
             }
         }
+
         /// <summary>
         /// Property for the number of memory pages in the program
         /// </summary>
@@ -86,9 +91,8 @@ namespace CPU_OS_Simulator.CPU
             {
                 pages = value;
             }
-
-
         }
+
         /// <summary>
         /// Property for the linked list of instructions that make up the program
         /// </summary>
@@ -117,8 +121,11 @@ namespace CPU_OS_Simulator.CPU
                 startAddress = value;
             }
         }
-        #endregion
+
+        #endregion Properties
+
         #region Methods
+
         public void AddInstruction(ref Instruction ins)
         {
             int address = CalculateAddress(ins);
@@ -129,13 +136,14 @@ namespace CPU_OS_Simulator.CPU
         private int CalculateAddress(Instruction instruction)
         {
             int address = baseAddress;
-            foreach(Instruction ins in instructions)
+            foreach (Instruction ins in instructions)
             {
                 address += ins.Size; // calculate address of the next intruction
             }
             address += instruction.Size;
             return address;
         }
-        #endregion
+
+        #endregion Methods
     }
 }
