@@ -164,8 +164,10 @@ namespace CPU_OS_Simulator
         private void btn_Delete_Click(object sender, RoutedEventArgs e)
         {
             int index = lst_InstructionsList.SelectedIndex;
-            //TODO BUG can not remove items from the list while in use
-            lst_InstructionsList.Items.RemoveAt(index);
+            lst_InstructionsList.ItemsSource = null;
+            SimulatorProgram prog = programList.Where(x => x.Name.Equals(currentProgram)).FirstOrDefault();
+            prog.Instructions.RemoveAt(index);
+            UpdateIntructions();
         }
 
         /// <summary>
@@ -175,6 +177,19 @@ namespace CPU_OS_Simulator
         /// <param name="e"> the eventargs</param>
         private void MainWindow2_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
+            if(programList.Count > 0)
+            {
+                MessageBoxResult saveresult = MessageBox.Show("There are unsaved programs do you want to save first?", "Save", MessageBoxButton.YesNoCancel, MessageBoxImage.Question);
+                if(saveresult == MessageBoxResult.Yes)
+                {
+                    SaveProgram();
+                }
+                else if(saveresult == MessageBoxResult.Cancel)
+                {
+                    e.Cancel = true;
+                    return;
+                }
+            }
             MessageBoxResult result = MessageBox.Show("Stopping the Simulator Continue?", "Stopping", MessageBoxButton.YesNo, MessageBoxImage.Information);
             if (result == MessageBoxResult.Yes)
             {
