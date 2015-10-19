@@ -186,6 +186,7 @@ namespace CPU_OS_Simulator
             Operand op1;
             Operand op2;
             int index = owner.lst_InstructionsList.SelectedIndex;
+            SimulatorProgram prog = (SimulatorProgram) owner.lst_ProgramList.SelectedItem;
             switch (SelectedTab.Header.ToString())
             {
                 case "Data Transfer":
@@ -220,7 +221,7 @@ namespace CPU_OS_Simulator
                         {
                             op2 = null;
                         }
-                        Instruction i = owner.CreateInstruction(opcode, op1, op2, 4);
+                        Instruction i = owner.CreateInstruction(opcode, op1, op2,4);
                         owner.AddInstruction(i, index);
                         break;
                     }

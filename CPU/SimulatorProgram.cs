@@ -132,6 +132,12 @@ namespace CPU_OS_Simulator.CPU
             ins.Address = address;
             instructions.Add(ins);
         }
+        public void AddInstruction(ref Instruction ins,int index)
+        {
+            int address = CalculateAddress(ins);
+            ins.Address = address;
+            instructions.Insert(index,ins);
+        }
 
         private int CalculateAddress(Instruction instruction)
         {

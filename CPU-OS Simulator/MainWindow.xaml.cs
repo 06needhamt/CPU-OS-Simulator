@@ -263,41 +263,41 @@ namespace CPU_OS_Simulator
                 if (InstructionMode.Equals(EnumInstructionMode.ADD_NEW))
                 {
                     SimulatorProgram prog = programList.Where(x => x.Name.Equals(currentProgram)).FirstOrDefault(); // find the currently active program
-                    prog.Instructions.Add(ins); // add the instruction
+                    prog.AddInstruction(ref ins); // add the instruction
                 }
                 else if (InstructionMode.Equals(EnumInstructionMode.INSERT_ABOVE))
                 {
                     SimulatorProgram prog = programList.Where(x => x.Name.Equals(currentProgram)).FirstOrDefault(); // find the currently active program
                     if (index == -1)
                     {
-                        prog.Instructions.Add(ins);
+                        prog.AddInstruction(ref ins);
                     }
                     else if (index == 0)
                     {
-                        prog.Instructions.Insert(0, ins);
+                        prog.AddInstruction(ref ins,0);
                     }
                     else
                     {
-                        prog.Instructions.Insert(index, ins); // add the instruction
+                        prog.AddInstruction(ref ins,index); // add the instruction
                     }
-                    //prog.Instructions.Insert(index, ins);
+                    //prog.AddInstruction(ref ins,index);
                 }
                 else if (InstructionMode.Equals(EnumInstructionMode.INSERT_BELOW))
                 {
                     SimulatorProgram prog = programList.Where(x => x.Name.Equals(currentProgram)).FirstOrDefault(); // find the currently active program
                     if (index == -1)
                     {
-                        prog.Instructions.Add(ins);
+                        prog.AddInstruction(ref ins);
                     }
                     else if (index == 0)
                     {
-                        prog.Instructions.Insert(0, ins);
+                        prog.AddInstruction(ref ins,0);
                     }
                     else
                     {
-                        prog.Instructions.Insert(index, ins); // add the instruction
+                        prog.AddInstruction(ref ins,index); // add the instruction
                     }
-                    //prog.Instructions.Insert(index, ins);
+                    //prog.AddInstruction(ref ins,index);
                 }
                 else
                 {
