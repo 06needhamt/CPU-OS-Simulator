@@ -151,12 +151,12 @@ namespace CPU_OS_Simulator.CPU
         {
             get
             {
-                return size;
+                return address;
             }
 
             set
             {
-                size = value;
+                address = value;
             }
         }
 
@@ -220,7 +220,7 @@ namespace CPU_OS_Simulator.CPU
                     op2 = Operand2.Value.ToString();
                 }
             }
-            return parsedOpcode.ToUpper() + " " + op1.ToUpper() + " " + op2.ToUpper();
+            return parsedOpcode.ToUpper() + " " + op1.ToUpper() + "," + op2.ToUpper();
         }
 
         #endregion Methods

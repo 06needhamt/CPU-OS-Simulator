@@ -128,23 +128,37 @@ namespace CPU_OS_Simulator.CPU
 
         public void AddInstruction(ref Instruction ins)
         {
-            int address = CalculateAddress(ins);
-            ins.Address = address;
+            //int address = CalculateAddress(ins,instructions.Count);
+            //ins.Address = address;
             instructions.Add(ins);
+            UpdateAddresses();
         }
         public void AddInstruction(ref Instruction ins,int index)
         {
-            int address = CalculateAddress(ins);
-            ins.Address = address;
+            //int address = CalculateAddress(ins,instructions.Count);
+            //ins.Address = address;
             instructions.Insert(index,ins);
+            UpdateAddresses();
         }
 
-        private int CalculateAddress(Instruction instruction)
+        private void UpdateAddresses()
         {
             int address = baseAddress;
-            foreach (Instruction ins in instructions)
+            for (int i = 0; i < instructions.Count; i++)
             {
-                address += ins.Size; // calculate address of the next intruction
+                address += instructions[i].Size; // calculate address of the next intruction
+                instructions[i].Address = address;
+            }
+            //address += instruction.Size;
+            //return address;
+        }
+
+        private int CalculateAddress(Instruction instruction,int index)
+        {
+            int address = baseAddress;
+            for(int i = 0; i < index; i++ )
+            {
+                address += instructions[i].Size; // calculate address of the next intruction
             }
             address += instruction.Size;
             return address;
