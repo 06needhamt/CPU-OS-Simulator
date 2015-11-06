@@ -9,6 +9,7 @@ using System.Reflection;
 using System.Web.Script.Serialization;
 using System.Windows;
 using System.Windows.Controls;
+using CPU_OS_Simulator.Memory;
 
 namespace CPU_OS_Simulator
 {
@@ -27,6 +28,7 @@ namespace CPU_OS_Simulator
             InitializeComponent();
             programList = new List<SimulatorProgram>();
             PopulateRegisters();
+            Console.WriteLine("Hello World");
         }
 
         private void PopulateRegisters()
@@ -51,6 +53,14 @@ namespace CPU_OS_Simulator
             this.Title += " " + GetProgramVersion();
 #if DEBUG
             this.Title += " DEBUG BUILD ";
+            MemoryPage m = new MemoryPage(0, 0, 255);
+            for (int i = 0; i < m.Data.GetLength(0); i++)
+            {
+                for (int j = 0; j < m.Data.GetLength(1); j++)
+                {
+                    Console.WriteLine((int)m.Data[i, j]);
+                }
+            }
 #endif
         }
 
@@ -121,7 +131,7 @@ namespace CPU_OS_Simulator
         }
 
         /// <summary>
-        /// TODO Fill in
+        /// Adds a new instruction to the program
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -133,7 +143,7 @@ namespace CPU_OS_Simulator
         }
 
         /// <summary>
-        /// TODO Fill in
+        /// Adds a new instruction to the program above the selected instruction
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -145,7 +155,7 @@ namespace CPU_OS_Simulator
         }
 
         /// <summary>
-        /// TODO Fill in
+        /// Adds a new instruction to the program above below selected instruction
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -460,6 +470,21 @@ namespace CPU_OS_Simulator
         private void sld_ClockSpeed_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
         {
             Console.WriteLine(sld_ClockSpeed.Value);
+        }
+
+        private void btn_Step_Click(object sender, RoutedEventArgs e)
+        {
+            SimulatorProgram prog = programList.Where(x => x.Name.Equals(currentProgram)).FirstOrDefault();
+            ExecutionUnit unit = new ExecutionUnit(prog, (int)sld_ClockSpeed.Value);
+            //TODO FIX not bieng called
+            unit.ExecuteProgram(true);
+        }
+
+        private void btn_Run_Click(object sender, RoutedEventArgs e)
+        {
+            SimulatorProgram prog = programList.Where(x => x.Name.Equals(currentProgram)).FirstOrDefault();
+            ExecutionUnit unit = new ExecutionUnit(prog, (int)sld_ClockSpeed.Value);
+            unit.ExecuteProgram(false);
         }
     }
 }

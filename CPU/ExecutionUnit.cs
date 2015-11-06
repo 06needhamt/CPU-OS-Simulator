@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
 
@@ -24,6 +25,7 @@ namespace CPU_OS_Simulator.CPU
 
         public IEnumerable<int> ExecuteProgram(bool step)
         {
+            Console.WriteLine("Executing");
             for (int i = currentIndex; i < program.Instructions.Count; i++)
             {
                 program.Instructions.ElementAt(i).Execute();

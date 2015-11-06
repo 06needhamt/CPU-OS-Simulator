@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using CPU_OS_Simulator.Memory;
 
 namespace CPU_OS_Simulator.CPU
 {
@@ -15,7 +16,9 @@ namespace CPU_OS_Simulator.CPU
         private Int32 baseAddress;
         private Int32 startAddress;
         private Int32 pages;
+        private ExecutionUnit unit;
         private List<Instruction> instructions;
+        private List<MemoryPage> memory;
 
         #endregion Global Variables
 
@@ -38,6 +41,7 @@ namespace CPU_OS_Simulator.CPU
             this.pages = pages;
             this.instructions = new List<Instruction>();
             this.startAddress = baseAddress;
+            unit = new ExecutionUnit(this, 100);
             Console.WriteLine("Program Created");
         }
 
@@ -119,6 +123,19 @@ namespace CPU_OS_Simulator.CPU
             set
             {
                 startAddress = value;
+            }
+        }
+
+        public List<MemoryPage> Memory
+        {
+            get
+            {
+                return memory;
+            }
+
+            set
+            {
+                memory = value;
             }
         }
 

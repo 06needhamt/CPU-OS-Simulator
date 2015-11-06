@@ -174,8 +174,8 @@
             <TabControl x:Name="ControlTabs" HorizontalAlignment="Left" Height="201" VerticalAlignment="Top" Width="249">
                 <TabItem Header="Control Unit">
                     <Grid x:Name="ControlUnitInnerGrid" Background="White" Margin="0,0,0,0">
-                        <Button x:Name="btn_Step" Content="STEP" HorizontalAlignment="Left" Margin="10,19,0,0" VerticalAlignment="Top" Width="75" Height="40" />
-                        <Button x:Name="btn_Run" Content="RUN" HorizontalAlignment="Left" Margin="10,70,0,0" VerticalAlignment="Top" Width="75" Height="40" />
+                        <Button x:Name="btn_Step" Content="STEP" HorizontalAlignment="Left" Margin="10,19,0,0" VerticalAlignment="Top" Width="75" Height="40" Click="btn_Step_Click" />
+                        <Button x:Name="btn_Run" Content="RUN" HorizontalAlignment="Left" Margin="10,70,0,0" VerticalAlignment="Top" Width="75" Height="40" Click="btn_Run_Click" />
                         <Button x:Name="btn_Stop" Content="STOP" HorizontalAlignment="Left" Margin="10,119,0,0" VerticalAlignment="Top" Width="75" Height="40" />
                         <RadioButton x:Name="rdb_ByInstruction" Content="By Instruction" HorizontalAlignment="Left" Margin="90,32,0,0" VerticalAlignment="Top" GroupName="StepType" IsChecked="True" />
                         <RadioButton x:Name="rdb_BySingleTick" Content="By Single Tick" HorizontalAlignment="Left" Margin="90,58,0,0" VerticalAlignment="Top" />

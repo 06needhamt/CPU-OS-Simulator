@@ -32,6 +32,7 @@ namespace CPU_OS_Simulator.CPU
             this.operand2 = null;
             this.size = size;
             instructionString = this.ToString();
+            BindDelegate();
         }
 
         public Instruction(Int32 opcode, Operand op1, Int32 size)
@@ -41,6 +42,7 @@ namespace CPU_OS_Simulator.CPU
             this.operand2 = null;
             this.size = size;
             instructionString = this.ToString();
+            BindDelegate();
         }
 
         public Instruction(Int32 opcode, Operand op1, Operand op2, Int32 size)
@@ -50,6 +52,7 @@ namespace CPU_OS_Simulator.CPU
             this.operand2 = op2;
             this.size = size;
             instructionString = this.ToString();
+            BindDelegate();
         }
 
         #endregion Constructors
@@ -181,6 +184,11 @@ namespace CPU_OS_Simulator.CPU
         {
             switch (opcode)
             {
+                case 0:
+                    {
+                        this.execute = () => Move(operand1, operand2);
+                        break;
+                    }
                 case 22:
                     {
                         this.execute = () => Add(operand1, operand2); // save the function in memory to call later
@@ -227,6 +235,14 @@ namespace CPU_OS_Simulator.CPU
 
         #region Instruction Execution Functions
 
+        private void Move(Operand lhs, Operand rhs)
+        {
+            result = rhs.Value;
+            if (lhs.IsRegister)
+            {
+                lhs.Register.Value = result;
+            }
+        }
         private void Add(Operand lhs, Operand rhs)
         {
             //TODO Allow for memory operands
