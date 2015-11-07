@@ -23,14 +23,14 @@ namespace CPU_OS_Simulator.CPU
             this.currentIndex = currentIndex;
         }
 
-        public IEnumerable<int> ExecuteProgram(bool step)
+        public void ExecuteProgram(bool step)
         {
             Console.WriteLine("Executing");
             for (int i = currentIndex; i < program.Instructions.Count; i++)
             {
                 program.Instructions.ElementAt(i).Execute();
                 Thread.Sleep(clockSpeed);
-                yield return i;
+                //yield return i;
             }
         }
 

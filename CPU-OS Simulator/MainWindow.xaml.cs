@@ -47,6 +47,23 @@ namespace CPU_OS_Simulator
                 lst_Registers.Items.Add(Register.FindRegister(registerString));
             }
         }
+        private void UpdateRegisters() {
+            for (int i = 0; i < lst_Registers.Items.Count; i++)
+            {
+                string registerString = "R";
+                if (i < 10)
+                {
+                    registerString += "0" + i;
+                }
+                else
+                {
+                    registerString += i;
+                }
+                //TODO FIX find out how to update registers in ui
+                ((Register)lst_Registers.Items.GetItemAt(i)).setRegisterValue(Register.FindRegister(registerString).Value,EnumOperandType.VALUE);
+
+            }
+        }
 
         private void MainWindow2_Loaded(object sender, RoutedEventArgs e)
         {
@@ -433,6 +450,7 @@ namespace CPU_OS_Simulator
         /// <param name="fileName">the file to save the objects to</param>
         public void SerializeObject<T>(T serializableObject, string filePath)
         {
+            //TODO FIX Saving Objects
             if (serializableObject == null) { return; }
 
             StreamWriter writer = new StreamWriter(filePath, true); // initialise a file writer
@@ -476,8 +494,9 @@ namespace CPU_OS_Simulator
         {
             SimulatorProgram prog = programList.Where(x => x.Name.Equals(currentProgram)).FirstOrDefault();
             ExecutionUnit unit = new ExecutionUnit(prog, (int)sld_ClockSpeed.Value);
-            //TODO FIX not bieng called
             unit.ExecuteProgram(true);
+            //TODO FIX registers not updating in ui
+            UpdateRegisters();
         }
 
         private void btn_Run_Click(object sender, RoutedEventArgs e)
@@ -485,6 +504,8 @@ namespace CPU_OS_Simulator
             SimulatorProgram prog = programList.Where(x => x.Name.Equals(currentProgram)).FirstOrDefault();
             ExecutionUnit unit = new ExecutionUnit(prog, (int)sld_ClockSpeed.Value);
             unit.ExecuteProgram(false);
+            //TODO FIX registers not updating in ui
+            UpdateRegisters();
         }
     }
 }
