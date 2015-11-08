@@ -48,21 +48,25 @@ namespace CPU_OS_Simulator
             }
         }
         private void UpdateRegisters() {
-            for (int i = 0; i < lst_Registers.Items.Count; i++)
-            {
-                string registerString = "R";
-                if (i < 10)
-                {
-                    registerString += "0" + i;
-                }
-                else
-                {
-                    registerString += i;
-                }
-                //TODO FIX find out how to update registers in ui
-                ((Register)lst_Registers.Items.GetItemAt(i)).setRegisterValue(Register.FindRegister(registerString).Value,EnumOperandType.VALUE);
+            //for (int i = 0; i < lst_Registers.Items.Count; i++)
+            //{
+            //    string registerString = "R";
+            //    if (i < 10)
+            //    {
+            //        registerString += "0" + i;
+            //    }
+            //    else
+            //    {
+            //        registerString += i;
+            //    }
+            //    TODO FIX find out how to update registers in ui
 
-            }
+            //    ((Register)lst_Registers.Items.GetItemAt(i)).setRegisterValue(Register.FindRegister(registerString).Value, EnumOperandType.VALUE);
+
+            //}
+            lst_Registers.ItemsSource = null;
+            lst_Registers.Items.Clear();
+            PopulateRegisters();
         }
 
         private void MainWindow2_Loaded(object sender, RoutedEventArgs e)
@@ -184,7 +188,7 @@ namespace CPU_OS_Simulator
         }
 
         /// <summary>
-        /// TODO Fill in
+        /// Deletes the selected instruction from the program
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -354,7 +358,7 @@ namespace CPU_OS_Simulator
                 Console.WriteLine(programList.Count);
                 currentProgram = programList.First().Name; // load the first program in the list
             }
-            lst_InstructionsList.ItemsSource = null; // WHY item source must be set to null when modifying the items within the list
+            lst_InstructionsList.ItemsSource = null; // HACK item source must be set to null when modifying the items within the list
             lst_InstructionsList.Items.Clear(); // clear the item list
             if ((lst_ProgramList.SelectedItem) == null) // if no program is selected
             {
@@ -495,7 +499,6 @@ namespace CPU_OS_Simulator
             SimulatorProgram prog = programList.Where(x => x.Name.Equals(currentProgram)).FirstOrDefault();
             ExecutionUnit unit = new ExecutionUnit(prog, (int)sld_ClockSpeed.Value);
             unit.ExecuteProgram(true);
-            //TODO FIX registers not updating in ui
             UpdateRegisters();
         }
 
@@ -504,7 +507,6 @@ namespace CPU_OS_Simulator
             SimulatorProgram prog = programList.Where(x => x.Name.Equals(currentProgram)).FirstOrDefault();
             ExecutionUnit unit = new ExecutionUnit(prog, (int)sld_ClockSpeed.Value);
             unit.ExecuteProgram(false);
-            //TODO FIX registers not updating in ui
             UpdateRegisters();
         }
     }
