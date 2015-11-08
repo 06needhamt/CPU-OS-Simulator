@@ -241,6 +241,8 @@ namespace CPU_OS_Simulator.CPU
             if (lhs.IsRegister)
             {
                 lhs.Register.Value = result;
+                Register.FindRegister(lhs.Register.Name).setRegisterValue(result,EnumOperandType.VALUE);
+                Console.WriteLine(Register.R00.Value);
             }
         }
         private void Add(Operand lhs, Operand rhs)
