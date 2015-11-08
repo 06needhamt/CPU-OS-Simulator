@@ -34,7 +34,7 @@ namespace CPU_OS_Simulator.CPU
         {
         }
 
-        private Register(string name)
+        protected Register(string name)
         {
             this.name = name;
             this.value = 0;
@@ -95,7 +95,6 @@ namespace CPU_OS_Simulator.CPU
         {
             switch (selectedItem)
             {
-                //TODO add other registers
                 case "R00":
                     {
                         return Register.R00;
