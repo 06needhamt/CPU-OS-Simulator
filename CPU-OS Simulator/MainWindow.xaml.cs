@@ -483,10 +483,20 @@ namespace CPU_OS_Simulator
             {
                 SimulatorProgram prog = deserializer.Deserialize<SimulatorProgram>(json); // deserialise the line into a object
                 programList.Add(prog);
+                BindInstructionDelegates(ref prog);
                 lst_ProgramList.Items.Add(prog); // add the object to the program list
+                
             }
 
             return;
+        }
+
+        private void BindInstructionDelegates(ref SimulatorProgram prog)
+        {
+            foreach (Instruction i in prog.Instructions)
+            {
+                i.BindDelegate();
+            }
         }
 
         private void sld_ClockSpeed_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)

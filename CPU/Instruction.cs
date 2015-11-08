@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Web.Script.Serialization;
 
 namespace CPU_OS_Simulator.CPU
 {
@@ -9,7 +10,8 @@ namespace CPU_OS_Simulator.CPU
 
         private Int32 opcode;
         private string category;
-        private Action execute;
+        [ScriptIgnore]
+        private Func<int> execute;
         private Operand operand1;
         private Operand operand2;
         private Int32 address;
@@ -110,8 +112,8 @@ namespace CPU_OS_Simulator.CPU
                 operand2 = value;
             }
         }
-
-        public Action Execute
+        [ScriptIgnore]
+        public Func<int> Execute
         {
             get
             {
@@ -235,7 +237,7 @@ namespace CPU_OS_Simulator.CPU
 
         #region Instruction Execution Functions
 
-        private void Move(Operand lhs, Operand rhs)
+        private int Move(Operand lhs, Operand rhs)
         {
             result = rhs.Value;
             if (lhs.IsRegister)
@@ -243,8 +245,9 @@ namespace CPU_OS_Simulator.CPU
                 lhs.Register.Value = result;
                 Register.FindRegister(lhs.Register.Name).setRegisterValue(result,EnumOperandType.VALUE);
             }
+            return result;
         }
-        private void Add(Operand lhs, Operand rhs)
+        private int Add(Operand lhs, Operand rhs)
         {
             //TODO Allow for memory operands
             result = lhs.Value + rhs.Value;
@@ -253,6 +256,7 @@ namespace CPU_OS_Simulator.CPU
                 lhs.Register.Value = result;
                 Register.FindRegister(lhs.Register.Name).setRegisterValue(result, EnumOperandType.VALUE);
             }
+            return result;
         }
 
         #endregion Instruction Execution Functions
