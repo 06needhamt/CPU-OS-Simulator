@@ -399,7 +399,7 @@ namespace CPU_OS_Simulator.CPU
         }
         private int PUSH(Operand lhs, Operand rhs)
         {
-            SimulatorProgram p = GetCurrentProgram()            
+            SimulatorProgram p = GetCurrentProgram();            
             //MessageBox.Show("PUSH Instruction is not currently implemented", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
             return 0;
         }
@@ -442,6 +442,7 @@ namespace CPU_OS_Simulator.CPU
         private SimulatorProgram GetCurrentProgram()
         {
             Assembly main = Assembly.GetEntryAssembly();
+            return null;
             
         }
     }
