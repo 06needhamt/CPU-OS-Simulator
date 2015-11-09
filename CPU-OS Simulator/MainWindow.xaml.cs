@@ -20,7 +20,7 @@ namespace CPU_OS_Simulator
     public partial class MainWindow : Window
     {
         private List<SimulatorProgram> programList;
-        private EnumInstructionMode InstructionMode;
+        private EnumInstructionMode instructionMode;
         public static string currentProgram = string.Empty;
         private ExecutionUnit activeUnit;
 
@@ -37,16 +37,16 @@ namespace CPU_OS_Simulator
             }
         }
 
-        public EnumInstructionMode InstructionMode1
+        public EnumInstructionMode InstructionMode
         {
             get
             {
-                return InstructionMode;
+                return instructionMode;
             }
 
             set
             {
-                InstructionMode = value;
+                instructionMode = value;
             }
         }
 
@@ -172,8 +172,8 @@ namespace CPU_OS_Simulator
         /// <param name="e"> the eventargs</param>
         private void btn_Show_Click(object sender, RoutedEventArgs e)
         {
-            InstructionMode = EnumInstructionMode.SHOW;
-            InstructionsWindow iw = new InstructionsWindow(this, InstructionMode);
+            instructionMode = EnumInstructionMode.SHOW;
+            InstructionsWindow iw = new InstructionsWindow(this, instructionMode);
             iw.Show();
         }
 
@@ -184,8 +184,8 @@ namespace CPU_OS_Simulator
         /// <param name="e"></param>
         private void btn_AddNew_Click(object sender, RoutedEventArgs e)
         {
-            InstructionMode = EnumInstructionMode.ADD_NEW;
-            InstructionsWindow iw = new InstructionsWindow(this, InstructionMode);
+            instructionMode = EnumInstructionMode.ADD_NEW;
+            InstructionsWindow iw = new InstructionsWindow(this, instructionMode);
             iw.Show();
         }
 
@@ -196,8 +196,8 @@ namespace CPU_OS_Simulator
         /// <param name="e"></param>
         private void btn_InsertAbove_Click(object sender, RoutedEventArgs e)
         {
-            InstructionMode = EnumInstructionMode.INSERT_ABOVE;
-            InstructionsWindow iw = new InstructionsWindow(this, InstructionMode);
+            instructionMode = EnumInstructionMode.INSERT_ABOVE;
+            InstructionsWindow iw = new InstructionsWindow(this, instructionMode);
             iw.Show();
         }
 
@@ -208,8 +208,8 @@ namespace CPU_OS_Simulator
         /// <param name="e"></param>
         private void btn_InsertBelow_Click(object sender, RoutedEventArgs e)
         {
-            InstructionMode = EnumInstructionMode.INSERT_BELOW;
-            InstructionsWindow iw = new InstructionsWindow(this, InstructionMode);
+            instructionMode = EnumInstructionMode.INSERT_BELOW;
+            InstructionsWindow iw = new InstructionsWindow(this, instructionMode);
             iw.Show();
         }
 
@@ -317,12 +317,12 @@ namespace CPU_OS_Simulator
                     return;
                 }
 
-                if (InstructionMode.Equals(EnumInstructionMode.ADD_NEW))
+                if (instructionMode.Equals(EnumInstructionMode.ADD_NEW))
                 {
                     SimulatorProgram prog = programList.Where(x => x.Name.Equals(currentProgram)).FirstOrDefault(); // find the currently active program
                     prog.AddInstruction(ref ins); // add the instruction
                 }
-                else if (InstructionMode.Equals(EnumInstructionMode.INSERT_ABOVE))
+                else if (instructionMode.Equals(EnumInstructionMode.INSERT_ABOVE))
                 {
                     SimulatorProgram prog = programList.Where(x => x.Name.Equals(currentProgram)).FirstOrDefault(); // find the currently active program
                     if (index == -1)
@@ -339,7 +339,7 @@ namespace CPU_OS_Simulator
                     }
                     //prog.AddInstruction(ref ins,index);
                 }
-                else if (InstructionMode.Equals(EnumInstructionMode.INSERT_BELOW))
+                else if (instructionMode.Equals(EnumInstructionMode.INSERT_BELOW))
                 {
                     SimulatorProgram prog = programList.Where(x => x.Name.Equals(currentProgram)).FirstOrDefault(); // find the currently active program
                     if (index == -1)
