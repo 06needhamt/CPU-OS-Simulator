@@ -3,8 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Windows.Forms;
-
+using System.Windows;
 namespace CPU_OS_Simulator.CPU
 {
     public class ProgramStack
@@ -22,7 +21,7 @@ namespace CPU_OS_Simulator.CPU
         {
             if(stackSize + 1 > maxStackSize)
             {
-                MessageBox.Show("Stack Overflow the program will now terminate", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Stack Overflow the program will now terminate", "", MessageBoxButton.OK, MessageBoxImage.Error);
                 // TODO Terminate Program
                 return;
             }
@@ -38,15 +37,15 @@ namespace CPU_OS_Simulator.CPU
             {
                 if(i == 0 && stackSize == 1)
                 {
-                    stackItems.ElementAt(i).Annotation = "TOS";
+                    stackItems.ElementAt(i).Annotation = "BOS";
                 }
                 else if(i == 0)
                 {
-                    stackItems.ElementAt(i).Annotation = "BOS";
+                    stackItems.ElementAt(i).Annotation = "TOS";
                 }
                 else if(i == (stackSize - 1))
                 {
-                    stackItems.ElementAt(i).Annotation = "TOS";
+                    stackItems.ElementAt(i).Annotation = "BOS";
                 }
                 else
                 {
@@ -59,7 +58,7 @@ namespace CPU_OS_Simulator.CPU
         {
             if (stackSize - 1 < 0)
             {
-                MessageBox.Show("Stack Underflow the program will now terminate", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Stack Underflow the program will now terminate", "", MessageBoxButton.OK, MessageBoxImage.Error);
                 // TODO Terminate Program
                 return int.MinValue;
             }

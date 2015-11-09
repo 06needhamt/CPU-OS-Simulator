@@ -21,8 +21,9 @@ namespace CPU_OS_Simulator
     {
         private List<SimulatorProgram> programList;
         private EnumInstructionMode instructionMode;
-        public static string currentProgram = string.Empty;
+        public string currentProgram = string.Empty;
         private ExecutionUnit activeUnit;
+        public static MainWindow currentInstance;
 
         public List<SimulatorProgram> ProgramList
         {
@@ -69,7 +70,7 @@ namespace CPU_OS_Simulator
             programList = new List<SimulatorProgram>();
             PopulateRegisters();
             Console.WriteLine("Hello World");
-            MainWindowInstance.mainWindow = this;
+            currentInstance = this;
         }
 
         private void PopulateRegisters()
@@ -568,6 +569,7 @@ namespace CPU_OS_Simulator
             activeUnit = new ExecutionUnit(prog, (int)sld_ClockSpeed.Value,lst_InstructionsList.SelectedIndex);
             activeUnit.ExecuteProgram(true);
             UpdateRegisters();
+            UpdateStack();
             lst_InstructionsList.SelectedIndex++;
         }
 
@@ -577,6 +579,7 @@ namespace CPU_OS_Simulator
             activeUnit = new ExecutionUnit(prog, (int)sld_ClockSpeed.Value,lst_InstructionsList.SelectedIndex);
             activeUnit.ExecuteProgram(false);
             UpdateRegisters();
+            UpdateStack();
         }
 
         private void btn_Stop_Click(object sender, RoutedEventArgs e)

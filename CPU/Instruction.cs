@@ -1,7 +1,15 @@
 ﻿using System;
-using System.Windows.Forms;
 using System.Web.Script.Serialization;
 using System.Reflection;
+using CPU_OS_Simulator.CPU;
+using Microsoft.Win32;
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.IO;
+using System.Linq;
+using System.Windows;
+using System.Windows.Controls;
+using CPU_OS_Simulator.Memory;
 
 namespace CPU_OS_Simulator.CPU
 {
@@ -333,87 +341,88 @@ namespace CPU_OS_Simulator.CPU
         }
         private int MVS(Operand lhs, Operand rhs)
         {
-            MessageBox.Show("MVS Instruction is not currently implemented", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MessageBox.Show("MVS Instruction is not currently implemented", "", MessageBoxButton.OK, MessageBoxImage.Information);
             return 0;
         }
         private int CVS(Operand lhs,Operand rhs)
         {
-            MessageBox.Show("CVS Instruction is not currently used", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MessageBox.Show("CVS Instruction is not currently used", "", MessageBoxButton.OK, MessageBoxImage.Information);
             return 0;
         }
         private int CVI(Operand lhs, Operand rhs)
         {
-            MessageBox.Show("CVI Instruction is not currently used", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MessageBox.Show("CVI Instruction is not currently used", "", MessageBoxButton.OK, MessageBoxImage.Information);
             return 0;
         }
         private int LDB(Operand lhs, Operand rhs)
         {
-            MessageBox.Show("LDB Instruction is not currently implemented", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MessageBox.Show("LDB Instruction is not currently implemented", "", MessageBoxButton.OK, MessageBoxImage.Information);
             return 0;
         }
         private int LDW(Operand lhs, Operand rhs)
         {
-            MessageBox.Show("LDW Instruction is not currently implemented", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MessageBox.Show("LDW Instruction is not currently implemented", "", MessageBoxButton.OK, MessageBoxImage.Information);
             return 0;
         }
         private int LNS(Operand lhs, Operand rhs)
         {
-            MessageBox.Show("LNS Instruction is not currently implemented", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MessageBox.Show("LNS Instruction is not currently implemented", "", MessageBoxButton.OK, MessageBoxImage.Information);
             return 0;
         }
         private int LDBI(Operand lhs, Operand rhs)
         {
-            MessageBox.Show("LDBI Instruction is not currently implemented", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MessageBox.Show("LDBI Instruction is not currently implemented", "", MessageBoxButton.OK, MessageBoxImage.Information);
             return 0;
         }
         private int LDWI(Operand lhs, Operand rhs)
         {
-            MessageBox.Show("LDWI Instruction is not currently implemented", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MessageBox.Show("LDWI Instruction is not currently implemented", "", MessageBoxButton.OK, MessageBoxImage.Information);
             return 0;
         }
         private int TAS(Operand lhs, Operand rhs)
         {
             //TODO Implement TAS
-            MessageBox.Show("TAS Instruction is not currently implemented", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MessageBox.Show("TAS Instruction is not currently implemented", "", MessageBoxButton.OK, MessageBoxImage.Information);
             return 0;
         }
         private int STB(Operand lhs, Operand rhs)
         {
-            MessageBox.Show("STB Instruction is not currently implemented", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MessageBox.Show("STB Instruction is not currently implemented", "", MessageBoxButton.OK, MessageBoxImage.Information);
             return 0;
         }
         private int STW(Operand lhs, Operand rhs)
         {
-            MessageBox.Show("STW Instruction is not currently implemented", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MessageBox.Show("STW Instruction is not currently implemented", "", MessageBoxButton.OK, MessageBoxImage.Information);
             return 0;
         }
         private int STBI(Operand lhs, Operand rhs)
         {
-            MessageBox.Show("STBI Instruction is not currently implemented", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MessageBox.Show("STBI Instruction is not currently implemented", "", MessageBoxButton.OK, MessageBoxImage.Information);
             return 0;
         }
         private int STWI(Operand lhs, Operand rhs)
         {
-            MessageBox.Show("STWI Instruction is not currently implemented", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MessageBox.Show("STWI Instruction is not currently implemented", "", MessageBoxButton.OK, MessageBoxImage.Information);
             return 0;
         }
         private int PUSH(Operand lhs, Operand rhs)
         {
-            SimulatorProgram p = GetCurrentProgram();            
-            //MessageBox.Show("PUSH Instruction is not currently implemented", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            SimulatorProgram p = GetCurrentProgram();
+            p.Stack.pushItem(new StackItem(lhs.Register.Value));
+            //MessageBox.Show("PUSH Instruction is not currently implemented", "", MessageBoxButton.OK, MessageBoxImage.Information);
             return 0;
         }
 
         private int POP(Operand lhs, Operand rhs)
         {
-            MessageBox.Show("POP Instruction is not currently implemented", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MessageBox.Show("POP Instruction is not currently implemented", "", MessageBoxButton.OK, MessageBoxImage.Information);
             return 0;
         }
         private int SWP(Operand lhs, Operand rhs)
         {
             if (!lhs.IsRegister || !rhs.IsRegister)
             {
-                MessageBox.Show("ERROR SWP Both operands must be a register", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("ERROR SWP Both operands must be a register", "", MessageBoxButton.OK, MessageBoxImage.Information);
                 return 0;
             }
             else
@@ -439,11 +448,37 @@ namespace CPU_OS_Simulator.CPU
         #endregion Data Transfer
         #endregion Instruction Execution Functions
 
+        #region Window Accessor Methods
         private SimulatorProgram GetCurrentProgram()
         {
-            Assembly main = Assembly.GetEntryAssembly();
-            return null;
-            
+            //Assembly main = Assembly.GetEntryAssembly();
+            //Type WindowType = main.GetType("MainWindow");
+            //var window = GetActiveWindow(WindowType).First();
+
+            //return null;
+            Assembly windowBridge = Assembly.LoadFrom("CPU_OS_Simulator.WindowBridge.dll");
+            Console.WriteLine(windowBridge.GetExportedTypes()[0]);
+            Type WindowType = windowBridge.GetType(windowBridge.GetExportedTypes()[0].ToString());
+            dynamic window = WindowType.GetField("MainWindowInstance").GetValue(null);
+            string programName = window.currentProgram;
+            List<SimulatorProgram> programs = window.ProgramList;
+            SimulatorProgram prog = programs.Where(x => x.Name.Equals(programName)).FirstOrDefault();
+            return prog;
         }
+
+        private List<Window> GetActiveWindow(Type WindowType)
+        {
+            List<Window> windows = new List<Window>();
+            foreach(Window window in Application.Current.Windows)
+            {
+                if (window.GetType() == WindowType)
+                    windows.Add(window);
+                else
+                    continue;
+
+            }
+            return windows;
+        }
+        #endregion Window Accessor Methods
     }
 }

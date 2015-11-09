@@ -11,6 +11,7 @@ namespace CPU_OS_Simulator.CPU
         private int clockSpeed;
         private int currentIndex;
         private bool stop;
+        
 
         public ExecutionUnit(SimulatorProgram program, int clockSpeed)
         {

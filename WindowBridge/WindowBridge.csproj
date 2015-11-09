@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{6EBCF9CD-C6A9-4535-9154-2FC7E303BFC4}</ProjectGuid>
+    <ProjectGuid>{D364AA4C-54CE-4BD3-AD4D-8790DEB58D2F}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>CPU_OS_Simulator.CPU</RootNamespace>
-    <AssemblyName>CPU-OS Simulator.CPU</AssemblyName>
+    <RootNamespace>CPU_OS_Simulator.WindowBridge</RootNamespace>
+    <AssemblyName>CPU_OS_Simulator.WindowBridge</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />
@@ -31,50 +31,29 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="PresentationCore" />
-    <Reference Include="PresentationFramework" />
     <Reference Include="System" />
-    <Reference Include="System.Activities" />
     <Reference Include="System.Core" />
-    <Reference Include="System.ServiceModel" />
-    <Reference Include="System.ServiceModel.Activities" />
-    <Reference Include="System.Web.Extensions" />
-    <Reference Include="System.Windows" />
-    <Reference Include="System.Xaml" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Xml" />
-    <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="EnumInstructionSize.cs" />
-    <Compile Include="EnumOpcodes.cs" />
-    <Compile Include="EnumOperandType.cs" />
-    <Compile Include="ExecutionUnit.cs" />
-    <Compile Include="Extentions.cs" />
-    <Compile Include="Instruction.cs" />
-    <Compile Include="Operand.cs" />
-    <Compile Include="ProgramStack.cs" />
+    <Compile Include="WindowInstances.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Register.cs" />
-    <Compile Include="SimulatorProgram.cs" />
-    <Compile Include="SpecialRegister.cs" />
-    <Compile Include="StackItem.cs" />
-    <Compile Include="StatusFlags.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="CPU-OS Simulator 7-5-50_1.ico" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Memory\Memory.csproj">
-      <Project>{2fba6a60-9499-4c9e-8b43-abb459a9c0b6}</Project>
-      <Name>Memory</Name>
+    <ProjectReference Include="..\CPU-OS Simulator\CPU-OS Simulator.csproj">
+      <Project>{c2efcee0-984e-4c61-b323-65aadd76f783}</Project>
+      <Name>CPU-OS Simulator</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>xcopy /Y /S "$(SolutionDir)\WindowBridge\bin\Debug\CPU_OS_Simulator.WindowBridge.dll" "$(SolutionDir)CPU-OS Simulator\bin\Debug"</PostBuildEvent>
+  </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">
