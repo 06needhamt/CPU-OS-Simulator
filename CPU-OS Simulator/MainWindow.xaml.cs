@@ -21,7 +21,47 @@ namespace CPU_OS_Simulator
     {
         private List<SimulatorProgram> programList;
         private EnumInstructionMode InstructionMode;
-        private string currentProgram = string.Empty;
+        public static string currentProgram = string.Empty;
+        private ExecutionUnit activeUnit;
+
+        public List<SimulatorProgram> ProgramList
+        {
+            get
+            {
+                return programList;
+            }
+
+            set
+            {
+                programList = value;
+            }
+        }
+
+        public EnumInstructionMode InstructionMode1
+        {
+            get
+            {
+                return InstructionMode;
+            }
+
+            set
+            {
+                InstructionMode = value;
+            }
+        }
+
+        public ExecutionUnit ActiveUnit
+        {
+            get
+            {
+                return activeUnit;
+            }
+
+            set
+            {
+                activeUnit = value;
+            }
+        }
 
         public MainWindow()
         {
@@ -29,6 +69,7 @@ namespace CPU_OS_Simulator
             programList = new List<SimulatorProgram>();
             PopulateRegisters();
             Console.WriteLine("Hello World");
+            MainWindowInstance.mainWindow = this;
         }
 
         private void PopulateRegisters()
@@ -48,22 +89,7 @@ namespace CPU_OS_Simulator
             }
         }
         private void UpdateRegisters() {
-            //for (int i = 0; i < lst_Registers.Items.Count; i++)
-            //{
-            //    string registerString = "R";
-            //    if (i < 10)
-            //    {
-            //        registerString += "0" + i;
-            //    }
-            //    else
-            //    {
-            //        registerString += i;
-            //    }
-            //    TODO FIX find out how to update registers in ui
-
-            //    ((Register)lst_Registers.Items.GetItemAt(i)).setRegisterValue(Register.FindRegister(registerString).Value, EnumOperandType.VALUE);
-
-            //}
+            // HACK item source must be null before modifying the list
             lst_Registers.ItemsSource = null;
             lst_Registers.Items.Clear();
             PopulateRegisters();
@@ -345,6 +371,39 @@ namespace CPU_OS_Simulator
         private void lst_ProgramList_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             UpdateIntructions();
+            UpdateStack();
+        }
+
+        private void UpdateStack()
+        {
+            if (currentProgram.Equals(string.Empty)) // if a program has been loaded from a file
+            {
+                programList = lst_ProgramList.Items.OfType<SimulatorProgram>().ToList(); // populate the program list with the loaded programs
+                Console.WriteLine(programList.Count);
+                currentProgram = programList.First().Name; // load the first program in the list
+            }
+            if ((lst_ProgramList.SelectedItem) == null) // if no program is selected
+            {
+                lst_InstructionsList.SelectedIndex = 0;
+                currentProgram = ((SimulatorProgram)lst_ProgramList.Items.GetItemAt(0)).Name; // select and load the first item
+            }
+            else
+            {
+                currentProgram = ((SimulatorProgram)lst_ProgramList.SelectedItem).Name; // load the selected item
+            }
+            lst_Stack.ItemsSource = null;
+            lst_Stack.Items.Clear();
+            SimulatorProgram prog = programList.Where(x => x.Name.Equals(currentProgram)).FirstOrDefault(); // find the currently active program
+            if (prog.Stack != null)
+            {
+                lst_Stack.ItemsSource = prog.Stack.StackItems;
+            }
+            else
+            {
+                lst_Stack.ItemsSource = null;
+            }
+            Console.WriteLine("Stack Updated");
+
         }
 
         /// <summary>
@@ -379,7 +438,7 @@ namespace CPU_OS_Simulator
             {
                 lst_InstructionsList.ItemsSource = null;
             }
-            Console.WriteLine(lst_InstructionsList.Items.Count);
+            Console.WriteLine("Instructions Updated");
         }
 
         private void btn_Load_Click(object sender, RoutedEventArgs e)
@@ -454,7 +513,6 @@ namespace CPU_OS_Simulator
         /// <param name="fileName">the file to save the objects to</param>
         public void SerializeObject<T>(T serializableObject, string filePath)
         {
-            //TODO FIX Saving Objects
             if (serializableObject == null) { return; }
 
             StreamWriter writer = new StreamWriter(filePath, true); // initialise a file writer
@@ -507,17 +565,23 @@ namespace CPU_OS_Simulator
         private void btn_Step_Click(object sender, RoutedEventArgs e)
         {
             SimulatorProgram prog = programList.Where(x => x.Name.Equals(currentProgram)).FirstOrDefault();
-            ExecutionUnit unit = new ExecutionUnit(prog, (int)sld_ClockSpeed.Value);
-            unit.ExecuteProgram(true);
+            activeUnit = new ExecutionUnit(prog, (int)sld_ClockSpeed.Value,lst_InstructionsList.SelectedIndex);
+            activeUnit.ExecuteProgram(true);
             UpdateRegisters();
+            lst_InstructionsList.SelectedIndex++;
         }
 
         private void btn_Run_Click(object sender, RoutedEventArgs e)
         {
             SimulatorProgram prog = programList.Where(x => x.Name.Equals(currentProgram)).FirstOrDefault();
-            ExecutionUnit unit = new ExecutionUnit(prog, (int)sld_ClockSpeed.Value);
-            unit.ExecuteProgram(false);
+            activeUnit = new ExecutionUnit(prog, (int)sld_ClockSpeed.Value,lst_InstructionsList.SelectedIndex);
+            activeUnit.ExecuteProgram(false);
             UpdateRegisters();
+        }
+
+        private void btn_Stop_Click(object sender, RoutedEventArgs e)
+        {
+            bool stopped = activeUnit != null ? activeUnit.Stop = true : activeUnit.Stop = false;
         }
     }
 }

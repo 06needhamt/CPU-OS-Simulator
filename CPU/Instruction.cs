@@ -1,5 +1,7 @@
 ﻿using System;
+using System.Windows.Forms;
 using System.Web.Script.Serialization;
+using System.Reflection;
 
 namespace CPU_OS_Simulator.CPU
 {
@@ -188,12 +190,92 @@ namespace CPU_OS_Simulator.CPU
             {
                 case 0:
                     {
-                        this.execute = () => Move(operand1, operand2);
+                        this.execute = () => MOV(operand1, operand2);
+                        break;
+                    }
+                case 1:
+                    {
+                        this.execute = () => MVS(operand1, operand2);
+                        break;
+                    }
+                case 2:
+                    {
+                        this.execute = () => CVS(operand1, operand2);
+                        break;
+                    }
+                case 3:
+                    {
+                        this.execute = () => CVI(operand1, operand2);
+                        break;
+                    }
+                case 4:
+                    {
+                        this.execute = () => LDB(operand1, operand2);
+                        break;
+                    }
+                case 5:
+                    {
+                        this.execute = () => LDW(operand1, operand2);
+                        break;
+                    }
+                case 6:
+                    {
+                        this.execute = () => LNS(operand1, operand2);
+                        break;
+                    }
+                case 7:
+                    {
+                        this.execute = () => LDBI(operand1, operand2);
+                        break;
+                    }
+                case 8:
+                    {
+                        this.execute = () => LDWI(operand1, operand2);
+                        break;
+                    }
+                case 9:
+                    {
+                        this.execute = () => TAS(operand1, operand2);
+                        break;
+                    }
+                case 10:
+                    {
+                        this.execute = () => STB(operand1, operand2);
+                        break;
+                    }
+                case 11:
+                    {
+                        this.execute = () => STW(operand1, operand2);
+                        break;
+                    }
+                case 12:
+                    {
+                        this.execute = () => STBI(operand1, operand2);
+                        break;
+                    }
+                case 13:
+                    {
+                        this.execute = () => STWI(operand1, operand2);
+                        break;
+                    }
+                case 14:
+                    {
+                        this.execute = () => PUSH(operand1, operand2);
+                        break;
+                    }
+                case 15:
+                    {
+                        this.execute = () => POP(operand1, operand2);
+                        break;
+                    }
+                case 16:
+                    {
+                        this.execute = () => SWP(operand1, operand2);
                         break;
                     }
                 case 22:
                     {
-                        this.execute = () => Add(operand1, operand2); // save the function in memory to call later
+                        this.execute = () => ADD(operand1, operand2); // save the function in memory to call later
                         break;
                     }
                 default:
@@ -237,7 +319,9 @@ namespace CPU_OS_Simulator.CPU
 
         #region Instruction Execution Functions
 
-        private int Move(Operand lhs, Operand rhs)
+        //TODO Allow for memory operands
+        #region Data Transfer
+        private int MOV(Operand lhs, Operand rhs)
         {
             result = rhs.Value;
             if (lhs.IsRegister)
@@ -247,9 +331,103 @@ namespace CPU_OS_Simulator.CPU
             }
             return result;
         }
-        private int Add(Operand lhs, Operand rhs)
+        private int MVS(Operand lhs, Operand rhs)
         {
-            //TODO Allow for memory operands
+            MessageBox.Show("MVS Instruction is not currently implemented", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            return 0;
+        }
+        private int CVS(Operand lhs,Operand rhs)
+        {
+            MessageBox.Show("CVS Instruction is not currently used", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            return 0;
+        }
+        private int CVI(Operand lhs, Operand rhs)
+        {
+            MessageBox.Show("CVI Instruction is not currently used", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            return 0;
+        }
+        private int LDB(Operand lhs, Operand rhs)
+        {
+            MessageBox.Show("LDB Instruction is not currently implemented", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            return 0;
+        }
+        private int LDW(Operand lhs, Operand rhs)
+        {
+            MessageBox.Show("LDW Instruction is not currently implemented", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            return 0;
+        }
+        private int LNS(Operand lhs, Operand rhs)
+        {
+            MessageBox.Show("LNS Instruction is not currently implemented", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            return 0;
+        }
+        private int LDBI(Operand lhs, Operand rhs)
+        {
+            MessageBox.Show("LDBI Instruction is not currently implemented", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            return 0;
+        }
+        private int LDWI(Operand lhs, Operand rhs)
+        {
+            MessageBox.Show("LDWI Instruction is not currently implemented", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            return 0;
+        }
+        private int TAS(Operand lhs, Operand rhs)
+        {
+            //TODO Implement TAS
+            MessageBox.Show("TAS Instruction is not currently implemented", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            return 0;
+        }
+        private int STB(Operand lhs, Operand rhs)
+        {
+            MessageBox.Show("STB Instruction is not currently implemented", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            return 0;
+        }
+        private int STW(Operand lhs, Operand rhs)
+        {
+            MessageBox.Show("STW Instruction is not currently implemented", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            return 0;
+        }
+        private int STBI(Operand lhs, Operand rhs)
+        {
+            MessageBox.Show("STBI Instruction is not currently implemented", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            return 0;
+        }
+        private int STWI(Operand lhs, Operand rhs)
+        {
+            MessageBox.Show("STWI Instruction is not currently implemented", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            return 0;
+        }
+        private int PUSH(Operand lhs, Operand rhs)
+        {
+            SimulatorProgram p = GetCurrentProgram()            
+            //MessageBox.Show("PUSH Instruction is not currently implemented", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            return 0;
+        }
+
+        private int POP(Operand lhs, Operand rhs)
+        {
+            MessageBox.Show("POP Instruction is not currently implemented", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            return 0;
+        }
+        private int SWP(Operand lhs, Operand rhs)
+        {
+            if (!lhs.IsRegister || !rhs.IsRegister)
+            {
+                MessageBox.Show("ERROR SWP Both operands must be a register", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return 0;
+            }
+            else
+            {
+                int leftvalue = lhs.Register.Value;
+                int rightvalue = rhs.Register.Value;
+                lhs.Register.Value = rightvalue;
+                rhs.Register.Value = leftvalue;
+                result = lhs.Register.Value;
+                return result;
+            }
+        }
+        private int ADD(Operand lhs, Operand rhs)
+        {
             result = lhs.Value + rhs.Value;
             if (lhs.IsRegister)
             {
@@ -258,7 +436,13 @@ namespace CPU_OS_Simulator.CPU
             }
             return result;
         }
-
+        #endregion Data Transfer
         #endregion Instruction Execution Functions
+
+        private SimulatorProgram GetCurrentProgram()
+        {
+            Assembly main = Assembly.GetEntryAssembly();
+            
+        }
     }
 }

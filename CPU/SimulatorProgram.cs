@@ -19,6 +19,7 @@ namespace CPU_OS_Simulator.CPU
         private ExecutionUnit unit;
         private List<Instruction> instructions;
         private List<MemoryPage> memory;
+        private ProgramStack stack;
 
         #endregion Global Variables
 
@@ -42,6 +43,7 @@ namespace CPU_OS_Simulator.CPU
             this.instructions = new List<Instruction>();
             this.startAddress = baseAddress;
             unit = new ExecutionUnit(this, 100);
+            stack = new ProgramStack();
             Console.WriteLine("Program Created");
         }
 
@@ -136,6 +138,19 @@ namespace CPU_OS_Simulator.CPU
             set
             {
                 memory = value;
+            }
+        }
+
+        public ProgramStack Stack
+        {
+            get
+            {
+                return stack;
+            }
+
+            set
+            {
+                stack = value;
             }
         }
 
