@@ -570,8 +570,11 @@ namespace CPU_OS_Simulator
         private void btn_Step_Click(object sender, RoutedEventArgs e)
         {
             SimulatorProgram prog = programList.Where(x => x.Name.Equals(currentProgram)).FirstOrDefault();
-            activeUnit = new ExecutionUnit(prog, (int)sld_ClockSpeed.Value,lst_InstructionsList.SelectedIndex);
-            activeUnit.ExecuteProgram(true);
+            if (activeUnit == null || !activeUnit.Program.Equals(prog));
+            {
+                activeUnit = new ExecutionUnit(prog, (int)sld_ClockSpeed.Value, lst_InstructionsList.SelectedIndex);
+            }
+            activeUnit.ExecuteInstruction(true);
             UpdateRegisters();
             UpdateStack();
             lst_InstructionsList.SelectedIndex++;
@@ -580,10 +583,31 @@ namespace CPU_OS_Simulator
         private void btn_Run_Click(object sender, RoutedEventArgs e)
         {
             SimulatorProgram prog = programList.Where(x => x.Name.Equals(currentProgram)).FirstOrDefault();
-            activeUnit = new ExecutionUnit(prog, (int)sld_ClockSpeed.Value,lst_InstructionsList.SelectedIndex);
-            activeUnit.ExecuteProgram(false);
-            UpdateRegisters();
-            UpdateStack();
+            if (activeUnit == null || !activeUnit.Program.Equals(prog))
+            {
+                activeUnit = new ExecutionUnit(prog, (int)sld_ClockSpeed.Value, lst_InstructionsList.SelectedIndex);
+            }
+            Stopwatch s = new Stopwatch();
+            s.Start();
+            while (!activeUnit.Done)
+            {
+                activeUnit.ExecuteInstruction(false);
+                UpdateRegisters();
+                UpdateStack();
+                lst_InstructionsList.SelectedIndex++;
+            }
+            s.Stop();
+            MessageBox.Show("Program Completed in: " + CalculateTime(s.ElapsedMilliseconds) + " Seconds","",MessageBoxButton.OK,MessageBoxImage.Information);
+
+        }
+
+        private string CalculateTime(long mills)
+        {
+            long mils = 0;
+            long secs = 0;
+            secs = mills / 1000;
+            mils = mills % 1000;
+            return secs + "." + mills;
         }
 
         private void btn_Stop_Click(object sender, RoutedEventArgs e)

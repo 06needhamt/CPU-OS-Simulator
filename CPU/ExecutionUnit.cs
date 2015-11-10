@@ -11,6 +11,7 @@ namespace CPU_OS_Simulator.CPU
         private int clockSpeed;
         private int currentIndex;
         private bool stop;
+        private bool done;
         
 
         public ExecutionUnit(SimulatorProgram program, int clockSpeed)
@@ -31,23 +32,14 @@ namespace CPU_OS_Simulator.CPU
             stop = false;
         }
 
-        public void ExecuteProgram(bool step)
+        public void ExecuteInstruction(bool step)
         {
-            if (step)
+            Console.WriteLine("Executing instruction");
+            program.Instructions.ElementAt(currentIndex).Execute();
+            currentIndex++;
+            if(currentIndex == program.Instructions.Count)
             {
-                Console.WriteLine("Executing instruction");
-                program.Instructions.ElementAt(currentIndex).Execute();
-            }
-            else
-            {
-                Console.WriteLine("Executing Program");
-                for (int i = currentIndex; i < program.Instructions.Count; i++)
-                {
-                    Thread.Sleep(clockSpeed);
-                    program.Instructions.ElementAt(i).Execute();
-                    currentIndex++;
-                    //yield return i;
-                }
+                Done = true;
             }
         }
 
@@ -87,6 +79,19 @@ namespace CPU_OS_Simulator.CPU
             set
             {
                 stop = value;
+            }
+        }
+
+        public bool Done
+        {
+            get
+            {
+                return done;
+            }
+
+            set
+            {
+                done = value;
             }
         }
     }
