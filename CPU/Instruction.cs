@@ -419,8 +419,16 @@ namespace CPU_OS_Simulator.CPU
 
         private int POP(Operand lhs, Operand rhs)
         {
-            MessageBox.Show("POP Instruction is not currently implemented", "", MessageBoxButton.OK, MessageBoxImage.Information);
-            return 0;
+            SimulatorProgram p = GetCurrentProgram();
+            if (!lhs.IsRegister)
+            {
+                MessageBox.Show("Operand for POP instruction must be a register", "", MessageBoxButton.OK, MessageBoxImage.Information);
+            }
+            lhs.Register.Value = p.Stack.popItem();
+            result = lhs.Register.Value;
+            Register.FindRegister(lhs.Register.Name).setRegisterValue(result,EnumOperandType.VALUE);
+            //MessageBox.Show("POP Instruction is not currently implemented", "", MessageBoxButton.OK, MessageBoxImage.Information);
+            return result;
         }
         private int SWP(Operand lhs, Operand rhs)
         {
