@@ -254,7 +254,7 @@
                     <Grid x:Name="TabGrid_Copy2" Background="#FFE5E5E5" Margin="0,0,0,31">
                         <Label x:Name="label3" Content="Opcode" HorizontalAlignment="Left" Margin="48,22,0,0" VerticalAlignment="Top" FontWeight="Bold" />
                         <Grid x:Name="InstructionListGrid3" HorizontalAlignment="Left" Height="277" Margin="25,53,0,0" VerticalAlignment="Top" Width="100">
-                            <ListBox x:Name="lst_OpcodeListControlTransfer" HorizontalAlignment="Left" Height="277" VerticalAlignment="Top" Width="100" Background="#FFFFFCC3" SelectedIndex="0" />
+                            <ListBox x:Name="lst_OpcodeListControlTransfer" HorizontalAlignment="Left" Height="277" VerticalAlignment="Top" Width="100" Background="#FFFFFCC3" SelectedIndex="0" SelectionChanged="lst_OpcodeListControlTransfer_SelectionChanged" />
                         </Grid>
                         <Grid x:Name="SourceOperandGrid3" HorizontalAlignment="Left" Height="151" Margin="145,53,0,0" VerticalAlignment="Top" Width="150">
                             <GroupBox x:Name="grp_SourceOperand3" Header="Source Operand" HorizontalAlignment="Left" VerticalAlignment="Top" Height="151" Width="150" Margin="0,-29,0,0">
@@ -332,7 +332,7 @@
                     <Grid x:Name="TabGrid_Copy3" Background="#FFE5E5E5" Margin="0,0,0,31">
                         <Label x:Name="label4" Content="Opcode" HorizontalAlignment="Left" Margin="48,22,0,0" VerticalAlignment="Top" FontWeight="Bold" />
                         <Grid x:Name="InstructionListGrid4" HorizontalAlignment="Left" Height="277" Margin="25,53,0,0" VerticalAlignment="Top" Width="100">
-                            <ListBox x:Name="lst_OpcodeListComparison" HorizontalAlignment="Left" Height="277" VerticalAlignment="Top" Width="100" Background="#FFFFFCC3" SelectedIndex="0" />
+                            <ListBox x:Name="lst_OpcodeListComparison" HorizontalAlignment="Left" Height="277" VerticalAlignment="Top" Width="100" Background="#FFFFFCC3" SelectedIndex="0" SelectionChanged="lst_OpcodeListComparison_SelectionChanged" />
                         </Grid>
                         <Grid x:Name="SourceOperandGrid4" HorizontalAlignment="Left" Height="151" Margin="145,53,0,0" VerticalAlignment="Top" Width="150">
                             <GroupBox x:Name="grp_SourceOperand4" Header="Source Operand" HorizontalAlignment="Left" VerticalAlignment="Top" Height="151" Width="150" Margin="0,-29,0,0">
@@ -410,7 +410,7 @@
                     <Grid x:Name="TabGrid_Copy4" Background="#FFE5E5E5" Margin="0,0,0,31">
                         <Label x:Name="label5" Content="Opcode" HorizontalAlignment="Left" Margin="48,22,0,0" VerticalAlignment="Top" FontWeight="Bold" />
                         <Grid x:Name="InstructionListGrid5" HorizontalAlignment="Left" Height="277" Margin="25,53,0,0" VerticalAlignment="Top" Width="100">
-                            <ListBox x:Name="lst_OpcodeListIO" HorizontalAlignment="Left" Height="277" VerticalAlignment="Top" Width="100" Background="#FFFFFCC3" SelectedIndex="0" />
+                            <ListBox x:Name="lst_OpcodeListIO" HorizontalAlignment="Left" Height="277" VerticalAlignment="Top" Width="100" Background="#FFFFFCC3" SelectedIndex="0" SelectionChanged="lst_OpcodeListIO_SelectionChanged" />
                         </Grid>
                         <Grid x:Name="SourceOperandGrid5" HorizontalAlignment="Left" Height="151" Margin="145,53,0,0" VerticalAlignment="Top" Width="150">
                             <GroupBox x:Name="grp_SourceOperand5" Header="Source Operand" HorizontalAlignment="Left" VerticalAlignment="Top" Height="151" Width="150" Margin="0,-29,0,0">
@@ -488,7 +488,7 @@
                     <Grid x:Name="TabGrid_Copy5" Background="#FFE5E5E5" Margin="0,0,0,31">
                         <Label x:Name="label6" Content="Opcode" HorizontalAlignment="Left" Margin="48,22,0,0" VerticalAlignment="Top" FontWeight="Bold" />
                         <Grid x:Name="InstructionListGrid6" HorizontalAlignment="Left" Height="277" Margin="25,53,0,0" VerticalAlignment="Top" Width="100">
-                            <ListBox x:Name="lst_OpcodeListMiscellaneous" HorizontalAlignment="Left" Height="277" VerticalAlignment="Top" Width="100" Background="#FFFFFCC3" SelectedIndex="0" />
+                            <ListBox x:Name="lst_OpcodeListMiscellaneous" HorizontalAlignment="Left" Height="277" VerticalAlignment="Top" Width="100" Background="#FFFFFCC3" SelectedIndex="0" SelectionChanged="lst_OpcodeListMiscellaneous_SelectionChanged" />
                         </Grid>
                         <Grid x:Name="SourceOperandGrid6" HorizontalAlignment="Left" Height="151" Margin="145,53,0,0" VerticalAlignment="Top" Width="150">
                             <GroupBox x:Name="grp_SourceOperand6" Header="Source Operand" HorizontalAlignment="Left" VerticalAlignment="Top" Height="151" Width="150" Margin="0,-29,0,0">

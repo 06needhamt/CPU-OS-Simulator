@@ -156,6 +156,28 @@ namespace CPU_OS_Simulator
             txtDescriptionArithmetic.Text = instructionDescriptions.ElementAt<string>((int)selected);
         }
 
+        private void lst_OpcodeListControlTransfer_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            EnumOpcodes selected = (EnumOpcodes)Enum.Parse(typeof(EnumOpcodes), lst_OpcodeListControlTransfer.SelectedItem.ToString());
+            txtDescriptionControlTransfer.Text = instructionDescriptions.ElementAt<string>((int)selected);
+        }
+
+        private void lst_OpcodeListComparison_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            EnumOpcodes selected = (EnumOpcodes)Enum.Parse(typeof(EnumOpcodes), lst_OpcodeListComparison.SelectedItem.ToString());
+            txtDescriptionComparison.Text = instructionDescriptions.ElementAt<string>((int)selected);
+        }
+
+        private void lst_OpcodeListIO_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            EnumOpcodes selected = (EnumOpcodes)Enum.Parse(typeof(EnumOpcodes), lst_OpcodeListIO.SelectedItem.ToString());
+            txtDescriptionIO.Text = instructionDescriptions.ElementAt<string>((int)selected);
+        }
+        private void lst_OpcodeListMiscellaneous_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            EnumOpcodes selected = (EnumOpcodes)Enum.Parse(typeof(EnumOpcodes), lst_OpcodeListMiscellaneous.SelectedItem.ToString());
+            txtDescriptionMiscellaneous.Text = instructionDescriptions.ElementAt<string>((int)selected);
+        }
         #endregion Populate Instruction Descriptions
 
         /// <summary>

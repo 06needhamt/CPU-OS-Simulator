@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Web.Script.Serialization;
 using CPU_OS_Simulator.Memory;
 
 namespace CPU_OS_Simulator.CPU
@@ -18,7 +19,9 @@ namespace CPU_OS_Simulator.CPU
         private Int32 pages;
         private ExecutionUnit unit;
         private List<Instruction> instructions;
+        [ScriptIgnore]
         private List<MemoryPage> memory;
+        [ScriptIgnore]
         private ProgramStack stack;
 
         #endregion Global Variables
@@ -127,7 +130,7 @@ namespace CPU_OS_Simulator.CPU
                 startAddress = value;
             }
         }
-
+        [ScriptIgnore]
         public List<MemoryPage> Memory
         {
             get
@@ -140,7 +143,7 @@ namespace CPU_OS_Simulator.CPU
                 memory = value;
             }
         }
-
+        [ScriptIgnore]
         public ProgramStack Stack
         {
             get

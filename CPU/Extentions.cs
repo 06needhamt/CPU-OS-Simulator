@@ -16,5 +16,15 @@ namespace CPU_OS_Simulator.CPU
             else
                 return source.ToString();
         }
+
+        public static int NumberOfOperandsAttr<T>(this T source)
+        {
+            FieldInfo fi = source.GetType().GetField(source.ToString());
+            NumberOfOperandsAttribute[] attributes = (NumberOfOperandsAttribute[])fi.GetCustomAttributes(typeof(NumberOfOperandsAttribute), false);
+            if (attributes != null && attributes.Length > 0)
+                return attributes[0].Value;
+            else
+                return 2;
+        } 
     }
 }

@@ -55,7 +55,9 @@
     <Compile Include="EnumOperandType.cs" />
     <Compile Include="ExecutionUnit.cs" />
     <Compile Include="Extentions.cs" />
+    <Compile Include="IAttribute.cs" />
     <Compile Include="Instruction.cs" />
+    <Compile Include="NumberOfOperandsAttribute.cs" />
     <Compile Include="Operand.cs" />
     <Compile Include="ProgramStack.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

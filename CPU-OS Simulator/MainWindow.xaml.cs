@@ -541,8 +541,12 @@ namespace CPU_OS_Simulator
             while ((json = reader.ReadLine()) != null) // while there are lines to read
             {
                 SimulatorProgram prog = deserializer.Deserialize<SimulatorProgram>(json); // deserialise the line into a object
-                programList.Add(prog);
                 BindInstructionDelegates(ref prog);
+                if(prog.Stack == null)
+                {
+                    prog.Stack = new ProgramStack();
+                }
+                programList.Add(prog);
                 lst_ProgramList.Items.Add(prog); // add the object to the program list
                 
             }
