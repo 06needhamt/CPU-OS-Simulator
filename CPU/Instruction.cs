@@ -408,6 +408,10 @@ namespace CPU_OS_Simulator.CPU
         private int PUSH(Operand lhs, Operand rhs)
         {
             SimulatorProgram p = GetCurrentProgram();
+            if (lhs.IsRegister)
+            {
+                lhs.Register.Value = Register.FindRegister(lhs.Register.Name).Value;
+            }
             p.Stack.pushItem(new StackItem(lhs.Register.Value));
             //MessageBox.Show("PUSH Instruction is not currently implemented", "", MessageBoxButton.OK, MessageBoxImage.Information);
             return 0;
@@ -437,12 +441,26 @@ namespace CPU_OS_Simulator.CPU
         }
         private int ADD(Operand lhs, Operand rhs)
         {
-            result = lhs.Value + rhs.Value;
             if (lhs.IsRegister)
             {
-                lhs.Register.Value = result;
-                Register.FindRegister(lhs.Register.Name).setRegisterValue(result, EnumOperandType.VALUE);
+                lhs.Register.Value = Register.FindRegister(lhs.Register.Name).Value;
+                result = lhs.Register.Value;
+                //Register.FindRegister(lhs.Register.Name).setRegisterValue(result, EnumOperandType.VALUE);
             }
+            else
+            {
+                MessageBox.Show("First operand of ADD instruction must be a register", "", MessageBoxButton.OK, MessageBoxImage.Information);
+            }
+            if(rhs.IsRegister)
+            {
+                lhs.Register.Value += Register.FindRegister(rhs.Register.Name).Value;
+            }
+            else
+            {
+                lhs.Register.Value += rhs.Value;
+            }
+            result = lhs.Register.Value;
+            Register.FindRegister(lhs.Register.Name).setRegisterValue(result, EnumOperandType.VALUE);
             return result;
         }
         #endregion Data Transfer
