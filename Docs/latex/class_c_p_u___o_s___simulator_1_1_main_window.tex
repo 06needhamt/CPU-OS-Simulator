@@ -15,14 +15,14 @@ Inheritance diagram for C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Main\+Window\+:\b
 \begin{DoxyCompactItemize}
 \item 
 \hyperlink{class_c_p_u___o_s___simulator_1_1_main_window_a33462505a86657583c1560cbf02172bd}{Main\+Window} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Constructor For the main window \end{DoxyCompactList}\item 
 \hyperlink{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_instruction}{Instruction} \hyperlink{class_c_p_u___o_s___simulator_1_1_main_window_a0786a3f7a368c6e63f6e49bc70d3083d}{Create\+Instruction} (\hyperlink{namespace_c_p_u___o_s___simulator_1_1_c_p_u_ac29c87bff87ad404c953b2581024043e}{Enum\+Opcodes} opcode, \hyperlink{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_operand}{Operand} op1, \hyperlink{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_operand}{Operand} op2, Int32 Size)
 \begin{DoxyCompactList}\small\item\em Creates an instruction with 2 operands \end{DoxyCompactList}\item 
 \hyperlink{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_instruction}{Instruction} \hyperlink{class_c_p_u___o_s___simulator_1_1_main_window_a91d73f33961d6268e741d7f2cf6a2b6d}{Create\+Instruction} (\hyperlink{namespace_c_p_u___o_s___simulator_1_1_c_p_u_ac29c87bff87ad404c953b2581024043e}{Enum\+Opcodes} opcode, \hyperlink{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_operand}{Operand} op1, Int32 Size)
 \begin{DoxyCompactList}\small\item\em Creates an instruction with 1 operand \end{DoxyCompactList}\item 
 \hyperlink{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_instruction}{Instruction} \hyperlink{class_c_p_u___o_s___simulator_1_1_main_window_a0616de56bcd9f57feb247f7e5de55f5f}{Create\+Instruction} (\hyperlink{namespace_c_p_u___o_s___simulator_1_1_c_p_u_ac29c87bff87ad404c953b2581024043e}{Enum\+Opcodes} opcode, Int32 Size)
 \begin{DoxyCompactList}\small\item\em Creates an instruction with no operands \end{DoxyCompactList}\item 
-void \hyperlink{class_c_p_u___o_s___simulator_1_1_main_window_aff4dc8e6061987daf02732e85fcd643a}{Add\+Instruction} (\hyperlink{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_instruction}{Instruction} ins)
+void \hyperlink{class_c_p_u___o_s___simulator_1_1_main_window_ae73f56ccee0f45b0df54438b3d397dd9}{Add\+Instruction} (\hyperlink{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_instruction}{Instruction} ins, int index)
 \begin{DoxyCompactList}\small\item\em Adds an instruction to the currently loaded program \end{DoxyCompactList}\item 
 void \hyperlink{class_c_p_u___o_s___simulator_1_1_main_window_a80985670e45349866a463b766f92e27b}{Serialize\+Object$<$ T $>$} (T serializable\+Object, string file\+Path)
 \begin{DoxyCompactList}\small\item\em Serializes a program List. \end{DoxyCompactList}\item 
@@ -36,6 +36,16 @@ void \hyperlink{class_c_p_u___o_s___simulator_1_1_main_window_a30724af44ae89c217
 \begin{DoxyCompactList}\small\item\em Initialize\+Component \end{DoxyCompactList}\item 
 void \hyperlink{class_c_p_u___o_s___simulator_1_1_main_window_a30724af44ae89c2172130c2dd36e145c}{Initialize\+Component} ()
 \begin{DoxyCompactList}\small\item\em Initialize\+Component \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+string \hyperlink{class_c_p_u___o_s___simulator_1_1_main_window_a91f063d9cf776004dc74e719ef942907}{current\+Program} = string.\+Empty
+\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{class_c_p_u___o_s___simulator_1_1_main_window}{Main\+Window} \hyperlink{class_c_p_u___o_s___simulator_1_1_main_window_a1280266cc57403a91f08a8350dee05cc}{current\+Instance}
+\end{DoxyCompactItemize}
 \subsection*{Package Attributes}
 \begin{DoxyCompactItemize}
 \item 
@@ -132,26 +142,143 @@ System.\+Windows.\+Controls.\+Group\+Box \hyperlink{class_c_p_u___o_s___simulato
 System.\+Windows.\+Controls.\+Grid \hyperlink{class_c_p_u___o_s___simulator_1_1_main_window_a4e287cef9f0becaebe0777af8de2d8c9}{Program\+List\+View\+Grid}
 \item 
 System.\+Windows.\+Controls.\+List\+View \hyperlink{class_c_p_u___o_s___simulator_1_1_main_window_ab33f21e0f19eab104e6f67f44d89daeb}{lst\+\_\+\+Program\+List}
+\item 
+System.\+Windows.\+Controls.\+Grid \hyperlink{class_c_p_u___o_s___simulator_1_1_main_window_a37acb139db0aa54950350fdb47dfd452}{Register\+Grid}
+\item 
+System.\+Windows.\+Controls.\+Group\+Box \hyperlink{class_c_p_u___o_s___simulator_1_1_main_window_af858add509dfe2b90f0d356822f73737}{grp\+\_\+\+Registers}
+\item 
+System.\+Windows.\+Controls.\+Grid \hyperlink{class_c_p_u___o_s___simulator_1_1_main_window_a27d2d9e2ed92e2daa444ca8086a0861e}{Register\+Inner\+Grid}
+\item 
+System.\+Windows.\+Controls.\+List\+View \hyperlink{class_c_p_u___o_s___simulator_1_1_main_window_ae88013c536662328670f206a4cab99b1}{lst\+\_\+\+Registers}
+\item 
+System.\+Windows.\+Controls.\+Grid \hyperlink{class_c_p_u___o_s___simulator_1_1_main_window_a7ce98e44f9236ca31eb5bf3ed81c3372}{Special\+Registers\+Grid}
+\item 
+System.\+Windows.\+Controls.\+Group\+Box \hyperlink{class_c_p_u___o_s___simulator_1_1_main_window_a02e4a81d8689928cb1d459fd3c01bfdf}{grp\+\_\+\+Special\+Registers}
+\item 
+System.\+Windows.\+Controls.\+Grid \hyperlink{class_c_p_u___o_s___simulator_1_1_main_window_aeef1e97d3e7d589fdab51828260c7b5a}{Special\+Registers\+Inner\+Grid}
+\item 
+System.\+Windows.\+Controls.\+Label \hyperlink{class_c_p_u___o_s___simulator_1_1_main_window_a94cf4fbdaebb09776745893c2bce1126}{label3}
+\item 
+System.\+Windows.\+Controls.\+Text\+Box \hyperlink{class_c_p_u___o_s___simulator_1_1_main_window_a7100765f8e26fa4c97a76dd445942b97}{txt\+\_\+\+P\+C}
+\item 
+System.\+Windows.\+Controls.\+Label \hyperlink{class_c_p_u___o_s___simulator_1_1_main_window_a3473dc873d8c8d8f4bba6e83f5684299}{label4}
+\item 
+System.\+Windows.\+Controls.\+Text\+Box \hyperlink{class_c_p_u___o_s___simulator_1_1_main_window_a9135c01bacd48e517d7cf46f69ea87d2}{txt\+\_\+\+S\+R}
+\item 
+System.\+Windows.\+Controls.\+Label \hyperlink{class_c_p_u___o_s___simulator_1_1_main_window_a37b18e7542e985a8984375d0b1cf441e}{label5}
+\item 
+System.\+Windows.\+Controls.\+Text\+Box \hyperlink{class_c_p_u___o_s___simulator_1_1_main_window_ac2427655774b9ca2b4c368651d5cd9de}{txt\+\_\+\+S\+P}
+\item 
+System.\+Windows.\+Controls.\+Label \hyperlink{class_c_p_u___o_s___simulator_1_1_main_window_aadfe7782d7e25b730849222805a541f9}{label5\+\_\+\+Copy}
+\item 
+System.\+Windows.\+Controls.\+Text\+Box \hyperlink{class_c_p_u___o_s___simulator_1_1_main_window_a7a878022ed4cb948598d3685dc821a00}{txt\+\_\+\+B\+R}
+\item 
+System.\+Windows.\+Controls.\+Group\+Box \hyperlink{class_c_p_u___o_s___simulator_1_1_main_window_a9947d1946c8258ea1fb77d860baa7e0f}{grp\+\_\+\+Status\+Flags}
+\item 
+System.\+Windows.\+Controls.\+Grid \hyperlink{class_c_p_u___o_s___simulator_1_1_main_window_afdda5e5a39c6e3b99300284ea2640e7c}{Status\+Flags\+Grid}
+\item 
+System.\+Windows.\+Controls.\+Check\+Box \hyperlink{class_c_p_u___o_s___simulator_1_1_main_window_adfbc519740506214093673b8015ea67d}{chk\+\_\+\+O\+V}
+\item 
+System.\+Windows.\+Controls.\+Check\+Box \hyperlink{class_c_p_u___o_s___simulator_1_1_main_window_a70c1a75df218201391cf5e0615a600f1}{chk\+\_\+\+Z}
+\item 
+System.\+Windows.\+Controls.\+Check\+Box \hyperlink{class_c_p_u___o_s___simulator_1_1_main_window_ab8a23e33c5c71e359574de36ccf8d991}{chk\+\_\+\+N}
+\item 
+System.\+Windows.\+Controls.\+Group\+Box \hyperlink{class_c_p_u___o_s___simulator_1_1_main_window_a0e549bad0f6778b2ea3fffb6c2d1a2bb}{grp\+\_\+\+C\+P\+U\+Mode}
+\item 
+System.\+Windows.\+Controls.\+Grid \hyperlink{class_c_p_u___o_s___simulator_1_1_main_window_ab6afb45d3f05517e9df6af167752be77}{C\+P\+U\+Mode\+Grid}
+\item 
+System.\+Windows.\+Controls.\+Radio\+Button \hyperlink{class_c_p_u___o_s___simulator_1_1_main_window_ab9e8d52c337bc24a24d8282dfbf449c8}{rdb\+\_\+\+User}
+\item 
+System.\+Windows.\+Controls.\+Radio\+Button \hyperlink{class_c_p_u___o_s___simulator_1_1_main_window_a549c6be690b051f4ab15dce643dec656}{rdb\+\_\+\+Kernel}
+\item 
+System.\+Windows.\+Controls.\+Label \hyperlink{class_c_p_u___o_s___simulator_1_1_main_window_a8f210008776bb163b4c2c2b160aa52be}{label6}
+\item 
+System.\+Windows.\+Controls.\+Text\+Box \hyperlink{class_c_p_u___o_s___simulator_1_1_main_window_ac6e0cfcdd72688d7bffd100ce6d11a28}{txt\+\_\+\+I\+R}
+\item 
+System.\+Windows.\+Controls.\+Label \hyperlink{class_c_p_u___o_s___simulator_1_1_main_window_a18612502a8ab2d53d85434e426785022}{label6\+\_\+\+Copy}
+\item 
+System.\+Windows.\+Controls.\+Text\+Box \hyperlink{class_c_p_u___o_s___simulator_1_1_main_window_a87f8440246e9f6ace0aa4d69b5bba289}{txt\+\_\+\+M\+A\+R}
+\item 
+System.\+Windows.\+Controls.\+Label \hyperlink{class_c_p_u___o_s___simulator_1_1_main_window_a890bd54d36af19ec881b6a840d6ac8a9}{label6\+\_\+\+Copy1}
+\item 
+System.\+Windows.\+Controls.\+Text\+Box \hyperlink{class_c_p_u___o_s___simulator_1_1_main_window_a1aa53d1512aa84e476b3649dcda5ced0}{txt\+\_\+\+M\+D\+R}
+\item 
+System.\+Windows.\+Controls.\+Grid \hyperlink{class_c_p_u___o_s___simulator_1_1_main_window_a59373e8f8822e4efea670d9fb87a1b32}{Program\+Stack\+Grid}
+\item 
+System.\+Windows.\+Controls.\+Group\+Box \hyperlink{class_c_p_u___o_s___simulator_1_1_main_window_a10687b397ff3a0381a556096a14ed0b0}{grp\+\_\+\+Program\+Stack}
+\item 
+System.\+Windows.\+Controls.\+Grid \hyperlink{class_c_p_u___o_s___simulator_1_1_main_window_a8c373866c86f6be0e7ef487a5ccb8c3c}{Program\+Stack\+Inner\+Grid}
+\item 
+System.\+Windows.\+Controls.\+List\+View \hyperlink{class_c_p_u___o_s___simulator_1_1_main_window_a8453db331c7cc1e7c1e711a06b2ec30c}{lst\+\_\+\+Stack}
+\item 
+System.\+Windows.\+Controls.\+Grid \hyperlink{class_c_p_u___o_s___simulator_1_1_main_window_af6e1d9a71f9501c02b62e8319ba11b5a}{Control\+Unit\+Grid}
+\item 
+System.\+Windows.\+Controls.\+Tab\+Control \hyperlink{class_c_p_u___o_s___simulator_1_1_main_window_acc893fc507d9ea08cc4a923bdc23091d}{Control\+Tabs}
+\item 
+System.\+Windows.\+Controls.\+Grid \hyperlink{class_c_p_u___o_s___simulator_1_1_main_window_a0bb4b4233380c349ee3bef69813a684b}{Control\+Unit\+Inner\+Grid}
+\item 
+System.\+Windows.\+Controls.\+Button \hyperlink{class_c_p_u___o_s___simulator_1_1_main_window_acd572aa9d278af703febb634fc1c34a3}{btn\+\_\+\+Step}
+\item 
+System.\+Windows.\+Controls.\+Button \hyperlink{class_c_p_u___o_s___simulator_1_1_main_window_ab3286e931d7154605876654bbf092840}{btn\+\_\+\+Run}
+\item 
+System.\+Windows.\+Controls.\+Button \hyperlink{class_c_p_u___o_s___simulator_1_1_main_window_a1b6b541d9765ca230f537d1d6b6c83aa}{btn\+\_\+\+Stop}
+\item 
+System.\+Windows.\+Controls.\+Radio\+Button \hyperlink{class_c_p_u___o_s___simulator_1_1_main_window_acba6218f7f716645443533815c6bd7a3}{rdb\+\_\+\+By\+Instruction}
+\item 
+System.\+Windows.\+Controls.\+Radio\+Button \hyperlink{class_c_p_u___o_s___simulator_1_1_main_window_ab40dcb618f5398ab67213476fe1b86ca}{rdb\+\_\+\+By\+Single\+Tick}
+\item 
+System.\+Windows.\+Controls.\+Slider \hyperlink{class_c_p_u___o_s___simulator_1_1_main_window_a39cd3af9bb0f8a3ccd06fdd44c9ed6a3}{sld\+\_\+\+Clock\+Speed}
+\item 
+System.\+Windows.\+Controls.\+Label \hyperlink{class_c_p_u___o_s___simulator_1_1_main_window_a38ed6363fd03954967bda7a099f6b07e}{label7}
+\item 
+System.\+Windows.\+Controls.\+Label \hyperlink{class_c_p_u___o_s___simulator_1_1_main_window_a216fc6a1692d8a8f8b80b08348c1dcd4}{label8}
+\item 
+System.\+Windows.\+Controls.\+Button \hyperlink{class_c_p_u___o_s___simulator_1_1_main_window_ada16565fc869dea1d54013009f5892b4}{btn\+\_\+\+Reset\+Program}
+\item 
+System.\+Windows.\+Controls.\+Button \hyperlink{class_c_p_u___o_s___simulator_1_1_main_window_a967a1b3dbde7ecb1d8091e5eababcc58}{btn\+\_\+\+Show\+P\+C\+B}
+\end{DoxyCompactItemize}
+\subsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+List$<$ \hyperlink{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_simulator_program}{Simulator\+Program} $>$ \hyperlink{class_c_p_u___o_s___simulator_1_1_main_window_a632c91cdd16a7498bbb8dfb3e5df252c}{Program\+List}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\item 
+\hyperlink{namespace_c_p_u___o_s___simulator_adc17a5a5e004084f05dc8e4d3f70e31f}{Enum\+Instruction\+Mode} \hyperlink{class_c_p_u___o_s___simulator_1_1_main_window_a65916937137002c26f9eb1c88cfff519}{Instruction\+Mode}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\item 
+\hyperlink{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_execution_unit}{Execution\+Unit} \hyperlink{class_c_p_u___o_s___simulator_1_1_main_window_a3d03550a73d7ab18ebd143a38dbf1431}{Active\+Unit}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
 \end{DoxyCompactItemize}
 \subsection*{Private Member Functions}
 \begin{DoxyCompactItemize}
 \item 
+void \hyperlink{class_c_p_u___o_s___simulator_1_1_main_window_a06b2ba04e8c006037cae7b0e40b9c5a0}{Populate\+Registers} ()
+\begin{DoxyCompactList}\small\item\em This function populates the register display in the main window \end{DoxyCompactList}\item 
+void \hyperlink{class_c_p_u___o_s___simulator_1_1_main_window_a4fbca2d50698a847da4ab82c3f380680}{Update\+Registers} ()
+\begin{DoxyCompactList}\small\item\em This function updates the register display in the main window whenever a register value is updated \end{DoxyCompactList}\item 
 void \hyperlink{class_c_p_u___o_s___simulator_1_1_main_window_a3b945b691332686989cd5b5107f7f98b}{Main\+Window2\+\_\+\+Loaded} (object sender, Routed\+Event\+Args e)
 \item 
 string \hyperlink{class_c_p_u___o_s___simulator_1_1_main_window_a99cb5e507849facbb9f5f271736759f7}{Get\+Program\+Version} ()
 \begin{DoxyCompactList}\small\item\em Geta the build number of the running program \end{DoxyCompactList}\item 
 void \hyperlink{class_c_p_u___o_s___simulator_1_1_main_window_abe3e79941789134ce080390fcafc720e}{btn\+\_\+\+Program\+Add\+\_\+\+Click} (object sender, Routed\+Event\+Args e)
 \begin{DoxyCompactList}\small\item\em Creates and adds a program to the program list \end{DoxyCompactList}\item 
-\hyperlink{class_c_p_u___o_s___simulator_1_1_simulator_program}{Simulator\+Program} \hyperlink{class_c_p_u___o_s___simulator_1_1_main_window_a4cb75cfa224757b1dc708b60681ad803}{Create\+New\+Program} ()
+\hyperlink{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_simulator_program}{Simulator\+Program} \hyperlink{class_c_p_u___o_s___simulator_1_1_main_window_a4cb75cfa224757b1dc708b60681ad803}{Create\+New\+Program} ()
 \begin{DoxyCompactList}\small\item\em Creates a new program based on entered data \end{DoxyCompactList}\item 
 void \hyperlink{class_c_p_u___o_s___simulator_1_1_main_window_afcb6e2b3719374f56fd8cb1c786bb219}{btn\+\_\+\+Show\+\_\+\+Click} (object sender, Routed\+Event\+Args e)
 \begin{DoxyCompactList}\small\item\em Called when the show button is clicked \end{DoxyCompactList}\item 
+void \hyperlink{class_c_p_u___o_s___simulator_1_1_main_window_a37c97ac2869b40063089f1af9cd86724}{btn\+\_\+\+Add\+New\+\_\+\+Click} (object sender, Routed\+Event\+Args e)
+\begin{DoxyCompactList}\small\item\em Adds a new instruction to the program \end{DoxyCompactList}\item 
+void \hyperlink{class_c_p_u___o_s___simulator_1_1_main_window_a8f710b1bee7b3c9360fb5652231b0502}{btn\+\_\+\+Insert\+Above\+\_\+\+Click} (object sender, Routed\+Event\+Args e)
+\begin{DoxyCompactList}\small\item\em Adds a new instruction to the program above the selected instruction \end{DoxyCompactList}\item 
+void \hyperlink{class_c_p_u___o_s___simulator_1_1_main_window_ac2307db4caedc82b5a6201077fb1c5b7}{btn\+\_\+\+Insert\+Below\+\_\+\+Click} (object sender, Routed\+Event\+Args e)
+\begin{DoxyCompactList}\small\item\em Adds a new instruction to the program above below selected instruction \end{DoxyCompactList}\item 
+void \hyperlink{class_c_p_u___o_s___simulator_1_1_main_window_a96ea1acde80b84701b58c1d4aaed2b9f}{btn\+\_\+\+Delete\+\_\+\+Click} (object sender, Routed\+Event\+Args e)
+\begin{DoxyCompactList}\small\item\em Deletes the selected instruction from the program \end{DoxyCompactList}\item 
 void \hyperlink{class_c_p_u___o_s___simulator_1_1_main_window_a23734396aff1eb673bcdc671759c5776}{Main\+Window2\+\_\+\+Closing} (object sender, System.\+Component\+Model.\+Cancel\+Event\+Args e)
 \begin{DoxyCompactList}\small\item\em Called when the window is closing \end{DoxyCompactList}\item 
 void \hyperlink{class_c_p_u___o_s___simulator_1_1_main_window_a5013d1984fc170246a5dc0d26c6fc493}{lst\+\_\+\+Instructions\+List\+\_\+\+Selection\+Changed} (object sender, Selection\+Changed\+Event\+Args e)
 \item 
 void \hyperlink{class_c_p_u___o_s___simulator_1_1_main_window_ab563b461cf3d62bd3c88eeb7921bfa75}{lst\+\_\+\+Program\+List\+\_\+\+Selection\+Changed} (object sender, Selection\+Changed\+Event\+Args e)
 \item 
+void \hyperlink{class_c_p_u___o_s___simulator_1_1_main_window_abd01bb7788b0c104045bcc93cf03c9d6}{Update\+Stack} ()
+\begin{DoxyCompactList}\small\item\em This function updates the stack display in the main window whenever a value is pushed or popped from the stack \end{DoxyCompactList}\item 
 void \hyperlink{class_c_p_u___o_s___simulator_1_1_main_window_a677bf9ebdb9fe30caa0f52f93e5390c9}{Update\+Intructions} ()
 \begin{DoxyCompactList}\small\item\em Updates the list of instructions \end{DoxyCompactList}\item 
 void \hyperlink{class_c_p_u___o_s___simulator_1_1_main_window_a13c54c19f906fc84076fe654f82f5398}{btn\+\_\+\+Load\+\_\+\+Click} (object sender, Routed\+Event\+Args e)
@@ -162,6 +289,18 @@ bool \hyperlink{class_c_p_u___o_s___simulator_1_1_main_window_a843bbe93c5c222582
 \begin{DoxyCompactList}\small\item\em Saves the program list to a file \end{DoxyCompactList}\item 
 bool \hyperlink{class_c_p_u___o_s___simulator_1_1_main_window_ad788d74c9d6582f3302912cbbba410b0}{Load\+Program} ()
 \begin{DoxyCompactList}\small\item\em Loads a program list from a file \end{DoxyCompactList}\item 
+void \hyperlink{class_c_p_u___o_s___simulator_1_1_main_window_afe4c815db0eb51ebc480374f5af09d0c}{Bind\+Instruction\+Delegates} (ref \hyperlink{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_simulator_program}{Simulator\+Program} prog)
+\begin{DoxyCompactList}\small\item\em This function rebinds the delegate function to each instruction in a program after it is loaded from a file. \end{DoxyCompactList}\item 
+void \hyperlink{class_c_p_u___o_s___simulator_1_1_main_window_ace253c0b4beef8898af97df25666df2f}{sld\+\_\+\+Clock\+Speed\+\_\+\+Value\+Changed} (object sender, Routed\+Property\+Changed\+Event\+Args$<$ double $>$ e)
+\item 
+void \hyperlink{class_c_p_u___o_s___simulator_1_1_main_window_a897049d123dd2ecf2820b02205ce1969}{btn\+\_\+\+Step\+\_\+\+Click} (object sender, Routed\+Event\+Args e)
+\item 
+void \hyperlink{class_c_p_u___o_s___simulator_1_1_main_window_a1f4dedca9ad81ea1c92637759515797f}{btn\+\_\+\+Run\+\_\+\+Click} (object sender, Routed\+Event\+Args e)
+\item 
+string \hyperlink{class_c_p_u___o_s___simulator_1_1_main_window_af436535e8368accea735ff7672fa83d9}{Calculate\+Time} (long mills)
+\begin{DoxyCompactList}\small\item\em This function calculates the time in seconds the last program took to execute \end{DoxyCompactList}\item 
+void \hyperlink{class_c_p_u___o_s___simulator_1_1_main_window_acbdc92abd94c317f978cee0d28af9448}{btn\+\_\+\+Stop\+\_\+\+Click} (object sender, Routed\+Event\+Args e)
+\item 
 void System.\+Windows.\+Markup.\+I\+Component\+Connector. \hyperlink{class_c_p_u___o_s___simulator_1_1_main_window_ae66177a5319cf24975b9dfab71bc830e}{Connect} (int connection\+Id, object target)
 \item 
 void System.\+Windows.\+Markup.\+I\+Component\+Connector. \hyperlink{class_c_p_u___o_s___simulator_1_1_main_window_ae66177a5319cf24975b9dfab71bc830e}{Connect} (int connection\+Id, object target)
@@ -173,11 +312,11 @@ void System.\+Windows.\+Markup.\+I\+Component\+Connector. \hyperlink{class_c_p_u
 \subsection*{Private Attributes}
 \begin{DoxyCompactItemize}
 \item 
-List$<$ \hyperlink{class_c_p_u___o_s___simulator_1_1_simulator_program}{Simulator\+Program} $>$ \hyperlink{class_c_p_u___o_s___simulator_1_1_main_window_a48fa4dc074c098338a652dbd6a3434c7}{program\+List}
+List$<$ \hyperlink{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_simulator_program}{Simulator\+Program} $>$ \hyperlink{class_c_p_u___o_s___simulator_1_1_main_window_a48fa4dc074c098338a652dbd6a3434c7}{program\+List}
 \item 
-string \hyperlink{class_c_p_u___o_s___simulator_1_1_main_window_a47960653966067f60d901b0dc1897154}{Instruction\+Mode}
+\hyperlink{namespace_c_p_u___o_s___simulator_adc17a5a5e004084f05dc8e4d3f70e31f}{Enum\+Instruction\+Mode} \hyperlink{class_c_p_u___o_s___simulator_1_1_main_window_adcf36837be53f52843bbeb354a16d15c}{instruction\+Mode}
 \item 
-string \hyperlink{class_c_p_u___o_s___simulator_1_1_main_window_a91f063d9cf776004dc74e719ef942907}{current\+Program} = string.\+Empty
+\hyperlink{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_execution_unit}{Execution\+Unit} \hyperlink{class_c_p_u___o_s___simulator_1_1_main_window_af00ce05444d9636c688974f706ef397b}{active\+Unit}
 \item 
 bool \hyperlink{class_c_p_u___o_s___simulator_1_1_main_window_ae8269f86a68d5fdf06180686fc947cc6}{\+\_\+content\+Loaded}
 \end{DoxyCompactItemize}
@@ -188,7 +327,7 @@ Interaction logic for Main\+Window.\+xaml
 
 \hyperlink{class_c_p_u___o_s___simulator_1_1_main_window}{Main\+Window} 
 
-Definition at line 29 of file Main\+Window.\+xaml.\+cs.
+Definition at line 20 of file Main\+Window.\+xaml.\+cs.
 
 
 
@@ -202,18 +341,23 @@ Definition at line 29 of file Main\+Window.\+xaml.\+cs.
 )}\label{class_c_p_u___o_s___simulator_1_1_main_window_a33462505a86657583c1560cbf02172bd}
 
 
-Definition at line 35 of file Main\+Window.\+xaml.\+cs.
+Constructor For the main window 
+
+
+
+Definition at line 80 of file Main\+Window.\+xaml.\+cs.
 
 
 
 \subsection{Member Function Documentation}
-\hypertarget{class_c_p_u___o_s___simulator_1_1_main_window_aff4dc8e6061987daf02732e85fcd643a}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window}!Add\+Instruction@{Add\+Instruction}}
+\hypertarget{class_c_p_u___o_s___simulator_1_1_main_window_ae73f56ccee0f45b0df54438b3d397dd9}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window}!Add\+Instruction@{Add\+Instruction}}
 \index{Add\+Instruction@{Add\+Instruction}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window}}
-\subsubsection[{Add\+Instruction(\+Instruction ins)}]{\setlength{\rightskip}{0pt plus 5cm}void C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Main\+Window.\+Add\+Instruction (
+\subsubsection[{Add\+Instruction(\+Instruction ins, int index)}]{\setlength{\rightskip}{0pt plus 5cm}void C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Main\+Window.\+Add\+Instruction (
 \begin{DoxyParamCaption}
-\item[{{\bf Instruction}}]{ins}
+\item[{{\bf Instruction}}]{ins, }
+\item[{int}]{index}
 \end{DoxyParamCaption}
-)}\label{class_c_p_u___o_s___simulator_1_1_main_window_aff4dc8e6061987daf02732e85fcd643a}
+)}\label{class_c_p_u___o_s___simulator_1_1_main_window_ae73f56ccee0f45b0df54438b3d397dd9}
 
 
 Adds an instruction to the currently loaded program 
@@ -222,10 +366,124 @@ Adds an instruction to the currently loaded program
 \begin{DoxyParams}{Parameters}
 {\em ins} & the instruction to add\\
 \hline
+{\em index} & the index in the program to add the instruction\\
+\hline
 \end{DoxyParams}
 
 
-Definition at line 169 of file Main\+Window.\+xaml.\+cs.
+Definition at line 336 of file Main\+Window.\+xaml.\+cs.
+
+\hypertarget{class_c_p_u___o_s___simulator_1_1_main_window_afe4c815db0eb51ebc480374f5af09d0c}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window}!Bind\+Instruction\+Delegates@{Bind\+Instruction\+Delegates}}
+\index{Bind\+Instruction\+Delegates@{Bind\+Instruction\+Delegates}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window}}
+\subsubsection[{Bind\+Instruction\+Delegates(ref Simulator\+Program prog)}]{\setlength{\rightskip}{0pt plus 5cm}void C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Main\+Window.\+Bind\+Instruction\+Delegates (
+\begin{DoxyParamCaption}
+\item[{ref {\bf Simulator\+Program}}]{prog}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{class_c_p_u___o_s___simulator_1_1_main_window_afe4c815db0eb51ebc480374f5af09d0c}
+
+
+This function rebinds the delegate function to each instruction in a program after it is loaded from a file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em prog} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 587 of file Main\+Window.\+xaml.\+cs.
+
+\hypertarget{class_c_p_u___o_s___simulator_1_1_main_window_a37c97ac2869b40063089f1af9cd86724}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window}!btn\+\_\+\+Add\+New\+\_\+\+Click@{btn\+\_\+\+Add\+New\+\_\+\+Click}}
+\index{btn\+\_\+\+Add\+New\+\_\+\+Click@{btn\+\_\+\+Add\+New\+\_\+\+Click}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window}}
+\subsubsection[{btn\+\_\+\+Add\+New\+\_\+\+Click(object sender, Routed\+Event\+Args e)}]{\setlength{\rightskip}{0pt plus 5cm}void C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Main\+Window.\+btn\+\_\+\+Add\+New\+\_\+\+Click (
+\begin{DoxyParamCaption}
+\item[{object}]{sender, }
+\item[{Routed\+Event\+Args}]{e}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{class_c_p_u___o_s___simulator_1_1_main_window_a37c97ac2869b40063089f1af9cd86724}
+
+
+Adds a new instruction to the program 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sender} & \\
+\hline
+{\em e} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 211 of file Main\+Window.\+xaml.\+cs.
+
+\hypertarget{class_c_p_u___o_s___simulator_1_1_main_window_a96ea1acde80b84701b58c1d4aaed2b9f}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window}!btn\+\_\+\+Delete\+\_\+\+Click@{btn\+\_\+\+Delete\+\_\+\+Click}}
+\index{btn\+\_\+\+Delete\+\_\+\+Click@{btn\+\_\+\+Delete\+\_\+\+Click}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window}}
+\subsubsection[{btn\+\_\+\+Delete\+\_\+\+Click(object sender, Routed\+Event\+Args e)}]{\setlength{\rightskip}{0pt plus 5cm}void C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Main\+Window.\+btn\+\_\+\+Delete\+\_\+\+Click (
+\begin{DoxyParamCaption}
+\item[{object}]{sender, }
+\item[{Routed\+Event\+Args}]{e}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{class_c_p_u___o_s___simulator_1_1_main_window_a96ea1acde80b84701b58c1d4aaed2b9f}
+
+
+Deletes the selected instruction from the program 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sender} & \\
+\hline
+{\em e} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 247 of file Main\+Window.\+xaml.\+cs.
+
+\hypertarget{class_c_p_u___o_s___simulator_1_1_main_window_a8f710b1bee7b3c9360fb5652231b0502}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window}!btn\+\_\+\+Insert\+Above\+\_\+\+Click@{btn\+\_\+\+Insert\+Above\+\_\+\+Click}}
+\index{btn\+\_\+\+Insert\+Above\+\_\+\+Click@{btn\+\_\+\+Insert\+Above\+\_\+\+Click}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window}}
+\subsubsection[{btn\+\_\+\+Insert\+Above\+\_\+\+Click(object sender, Routed\+Event\+Args e)}]{\setlength{\rightskip}{0pt plus 5cm}void C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Main\+Window.\+btn\+\_\+\+Insert\+Above\+\_\+\+Click (
+\begin{DoxyParamCaption}
+\item[{object}]{sender, }
+\item[{Routed\+Event\+Args}]{e}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{class_c_p_u___o_s___simulator_1_1_main_window_a8f710b1bee7b3c9360fb5652231b0502}
+
+
+Adds a new instruction to the program above the selected instruction 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sender} & \\
+\hline
+{\em e} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 223 of file Main\+Window.\+xaml.\+cs.
+
+\hypertarget{class_c_p_u___o_s___simulator_1_1_main_window_ac2307db4caedc82b5a6201077fb1c5b7}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window}!btn\+\_\+\+Insert\+Below\+\_\+\+Click@{btn\+\_\+\+Insert\+Below\+\_\+\+Click}}
+\index{btn\+\_\+\+Insert\+Below\+\_\+\+Click@{btn\+\_\+\+Insert\+Below\+\_\+\+Click}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window}}
+\subsubsection[{btn\+\_\+\+Insert\+Below\+\_\+\+Click(object sender, Routed\+Event\+Args e)}]{\setlength{\rightskip}{0pt plus 5cm}void C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Main\+Window.\+btn\+\_\+\+Insert\+Below\+\_\+\+Click (
+\begin{DoxyParamCaption}
+\item[{object}]{sender, }
+\item[{Routed\+Event\+Args}]{e}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{class_c_p_u___o_s___simulator_1_1_main_window_ac2307db4caedc82b5a6201077fb1c5b7}
+
+
+Adds a new instruction to the program above below selected instruction 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sender} & \\
+\hline
+{\em e} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 235 of file Main\+Window.\+xaml.\+cs.
 
 \hypertarget{class_c_p_u___o_s___simulator_1_1_main_window_a13c54c19f906fc84076fe654f82f5398}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window}!btn\+\_\+\+Load\+\_\+\+Click@{btn\+\_\+\+Load\+\_\+\+Click}}
 \index{btn\+\_\+\+Load\+\_\+\+Click@{btn\+\_\+\+Load\+\_\+\+Click}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window}}
@@ -237,7 +495,7 @@ Definition at line 169 of file Main\+Window.\+xaml.\+cs.
 )\hspace{0.3cm}{\ttfamily [private]}}\label{class_c_p_u___o_s___simulator_1_1_main_window_a13c54c19f906fc84076fe654f82f5398}
 
 
-Definition at line 223 of file Main\+Window.\+xaml.\+cs.
+Definition at line 472 of file Main\+Window.\+xaml.\+cs.
 
 \hypertarget{class_c_p_u___o_s___simulator_1_1_main_window_abe3e79941789134ce080390fcafc720e}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window}!btn\+\_\+\+Program\+Add\+\_\+\+Click@{btn\+\_\+\+Program\+Add\+\_\+\+Click}}
 \index{btn\+\_\+\+Program\+Add\+\_\+\+Click@{btn\+\_\+\+Program\+Add\+\_\+\+Click}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window}}
@@ -260,7 +518,19 @@ Creates and adds a program to the program list
 \end{DoxyParams}
 
 
-Definition at line 63 of file Main\+Window.\+xaml.\+cs.
+Definition at line 156 of file Main\+Window.\+xaml.\+cs.
+
+\hypertarget{class_c_p_u___o_s___simulator_1_1_main_window_a1f4dedca9ad81ea1c92637759515797f}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window}!btn\+\_\+\+Run\+\_\+\+Click@{btn\+\_\+\+Run\+\_\+\+Click}}
+\index{btn\+\_\+\+Run\+\_\+\+Click@{btn\+\_\+\+Run\+\_\+\+Click}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window}}
+\subsubsection[{btn\+\_\+\+Run\+\_\+\+Click(object sender, Routed\+Event\+Args e)}]{\setlength{\rightskip}{0pt plus 5cm}void C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Main\+Window.\+btn\+\_\+\+Run\+\_\+\+Click (
+\begin{DoxyParamCaption}
+\item[{object}]{sender, }
+\item[{Routed\+Event\+Args}]{e}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{class_c_p_u___o_s___simulator_1_1_main_window_a1f4dedca9ad81ea1c92637759515797f}
+
+
+Definition at line 613 of file Main\+Window.\+xaml.\+cs.
 
 \hypertarget{class_c_p_u___o_s___simulator_1_1_main_window_a3bbf0774868d6b5da4ff08d70e236fa6}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window}!btn\+\_\+\+Save\+\_\+\+Click@{btn\+\_\+\+Save\+\_\+\+Click}}
 \index{btn\+\_\+\+Save\+\_\+\+Click@{btn\+\_\+\+Save\+\_\+\+Click}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window}}
@@ -272,7 +542,7 @@ Definition at line 63 of file Main\+Window.\+xaml.\+cs.
 )\hspace{0.3cm}{\ttfamily [private]}}\label{class_c_p_u___o_s___simulator_1_1_main_window_a3bbf0774868d6b5da4ff08d70e236fa6}
 
 
-Definition at line 232 of file Main\+Window.\+xaml.\+cs.
+Definition at line 482 of file Main\+Window.\+xaml.\+cs.
 
 \hypertarget{class_c_p_u___o_s___simulator_1_1_main_window_afcb6e2b3719374f56fd8cb1c786bb219}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window}!btn\+\_\+\+Show\+\_\+\+Click@{btn\+\_\+\+Show\+\_\+\+Click}}
 \index{btn\+\_\+\+Show\+\_\+\+Click@{btn\+\_\+\+Show\+\_\+\+Click}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window}}
@@ -295,7 +565,54 @@ Called when the show button is clicked
 \end{DoxyParams}
 
 
-Definition at line 102 of file Main\+Window.\+xaml.\+cs.
+Definition at line 199 of file Main\+Window.\+xaml.\+cs.
+
+\hypertarget{class_c_p_u___o_s___simulator_1_1_main_window_a897049d123dd2ecf2820b02205ce1969}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window}!btn\+\_\+\+Step\+\_\+\+Click@{btn\+\_\+\+Step\+\_\+\+Click}}
+\index{btn\+\_\+\+Step\+\_\+\+Click@{btn\+\_\+\+Step\+\_\+\+Click}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window}}
+\subsubsection[{btn\+\_\+\+Step\+\_\+\+Click(object sender, Routed\+Event\+Args e)}]{\setlength{\rightskip}{0pt plus 5cm}void C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Main\+Window.\+btn\+\_\+\+Step\+\_\+\+Click (
+\begin{DoxyParamCaption}
+\item[{object}]{sender, }
+\item[{Routed\+Event\+Args}]{e}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{class_c_p_u___o_s___simulator_1_1_main_window_a897049d123dd2ecf2820b02205ce1969}
+
+
+Definition at line 600 of file Main\+Window.\+xaml.\+cs.
+
+\hypertarget{class_c_p_u___o_s___simulator_1_1_main_window_acbdc92abd94c317f978cee0d28af9448}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window}!btn\+\_\+\+Stop\+\_\+\+Click@{btn\+\_\+\+Stop\+\_\+\+Click}}
+\index{btn\+\_\+\+Stop\+\_\+\+Click@{btn\+\_\+\+Stop\+\_\+\+Click}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window}}
+\subsubsection[{btn\+\_\+\+Stop\+\_\+\+Click(object sender, Routed\+Event\+Args e)}]{\setlength{\rightskip}{0pt plus 5cm}void C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Main\+Window.\+btn\+\_\+\+Stop\+\_\+\+Click (
+\begin{DoxyParamCaption}
+\item[{object}]{sender, }
+\item[{Routed\+Event\+Args}]{e}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{class_c_p_u___o_s___simulator_1_1_main_window_acbdc92abd94c317f978cee0d28af9448}
+
+
+Definition at line 647 of file Main\+Window.\+xaml.\+cs.
+
+\hypertarget{class_c_p_u___o_s___simulator_1_1_main_window_af436535e8368accea735ff7672fa83d9}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window}!Calculate\+Time@{Calculate\+Time}}
+\index{Calculate\+Time@{Calculate\+Time}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window}}
+\subsubsection[{Calculate\+Time(long mills)}]{\setlength{\rightskip}{0pt plus 5cm}string C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Main\+Window.\+Calculate\+Time (
+\begin{DoxyParamCaption}
+\item[{long}]{mills}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{class_c_p_u___o_s___simulator_1_1_main_window_af436535e8368accea735ff7672fa83d9}
+
+
+This function calculates the time in seconds the last program took to execute 
+
+
+\begin{DoxyParams}{Parameters}
+{\em mills} & the number of milliseconds the last program took to execute\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Definition at line 638 of file Main\+Window.\+xaml.\+cs.
 
 \hypertarget{class_c_p_u___o_s___simulator_1_1_main_window_ae66177a5319cf24975b9dfab71bc830e}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window}!Connect@{Connect}}
 \index{Connect@{Connect}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window}}
@@ -307,7 +624,7 @@ Definition at line 102 of file Main\+Window.\+xaml.\+cs.
 )\hspace{0.3cm}{\ttfamily [private]}}\label{class_c_p_u___o_s___simulator_1_1_main_window_ae66177a5319cf24975b9dfab71bc830e}
 
 
-Definition at line 86 of file Main\+Window.\+g.\+cs.
+Definition at line 822 of file Main\+Window.\+g.\+cs.
 
 \hypertarget{class_c_p_u___o_s___simulator_1_1_main_window_ae66177a5319cf24975b9dfab71bc830e}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window}!Connect@{Connect}}
 \index{Connect@{Connect}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window}}
@@ -319,7 +636,7 @@ Definition at line 86 of file Main\+Window.\+g.\+cs.
 )\hspace{0.3cm}{\ttfamily [private]}}\label{class_c_p_u___o_s___simulator_1_1_main_window_ae66177a5319cf24975b9dfab71bc830e}
 
 
-Definition at line 86 of file Main\+Window.\+g.\+i.\+cs.
+Definition at line 822 of file Main\+Window.\+g.\+i.\+cs.
 
 \hypertarget{class_c_p_u___o_s___simulator_1_1_main_window_ae66177a5319cf24975b9dfab71bc830e}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window}!Connect@{Connect}}
 \index{Connect@{Connect}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window}}
@@ -331,7 +648,7 @@ Definition at line 86 of file Main\+Window.\+g.\+i.\+cs.
 )\hspace{0.3cm}{\ttfamily [private]}}\label{class_c_p_u___o_s___simulator_1_1_main_window_ae66177a5319cf24975b9dfab71bc830e}
 
 
-Definition at line 446 of file Main\+Window.\+g.\+cs.
+Definition at line 822 of file Main\+Window.\+g.\+cs.
 
 \hypertarget{class_c_p_u___o_s___simulator_1_1_main_window_ae66177a5319cf24975b9dfab71bc830e}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window}!Connect@{Connect}}
 \index{Connect@{Connect}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window}}
@@ -343,7 +660,7 @@ Definition at line 446 of file Main\+Window.\+g.\+cs.
 )\hspace{0.3cm}{\ttfamily [private]}}\label{class_c_p_u___o_s___simulator_1_1_main_window_ae66177a5319cf24975b9dfab71bc830e}
 
 
-Definition at line 446 of file Main\+Window.\+g.\+i.\+cs.
+Definition at line 822 of file Main\+Window.\+g.\+i.\+cs.
 
 \hypertarget{class_c_p_u___o_s___simulator_1_1_main_window_a0786a3f7a368c6e63f6e49bc70d3083d}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window}!Create\+Instruction@{Create\+Instruction}}
 \index{Create\+Instruction@{Create\+Instruction}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window}}
@@ -375,7 +692,7 @@ Creates an instruction with 2 operands
 \end{DoxyReturn}
 
 
-Definition at line 141 of file Main\+Window.\+xaml.\+cs.
+Definition at line 305 of file Main\+Window.\+xaml.\+cs.
 
 \hypertarget{class_c_p_u___o_s___simulator_1_1_main_window_a91d73f33961d6268e741d7f2cf6a2b6d}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window}!Create\+Instruction@{Create\+Instruction}}
 \index{Create\+Instruction@{Create\+Instruction}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window}}
@@ -401,7 +718,7 @@ Creates an instruction with 1 operand
 \end{DoxyParams}
 
 
-Definition at line 151 of file Main\+Window.\+xaml.\+cs.
+Definition at line 316 of file Main\+Window.\+xaml.\+cs.
 
 \hypertarget{class_c_p_u___o_s___simulator_1_1_main_window_a0616de56bcd9f57feb247f7e5de55f5f}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window}!Create\+Instruction@{Create\+Instruction}}
 \index{Create\+Instruction@{Create\+Instruction}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window}}
@@ -424,7 +741,7 @@ Creates an instruction with no operands
 \end{DoxyParams}
 
 
-Definition at line 160 of file Main\+Window.\+xaml.\+cs.
+Definition at line 326 of file Main\+Window.\+xaml.\+cs.
 
 \hypertarget{class_c_p_u___o_s___simulator_1_1_main_window_a4cb75cfa224757b1dc708b60681ad803}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window}!Create\+New\+Program@{Create\+New\+Program}}
 \index{Create\+New\+Program@{Create\+New\+Program}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window}}
@@ -442,7 +759,7 @@ the created program
 \end{DoxyReturn}
 
 
-Definition at line 75 of file Main\+Window.\+xaml.\+cs.
+Definition at line 171 of file Main\+Window.\+xaml.\+cs.
 
 \hypertarget{class_c_p_u___o_s___simulator_1_1_main_window_a44e09f35524cd53ddab77488989c5833}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window}!De\+Serialize\+Object$<$ T $>$@{De\+Serialize\+Object$<$ T $>$}}
 \index{De\+Serialize\+Object$<$ T $>$@{De\+Serialize\+Object$<$ T $>$}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window}}
@@ -467,7 +784,7 @@ Deserializes an .sas file into a program list
 \end{DoxyParams}
 
 
-Definition at line 308 of file Main\+Window.\+xaml.\+cs.
+Definition at line 560 of file Main\+Window.\+xaml.\+cs.
 
 \hypertarget{class_c_p_u___o_s___simulator_1_1_main_window_a99cb5e507849facbb9f5f271736759f7}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window}!Get\+Program\+Version@{Get\+Program\+Version}}
 \index{Get\+Program\+Version@{Get\+Program\+Version}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window}}
@@ -485,7 +802,7 @@ The build number of the running program
 \end{DoxyReturn}
 
 
-Definition at line 52 of file Main\+Window.\+xaml.\+cs.
+Definition at line 144 of file Main\+Window.\+xaml.\+cs.
 
 \hypertarget{class_c_p_u___o_s___simulator_1_1_main_window_a30724af44ae89c2172130c2dd36e145c}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window}!Initialize\+Component@{Initialize\+Component}}
 \index{Initialize\+Component@{Initialize\+Component}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window}}
@@ -500,7 +817,7 @@ Initialize\+Component
 
 
 
-Definition at line 66 of file Main\+Window.\+g.\+cs.
+Definition at line 802 of file Main\+Window.\+g.\+i.\+cs.
 
 \hypertarget{class_c_p_u___o_s___simulator_1_1_main_window_a30724af44ae89c2172130c2dd36e145c}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window}!Initialize\+Component@{Initialize\+Component}}
 \index{Initialize\+Component@{Initialize\+Component}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window}}
@@ -515,7 +832,7 @@ Initialize\+Component
 
 
 
-Definition at line 66 of file Main\+Window.\+g.\+i.\+cs.
+Definition at line 802 of file Main\+Window.\+g.\+i.\+cs.
 
 \hypertarget{class_c_p_u___o_s___simulator_1_1_main_window_a30724af44ae89c2172130c2dd36e145c}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window}!Initialize\+Component@{Initialize\+Component}}
 \index{Initialize\+Component@{Initialize\+Component}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window}}
@@ -530,7 +847,7 @@ Initialize\+Component
 
 
 
-Definition at line 426 of file Main\+Window.\+g.\+cs.
+Definition at line 802 of file Main\+Window.\+g.\+cs.
 
 \hypertarget{class_c_p_u___o_s___simulator_1_1_main_window_a30724af44ae89c2172130c2dd36e145c}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window}!Initialize\+Component@{Initialize\+Component}}
 \index{Initialize\+Component@{Initialize\+Component}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window}}
@@ -545,7 +862,7 @@ Initialize\+Component
 
 
 
-Definition at line 426 of file Main\+Window.\+g.\+i.\+cs.
+Definition at line 802 of file Main\+Window.\+g.\+cs.
 
 \hypertarget{class_c_p_u___o_s___simulator_1_1_main_window_ad788d74c9d6582f3302912cbbba410b0}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window}!Load\+Program@{Load\+Program}}
 \index{Load\+Program@{Load\+Program}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window}}
@@ -563,7 +880,7 @@ true if succeeded false if not
 \end{DoxyReturn}
 
 
-Definition at line 266 of file Main\+Window.\+xaml.\+cs.
+Definition at line 522 of file Main\+Window.\+xaml.\+cs.
 
 \hypertarget{class_c_p_u___o_s___simulator_1_1_main_window_a5013d1984fc170246a5dc0d26c6fc493}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window}!lst\+\_\+\+Instructions\+List\+\_\+\+Selection\+Changed@{lst\+\_\+\+Instructions\+List\+\_\+\+Selection\+Changed}}
 \index{lst\+\_\+\+Instructions\+List\+\_\+\+Selection\+Changed@{lst\+\_\+\+Instructions\+List\+\_\+\+Selection\+Changed}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window}}
@@ -575,7 +892,7 @@ Definition at line 266 of file Main\+Window.\+xaml.\+cs.
 )\hspace{0.3cm}{\ttfamily [private]}}\label{class_c_p_u___o_s___simulator_1_1_main_window_a5013d1984fc170246a5dc0d26c6fc493}
 
 
-Definition at line 186 of file Main\+Window.\+xaml.\+cs.
+Definition at line 393 of file Main\+Window.\+xaml.\+cs.
 
 \hypertarget{class_c_p_u___o_s___simulator_1_1_main_window_ab563b461cf3d62bd3c88eeb7921bfa75}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window}!lst\+\_\+\+Program\+List\+\_\+\+Selection\+Changed@{lst\+\_\+\+Program\+List\+\_\+\+Selection\+Changed}}
 \index{lst\+\_\+\+Program\+List\+\_\+\+Selection\+Changed@{lst\+\_\+\+Program\+List\+\_\+\+Selection\+Changed}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window}}
@@ -587,7 +904,7 @@ Definition at line 186 of file Main\+Window.\+xaml.\+cs.
 )\hspace{0.3cm}{\ttfamily [private]}}\label{class_c_p_u___o_s___simulator_1_1_main_window_ab563b461cf3d62bd3c88eeb7921bfa75}
 
 
-Definition at line 191 of file Main\+Window.\+xaml.\+cs.
+Definition at line 397 of file Main\+Window.\+xaml.\+cs.
 
 \hypertarget{class_c_p_u___o_s___simulator_1_1_main_window_a23734396aff1eb673bcdc671759c5776}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window}!Main\+Window2\+\_\+\+Closing@{Main\+Window2\+\_\+\+Closing}}
 \index{Main\+Window2\+\_\+\+Closing@{Main\+Window2\+\_\+\+Closing}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window}}
@@ -610,7 +927,7 @@ Called when the window is closing
 \end{DoxyParams}
 
 
-Definition at line 113 of file Main\+Window.\+xaml.\+cs.
+Definition at line 261 of file Main\+Window.\+xaml.\+cs.
 
 \hypertarget{class_c_p_u___o_s___simulator_1_1_main_window_a3b945b691332686989cd5b5107f7f98b}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window}!Main\+Window2\+\_\+\+Loaded@{Main\+Window2\+\_\+\+Loaded}}
 \index{Main\+Window2\+\_\+\+Loaded@{Main\+Window2\+\_\+\+Loaded}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window}}
@@ -622,7 +939,22 @@ Definition at line 113 of file Main\+Window.\+xaml.\+cs.
 )\hspace{0.3cm}{\ttfamily [private]}}\label{class_c_p_u___o_s___simulator_1_1_main_window_a3b945b691332686989cd5b5107f7f98b}
 
 
-Definition at line 41 of file Main\+Window.\+xaml.\+cs.
+Definition at line 124 of file Main\+Window.\+xaml.\+cs.
+
+\hypertarget{class_c_p_u___o_s___simulator_1_1_main_window_a06b2ba04e8c006037cae7b0e40b9c5a0}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window}!Populate\+Registers@{Populate\+Registers}}
+\index{Populate\+Registers@{Populate\+Registers}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window}}
+\subsubsection[{Populate\+Registers()}]{\setlength{\rightskip}{0pt plus 5cm}void C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Main\+Window.\+Populate\+Registers (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{class_c_p_u___o_s___simulator_1_1_main_window_a06b2ba04e8c006037cae7b0e40b9c5a0}
+
+
+This function populates the register display in the main window 
+
+
+
+Definition at line 96 of file Main\+Window.\+xaml.\+cs.
 
 \hypertarget{class_c_p_u___o_s___simulator_1_1_main_window_a843bbe93c5c2225820d216cc1cb7d4e9}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window}!Save\+Program@{Save\+Program}}
 \index{Save\+Program@{Save\+Program}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window}}
@@ -640,7 +972,7 @@ True if succeeded false if not
 \end{DoxyReturn}
 
 
-Definition at line 245 of file Main\+Window.\+xaml.\+cs.
+Definition at line 496 of file Main\+Window.\+xaml.\+cs.
 
 \hypertarget{class_c_p_u___o_s___simulator_1_1_main_window_a80985670e45349866a463b766f92e27b}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window}!Serialize\+Object$<$ T $>$@{Serialize\+Object$<$ T $>$}}
 \index{Serialize\+Object$<$ T $>$@{Serialize\+Object$<$ T $>$}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window}}
@@ -668,7 +1000,19 @@ Serializes a program List.
 \end{DoxyParams}
 
 
-Definition at line 286 of file Main\+Window.\+xaml.\+cs.
+Definition at line 542 of file Main\+Window.\+xaml.\+cs.
+
+\hypertarget{class_c_p_u___o_s___simulator_1_1_main_window_ace253c0b4beef8898af97df25666df2f}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window}!sld\+\_\+\+Clock\+Speed\+\_\+\+Value\+Changed@{sld\+\_\+\+Clock\+Speed\+\_\+\+Value\+Changed}}
+\index{sld\+\_\+\+Clock\+Speed\+\_\+\+Value\+Changed@{sld\+\_\+\+Clock\+Speed\+\_\+\+Value\+Changed}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window}}
+\subsubsection[{sld\+\_\+\+Clock\+Speed\+\_\+\+Value\+Changed(object sender, Routed\+Property\+Changed\+Event\+Args$<$ double $>$ e)}]{\setlength{\rightskip}{0pt plus 5cm}void C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Main\+Window.\+sld\+\_\+\+Clock\+Speed\+\_\+\+Value\+Changed (
+\begin{DoxyParamCaption}
+\item[{object}]{sender, }
+\item[{Routed\+Property\+Changed\+Event\+Args$<$ double $>$}]{e}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{class_c_p_u___o_s___simulator_1_1_main_window_ace253c0b4beef8898af97df25666df2f}
+
+
+Definition at line 595 of file Main\+Window.\+xaml.\+cs.
 
 \hypertarget{class_c_p_u___o_s___simulator_1_1_main_window_a677bf9ebdb9fe30caa0f52f93e5390c9}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window}!Update\+Intructions@{Update\+Intructions}}
 \index{Update\+Intructions@{Update\+Intructions}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window}}
@@ -683,7 +1027,37 @@ Updates the list of instructions
 
 
 
-Definition at line 198 of file Main\+Window.\+xaml.\+cs.
+Definition at line 440 of file Main\+Window.\+xaml.\+cs.
+
+\hypertarget{class_c_p_u___o_s___simulator_1_1_main_window_a4fbca2d50698a847da4ab82c3f380680}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window}!Update\+Registers@{Update\+Registers}}
+\index{Update\+Registers@{Update\+Registers}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window}}
+\subsubsection[{Update\+Registers()}]{\setlength{\rightskip}{0pt plus 5cm}void C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Main\+Window.\+Update\+Registers (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{class_c_p_u___o_s___simulator_1_1_main_window_a4fbca2d50698a847da4ab82c3f380680}
+
+
+This function updates the register display in the main window whenever a register value is updated 
+
+
+
+Definition at line 116 of file Main\+Window.\+xaml.\+cs.
+
+\hypertarget{class_c_p_u___o_s___simulator_1_1_main_window_abd01bb7788b0c104045bcc93cf03c9d6}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window}!Update\+Stack@{Update\+Stack}}
+\index{Update\+Stack@{Update\+Stack}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window}}
+\subsubsection[{Update\+Stack()}]{\setlength{\rightskip}{0pt plus 5cm}void C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Main\+Window.\+Update\+Stack (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{class_c_p_u___o_s___simulator_1_1_main_window_abd01bb7788b0c104045bcc93cf03c9d6}
+
+
+This function updates the stack display in the main window whenever a value is pushed or popped from the stack 
+
+
+
+Definition at line 406 of file Main\+Window.\+xaml.\+cs.
 
 
 
@@ -693,7 +1067,14 @@ Definition at line 198 of file Main\+Window.\+xaml.\+cs.
 \subsubsection[{\+\_\+content\+Loaded}]{\setlength{\rightskip}{0pt plus 5cm}bool C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Main\+Window.\+\_\+content\+Loaded\hspace{0.3cm}{\ttfamily [private]}}\label{class_c_p_u___o_s___simulator_1_1_main_window_ae8269f86a68d5fdf06180686fc947cc6}
 
 
-Definition at line 419 of file Main\+Window.\+g.\+cs.
+Definition at line 795 of file Main\+Window.\+g.\+cs.
+
+\hypertarget{class_c_p_u___o_s___simulator_1_1_main_window_af00ce05444d9636c688974f706ef397b}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window}!active\+Unit@{active\+Unit}}
+\index{active\+Unit@{active\+Unit}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window}}
+\subsubsection[{active\+Unit}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Execution\+Unit} C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Main\+Window.\+active\+Unit\hspace{0.3cm}{\ttfamily [private]}}\label{class_c_p_u___o_s___simulator_1_1_main_window_af00ce05444d9636c688974f706ef397b}
+
+
+Definition at line 27 of file Main\+Window.\+xaml.\+cs.
 
 \hypertarget{class_c_p_u___o_s___simulator_1_1_main_window_a50fb8fcd9e592c4987fac4bcb8762785}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window}!btn\+\_\+\+Add\+New@{btn\+\_\+\+Add\+New}}
 \index{btn\+\_\+\+Add\+New@{btn\+\_\+\+Add\+New}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window}}
@@ -765,6 +1146,20 @@ Definition at line 374 of file Main\+Window.\+g.\+cs.
 
 Definition at line 182 of file Main\+Window.\+g.\+cs.
 
+\hypertarget{class_c_p_u___o_s___simulator_1_1_main_window_ada16565fc869dea1d54013009f5892b4}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window}!btn\+\_\+\+Reset\+Program@{btn\+\_\+\+Reset\+Program}}
+\index{btn\+\_\+\+Reset\+Program@{btn\+\_\+\+Reset\+Program}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window}}
+\subsubsection[{btn\+\_\+\+Reset\+Program}]{\setlength{\rightskip}{0pt plus 5cm}System Windows Controls Button C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Main\+Window.\+btn\+\_\+\+Reset\+Program\hspace{0.3cm}{\ttfamily [package]}}\label{class_c_p_u___o_s___simulator_1_1_main_window_ada16565fc869dea1d54013009f5892b4}
+
+
+Definition at line 782 of file Main\+Window.\+g.\+cs.
+
+\hypertarget{class_c_p_u___o_s___simulator_1_1_main_window_ab3286e931d7154605876654bbf092840}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window}!btn\+\_\+\+Run@{btn\+\_\+\+Run}}
+\index{btn\+\_\+\+Run@{btn\+\_\+\+Run}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window}}
+\subsubsection[{btn\+\_\+\+Run}]{\setlength{\rightskip}{0pt plus 5cm}System Windows Controls Button C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Main\+Window.\+btn\+\_\+\+Run\hspace{0.3cm}{\ttfamily [package]}}\label{class_c_p_u___o_s___simulator_1_1_main_window_ab3286e931d7154605876654bbf092840}
+
+
+Definition at line 726 of file Main\+Window.\+g.\+cs.
+
 \hypertarget{class_c_p_u___o_s___simulator_1_1_main_window_a638eee3b21f6ac5d28a5c95c4dad3fc2}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window}!btn\+\_\+\+Save@{btn\+\_\+\+Save}}
 \index{btn\+\_\+\+Save@{btn\+\_\+\+Save}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window}}
 \subsubsection[{btn\+\_\+\+Save}]{\setlength{\rightskip}{0pt plus 5cm}System Windows Controls Button C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Main\+Window.\+btn\+\_\+\+Save\hspace{0.3cm}{\ttfamily [package]}}\label{class_c_p_u___o_s___simulator_1_1_main_window_a638eee3b21f6ac5d28a5c95c4dad3fc2}
@@ -778,6 +1173,27 @@ Definition at line 206 of file Main\+Window.\+g.\+cs.
 
 
 Definition at line 294 of file Main\+Window.\+g.\+cs.
+
+\hypertarget{class_c_p_u___o_s___simulator_1_1_main_window_a967a1b3dbde7ecb1d8091e5eababcc58}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window}!btn\+\_\+\+Show\+P\+C\+B@{btn\+\_\+\+Show\+P\+C\+B}}
+\index{btn\+\_\+\+Show\+P\+C\+B@{btn\+\_\+\+Show\+P\+C\+B}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window}}
+\subsubsection[{btn\+\_\+\+Show\+P\+C\+B}]{\setlength{\rightskip}{0pt plus 5cm}System Windows Controls Button C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Main\+Window.\+btn\+\_\+\+Show\+P\+C\+B\hspace{0.3cm}{\ttfamily [package]}}\label{class_c_p_u___o_s___simulator_1_1_main_window_a967a1b3dbde7ecb1d8091e5eababcc58}
+
+
+Definition at line 790 of file Main\+Window.\+g.\+cs.
+
+\hypertarget{class_c_p_u___o_s___simulator_1_1_main_window_acd572aa9d278af703febb634fc1c34a3}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window}!btn\+\_\+\+Step@{btn\+\_\+\+Step}}
+\index{btn\+\_\+\+Step@{btn\+\_\+\+Step}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window}}
+\subsubsection[{btn\+\_\+\+Step}]{\setlength{\rightskip}{0pt plus 5cm}System Windows Controls Button C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Main\+Window.\+btn\+\_\+\+Step\hspace{0.3cm}{\ttfamily [package]}}\label{class_c_p_u___o_s___simulator_1_1_main_window_acd572aa9d278af703febb634fc1c34a3}
+
+
+Definition at line 718 of file Main\+Window.\+g.\+cs.
+
+\hypertarget{class_c_p_u___o_s___simulator_1_1_main_window_a1b6b541d9765ca230f537d1d6b6c83aa}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window}!btn\+\_\+\+Stop@{btn\+\_\+\+Stop}}
+\index{btn\+\_\+\+Stop@{btn\+\_\+\+Stop}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window}}
+\subsubsection[{btn\+\_\+\+Stop}]{\setlength{\rightskip}{0pt plus 5cm}System Windows Controls Button C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Main\+Window.\+btn\+\_\+\+Stop\hspace{0.3cm}{\ttfamily [package]}}\label{class_c_p_u___o_s___simulator_1_1_main_window_a1b6b541d9765ca230f537d1d6b6c83aa}
+
+
+Definition at line 734 of file Main\+Window.\+g.\+cs.
 
 \hypertarget{class_c_p_u___o_s___simulator_1_1_main_window_ac30720a1b345a3d59312d2d68f742359}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window}!btn\+\_\+\+Undo@{btn\+\_\+\+Undo}}
 \index{btn\+\_\+\+Undo@{btn\+\_\+\+Undo}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window}}
@@ -814,6 +1230,27 @@ Definition at line 366 of file Main\+Window.\+g.\+cs.
 
 Definition at line 262 of file Main\+Window.\+g.\+cs.
 
+\hypertarget{class_c_p_u___o_s___simulator_1_1_main_window_ab8a23e33c5c71e359574de36ccf8d991}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window}!chk\+\_\+\+N@{chk\+\_\+\+N}}
+\index{chk\+\_\+\+N@{chk\+\_\+\+N}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window}}
+\subsubsection[{chk\+\_\+\+N}]{\setlength{\rightskip}{0pt plus 5cm}System Windows Controls Check\+Box C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Main\+Window.\+chk\+\_\+\+N\hspace{0.3cm}{\ttfamily [package]}}\label{class_c_p_u___o_s___simulator_1_1_main_window_ab8a23e33c5c71e359574de36ccf8d991}
+
+
+Definition at line 574 of file Main\+Window.\+g.\+cs.
+
+\hypertarget{class_c_p_u___o_s___simulator_1_1_main_window_adfbc519740506214093673b8015ea67d}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window}!chk\+\_\+\+O\+V@{chk\+\_\+\+O\+V}}
+\index{chk\+\_\+\+O\+V@{chk\+\_\+\+O\+V}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window}}
+\subsubsection[{chk\+\_\+\+O\+V}]{\setlength{\rightskip}{0pt plus 5cm}System Windows Controls Check\+Box C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Main\+Window.\+chk\+\_\+\+O\+V\hspace{0.3cm}{\ttfamily [package]}}\label{class_c_p_u___o_s___simulator_1_1_main_window_adfbc519740506214093673b8015ea67d}
+
+
+Definition at line 558 of file Main\+Window.\+g.\+cs.
+
+\hypertarget{class_c_p_u___o_s___simulator_1_1_main_window_a70c1a75df218201391cf5e0615a600f1}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window}!chk\+\_\+\+Z@{chk\+\_\+\+Z}}
+\index{chk\+\_\+\+Z@{chk\+\_\+\+Z}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window}}
+\subsubsection[{chk\+\_\+\+Z}]{\setlength{\rightskip}{0pt plus 5cm}System Windows Controls Check\+Box C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Main\+Window.\+chk\+\_\+\+Z\hspace{0.3cm}{\ttfamily [package]}}\label{class_c_p_u___o_s___simulator_1_1_main_window_a70c1a75df218201391cf5e0615a600f1}
+
+
+Definition at line 566 of file Main\+Window.\+g.\+cs.
+
 \hypertarget{class_c_p_u___o_s___simulator_1_1_main_window_a8da421354f40baef03909c87c3407e3c}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window}!cmb\+\_\+\+Pages@{cmb\+\_\+\+Pages}}
 \index{cmb\+\_\+\+Pages@{cmb\+\_\+\+Pages}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window}}
 \subsubsection[{cmb\+\_\+\+Pages}]{\setlength{\rightskip}{0pt plus 5cm}System Windows Controls Combo\+Box C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Main\+Window.\+cmb\+\_\+\+Pages\hspace{0.3cm}{\ttfamily [package]}}\label{class_c_p_u___o_s___simulator_1_1_main_window_a8da421354f40baef03909c87c3407e3c}
@@ -828,12 +1265,47 @@ Definition at line 174 of file Main\+Window.\+g.\+cs.
 
 Definition at line 238 of file Main\+Window.\+g.\+cs.
 
+\hypertarget{class_c_p_u___o_s___simulator_1_1_main_window_acc893fc507d9ea08cc4a923bdc23091d}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window}!Control\+Tabs@{Control\+Tabs}}
+\index{Control\+Tabs@{Control\+Tabs}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window}}
+\subsubsection[{Control\+Tabs}]{\setlength{\rightskip}{0pt plus 5cm}System Windows Controls Tab\+Control C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Main\+Window.\+Control\+Tabs\hspace{0.3cm}{\ttfamily [package]}}\label{class_c_p_u___o_s___simulator_1_1_main_window_acc893fc507d9ea08cc4a923bdc23091d}
+
+
+Definition at line 702 of file Main\+Window.\+g.\+cs.
+
+\hypertarget{class_c_p_u___o_s___simulator_1_1_main_window_af6e1d9a71f9501c02b62e8319ba11b5a}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window}!Control\+Unit\+Grid@{Control\+Unit\+Grid}}
+\index{Control\+Unit\+Grid@{Control\+Unit\+Grid}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window}}
+\subsubsection[{Control\+Unit\+Grid}]{\setlength{\rightskip}{0pt plus 5cm}System Windows Controls Grid C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Main\+Window.\+Control\+Unit\+Grid\hspace{0.3cm}{\ttfamily [package]}}\label{class_c_p_u___o_s___simulator_1_1_main_window_af6e1d9a71f9501c02b62e8319ba11b5a}
+
+
+Definition at line 694 of file Main\+Window.\+g.\+cs.
+
+\hypertarget{class_c_p_u___o_s___simulator_1_1_main_window_a0bb4b4233380c349ee3bef69813a684b}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window}!Control\+Unit\+Inner\+Grid@{Control\+Unit\+Inner\+Grid}}
+\index{Control\+Unit\+Inner\+Grid@{Control\+Unit\+Inner\+Grid}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window}}
+\subsubsection[{Control\+Unit\+Inner\+Grid}]{\setlength{\rightskip}{0pt plus 5cm}System Windows Controls Grid C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Main\+Window.\+Control\+Unit\+Inner\+Grid\hspace{0.3cm}{\ttfamily [package]}}\label{class_c_p_u___o_s___simulator_1_1_main_window_a0bb4b4233380c349ee3bef69813a684b}
+
+
+Definition at line 710 of file Main\+Window.\+g.\+cs.
+
+\hypertarget{class_c_p_u___o_s___simulator_1_1_main_window_ab6afb45d3f05517e9df6af167752be77}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window}!C\+P\+U\+Mode\+Grid@{C\+P\+U\+Mode\+Grid}}
+\index{C\+P\+U\+Mode\+Grid@{C\+P\+U\+Mode\+Grid}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window}}
+\subsubsection[{C\+P\+U\+Mode\+Grid}]{\setlength{\rightskip}{0pt plus 5cm}System Windows Controls Grid C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Main\+Window.\+C\+P\+U\+Mode\+Grid\hspace{0.3cm}{\ttfamily [package]}}\label{class_c_p_u___o_s___simulator_1_1_main_window_ab6afb45d3f05517e9df6af167752be77}
+
+
+Definition at line 590 of file Main\+Window.\+g.\+cs.
+
+\hypertarget{class_c_p_u___o_s___simulator_1_1_main_window_a1280266cc57403a91f08a8350dee05cc}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window}!current\+Instance@{current\+Instance}}
+\index{current\+Instance@{current\+Instance}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window}}
+\subsubsection[{current\+Instance}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Main\+Window} C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Main\+Window.\+current\+Instance\hspace{0.3cm}{\ttfamily [static]}}\label{class_c_p_u___o_s___simulator_1_1_main_window_a1280266cc57403a91f08a8350dee05cc}
+
+
+Definition at line 28 of file Main\+Window.\+xaml.\+cs.
+
 \hypertarget{class_c_p_u___o_s___simulator_1_1_main_window_a91f063d9cf776004dc74e719ef942907}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window}!current\+Program@{current\+Program}}
 \index{current\+Program@{current\+Program}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window}}
-\subsubsection[{current\+Program}]{\setlength{\rightskip}{0pt plus 5cm}string C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Main\+Window.\+current\+Program = string.\+Empty\hspace{0.3cm}{\ttfamily [private]}}\label{class_c_p_u___o_s___simulator_1_1_main_window_a91f063d9cf776004dc74e719ef942907}
+\subsubsection[{current\+Program}]{\setlength{\rightskip}{0pt plus 5cm}string C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Main\+Window.\+current\+Program = string.\+Empty}\label{class_c_p_u___o_s___simulator_1_1_main_window_a91f063d9cf776004dc74e719ef942907}
 
 
-Definition at line 33 of file Main\+Window.\+xaml.\+cs.
+Definition at line 26 of file Main\+Window.\+xaml.\+cs.
 
 \hypertarget{class_c_p_u___o_s___simulator_1_1_main_window_af09ff1f305e936227c4a975f4c788133}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window}!grid\+\_\+\+Instructions@{grid\+\_\+\+Instructions}}
 \index{grid\+\_\+\+Instructions@{grid\+\_\+\+Instructions}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window}}
@@ -855,6 +1327,13 @@ Definition at line 126 of file Main\+Window.\+g.\+cs.
 
 
 Definition at line 198 of file Main\+Window.\+g.\+cs.
+
+\hypertarget{class_c_p_u___o_s___simulator_1_1_main_window_a0e549bad0f6778b2ea3fffb6c2d1a2bb}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window}!grp\+\_\+\+C\+P\+U\+Mode@{grp\+\_\+\+C\+P\+U\+Mode}}
+\index{grp\+\_\+\+C\+P\+U\+Mode@{grp\+\_\+\+C\+P\+U\+Mode}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window}}
+\subsubsection[{grp\+\_\+\+C\+P\+U\+Mode}]{\setlength{\rightskip}{0pt plus 5cm}System Windows Controls Group\+Box C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Main\+Window.\+grp\+\_\+\+C\+P\+U\+Mode\hspace{0.3cm}{\ttfamily [package]}}\label{class_c_p_u___o_s___simulator_1_1_main_window_a0e549bad0f6778b2ea3fffb6c2d1a2bb}
+
+
+Definition at line 582 of file Main\+Window.\+g.\+cs.
 
 \hypertarget{class_c_p_u___o_s___simulator_1_1_main_window_aebc1256b654d001b7c4ce2bc08522667}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window}!grp\+\_\+\+Instructions\+Box@{grp\+\_\+\+Instructions\+Box}}
 \index{grp\+\_\+\+Instructions\+Box@{grp\+\_\+\+Instructions\+Box}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window}}
@@ -884,12 +1363,40 @@ Definition at line 398 of file Main\+Window.\+g.\+cs.
 
 Definition at line 190 of file Main\+Window.\+g.\+cs.
 
-\hypertarget{class_c_p_u___o_s___simulator_1_1_main_window_a47960653966067f60d901b0dc1897154}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window}!Instruction\+Mode@{Instruction\+Mode}}
-\index{Instruction\+Mode@{Instruction\+Mode}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window}}
-\subsubsection[{Instruction\+Mode}]{\setlength{\rightskip}{0pt plus 5cm}string C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Main\+Window.\+Instruction\+Mode\hspace{0.3cm}{\ttfamily [private]}}\label{class_c_p_u___o_s___simulator_1_1_main_window_a47960653966067f60d901b0dc1897154}
+\hypertarget{class_c_p_u___o_s___simulator_1_1_main_window_a10687b397ff3a0381a556096a14ed0b0}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window}!grp\+\_\+\+Program\+Stack@{grp\+\_\+\+Program\+Stack}}
+\index{grp\+\_\+\+Program\+Stack@{grp\+\_\+\+Program\+Stack}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window}}
+\subsubsection[{grp\+\_\+\+Program\+Stack}]{\setlength{\rightskip}{0pt plus 5cm}System Windows Controls Group\+Box C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Main\+Window.\+grp\+\_\+\+Program\+Stack\hspace{0.3cm}{\ttfamily [package]}}\label{class_c_p_u___o_s___simulator_1_1_main_window_a10687b397ff3a0381a556096a14ed0b0}
 
 
-Definition at line 32 of file Main\+Window.\+xaml.\+cs.
+Definition at line 670 of file Main\+Window.\+g.\+cs.
+
+\hypertarget{class_c_p_u___o_s___simulator_1_1_main_window_af858add509dfe2b90f0d356822f73737}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window}!grp\+\_\+\+Registers@{grp\+\_\+\+Registers}}
+\index{grp\+\_\+\+Registers@{grp\+\_\+\+Registers}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window}}
+\subsubsection[{grp\+\_\+\+Registers}]{\setlength{\rightskip}{0pt plus 5cm}System Windows Controls Group\+Box C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Main\+Window.\+grp\+\_\+\+Registers\hspace{0.3cm}{\ttfamily [package]}}\label{class_c_p_u___o_s___simulator_1_1_main_window_af858add509dfe2b90f0d356822f73737}
+
+
+Definition at line 430 of file Main\+Window.\+g.\+cs.
+
+\hypertarget{class_c_p_u___o_s___simulator_1_1_main_window_a02e4a81d8689928cb1d459fd3c01bfdf}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window}!grp\+\_\+\+Special\+Registers@{grp\+\_\+\+Special\+Registers}}
+\index{grp\+\_\+\+Special\+Registers@{grp\+\_\+\+Special\+Registers}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window}}
+\subsubsection[{grp\+\_\+\+Special\+Registers}]{\setlength{\rightskip}{0pt plus 5cm}System Windows Controls Group\+Box C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Main\+Window.\+grp\+\_\+\+Special\+Registers\hspace{0.3cm}{\ttfamily [package]}}\label{class_c_p_u___o_s___simulator_1_1_main_window_a02e4a81d8689928cb1d459fd3c01bfdf}
+
+
+Definition at line 462 of file Main\+Window.\+g.\+cs.
+
+\hypertarget{class_c_p_u___o_s___simulator_1_1_main_window_a9947d1946c8258ea1fb77d860baa7e0f}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window}!grp\+\_\+\+Status\+Flags@{grp\+\_\+\+Status\+Flags}}
+\index{grp\+\_\+\+Status\+Flags@{grp\+\_\+\+Status\+Flags}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window}}
+\subsubsection[{grp\+\_\+\+Status\+Flags}]{\setlength{\rightskip}{0pt plus 5cm}System Windows Controls Group\+Box C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Main\+Window.\+grp\+\_\+\+Status\+Flags\hspace{0.3cm}{\ttfamily [package]}}\label{class_c_p_u___o_s___simulator_1_1_main_window_a9947d1946c8258ea1fb77d860baa7e0f}
+
+
+Definition at line 542 of file Main\+Window.\+g.\+cs.
+
+\hypertarget{class_c_p_u___o_s___simulator_1_1_main_window_adcf36837be53f52843bbeb354a16d15c}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window}!instruction\+Mode@{instruction\+Mode}}
+\index{instruction\+Mode@{instruction\+Mode}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window}}
+\subsubsection[{instruction\+Mode}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Enum\+Instruction\+Mode} C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Main\+Window.\+instruction\+Mode\hspace{0.3cm}{\ttfamily [private]}}\label{class_c_p_u___o_s___simulator_1_1_main_window_adcf36837be53f52843bbeb354a16d15c}
+
+
+Definition at line 25 of file Main\+Window.\+xaml.\+cs.
 
 \hypertarget{class_c_p_u___o_s___simulator_1_1_main_window_a2e6841673af413e8a8f8ba8aa0d7c80b}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window}!Instructions\+Grid@{Instructions\+Grid}}
 \index{Instructions\+Grid@{Instructions\+Grid}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window}}
@@ -933,6 +1440,69 @@ Definition at line 150 of file Main\+Window.\+g.\+cs.
 
 Definition at line 166 of file Main\+Window.\+g.\+cs.
 
+\hypertarget{class_c_p_u___o_s___simulator_1_1_main_window_a94cf4fbdaebb09776745893c2bce1126}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window}!label3@{label3}}
+\index{label3@{label3}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window}}
+\subsubsection[{label3}]{\setlength{\rightskip}{0pt plus 5cm}System Windows Controls Label C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Main\+Window.\+label3\hspace{0.3cm}{\ttfamily [package]}}\label{class_c_p_u___o_s___simulator_1_1_main_window_a94cf4fbdaebb09776745893c2bce1126}
+
+
+Definition at line 478 of file Main\+Window.\+g.\+cs.
+
+\hypertarget{class_c_p_u___o_s___simulator_1_1_main_window_a3473dc873d8c8d8f4bba6e83f5684299}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window}!label4@{label4}}
+\index{label4@{label4}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window}}
+\subsubsection[{label4}]{\setlength{\rightskip}{0pt plus 5cm}System Windows Controls Label C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Main\+Window.\+label4\hspace{0.3cm}{\ttfamily [package]}}\label{class_c_p_u___o_s___simulator_1_1_main_window_a3473dc873d8c8d8f4bba6e83f5684299}
+
+
+Definition at line 494 of file Main\+Window.\+g.\+cs.
+
+\hypertarget{class_c_p_u___o_s___simulator_1_1_main_window_a37b18e7542e985a8984375d0b1cf441e}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window}!label5@{label5}}
+\index{label5@{label5}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window}}
+\subsubsection[{label5}]{\setlength{\rightskip}{0pt plus 5cm}System Windows Controls Label C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Main\+Window.\+label5\hspace{0.3cm}{\ttfamily [package]}}\label{class_c_p_u___o_s___simulator_1_1_main_window_a37b18e7542e985a8984375d0b1cf441e}
+
+
+Definition at line 510 of file Main\+Window.\+g.\+cs.
+
+\hypertarget{class_c_p_u___o_s___simulator_1_1_main_window_aadfe7782d7e25b730849222805a541f9}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window}!label5\+\_\+\+Copy@{label5\+\_\+\+Copy}}
+\index{label5\+\_\+\+Copy@{label5\+\_\+\+Copy}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window}}
+\subsubsection[{label5\+\_\+\+Copy}]{\setlength{\rightskip}{0pt plus 5cm}System Windows Controls Label C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Main\+Window.\+label5\+\_\+\+Copy\hspace{0.3cm}{\ttfamily [package]}}\label{class_c_p_u___o_s___simulator_1_1_main_window_aadfe7782d7e25b730849222805a541f9}
+
+
+Definition at line 526 of file Main\+Window.\+g.\+cs.
+
+\hypertarget{class_c_p_u___o_s___simulator_1_1_main_window_a8f210008776bb163b4c2c2b160aa52be}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window}!label6@{label6}}
+\index{label6@{label6}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window}}
+\subsubsection[{label6}]{\setlength{\rightskip}{0pt plus 5cm}System Windows Controls Label C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Main\+Window.\+label6\hspace{0.3cm}{\ttfamily [package]}}\label{class_c_p_u___o_s___simulator_1_1_main_window_a8f210008776bb163b4c2c2b160aa52be}
+
+
+Definition at line 614 of file Main\+Window.\+g.\+cs.
+
+\hypertarget{class_c_p_u___o_s___simulator_1_1_main_window_a18612502a8ab2d53d85434e426785022}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window}!label6\+\_\+\+Copy@{label6\+\_\+\+Copy}}
+\index{label6\+\_\+\+Copy@{label6\+\_\+\+Copy}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window}}
+\subsubsection[{label6\+\_\+\+Copy}]{\setlength{\rightskip}{0pt plus 5cm}System Windows Controls Label C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Main\+Window.\+label6\+\_\+\+Copy\hspace{0.3cm}{\ttfamily [package]}}\label{class_c_p_u___o_s___simulator_1_1_main_window_a18612502a8ab2d53d85434e426785022}
+
+
+Definition at line 630 of file Main\+Window.\+g.\+cs.
+
+\hypertarget{class_c_p_u___o_s___simulator_1_1_main_window_a890bd54d36af19ec881b6a840d6ac8a9}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window}!label6\+\_\+\+Copy1@{label6\+\_\+\+Copy1}}
+\index{label6\+\_\+\+Copy1@{label6\+\_\+\+Copy1}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window}}
+\subsubsection[{label6\+\_\+\+Copy1}]{\setlength{\rightskip}{0pt plus 5cm}System Windows Controls Label C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Main\+Window.\+label6\+\_\+\+Copy1\hspace{0.3cm}{\ttfamily [package]}}\label{class_c_p_u___o_s___simulator_1_1_main_window_a890bd54d36af19ec881b6a840d6ac8a9}
+
+
+Definition at line 646 of file Main\+Window.\+g.\+cs.
+
+\hypertarget{class_c_p_u___o_s___simulator_1_1_main_window_a38ed6363fd03954967bda7a099f6b07e}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window}!label7@{label7}}
+\index{label7@{label7}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window}}
+\subsubsection[{label7}]{\setlength{\rightskip}{0pt plus 5cm}System Windows Controls Label C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Main\+Window.\+label7\hspace{0.3cm}{\ttfamily [package]}}\label{class_c_p_u___o_s___simulator_1_1_main_window_a38ed6363fd03954967bda7a099f6b07e}
+
+
+Definition at line 766 of file Main\+Window.\+g.\+cs.
+
+\hypertarget{class_c_p_u___o_s___simulator_1_1_main_window_a216fc6a1692d8a8f8b80b08348c1dcd4}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window}!label8@{label8}}
+\index{label8@{label8}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window}}
+\subsubsection[{label8}]{\setlength{\rightskip}{0pt plus 5cm}System Windows Controls Label C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Main\+Window.\+label8\hspace{0.3cm}{\ttfamily [package]}}\label{class_c_p_u___o_s___simulator_1_1_main_window_a216fc6a1692d8a8f8b80b08348c1dcd4}
+
+
+Definition at line 774 of file Main\+Window.\+g.\+cs.
+
 \hypertarget{class_c_p_u___o_s___simulator_1_1_main_window_ae3adff2ef98d792ce094dcc229c293a8}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window}!lbl\+\_\+\+Base\+Address@{lbl\+\_\+\+Base\+Address}}
 \index{lbl\+\_\+\+Base\+Address@{lbl\+\_\+\+Base\+Address}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window}}
 \subsubsection[{lbl\+\_\+\+Base\+Address}]{\setlength{\rightskip}{0pt plus 5cm}System Windows Controls Label C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Main\+Window.\+lbl\+\_\+\+Base\+Address\hspace{0.3cm}{\ttfamily [package]}}\label{class_c_p_u___o_s___simulator_1_1_main_window_ae3adff2ef98d792ce094dcc229c293a8}
@@ -960,6 +1530,20 @@ Definition at line 86 of file Main\+Window.\+g.\+cs.
 
 
 Definition at line 414 of file Main\+Window.\+g.\+cs.
+
+\hypertarget{class_c_p_u___o_s___simulator_1_1_main_window_ae88013c536662328670f206a4cab99b1}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window}!lst\+\_\+\+Registers@{lst\+\_\+\+Registers}}
+\index{lst\+\_\+\+Registers@{lst\+\_\+\+Registers}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window}}
+\subsubsection[{lst\+\_\+\+Registers}]{\setlength{\rightskip}{0pt plus 5cm}System Windows Controls List\+View C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Main\+Window.\+lst\+\_\+\+Registers\hspace{0.3cm}{\ttfamily [package]}}\label{class_c_p_u___o_s___simulator_1_1_main_window_ae88013c536662328670f206a4cab99b1}
+
+
+Definition at line 446 of file Main\+Window.\+g.\+cs.
+
+\hypertarget{class_c_p_u___o_s___simulator_1_1_main_window_a8453db331c7cc1e7c1e711a06b2ec30c}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window}!lst\+\_\+\+Stack@{lst\+\_\+\+Stack}}
+\index{lst\+\_\+\+Stack@{lst\+\_\+\+Stack}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window}}
+\subsubsection[{lst\+\_\+\+Stack}]{\setlength{\rightskip}{0pt plus 5cm}System Windows Controls List\+View C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Main\+Window.\+lst\+\_\+\+Stack\hspace{0.3cm}{\ttfamily [package]}}\label{class_c_p_u___o_s___simulator_1_1_main_window_a8453db331c7cc1e7c1e711a06b2ec30c}
+
+
+Definition at line 686 of file Main\+Window.\+g.\+cs.
 
 \hypertarget{class_c_p_u___o_s___simulator_1_1_main_window_adf996cda04d3cf426847b8fd8981ee66}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window}!Main\+Window2@{Main\+Window2}}
 \index{Main\+Window2@{Main\+Window2}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window}}
@@ -994,7 +1578,7 @@ Definition at line 382 of file Main\+Window.\+g.\+cs.
 \subsubsection[{program\+List}]{\setlength{\rightskip}{0pt plus 5cm}List$<${\bf Simulator\+Program}$>$ C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Main\+Window.\+program\+List\hspace{0.3cm}{\ttfamily [private]}}\label{class_c_p_u___o_s___simulator_1_1_main_window_a48fa4dc074c098338a652dbd6a3434c7}
 
 
-Definition at line 31 of file Main\+Window.\+xaml.\+cs.
+Definition at line 24 of file Main\+Window.\+xaml.\+cs.
 
 \hypertarget{class_c_p_u___o_s___simulator_1_1_main_window_adb8397cdbc794d18b0379ba7251d2278}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window}!Program\+List\+Grid@{Program\+List\+Grid}}
 \index{Program\+List\+Grid@{Program\+List\+Grid}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window}}
@@ -1010,6 +1594,20 @@ Definition at line 390 of file Main\+Window.\+g.\+cs.
 
 Definition at line 406 of file Main\+Window.\+g.\+cs.
 
+\hypertarget{class_c_p_u___o_s___simulator_1_1_main_window_a59373e8f8822e4efea670d9fb87a1b32}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window}!Program\+Stack\+Grid@{Program\+Stack\+Grid}}
+\index{Program\+Stack\+Grid@{Program\+Stack\+Grid}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window}}
+\subsubsection[{Program\+Stack\+Grid}]{\setlength{\rightskip}{0pt plus 5cm}System Windows Controls Grid C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Main\+Window.\+Program\+Stack\+Grid\hspace{0.3cm}{\ttfamily [package]}}\label{class_c_p_u___o_s___simulator_1_1_main_window_a59373e8f8822e4efea670d9fb87a1b32}
+
+
+Definition at line 662 of file Main\+Window.\+g.\+cs.
+
+\hypertarget{class_c_p_u___o_s___simulator_1_1_main_window_a8c373866c86f6be0e7ef487a5ccb8c3c}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window}!Program\+Stack\+Inner\+Grid@{Program\+Stack\+Inner\+Grid}}
+\index{Program\+Stack\+Inner\+Grid@{Program\+Stack\+Inner\+Grid}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window}}
+\subsubsection[{Program\+Stack\+Inner\+Grid}]{\setlength{\rightskip}{0pt plus 5cm}System Windows Controls Grid C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Main\+Window.\+Program\+Stack\+Inner\+Grid\hspace{0.3cm}{\ttfamily [package]}}\label{class_c_p_u___o_s___simulator_1_1_main_window_a8c373866c86f6be0e7ef487a5ccb8c3c}
+
+
+Definition at line 678 of file Main\+Window.\+g.\+cs.
+
 \hypertarget{class_c_p_u___o_s___simulator_1_1_main_window_a615ea960969aa9a61afdaef8cf039348}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window}!Program\+Tab@{Program\+Tab}}
 \index{Program\+Tab@{Program\+Tab}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window}}
 \subsubsection[{Program\+Tab}]{\setlength{\rightskip}{0pt plus 5cm}System Windows Controls Tab\+Control C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Main\+Window.\+Program\+Tab\hspace{0.3cm}{\ttfamily [package]}}\label{class_c_p_u___o_s___simulator_1_1_main_window_a615ea960969aa9a61afdaef8cf039348}
@@ -1017,12 +1615,131 @@ Definition at line 406 of file Main\+Window.\+g.\+cs.
 
 Definition at line 110 of file Main\+Window.\+g.\+cs.
 
+\hypertarget{class_c_p_u___o_s___simulator_1_1_main_window_acba6218f7f716645443533815c6bd7a3}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window}!rdb\+\_\+\+By\+Instruction@{rdb\+\_\+\+By\+Instruction}}
+\index{rdb\+\_\+\+By\+Instruction@{rdb\+\_\+\+By\+Instruction}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window}}
+\subsubsection[{rdb\+\_\+\+By\+Instruction}]{\setlength{\rightskip}{0pt plus 5cm}System Windows Controls Radio\+Button C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Main\+Window.\+rdb\+\_\+\+By\+Instruction\hspace{0.3cm}{\ttfamily [package]}}\label{class_c_p_u___o_s___simulator_1_1_main_window_acba6218f7f716645443533815c6bd7a3}
+
+
+Definition at line 742 of file Main\+Window.\+g.\+cs.
+
+\hypertarget{class_c_p_u___o_s___simulator_1_1_main_window_ab40dcb618f5398ab67213476fe1b86ca}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window}!rdb\+\_\+\+By\+Single\+Tick@{rdb\+\_\+\+By\+Single\+Tick}}
+\index{rdb\+\_\+\+By\+Single\+Tick@{rdb\+\_\+\+By\+Single\+Tick}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window}}
+\subsubsection[{rdb\+\_\+\+By\+Single\+Tick}]{\setlength{\rightskip}{0pt plus 5cm}System Windows Controls Radio\+Button C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Main\+Window.\+rdb\+\_\+\+By\+Single\+Tick\hspace{0.3cm}{\ttfamily [package]}}\label{class_c_p_u___o_s___simulator_1_1_main_window_ab40dcb618f5398ab67213476fe1b86ca}
+
+
+Definition at line 750 of file Main\+Window.\+g.\+cs.
+
+\hypertarget{class_c_p_u___o_s___simulator_1_1_main_window_a549c6be690b051f4ab15dce643dec656}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window}!rdb\+\_\+\+Kernel@{rdb\+\_\+\+Kernel}}
+\index{rdb\+\_\+\+Kernel@{rdb\+\_\+\+Kernel}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window}}
+\subsubsection[{rdb\+\_\+\+Kernel}]{\setlength{\rightskip}{0pt plus 5cm}System Windows Controls Radio\+Button C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Main\+Window.\+rdb\+\_\+\+Kernel\hspace{0.3cm}{\ttfamily [package]}}\label{class_c_p_u___o_s___simulator_1_1_main_window_a549c6be690b051f4ab15dce643dec656}
+
+
+Definition at line 606 of file Main\+Window.\+g.\+cs.
+
+\hypertarget{class_c_p_u___o_s___simulator_1_1_main_window_ab9e8d52c337bc24a24d8282dfbf449c8}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window}!rdb\+\_\+\+User@{rdb\+\_\+\+User}}
+\index{rdb\+\_\+\+User@{rdb\+\_\+\+User}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window}}
+\subsubsection[{rdb\+\_\+\+User}]{\setlength{\rightskip}{0pt plus 5cm}System Windows Controls Radio\+Button C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Main\+Window.\+rdb\+\_\+\+User\hspace{0.3cm}{\ttfamily [package]}}\label{class_c_p_u___o_s___simulator_1_1_main_window_ab9e8d52c337bc24a24d8282dfbf449c8}
+
+
+Definition at line 598 of file Main\+Window.\+g.\+cs.
+
+\hypertarget{class_c_p_u___o_s___simulator_1_1_main_window_a37acb139db0aa54950350fdb47dfd452}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window}!Register\+Grid@{Register\+Grid}}
+\index{Register\+Grid@{Register\+Grid}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window}}
+\subsubsection[{Register\+Grid}]{\setlength{\rightskip}{0pt plus 5cm}System Windows Controls Grid C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Main\+Window.\+Register\+Grid\hspace{0.3cm}{\ttfamily [package]}}\label{class_c_p_u___o_s___simulator_1_1_main_window_a37acb139db0aa54950350fdb47dfd452}
+
+
+Definition at line 422 of file Main\+Window.\+g.\+cs.
+
+\hypertarget{class_c_p_u___o_s___simulator_1_1_main_window_a27d2d9e2ed92e2daa444ca8086a0861e}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window}!Register\+Inner\+Grid@{Register\+Inner\+Grid}}
+\index{Register\+Inner\+Grid@{Register\+Inner\+Grid}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window}}
+\subsubsection[{Register\+Inner\+Grid}]{\setlength{\rightskip}{0pt plus 5cm}System Windows Controls Grid C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Main\+Window.\+Register\+Inner\+Grid\hspace{0.3cm}{\ttfamily [package]}}\label{class_c_p_u___o_s___simulator_1_1_main_window_a27d2d9e2ed92e2daa444ca8086a0861e}
+
+
+Definition at line 438 of file Main\+Window.\+g.\+cs.
+
 \hypertarget{class_c_p_u___o_s___simulator_1_1_main_window_a014812a0e9cd159be05250d94d9a5a8b}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window}!scroll\+Bar1@{scroll\+Bar1}}
 \index{scroll\+Bar1@{scroll\+Bar1}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window}}
 \subsubsection[{scroll\+Bar1}]{\setlength{\rightskip}{0pt plus 5cm}System Windows Controls Primitives Scroll\+Bar C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Main\+Window.\+scroll\+Bar1\hspace{0.3cm}{\ttfamily [package]}}\label{class_c_p_u___o_s___simulator_1_1_main_window_a014812a0e9cd159be05250d94d9a5a8b}
 
 
 Definition at line 94 of file Main\+Window.\+g.\+cs.
+
+\hypertarget{class_c_p_u___o_s___simulator_1_1_main_window_a39cd3af9bb0f8a3ccd06fdd44c9ed6a3}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window}!sld\+\_\+\+Clock\+Speed@{sld\+\_\+\+Clock\+Speed}}
+\index{sld\+\_\+\+Clock\+Speed@{sld\+\_\+\+Clock\+Speed}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window}}
+\subsubsection[{sld\+\_\+\+Clock\+Speed}]{\setlength{\rightskip}{0pt plus 5cm}System Windows Controls Slider C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Main\+Window.\+sld\+\_\+\+Clock\+Speed\hspace{0.3cm}{\ttfamily [package]}}\label{class_c_p_u___o_s___simulator_1_1_main_window_a39cd3af9bb0f8a3ccd06fdd44c9ed6a3}
+
+
+Definition at line 758 of file Main\+Window.\+g.\+cs.
+
+\hypertarget{class_c_p_u___o_s___simulator_1_1_main_window_a7ce98e44f9236ca31eb5bf3ed81c3372}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window}!Special\+Registers\+Grid@{Special\+Registers\+Grid}}
+\index{Special\+Registers\+Grid@{Special\+Registers\+Grid}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window}}
+\subsubsection[{Special\+Registers\+Grid}]{\setlength{\rightskip}{0pt plus 5cm}System Windows Controls Grid C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Main\+Window.\+Special\+Registers\+Grid\hspace{0.3cm}{\ttfamily [package]}}\label{class_c_p_u___o_s___simulator_1_1_main_window_a7ce98e44f9236ca31eb5bf3ed81c3372}
+
+
+Definition at line 454 of file Main\+Window.\+g.\+cs.
+
+\hypertarget{class_c_p_u___o_s___simulator_1_1_main_window_aeef1e97d3e7d589fdab51828260c7b5a}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window}!Special\+Registers\+Inner\+Grid@{Special\+Registers\+Inner\+Grid}}
+\index{Special\+Registers\+Inner\+Grid@{Special\+Registers\+Inner\+Grid}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window}}
+\subsubsection[{Special\+Registers\+Inner\+Grid}]{\setlength{\rightskip}{0pt plus 5cm}System Windows Controls Grid C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Main\+Window.\+Special\+Registers\+Inner\+Grid\hspace{0.3cm}{\ttfamily [package]}}\label{class_c_p_u___o_s___simulator_1_1_main_window_aeef1e97d3e7d589fdab51828260c7b5a}
+
+
+Definition at line 470 of file Main\+Window.\+g.\+cs.
+
+\hypertarget{class_c_p_u___o_s___simulator_1_1_main_window_afdda5e5a39c6e3b99300284ea2640e7c}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window}!Status\+Flags\+Grid@{Status\+Flags\+Grid}}
+\index{Status\+Flags\+Grid@{Status\+Flags\+Grid}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window}}
+\subsubsection[{Status\+Flags\+Grid}]{\setlength{\rightskip}{0pt plus 5cm}System Windows Controls Grid C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Main\+Window.\+Status\+Flags\+Grid\hspace{0.3cm}{\ttfamily [package]}}\label{class_c_p_u___o_s___simulator_1_1_main_window_afdda5e5a39c6e3b99300284ea2640e7c}
+
+
+Definition at line 550 of file Main\+Window.\+g.\+cs.
+
+\hypertarget{class_c_p_u___o_s___simulator_1_1_main_window_a7a878022ed4cb948598d3685dc821a00}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window}!txt\+\_\+\+B\+R@{txt\+\_\+\+B\+R}}
+\index{txt\+\_\+\+B\+R@{txt\+\_\+\+B\+R}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window}}
+\subsubsection[{txt\+\_\+\+B\+R}]{\setlength{\rightskip}{0pt plus 5cm}System Windows Controls Text\+Box C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Main\+Window.\+txt\+\_\+\+B\+R\hspace{0.3cm}{\ttfamily [package]}}\label{class_c_p_u___o_s___simulator_1_1_main_window_a7a878022ed4cb948598d3685dc821a00}
+
+
+Definition at line 534 of file Main\+Window.\+g.\+cs.
+
+\hypertarget{class_c_p_u___o_s___simulator_1_1_main_window_ac6e0cfcdd72688d7bffd100ce6d11a28}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window}!txt\+\_\+\+I\+R@{txt\+\_\+\+I\+R}}
+\index{txt\+\_\+\+I\+R@{txt\+\_\+\+I\+R}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window}}
+\subsubsection[{txt\+\_\+\+I\+R}]{\setlength{\rightskip}{0pt plus 5cm}System Windows Controls Text\+Box C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Main\+Window.\+txt\+\_\+\+I\+R\hspace{0.3cm}{\ttfamily [package]}}\label{class_c_p_u___o_s___simulator_1_1_main_window_ac6e0cfcdd72688d7bffd100ce6d11a28}
+
+
+Definition at line 622 of file Main\+Window.\+g.\+cs.
+
+\hypertarget{class_c_p_u___o_s___simulator_1_1_main_window_a87f8440246e9f6ace0aa4d69b5bba289}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window}!txt\+\_\+\+M\+A\+R@{txt\+\_\+\+M\+A\+R}}
+\index{txt\+\_\+\+M\+A\+R@{txt\+\_\+\+M\+A\+R}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window}}
+\subsubsection[{txt\+\_\+\+M\+A\+R}]{\setlength{\rightskip}{0pt plus 5cm}System Windows Controls Text\+Box C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Main\+Window.\+txt\+\_\+\+M\+A\+R\hspace{0.3cm}{\ttfamily [package]}}\label{class_c_p_u___o_s___simulator_1_1_main_window_a87f8440246e9f6ace0aa4d69b5bba289}
+
+
+Definition at line 638 of file Main\+Window.\+g.\+cs.
+
+\hypertarget{class_c_p_u___o_s___simulator_1_1_main_window_a1aa53d1512aa84e476b3649dcda5ced0}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window}!txt\+\_\+\+M\+D\+R@{txt\+\_\+\+M\+D\+R}}
+\index{txt\+\_\+\+M\+D\+R@{txt\+\_\+\+M\+D\+R}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window}}
+\subsubsection[{txt\+\_\+\+M\+D\+R}]{\setlength{\rightskip}{0pt plus 5cm}System Windows Controls Text\+Box C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Main\+Window.\+txt\+\_\+\+M\+D\+R\hspace{0.3cm}{\ttfamily [package]}}\label{class_c_p_u___o_s___simulator_1_1_main_window_a1aa53d1512aa84e476b3649dcda5ced0}
+
+
+Definition at line 654 of file Main\+Window.\+g.\+cs.
+
+\hypertarget{class_c_p_u___o_s___simulator_1_1_main_window_a7100765f8e26fa4c97a76dd445942b97}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window}!txt\+\_\+\+P\+C@{txt\+\_\+\+P\+C}}
+\index{txt\+\_\+\+P\+C@{txt\+\_\+\+P\+C}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window}}
+\subsubsection[{txt\+\_\+\+P\+C}]{\setlength{\rightskip}{0pt plus 5cm}System Windows Controls Text\+Box C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Main\+Window.\+txt\+\_\+\+P\+C\hspace{0.3cm}{\ttfamily [package]}}\label{class_c_p_u___o_s___simulator_1_1_main_window_a7100765f8e26fa4c97a76dd445942b97}
+
+
+Definition at line 486 of file Main\+Window.\+g.\+cs.
+
+\hypertarget{class_c_p_u___o_s___simulator_1_1_main_window_ac2427655774b9ca2b4c368651d5cd9de}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window}!txt\+\_\+\+S\+P@{txt\+\_\+\+S\+P}}
+\index{txt\+\_\+\+S\+P@{txt\+\_\+\+S\+P}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window}}
+\subsubsection[{txt\+\_\+\+S\+P}]{\setlength{\rightskip}{0pt plus 5cm}System Windows Controls Text\+Box C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Main\+Window.\+txt\+\_\+\+S\+P\hspace{0.3cm}{\ttfamily [package]}}\label{class_c_p_u___o_s___simulator_1_1_main_window_ac2427655774b9ca2b4c368651d5cd9de}
+
+
+Definition at line 518 of file Main\+Window.\+g.\+cs.
+
+\hypertarget{class_c_p_u___o_s___simulator_1_1_main_window_a9135c01bacd48e517d7cf46f69ea87d2}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window}!txt\+\_\+\+S\+R@{txt\+\_\+\+S\+R}}
+\index{txt\+\_\+\+S\+R@{txt\+\_\+\+S\+R}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window}}
+\subsubsection[{txt\+\_\+\+S\+R}]{\setlength{\rightskip}{0pt plus 5cm}System Windows Controls Text\+Box C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Main\+Window.\+txt\+\_\+\+S\+R\hspace{0.3cm}{\ttfamily [package]}}\label{class_c_p_u___o_s___simulator_1_1_main_window_a9135c01bacd48e517d7cf46f69ea87d2}
+
+
+Definition at line 502 of file Main\+Window.\+g.\+cs.
 
 \hypertarget{class_c_p_u___o_s___simulator_1_1_main_window_aa6eeef1bfdd74aa90d6fea68987306ad}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window}!txt\+Base\+Address@{txt\+Base\+Address}}
 \index{txt\+Base\+Address@{txt\+Base\+Address}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window}}
@@ -1044,6 +1761,30 @@ Definition at line 254 of file Main\+Window.\+g.\+cs.
 
 
 Definition at line 142 of file Main\+Window.\+g.\+cs.
+
+
+
+\subsection{Property Documentation}
+\hypertarget{class_c_p_u___o_s___simulator_1_1_main_window_a3d03550a73d7ab18ebd143a38dbf1431}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window}!Active\+Unit@{Active\+Unit}}
+\index{Active\+Unit@{Active\+Unit}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window}}
+\subsubsection[{Active\+Unit}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Execution\+Unit} C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Main\+Window.\+Active\+Unit\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}\label{class_c_p_u___o_s___simulator_1_1_main_window_a3d03550a73d7ab18ebd143a38dbf1431}
+
+
+Definition at line 61 of file Main\+Window.\+xaml.\+cs.
+
+\hypertarget{class_c_p_u___o_s___simulator_1_1_main_window_a65916937137002c26f9eb1c88cfff519}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window}!Instruction\+Mode@{Instruction\+Mode}}
+\index{Instruction\+Mode@{Instruction\+Mode}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window}}
+\subsubsection[{Instruction\+Mode}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Enum\+Instruction\+Mode} C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Main\+Window.\+Instruction\+Mode\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}\label{class_c_p_u___o_s___simulator_1_1_main_window_a65916937137002c26f9eb1c88cfff519}
+
+
+Definition at line 48 of file Main\+Window.\+xaml.\+cs.
+
+\hypertarget{class_c_p_u___o_s___simulator_1_1_main_window_a632c91cdd16a7498bbb8dfb3e5df252c}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window}!Program\+List@{Program\+List}}
+\index{Program\+List@{Program\+List}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Main\+Window}}
+\subsubsection[{Program\+List}]{\setlength{\rightskip}{0pt plus 5cm}List$<${\bf Simulator\+Program}$>$ C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Main\+Window.\+Program\+List\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}\label{class_c_p_u___o_s___simulator_1_1_main_window_a632c91cdd16a7498bbb8dfb3e5df252c}
+
+
+Definition at line 35 of file Main\+Window.\+xaml.\+cs.
 
 
 

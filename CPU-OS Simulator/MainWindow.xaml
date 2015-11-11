@@ -160,7 +160,7 @@
                     <ListView x:Name="lst_Stack" HorizontalAlignment="Left" Height="266" VerticalAlignment="Top" Width="223" Background="#FFFFFCC1" Margin="0,0,0,-35">
                         <ListView.View>
                             <GridView>
-                                <GridViewColumn Header="" Width="60" DisplayMemberBinding="{Binding Annotation}"/>
+                                <GridViewColumn Header="" Width="60" DisplayMemberBinding="{Binding Annotation}" />
                                 <GridViewColumn Header="Pos" DisplayMemberBinding="{Binding Position}" Width="30" />
                                 <GridViewColumn Header="Value" DisplayMemberBinding="{Binding Value}" Width="60" />
                                 <GridViewColumn Header="Address" DisplayMemberBinding="{Binding Address}" Width="60" />

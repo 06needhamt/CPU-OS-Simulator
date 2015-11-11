@@ -1,4 +1,5 @@
 ﻿using CPU_OS_Simulator.CPU;
+using CPU_OS_Simulator.Memory;
 using Microsoft.Win32;
 using System;
 using System.Collections.Generic;
@@ -9,7 +10,6 @@ using System.Reflection;
 using System.Web.Script.Serialization;
 using System.Windows;
 using System.Windows.Controls;
-using CPU_OS_Simulator.Memory;
 
 namespace CPU_OS_Simulator
 {
@@ -19,11 +19,17 @@ namespace CPU_OS_Simulator
     ///
     public partial class MainWindow : Window
     {
+        #region Global Variables
+
         private List<SimulatorProgram> programList;
         private EnumInstructionMode instructionMode;
         public string currentProgram = string.Empty;
         private ExecutionUnit activeUnit;
         public static MainWindow currentInstance;
+
+        #endregion Global Variables
+
+        #region Properties
 
         public List<SimulatorProgram> ProgramList
         {
@@ -64,6 +70,13 @@ namespace CPU_OS_Simulator
             }
         }
 
+        #endregion Properties
+
+        #region Constructors
+
+        /// <summary>
+        /// Constructor For the main window
+        /// </summary>
         public MainWindow()
         {
             InitializeComponent();
@@ -73,6 +86,13 @@ namespace CPU_OS_Simulator
             currentInstance = this;
         }
 
+        #endregion Constructors
+
+        #region Methods
+
+        /// <summary>
+        /// This function populates the register display in the main window
+        /// </summary>
         private void PopulateRegisters()
         {
             for (int i = 0; i < 21; i++)
@@ -89,7 +109,12 @@ namespace CPU_OS_Simulator
                 lst_Registers.Items.Add(Register.FindRegister(registerString));
             }
         }
-        private void UpdateRegisters() {
+
+        /// <summary>
+        /// This function updates the register display in the main window whenever a register value is updated
+        /// </summary>
+        private void UpdateRegisters()
+        {
             // HACK item source must be null before modifying the list
             lst_Registers.ItemsSource = null;
             lst_Registers.Items.Clear();
@@ -235,14 +260,14 @@ namespace CPU_OS_Simulator
         /// <param name="e"> the eventargs</param>
         private void MainWindow2_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
-            if(programList.Count > 0)
+            if (programList.Count > 0)
             {
                 MessageBoxResult saveresult = MessageBox.Show("There are unsaved programs do you want to save first?", "Save", MessageBoxButton.YesNoCancel, MessageBoxImage.Question);
-                if(saveresult == MessageBoxResult.Yes)
+                if (saveresult == MessageBoxResult.Yes)
                 {
                     SaveProgram();
                 }
-                else if(saveresult == MessageBoxResult.Cancel)
+                else if (saveresult == MessageBoxResult.Cancel)
                 {
                     e.Cancel = true;
                     return;
@@ -332,11 +357,11 @@ namespace CPU_OS_Simulator
                     }
                     else if (index == 0)
                     {
-                        prog.AddInstruction(ref ins,0);
+                        prog.AddInstruction(ref ins, 0);
                     }
                     else
                     {
-                        prog.AddInstruction(ref ins,index); // add the instruction
+                        prog.AddInstruction(ref ins, index); // add the instruction
                     }
                     //prog.AddInstruction(ref ins,index);
                 }
@@ -349,11 +374,11 @@ namespace CPU_OS_Simulator
                     }
                     else if (index == 0)
                     {
-                        prog.AddInstruction(ref ins,0);
+                        prog.AddInstruction(ref ins, 0);
                     }
                     else
                     {
-                        prog.AddInstruction(ref ins,index); // add the instruction
+                        prog.AddInstruction(ref ins, index); // add the instruction
                     }
                     //prog.AddInstruction(ref ins,index);
                 }
@@ -375,6 +400,9 @@ namespace CPU_OS_Simulator
             UpdateStack();
         }
 
+        /// <summary>
+        /// This function updates the stack display in the main window whenever a value is pushed or popped from the stack
+        /// </summary>
         private void UpdateStack()
         {
             if (currentProgram.Equals(string.Empty)) // if a program has been loaded from a file
@@ -404,7 +432,6 @@ namespace CPU_OS_Simulator
                 lst_Stack.ItemsSource = null;
             }
             Console.WriteLine("Stack Updated");
-
         }
 
         /// <summary>
@@ -542,18 +569,21 @@ namespace CPU_OS_Simulator
             {
                 SimulatorProgram prog = deserializer.Deserialize<SimulatorProgram>(json); // deserialise the line into a object
                 BindInstructionDelegates(ref prog);
-                if(prog.Stack == null)
+                if (prog.Stack == null)
                 {
                     prog.Stack = new ProgramStack();
                 }
                 programList.Add(prog);
                 lst_ProgramList.Items.Add(prog); // add the object to the program list
-                
             }
 
             return;
         }
 
+        /// <summary>
+        /// This function rebinds the delegate function to each instruction in a program after it is loaded from a file.
+        /// </summary>
+        /// <param name="prog"></param>
         private void BindInstructionDelegates(ref SimulatorProgram prog)
         {
             foreach (Instruction i in prog.Instructions)
@@ -570,11 +600,11 @@ namespace CPU_OS_Simulator
         private void btn_Step_Click(object sender, RoutedEventArgs e)
         {
             SimulatorProgram prog = programList.Where(x => x.Name.Equals(currentProgram)).FirstOrDefault();
-            if (activeUnit == null || !activeUnit.Program.Equals(prog));
+            if (activeUnit == null || !activeUnit.Program.Equals(prog)) ;
             {
                 activeUnit = new ExecutionUnit(prog, (int)sld_ClockSpeed.Value, lst_InstructionsList.SelectedIndex);
             }
-            activeUnit.ExecuteInstruction(true);
+            activeUnit.ExecuteInstruction();
             UpdateRegisters();
             UpdateStack();
             lst_InstructionsList.SelectedIndex++;
@@ -591,16 +621,20 @@ namespace CPU_OS_Simulator
             s.Start();
             while (!activeUnit.Done)
             {
-                activeUnit.ExecuteInstruction(false);
+                activeUnit.ExecuteInstruction();
                 UpdateRegisters();
                 UpdateStack();
                 lst_InstructionsList.SelectedIndex++;
             }
             s.Stop();
-            MessageBox.Show("Program Completed in: " + CalculateTime(s.ElapsedMilliseconds) + " Seconds","",MessageBoxButton.OK,MessageBoxImage.Information);
-
+            MessageBox.Show("Program Completed in: " + CalculateTime(s.ElapsedMilliseconds) + " Seconds", "", MessageBoxButton.OK, MessageBoxImage.Information);
         }
 
+        /// <summary>
+        /// This function calculates the time in seconds the last program took to execute
+        /// </summary>
+        /// <param name="mills"> the number of milliseconds the last program took to execute</param>
+        /// <returns></returns>
         private string CalculateTime(long mills)
         {
             long mils = 0;
@@ -614,5 +648,7 @@ namespace CPU_OS_Simulator
         {
             bool stopped = activeUnit != null ? activeUnit.Stop = true : activeUnit.Stop = false;
         }
+
+        #endregion Methods
     }
 }

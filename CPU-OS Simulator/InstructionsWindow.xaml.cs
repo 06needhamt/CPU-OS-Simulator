@@ -72,7 +72,7 @@ namespace CPU_OS_Simulator
                 string category = split[0];
                 string description = split[1];
                 instructionDescriptions.Add(description); // add the description to the list
-  
+
                 switch (category)
                 {
                     case "Data Transfer":
@@ -146,7 +146,7 @@ namespace CPU_OS_Simulator
             EnumOpcodes selected = (EnumOpcodes)Enum.Parse(typeof(EnumOpcodes), lst_OpcodeListDataTransfer.SelectedItem.ToString());
             txtDescriptionDataTransfer.Text = instructionDescriptions.ElementAt<string>((int)selected);
             int operands = Extentions.NumberOfOperandsAttr<EnumOpcodes>(selected);
-            if(operands == 0)
+            if (operands == 0)
             {
                 rdb_SourceValueDataTransfer.IsEnabled = false;
                 txtSourceValueDataTransfer.IsEnabled = false;
@@ -157,7 +157,7 @@ namespace CPU_OS_Simulator
                 rdb_DestinationRegisterDataTransfer.IsEnabled = false;
                 cmb_DestinationRegisterDataTransfer.IsEnabled = false;
             }
-            else if(operands == 1)
+            else if (operands == 1)
             {
                 rdb_DestinationValueDataTransfer.IsEnabled = false;
                 txtDestinationValueDataTransfer.IsEnabled = false;
@@ -165,7 +165,7 @@ namespace CPU_OS_Simulator
                 cmb_DestinationRegisterDataTransfer.IsEnabled = false;
             }
         }
-      
+
         private void lst_OpcodeListLogical_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             EnumOpcodes selected = (EnumOpcodes)Enum.Parse(typeof(EnumOpcodes), lst_OpcodeListLogical.SelectedItem.ToString());
@@ -290,6 +290,7 @@ namespace CPU_OS_Simulator
                 cmb_DestinationRegisterIO.IsEnabled = false;
             }
         }
+
         private void lst_OpcodeListMiscellaneous_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             EnumOpcodes selected = (EnumOpcodes)Enum.Parse(typeof(EnumOpcodes), lst_OpcodeListMiscellaneous.SelectedItem.ToString());
@@ -314,6 +315,7 @@ namespace CPU_OS_Simulator
                 cmb_DestinationRegisterMiscellaneous.IsEnabled = false;
             }
         }
+
         #endregion Populate Instruction Descriptions
 
         /// <summary>
@@ -344,7 +346,7 @@ namespace CPU_OS_Simulator
             Operand op1;
             Operand op2;
             int index = owner.lst_InstructionsList.SelectedIndex;
-            SimulatorProgram prog = (SimulatorProgram) owner.lst_ProgramList.SelectedItem;
+            SimulatorProgram prog = (SimulatorProgram)owner.lst_ProgramList.SelectedItem;
             switch (SelectedTab.Header.ToString())
             {
                 case "Data Transfer":
@@ -379,7 +381,7 @@ namespace CPU_OS_Simulator
                         {
                             op2 = null;
                         }
-                        Instruction i = owner.CreateInstruction(opcode, op1, op2,4);
+                        Instruction i = owner.CreateInstruction(opcode, op1, op2, 4);
                         owner.AddInstruction(i, index);
                         break;
                     }

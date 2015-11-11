@@ -28,8 +28,9 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "___c_p_u-_o_s_01_simulator_8_c_p_u_8g_8cs.html",
-"class_c_p_u___o_s___simulator_1_1_instructions_window.html#a2fbd163f2638a32f7cfbf831dc91582f",
-"class_xaml_static_helper_namespace_1_1___xaml_static_helper.html#a703c877fd6ad70d1add0c1cfda1de3a1"
+"class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_instruction.html#a8fb993dcebcd127a335a7d068a6e9de4",
+"class_c_p_u___o_s___simulator_1_1_instructions_window.html#a84f7cc6d64bd8050be7c729f469cd29c",
+"class_c_p_u___o_s___simulator_1_1_memory_1_1_memory_page.html#acb107b35713d8fe3d5032c3a8b0e878d"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

@@ -1,25 +1,54 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
+
 namespace CPU_OS_Simulator.CPU
 {
+    /// <summary>
+    /// This class represents a Last in first out (LIFO) stack data structuee for use with simulator programs
+    /// </summary>
     public class ProgramStack
     {
+        #region Global Variables
+
+        /// <summary>
+        /// The items held within the stack
+        /// </summary>
         private List<StackItem> stackItems = new List<StackItem>();
+
+        /// <summary>
+        /// The maximum size of the stack before it overflows
+        /// </summary>
         private readonly int maxStackSize = 1024;
+
+        /// <summary>
+        /// the current size of the stack
+        /// </summary>
         private int stackSize;
-         
+
+        #endregion Global Variables
+
+        #region Constructors
+
+        /// <summary>
+        /// Constructor for program stack objects
+        /// </summary>
         public ProgramStack()
         {
             stackSize = 0;
         }
 
+        #endregion Constructors
+
+        #region Methods
+
+        /// <summary>
+        /// this function pushes an item onto the stack
+        /// </summary>
+        /// <param name="item"> the item to be pushed onto the stack</param>
         public void pushItem(StackItem item)
         {
-            if(stackSize + 1 > maxStackSize)
+            if (stackSize + 1 > maxStackSize)
             {
                 MessageBox.Show("Stack Overflow the program will now terminate", "", MessageBoxButton.OK, MessageBoxImage.Error);
                 // TODO Terminate Program
@@ -31,19 +60,25 @@ namespace CPU_OS_Simulator.CPU
             SetAnnotations();
         }
 
+        /// <summary>
+        /// This method sets an annotation to a stack item
+        /// BOS if the item is at the bottom of the stack
+        /// TOS if the item is at the top of the stack
+        /// or an emby string if it in the middle of the stack
+        /// </summary>
         private void SetAnnotations()
         {
-            for(int i = 0; i < stackSize; i++)
+            for (int i = 0; i < stackSize; i++)
             {
-                if(i == 0 && stackSize == 1)
+                if (i == 0 && stackSize == 1)
                 {
                     stackItems.ElementAt(i).Annotation = "BOS";
                 }
-                else if(i == 0)
+                else if (i == 0)
                 {
                     stackItems.ElementAt(i).Annotation = "TOS";
                 }
-                else if(i == (stackSize - 1))
+                else if (i == (stackSize - 1))
                 {
                     stackItems.ElementAt(i).Annotation = "BOS";
                 }
@@ -54,6 +89,10 @@ namespace CPU_OS_Simulator.CPU
             }
         }
 
+        /// <summary>
+        /// This item pops a value off the top of the stack
+        /// </summary>
+        /// <returns> the value that was popped off the stack</returns>
         public int popItem()
         {
             if (stackSize - 1 < 0)
@@ -68,6 +107,10 @@ namespace CPU_OS_Simulator.CPU
             SetAnnotations();
             return value;
         }
+
+        #endregion Methods
+
+        #region Properties
 
         public List<StackItem> StackItems
         {
@@ -104,6 +147,6 @@ namespace CPU_OS_Simulator.CPU
             }
         }
 
-
+        #endregion Properties
     }
 }

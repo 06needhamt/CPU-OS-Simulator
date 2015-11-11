@@ -96,6 +96,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       <li><a href="#index_i"><span>i</span></a></li>
       <li><a href="#index_l"><span>l</span></a></li>
       <li><a href="#index_m"><span>m</span></a></li>
+      <li><a href="#index_n"><span>n</span></a></li>
       <li><a href="#index_o"><span>o</span></a></li>
       <li><a href="#index_p"><span>p</span></a></li>
       <li><a href="#index_r"><span>r</span></a></li>
@@ -141,12 +142,12 @@ $(document).ready(function(){initNavTree('functions_func.html','');});
 <li>Activity1()
 : <a class="el" href="class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_activity1.html#afb3ce8aeef1cfe7c4a479f43327d5ea1">CPU_OS_Simulator.CPU.Activity1</a>
 </li>
-<li>Add()
-: <a class="el" href="class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_instruction.html#a629b6896ade92ac6eba831701dcf69b4">CPU_OS_Simulator.CPU.Instruction</a>
+<li>ADD()
+: <a class="el" href="class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_instruction.html#a0c627b3cf43f2bf9d196800fbc7dc476">CPU_OS_Simulator.CPU.Instruction</a>
 </li>
 <li>AddInstruction()
-: <a class="el" href="class_c_p_u___o_s___simulator_1_1_main_window.html#aff4dc8e6061987daf02732e85fcd643a">CPU_OS_Simulator.MainWindow</a>
-, <a class="el" href="class_c_p_u___o_s___simulator_1_1_simulator_program.html#a1c66b407ab8e42315aa3b0358048f4b2">CPU_OS_Simulator.SimulatorProgram</a>
+: <a class="el" href="class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_simulator_program.html#a6b6df3400e406b1dc6de3787f1a8fc61">CPU_OS_Simulator.CPU.SimulatorProgram</a>
+, <a class="el" href="class_c_p_u___o_s___simulator_1_1_main_window.html#ae73f56ccee0f45b0df54438b3d397dd9">CPU_OS_Simulator.MainWindow</a>
 </li>
 <li>AfterInitializeComponent()
 : <a class="el" href="class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_activity1.html#af4be750af1e09a820a79d78faf6caf4f">CPU_OS_Simulator.CPU.Activity1</a>
@@ -164,8 +165,23 @@ $(document).ready(function(){initNavTree('functions_func.html','');});
 <li>BindDelegate()
 : <a class="el" href="class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_instruction.html#ab3bbd51fd889e3bbeb656ea717a7fe9c">CPU_OS_Simulator.CPU.Instruction</a>
 </li>
+<li>BindInstructionDelegates()
+: <a class="el" href="class_c_p_u___o_s___simulator_1_1_main_window.html#afe4c815db0eb51ebc480374f5af09d0c">CPU_OS_Simulator.MainWindow</a>
+</li>
+<li>btn_AddNew_Click()
+: <a class="el" href="class_c_p_u___o_s___simulator_1_1_main_window.html#a37c97ac2869b40063089f1af9cd86724">CPU_OS_Simulator.MainWindow</a>
+</li>
 <li>btn_Close_Click()
 : <a class="el" href="class_c_p_u___o_s___simulator_1_1_instructions_window.html#a5fd3510dda95cf73b61af11ccacd81cd">CPU_OS_Simulator.InstructionsWindow</a>
+</li>
+<li>btn_Delete_Click()
+: <a class="el" href="class_c_p_u___o_s___simulator_1_1_main_window.html#a96ea1acde80b84701b58c1d4aaed2b9f">CPU_OS_Simulator.MainWindow</a>
+</li>
+<li>btn_InsertAbove_Click()
+: <a class="el" href="class_c_p_u___o_s___simulator_1_1_main_window.html#a8f710b1bee7b3c9360fb5652231b0502">CPU_OS_Simulator.MainWindow</a>
+</li>
+<li>btn_InsertBelow_Click()
+: <a class="el" href="class_c_p_u___o_s___simulator_1_1_main_window.html#ac2307db4caedc82b5a6201077fb1c5b7">CPU_OS_Simulator.MainWindow</a>
 </li>
 <li>btn_Load_Click()
 : <a class="el" href="class_c_p_u___o_s___simulator_1_1_main_window.html#a13c54c19f906fc84076fe654f82f5398">CPU_OS_Simulator.MainWindow</a>
@@ -173,21 +189,72 @@ $(document).ready(function(){initNavTree('functions_func.html','');});
 <li>btn_ProgramAdd_Click()
 : <a class="el" href="class_c_p_u___o_s___simulator_1_1_main_window.html#abe3e79941789134ce080390fcafc720e">CPU_OS_Simulator.MainWindow</a>
 </li>
+<li>btn_Run_Click()
+: <a class="el" href="class_c_p_u___o_s___simulator_1_1_main_window.html#a1f4dedca9ad81ea1c92637759515797f">CPU_OS_Simulator.MainWindow</a>
+</li>
 <li>btn_Save_Click()
 : <a class="el" href="class_c_p_u___o_s___simulator_1_1_main_window.html#a3bbf0774868d6b5da4ff08d70e236fa6">CPU_OS_Simulator.MainWindow</a>
 </li>
 <li>btn_Show_Click()
 : <a class="el" href="class_c_p_u___o_s___simulator_1_1_main_window.html#afcb6e2b3719374f56fd8cb1c786bb219">CPU_OS_Simulator.MainWindow</a>
 </li>
+<li>btn_Step_Click()
+: <a class="el" href="class_c_p_u___o_s___simulator_1_1_main_window.html#a897049d123dd2ecf2820b02205ce1969">CPU_OS_Simulator.MainWindow</a>
+</li>
+<li>btn_Stop_Click()
+: <a class="el" href="class_c_p_u___o_s___simulator_1_1_main_window.html#acbdc92abd94c317f978cee0d28af9448">CPU_OS_Simulator.MainWindow</a>
+</li>
 </ul>
 
 
 <h3><a class="anchor" id="index_c"></a>- c -</h3><ul>
 <li>CalculateAddress()
-: <a class="el" href="class_c_p_u___o_s___simulator_1_1_simulator_program.html#a002d414bff9b08c0f2312c9da5df1c0c">CPU_OS_Simulator.SimulatorProgram</a>
+: <a class="el" href="class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_simulator_program.html#a6ab84d4093d03fc387e4288dfc566388">CPU_OS_Simulator.CPU.SimulatorProgram</a>
+</li>
+<li>CalculateTime()
+: <a class="el" href="class_c_p_u___o_s___simulator_1_1_main_window.html#af436535e8368accea735ff7672fa83d9">CPU_OS_Simulator.MainWindow</a>
+</li>
+<li>cmb_DestinationRegisterArithmetic_GotFocus()
+: <a class="el" href="class_c_p_u___o_s___simulator_1_1_instructions_window.html#a9c964d2e398c2ed0699652c67c80422a">CPU_OS_Simulator.InstructionsWindow</a>
+</li>
+<li>cmb_DestinationRegisterComparison_GotFocus()
+: <a class="el" href="class_c_p_u___o_s___simulator_1_1_instructions_window.html#a867a9b46a598bfb0b067da68707961ca">CPU_OS_Simulator.InstructionsWindow</a>
+</li>
+<li>cmb_DestinationRegisterControlTransfer_GotFocus()
+: <a class="el" href="class_c_p_u___o_s___simulator_1_1_instructions_window.html#a5f5a0d30cab0406f864a56163f7996ba">CPU_OS_Simulator.InstructionsWindow</a>
+</li>
+<li>cmb_DestinationRegisterDataTransfer_GotFocus()
+: <a class="el" href="class_c_p_u___o_s___simulator_1_1_instructions_window.html#a94becba2935eb5b5213fce4a90a639e2">CPU_OS_Simulator.InstructionsWindow</a>
+</li>
+<li>cmb_DestinationRegisterIO_GotFocus()
+: <a class="el" href="class_c_p_u___o_s___simulator_1_1_instructions_window.html#a565cca857d005347574918cdc5cab5b9">CPU_OS_Simulator.InstructionsWindow</a>
 </li>
 <li>cmb_DestinationRegisterLogical_GotFocus()
 : <a class="el" href="class_c_p_u___o_s___simulator_1_1_instructions_window.html#a596ecf3b64608b39235b662565469b3e">CPU_OS_Simulator.InstructionsWindow</a>
+</li>
+<li>cmb_DestinationRegisterMiscellaneous_GotFocus()
+: <a class="el" href="class_c_p_u___o_s___simulator_1_1_instructions_window.html#aa05471f59f3884c72353dd2fd41fbabf">CPU_OS_Simulator.InstructionsWindow</a>
+</li>
+<li>cmb_SourceRegisterArithmetic_GotFocus()
+: <a class="el" href="class_c_p_u___o_s___simulator_1_1_instructions_window.html#aded465dc161799c6ae52c988e3f8882c">CPU_OS_Simulator.InstructionsWindow</a>
+</li>
+<li>cmb_SourceRegisterComparison_GotFocus()
+: <a class="el" href="class_c_p_u___o_s___simulator_1_1_instructions_window.html#a832c901ee54eaab86d0a10cac789e114">CPU_OS_Simulator.InstructionsWindow</a>
+</li>
+<li>cmb_SourceRegisterControlTransfer_GotFocus()
+: <a class="el" href="class_c_p_u___o_s___simulator_1_1_instructions_window.html#a035689dfb95c248b0cadb714a326b714">CPU_OS_Simulator.InstructionsWindow</a>
+</li>
+<li>cmb_SourceRegisterDataTransfer_GotFocus()
+: <a class="el" href="class_c_p_u___o_s___simulator_1_1_instructions_window.html#a3435ee12d0f01d5095fa3229b4d9c972">CPU_OS_Simulator.InstructionsWindow</a>
+</li>
+<li>cmb_SourceRegisterIO_GotFocus()
+: <a class="el" href="class_c_p_u___o_s___simulator_1_1_instructions_window.html#a7046f3fb03ffcc336bcc0af4db5857de">CPU_OS_Simulator.InstructionsWindow</a>
+</li>
+<li>cmb_SourceRegisterLogical_GotFocus()
+: <a class="el" href="class_c_p_u___o_s___simulator_1_1_instructions_window.html#abe93d8b72aefc8adcf3b5bb26cc55a1b">CPU_OS_Simulator.InstructionsWindow</a>
+</li>
+<li>cmb_SourceRegisterMiscellaneous_GotFocus()
+: <a class="el" href="class_c_p_u___o_s___simulator_1_1_instructions_window.html#aebeed4545e10bda489f1f73f4c09a20c">CPU_OS_Simulator.InstructionsWindow</a>
 </li>
 <li>Connect()
 : <a class="el" href="class_c_p_u___o_s___simulator_1_1_instructions_window.html#a0efa7624a59a6abc64d0940ffaa100b0">CPU_OS_Simulator.InstructionsWindow</a>
@@ -195,10 +262,16 @@ $(document).ready(function(){initNavTree('functions_func.html','');});
 </li>
 <li>CreateInstruction()
 : <a class="el" href="class_c_p_u___o_s___simulator_1_1_instructions_window.html#aafdc8c843b7f2d0e4c434edc569923c6">CPU_OS_Simulator.InstructionsWindow</a>
-, <a class="el" href="class_c_p_u___o_s___simulator_1_1_main_window.html#a0786a3f7a368c6e63f6e49bc70d3083d">CPU_OS_Simulator.MainWindow</a>
+, <a class="el" href="class_c_p_u___o_s___simulator_1_1_main_window.html#a91d73f33961d6268e741d7f2cf6a2b6d">CPU_OS_Simulator.MainWindow</a>
 </li>
 <li>CreateNewProgram()
 : <a class="el" href="class_c_p_u___o_s___simulator_1_1_main_window.html#a4cb75cfa224757b1dc708b60681ad803">CPU_OS_Simulator.MainWindow</a>
+</li>
+<li>CVI()
+: <a class="el" href="class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_instruction.html#af73e92c10474c39863df39c1f826ff50">CPU_OS_Simulator.CPU.Instruction</a>
+</li>
+<li>CVS()
+: <a class="el" href="class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_instruction.html#a689065741dc51ddacf955b3781570546">CPU_OS_Simulator.CPU.Instruction</a>
 </li>
 </ul>
 
@@ -217,12 +290,18 @@ $(document).ready(function(){initNavTree('functions_func.html','');});
 <li>EndInit()
 : <a class="el" href="class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_activity1.html#a7d9c8128517a9b4a1a8860b3cc8ffd43">CPU_OS_Simulator.CPU.Activity1</a>
 </li>
+<li>ExecuteInstruction()
+: <a class="el" href="class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_execution_unit.html#ae0298423e5e7aad47e342e3960a361ac">CPU_OS_Simulator.CPU.ExecutionUnit</a>
+</li>
+<li>ExecutionUnit()
+: <a class="el" href="class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_execution_unit.html#aaa72bccee27d810d5bbfa9ed02215fa9">CPU_OS_Simulator.CPU.ExecutionUnit</a>
+</li>
 </ul>
 
 
 <h3><a class="anchor" id="index_f"></a>- f -</h3><ul>
 <li>FindRegister()
-: <a class="el" href="class_c_p_u___o_s___simulator_1_1_instructions_window.html#a2fbd163f2638a32f7cfbf831dc91582f">CPU_OS_Simulator.InstructionsWindow</a>
+: <a class="el" href="class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_register.html#aa1c8b83312ee8b41c4d9cbd328354a6b">CPU_OS_Simulator.CPU.Register</a>
 </li>
 <li>FindResource()
 : <a class="el" href="class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_activity1.html#a841192007ebd277cd3e86f47e8d9c04b">CPU_OS_Simulator.CPU.Activity1</a>
@@ -231,6 +310,18 @@ $(document).ready(function(){initNavTree('functions_func.html','');});
 
 
 <h3><a class="anchor" id="index_g"></a>- g -</h3><ul>
+<li>GetActiveWindow()
+: <a class="el" href="class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_instruction.html#a0db56b05531624fbe8d0075f4318cb50">CPU_OS_Simulator.CPU.Instruction</a>
+</li>
+<li>getByte()
+: <a class="el" href="class_c_p_u___o_s___simulator_1_1_memory_1_1_memory_page.html#acb107b35713d8fe3d5032c3a8b0e878d">CPU_OS_Simulator.Memory.MemoryPage</a>
+</li>
+<li>GetCurrentProgram()
+: <a class="el" href="class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_instruction.html#a64441a8d85d6eef7e4c58794cfcdca3c">CPU_OS_Simulator.CPU.Instruction</a>
+</li>
+<li>GetMainWindowInstance()
+: <a class="el" href="class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_instruction.html#a6b21a943b331f1c15871302e1ba66882">CPU_OS_Simulator.CPU.Instruction</a>
+</li>
 <li>GetProgramVersion()
 : <a class="el" href="class_c_p_u___o_s___simulator_1_1_main_window.html#a99cb5e507849facbb9f5f271736759f7">CPU_OS_Simulator.MainWindow</a>
 </li>
@@ -248,7 +339,7 @@ $(document).ready(function(){initNavTree('functions_func.html','');});
 : <a class="el" href="class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_instruction.html#afb0f711deb1e6e4dc53fa2ffa4458a66">CPU_OS_Simulator.CPU.Instruction</a>
 </li>
 <li>InstructionsWindow()
-: <a class="el" href="class_c_p_u___o_s___simulator_1_1_instructions_window.html#a5ed238dc308dcc976400105a3973deb0">CPU_OS_Simulator.InstructionsWindow</a>
+: <a class="el" href="class_c_p_u___o_s___simulator_1_1_instructions_window.html#aa482ef12f9c98458bedcc3c07d696879">CPU_OS_Simulator.InstructionsWindow</a>
 </li>
 <li>InstructionsWindow1_Closing()
 : <a class="el" href="class_c_p_u___o_s___simulator_1_1_instructions_window.html#ac5b4dea0d3fe645b7f0bf9201cb0ad1c">CPU_OS_Simulator.InstructionsWindow</a>
@@ -257,6 +348,21 @@ $(document).ready(function(){initNavTree('functions_func.html','');});
 
 
 <h3><a class="anchor" id="index_l"></a>- l -</h3><ul>
+<li>LDB()
+: <a class="el" href="class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_instruction.html#ae09705d74d57f968b93ba1739832488f">CPU_OS_Simulator.CPU.Instruction</a>
+</li>
+<li>LDBI()
+: <a class="el" href="class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_instruction.html#a41d94be59f02b4ff381bed811f0c4f2e">CPU_OS_Simulator.CPU.Instruction</a>
+</li>
+<li>LDW()
+: <a class="el" href="class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_instruction.html#adc1b564050331c46094af907abb34acb">CPU_OS_Simulator.CPU.Instruction</a>
+</li>
+<li>LDWI()
+: <a class="el" href="class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_instruction.html#a2a8c6cf1d6f14e9d219fabc5957cd586">CPU_OS_Simulator.CPU.Instruction</a>
+</li>
+<li>LNS()
+: <a class="el" href="class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_instruction.html#abaa66d00b38349cd8033c8c1428a9ca3">CPU_OS_Simulator.CPU.Instruction</a>
+</li>
 <li>Load()
 : <a class="el" href="class_xaml_static_helper_namespace_1_1___xaml_static_helper.html#adc04a34bff2e0d36643d52e4521bb26f">XamlStaticHelperNamespace._XamlStaticHelper</a>
 </li>
@@ -272,11 +378,23 @@ $(document).ready(function(){initNavTree('functions_func.html','');});
 <li>lst_OpcodeListArithmetic_SelectionChanged()
 : <a class="el" href="class_c_p_u___o_s___simulator_1_1_instructions_window.html#ab4001352180ad08e3b335bf80c7dd9b8">CPU_OS_Simulator.InstructionsWindow</a>
 </li>
+<li>lst_OpcodeListComparison_SelectionChanged()
+: <a class="el" href="class_c_p_u___o_s___simulator_1_1_instructions_window.html#a2533f28aaeacd5ef8b931670e9716e1f">CPU_OS_Simulator.InstructionsWindow</a>
+</li>
+<li>lst_OpcodeListControlTransfer_SelectionChanged()
+: <a class="el" href="class_c_p_u___o_s___simulator_1_1_instructions_window.html#a1173e7310199c8312dabdf6905b53b73">CPU_OS_Simulator.InstructionsWindow</a>
+</li>
 <li>lst_OpcodeListDataTransfer_SelectionChanged()
 : <a class="el" href="class_c_p_u___o_s___simulator_1_1_instructions_window.html#a380aec4afa9900f7dd9ef964a5b86503">CPU_OS_Simulator.InstructionsWindow</a>
 </li>
+<li>lst_OpcodeListIO_SelectionChanged()
+: <a class="el" href="class_c_p_u___o_s___simulator_1_1_instructions_window.html#a48ff23d2cce66f2bb2c5219fabfb7f9b">CPU_OS_Simulator.InstructionsWindow</a>
+</li>
 <li>lst_OpcodeListLogical_SelectionChanged()
 : <a class="el" href="class_c_p_u___o_s___simulator_1_1_instructions_window.html#a245baef3e788a01e6cf752f2c48f1843">CPU_OS_Simulator.InstructionsWindow</a>
+</li>
+<li>lst_OpcodeListMiscellaneous_SelectionChanged()
+: <a class="el" href="class_c_p_u___o_s___simulator_1_1_instructions_window.html#aec022b9a8b3fb4d538f674336275dd81">CPU_OS_Simulator.InstructionsWindow</a>
 </li>
 <li>lst_ProgramList_SelectionChanged()
 : <a class="el" href="class_c_p_u___o_s___simulator_1_1_main_window.html#ab563b461cf3d62bd3c88eeb7921bfa75">CPU_OS_Simulator.MainWindow</a>
@@ -297,6 +415,25 @@ $(document).ready(function(){initNavTree('functions_func.html','');});
 <li>MainWindow2_Loaded()
 : <a class="el" href="class_c_p_u___o_s___simulator_1_1_main_window.html#a3b945b691332686989cd5b5107f7f98b">CPU_OS_Simulator.MainWindow</a>
 </li>
+<li>MemoryPage()
+: <a class="el" href="class_c_p_u___o_s___simulator_1_1_memory_1_1_memory_page.html#ab471d5de4e2b4e5f6585ae3782fa2ae7">CPU_OS_Simulator.Memory.MemoryPage</a>
+</li>
+<li>MOV()
+: <a class="el" href="class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_instruction.html#af6548da603e7370f10de03e0da040a24">CPU_OS_Simulator.CPU.Instruction</a>
+</li>
+<li>MVS()
+: <a class="el" href="class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_instruction.html#a33723518d4e117877d2ecf5b861d2eb2">CPU_OS_Simulator.CPU.Instruction</a>
+</li>
+</ul>
+
+
+<h3><a class="anchor" id="index_n"></a>- n -</h3><ul>
+<li>NumberOfOperandsAttr&lt; T &gt;()
+: <a class="el" href="class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_extentions.html#a5391dde3088335a6e3754e1273f0ff40">CPU_OS_Simulator.CPU.Extentions</a>
+</li>
+<li>NumberOfOperandsAttribute()
+: <a class="el" href="class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_number_of_operands_attribute.html#a1976902af3b6dc92e16724d83937816e">CPU_OS_Simulator.CPU.NumberOfOperandsAttribute</a>
+</li>
 </ul>
 
 
@@ -308,8 +445,29 @@ $(document).ready(function(){initNavTree('functions_func.html','');});
 
 
 <h3><a class="anchor" id="index_p"></a>- p -</h3><ul>
+<li>POP()
+: <a class="el" href="class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_instruction.html#a16a47493684bb30a289d337188fb77b6">CPU_OS_Simulator.CPU.Instruction</a>
+</li>
+<li>popItem()
+: <a class="el" href="class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_program_stack.html#a32a272fedcd1d8ac5673b3ef90689519">CPU_OS_Simulator.CPU.ProgramStack</a>
+</li>
+<li>PopulateArray&lt; T &gt;()
+: <a class="el" href="class_c_p_u___o_s___simulator_1_1_memory_1_1_memory_page.html#a31eb94b943ac28738406a5c571d2a450">CPU_OS_Simulator.Memory.MemoryPage</a>
+</li>
 <li>PopulateInstructions()
 : <a class="el" href="class_c_p_u___o_s___simulator_1_1_instructions_window.html#a52685f2ecc3d1cf7216716401d2621e0">CPU_OS_Simulator.InstructionsWindow</a>
+</li>
+<li>PopulateRegisters()
+: <a class="el" href="class_c_p_u___o_s___simulator_1_1_main_window.html#a06b2ba04e8c006037cae7b0e40b9c5a0">CPU_OS_Simulator.MainWindow</a>
+</li>
+<li>ProgramStack()
+: <a class="el" href="class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_program_stack.html#a2a30dfbb7df3408de94c883c44aff090">CPU_OS_Simulator.CPU.ProgramStack</a>
+</li>
+<li>PUSH()
+: <a class="el" href="class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_instruction.html#a4a6711b8309af629c9460cdadc340444">CPU_OS_Simulator.CPU.Instruction</a>
+</li>
+<li>pushItem()
+: <a class="el" href="class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_program_stack.html#ae52c8a15274b2e86e02572ba13cad60c">CPU_OS_Simulator.CPU.ProgramStack</a>
 </li>
 </ul>
 
@@ -400,7 +558,7 @@ $(document).ready(function(){initNavTree('functions_func.html','');});
 : <a class="el" href="class_c_p_u___o_s___simulator_1_1_instructions_window.html#a245dad441fcbc7e910e7f2ab6d10563c">CPU_OS_Simulator.InstructionsWindow</a>
 </li>
 <li>Register()
-: <a class="el" href="class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_register.html#a17e76aef3bd00389ac1473b4edda8855">CPU_OS_Simulator.CPU.Register</a>
+: <a class="el" href="class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_register.html#a1ee1fb682bf9349209b31a50aff2de45">CPU_OS_Simulator.CPU.Register</a>
 </li>
 <li>Resources()
 : <a class="el" href="class_c_p_u___o_s___simulator_1_1_properties_1_1_resources.html#ae830a892b90306383137816b2194f777">CPU_OS_Simulator.Properties.Resources</a>
@@ -415,28 +573,115 @@ $(document).ready(function(){initNavTree('functions_func.html','');});
 <li>SerializeObject&lt; T &gt;()
 : <a class="el" href="class_c_p_u___o_s___simulator_1_1_main_window.html#a80985670e45349866a463b766f92e27b">CPU_OS_Simulator.MainWindow</a>
 </li>
+<li>SetAnnotations()
+: <a class="el" href="class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_program_stack.html#a64ba20aa2a49863d1197a9aeb31b4a13">CPU_OS_Simulator.CPU.ProgramStack</a>
+</li>
+<li>setByte()
+: <a class="el" href="class_c_p_u___o_s___simulator_1_1_memory_1_1_memory_page.html#aad04f4e5938283889df2190e826aa5bf">CPU_OS_Simulator.Memory.MemoryPage</a>
+</li>
 <li>setRegisterValue()
 : <a class="el" href="class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_register.html#a29b6a87aa7d0bb7fc118b021fc559482">CPU_OS_Simulator.CPU.Register</a>
 </li>
 <li>SimulatorProgram()
-: <a class="el" href="class_c_p_u___o_s___simulator_1_1_simulator_program.html#a4fb472bc7df1427222a593c1bd6bb1e8">CPU_OS_Simulator.SimulatorProgram</a>
+: <a class="el" href="class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_simulator_program.html#a92873858cd0a0d7e506f5718788a9e5e">CPU_OS_Simulator.CPU.SimulatorProgram</a>
+</li>
+<li>sld_ClockSpeed_ValueChanged()
+: <a class="el" href="class_c_p_u___o_s___simulator_1_1_main_window.html#ace253c0b4beef8898af97df25666df2f">CPU_OS_Simulator.MainWindow</a>
+</li>
+<li>SpecialRegister()
+: <a class="el" href="class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_special_register.html#a697f3e6f938ad7ab0ceee0555fe2c312">CPU_OS_Simulator.CPU.SpecialRegister</a>
+</li>
+<li>StackItem()
+: <a class="el" href="class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_stack_item.html#a7925b78a92c2561df2396e93b858147d">CPU_OS_Simulator.CPU.StackItem</a>
+</li>
+<li>StatusFlags()
+: <a class="el" href="class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_status_flags.html#ab99e9cd2522d43a7dfd3224ff9ae0d79">CPU_OS_Simulator.CPU.StatusFlags</a>
+</li>
+<li>STB()
+: <a class="el" href="class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_instruction.html#a26aa3d1a1f62f61acc3b37c7d57743f1">CPU_OS_Simulator.CPU.Instruction</a>
+</li>
+<li>STBI()
+: <a class="el" href="class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_instruction.html#a2724896fa80e3da440271b6dba5421a3">CPU_OS_Simulator.CPU.Instruction</a>
+</li>
+<li>STW()
+: <a class="el" href="class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_instruction.html#aa1bc7540a41bcd8ab9273cfac88a5bf8">CPU_OS_Simulator.CPU.Instruction</a>
+</li>
+<li>STWI()
+: <a class="el" href="class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_instruction.html#aec8b426958aee888d46d9cbb565ed548">CPU_OS_Simulator.CPU.Instruction</a>
+</li>
+<li>SWP()
+: <a class="el" href="class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_instruction.html#ac86363232497de67ac268dd8942294a3">CPU_OS_Simulator.CPU.Instruction</a>
 </li>
 </ul>
 
 
 <h3><a class="anchor" id="index_t"></a>- t -</h3><ul>
+<li>TAS()
+: <a class="el" href="class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_instruction.html#a78fbef41ec65046f35456e7cb161d037">CPU_OS_Simulator.CPU.Instruction</a>
+</li>
+<li>ToggleFlag()
+: <a class="el" href="class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_status_flags.html#a435d878793ab321ac1f2aae372c2e43e">CPU_OS_Simulator.CPU.StatusFlags</a>
+</li>
 <li>ToString()
 : <a class="el" href="class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_instruction.html#a7d3a81ead6e3639f970901d8e898f02c">CPU_OS_Simulator.CPU.Instruction</a>
 </li>
+<li>txtDestinationValueArithmetic_GotFocus()
+: <a class="el" href="class_c_p_u___o_s___simulator_1_1_instructions_window.html#ae969ae41ccdb44d87f180b18b11b5b29">CPU_OS_Simulator.InstructionsWindow</a>
+</li>
+<li>txtDestinationValueComparison_GotFocus()
+: <a class="el" href="class_c_p_u___o_s___simulator_1_1_instructions_window.html#a2f346b8f78940a1626ab5419af3973ef">CPU_OS_Simulator.InstructionsWindow</a>
+</li>
+<li>txtDestinationValueControlTransfer_GotFocus()
+: <a class="el" href="class_c_p_u___o_s___simulator_1_1_instructions_window.html#ab9695cfa485c6cd4f6d941c93105187b">CPU_OS_Simulator.InstructionsWindow</a>
+</li>
+<li>txtDestinationValueDataTransfer_GotFocus()
+: <a class="el" href="class_c_p_u___o_s___simulator_1_1_instructions_window.html#a7d05b02bf62d6b920ebd1c2677e5a0dc">CPU_OS_Simulator.InstructionsWindow</a>
+</li>
+<li>txtDestinationValueIO_GotFocus()
+: <a class="el" href="class_c_p_u___o_s___simulator_1_1_instructions_window.html#a0d69d4710419b9efea12396940b60e89">CPU_OS_Simulator.InstructionsWindow</a>
+</li>
+<li>txtDestinationValueLogical_GotFocus()
+: <a class="el" href="class_c_p_u___o_s___simulator_1_1_instructions_window.html#ad56b9592b566db4c4e4756654891a045">CPU_OS_Simulator.InstructionsWindow</a>
+</li>
+<li>txtDestinationValueMiscellaneous_GotFocus()
+: <a class="el" href="class_c_p_u___o_s___simulator_1_1_instructions_window.html#aceca94bcec64cbfd4cfe472e9dd34a58">CPU_OS_Simulator.InstructionsWindow</a>
+</li>
+<li>txtSourceValueArithmetic_GotFocus()
+: <a class="el" href="class_c_p_u___o_s___simulator_1_1_instructions_window.html#a82c5caec3787f079bb214dbd6a2a1505">CPU_OS_Simulator.InstructionsWindow</a>
+</li>
+<li>txtSourceValueComparison_GotFocus()
+: <a class="el" href="class_c_p_u___o_s___simulator_1_1_instructions_window.html#a7fc4519d09df6fde91777a5a56101b92">CPU_OS_Simulator.InstructionsWindow</a>
+</li>
+<li>txtSourceValueControlTransfer_GotFocus()
+: <a class="el" href="class_c_p_u___o_s___simulator_1_1_instructions_window.html#a0d1f28315429ad5e01867bef7dbf9b6b">CPU_OS_Simulator.InstructionsWindow</a>
+</li>
+<li>txtSourceValueDataTransfer_GotFocus()
+: <a class="el" href="class_c_p_u___o_s___simulator_1_1_instructions_window.html#ab89dd8e5416a91477aad1faa02bcbacd">CPU_OS_Simulator.InstructionsWindow</a>
+</li>
+<li>txtSourceValueIO_GotFocus()
+: <a class="el" href="class_c_p_u___o_s___simulator_1_1_instructions_window.html#a83fbca00e890edc28dd3d58c350360eb">CPU_OS_Simulator.InstructionsWindow</a>
+</li>
 <li>txtSourceValueLogical_GotFocus()
 : <a class="el" href="class_c_p_u___o_s___simulator_1_1_instructions_window.html#a1126bf0eb7a7e562d7c197a7300842d2">CPU_OS_Simulator.InstructionsWindow</a>
+</li>
+<li>txtSourceValueMiscellaneous_GotFocus()
+: <a class="el" href="class_c_p_u___o_s___simulator_1_1_instructions_window.html#ae5a577d3fa0f6abeb8239de87a4c4a48">CPU_OS_Simulator.InstructionsWindow</a>
 </li>
 </ul>
 
 
 <h3><a class="anchor" id="index_u"></a>- u -</h3><ul>
+<li>UpdateAddresses()
+: <a class="el" href="class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_simulator_program.html#a4f7e933d4f3ca318d68471d465c6b31c">CPU_OS_Simulator.CPU.SimulatorProgram</a>
+</li>
 <li>UpdateIntructions()
 : <a class="el" href="class_c_p_u___o_s___simulator_1_1_main_window.html#a677bf9ebdb9fe30caa0f52f93e5390c9">CPU_OS_Simulator.MainWindow</a>
+</li>
+<li>UpdateRegisters()
+: <a class="el" href="class_c_p_u___o_s___simulator_1_1_main_window.html#a4fbca2d50698a847da4ab82c3f380680">CPU_OS_Simulator.MainWindow</a>
+</li>
+<li>UpdateStack()
+: <a class="el" href="class_c_p_u___o_s___simulator_1_1_main_window.html#abd01bb7788b0c104045bcc93cf03c9d6">CPU_OS_Simulator.MainWindow</a>
 </li>
 </ul>
 

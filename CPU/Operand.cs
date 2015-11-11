@@ -2,6 +2,9 @@
 
 namespace CPU_OS_Simulator.CPU
 {
+    /// <summary>
+    /// This class represents an operand which can be passed to an instruction
+    /// </summary>
     [Serializable]
     public class Operand
     {
@@ -16,10 +19,19 @@ namespace CPU_OS_Simulator.CPU
 
         #region Constructors
 
+        /// <summary>
+        /// Default constructor for an operand used when deserialising an operand
+        /// NOTE do not use in code
+        /// </summary>
         public Operand()
         {
         }
 
+        /// <summary>
+        /// Constructor for an operand which is an intermediate value
+        /// </summary>
+        /// <param name="value"> the value of the opernad </param>
+        /// <param name="type"> the type of the operand i.e memory address or intermediate value</param>
         public Operand(Int32 value, EnumOperandType type)
         {
             this.value = value;
@@ -28,6 +40,11 @@ namespace CPU_OS_Simulator.CPU
             this.register = null;
         }
 
+        /// <summary>
+        /// Constructor for an operand which is a register
+        /// </summary>
+        /// <param name="reg">the register to be passed as an operand</param>
+        /// <param name="type"> the type of the operand i.e memory address or intermediate value</param>
         public Operand(Register reg, EnumOperandType type)
         {
             this.isRegister = true;

@@ -1,42 +1,83 @@
 ﻿using System;
-using System.Web.Script.Serialization;
-using System.Reflection;
-using CPU_OS_Simulator.CPU;
-using Microsoft.Win32;
 using System.Collections.Generic;
-using System.Diagnostics;
-using System.IO;
 using System.Linq;
+using System.Reflection;
+using System.Web.Script.Serialization;
 using System.Windows;
-using System.Windows.Controls;
-using CPU_OS_Simulator.Memory;
 
 namespace CPU_OS_Simulator.CPU
 {
+    /// <summary>
+    /// This class represents an instruction witch can be executed by the virtual CPU
+    /// </summary>
     [Serializable]
     public class Instruction
     {
         #region Global Variables
 
+        /// <summary>
+        /// The opcode for the instruction
+        /// </summary>
         private Int32 opcode;
+
+        /// <summary>
+        /// The catagory in which the instruction will be displayed within the interface
+        /// </summary>
         private string category;
+
+        /// <summary>
+        /// The function that will be executed when the instruction is executed
+        /// </summary>
         [ScriptIgnore]
         private Func<int> execute;
+
+        /// <summary>
+        /// The first operand for the instruction
+        /// </summary>
         private Operand operand1;
+
+        /// <summary>
+        /// The second operand for the instruction
+        /// </summary>
         private Operand operand2;
+
+        /// <summary>
+        /// The Logical address of this instruction within a program
+        /// </summary>
         private Int32 address;
+
+        /// <summary>
+        /// The size of the instruction within the program
+        /// </summary>
         private Int32 size;
+
+        /// <summary>
+        /// The result of the instruxtion once executed e.g. the result of ADD 1,1 would be 2
+        /// </summary>
         private Int32 result;
+
+        /// <summary>
+        /// The string representation of this istruction e.g. ADD R01,10
+        /// </summary>
         private string instructionString;
 
         #endregion Global Variables
 
         #region Constructors
 
+        /// <summary>
+        /// Default constructor for instruction used when deserialising an instruction
+        /// NOTE Do not use in code
+        /// </summary>
         public Instruction()
         {
         }
 
+        /// <summary>
+        /// Constructor for an instruction that takes no operands
+        /// </summary>
+        /// <param name="opcode"> the opcode for the instruction</param>
+        /// <param name="size"> the size of the instruction </param>
         public Instruction(Int32 opcode, Int32 size)
         {
             this.opcode = opcode;
@@ -47,6 +88,12 @@ namespace CPU_OS_Simulator.CPU
             BindDelegate();
         }
 
+        /// <summary>
+        /// Constructor for an instruction that takes one operand
+        /// </summary>
+        /// <param name="opcode"> the opcode for the instruction</param>
+        /// <param name="op1"> the first operand of the instruction</param>
+        /// <param name="size"> the size of the instruction </param>
         public Instruction(Int32 opcode, Operand op1, Int32 size)
         {
             this.opcode = opcode;
@@ -57,6 +104,13 @@ namespace CPU_OS_Simulator.CPU
             BindDelegate();
         }
 
+        /// <summary>
+        /// Constructor for an instruction that takes two operands
+        /// </summary>
+        /// <param name="opcode"> the opcode for the instruction</param>
+        /// <param name="op1"> the first operand of the instruction</param>
+        /// <param name="op2"> the second operand of the instruction</param>
+        /// <param name="size"> the size of the instruction </param>
         public Instruction(Int32 opcode, Operand op1, Operand op2, Int32 size)
         {
             this.opcode = opcode;
@@ -122,6 +176,7 @@ namespace CPU_OS_Simulator.CPU
                 operand2 = value;
             }
         }
+
         [ScriptIgnore]
         public Func<int> Execute
         {
@@ -192,93 +247,97 @@ namespace CPU_OS_Simulator.CPU
 
         #region Methods
 
+        /// <summary>
+        /// this function binds a delegate to an instruction.
+        /// The delegate bound here will be called when the instruction is executed
+        /// </summary>
         public void BindDelegate()
         {
             switch (opcode)
             {
                 case 0:
                     {
-                        this.execute = () => MOV(operand1, operand2);
+                        this.execute = () => MOV(operand1, operand2); // save the function in memory to call later
                         break;
                     }
                 case 1:
                     {
-                        this.execute = () => MVS(operand1, operand2);
+                        this.execute = () => MVS(operand1, operand2); // save the function in memory to call later
                         break;
                     }
                 case 2:
                     {
-                        this.execute = () => CVS(operand1, operand2);
+                        this.execute = () => CVS(operand1, operand2); // save the function in memory to call later
                         break;
                     }
                 case 3:
                     {
-                        this.execute = () => CVI(operand1, operand2);
+                        this.execute = () => CVI(operand1, operand2); // save the function in memory to call later
                         break;
                     }
                 case 4:
                     {
-                        this.execute = () => LDB(operand1, operand2);
+                        this.execute = () => LDB(operand1, operand2); // save the function in memory to call later
                         break;
                     }
                 case 5:
                     {
-                        this.execute = () => LDW(operand1, operand2);
+                        this.execute = () => LDW(operand1, operand2); // save the function in memory to call later
                         break;
                     }
                 case 6:
                     {
-                        this.execute = () => LNS(operand1, operand2);
+                        this.execute = () => LNS(operand1, operand2); // save the function in memory to call later
                         break;
                     }
                 case 7:
                     {
-                        this.execute = () => LDBI(operand1, operand2);
+                        this.execute = () => LDBI(operand1, operand2); // save the function in memory to call later
                         break;
                     }
                 case 8:
                     {
-                        this.execute = () => LDWI(operand1, operand2);
+                        this.execute = () => LDWI(operand1, operand2); // save the function in memory to call later
                         break;
                     }
                 case 9:
                     {
-                        this.execute = () => TAS(operand1, operand2);
+                        this.execute = () => TAS(operand1, operand2); // save the function in memory to call later
                         break;
                     }
                 case 10:
                     {
-                        this.execute = () => STB(operand1, operand2);
+                        this.execute = () => STB(operand1, operand2); // save the function in memory to call later
                         break;
                     }
                 case 11:
                     {
-                        this.execute = () => STW(operand1, operand2);
+                        this.execute = () => STW(operand1, operand2); // save the function in memory to call later
                         break;
                     }
                 case 12:
                     {
-                        this.execute = () => STBI(operand1, operand2);
+                        this.execute = () => STBI(operand1, operand2); // save the function in memory to call later
                         break;
                     }
                 case 13:
                     {
-                        this.execute = () => STWI(operand1, operand2);
+                        this.execute = () => STWI(operand1, operand2); // save the function in memory to call later
                         break;
                     }
                 case 14:
                     {
-                        this.execute = () => PUSH(operand1, operand2);
+                        this.execute = () => PUSH(operand1, operand2); // save the function in memory to call later
                         break;
                     }
                 case 15:
                     {
-                        this.execute = () => POP(operand1, operand2);
+                        this.execute = () => POP(operand1, operand2); // save the function in memory to call later
                         break;
                     }
                 case 16:
                     {
-                        this.execute = () => SWP(operand1, operand2);
+                        this.execute = () => SWP(operand1, operand2); // save the function in memory to call later
                         break;
                     }
                 case 22:
@@ -293,6 +352,10 @@ namespace CPU_OS_Simulator.CPU
             }
         }
 
+        /// <summary>
+        /// Returns a string that represents this instruction
+        /// </summary>
+        /// <returns> a string that represents this instruction</returns>
         public override string ToString()
         {
             string parsedOpcode = Enum.GetName(typeof(EnumOpcodes), opcode);
@@ -328,83 +391,189 @@ namespace CPU_OS_Simulator.CPU
         #region Instruction Execution Functions
 
         //TODO Allow for memory operands
+
         #region Data Transfer
+
+        /// <summary>
+        /// This fuction is called whenever a MOV instruction is executed
+        /// </summary>
+        /// <param name="lhs"> The left hand operand of the instruction </param>
+        /// <param name="rhs"> The right hand operand of the instruction </param>
+        /// <returns> the result of the instruction or int.MINVALUE if no result is returned </returns>
         private int MOV(Operand lhs, Operand rhs)
         {
             result = rhs.Value;
             if (lhs.IsRegister)
             {
                 lhs.Register.Value = result;
-                Register.FindRegister(lhs.Register.Name).setRegisterValue(result,EnumOperandType.VALUE);
+                Register.FindRegister(lhs.Register.Name).setRegisterValue(result, EnumOperandType.VALUE);
             }
             return result;
         }
+
+        /// <summary>
+        /// This fuction is called whenever a MVS instruction is executed
+        /// </summary>
+        /// <param name="lhs"> The left hand operand of the instruction </param>
+        /// <param name="rhs"> The right hand operand of the instruction </param>
+        /// <returns> the result of the instruction or int.MINVALUE if no result is returned </returns>
         private int MVS(Operand lhs, Operand rhs)
         {
             MessageBox.Show("MVS Instruction is not currently implemented", "", MessageBoxButton.OK, MessageBoxImage.Information);
             return 0;
         }
-        private int CVS(Operand lhs,Operand rhs)
+
+        /// <summary>
+        /// This fuction is called whenever a CVS instruction is executed
+        /// </summary>
+        /// <param name="lhs"> The left hand operand of the instruction </param>
+        /// <param name="rhs"> The right hand operand of the instruction </param>
+        /// <returns> the result of the instruction or int.MINVALUE if no result is returned </returns>
+        private int CVS(Operand lhs, Operand rhs)
         {
             MessageBox.Show("CVS Instruction is not currently used", "", MessageBoxButton.OK, MessageBoxImage.Information);
             return 0;
         }
+
+        /// <summary>
+        /// This fuction is called whenever a CVI instruction is executed
+        /// </summary>
+        /// <param name="lhs"> The left hand operand of the instruction </param>
+        /// <param name="rhs"> The right hand operand of the instruction </param>
+        /// <returns> the result of the instruction or int.MINVALUE if no result is returned </returns>
         private int CVI(Operand lhs, Operand rhs)
         {
             MessageBox.Show("CVI Instruction is not currently used", "", MessageBoxButton.OK, MessageBoxImage.Information);
             return 0;
         }
+
+        /// <summary>
+        /// This fuction is called whenever a LDB instruction is executed
+        /// </summary>
+        /// <param name="lhs"> The left hand operand of the instruction </param>
+        /// <param name="rhs"> The right hand operand of the instruction </param>
+        /// <returns> the result of the instruction or int.MINVALUE if no result is returned </returns>
         private int LDB(Operand lhs, Operand rhs)
         {
             MessageBox.Show("LDB Instruction is not currently implemented", "", MessageBoxButton.OK, MessageBoxImage.Information);
             return 0;
         }
+
+        /// <summary>
+        /// This fuction is called whenever a LDW instruction is executed
+        /// </summary>
+        /// <param name="lhs"> The left hand operand of the instruction </param>
+        /// <param name="rhs"> The right hand operand of the instruction </param>
+        /// <returns> the result of the instruction or int.MINVALUE if no result is returned </returns>
         private int LDW(Operand lhs, Operand rhs)
         {
             MessageBox.Show("LDW Instruction is not currently implemented", "", MessageBoxButton.OK, MessageBoxImage.Information);
             return 0;
         }
+
+        /// <summary>
+        /// This fuction is called whenever a LNS instruction is executed
+        /// </summary>
+        /// <param name="lhs"> The left hand operand of the instruction </param>
+        /// <param name="rhs"> The right hand operand of the instruction </param>
+        /// <returns> the result of the instruction or int.MINVALUE if no result is returned </returns>
         private int LNS(Operand lhs, Operand rhs)
         {
             MessageBox.Show("LNS Instruction is not currently implemented", "", MessageBoxButton.OK, MessageBoxImage.Information);
             return 0;
         }
+
+        /// <summary>
+        /// This fuction is called whenever a LDBI instruction is executed
+        /// </summary>
+        /// <param name="lhs"> The left hand operand of the instruction </param>
+        /// <param name="rhs"> The right hand operand of the instruction </param>
+        /// <returns> the result of the instruction or int.MINVALUE if no result is returned </returns>
         private int LDBI(Operand lhs, Operand rhs)
         {
             MessageBox.Show("LDBI Instruction is not currently implemented", "", MessageBoxButton.OK, MessageBoxImage.Information);
             return 0;
         }
+
+        /// <summary>
+        /// This fuction is called whenever a LDWI instruction is executed
+        /// </summary>
+        /// <param name="lhs"> The left hand operand of the instruction </param>
+        /// <param name="rhs"> The right hand operand of the instruction </param>
+        /// <returns> the result of the instruction or int.MINVALUE if no result is returned </returns>
         private int LDWI(Operand lhs, Operand rhs)
         {
             MessageBox.Show("LDWI Instruction is not currently implemented", "", MessageBoxButton.OK, MessageBoxImage.Information);
             return 0;
         }
+
+        /// <summary>
+        /// This fuction is called whenever a TAS instruction is executed
+        /// </summary>
+        /// <param name="lhs"> The left hand operand of the instruction </param>
+        /// <param name="rhs"> The right hand operand of the instruction </param>
+        /// <returns> the result of the instruction or int.MINVALUE if no result is returned </returns>
         private int TAS(Operand lhs, Operand rhs)
         {
             //TODO Implement TAS
             MessageBox.Show("TAS Instruction is not currently implemented", "", MessageBoxButton.OK, MessageBoxImage.Information);
             return 0;
         }
+
+        /// <summary>
+        /// This fuction is called whenever a STB instruction is executed
+        /// </summary>
+        /// <param name="lhs"> The left hand operand of the instruction </param>
+        /// <param name="rhs"> The right hand operand of the instruction </param>
+        /// <returns> the result of the instruction or int.MINVALUE if no result is returned </returns>
         private int STB(Operand lhs, Operand rhs)
         {
             MessageBox.Show("STB Instruction is not currently implemented", "", MessageBoxButton.OK, MessageBoxImage.Information);
             return 0;
         }
+
+        /// <summary>
+        /// This fuction is called whenever a STW instruction is executed
+        /// </summary>
+        /// <param name="lhs"> The left hand operand of the instruction </param>
+        /// <param name="rhs"> The right hand operand of the instruction </param>
+        /// <returns> the result of the instruction or int.MINVALUE if no result is returned </returns>
         private int STW(Operand lhs, Operand rhs)
         {
             MessageBox.Show("STW Instruction is not currently implemented", "", MessageBoxButton.OK, MessageBoxImage.Information);
             return 0;
         }
+
+        /// <summary>
+        /// This fuction is called whenever a STBI instruction is executed
+        /// </summary>
+        /// <param name="lhs"> The left hand operand of the instruction </param>
+        /// <param name="rhs"> The right hand operand of the instruction </param>
+        /// <returns> the result of the instruction or int.MINVALUE if no result is returned </returns>
         private int STBI(Operand lhs, Operand rhs)
         {
             MessageBox.Show("STBI Instruction is not currently implemented", "", MessageBoxButton.OK, MessageBoxImage.Information);
             return 0;
         }
+
+        /// <summary>
+        /// This fuction is called whenever a STWI instruction is executed
+        /// </summary>
+        /// <param name="lhs"> The left hand operand of the instruction </param>
+        /// <param name="rhs"> The right hand operand of the instruction </param>
+        /// <returns> the result of the instruction or int.MINVALUE if no result is returned </returns>
         private int STWI(Operand lhs, Operand rhs)
         {
             MessageBox.Show("STWI Instruction is not currently implemented", "", MessageBoxButton.OK, MessageBoxImage.Information);
             return 0;
         }
+
+        /// <summary>
+        /// This fuction is called whenever a PUSH instruction is executed
+        /// </summary>
+        /// <param name="lhs"> The left hand operand of the instruction </param>
+        /// <param name="rhs"> The right hand operand of the instruction </param>
+        /// <returns> the result of the instruction or int.MINVALUE if no result is returned </returns>
         private int PUSH(Operand lhs, Operand rhs)
         {
             SimulatorProgram p = GetCurrentProgram();
@@ -421,6 +590,12 @@ namespace CPU_OS_Simulator.CPU
             return 0;
         }
 
+        /// <summary>
+        /// This fuction is called whenever a POP instruction is executed
+        /// </summary>
+        /// <param name="lhs"> The left hand operand of the instruction </param>
+        /// <param name="rhs"> The right hand operand of the instruction </param>
+        /// <returns> the result of the instruction or int.MINVALUE if no result is returned </returns>
         private int POP(Operand lhs, Operand rhs)
         {
             SimulatorProgram p = GetCurrentProgram();
@@ -430,10 +605,17 @@ namespace CPU_OS_Simulator.CPU
             }
             lhs.Register.Value = p.Stack.popItem();
             result = lhs.Register.Value;
-            Register.FindRegister(lhs.Register.Name).setRegisterValue(result,EnumOperandType.VALUE);
+            Register.FindRegister(lhs.Register.Name).setRegisterValue(result, EnumOperandType.VALUE);
             //MessageBox.Show("POP Instruction is not currently implemented", "", MessageBoxButton.OK, MessageBoxImage.Information);
             return result;
         }
+
+        /// <summary>
+        /// This fuction is called whenever a SWP instruction is executed
+        /// </summary>
+        /// <param name="lhs"> The left hand operand of the instruction </param>
+        /// <param name="rhs"> The right hand operand of the instruction </param>
+        /// <returns> the result of the instruction or int.MINVALUE if no result is returned </returns>
         private int SWP(Operand lhs, Operand rhs)
         {
             if (!lhs.IsRegister || !rhs.IsRegister)
@@ -451,6 +633,13 @@ namespace CPU_OS_Simulator.CPU
                 return result;
             }
         }
+
+        /// <summary>
+        /// This fuction is called whenever a ADD instruction is executed
+        /// </summary>
+        /// <param name="lhs"> The left hand operand of the instruction </param>
+        /// <param name="rhs"> The right hand operand of the instruction </param>
+        /// <returns> the result of the instruction or int.MINVALUE if no result is returned </returns>
         private int ADD(Operand lhs, Operand rhs)
         {
             if (lhs.IsRegister)
@@ -463,7 +652,7 @@ namespace CPU_OS_Simulator.CPU
             {
                 MessageBox.Show("First operand of ADD instruction must be a register", "", MessageBoxButton.OK, MessageBoxImage.Information);
             }
-            if(rhs.IsRegister)
+            if (rhs.IsRegister)
             {
                 lhs.Register.Value += Register.FindRegister(rhs.Register.Name).Value;
             }
@@ -475,40 +664,58 @@ namespace CPU_OS_Simulator.CPU
             Register.FindRegister(lhs.Register.Name).setRegisterValue(result, EnumOperandType.VALUE);
             return result;
         }
+
         #endregion Data Transfer
+
         #endregion Instruction Execution Functions
 
         #region Window Accessor Methods
-        private SimulatorProgram GetCurrentProgram()
-        {
-            //Assembly main = Assembly.GetEntryAssembly();
-            //Type WindowType = main.GetType("MainWindow");
-            //var window = GetActiveWindow(WindowType).First();
 
-            //return null;
-            Assembly windowBridge = Assembly.LoadFrom("CPU_OS_Simulator.WindowBridge.dll");
+        /// <summary>
+        /// This function gets the main window instance from the window bridge
+        /// </summary>
+        /// <returns> the active instance of main window </returns>
+        private dynamic GetMainWindowInstance()
+        {
+            Assembly windowBridge = Assembly.LoadFrom("CPU_OS_Simulator.WindowBridge.dll"); // Load the window bridge module
             Console.WriteLine(windowBridge.GetExportedTypes()[0]);
-            Type WindowType = windowBridge.GetType(windowBridge.GetExportedTypes()[0].ToString());
-            dynamic window = WindowType.GetField("MainWindowInstance").GetValue(null);
-            string programName = window.currentProgram;
-            List<SimulatorProgram> programs = window.ProgramList;
-            SimulatorProgram prog = programs.Where(x => x.Name.Equals(programName)).FirstOrDefault();
-            return prog;
+            Type WindowType = windowBridge.GetType(windowBridge.GetExportedTypes()[0].ToString()); // get the name of the type that contains the window inatances
+            dynamic window = WindowType.GetField("MainWindowInstance").GetValue(null); // get the value of the static MainWindowInstance field
+            return window;
         }
 
+        /// <summary>
+        /// This Function gets the program to be executed by the CPU from the main window
+        /// </summary>
+        /// <returns>the program to be executed by the CPU</returns>
+        private SimulatorProgram GetCurrentProgram()
+        {
+            dynamic window = GetMainWindowInstance();
+            string programName = window.currentProgram; // get the name of the program that is currently loaded
+            List<SimulatorProgram> programs = window.ProgramList; // get a copy of the program list
+            SimulatorProgram prog = programs.Where(x => x.Name.Equals(programName)).FirstOrDefault(); // find the current program in the list
+            return prog; // return the current program
+        }
+
+        /// <summary>
+        /// This method returns all of the active window instances of a specific type
+        /// </summary>
+        /// <param name="WindowType"> the type of window to return</param>
+        /// <returns> a list containing all active window instances</returns>
+        [Obsolete("GetActiveWindow is depreciated please use GetMainWindowInstance instead", true)]
         private List<Window> GetActiveWindow(Type WindowType)
         {
             List<Window> windows = new List<Window>();
-            foreach(Window window in Application.Current.Windows)
+            foreach (Window window in Application.Current.Windows)
             {
                 if (window.GetType() == WindowType)
                     windows.Add(window);
                 else
                     continue;
-
             }
             return windows;
         }
+
         #endregion Window Accessor Methods
     }
 }

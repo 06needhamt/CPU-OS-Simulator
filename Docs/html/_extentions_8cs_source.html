@@ -107,34 +107,41 @@ $(document).ready(function(){initNavTree('_extentions_8cs_source.html','');});
 <div class="title">Extentions.cs</div>  </div>
 </div><!--header-->
 <div class="contents">
-<a href="_extentions_8cs.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="keyword">using</span> <a class="code" href="namespace_system.html">System</a>;</div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="keyword">using</span> <a class="code" href="namespace_system.html">System</a>.Collections.Generic;</div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="keyword">using</span> <a class="code" href="namespace_system.html">System</a>.ComponentModel;</div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="keyword">using</span> <a class="code" href="namespace_system.html">System</a>.Linq;</div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="keyword">using</span> <a class="code" href="namespace_system.html">System</a>.Reflection;</div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="keyword">using</span> <a class="code" href="namespace_system.html">System</a>.Text;</div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="keyword">using</span> <a class="code" href="namespace_system.html">System</a>.Threading.Tasks;</div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;</div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespace_c_p_u___o_s___simulator.html">CPU_OS_Simulator</a>.CPU</div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;{</div>
-<div class="line"><a name="l00011"></a><span class="lineno"><a class="line" href="class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_extentions.html">   11</a></span>&#160;    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">class </span><a class="code" href="class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_extentions.html">Extentions</a></div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    {</div>
-<div class="line"><a name="l00013"></a><span class="lineno"><a class="line" href="class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_extentions.html#a57b9eeabb06f5b69160698e7106b2193">   13</a></span>&#160;        <span class="keyword">public</span> <span class="keyword">static</span> <span class="keywordtype">string</span> DescriptionAttr&lt;T&gt;(<span class="keyword">this</span> T source)</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;        {</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;            FieldInfo fi = source.GetType().GetField(source.ToString());</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;            DescriptionAttribute[] attributes = (DescriptionAttribute[])fi.GetCustomAttributes(typeof(DescriptionAttribute), <span class="keyword">false</span>);</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;            <span class="keywordflow">if</span> (attributes != null &amp;&amp; attributes.Length &gt; 0)</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;                <span class="keywordflow">return</span> attributes[0].Description;</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;            <span class="keywordflow">else</span></div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;                <span class="keywordflow">return</span> source.ToString();</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        }</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    }</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;}</div>
-<div class="ttc" id="class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_extentions_html"><div class="ttname"><a href="class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_extentions.html">CPU_OS_Simulator.CPU.Extentions</a></div><div class="ttdef"><b>Definition:</b> <a href="_extentions_8cs_source.html#l00011">Extentions.cs:11</a></div></div>
+<a href="_extentions_8cs.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="keyword">using</span> <a class="code" href="namespace_system.html">System</a>.ComponentModel;</div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="keyword">using</span> <a class="code" href="namespace_system.html">System</a>.Reflection;</div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;</div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespace_c_p_u___o_s___simulator.html">CPU_OS_Simulator</a>.CPU</div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;{</div>
+<div class="line"><a name="l00009"></a><span class="lineno"><a class="line" href="class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_extentions.html">    9</a></span>&#160;    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">class </span><a class="code" href="class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_extentions.html">Extentions</a></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;    {</div>
+<div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_extentions.html#a57b9eeabb06f5b69160698e7106b2193">   17</a></span>&#160;        <span class="keyword">public</span> <span class="keyword">static</span> <span class="keywordtype">string</span> DescriptionAttr&lt;T&gt;(<span class="keyword">this</span> T source)</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;        {</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;            FieldInfo fi = source.GetType().GetField(source.ToString());</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;            DescriptionAttribute[] attributes = (DescriptionAttribute[])fi.GetCustomAttributes(typeof(DescriptionAttribute), <span class="keyword">false</span>);</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;            <span class="keywordflow">if</span> (attributes != null &amp;&amp; attributes.Length &gt; 0)</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;                <span class="keywordflow">return</span> attributes[0].Description;</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;            <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;                <span class="keywordflow">return</span> source.ToString();</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        }</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;</div>
+<div class="line"><a name="l00035"></a><span class="lineno"><a class="line" href="class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_extentions.html#a5391dde3088335a6e3754e1273f0ff40">   35</a></span>&#160;        <span class="keyword">public</span> <span class="keyword">static</span> <span class="keywordtype">int</span> NumberOfOperandsAttr&lt;T&gt;(<span class="keyword">this</span> T source)</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        {</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;            FieldInfo fi = source.GetType().GetField(source.ToString());</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;            <a class="code" href="class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_number_of_operands_attribute.html">NumberOfOperandsAttribute</a>[] attributes = (<a class="code" href="class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_number_of_operands_attribute.html">NumberOfOperandsAttribute</a>[])fi.GetCustomAttributes(typeof(<a class="code" href="class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_number_of_operands_attribute.html">NumberOfOperandsAttribute</a>), <span class="keyword">false</span>);</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;            <span class="keywordflow">if</span> (attributes != null &amp;&amp; attributes.Length &gt; 0)</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;                <span class="keywordflow">return</span> attributes[0].<a class="code" href="class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_number_of_operands_attribute.html#a00873634b211bcf2fd8b1425aa5143d6">Value</a>;</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;            <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;                <span class="keywordflow">return</span> 2;</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        }</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    }</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;}</div>
+<div class="ttc" id="class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_number_of_operands_attribute_html"><div class="ttname"><a href="class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_number_of_operands_attribute.html">CPU_OS_Simulator.CPU.NumberOfOperandsAttribute</a></div><div class="ttdoc">This class represents the NumberOfOperands attribute </div><div class="ttdef"><b>Definition:</b> <a href="_number_of_operands_attribute_8cs_source.html#l00008">NumberOfOperandsAttribute.cs:8</a></div></div>
+<div class="ttc" id="class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_extentions_html"><div class="ttname"><a href="class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_extentions.html">CPU_OS_Simulator.CPU.Extentions</a></div><div class="ttdoc">This class contains extention methods for getting attributes from enum items </div><div class="ttdef"><b>Definition:</b> <a href="_extentions_8cs_source.html#l00009">Extentions.cs:9</a></div></div>
 <div class="ttc" id="namespace_c_p_u___o_s___simulator_html"><div class="ttname"><a href="namespace_c_p_u___o_s___simulator.html">CPU_OS_Simulator</a></div></div>
 <div class="ttc" id="namespace_system_html"><div class="ttname"><a href="namespace_system.html">System</a></div></div>
+<div class="ttc" id="class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_number_of_operands_attribute_html_a00873634b211bcf2fd8b1425aa5143d6"><div class="ttname"><a href="class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_number_of_operands_attribute.html#a00873634b211bcf2fd8b1425aa5143d6">CPU_OS_Simulator.CPU.NumberOfOperandsAttribute.Value</a></div><div class="ttdeci">int Value</div><div class="ttdef"><b>Definition:</b> <a href="_number_of_operands_attribute_8cs_source.html#l00025">NumberOfOperandsAttribute.cs:25</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

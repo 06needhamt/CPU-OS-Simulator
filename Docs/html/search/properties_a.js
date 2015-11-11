@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['schemacontext',['SchemaContext',['../class_xaml_static_helper_namespace_1_1___xaml_static_helper.html#a703c877fd6ad70d1add0c1cfda1de3a1',1,'XamlStaticHelperNamespace::_XamlStaticHelper']]],
-  ['size',['Size',['../class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_instruction.html#a7c60418808e7bd6cb1964a227dcd9dac',1,'CPU_OS_Simulator::CPU::Instruction']]],
-  ['startaddress',['StartAddress',['../class_c_p_u___o_s___simulator_1_1_simulator_program.html#afe1316429a20c7e678f8e4c0654dbacd',1,'CPU_OS_Simulator::SimulatorProgram']]]
+  ['register',['Register',['../class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_operand.html#a8f08360f0e27922fc0377f5d58a9e67f',1,'CPU_OS_Simulator::CPU::Operand']]],
+  ['resourcemanager',['ResourceManager',['../class_c_p_u___o_s___simulator_1_1_properties_1_1_resources.html#a59a57fa23c17b7afe97c18c6cb3c30cc',1,'CPU_OS_Simulator::Properties::Resources']]],
+  ['result',['Result',['../class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_instruction.html#a8e0f7c63850af7cfd8a41c066c01838e',1,'CPU_OS_Simulator::CPU::Instruction']]]
 ];

@@ -2,6 +2,9 @@
 
 namespace CPU_OS_Simulator.CPU
 {
+    /// <summary>
+    /// This enum holds the opcodes for each instruction type
+    /// </summary>
     public enum EnumOpcodes
     {
         #region Data Transfer
@@ -205,8 +208,11 @@ namespace CPU_OS_Simulator.CPU
         [Description("Control Transfer: HLT Halts the simulator")]
         [NumberOfOperands(0)]
         HLT = 46,
+
         #endregion Control Transfer
+
         #region Comparison
+
         [Description("Comparison: CMP Compares two numeric values")]
         [NumberOfOperands(2)]
         CMP = 47,
@@ -214,9 +220,11 @@ namespace CPU_OS_Simulator.CPU
         [Description("Comparison: CPS Compares two string values")]
         [NumberOfOperands(2)]
         CPS = 48,
+
         #endregion Comparison
 
         #region I/O
+
         [Description("I/O: IN Gets input into register or memory")]
         [NumberOfOperands(1)]
         IN = 49,
@@ -224,13 +232,15 @@ namespace CPU_OS_Simulator.CPU
         [Description("I/O: OUT Puts output from register or memory")]
         [NumberOfOperands(1)]
         OUT = 50,
+
         #endregion I/O
+
         #region Miscellaneous
+
         [Description("Miscellaneous: NOP No operation (or null operation)")]
         [NumberOfOperands(0)]
         NOP = 51
+
         #endregion Miscellaneous
-
-
     }
 }

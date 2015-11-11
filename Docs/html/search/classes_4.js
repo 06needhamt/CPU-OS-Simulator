@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['mainwindow',['MainWindow',['../class_c_p_u___o_s___simulator_1_1_main_window.html',1,'CPU_OS_Simulator']]]
+  ['mainwindow',['MainWindow',['../class_c_p_u___o_s___simulator_1_1_main_window.html',1,'CPU_OS_Simulator']]],
+  ['memorypage',['MemoryPage',['../class_c_p_u___o_s___simulator_1_1_memory_1_1_memory_page.html',1,'CPU_OS_Simulator::Memory']]]
 ];

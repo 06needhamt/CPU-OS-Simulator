@@ -3,9 +3,17 @@ var searchData=
   ['beforeinitializecomponent',['BeforeInitializeComponent',['../class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_activity1.html#a40e21e1735bdef0af255ee9f07fcb3d8',1,'CPU_OS_Simulator::CPU::Activity1']]],
   ['begininit',['BeginInit',['../class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_activity1.html#ae02f7230ddf93bd55c74ad47d9dc72e5',1,'CPU_OS_Simulator::CPU::Activity1']]],
   ['binddelegate',['BindDelegate',['../class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_instruction.html#ab3bbd51fd889e3bbeb656ea717a7fe9c',1,'CPU_OS_Simulator::CPU::Instruction']]],
+  ['bindinstructiondelegates',['BindInstructionDelegates',['../class_c_p_u___o_s___simulator_1_1_main_window.html#afe4c815db0eb51ebc480374f5af09d0c',1,'CPU_OS_Simulator::MainWindow']]],
+  ['btn_5faddnew_5fclick',['btn_AddNew_Click',['../class_c_p_u___o_s___simulator_1_1_main_window.html#a37c97ac2869b40063089f1af9cd86724',1,'CPU_OS_Simulator::MainWindow']]],
   ['btn_5fclose_5fclick',['btn_Close_Click',['../class_c_p_u___o_s___simulator_1_1_instructions_window.html#a5fd3510dda95cf73b61af11ccacd81cd',1,'CPU_OS_Simulator::InstructionsWindow']]],
+  ['btn_5fdelete_5fclick',['btn_Delete_Click',['../class_c_p_u___o_s___simulator_1_1_main_window.html#a96ea1acde80b84701b58c1d4aaed2b9f',1,'CPU_OS_Simulator::MainWindow']]],
+  ['btn_5finsertabove_5fclick',['btn_InsertAbove_Click',['../class_c_p_u___o_s___simulator_1_1_main_window.html#a8f710b1bee7b3c9360fb5652231b0502',1,'CPU_OS_Simulator::MainWindow']]],
+  ['btn_5finsertbelow_5fclick',['btn_InsertBelow_Click',['../class_c_p_u___o_s___simulator_1_1_main_window.html#ac2307db4caedc82b5a6201077fb1c5b7',1,'CPU_OS_Simulator::MainWindow']]],
   ['btn_5fload_5fclick',['btn_Load_Click',['../class_c_p_u___o_s___simulator_1_1_main_window.html#a13c54c19f906fc84076fe654f82f5398',1,'CPU_OS_Simulator::MainWindow']]],
   ['btn_5fprogramadd_5fclick',['btn_ProgramAdd_Click',['../class_c_p_u___o_s___simulator_1_1_main_window.html#abe3e79941789134ce080390fcafc720e',1,'CPU_OS_Simulator::MainWindow']]],
+  ['btn_5frun_5fclick',['btn_Run_Click',['../class_c_p_u___o_s___simulator_1_1_main_window.html#a1f4dedca9ad81ea1c92637759515797f',1,'CPU_OS_Simulator::MainWindow']]],
   ['btn_5fsave_5fclick',['btn_Save_Click',['../class_c_p_u___o_s___simulator_1_1_main_window.html#a3bbf0774868d6b5da4ff08d70e236fa6',1,'CPU_OS_Simulator::MainWindow']]],
-  ['btn_5fshow_5fclick',['btn_Show_Click',['../class_c_p_u___o_s___simulator_1_1_main_window.html#afcb6e2b3719374f56fd8cb1c786bb219',1,'CPU_OS_Simulator::MainWindow']]]
+  ['btn_5fshow_5fclick',['btn_Show_Click',['../class_c_p_u___o_s___simulator_1_1_main_window.html#afcb6e2b3719374f56fd8cb1c786bb219',1,'CPU_OS_Simulator::MainWindow']]],
+  ['btn_5fstep_5fclick',['btn_Step_Click',['../class_c_p_u___o_s___simulator_1_1_main_window.html#a897049d123dd2ecf2820b02205ce1969',1,'CPU_OS_Simulator::MainWindow']]],
+  ['btn_5fstop_5fclick',['btn_Stop_Click',['../class_c_p_u___o_s___simulator_1_1_main_window.html#acbdc92abd94c317f978cee0d28af9448',1,'CPU_OS_Simulator::MainWindow']]]
 ];

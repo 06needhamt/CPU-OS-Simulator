@@ -5,20 +5,36 @@
 \item 
 class \hyperlink{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_activity1}{Activity1}
 \item 
+class \hyperlink{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_execution_unit}{Execution\+Unit}
+\begin{DoxyCompactList}\small\item\em This class represents the part of the \hyperlink{namespace_c_p_u___o_s___simulator_1_1_c_p_u}{C\+P\+U} which executes instructions \end{DoxyCompactList}\item 
 class \hyperlink{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_extentions}{Extentions}
-\item 
+\begin{DoxyCompactList}\small\item\em This class contains extention methods for getting attributes from enum items \end{DoxyCompactList}\item 
+interface \hyperlink{interface_c_p_u___o_s___simulator_1_1_c_p_u_1_1_i_attribute}{I\+Attribute}
+\begin{DoxyCompactList}\small\item\em This interface defines a basic attribute \end{DoxyCompactList}\item 
 class \hyperlink{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_instruction}{Instruction}
-\item 
+\begin{DoxyCompactList}\small\item\em This class represents an instruction witch can be executed by the virtual \hyperlink{namespace_c_p_u___o_s___simulator_1_1_c_p_u}{C\+P\+U} \end{DoxyCompactList}\item 
+class \hyperlink{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_number_of_operands_attribute}{Number\+Of\+Operands\+Attribute}
+\begin{DoxyCompactList}\small\item\em This class represents the Number\+Of\+Operands attribute \end{DoxyCompactList}\item 
 class \hyperlink{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_operand}{Operand}
-\item 
+\begin{DoxyCompactList}\small\item\em This class represents an operand which can be passed to an instruction \end{DoxyCompactList}\item 
+class \hyperlink{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_program_stack}{Program\+Stack}
+\begin{DoxyCompactList}\small\item\em This class represents a Last in first out (L\+I\+F\+O) stack data structuee for use with simulator programs \end{DoxyCompactList}\item 
 class \hyperlink{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_register}{Register}
+\item 
+class \hyperlink{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_simulator_program}{Simulator\+Program}
+\begin{DoxyCompactList}\small\item\em This class represents a program that can be run within the simulator \end{DoxyCompactList}\item 
+class \hyperlink{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_special_register}{Special\+Register}
+\item 
+class \hyperlink{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_stack_item}{Stack\+Item}
+\item 
+class \hyperlink{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_status_flags}{Status\+Flags}
 \end{DoxyCompactItemize}
 \subsection*{Enumerations}
 \begin{DoxyCompactItemize}
 \item 
 enum \hyperlink{namespace_c_p_u___o_s___simulator_1_1_c_p_u_af322082b9b46482202165fb547c052a7}{Enum\+Instruction\+Size} \{ \hyperlink{namespace_c_p_u___o_s___simulator_1_1_c_p_u_af322082b9b46482202165fb547c052a7a17b32100aef1fc19670be7fd58bc85df}{Enum\+Instruction\+Size.\+M\+O\+V} = 4, 
 \hyperlink{namespace_c_p_u___o_s___simulator_1_1_c_p_u_af322082b9b46482202165fb547c052a7aefdb39a4c7286afcecf0e8a7435fce6a}{Enum\+Instruction\+Size.\+P\+O\+P} = 4
- \}
+ \}\begin{DoxyCompactList}\small\item\em This enum holds the sizes for all instruction types \end{DoxyCompactList}
 \item 
 enum \hyperlink{namespace_c_p_u___o_s___simulator_1_1_c_p_u_ac29c87bff87ad404c953b2581024043e}{Enum\+Opcodes} \{ \\*
 \hyperlink{namespace_c_p_u___o_s___simulator_1_1_c_p_u_ac29c87bff87ad404c953b2581024043ea17b32100aef1fc19670be7fd58bc85df}{Enum\+Opcodes.\+M\+O\+V} = 0, 
@@ -85,11 +101,11 @@ enum \hyperlink{namespace_c_p_u___o_s___simulator_1_1_c_p_u_ac29c87bff87ad404c95
 \hyperlink{namespace_c_p_u___o_s___simulator_1_1_c_p_u_ac29c87bff87ad404c953b2581024043eac86ee0d9d7ed3e7b4fdbf486fa6c0ebb}{Enum\+Opcodes.\+I\+N} = 49, 
 \hyperlink{namespace_c_p_u___o_s___simulator_1_1_c_p_u_ac29c87bff87ad404c953b2581024043eaef373774188a51f80463f37b6bd9e83a}{Enum\+Opcodes.\+O\+U\+T} = 50, 
 \hyperlink{namespace_c_p_u___o_s___simulator_1_1_c_p_u_ac29c87bff87ad404c953b2581024043ea1a004f5abe2b334db21328be1ea6b593}{Enum\+Opcodes.\+N\+O\+P} = 51
- \}
+ \}\begin{DoxyCompactList}\small\item\em This enum holds the opcodes for each instruction type \end{DoxyCompactList}
 \item 
 enum \hyperlink{namespace_c_p_u___o_s___simulator_1_1_c_p_u_ad49cfe442b74115a326c03b7ae848f76}{Enum\+Operand\+Type} \{ \hyperlink{namespace_c_p_u___o_s___simulator_1_1_c_p_u_ad49cfe442b74115a326c03b7ae848f76aecc2e9c313faddb07e7da223c1dc5c3f}{Enum\+Operand\+Type.\+V\+A\+L\+U\+E} = 0, 
 \hyperlink{namespace_c_p_u___o_s___simulator_1_1_c_p_u_ad49cfe442b74115a326c03b7ae848f76a9e7f9540060b7dd24a9062b3bff47ee5}{Enum\+Operand\+Type.\+A\+D\+R\+E\+S\+S} = 1
- \}
+ \}\begin{DoxyCompactList}\small\item\em This enum holds the different operand types \end{DoxyCompactList}
 \end{DoxyCompactItemize}
 
 
@@ -97,6 +113,10 @@ enum \hyperlink{namespace_c_p_u___o_s___simulator_1_1_c_p_u_ad49cfe442b74115a326
 \hypertarget{namespace_c_p_u___o_s___simulator_1_1_c_p_u_af322082b9b46482202165fb547c052a7}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U}!Enum\+Instruction\+Size@{Enum\+Instruction\+Size}}
 \index{Enum\+Instruction\+Size@{Enum\+Instruction\+Size}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U}}
 \subsubsection[{Enum\+Instruction\+Size}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+C\+P\+U.\+Enum\+Instruction\+Size}\hspace{0.3cm}{\ttfamily [strong]}}\label{namespace_c_p_u___o_s___simulator_1_1_c_p_u_af322082b9b46482202165fb547c052a7}
+
+
+This enum holds the sizes for all instruction types 
+
 \begin{Desc}
 \item[Enumerator]\par
 \begin{description}
@@ -108,11 +128,15 @@ enum \hyperlink{namespace_c_p_u___o_s___simulator_1_1_c_p_u_ad49cfe442b74115a326
 \end{Desc}
 
 
-Definition at line 9 of file Enum\+Instruction\+Size.\+cs.
+Definition at line 6 of file Enum\+Instruction\+Size.\+cs.
 
 \hypertarget{namespace_c_p_u___o_s___simulator_1_1_c_p_u_ac29c87bff87ad404c953b2581024043e}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U}!Enum\+Opcodes@{Enum\+Opcodes}}
 \index{Enum\+Opcodes@{Enum\+Opcodes}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U}}
 \subsubsection[{Enum\+Opcodes}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+C\+P\+U.\+Enum\+Opcodes}\hspace{0.3cm}{\ttfamily [strong]}}\label{namespace_c_p_u___o_s___simulator_1_1_c_p_u_ac29c87bff87ad404c953b2581024043e}
+
+
+This enum holds the opcodes for each instruction type 
+
 \begin{Desc}
 \item[Enumerator]\par
 \begin{description}
@@ -224,11 +248,15 @@ Definition at line 9 of file Enum\+Instruction\+Size.\+cs.
 \end{Desc}
 
 
-Definition at line 10 of file Enum\+Opcodes.\+cs.
+Definition at line 8 of file Enum\+Opcodes.\+cs.
 
 \hypertarget{namespace_c_p_u___o_s___simulator_1_1_c_p_u_ad49cfe442b74115a326c03b7ae848f76}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U}!Enum\+Operand\+Type@{Enum\+Operand\+Type}}
 \index{Enum\+Operand\+Type@{Enum\+Operand\+Type}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U}}
 \subsubsection[{Enum\+Operand\+Type}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+C\+P\+U.\+Enum\+Operand\+Type}\hspace{0.3cm}{\ttfamily [strong]}}\label{namespace_c_p_u___o_s___simulator_1_1_c_p_u_ad49cfe442b74115a326c03b7ae848f76}
+
+
+This enum holds the different operand types 
+
 \begin{Desc}
 \item[Enumerator]\par
 \begin{description}
@@ -240,5 +268,5 @@ Definition at line 10 of file Enum\+Opcodes.\+cs.
 \end{Desc}
 
 
-Definition at line 9 of file Enum\+Operand\+Type.\+cs.
+Definition at line 6 of file Enum\+Operand\+Type.\+cs.
 

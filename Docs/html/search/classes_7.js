@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['settings',['Settings',['../class_c_p_u___o_s___simulator_1_1_properties_1_1_settings.html',1,'CPU_OS_Simulator::Properties']]],
-  ['simulatorprogram',['SimulatorProgram',['../class_c_p_u___o_s___simulator_1_1_simulator_program.html',1,'CPU_OS_Simulator']]]
+  ['programstack',['ProgramStack',['../class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_program_stack.html',1,'CPU_OS_Simulator::CPU']]]
 ];

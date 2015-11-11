@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace CPU_OS_Simulator.CPU
 {
@@ -19,7 +15,6 @@ namespace CPU_OS_Simulator.CPU
 
         public SpecialRegister() : base()
         {
-
         }
 
         protected SpecialRegister(string name) : base(name)

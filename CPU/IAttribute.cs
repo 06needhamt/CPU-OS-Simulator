@@ -1,12 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace CPU_OS_Simulator.CPU
+﻿namespace CPU_OS_Simulator.CPU
 {
-    interface IAttribute<T>
+    /// <summary>
+    /// This interface defines a basic attribute
+    /// </summary>
+    /// <typeparam name="T"> The type of the attribute </typeparam>
+    internal interface IAttribute<T>
     {
         T Value { get; }
     }

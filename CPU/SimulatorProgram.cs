@@ -1,7 +1,7 @@
-﻿using System;
+﻿using CPU_OS_Simulator.Memory;
+using System;
 using System.Collections.Generic;
 using System.Web.Script.Serialization;
-using CPU_OS_Simulator.Memory;
 
 namespace CPU_OS_Simulator.CPU
 {
@@ -19,8 +19,10 @@ namespace CPU_OS_Simulator.CPU
         private Int32 pages;
         private ExecutionUnit unit;
         private List<Instruction> instructions;
+
         [ScriptIgnore]
         private List<MemoryPage> memory;
+
         [ScriptIgnore]
         private ProgramStack stack;
 
@@ -130,6 +132,7 @@ namespace CPU_OS_Simulator.CPU
                 startAddress = value;
             }
         }
+
         [ScriptIgnore]
         public List<MemoryPage> Memory
         {
@@ -143,6 +146,7 @@ namespace CPU_OS_Simulator.CPU
                 memory = value;
             }
         }
+
         [ScriptIgnore]
         public ProgramStack Stack
         {
@@ -168,11 +172,12 @@ namespace CPU_OS_Simulator.CPU
             instructions.Add(ins);
             UpdateAddresses();
         }
-        public void AddInstruction(ref Instruction ins,int index)
+
+        public void AddInstruction(ref Instruction ins, int index)
         {
             //int address = CalculateAddress(ins,instructions.Count);
             //ins.Address = address;
-            instructions.Insert(index,ins);
+            instructions.Insert(index, ins);
             UpdateAddresses();
         }
 
@@ -188,10 +193,10 @@ namespace CPU_OS_Simulator.CPU
             //return address;
         }
 
-        private int CalculateAddress(Instruction instruction,int index)
+        private int CalculateAddress(Instruction instruction, int index)
         {
             int address = baseAddress;
-            for(int i = 0; i < index; i++ )
+            for (int i = 0; i < index; i++)
             {
                 address += instructions[i].Size; // calculate address of the next intruction
             }

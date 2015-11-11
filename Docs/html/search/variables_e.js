@@ -3,6 +3,7 @@ var searchData=
   ['schemacontextfield',['schemaContextField',['../class_xaml_static_helper_namespace_1_1___xaml_static_helper.html#a4a6305e6ff660caf4aea99a620f62961',1,'XamlStaticHelperNamespace::_XamlStaticHelper']]],
   ['scrollbar1',['scrollBar1',['../class_c_p_u___o_s___simulator_1_1_main_window.html#a014812a0e9cd159be05250d94d9a5a8b',1,'CPU_OS_Simulator::MainWindow']]],
   ['size',['size',['../class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_instruction.html#ac8c820f3e522e4fefaa510856ed11fb0',1,'CPU_OS_Simulator::CPU::Instruction']]],
+  ['sld_5fclockspeed',['sld_ClockSpeed',['../class_c_p_u___o_s___simulator_1_1_main_window.html#a39cd3af9bb0f8a3ccd06fdd44c9ed6a3',1,'CPU_OS_Simulator::MainWindow']]],
   ['sourceoperandgrid',['SourceOperandGrid',['../class_c_p_u___o_s___simulator_1_1_instructions_window.html#a6e37ff7da499bab3f5b0037d2b4c68cd',1,'CPU_OS_Simulator::InstructionsWindow']]],
   ['sourceoperandgrid1',['SourceOperandGrid1',['../class_c_p_u___o_s___simulator_1_1_instructions_window.html#a3f9d1afc4455fa6b06c6fab3cdb6aeec',1,'CPU_OS_Simulator::InstructionsWindow']]],
   ['sourceoperandgrid2',['SourceOperandGrid2',['../class_c_p_u___o_s___simulator_1_1_instructions_window.html#a715ed01337540f316f39fe42c373c602',1,'CPU_OS_Simulator::InstructionsWindow']]],
@@ -17,5 +18,15 @@ var searchData=
   ['sourceoperandgrid_5fcopy4',['SourceOperandGrid_Copy4',['../class_c_p_u___o_s___simulator_1_1_instructions_window.html#aa8c70305e3c77644ac312df74b0696b7',1,'CPU_OS_Simulator::InstructionsWindow']]],
   ['sourceoperandgrid_5fcopy5',['SourceOperandGrid_Copy5',['../class_c_p_u___o_s___simulator_1_1_instructions_window.html#a5a43b8933f014dffe28d3aa610518a94',1,'CPU_OS_Simulator::InstructionsWindow']]],
   ['sourceoperandgrid_5fcopy6',['SourceOperandGrid_Copy6',['../class_c_p_u___o_s___simulator_1_1_instructions_window.html#a3dfdd68ad6b08fb1612fd43a420e5193',1,'CPU_OS_Simulator::InstructionsWindow']]],
-  ['startaddress',['startAddress',['../class_c_p_u___o_s___simulator_1_1_simulator_program.html#ab9a0f3e642c0e7cb844dcd2e26a9b0bc',1,'CPU_OS_Simulator::SimulatorProgram']]]
+  ['sp',['SP',['../class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_special_register.html#ae1699c7972763e73e3f1cfe467cc82e9',1,'CPU_OS_Simulator::CPU::SpecialRegister']]],
+  ['specialregistersgrid',['SpecialRegistersGrid',['../class_c_p_u___o_s___simulator_1_1_main_window.html#a7ce98e44f9236ca31eb5bf3ed81c3372',1,'CPU_OS_Simulator::MainWindow']]],
+  ['specialregistersinnergrid',['SpecialRegistersInnerGrid',['../class_c_p_u___o_s___simulator_1_1_main_window.html#aeef1e97d3e7d589fdab51828260c7b5a',1,'CPU_OS_Simulator::MainWindow']]],
+  ['sr',['SR',['../class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_special_register.html#a556243e1c3c891e685bf884771c1575c',1,'CPU_OS_Simulator::CPU::SpecialRegister']]],
+  ['stack',['stack',['../class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_simulator_program.html#a85f44af349486db4b141b3946bf21a64',1,'CPU_OS_Simulator::CPU::SimulatorProgram']]],
+  ['stackitems',['stackItems',['../class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_program_stack.html#ada087487ee69e4e38e2f2591bdc28f37',1,'CPU_OS_Simulator::CPU::ProgramStack']]],
+  ['stacksize',['stackSize',['../class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_program_stack.html#ab0667a30e4d6e10c3ffddfdfbc084102',1,'CPU_OS_Simulator::CPU::ProgramStack']]],
+  ['startaddress',['startAddress',['../class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_simulator_program.html#a7b2581eff41da814292bf29936ab5318',1,'CPU_OS_Simulator::CPU::SimulatorProgram']]],
+  ['startoffset',['startOffset',['../class_c_p_u___o_s___simulator_1_1_memory_1_1_memory_page.html#a6fe2e28385db19a1968a41efe3df3f38',1,'CPU_OS_Simulator::Memory::MemoryPage']]],
+  ['statusflagsgrid',['StatusFlagsGrid',['../class_c_p_u___o_s___simulator_1_1_main_window.html#afdda5e5a39c6e3b99300284ea2640e7c',1,'CPU_OS_Simulator::MainWindow']]],
+  ['stop',['stop',['../class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_execution_unit.html#aad508435c1085ec880b75723260b0439',1,'CPU_OS_Simulator::CPU::ExecutionUnit']]]
 ];

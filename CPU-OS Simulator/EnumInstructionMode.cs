@@ -1,5 +1,8 @@
 ﻿namespace CPU_OS_Simulator
 {
+    /// <summary>
+    /// This enum represents the possible modes for adding instructions to a program
+    /// </summary>
     public enum EnumInstructionMode
     {
         SHOW = 0,
