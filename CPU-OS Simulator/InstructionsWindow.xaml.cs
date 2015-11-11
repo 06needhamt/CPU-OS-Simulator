@@ -18,6 +18,8 @@ namespace CPU_OS_Simulator
         /// </summary>
         private List<string> instructionDescriptions = new List<string>();
 
+        private List<int> NumberOfOperands = new List<int>();
+
         /// <summary>
         /// The window that owns this window
         /// </summary>
@@ -70,6 +72,7 @@ namespace CPU_OS_Simulator
                 string category = split[0];
                 string description = split[1];
                 instructionDescriptions.Add(description); // add the description to the list
+  
                 switch (category)
                 {
                     case "Data Transfer":
@@ -142,41 +145,174 @@ namespace CPU_OS_Simulator
         {
             EnumOpcodes selected = (EnumOpcodes)Enum.Parse(typeof(EnumOpcodes), lst_OpcodeListDataTransfer.SelectedItem.ToString());
             txtDescriptionDataTransfer.Text = instructionDescriptions.ElementAt<string>((int)selected);
+            int operands = Extentions.NumberOfOperandsAttr<EnumOpcodes>(selected);
+            if(operands == 0)
+            {
+                rdb_SourceValueDataTransfer.IsEnabled = false;
+                txtSourceValueDataTransfer.IsEnabled = false;
+                rdb_SourceRegisterDataTransfer.IsEnabled = false;
+                cmb_SourceRegisterDataTransfer.IsEnabled = false;
+                rdb_DestinationValueDataTransfer.IsEnabled = false;
+                txtDestinationValueDataTransfer.IsEnabled = false;
+                rdb_DestinationRegisterDataTransfer.IsEnabled = false;
+                cmb_DestinationRegisterDataTransfer.IsEnabled = false;
+            }
+            else if(operands == 1)
+            {
+                rdb_DestinationValueDataTransfer.IsEnabled = false;
+                txtDestinationValueDataTransfer.IsEnabled = false;
+                rdb_DestinationRegisterDataTransfer.IsEnabled = false;
+                cmb_DestinationRegisterDataTransfer.IsEnabled = false;
+            }
         }
-
+      
         private void lst_OpcodeListLogical_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             EnumOpcodes selected = (EnumOpcodes)Enum.Parse(typeof(EnumOpcodes), lst_OpcodeListLogical.SelectedItem.ToString());
             txtDescriptionLogical.Text = instructionDescriptions.ElementAt<string>((int)selected);
+            int operands = Extentions.NumberOfOperandsAttr<EnumOpcodes>(selected);
+            if (operands == 0)
+            {
+                rdb_SourceValueLogical.IsEnabled = false;
+                txtSourceValueLogical.IsEnabled = false;
+                rdb_SourceRegisterLogical.IsEnabled = false;
+                cmb_SourceRegisterLogical.IsEnabled = false;
+                rdb_DestinationValueLogical.IsEnabled = false;
+                txtDestinationValueLogical.IsEnabled = false;
+                rdb_DestinationRegisterLogical.IsEnabled = false;
+                cmb_DestinationRegisterLogical.IsEnabled = false;
+            }
+            else if (operands == 1)
+            {
+                rdb_DestinationValueLogical.IsEnabled = false;
+                txtDestinationValueLogical.IsEnabled = false;
+                rdb_DestinationRegisterLogical.IsEnabled = false;
+                cmb_DestinationRegisterLogical.IsEnabled = false;
+            }
         }
 
         private void lst_OpcodeListArithmetic_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             EnumOpcodes selected = (EnumOpcodes)Enum.Parse(typeof(EnumOpcodes), lst_OpcodeListArithmetic.SelectedItem.ToString());
             txtDescriptionArithmetic.Text = instructionDescriptions.ElementAt<string>((int)selected);
+            int operands = Extentions.NumberOfOperandsAttr<EnumOpcodes>(selected);
+            if (operands == 0)
+            {
+                rdb_SourceValueArithmetic.IsEnabled = false;
+                txtSourceValueArithmetic.IsEnabled = false;
+                rdb_SourceRegisterArithmetic.IsEnabled = false;
+                cmb_SourceRegisterArithmetic.IsEnabled = false;
+                rdb_DestinationValueArithmetic.IsEnabled = false;
+                txtDestinationValueArithmetic.IsEnabled = false;
+                rdb_DestinationRegisterArithmetic.IsEnabled = false;
+                cmb_DestinationRegisterArithmetic.IsEnabled = false;
+            }
+            else if (operands == 1)
+            {
+                rdb_DestinationValueArithmetic.IsEnabled = false;
+                txtDestinationValueArithmetic.IsEnabled = false;
+                rdb_DestinationRegisterArithmetic.IsEnabled = false;
+                cmb_DestinationRegisterArithmetic.IsEnabled = false;
+            }
         }
 
         private void lst_OpcodeListControlTransfer_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             EnumOpcodes selected = (EnumOpcodes)Enum.Parse(typeof(EnumOpcodes), lst_OpcodeListControlTransfer.SelectedItem.ToString());
             txtDescriptionControlTransfer.Text = instructionDescriptions.ElementAt<string>((int)selected);
+            int operands = Extentions.NumberOfOperandsAttr<EnumOpcodes>(selected);
+            if (operands == 0)
+            {
+                rdb_SourceValueControlTransfer.IsEnabled = false;
+                txtSourceValueControlTransfer.IsEnabled = false;
+                rdb_SourceRegisterControlTransfer.IsEnabled = false;
+                cmb_SourceRegisterControlTransfer.IsEnabled = false;
+                rdb_DestinationValueControlTransfer.IsEnabled = false;
+                txtDestinationValueControlTransfer.IsEnabled = false;
+                rdb_DestinationRegisterControlTransfer.IsEnabled = false;
+                cmb_DestinationRegisterControlTransfer.IsEnabled = false;
+            }
+            else if (operands == 1)
+            {
+                rdb_DestinationValueControlTransfer.IsEnabled = false;
+                txtDestinationValueControlTransfer.IsEnabled = false;
+                rdb_DestinationRegisterControlTransfer.IsEnabled = false;
+                cmb_DestinationRegisterControlTransfer.IsEnabled = false;
+            }
         }
 
         private void lst_OpcodeListComparison_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             EnumOpcodes selected = (EnumOpcodes)Enum.Parse(typeof(EnumOpcodes), lst_OpcodeListComparison.SelectedItem.ToString());
             txtDescriptionComparison.Text = instructionDescriptions.ElementAt<string>((int)selected);
+            int operands = Extentions.NumberOfOperandsAttr<EnumOpcodes>(selected);
+            if (operands == 0)
+            {
+                rdb_SourceValueComparison.IsEnabled = false;
+                txtSourceValueComparison.IsEnabled = false;
+                rdb_SourceRegisterComparison.IsEnabled = false;
+                cmb_SourceRegisterComparison.IsEnabled = false;
+                rdb_DestinationValueComparison.IsEnabled = false;
+                txtDestinationValueComparison.IsEnabled = false;
+                rdb_DestinationRegisterComparison.IsEnabled = false;
+                cmb_DestinationRegisterComparison.IsEnabled = false;
+            }
+            else if (operands == 1)
+            {
+                rdb_DestinationValueComparison.IsEnabled = false;
+                txtDestinationValueComparison.IsEnabled = false;
+                rdb_DestinationRegisterComparison.IsEnabled = false;
+                cmb_DestinationRegisterComparison.IsEnabled = false;
+            }
         }
 
         private void lst_OpcodeListIO_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             EnumOpcodes selected = (EnumOpcodes)Enum.Parse(typeof(EnumOpcodes), lst_OpcodeListIO.SelectedItem.ToString());
             txtDescriptionIO.Text = instructionDescriptions.ElementAt<string>((int)selected);
+            int operands = Extentions.NumberOfOperandsAttr<EnumOpcodes>(selected);
+            if (operands == 0)
+            {
+                rdb_SourceValueIO.IsEnabled = false;
+                txtSourceValueIO.IsEnabled = false;
+                rdb_SourceRegisterIO.IsEnabled = false;
+                cmb_SourceRegisterIO.IsEnabled = false;
+                rdb_DestinationValueIO.IsEnabled = false;
+                txtDestinationValueIO.IsEnabled = false;
+                rdb_DestinationRegisterIO.IsEnabled = false;
+                cmb_DestinationRegisterIO.IsEnabled = false;
+            }
+            else if (operands == 1)
+            {
+                rdb_DestinationValueIO.IsEnabled = false;
+                txtDestinationValueIO.IsEnabled = false;
+                rdb_DestinationRegisterIO.IsEnabled = false;
+                cmb_DestinationRegisterIO.IsEnabled = false;
+            }
         }
         private void lst_OpcodeListMiscellaneous_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             EnumOpcodes selected = (EnumOpcodes)Enum.Parse(typeof(EnumOpcodes), lst_OpcodeListMiscellaneous.SelectedItem.ToString());
             txtDescriptionMiscellaneous.Text = instructionDescriptions.ElementAt<string>((int)selected);
+            int operands = Extentions.NumberOfOperandsAttr<EnumOpcodes>(selected);
+            if (operands == 0)
+            {
+                rdb_SourceValueMiscellaneous.IsEnabled = false;
+                txtSourceValueMiscellaneous.IsEnabled = false;
+                rdb_SourceRegisterMiscellaneous.IsEnabled = false;
+                cmb_SourceRegisterMiscellaneous.IsEnabled = false;
+                rdb_DestinationValueMiscellaneous.IsEnabled = false;
+                txtDestinationValueMiscellaneous.IsEnabled = false;
+                rdb_DestinationRegisterMiscellaneous.IsEnabled = false;
+                cmb_DestinationRegisterMiscellaneous.IsEnabled = false;
+            }
+            else if (operands == 1)
+            {
+                rdb_DestinationValueMiscellaneous.IsEnabled = false;
+                txtDestinationValueMiscellaneous.IsEnabled = false;
+                rdb_DestinationRegisterMiscellaneous.IsEnabled = false;
+                cmb_DestinationRegisterMiscellaneous.IsEnabled = false;
+            }
         }
         #endregion Populate Instruction Descriptions
 

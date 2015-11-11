@@ -411,8 +411,12 @@ namespace CPU_OS_Simulator.CPU
             if (lhs.IsRegister)
             {
                 lhs.Register.Value = Register.FindRegister(lhs.Register.Name).Value;
+                p.Stack.pushItem(new StackItem(lhs.Register.Value));
             }
-            p.Stack.pushItem(new StackItem(lhs.Register.Value));
+            else
+            {
+                p.Stack.pushItem(new StackItem(lhs.Value));
+            }
             //MessageBox.Show("PUSH Instruction is not currently implemented", "", MessageBoxButton.OK, MessageBoxImage.Information);
             return 0;
         }
