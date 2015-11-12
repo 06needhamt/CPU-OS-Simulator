@@ -340,9 +340,64 @@ namespace CPU_OS_Simulator.CPU
                         this.execute = () => SWP(operand1, operand2); // save the function in memory to call later
                         break;
                     }
+                case 17:
+                    {
+                        this.execute = () => AND(operand1, operand2); // save the function in memory to call later
+                        break;
+                    }
+                case 18:
+                    {
+                        this.execute = () => OR(operand1, operand2); // save the function in memory to call later
+                        break;
+                    }
+                case 19:
+                    {
+                        this.execute = () => NOT(operand1, operand2); // save the function in memory to call later
+                        break;
+                    }
+                case 20:
+                    {
+                        this.execute = () => SHL(operand1, operand2); // save the function in memory to call later
+                        break;
+                    }
+                case 21:
+                    {
+                        this.execute = () => SHR(operand1, operand2); // save the function in memory to call later
+                        break;
+                    }
                 case 22:
                     {
                         this.execute = () => ADD(operand1, operand2); // save the function in memory to call later
+                        break;
+                    }
+                case 23:
+                    {
+                        this.execute = () => SUB(operand1, operand2); // save the function in memory to call later
+                        break;
+                    }
+                case 24:
+                    {
+                        this.execute = () => SUBU(operand1, operand2); // save the function in memory to call later
+                        break;
+                    }
+                case 25:
+                    {
+                        this.execute = () => MUL(operand1, operand2); // save the function in memory to call later
+                        break;
+                    }
+                case 26:
+                    {
+                        this.execute = () => DIV(operand1, operand2); // save the function in memory to call later
+                        break;
+                    }
+                case 27:
+                    {
+                        this.execute = () => INC(operand1, operand2); // save the function in memory to call later
+                        break;
+                    }
+                case 28:
+                    {
+                        this.execute = () => DEC(operand1, operand2); // save the function in memory to call later
                         break;
                     }
                 default:
@@ -602,6 +657,7 @@ namespace CPU_OS_Simulator.CPU
             if (!lhs.IsRegister)
             {
                 MessageBox.Show("Operand for POP instruction must be a register", "", MessageBoxButton.OK, MessageBoxImage.Information);
+                return int.MinValue;
             }
             lhs.Register.Value = p.Stack.popItem();
             result = lhs.Register.Value;
@@ -621,7 +677,7 @@ namespace CPU_OS_Simulator.CPU
             if (!lhs.IsRegister || !rhs.IsRegister)
             {
                 MessageBox.Show("ERROR SWP Both operands must be a register", "", MessageBoxButton.OK, MessageBoxImage.Information);
-                return 0;
+                return int.MinValue;
             }
             else
             {
@@ -633,7 +689,163 @@ namespace CPU_OS_Simulator.CPU
                 return result;
             }
         }
+        #endregion Data Transfer
+        #region Logical
+        
+        /// <summary>
+        /// This fuction is called whenever a AND instruction is executed
+        /// </summary>
+        /// <param name="lhs"> The left hand operand of the instruction </param>
+        /// <param name="rhs"> The right hand operand of the instruction </param>
+        /// <returns> the result of the instruction or int.MINVALUE if no result is returned </returns>
+        private int AND(Operand lhs, Operand rhs)
+        {
+            if (lhs.IsRegister)
+            {
+                lhs.Register.Value = Register.FindRegister(lhs.Register.Name).Value;
+                result = lhs.Register.Value;
+            }
+            else
+            {
+                MessageBox.Show("First operand of AND instruction must be a register", "", MessageBoxButton.OK, MessageBoxImage.Information);
+                return int.MinValue;
+            }
+            if (rhs.IsRegister)
+            {
+                lhs.Register.Value &= Register.FindRegister(rhs.Register.Name).Value; 
+            }
+            else
+            {
+                lhs.Register.Value &= rhs.Value;
+            }
+            result = lhs.Register.Value;
+            Register.FindRegister(lhs.Register.Name).setRegisterValue(result, EnumOperandType.VALUE);
+            return result;
+        }
 
+        /// <summary>
+        /// This fuction is called whenever a OR instruction is executed
+        /// </summary>
+        /// <param name="lhs"> The left hand operand of the instruction </param>
+        /// <param name="rhs"> The right hand operand of the instruction </param>
+        /// <returns> the result of the instruction or int.MINVALUE if no result is returned </returns>
+        private int OR(Operand lhs, Operand rhs)
+        {
+            if (lhs.IsRegister)
+            {
+                lhs.Register.Value = Register.FindRegister(lhs.Register.Name).Value;
+                result = lhs.Register.Value;
+            }
+            else
+            {
+                MessageBox.Show("First operand of OR instruction must be a register", "", MessageBoxButton.OK, MessageBoxImage.Information);
+                return int.MinValue;
+            }
+            if (rhs.IsRegister)
+            {
+                lhs.Register.Value |= Register.FindRegister(rhs.Register.Name).Value;
+            }
+            else
+            {
+                lhs.Register.Value |= rhs.Value;
+            }
+            result = lhs.Register.Value;
+            Register.FindRegister(lhs.Register.Name).setRegisterValue(result, EnumOperandType.VALUE);
+            return result;
+        }
+        /// <summary>
+        /// This fuction is called whenever a NOT instruction is executed
+        /// </summary>
+        /// <param name="lhs"> The left hand operand of the instruction </param>
+        /// <param name="rhs"> The right hand operand of the instruction </param>
+        /// <returns> the result of the instruction or int.MINVALUE if no result is returned </returns>
+        private int NOT(Operand lhs, Operand rhs)
+        {
+            if (lhs.IsRegister)
+            {
+                lhs.Register.Value = Register.FindRegister(lhs.Register.Name).Value;
+                result = lhs.Register.Value;
+            }
+            else
+            {
+                MessageBox.Show("First operand of NOT instruction must be a register", "", MessageBoxButton.OK, MessageBoxImage.Information);
+                return int.MinValue;
+            }
+            if (rhs.IsRegister)
+            {
+                lhs.Register.Value = ~Register.FindRegister(rhs.Register.Name).Value;
+            }
+            else
+            {
+                lhs.Register.Value = ~rhs.Value;
+            }
+            result = lhs.Register.Value;
+            Register.FindRegister(lhs.Register.Name).setRegisterValue(result, EnumOperandType.VALUE);
+            return result;
+        }
+        /// <summary>
+        /// This fuction is called whenever a SHL instruction is executed
+        /// </summary>
+        /// <param name="lhs"> The left hand operand of the instruction </param>
+        /// <param name="rhs"> The right hand operand of the instruction </param>
+        /// <returns> the result of the instruction or int.MINVALUE if no result is returned </returns>
+        private int SHL(Operand lhs, Operand rhs)
+        {
+            if (lhs.IsRegister)
+            {
+                lhs.Register.Value = Register.FindRegister(lhs.Register.Name).Value;
+                result = lhs.Register.Value;
+            }
+            else
+            {
+                MessageBox.Show("First operand of SHL instruction must be a register", "", MessageBoxButton.OK, MessageBoxImage.Information);
+                return int.MinValue;
+            }
+            if (rhs.IsRegister)
+            {
+                lhs.Register.Value <<= Register.FindRegister(rhs.Register.Name).Value;
+            }
+            else
+            {
+                lhs.Register.Value <<= rhs.Value;
+            }
+            result = lhs.Register.Value;
+            Register.FindRegister(lhs.Register.Name).setRegisterValue(result, EnumOperandType.VALUE);
+            return result;
+        }
+        /// <summary>
+        /// This fuction is called whenever a SHR instruction is executed
+        /// </summary>
+        /// <param name="lhs"> The left hand operand of the instruction </param>
+        /// <param name="rhs"> The right hand operand of the instruction </param>
+        /// <returns> the result of the instruction or int.MINVALUE if no result is returned </returns>
+        private int SHR(Operand lhs, Operand rhs)
+        {
+            if (lhs.IsRegister)
+            {
+                lhs.Register.Value = Register.FindRegister(lhs.Register.Name).Value;
+                result = lhs.Register.Value;
+            }
+            else
+            {
+                MessageBox.Show("First operand of SHR instruction must be a register", "", MessageBoxButton.OK, MessageBoxImage.Information);
+                return int.MinValue;
+            }
+            if (rhs.IsRegister)
+            {
+                lhs.Register.Value >>= Register.FindRegister(rhs.Register.Name).Value;
+            }
+            else
+            {
+                lhs.Register.Value >>= rhs.Value;
+            }
+            result = lhs.Register.Value;
+            Register.FindRegister(lhs.Register.Name).setRegisterValue(result, EnumOperandType.VALUE);
+            return result;
+        }
+        #endregion Logical
+
+        #region Arithmetic
         /// <summary>
         /// This fuction is called whenever a ADD instruction is executed
         /// </summary>
@@ -651,6 +863,7 @@ namespace CPU_OS_Simulator.CPU
             else
             {
                 MessageBox.Show("First operand of ADD instruction must be a register", "", MessageBoxButton.OK, MessageBoxImage.Information);
+                return int.MinValue;
             }
             if (rhs.IsRegister)
             {
@@ -664,8 +877,191 @@ namespace CPU_OS_Simulator.CPU
             Register.FindRegister(lhs.Register.Name).setRegisterValue(result, EnumOperandType.VALUE);
             return result;
         }
+        /// <summary>
+        /// This fuction is called whenever a SUB instruction is executed
+        /// </summary>
+        /// <param name="lhs"> The left hand operand of the instruction </param>
+        /// <param name="rhs"> The right hand operand of the instruction </param>
+        /// <returns> the result of the instruction or int.MINVALUE if no result is returned </returns>
+        private int SUB(Operand lhs, Operand rhs)
+        {
+            if (lhs.IsRegister)
+            {
+                lhs.Register.Value = Register.FindRegister(lhs.Register.Name).Value;
+                result = lhs.Register.Value;
+                //Register.FindRegister(lhs.Register.Name).setRegisterValue(result, EnumOperandType.VALUE);
+            }
+            else
+            {
+                MessageBox.Show("First operand of SUB instruction must be a register", "", MessageBoxButton.OK, MessageBoxImage.Information);
+                return int.MinValue;
+            }
+            if (rhs.IsRegister)
+            {
+                lhs.Register.Value -= Register.FindRegister(rhs.Register.Name).Value;
+            }
+            else
+            {
+                lhs.Register.Value -= rhs.Value;
+            }
+            result = lhs.Register.Value;
+            Register.FindRegister(lhs.Register.Name).setRegisterValue(result, EnumOperandType.VALUE);
+            return result;
+        }
+        /// <summary>
+        /// This fuction is called whenever a SUBU instruction is executed
+        /// </summary>
+        /// <param name="lhs"> The left hand operand of the instruction </param>
+        /// <param name="rhs"> The right hand operand of the instruction </param>
+        /// <returns> the result of the instruction or int.MINVALUE if no result is returned </returns>
+        private int SUBU(Operand lhs, Operand rhs)
+        {
+            if (lhs.IsRegister)
+            {
+                lhs.Register.Value = Math.Abs(Register.FindRegister(lhs.Register.Name).Value);
+                result = lhs.Register.Value;
+                //Register.FindRegister(lhs.Register.Name).setRegisterValue(result, EnumOperandType.VALUE);
+            }
+            else
+            {
+                MessageBox.Show("First operand of SUBU instruction must be a register", "", MessageBoxButton.OK, MessageBoxImage.Information);
+                return int.MinValue;
+            }
+            if (rhs.IsRegister)
+            {
+                lhs.Register.Value = Math.Abs(lhs.Register.Value - Register.FindRegister(rhs.Register.Name).Value);
+            }
+            else
+            {
+                lhs.Register.Value = Math.Abs(lhs.Register.Value - rhs.Value);
+            }
+            result = lhs.Register.Value;
+            Register.FindRegister(lhs.Register.Name).setRegisterValue(result, EnumOperandType.VALUE);
+            return result;
+        }
+        /// <summary>
+        /// This fuction is called whenever a MUL instruction is executed
+        /// </summary>
+        /// <param name="lhs"> The left hand operand of the instruction </param>
+        /// <param name="rhs"> The right hand operand of the instruction </param>
+        /// <returns> the result of the instruction or int.MINVALUE if no result is returned </returns>
+        private int MUL(Operand lhs, Operand rhs)
+        {
+            if (lhs.IsRegister)
+            {
+                lhs.Register.Value = Register.FindRegister(lhs.Register.Name).Value;
+                result = lhs.Register.Value;
+                //Register.FindRegister(lhs.Register.Name).setRegisterValue(result, EnumOperandType.VALUE);
+            }
+            else
+            {
+                MessageBox.Show("First operand of MUL instruction must be a register", "", MessageBoxButton.OK, MessageBoxImage.Information);
+                return int.MinValue;
+            }
+            if (rhs.IsRegister)
+            {
+                lhs.Register.Value *= Register.FindRegister(rhs.Register.Name).Value;
+            }
+            else
+            {
+                lhs.Register.Value *= rhs.Value;
+            }
+            result = lhs.Register.Value;
+            Register.FindRegister(lhs.Register.Name).setRegisterValue(result, EnumOperandType.VALUE);
+            return result;
+        }
 
-        #endregion Data Transfer
+        /// <summary>
+        /// This fuction is called whenever a DIV instruction is executed
+        /// </summary>
+        /// <param name="lhs"> The left hand operand of the instruction </param>
+        /// <param name="rhs"> The right hand operand of the instruction </param>
+        /// <returns> the result of the instruction or int.MINVALUE if no result is returned </returns>
+        private int DIV(Operand lhs, Operand rhs)
+        {
+            if (lhs.IsRegister)
+            {
+                lhs.Register.Value = Register.FindRegister(lhs.Register.Name).Value;
+                result = lhs.Register.Value;
+                //Register.FindRegister(lhs.Register.Name).setRegisterValue(result, EnumOperandType.VALUE);
+            }
+            else
+            {
+                MessageBox.Show("First operand of DIV instruction must be a register", "", MessageBoxButton.OK, MessageBoxImage.Information);
+                return int.MinValue;
+            }
+            if (rhs.IsRegister)
+            {
+                if (Register.FindRegister(rhs.Register.Name).Value == 0)
+                {
+                    MessageBox.Show("Cannot Divide by ZERO", "", MessageBoxButton.OK, MessageBoxImage.Information);
+                    lhs.Register.Value = 0;
+                    result = int.MinValue;
+                    return result;
+                }
+                lhs.Register.Value /= Register.FindRegister(rhs.Register.Name).Value;
+            }
+            else
+            {
+                if(rhs.Value == 0)
+                {
+                    MessageBox.Show("Cannot Divide by ZERO", "", MessageBoxButton.OK, MessageBoxImage.Information);
+                    lhs.Register.Value = 0;
+                    result = int.MinValue;
+                    return result;
+                }
+                lhs.Register.Value /= rhs.Value;
+            }
+            result = lhs.Register.Value;
+            Register.FindRegister(lhs.Register.Name).setRegisterValue(result, EnumOperandType.VALUE);
+            return result;
+        }
+        /// <summary>
+        /// This fuction is called whenever a INC instruction is executed
+        /// </summary>
+        /// <param name="lhs"> The left hand operand of the instruction </param>
+        /// <param name="rhs"> The right hand operand of the instruction </param>
+        /// <returns> the result of the instruction or int.MINVALUE if no result is returned </returns>
+        private int INC(Operand lhs, Operand rhs)
+        {
+            if (lhs.IsRegister)
+            {
+                lhs.Register.Value = Register.FindRegister(lhs.Register.Name).Value;
+                lhs.Register.Value++;
+                result = lhs.Register.Value;
+                Register.FindRegister(lhs.Register.Name).setRegisterValue(result, EnumOperandType.VALUE);
+                return result;
+            }
+            else
+            {
+                MessageBox.Show("Operand of INC instruction must be a register", "", MessageBoxButton.OK, MessageBoxImage.Information);
+                return int.MinValue;
+            }
+        }
+
+        /// <summary>
+        /// This fuction is called whenever a DEC instruction is executed
+        /// </summary>
+        /// <param name="lhs"> The left hand operand of the instruction </param>
+        /// <param name="rhs"> The right hand operand of the instruction </param>
+        /// <returns> the result of the instruction or int.MINVALUE if no result is returned </returns>
+        private int DEC(Operand lhs, Operand rhs)
+        {
+            if (lhs.IsRegister)
+            {
+                lhs.Register.Value = Register.FindRegister(lhs.Register.Name).Value;
+                lhs.Register.Value--;
+                result = lhs.Register.Value;
+                Register.FindRegister(lhs.Register.Name).setRegisterValue(result, EnumOperandType.VALUE);
+                return result;
+            }
+            else
+            {
+                MessageBox.Show("Operand of DEC instruction must be a register", "", MessageBoxButton.OK, MessageBoxImage.Information);
+                return int.MinValue;
+            }
+        }
+        #endregion Arithmetic
 
         #endregion Instruction Execution Functions
 
