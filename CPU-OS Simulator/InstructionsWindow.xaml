@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:CPU_OS_Simulator"
         xmlns:System="clr-namespace:System;assembly=mscorlib" x:Name="InstructionsWindow1" x:Class="CPU_OS_Simulator.InstructionsWindow"
         mc:Ignorable="d"
-        Title="InstructionsWindow" Height="500" Width="600" Icon="CPU-OS Simulator 7-5-50_1.ico" ResizeMode="NoResize" Loaded="Window_Loaded" Closing="InstructionsWindow1_Closing">
+        Title="InstructionsWindow" Height="500" Width="600" Icon="CPU-OS Simulator 7-5-50_1.ico" ResizeMode="NoResize" Loaded="Window_Loaded" Closing="InstructionsWindow1_Closing" WindowStartupLocation="CenterScreen">
     <Grid>
         <Grid x:Name="grid_Main" HorizontalAlignment="Left" Height="466" VerticalAlignment="Top" Width="598" Margin="0,5,-4,0">
             <TabControl x:Name="InstructionTabs" HorizontalAlignment="Left" Height="446" Margin="10,10,0,0" VerticalAlignment="Top" Width="578">

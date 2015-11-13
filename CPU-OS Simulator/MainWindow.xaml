@@ -6,9 +6,13 @@
         xmlns:local="clr-namespace:CPU_OS_Simulator"
         xmlns:System="clr-namespace:System;assembly=mscorlib" x:Name="MainWindow2" x:Class="CPU_OS_Simulator.MainWindow"
         mc:Ignorable="d"
-        Title="CPU-OS Simulator" Height="768" Width="1280" Icon="CPU-OS Simulator 7-5-50_1.ico" ResizeMode="NoResize" Closing="MainWindow2_Closing" Loaded="MainWindow2_Loaded">
+        Title="CPU-OS Simulator" Height="768" Width="1280" Icon="CPU-OS Simulator 7-5-50_1.ico" ResizeMode="NoResize" Closing="MainWindow2_Closing" Loaded="MainWindow2_Loaded" WindowStartupLocation="CenterScreen">
     <Grid x:Name="MainWindowGrid" Cursor="Arrow">
-        <Grid x:Name="InstructionsGrid" HorizontalAlignment="Left" Height="479" Margin="10,10,0,0" VerticalAlignment="Top" Width="436">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="443*"/>
+            <ColumnDefinition Width="831*"/>
+        </Grid.ColumnDefinitions>
+        <Grid x:Name="InstructionsGrid" HorizontalAlignment="Left" Height="479" Margin="10,10,0,0" VerticalAlignment="Top" Width="436" Grid.ColumnSpan="2">
             <GroupBox x:Name="grp_InstructionsBox" Header="CPU INSTRUCTIONS IM MEMORY (RAM)" HorizontalAlignment="Left" VerticalAlignment="Top" Height="479" Width="436">
                 <Grid x:Name="InstructionsInnerGrid" HorizontalAlignment="Left" Height="469" VerticalAlignment="Top" Width="426" Margin="0,0,-2,-12">
                     <ListView x:Name="lst_InstructionsList" HorizontalAlignment="Left" Height="459" VerticalAlignment="Top" Width="426" Background="#FF8BF4FF" SelectionChanged="lst_InstructionsList_SelectionChanged">
@@ -27,7 +31,7 @@
                 </Grid>
             </GroupBox>
         </Grid>
-        <Grid x:Name="OperationsGrid" HorizontalAlignment="Left" Height="223" Margin="10,504,0,0" VerticalAlignment="Top" Width="436">
+        <Grid x:Name="OperationsGrid" HorizontalAlignment="Left" Height="223" Margin="10,504,0,0" VerticalAlignment="Top" Width="436" Grid.ColumnSpan="2">
             <TabControl x:Name="ProgramTab" HorizontalAlignment="Left" Height="223" VerticalAlignment="Top" Width="436">
                 <TabItem Header="Program">
                     <Grid Background="White">
@@ -90,7 +94,7 @@
                 </TabItem>
             </TabControl>
         </Grid>
-        <Grid x:Name="ProgramListGrid" HorizontalAlignment="Left" Height="289" Margin="474,232,0,0" VerticalAlignment="Top" Width="249">
+        <Grid x:Name="ProgramListGrid" HorizontalAlignment="Left" Height="289" Margin="31,232,0,0" VerticalAlignment="Top" Width="249" Grid.Column="1">
             <GroupBox x:Name="grp_ProgramList" Header="PROGRAM LIST" HorizontalAlignment="Left" VerticalAlignment="Top" Height="282" Width="249" Margin="0,0,0,-66">
                 <Grid x:Name="ProgramListViewGrid" HorizontalAlignment="Left" Height="272" VerticalAlignment="Top" Width="239" Margin="0,0,-2,-12">
                     <ListView x:Name="lst_ProgramList" HorizontalAlignment="Left" Height="140" VerticalAlignment="Top" Width="239" Background="#FFFFFBAC" SelectionChanged="lst_ProgramList_SelectionChanged">
@@ -106,7 +110,7 @@
                 </Grid>
             </GroupBox>
         </Grid>
-        <Grid x:Name="RegisterGrid" HorizontalAlignment="Left" Height="479" Margin="971,10,0,0" VerticalAlignment="Top" Width="293">
+        <Grid x:Name="RegisterGrid" HorizontalAlignment="Left" Height="479" Margin="528,10,0,0" VerticalAlignment="Top" Width="293" Grid.Column="1">
             <GroupBox x:Name="grp_Registers" Header="GENERAL PURPOSE CPU REGISTERS" HorizontalAlignment="Left" VerticalAlignment="Top" Height="479" Width="283" Margin="10,0,0,0">
                 <Grid x:Name="RegisterInnerGrid" HorizontalAlignment="Left" Height="469" VerticalAlignment="Top" Width="273" Margin="0,0,-2,-12">
                     <ListView x:Name="lst_Registers" HorizontalAlignment="Left" Height="459" VerticalAlignment="Top" Width="273" Background="#FFDCD9D9">
@@ -120,7 +124,7 @@
                 </Grid>
             </GroupBox>
         </Grid>
-        <Grid x:Name="SpecialRegistersGrid" HorizontalAlignment="Left" Height="205" Margin="738,10,0,0" VerticalAlignment="Top" Width="233">
+        <Grid x:Name="SpecialRegistersGrid" HorizontalAlignment="Left" Height="205" Margin="295,10,0,0" VerticalAlignment="Top" Width="233" Grid.Column="1">
             <GroupBox x:Name="grp_SpecialRegisters" Header="SPECIAL CPU REGISTERS" HorizontalAlignment="Left" VerticalAlignment="Top" Height="205" Width="233">
                 <Grid x:Name="SpecialRegistersInnerGrid" HorizontalAlignment="Left" Height="195" VerticalAlignment="Top" Width="223" Margin="0,0,-2,-12">
                     <Label x:Name="label3" Content="PC" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" />
@@ -154,7 +158,7 @@
                 </Grid>
             </GroupBox>
         </Grid>
-        <Grid x:Name="ProgramStackGrid" HorizontalAlignment="Left" Height="291" Margin="738,230,0,0" VerticalAlignment="Top" Width="233">
+        <Grid x:Name="ProgramStackGrid" HorizontalAlignment="Left" Height="291" Margin="295,230,0,0" VerticalAlignment="Top" Width="233" Grid.Column="1">
             <GroupBox x:Name="grp_ProgramStack" Header="PROGRAM STACK (RAM)" HorizontalAlignment="Left" VerticalAlignment="Top" Height="291" Width="233">
                 <Grid x:Name="ProgramStackInnerGrid" HorizontalAlignment="Left" Height="291" VerticalAlignment="Top" Width="223" Margin="0,0,-2,-3">
                     <ListView x:Name="lst_Stack" HorizontalAlignment="Left" Height="266" VerticalAlignment="Top" Width="223" Background="#FFFFFCC1" Margin="0,0,0,-35">
@@ -170,7 +174,7 @@
                 </Grid>
             </GroupBox>
         </Grid>
-        <Grid x:Name="ControlUnitGrid" HorizontalAlignment="Left" Height="201" Margin="474,526,0,0" VerticalAlignment="Top" Width="249">
+        <Grid x:Name="ControlUnitGrid" HorizontalAlignment="Left" Height="201" Margin="31,526,0,0" VerticalAlignment="Top" Width="249" Grid.Column="1">
             <TabControl x:Name="ControlTabs" HorizontalAlignment="Left" Height="201" VerticalAlignment="Top" Width="249">
                 <TabItem Header="Control Unit">
                     <Grid x:Name="ControlUnitInnerGrid" Background="White" Margin="0,0,0,0">
