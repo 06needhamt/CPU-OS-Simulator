@@ -120,10 +120,31 @@ namespace CPU_OS_Simulator
             lst_Registers.Items.Clear();
             PopulateRegisters();
         }
+        /// <summary>
+        /// This function updates the values in the UI for the special registers
+        /// </summary>
+        private void UpdateSpecialRegisters()
+        {
+            txt_BR.Text = SpecialRegister.FindSpecialRegister("BR").Value.ToString();
+            txt_IR.Text = SpecialRegister.FindSpecialRegister("IR").ValueString.ToString();
+            txt_MAR.Text = SpecialRegister.FindSpecialRegister("MAR").Value.ToString();
+            txt_MDR.Text = SpecialRegister.FindSpecialRegister("MDR").Value.ToString();
+            txt_PC.Text = SpecialRegister.FindSpecialRegister("PC").Value.ToString();
+            txt_SP.Text = SpecialRegister.FindSpecialRegister("SP").Value.ToString();
+            txt_SR.Text = SpecialRegister.FindSpecialRegister("SR").Value.ToString();
+        }
 
         private void MainWindow2_Loaded(object sender, RoutedEventArgs e)
         {
             this.Title += " " + GetProgramVersion();
+            SpecialRegister.FindSpecialRegister("BR").setRegisterValue(Convert.ToInt32(txt_BR.Text), EnumOperandType.VALUE);
+            SpecialRegister.FindSpecialRegister("IR").setRegisterValue(txt_IR.Text, EnumOperandType.VALUE);
+            SpecialRegister.FindSpecialRegister("MAR").setRegisterValue(Convert.ToInt32(txt_MAR.Text), EnumOperandType.VALUE);
+            SpecialRegister.FindSpecialRegister("MDR").setRegisterValue(txt_MDR.Text, EnumOperandType.VALUE);
+            SpecialRegister.FindSpecialRegister("PC").setRegisterValue(Convert.ToInt32(txt_PC.Text), EnumOperandType.VALUE);
+            SpecialRegister.FindSpecialRegister("SP").setRegisterValue(Convert.ToInt32(txt_SP.Text), EnumOperandType.VALUE);
+            SpecialRegister.FindSpecialRegister("SR").setRegisterValue(Convert.ToInt32(txt_SR.Text), EnumOperandType.VALUE);
+
 #if DEBUG
             this.Title += " DEBUG BUILD ";
             MemoryPage m = new MemoryPage(0, 0, 255);
@@ -392,6 +413,13 @@ namespace CPU_OS_Simulator
 
         private void lst_InstructionsList_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
+            if(activeUnit != null)
+            {
+                activeUnit.CurrentIndex = lst_InstructionsList.SelectedIndex;
+                activeUnit.Stop = false;
+                activeUnit.Done = false;
+            }
+            
         }
 
         private void lst_ProgramList_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -605,9 +633,13 @@ namespace CPU_OS_Simulator
                 activeUnit = new ExecutionUnit(prog, (int)sld_ClockSpeed.Value, lst_InstructionsList.SelectedIndex);
             }
             activeUnit.ExecuteInstruction();
+            lst_InstructionsList.SelectedIndex++;
+            SpecialRegister.FindSpecialRegister("PC").setRegisterValue(prog.Instructions.ElementAt(lst_InstructionsList.SelectedIndex).Address, EnumOperandType.VALUE);
+            SpecialRegister.FindSpecialRegister("IR").setRegisterValue(prog.Instructions.ElementAt(lst_InstructionsList.SelectedIndex).InstructionString, EnumOperandType.VALUE);
             UpdateRegisters();
             UpdateStack();
-            lst_InstructionsList.SelectedIndex++;
+            UpdateSpecialRegisters();
+
         }
 
         private void btn_Run_Click(object sender, RoutedEventArgs e)
@@ -622,9 +654,13 @@ namespace CPU_OS_Simulator
             while (!activeUnit.Done)
             {
                 activeUnit.ExecuteInstruction();
+                lst_InstructionsList.SelectedIndex++;
+                SpecialRegister.FindSpecialRegister("PC").setRegisterValue(prog.Instructions.ElementAt(lst_InstructionsList.SelectedIndex).Address, EnumOperandType.VALUE);
+                SpecialRegister.FindSpecialRegister("IR").setRegisterValue(prog.Instructions.ElementAt(lst_InstructionsList.SelectedIndex).InstructionString, EnumOperandType.VALUE);
                 UpdateRegisters();
                 UpdateStack();
-                lst_InstructionsList.SelectedIndex++;
+                UpdateSpecialRegisters();
+
             }
             s.Stop();
             MessageBox.Show("Program Completed in: " + CalculateTime(s.ElapsedMilliseconds) + " Seconds", "", MessageBoxButton.OK, MessageBoxImage.Information);

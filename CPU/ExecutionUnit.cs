@@ -144,6 +144,19 @@ namespace CPU_OS_Simulator.CPU
             }
         }
 
+        public int CurrentIndex
+        {
+            get
+            {
+                return currentIndex;
+            }
+
+            set
+            {
+                currentIndex = value;
+            }
+        }
+
         #endregion Properties
     }
 }
