@@ -25,6 +25,8 @@ namespace CPU_OS_Simulator.CPU
         /// </summary>
         private int currentIndex;
 
+        private int logicalAddress;
+
         /// <summary>
         /// Whether the unit has recieved a stop signal from the main window
         /// </summary>
@@ -80,6 +82,7 @@ namespace CPU_OS_Simulator.CPU
         public void ExecuteInstruction()
         {
             Console.WriteLine("Executing instruction");
+            logicalAddress = currentIndex * 4;
             program.Instructions.ElementAt(currentIndex).Execute();
             currentIndex++;
             if (currentIndex == program.Instructions.Count)
@@ -154,6 +157,19 @@ namespace CPU_OS_Simulator.CPU
             set
             {
                 currentIndex = value;
+            }
+        }
+
+        public int LogicalAddress
+        {
+            get
+            {
+                return logicalAddress;
+            }
+
+            set
+            {
+                logicalAddress = value;
             }
         }
 

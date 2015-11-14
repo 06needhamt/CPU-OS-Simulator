@@ -70,6 +70,19 @@ namespace CPU_OS_Simulator
             }
         }
 
+        public ExecutionUnit ActiveUnit1
+        {
+            get
+            {
+                return activeUnit;
+            }
+
+            set
+            {
+                activeUnit = value;
+            }
+        }
+
         #endregion Properties
 
         #region Constructors
@@ -633,12 +646,13 @@ namespace CPU_OS_Simulator
                 activeUnit = new ExecutionUnit(prog, (int)sld_ClockSpeed.Value, lst_InstructionsList.SelectedIndex);
             }
             activeUnit.ExecuteInstruction();
-            lst_InstructionsList.SelectedIndex++;
+            lst_InstructionsList.SelectedIndex = activeUnit.CurrentIndex;
             SpecialRegister.FindSpecialRegister("PC").setRegisterValue(prog.Instructions.ElementAt(lst_InstructionsList.SelectedIndex).Address, EnumOperandType.VALUE);
             SpecialRegister.FindSpecialRegister("IR").setRegisterValue(prog.Instructions.ElementAt(lst_InstructionsList.SelectedIndex).InstructionString, EnumOperandType.VALUE);
             UpdateRegisters();
             UpdateStack();
             UpdateSpecialRegisters();
+
 
         }
 
@@ -654,7 +668,7 @@ namespace CPU_OS_Simulator
             while (!activeUnit.Done)
             {
                 activeUnit.ExecuteInstruction();
-                lst_InstructionsList.SelectedIndex++;
+                lst_InstructionsList.SelectedIndex = activeUnit.CurrentIndex;
                 SpecialRegister.FindSpecialRegister("PC").setRegisterValue(prog.Instructions.ElementAt(lst_InstructionsList.SelectedIndex).Address, EnumOperandType.VALUE);
                 SpecialRegister.FindSpecialRegister("IR").setRegisterValue(prog.Instructions.ElementAt(lst_InstructionsList.SelectedIndex).InstructionString, EnumOperandType.VALUE);
                 UpdateRegisters();
@@ -686,5 +700,58 @@ namespace CPU_OS_Simulator
         }
 
         #endregion Methods
+
+        private void btn_ResetProgram_Click(object sender, RoutedEventArgs e)
+        {
+            if (activeUnit != null)
+            {
+                lst_InstructionsList.SelectedIndex = 0;
+                activeUnit.CurrentIndex = 0;
+                activeUnit.Stop = false;
+                activeUnit.Done = false;
+            }
+        }
+
+        private void chk_OV_Checked(object sender, RoutedEventArgs e)
+        {
+            StatusFlags.OV.IsSet = true;
+            SpecialRegister.FindSpecialRegister("SR").Value += StatusFlags.OV.Value;
+            UpdateSpecialRegisters();
+        }
+
+        private void chk_OV_Unchecked(object sender, RoutedEventArgs e)
+        {
+            StatusFlags.OV.IsSet = false;
+            SpecialRegister.FindSpecialRegister("SR").Value -= StatusFlags.OV.Value;
+            UpdateSpecialRegisters();
+        }
+
+        private void chk_Z_Checked(object sender, RoutedEventArgs e)
+        {
+            StatusFlags.Z.IsSet = true;
+            SpecialRegister.FindSpecialRegister("SR").Value += StatusFlags.Z.Value;
+            UpdateSpecialRegisters();
+        }
+
+        private void chk_Z_Unchecked(object sender, RoutedEventArgs e)
+        {
+            StatusFlags.Z.IsSet = false;
+            SpecialRegister.FindSpecialRegister("SR").Value -= StatusFlags.Z.Value;
+            UpdateSpecialRegisters();
+        }
+
+        private void chk_N_Checked(object sender, RoutedEventArgs e)
+        {
+            StatusFlags.N.IsSet = true;
+            SpecialRegister.FindSpecialRegister("SR").Value += StatusFlags.N.Value;
+            UpdateSpecialRegisters();
+        }
+
+        private void chk_N_Unchecked(object sender, RoutedEventArgs e)
+        {
+            StatusFlags.N.IsSet = true;
+            SpecialRegister.FindSpecialRegister("SR").Value -= StatusFlags.N.Value;
+            UpdateSpecialRegisters();
+        }
     }
 }

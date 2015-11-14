@@ -52,15 +52,17 @@ namespace CPU_OS_Simulator.CPU
         private Int32 size;
 
         /// <summary>
-        /// The result of the instruxtion once executed e.g. the result of ADD 1,1 would be 2
+        /// The result of the instruction once executed e.g. the result of ADD 1,1 would be 2
         /// </summary>
         private Int32 result;
 
         /// <summary>
-        /// The string representation of this istruction e.g. ADD R01,10
+        /// The string representation of this instruction e.g. ADD R01,10
         /// </summary>
         private string instructionString;
 
+        [ScriptIgnore]
+        private ExecutionUnit unit;
         #endregion Global Variables
 
         #region Constructors
@@ -398,6 +400,11 @@ namespace CPU_OS_Simulator.CPU
                 case 28:
                     {
                         this.execute = () => DEC(operand1, operand2); // save the function in memory to call later
+                        break;
+                    }
+                case 29:
+                    {
+                        this.execute = () => JMP(operand1, operand2); // save the function in memory to call later
                         break;
                     }
                 default:
@@ -1063,6 +1070,20 @@ namespace CPU_OS_Simulator.CPU
         }
         #endregion Arithmetic
 
+        #region Control Transfer
+        private int JMP(Operand lhs, Operand rhs)
+        {
+            dynamic window = GetMainWindowInstance();
+            ExecutionUnit unit = window.ActiveUnit;
+            unit.LogicalAddress = lhs.Value;
+            unit.CurrentIndex = lhs.Value / 4;
+            result = lhs.Value;
+            unit.Done = false;
+            unit.Stop = false;
+            //window.lst_InstructionsList.SelectedIndex = 0;
+            return result;
+        }
+        #endregion Control Transfer
         #endregion Instruction Execution Functions
 
         #region Window Accessor Methods

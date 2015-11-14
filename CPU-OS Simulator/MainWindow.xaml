@@ -137,9 +137,9 @@
                     <TextBox x:Name="txt_BR" HorizontalAlignment="Left" Height="23" Margin="141,39,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="59" Background="#FFFFFBAC" />
                     <GroupBox x:Name="grp_StatusFlags" Header="SR Status Flags" HorizontalAlignment="Left" Margin="10,65,0,0" VerticalAlignment="Top" Height="54" Width="126">
                         <Grid x:Name="StatusFlagsGrid" HorizontalAlignment="Left" Height="42" Margin="0,-10,-2,-12" VerticalAlignment="Top" Width="116">
-                            <CheckBox x:Name="chk_OV" Content="OV" HorizontalAlignment="Left" Margin="5,19,0,0" VerticalAlignment="Top" />
-                            <CheckBox x:Name="chk_Z" Content="Z" HorizontalAlignment="Left" Margin="46,19,0,0" VerticalAlignment="Top" />
-                            <CheckBox x:Name="chk_N" Content="N" HorizontalAlignment="Left" Margin="80,19,0,0" VerticalAlignment="Top" />
+                            <CheckBox x:Name="chk_OV" Content="OV" HorizontalAlignment="Left" Margin="5,19,0,0" VerticalAlignment="Top" Checked="chk_OV_Checked" Unchecked="chk_OV_Unchecked" />
+                            <CheckBox x:Name="chk_Z" Content="Z" HorizontalAlignment="Left" Margin="46,19,0,0" VerticalAlignment="Top" Unchecked="chk_Z_Unchecked" Checked="chk_Z_Checked" />
+                            <CheckBox x:Name="chk_N" Content="N" HorizontalAlignment="Left" Margin="80,19,0,0" VerticalAlignment="Top" Checked="chk_N_Checked" Unchecked="chk_N_Unchecked" />
                         </Grid>
                     </GroupBox>
                     <GroupBox x:Name="grp_CPUMode" Header="CPU Mode" HorizontalAlignment="Left" Margin="142,65,0,0" VerticalAlignment="Top" Height="54" Width="75">
@@ -186,7 +186,7 @@
                         <Slider x:Name="sld_ClockSpeed" HorizontalAlignment="Left" Margin="90,78,0,0" VerticalAlignment="Top" Height="85" Width="71" Orientation="Vertical" Maximum="1000" Minimum="10" SmallChange="10" TickFrequency="100" LargeChange="100" TickPlacement="BottomRight" ValueChanged="sld_ClockSpeed_ValueChanged" IsDirectionReversed="True" Value="1000" />
                         <Label x:Name="label7" Content="Slow" HorizontalAlignment="Left" Margin="123,141,0,0" VerticalAlignment="Top" />
                         <Label x:Name="label8" Content="Fast" HorizontalAlignment="Left" Margin="123,77,0,0" VerticalAlignment="Top" />
-                        <Button x:Name="btn_ResetProgram"  HorizontalAlignment="Left" Margin="163,75,0,0" VerticalAlignment="Top" Width="75" Height="40">
+                        <Button x:Name="btn_ResetProgram"  HorizontalAlignment="Left" Margin="163,75,0,0" VerticalAlignment="Top" Width="75" Height="40" Click="btn_ResetProgram_Click">
                             <TextBlock Text="RESET PROGRAM" TextWrapping="Wrap" HorizontalAlignment="Center" VerticalAlignment="Center" />
                         </Button>
                         <Button x:Name="btn_ShowPCB" Content="SHOW PCB" HorizontalAlignment="Left" Margin="162,120,0,0" VerticalAlignment="Top" Width="75" Height="40" />
