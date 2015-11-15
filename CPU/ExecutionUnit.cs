@@ -84,10 +84,7 @@ namespace CPU_OS_Simulator.CPU
             Console.WriteLine("Executing instruction");
             logicalAddress = currentIndex * 4;
             program.Instructions.ElementAt(currentIndex).Execute();
-            if (program.Instructions.ElementAt(currentIndex).Opcode == (int) EnumOpcodes.JMP)
-            {
-                currentIndex++;
-            }
+            currentIndex++;
             if (currentIndex == program.Instructions.Count)
             {
                 Done = true;
