@@ -1076,7 +1076,7 @@ namespace CPU_OS_Simulator.CPU
             dynamic window = GetMainWindowInstance();
             ExecutionUnit unit = window.ActiveUnit;
             unit.LogicalAddress = lhs.Value;
-            unit.CurrentIndex = lhs.Value / 4;
+            unit.CurrentIndex = (lhs.Value / 4);
             result = lhs.Value;
             unit.Done = false;
             unit.Stop = false;
