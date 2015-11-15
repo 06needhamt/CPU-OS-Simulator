@@ -1084,6 +1084,150 @@ namespace CPU_OS_Simulator.CPU
             //window.lst_InstructionsList.SelectedIndex = 0;
             return result;
         }
+
+        private int JEQ(Operand lhs, Operand rhs)
+        {
+            if (lhs.Value == rhs.Value)
+            {
+                dynamic window = GetMainWindowInstance();
+                ExecutionUnit unit = window.ActiveUnit;
+                SimulatorProgram prog = GetCurrentProgram();
+                unit.LogicalAddress = lhs.Value;
+                unit.CurrentIndex = (lhs.Value - prog.BaseAddress / 4);
+                result = lhs.Value;
+                unit.Done = false;
+                unit.Stop = false;
+                //window.lst_InstructionsList.SelectedIndex = 0;
+                return result;
+            }
+            return 0;
+        }
+
+        private int JNE(Operand lhs, Operand rhs)
+        {
+            if (lhs.Value != rhs.Value)
+            {
+                dynamic window = GetMainWindowInstance();
+                ExecutionUnit unit = window.ActiveUnit;
+                SimulatorProgram prog = GetCurrentProgram();
+                unit.LogicalAddress = lhs.Value;
+                unit.CurrentIndex = (lhs.Value - prog.BaseAddress / 4);
+                result = lhs.Value;
+                unit.Done = false;
+                unit.Stop = false;
+                //window.lst_InstructionsList.SelectedIndex = 0;
+                return result;
+            }
+            return 0;
+        }
+
+        private int JGT(Operand lhs, Operand rhs)
+        {
+            if (lhs.Value > rhs.Value)
+            {
+                dynamic window = GetMainWindowInstance();
+                ExecutionUnit unit = window.ActiveUnit;
+                SimulatorProgram prog = GetCurrentProgram();
+                unit.LogicalAddress = lhs.Value;
+                unit.CurrentIndex = (lhs.Value - prog.BaseAddress / 4);
+                result = lhs.Value;
+                unit.Done = false;
+                unit.Stop = false;
+                //window.lst_InstructionsList.SelectedIndex = 0;
+                return result;
+            }
+            return 0;
+        }
+
+        private int JGE(Operand lhs, Operand rhs)
+        {
+            if (lhs.Value >= rhs.Value)
+            {
+                dynamic window = GetMainWindowInstance();
+                ExecutionUnit unit = window.ActiveUnit;
+                SimulatorProgram prog = GetCurrentProgram();
+                unit.LogicalAddress = lhs.Value;
+                unit.CurrentIndex = (lhs.Value - prog.BaseAddress / 4);
+                result = lhs.Value;
+                unit.Done = false;
+                unit.Stop = false;
+                //window.lst_InstructionsList.SelectedIndex = 0;
+                return result;
+            }
+            return 0;
+        }
+
+        private int JLT(Operand lhs, Operand rhs)
+        {
+            if (lhs.Value < rhs.Value)
+            {
+                dynamic window = GetMainWindowInstance();
+                ExecutionUnit unit = window.ActiveUnit;
+                SimulatorProgram prog = GetCurrentProgram();
+                unit.LogicalAddress = lhs.Value;
+                unit.CurrentIndex = (lhs.Value - prog.BaseAddress / 4);
+                result = lhs.Value;
+                unit.Done = false;
+                unit.Stop = false;
+                //window.lst_InstructionsList.SelectedIndex = 0;
+                return result;
+            }
+            return 0;
+        }
+
+        private int JLE(Operand lhs, Operand rhs)
+        {
+            if (lhs.Value <= rhs.Value)
+            {
+                dynamic window = GetMainWindowInstance();
+                ExecutionUnit unit = window.ActiveUnit;
+                SimulatorProgram prog = GetCurrentProgram();
+                unit.LogicalAddress = lhs.Value;
+                unit.CurrentIndex = (lhs.Value - prog.BaseAddress / 4);
+                result = lhs.Value;
+                unit.Done = false;
+                unit.Stop = false;
+                //window.lst_InstructionsList.SelectedIndex = 0;
+                return result;
+            }
+            return 0;
+        }
+
+        private int JNZ(Operand lhs, Operand rhs)
+        {
+            if (lhs.Value != 0)
+            {
+                dynamic window = GetMainWindowInstance();
+                ExecutionUnit unit = window.ActiveUnit;
+                SimulatorProgram prog = GetCurrentProgram();
+                unit.LogicalAddress = lhs.Value;
+                unit.CurrentIndex = (lhs.Value - prog.BaseAddress / 4);
+                result = lhs.Value;
+                unit.Done = false;
+                unit.Stop = false;
+                //window.lst_InstructionsList.SelectedIndex = 0;
+                return result;
+            }
+            return 0;
+        }
+
+        private int JZR(Operand lhs, Operand rhs)
+        {
+            if (lhs.Value == 0)
+            {
+                dynamic window = GetMainWindowInstance();
+                ExecutionUnit unit = window.ActiveUnit;
+                SimulatorProgram prog = GetCurrentProgram();
+                unit.LogicalAddress = lhs.Value;
+                unit.CurrentIndex = (lhs.Value - prog.BaseAddress / 4);
+                result = lhs.Value;
+                unit.Done = false;
+                unit.Stop = false;
+                //window.lst_InstructionsList.SelectedIndex = 0;
+                return result;
+            }
+            return 0;
+        }
         #endregion Control Transfer
         #endregion Instruction Execution Functions
 

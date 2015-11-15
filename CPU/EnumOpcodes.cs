@@ -161,53 +161,57 @@ namespace CPU_OS_Simulator.CPU
         [NumberOfOperands(1)]
         JLT = 34,
 
+        [Description("Control Transfer: JLE Jumps if less than or equal")]
+        [NumberOfOperands(1)]
+        JLE = 35,
+
         [Description("Control Transfer: JNZ Jumps if not zero")]
         [NumberOfOperands(1)]
-        JNZ = 35,
+        JNZ = 36,
 
         [Description("Control Transfer: JZR Jumps if Z status flag is set")]
         [NumberOfOperands(1)]
-        JZR = 36,
+        JZR = 37,
 
         [Description("Control Transfer: CALL Calls subroutine")]
         [NumberOfOperands(1)]
-        CALL = 37,
+        CALL = 38,
 
         [Description("Control Transfer: LOOP Loops if register value is greater than 0")]
         [NumberOfOperands(1)]
-        LOOP = 38,
+        LOOP = 39,
 
         [Description("Control Transfer: JSEL Not currently used")]
         [NumberOfOperands(0)]
-        JSEL = 39,
+        JSEL = 40,
 
         [Description("Control Transfer: TABE Not currently used")]
         [NumberOfOperands(0)]
-        TABE = 40,
+        TABE = 41,
 
         [Description("Control Transfer: TABI Not currently used")]
         [NumberOfOperands(0)]
-        TABI = 41,
+        TABI = 42,
 
         [Description("Control Transfer: MSF Mark stack frame")]
         [NumberOfOperands(0)]
-        MSF = 42,
+        MSF = 43,
 
         [Description("Control Transfer: RET Returns from subroutine")]
         [NumberOfOperands(0)]
-        RET = 43,
+        RET = 44,
 
         [Description("Control Transfer: IRET Returns from interrupt routine")]
         [NumberOfOperands(0)]
-        IRET = 44,
+        IRET = 45,
 
         [Description("Control Transfer: SWI Software interrupt - used in OS system calls")]
         [NumberOfOperands(1)]
-        SWI = 45,
+        SWI = 46,
 
         [Description("Control Transfer: HLT Halts the simulator")]
         [NumberOfOperands(0)]
-        HLT = 46,
+        HLT = 47,
 
         #endregion Control Transfer
 
@@ -215,11 +219,11 @@ namespace CPU_OS_Simulator.CPU
 
         [Description("Comparison: CMP Compares two numeric values")]
         [NumberOfOperands(2)]
-        CMP = 47,
+        CMP = 48,
 
         [Description("Comparison: CPS Compares two string values")]
         [NumberOfOperands(2)]
-        CPS = 48,
+        CPS = 49,
 
         #endregion Comparison
 
@@ -227,11 +231,11 @@ namespace CPU_OS_Simulator.CPU
 
         [Description("I/O: IN Gets input into register or memory")]
         [NumberOfOperands(1)]
-        IN = 49,
+        IN = 50,
 
         [Description("I/O: OUT Puts output from register or memory")]
         [NumberOfOperands(1)]
-        OUT = 50,
+        OUT = 51,
 
         #endregion I/O
 
@@ -239,7 +243,7 @@ namespace CPU_OS_Simulator.CPU
 
         [Description("Miscellaneous: NOP No operation (or null operation)")]
         [NumberOfOperands(0)]
-        NOP = 51
+        NOP = 52
 
         #endregion Miscellaneous
     }
