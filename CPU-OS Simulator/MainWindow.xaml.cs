@@ -7,6 +7,7 @@ using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Reflection;
+using System.Runtime.InteropServices;
 using System.Web.Script.Serialization;
 using System.Windows;
 using System.Windows.Controls;
@@ -93,6 +94,8 @@ namespace CPU_OS_Simulator
         public MainWindow()
         {
             InitializeComponent();
+            string path = (new System.Uri(Assembly.GetExecutingAssembly().CodeBase)).AbsolutePath;
+            SetAssociation(".sas", "Simulator Program File", path, "CPU-OS Simulator Program File");
             programList = new List<SimulatorProgram>();
             PopulateRegisters();
             Console.WriteLine("Hello World");
@@ -102,6 +105,37 @@ namespace CPU_OS_Simulator
         #endregion Constructors
 
         #region Methods
+
+        [DllImport("shell32.dll", CharSet = CharSet.Auto, SetLastError = true)]
+        public static extern void SHChangeNotify(uint wEventId, uint uFlags, IntPtr dwItem1, IntPtr dwItem2);
+
+        public static void SetAssociation(string Extension, string KeyName, string OpenWith, string FileDescription)
+        {
+            RegistryKey BaseKey;
+            RegistryKey OpenMethod;
+            RegistryKey Shell;
+            RegistryKey CurrentUser;
+
+            BaseKey = Registry.ClassesRoot.CreateSubKey(Extension);
+            BaseKey.SetValue("", KeyName);
+
+            OpenMethod = Registry.ClassesRoot.CreateSubKey(KeyName);
+            OpenMethod.SetValue("", FileDescription);
+            OpenMethod.CreateSubKey("DefaultIcon").SetValue("", "\"" + OpenWith + "\",0");
+            Shell = OpenMethod.CreateSubKey("Shell");
+            Shell.CreateSubKey("edit").CreateSubKey("command").SetValue("", "\"" + OpenWith + "\"" + " \"%1\"");
+            Shell.CreateSubKey("open").CreateSubKey("command").SetValue("", "\"" + OpenWith + "\"" + " \"%1\"");
+            BaseKey.Close();
+            OpenMethod.Close();
+            Shell.Close();
+
+            CurrentUser = Registry.CurrentUser.OpenSubKey("Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\FileExts\\.sas", true);
+            CurrentUser.DeleteSubKey("UserChoice", false);
+            CurrentUser.Close();
+
+            // Tell explorer the file association has been changed
+            SHChangeNotify(0x08000000, 0x0000, IntPtr.Zero, IntPtr.Zero);
+        }
 
         /// <summary>
         /// This function populates the register display in the main window
