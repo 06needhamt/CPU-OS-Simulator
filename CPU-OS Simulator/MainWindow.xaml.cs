@@ -8,6 +8,7 @@ using System.IO;
 using System.Linq;
 using System.Reflection;
 using System.Runtime.InteropServices;
+using System.Security.Principal;
 using System.Web.Script.Serialization;
 using System.Windows;
 using System.Windows.Controls;
@@ -94,8 +95,11 @@ namespace CPU_OS_Simulator
         public MainWindow()
         {
             InitializeComponent();
-            string path = (new System.Uri(Assembly.GetExecutingAssembly().CodeBase)).AbsolutePath;
-            SetAssociation(".sas", "Simulator Program File", path, "CPU-OS Simulator Program File");
+            if (IsAdministrator())
+            {
+                string path = (new System.Uri(Assembly.GetExecutingAssembly().CodeBase)).AbsolutePath;
+                SetAssociation(".sas", "Simulator Program File", path, "CPU-OS Simulator Program File");
+            }
             programList = new List<SimulatorProgram>();
             PopulateRegisters();
             Console.WriteLine("Hello World");
@@ -105,6 +109,13 @@ namespace CPU_OS_Simulator
         #endregion Constructors
 
         #region Methods
+
+        public static bool IsAdministrator()
+        {
+            var identity = WindowsIdentity.GetCurrent();
+            var principal = new WindowsPrincipal(identity);
+            return principal.IsInRole(WindowsBuiltInRole.Administrator);
+        }
 
         [DllImport("shell32.dll", CharSet = CharSet.Auto, SetLastError = true)]
         public static extern void SHChangeNotify(uint wEventId, uint uFlags, IntPtr dwItem1, IntPtr dwItem2);

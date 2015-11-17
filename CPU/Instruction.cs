@@ -407,6 +407,10 @@ namespace CPU_OS_Simulator.CPU
                         this.execute = () => JMP(operand1, operand2); // save the function in memory to call later
                         break;
                     }
+                case 48:
+                    {
+                        break;
+                    }
                 default:
                     {
                         break;
@@ -1087,7 +1091,7 @@ namespace CPU_OS_Simulator.CPU
 
         private int JEQ(Operand lhs, Operand rhs)
         {
-            if (lhs.Value == rhs.Value)
+            if (StatusFlags.Z.IsSet)
             {
                 dynamic window = GetMainWindowInstance();
                 ExecutionUnit unit = window.ActiveUnit;
@@ -1105,7 +1109,7 @@ namespace CPU_OS_Simulator.CPU
 
         private int JNE(Operand lhs, Operand rhs)
         {
-            if (lhs.Value != rhs.Value)
+            if (!StatusFlags.Z.IsSet)
             {
                 dynamic window = GetMainWindowInstance();
                 ExecutionUnit unit = window.ActiveUnit;
@@ -1123,7 +1127,7 @@ namespace CPU_OS_Simulator.CPU
 
         private int JGT(Operand lhs, Operand rhs)
         {
-            if (lhs.Value > rhs.Value)
+            if (!StatusFlags.Z.IsSet && StatusFlags.N.IsSet)
             {
                 dynamic window = GetMainWindowInstance();
                 ExecutionUnit unit = window.ActiveUnit;
@@ -1141,7 +1145,7 @@ namespace CPU_OS_Simulator.CPU
 
         private int JGE(Operand lhs, Operand rhs)
         {
-            if (lhs.Value >= rhs.Value)
+            if (StatusFlags.Z.IsSet || StatusFlags.N.IsSet)
             {
                 dynamic window = GetMainWindowInstance();
                 ExecutionUnit unit = window.ActiveUnit;
@@ -1159,7 +1163,7 @@ namespace CPU_OS_Simulator.CPU
 
         private int JLT(Operand lhs, Operand rhs)
         {
-            if (lhs.Value < rhs.Value)
+            if (!StatusFlags.Z.IsSet && !StatusFlags.N.IsSet)
             {
                 dynamic window = GetMainWindowInstance();
                 ExecutionUnit unit = window.ActiveUnit;
@@ -1177,7 +1181,7 @@ namespace CPU_OS_Simulator.CPU
 
         private int JLE(Operand lhs, Operand rhs)
         {
-            if (lhs.Value <= rhs.Value)
+            if (StatusFlags.Z.IsSet || !StatusFlags.N.IsSet)
             {
                 dynamic window = GetMainWindowInstance();
                 ExecutionUnit unit = window.ActiveUnit;
@@ -1195,7 +1199,7 @@ namespace CPU_OS_Simulator.CPU
 
         private int JNZ(Operand lhs, Operand rhs)
         {
-            if (lhs.Value != 0)
+            if (!StatusFlags.Z.IsSet)
             {
                 dynamic window = GetMainWindowInstance();
                 ExecutionUnit unit = window.ActiveUnit;
@@ -1213,7 +1217,7 @@ namespace CPU_OS_Simulator.CPU
 
         private int JZR(Operand lhs, Operand rhs)
         {
-            if (lhs.Value == 0)
+            if (StatusFlags.Z.IsSet)
             {
                 dynamic window = GetMainWindowInstance();
                 ExecutionUnit unit = window.ActiveUnit;
@@ -1229,6 +1233,26 @@ namespace CPU_OS_Simulator.CPU
             return 0;
         }
         #endregion Control Transfer
+
+        #region Comparison
+
+        private int CMP(Operand lhs, Operand rhs)
+        {
+            StatusFlags.OV.IsSet = false;
+            StatusFlags.N.IsSet = false;
+            StatusFlags.Z.IsSet = false;
+
+            if((lhs.Value - rhs.Value) == 0)
+            {
+                StatusFlags.Z.IsSet = true;
+            }
+            else if((lhs.Value - rhs.Value) < 0)
+            {
+                StatusFlags.N.IsSet = true;
+            }
+            return 0;
+        }
+        #endregion Comparison
         #endregion Instruction Execution Functions
 
         #region Window Accessor Methods

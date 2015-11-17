@@ -30,6 +30,8 @@ namespace CPU_OS_Simulator
         /// </summary>
         private EnumInstructionMode instructionMode;
 
+        Func<int>[] InstructionCreationFunctions = new Func<int>[7];
+
         /// <summary>
         /// Default Constructor for Instruction Window
         /// </summary>
@@ -135,6 +137,13 @@ namespace CPU_OS_Simulator
         /// <param name="e"> the eventargs associated with this event</param>
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
+            InstructionCreationFunctions[0] = () => CreateDataTransferInstruction();
+            InstructionCreationFunctions[1] = () => CreateLogicalInstruction();
+            InstructionCreationFunctions[2] = () => CreateArithmeticInstruction();
+            InstructionCreationFunctions[3] = () => CreateControlTransferInstruction();
+            InstructionCreationFunctions[4] = () => CreateComparisonInstruction();
+            InstructionCreationFunctions[5] = () => CreateIOInstruction();
+            InstructionCreationFunctions[6] = () => CreateMiscellaneousInstruction();
             InstructionTabs.SelectedItem = DataTransferTab;
             PopulateInstructions();
         }
@@ -336,237 +345,414 @@ namespace CPU_OS_Simulator
             }
         }
 
-        /// <summary>
-        /// Creates an instruction based on selected options
-        /// </summary>
-        private void CreateInstruction()
+        private int CreateDataTransferInstruction()
         {
             TabItem SelectedTab = (TabItem)InstructionTabs.SelectedItem;
             EnumOpcodes opcode;
             Operand op1;
             Operand op2;
             int index = owner.lst_InstructionsList.SelectedIndex;
+
             SimulatorProgram prog = (SimulatorProgram)owner.lst_ProgramList.SelectedItem;
-            switch (SelectedTab.Header.ToString())
+            opcode = (EnumOpcodes)Enum.Parse(typeof(EnumOpcodes), lst_OpcodeListDataTransfer.SelectedItem.ToString());
+
+            if (rdb_SourceValueDataTransfer.IsChecked.Value)
             {
-                case "Data Transfer":
-                    {
-                        opcode = (EnumOpcodes)Enum.Parse(typeof(EnumOpcodes), lst_OpcodeListDataTransfer.SelectedItem.ToString());
-
-                        if (rdb_SourceValueDataTransfer.IsChecked.Value)
-                        {
-                            op1 = new Operand(Convert.ToInt32(txtSourceValueDataTransfer.Text), EnumOperandType.VALUE);
-                        }
-                        else if (rdb_SourceRegisterDataTransfer.IsChecked.Value)
-                        {
-                            string selectedRegister = (string)cmb_SourceRegisterDataTransfer.SelectedItem;
-                            Register reg = Register.FindRegister(selectedRegister);
-                            op1 = new Operand(reg, reg.Type);
-                        }
-                        else
-                        {
-                            op1 = null;
-                        }
-                        if (rdb_DestinationValueDataTransfer.IsChecked.Value)
-                        {
-                            op2 = new Operand(Convert.ToInt32(txtDestinationValueDataTransfer.Text), EnumOperandType.VALUE);
-                        }
-                        else if (rdb_DestinationRegisterDataTransfer.IsChecked.Value)
-                        {
-                            string selectedRegister = (string)cmb_DestinationRegisterDataTransfer.SelectedItem;
-                            Register reg = Register.FindRegister(selectedRegister);
-                            op2 = new Operand(reg, reg.Type);
-                        }
-                        else
-                        {
-                            op2 = null;
-                        }
-                        Instruction i = owner.CreateInstruction(opcode, op1, op2, 4);
-                        owner.AddInstruction(i, index);
-                        break;
-                    }
-                case "Logical":
-                    {
-                        opcode = (EnumOpcodes)Enum.Parse(typeof(EnumOpcodes), lst_OpcodeListLogical.SelectedItem.ToString());
-                        if (rdb_SourceValueLogical.IsChecked.Value)
-                        {
-                            op1 = new Operand(Convert.ToInt32(txtSourceValueLogical.Text), EnumOperandType.VALUE);
-                        }
-                        else if (rdb_SourceRegisterLogical.IsChecked.Value)
-                        {
-                            string selectedRegister = (string)cmb_SourceRegisterLogical.SelectedItem;
-                            Register reg = Register.FindRegister(selectedRegister);
-                            op1 = new Operand(reg, reg.Type);
-                        }
-                        else
-                        {
-                            op1 = null;
-                        }
-                        if (rdb_DestinationValueLogical.IsChecked.Value)
-                        {
-                            op2 = new Operand(Convert.ToInt32(txtDestinationValueLogical.Text), EnumOperandType.VALUE);
-                        }
-                        else if (rdb_DestinationRegisterLogical.IsChecked.Value)
-                        {
-                            string selectedRegister = (string)cmb_DestinationRegisterLogical.SelectedItem;
-                            Register reg = Register.FindRegister(selectedRegister);
-                            op2 = new Operand(reg, reg.Type);
-                        }
-                        else
-                        {
-                            op2 = null;
-                        }
-                        Instruction i = owner.CreateInstruction(opcode, op1, op2, 4);
-                        owner.AddInstruction(i, index);
-                        break;
-                    }
-                case "Arithmetic":
-                    {
-                        opcode = (EnumOpcodes)Enum.Parse(typeof(EnumOpcodes), lst_OpcodeListArithmetic.SelectedItem.ToString());
-                        if (rdb_SourceValueArithmetic.IsChecked.Value)
-                        {
-                            op1 = new Operand(Convert.ToInt32(txtSourceValueArithmetic.Text), EnumOperandType.VALUE);
-                        }
-                        else if (rdb_SourceRegisterArithmetic.IsChecked.Value)
-                        {
-                            string selectedRegister = (string)cmb_SourceRegisterArithmetic.SelectedItem;
-                            Register reg = Register.FindRegister(selectedRegister);
-                            op1 = new Operand(reg, reg.Type);
-                        }
-                        else
-                        {
-                            op1 = null;
-                        }
-                        if (rdb_DestinationValueArithmetic.IsChecked.Value)
-                        {
-                            op2 = new Operand(Convert.ToInt32(txtDestinationValueArithmetic.Text), EnumOperandType.VALUE);
-                        }
-                        else if (rdb_DestinationRegisterArithmetic.IsChecked.Value)
-                        {
-                            string selectedRegister = (string)cmb_DestinationRegisterArithmetic.SelectedItem;
-                            Register reg = Register.FindRegister(selectedRegister);
-                            op2 = new Operand(reg, reg.Type);
-                        }
-                        else
-                        {
-                            op2 = null;
-                        }
-                        Instruction i = owner.CreateInstruction(opcode, op1, op2, 4);
-                        owner.AddInstruction(i, index);
-                        break;
-                    }
-                case "Control Transfer":
-                    {
-                        opcode = (EnumOpcodes)Enum.Parse(typeof(EnumOpcodes), lst_OpcodeListControlTransfer.SelectedItem.ToString());
-                        if (rdb_SourceValueControlTransfer.IsChecked.Value)
-                        {
-                            op1 = new Operand(Convert.ToInt32(txtSourceValueControlTransfer.Text), EnumOperandType.VALUE);
-                        }
-                        else if (rdb_SourceRegisterControlTransfer.IsChecked.Value)
-                        {
-                            string selectedRegister = (string)cmb_SourceRegisterControlTransfer.SelectedItem;
-                            Register reg = Register.FindRegister(selectedRegister);
-                            op1 = new Operand(reg, reg.Type);
-                        }
-                        else
-                        {
-                            op1 = null;
-                        }
-
-                        if (rdb_DestinationValueControlTransfer.IsChecked.Value)
-                        {
-                            op2 = new Operand(Convert.ToInt32(txtDestinationValueControlTransfer.Text), EnumOperandType.VALUE);
-                        }
-                        else if (rdb_DestinationRegisterControlTransfer.IsChecked.Value)
-                        {
-                            string selectedRegister = (string)cmb_DestinationRegisterControlTransfer.SelectedItem;
-                            Register reg = Register.FindRegister(selectedRegister);
-                            op2 = new Operand(reg, reg.Type);
-                        }
-                        else
-                        {
-                            op2 = null;
-                        }
-                        Instruction i = owner.CreateInstruction(opcode, op1, op2, 4);
-                        owner.AddInstruction(i, index);
-                        break;
-                    }
-
-                case "I/O":
-                    {
-                        opcode = (EnumOpcodes)Enum.Parse(typeof(EnumOpcodes), lst_OpcodeListIO.SelectedItem.ToString());
-                        if (rdb_SourceValueIO.IsChecked.Value)
-                        {
-                            op1 = new Operand(Convert.ToInt32(txtSourceValueIO.Text), EnumOperandType.VALUE);
-                        }
-                        else if (rdb_SourceRegisterIO.IsChecked.Value)
-                        {
-                            string selectedRegister = (string)cmb_SourceRegisterIO.SelectedItem;
-                            Register reg = Register.FindRegister(selectedRegister);
-                            op1 = new Operand(reg, reg.Type);
-                        }
-                        else
-                        {
-                            op1 = null;
-                        }
-                        if (rdb_DestinationValueIO.IsChecked.Value)
-                        {
-                            op2 = new Operand(Convert.ToInt32(txtDestinationValueIO.Text), EnumOperandType.VALUE);
-                        }
-                        else if (rdb_DestinationRegisterIO.IsChecked.Value)
-                        {
-                            string selectedRegister = (string)cmb_DestinationRegisterIO.SelectedItem;
-                            Register reg = Register.FindRegister(selectedRegister);
-                            op2 = new Operand(reg, reg.Type);
-                        }
-                        else
-                        {
-                            op2 = null;
-                        }
-                        Instruction i = owner.CreateInstruction(opcode, op1, op2, 4);
-                        owner.AddInstruction(i, index);
-                        break;
-                    }
-                case "Miscellaneous":
-                    {
-                        opcode = (EnumOpcodes)Enum.Parse(typeof(EnumOpcodes), lst_OpcodeListMiscellaneous.SelectedItem.ToString());
-                        if (rdb_SourceValueMiscellaneous.IsChecked.Value)
-                        {
-                            op1 = new Operand(Convert.ToInt32(txtSourceValueMiscellaneous.Text), EnumOperandType.VALUE);
-                        }
-                        else if (rdb_SourceRegisterMiscellaneous.IsChecked.Value)
-                        {
-                            string selectedRegister = (string)cmb_SourceRegisterMiscellaneous.SelectedItem;
-                            Register reg = Register.FindRegister(selectedRegister);
-                            op1 = new Operand(reg, reg.Type);
-                        }
-                        else
-                        {
-                            op1 = null;
-                        }
-                        if (rdb_DestinationValueMiscellaneous.IsChecked.Value)
-                        {
-                            op2 = new Operand(Convert.ToInt32(txtDestinationValueMiscellaneous.Text), EnumOperandType.VALUE);
-                        }
-                        else if (rdb_DestinationRegisterMiscellaneous.IsChecked.Value)
-                        {
-                            string selectedRegister = (string)cmb_DestinationRegisterMiscellaneous.SelectedItem;
-                            Register reg = Register.FindRegister(selectedRegister);
-                            op2 = new Operand(reg, reg.Type);
-                        }
-                        else
-                        {
-                            op2 = null;
-                        }
-                        Instruction i = owner.CreateInstruction(opcode, op1, op2, 4);
-                        owner.AddInstruction(i, index);
-                        break;
-                    }
-                default:
-                    {
-                        throw new Exception("Unknown tab selected");
-                    }
+                op1 = new Operand(Convert.ToInt32(txtSourceValueDataTransfer.Text), EnumOperandType.VALUE);
             }
+            else if (rdb_SourceRegisterDataTransfer.IsChecked.Value)
+            {
+                string selectedRegister = (string)cmb_SourceRegisterDataTransfer.SelectedItem;
+                Register reg = Register.FindRegister(selectedRegister);
+                op1 = new Operand(reg, reg.Type);
+            }
+            else
+            {
+                op1 = null;
+            }
+            if (rdb_DestinationValueDataTransfer.IsChecked.Value)
+            {
+                op2 = new Operand(Convert.ToInt32(txtDestinationValueDataTransfer.Text), EnumOperandType.VALUE);
+            }
+            else if (rdb_DestinationRegisterDataTransfer.IsChecked.Value)
+            {
+                string selectedRegister = (string)cmb_DestinationRegisterDataTransfer.SelectedItem;
+                Register reg = Register.FindRegister(selectedRegister);
+                op2 = new Operand(reg, reg.Type);
+            }
+            else
+            {
+                op2 = null;
+            }
+            Instruction i = owner.CreateInstruction(opcode, op1, op2, 4);
+            owner.AddInstruction(i, index);
+            return 0;
+        }
+
+        private int CreateLogicalInstruction()
+        {
+            TabItem SelectedTab = (TabItem)InstructionTabs.SelectedItem;
+            EnumOpcodes opcode;
+            Operand op1;
+            Operand op2;
+            int index = owner.lst_InstructionsList.SelectedIndex;
+
+            opcode = (EnumOpcodes)Enum.Parse(typeof(EnumOpcodes), lst_OpcodeListLogical.SelectedItem.ToString());
+            if (rdb_SourceValueLogical.IsChecked.Value)
+            {
+                op1 = new Operand(Convert.ToInt32(txtSourceValueLogical.Text), EnumOperandType.VALUE);
+            }
+            else if (rdb_SourceRegisterLogical.IsChecked.Value)
+            {
+                string selectedRegister = (string)cmb_SourceRegisterLogical.SelectedItem;
+                Register reg = Register.FindRegister(selectedRegister);
+                op1 = new Operand(reg, reg.Type);
+            }
+            else
+            {
+                op1 = null;
+            }
+            if (rdb_DestinationValueLogical.IsChecked.Value)
+            {
+                op2 = new Operand(Convert.ToInt32(txtDestinationValueLogical.Text), EnumOperandType.VALUE);
+            }
+            else if (rdb_DestinationRegisterLogical.IsChecked.Value)
+            {
+                string selectedRegister = (string)cmb_DestinationRegisterLogical.SelectedItem;
+                Register reg = Register.FindRegister(selectedRegister);
+                op2 = new Operand(reg, reg.Type);
+            }
+            else
+            {
+                op2 = null;
+            }
+            Instruction i = owner.CreateInstruction(opcode, op1, op2, 4);
+            owner.AddInstruction(i, index);
+            return 0;
+        }
+
+        private int CreateArithmeticInstruction()
+        {
+            TabItem SelectedTab = (TabItem)InstructionTabs.SelectedItem;
+            EnumOpcodes opcode;
+            Operand op1;
+            Operand op2;
+            int index = owner.lst_InstructionsList.SelectedIndex;
+
+            opcode = (EnumOpcodes)Enum.Parse(typeof(EnumOpcodes), lst_OpcodeListArithmetic.SelectedItem.ToString());
+            if (rdb_SourceValueArithmetic.IsChecked.Value)
+            {
+                op1 = new Operand(Convert.ToInt32(txtSourceValueArithmetic.Text), EnumOperandType.VALUE);
+            }
+            else if (rdb_SourceRegisterArithmetic.IsChecked.Value)
+            {
+                string selectedRegister = (string)cmb_SourceRegisterArithmetic.SelectedItem;
+                Register reg = Register.FindRegister(selectedRegister);
+                op1 = new Operand(reg, reg.Type);
+            }
+            else
+            {
+                op1 = null;
+            }
+            if (rdb_DestinationValueArithmetic.IsChecked.Value)
+            {
+                op2 = new Operand(Convert.ToInt32(txtDestinationValueArithmetic.Text), EnumOperandType.VALUE);
+            }
+            else if (rdb_DestinationRegisterArithmetic.IsChecked.Value)
+            {
+                string selectedRegister = (string)cmb_DestinationRegisterArithmetic.SelectedItem;
+                Register reg = Register.FindRegister(selectedRegister);
+                op2 = new Operand(reg, reg.Type);
+            }
+            else
+            {
+                op2 = null;
+            }
+            Instruction i = owner.CreateInstruction(opcode, op1, op2, 4);
+            owner.AddInstruction(i, index);
+            return 0;
+        }
+
+        private int CreateControlTransferInstruction()
+        {
+            TabItem SelectedTab = (TabItem)InstructionTabs.SelectedItem;
+            EnumOpcodes opcode;
+            Operand op1;
+            Operand op2;
+            int index = owner.lst_InstructionsList.SelectedIndex;
+
+            opcode = (EnumOpcodes)Enum.Parse(typeof(EnumOpcodes), lst_OpcodeListControlTransfer.SelectedItem.ToString());
+            if (rdb_SourceValueControlTransfer.IsChecked.Value)
+            {
+                op1 = new Operand(Convert.ToInt32(txtSourceValueControlTransfer.Text), EnumOperandType.VALUE);
+            }
+            else if (rdb_SourceRegisterControlTransfer.IsChecked.Value)
+            {
+                string selectedRegister = (string)cmb_SourceRegisterControlTransfer.SelectedItem;
+                Register reg = Register.FindRegister(selectedRegister);
+                op1 = new Operand(reg, reg.Type);
+            }
+            else
+            {
+                op1 = null;
+            }
+
+            if (rdb_DestinationValueControlTransfer.IsChecked.Value)
+            {
+                op2 = new Operand(Convert.ToInt32(txtDestinationValueControlTransfer.Text), EnumOperandType.VALUE);
+            }
+            else if (rdb_DestinationRegisterControlTransfer.IsChecked.Value)
+            {
+                string selectedRegister = (string)cmb_DestinationRegisterControlTransfer.SelectedItem;
+                Register reg = Register.FindRegister(selectedRegister);
+                op2 = new Operand(reg, reg.Type);
+            }
+            else
+            {
+                op2 = null;
+            }
+            Instruction i = owner.CreateInstruction(opcode, op1, op2, 4);
+            owner.AddInstruction(i, index);
+            return 0;
+        }
+
+        private int CreateComparisonInstruction()
+        {
+            TabItem SelectedTab = (TabItem)InstructionTabs.SelectedItem;
+            EnumOpcodes opcode;
+            Operand op1;
+            Operand op2;
+            int index = owner.lst_InstructionsList.SelectedIndex;
+
+            opcode = (EnumOpcodes)Enum.Parse(typeof(EnumOpcodes), lst_OpcodeListComparison.SelectedItem.ToString());
+            if (rdb_SourceValueComparison.IsChecked.Value)
+            {
+                op1 = new Operand(Convert.ToInt32(txtSourceValueComparison.Text), EnumOperandType.VALUE);
+            }
+            else if (rdb_SourceRegisterComparison.IsChecked.Value)
+            {
+                string selectedRegister = (string)cmb_SourceRegisterComparison.SelectedItem;
+                Register reg = Register.FindRegister(selectedRegister);
+                op1 = new Operand(reg, reg.Type);
+            }
+            else
+            {
+                op1 = null;
+            }
+
+            if (rdb_DestinationValueComparison.IsChecked.Value)
+            {
+                op2 = new Operand(Convert.ToInt32(txtDestinationValueComparison.Text), EnumOperandType.VALUE);
+            }
+            else if (rdb_DestinationRegisterComparison.IsChecked.Value)
+            {
+                string selectedRegister = (string)cmb_DestinationRegisterComparison.SelectedItem;
+                Register reg = Register.FindRegister(selectedRegister);
+                op2 = new Operand(reg, reg.Type);
+            }
+            else
+            {
+                op2 = null;
+            }
+            Instruction i = owner.CreateInstruction(opcode, op1, op2, 4);
+            owner.AddInstruction(i, index);
+            return 0;
+        }
+
+        private int CreateIOInstruction()
+        {
+            TabItem SelectedTab = (TabItem)InstructionTabs.SelectedItem;
+            EnumOpcodes opcode;
+            Operand op1;
+            Operand op2;
+            int index = owner.lst_InstructionsList.SelectedIndex;
+
+            opcode = (EnumOpcodes)Enum.Parse(typeof(EnumOpcodes), lst_OpcodeListIO.SelectedItem.ToString());
+            if (rdb_SourceValueIO.IsChecked.Value)
+            {
+                op1 = new Operand(Convert.ToInt32(txtSourceValueIO.Text), EnumOperandType.VALUE);
+            }
+            else if (rdb_SourceRegisterIO.IsChecked.Value)
+            {
+                string selectedRegister = (string)cmb_SourceRegisterIO.SelectedItem;
+                Register reg = Register.FindRegister(selectedRegister);
+                op1 = new Operand(reg, reg.Type);
+            }
+            else
+            {
+                op1 = null;
+            }
+
+            if (rdb_DestinationValueIO.IsChecked.Value)
+            {
+                op2 = new Operand(Convert.ToInt32(txtDestinationValueIO.Text), EnumOperandType.VALUE);
+            }
+            else if (rdb_DestinationRegisterIO.IsChecked.Value)
+            {
+                string selectedRegister = (string)cmb_DestinationRegisterIO.SelectedItem;
+                Register reg = Register.FindRegister(selectedRegister);
+                op2 = new Operand(reg, reg.Type);
+            }
+            else
+            {
+                op2 = null;
+            }
+            Instruction i = owner.CreateInstruction(opcode, op1, op2, 4);
+            owner.AddInstruction(i, index);
+            return 0;
+        }
+
+        private int CreateMiscellaneousInstruction()
+        {
+            TabItem SelectedTab = (TabItem)InstructionTabs.SelectedItem;
+            EnumOpcodes opcode;
+            Operand op1;
+            Operand op2;
+            int index = owner.lst_InstructionsList.SelectedIndex;
+
+            opcode = (EnumOpcodes)Enum.Parse(typeof(EnumOpcodes), lst_OpcodeListMiscellaneous.SelectedItem.ToString());
+            if (rdb_SourceValueMiscellaneous.IsChecked.Value)
+            {
+                op1 = new Operand(Convert.ToInt32(txtSourceValueMiscellaneous.Text), EnumOperandType.VALUE);
+            }
+            else if (rdb_SourceRegisterMiscellaneous.IsChecked.Value)
+            {
+                string selectedRegister = (string)cmb_SourceRegisterMiscellaneous.SelectedItem;
+                Register reg = Register.FindRegister(selectedRegister);
+                op1 = new Operand(reg, reg.Type);
+            }
+            else
+            {
+                op1 = null;
+            }
+
+            if (rdb_DestinationValueMiscellaneous.IsChecked.Value)
+            {
+                op2 = new Operand(Convert.ToInt32(txtDestinationValueMiscellaneous.Text), EnumOperandType.VALUE);
+            }
+            else if (rdb_DestinationRegisterMiscellaneous.IsChecked.Value)
+            {
+                string selectedRegister = (string)cmb_DestinationRegisterMiscellaneous.SelectedItem;
+                Register reg = Register.FindRegister(selectedRegister);
+                op2 = new Operand(reg, reg.Type);
+            }
+            else
+            {
+                op2 = null;
+            }
+            Instruction i = owner.CreateInstruction(opcode, op1, op2, 4);
+            owner.AddInstruction(i, index);
+            return 0;
+        }
+        /// <summary>
+        /// Creates an instruction based on selected options
+        /// </summary>
+        private void CreateInstruction()
+        {
+            int SelectedTab = InstructionTabs.SelectedIndex;
+            InstructionCreationFunctions[SelectedTab]();
+            //TabItem SelectedTab = (TabItem)InstructionTabs.SelectedItem;
+            //EnumOpcodes opcode;
+            //Operand op1;
+            //Operand op2;
+            //int index = owner.lst_InstructionsList.SelectedIndex;
+            //SimulatorProgram prog = (SimulatorProgram)owner.lst_ProgramList.SelectedItem;
+            //switch (SelectedTab.Header.ToString())
+            //{
+            //    case "Data Transfer":
+            //        {
+
+            //        }
+            //    case "Logical":
+            //        {
+
+            //        }
+            //    case "Arithmetic":
+            //        {
+
+            //            break;
+            //        }
+            //    case "Control Transfer":
+            //        {
+
+            //            break;
+            //        }
+
+            //    case "I/O":
+            //        {
+            //            opcode = (EnumOpcodes)Enum.Parse(typeof(EnumOpcodes), lst_OpcodeListIO.SelectedItem.ToString());
+            //            if (rdb_SourceValueIO.IsChecked.Value)
+            //            {
+            //                op1 = new Operand(Convert.ToInt32(txtSourceValueIO.Text), EnumOperandType.VALUE);
+            //            }
+            //            else if (rdb_SourceRegisterIO.IsChecked.Value)
+            //            {
+            //                string selectedRegister = (string)cmb_SourceRegisterIO.SelectedItem;
+            //                Register reg = Register.FindRegister(selectedRegister);
+            //                op1 = new Operand(reg, reg.Type);
+            //            }
+            //            else
+            //            {
+            //                op1 = null;
+            //            }
+            //            if (rdb_DestinationValueIO.IsChecked.Value)
+            //            {
+            //                op2 = new Operand(Convert.ToInt32(txtDestinationValueIO.Text), EnumOperandType.VALUE);
+            //            }
+            //            else if (rdb_DestinationRegisterIO.IsChecked.Value)
+            //            {
+            //                string selectedRegister = (string)cmb_DestinationRegisterIO.SelectedItem;
+            //                Register reg = Register.FindRegister(selectedRegister);
+            //                op2 = new Operand(reg, reg.Type);
+            //            }
+            //            else
+            //            {
+            //                op2 = null;
+            //            }
+            //            Instruction i = owner.CreateInstruction(opcode, op1, op2, 4);
+            //            owner.AddInstruction(i, index);
+            //            break;
+            //        }
+            //    case "Miscellaneous":
+            //        {
+            //            opcode = (EnumOpcodes)Enum.Parse(typeof(EnumOpcodes), lst_OpcodeListMiscellaneous.SelectedItem.ToString());
+            //            if (rdb_SourceValueMiscellaneous.IsChecked.Value)
+            //            {
+            //                op1 = new Operand(Convert.ToInt32(txtSourceValueMiscellaneous.Text), EnumOperandType.VALUE);
+            //            }
+            //            else if (rdb_SourceRegisterMiscellaneous.IsChecked.Value)
+            //            {
+            //                string selectedRegister = (string)cmb_SourceRegisterMiscellaneous.SelectedItem;
+            //                Register reg = Register.FindRegister(selectedRegister);
+            //                op1 = new Operand(reg, reg.Type);
+            //            }
+            //            else
+            //            {
+            //                op1 = null;
+            //            }
+            //            if (rdb_DestinationValueMiscellaneous.IsChecked.Value)
+            //            {
+            //                op2 = new Operand(Convert.ToInt32(txtDestinationValueMiscellaneous.Text), EnumOperandType.VALUE);
+            //            }
+            //            else if (rdb_DestinationRegisterMiscellaneous.IsChecked.Value)
+            //            {
+            //                string selectedRegister = (string)cmb_DestinationRegisterMiscellaneous.SelectedItem;
+            //                Register reg = Register.FindRegister(selectedRegister);
+            //                op2 = new Operand(reg, reg.Type);
+            //            }
+            //            else
+            //            {
+            //                op2 = null;
+            //            }
+            //            Instruction i = owner.CreateInstruction(opcode, op1, op2, 4);
+            //            owner.AddInstruction(i, index);
+            //            break;
+            //        }
+            //    default:
+            //        {
+            //            throw new Exception("Unknown tab selected");
+            //        }
+            //    }
         }
 
         /// <summary>
