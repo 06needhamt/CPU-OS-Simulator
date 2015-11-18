@@ -14,6 +14,7 @@ var searchData=
   ['label8',['label8',['../class_c_p_u___o_s___simulator_1_1_main_window.html#a216fc6a1692d8a8f8b80b08348c1dcd4',1,'CPU_OS_Simulator::MainWindow']]],
   ['lbl_5fbaseaddress',['lbl_BaseAddress',['../class_c_p_u___o_s___simulator_1_1_main_window.html#ae3adff2ef98d792ce094dcc229c293a8',1,'CPU_OS_Simulator::MainWindow']]],
   ['lblprogramlist',['lblProgramList',['../class_c_p_u___o_s___simulator_1_1_main_window.html#a9cbfc378965cf635e61c760e11dd5c8a',1,'CPU_OS_Simulator::MainWindow']]],
+  ['logicaladdress',['logicalAddress',['../class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_execution_unit.html#aa387f2bbbf0de1c75cbd1c79e27a630c',1,'CPU_OS_Simulator::CPU::ExecutionUnit']]],
   ['logicaltab',['LogicalTab',['../class_c_p_u___o_s___simulator_1_1_instructions_window.html#a06c53026f495bcbdad82e84bbcb6611c',1,'CPU_OS_Simulator::InstructionsWindow']]],
   ['lst_5finstructionslist',['lst_InstructionsList',['../class_c_p_u___o_s___simulator_1_1_main_window.html#acdab094f589df9435fa8e3bfe04e61cb',1,'CPU_OS_Simulator::MainWindow']]],
   ['lst_5fopcodelistarithmetic',['lst_OpcodeListArithmetic',['../class_c_p_u___o_s___simulator_1_1_instructions_window.html#a7445b276d3723f67ba564038940d44c5',1,'CPU_OS_Simulator::InstructionsWindow']]],

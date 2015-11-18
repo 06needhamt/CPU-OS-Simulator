@@ -22,6 +22,7 @@ var searchData=
   ['load',['Load',['../class_xaml_static_helper_namespace_1_1___xaml_static_helper.html#adc04a34bff2e0d36643d52e4521bb26f',1,'XamlStaticHelperNamespace::_XamlStaticHelper']]],
   ['loadassemblies',['LoadAssemblies',['../class_xaml_static_helper_namespace_1_1___xaml_static_helper.html#a96ab05879687ec30f1c2c505a94802f8',1,'XamlStaticHelperNamespace::_XamlStaticHelper']]],
   ['loadprogram',['LoadProgram',['../class_c_p_u___o_s___simulator_1_1_main_window.html#ad788d74c9d6582f3302912cbbba410b0',1,'CPU_OS_Simulator::MainWindow']]],
+  ['logicaladdress',['logicalAddress',['../class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_execution_unit.html#aa387f2bbbf0de1c75cbd1c79e27a630c',1,'CPU_OS_Simulator.CPU.ExecutionUnit.logicalAddress()'],['../class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_execution_unit.html#ac939e9a08b30b2cc3a9438d6c1cc5a61',1,'CPU_OS_Simulator.CPU.ExecutionUnit.LogicalAddress()']]],
   ['logicaltab',['LogicalTab',['../class_c_p_u___o_s___simulator_1_1_instructions_window.html#a06c53026f495bcbdad82e84bbcb6611c',1,'CPU_OS_Simulator::InstructionsWindow']]],
   ['loop',['LOOP',['../namespace_c_p_u___o_s___simulator_1_1_c_p_u.html#ac29c87bff87ad404c953b2581024043ea9159b3578e4e1eb31ffdf90acd6f6e40',1,'CPU_OS_Simulator::CPU']]],
   ['lst_5finstructionslist',['lst_InstructionsList',['../class_c_p_u___o_s___simulator_1_1_main_window.html#acdab094f589df9435fa8e3bfe04e61cb',1,'CPU_OS_Simulator::MainWindow']]],

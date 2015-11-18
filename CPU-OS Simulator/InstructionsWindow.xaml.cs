@@ -30,7 +30,11 @@ namespace CPU_OS_Simulator
         /// </summary>
         private EnumInstructionMode instructionMode;
 
-        Func<int>[] InstructionCreationFunctions = new Func<int>[7];
+        /// <summary>
+        /// Array of function pointers to point to the instruction creation functions
+        /// used when creating instructions
+        /// </summary>
+        private Func<int>[] InstructionCreationFunctions = new Func<int>[7];
 
         /// <summary>
         /// Default Constructor for Instruction Window
@@ -70,7 +74,7 @@ namespace CPU_OS_Simulator
                 EnumOpcodes value = (EnumOpcodes)i;
                 string fulldescription = Extentions.DescriptionAttr<EnumOpcodes>(value);
                 string opcode = value.ToString();
-                string[] split = fulldescription.Split(new char[] { ':' }); // split the catagory from the description
+                string[] split = fulldescription.Split(new char[] { ':' }); // split the category from the description
                 string category = split[0];
                 string description = split[1];
                 instructionDescriptions.Add(description); // add the description to the list
@@ -89,7 +93,7 @@ namespace CPU_OS_Simulator
                         }
                     case "Arithmetic":
                         {
-                            lst_OpcodeListArithmetic.Items.Add(opcode); //populate aritmetic instructions
+                            lst_OpcodeListArithmetic.Items.Add(opcode); //populate arithmetic instructions
                             break;
                         }
                     case "Control Transfer":
@@ -344,7 +348,7 @@ namespace CPU_OS_Simulator
                 CreateInstruction();
             }
         }
-
+        #region Instruction Creation Functions
         private int CreateDataTransferInstruction()
         {
             TabItem SelectedTab = (TabItem)InstructionTabs.SelectedItem;
@@ -644,6 +648,7 @@ namespace CPU_OS_Simulator
             owner.AddInstruction(i, index);
             return 0;
         }
+        #endregion Instruction Creation Functions
         /// <summary>
         /// Creates an instruction based on selected options
         /// </summary>

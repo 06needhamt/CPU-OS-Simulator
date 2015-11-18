@@ -4,7 +4,7 @@ using System.Reflection;
 namespace CPU_OS_Simulator.CPU
 {
     /// <summary>
-    /// This class contains extention methods for getting attributes from enum items
+    /// This class contains extension methods for getting attributes from enum items
     /// </summary>
     public static class Extentions
     {

@@ -1,5 +1,6 @@
 var searchData=
 [
+  ['instructioncreationfunctions',['InstructionCreationFunctions',['../class_c_p_u___o_s___simulator_1_1_instructions_window.html#ae303b32cfc2f5e7cc5ab18df94fd574b',1,'CPU_OS_Simulator::InstructionsWindow']]],
   ['instructiondescriptions',['instructionDescriptions',['../class_c_p_u___o_s___simulator_1_1_instructions_window.html#a678ab4df2b78758142472eeed8c5d7ba',1,'CPU_OS_Simulator::InstructionsWindow']]],
   ['instructionlistgrid',['InstructionListGrid',['../class_c_p_u___o_s___simulator_1_1_instructions_window.html#af568f7891b3381f9bec2f0d5b2d0d8c6',1,'CPU_OS_Simulator::InstructionsWindow']]],
   ['instructionlistgrid1',['InstructionListGrid1',['../class_c_p_u___o_s___simulator_1_1_instructions_window.html#a8f09b0005016c225169d7e9dd2724053',1,'CPU_OS_Simulator::InstructionsWindow']]],

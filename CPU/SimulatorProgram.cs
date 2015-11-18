@@ -186,7 +186,7 @@ namespace CPU_OS_Simulator.CPU
             int address = baseAddress;
             for (int i = 0; i < instructions.Count; i++)
             {
-                address += instructions[i].Size; // calculate address of the next intruction
+                address += instructions[i].Size; // calculate address of the next instruction
                 instructions[i].Address = address;
             }
             //address += instruction.Size;
@@ -198,7 +198,7 @@ namespace CPU_OS_Simulator.CPU
             int address = baseAddress;
             for (int i = 0; i < index; i++)
             {
-                address += instructions[i].Size; // calculate address of the next intruction
+                address += instructions[i].Size; // calculate address of the next instruction
             }
             address += instruction.Size;
             return address;

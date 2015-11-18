@@ -21,7 +21,7 @@ namespace CPU_OS_Simulator.CPU
         private Int32 opcode;
 
         /// <summary>
-        /// The catagory in which the instruction will be displayed within the interface
+        /// The category in which the instruction will be displayed within the interface
         /// </summary>
         private string category;
 
@@ -461,7 +461,7 @@ namespace CPU_OS_Simulator.CPU
         #region Data Transfer
 
         /// <summary>
-        /// This fuction is called whenever a MOV instruction is executed
+        /// This function is called whenever a MOV instruction is executed
         /// </summary>
         /// <param name="lhs"> The left hand operand of the instruction </param>
         /// <param name="rhs"> The right hand operand of the instruction </param>
@@ -478,7 +478,7 @@ namespace CPU_OS_Simulator.CPU
         }
 
         /// <summary>
-        /// This fuction is called whenever a MVS instruction is executed
+        /// This function is called whenever a MVS instruction is executed
         /// </summary>
         /// <param name="lhs"> The left hand operand of the instruction </param>
         /// <param name="rhs"> The right hand operand of the instruction </param>
@@ -490,7 +490,7 @@ namespace CPU_OS_Simulator.CPU
         }
 
         /// <summary>
-        /// This fuction is called whenever a CVS instruction is executed
+        /// This function is called whenever a CVS instruction is executed
         /// </summary>
         /// <param name="lhs"> The left hand operand of the instruction </param>
         /// <param name="rhs"> The right hand operand of the instruction </param>
@@ -502,7 +502,7 @@ namespace CPU_OS_Simulator.CPU
         }
 
         /// <summary>
-        /// This fuction is called whenever a CVI instruction is executed
+        /// This function is called whenever a CVI instruction is executed
         /// </summary>
         /// <param name="lhs"> The left hand operand of the instruction </param>
         /// <param name="rhs"> The right hand operand of the instruction </param>
@@ -514,7 +514,7 @@ namespace CPU_OS_Simulator.CPU
         }
 
         /// <summary>
-        /// This fuction is called whenever a LDB instruction is executed
+        /// This function is called whenever a LDB instruction is executed
         /// </summary>
         /// <param name="lhs"> The left hand operand of the instruction </param>
         /// <param name="rhs"> The right hand operand of the instruction </param>
@@ -526,7 +526,7 @@ namespace CPU_OS_Simulator.CPU
         }
 
         /// <summary>
-        /// This fuction is called whenever a LDW instruction is executed
+        /// This function is called whenever a LDW instruction is executed
         /// </summary>
         /// <param name="lhs"> The left hand operand of the instruction </param>
         /// <param name="rhs"> The right hand operand of the instruction </param>
@@ -538,7 +538,7 @@ namespace CPU_OS_Simulator.CPU
         }
 
         /// <summary>
-        /// This fuction is called whenever a LNS instruction is executed
+        /// This function is called whenever a LNS instruction is executed
         /// </summary>
         /// <param name="lhs"> The left hand operand of the instruction </param>
         /// <param name="rhs"> The right hand operand of the instruction </param>
@@ -550,7 +550,7 @@ namespace CPU_OS_Simulator.CPU
         }
 
         /// <summary>
-        /// This fuction is called whenever a LDBI instruction is executed
+        /// This function is called whenever a LDBI instruction is executed
         /// </summary>
         /// <param name="lhs"> The left hand operand of the instruction </param>
         /// <param name="rhs"> The right hand operand of the instruction </param>
@@ -562,7 +562,7 @@ namespace CPU_OS_Simulator.CPU
         }
 
         /// <summary>
-        /// This fuction is called whenever a LDWI instruction is executed
+        /// This function is called whenever a LDWI instruction is executed
         /// </summary>
         /// <param name="lhs"> The left hand operand of the instruction </param>
         /// <param name="rhs"> The right hand operand of the instruction </param>
@@ -574,7 +574,7 @@ namespace CPU_OS_Simulator.CPU
         }
 
         /// <summary>
-        /// This fuction is called whenever a TAS instruction is executed
+        /// This function is called whenever a TAS instruction is executed
         /// </summary>
         /// <param name="lhs"> The left hand operand of the instruction </param>
         /// <param name="rhs"> The right hand operand of the instruction </param>
@@ -587,7 +587,7 @@ namespace CPU_OS_Simulator.CPU
         }
 
         /// <summary>
-        /// This fuction is called whenever a STB instruction is executed
+        /// This function is called whenever a STB instruction is executed
         /// </summary>
         /// <param name="lhs"> The left hand operand of the instruction </param>
         /// <param name="rhs"> The right hand operand of the instruction </param>
@@ -599,7 +599,7 @@ namespace CPU_OS_Simulator.CPU
         }
 
         /// <summary>
-        /// This fuction is called whenever a STW instruction is executed
+        /// This function is called whenever a STW instruction is executed
         /// </summary>
         /// <param name="lhs"> The left hand operand of the instruction </param>
         /// <param name="rhs"> The right hand operand of the instruction </param>
@@ -611,7 +611,7 @@ namespace CPU_OS_Simulator.CPU
         }
 
         /// <summary>
-        /// This fuction is called whenever a STBI instruction is executed
+        /// This function is called whenever a STBI instruction is executed
         /// </summary>
         /// <param name="lhs"> The left hand operand of the instruction </param>
         /// <param name="rhs"> The right hand operand of the instruction </param>
@@ -623,7 +623,7 @@ namespace CPU_OS_Simulator.CPU
         }
 
         /// <summary>
-        /// This fuction is called whenever a STWI instruction is executed
+        /// This function is called whenever a STWI instruction is executed
         /// </summary>
         /// <param name="lhs"> The left hand operand of the instruction </param>
         /// <param name="rhs"> The right hand operand of the instruction </param>
@@ -635,7 +635,7 @@ namespace CPU_OS_Simulator.CPU
         }
 
         /// <summary>
-        /// This fuction is called whenever a PUSH instruction is executed
+        /// This function is called whenever a PUSH instruction is executed
         /// </summary>
         /// <param name="lhs"> The left hand operand of the instruction </param>
         /// <param name="rhs"> The right hand operand of the instruction </param>
@@ -657,7 +657,7 @@ namespace CPU_OS_Simulator.CPU
         }
 
         /// <summary>
-        /// This fuction is called whenever a POP instruction is executed
+        /// This function is called whenever a POP instruction is executed
         /// </summary>
         /// <param name="lhs"> The left hand operand of the instruction </param>
         /// <param name="rhs"> The right hand operand of the instruction </param>
@@ -678,7 +678,7 @@ namespace CPU_OS_Simulator.CPU
         }
 
         /// <summary>
-        /// This fuction is called whenever a SWP instruction is executed
+        /// This function is called whenever a SWP instruction is executed
         /// </summary>
         /// <param name="lhs"> The left hand operand of the instruction </param>
         /// <param name="rhs"> The right hand operand of the instruction </param>
@@ -704,7 +704,7 @@ namespace CPU_OS_Simulator.CPU
         #region Logical
         
         /// <summary>
-        /// This fuction is called whenever a AND instruction is executed
+        /// This function is called whenever a AND instruction is executed
         /// </summary>
         /// <param name="lhs"> The left hand operand of the instruction </param>
         /// <param name="rhs"> The right hand operand of the instruction </param>
@@ -735,7 +735,7 @@ namespace CPU_OS_Simulator.CPU
         }
 
         /// <summary>
-        /// This fuction is called whenever a OR instruction is executed
+        /// This function is called whenever a OR instruction is executed
         /// </summary>
         /// <param name="lhs"> The left hand operand of the instruction </param>
         /// <param name="rhs"> The right hand operand of the instruction </param>
@@ -765,7 +765,7 @@ namespace CPU_OS_Simulator.CPU
             return result;
         }
         /// <summary>
-        /// This fuction is called whenever a NOT instruction is executed
+        /// This function is called whenever a NOT instruction is executed
         /// </summary>
         /// <param name="lhs"> The left hand operand of the instruction </param>
         /// <param name="rhs"> The right hand operand of the instruction </param>
@@ -795,7 +795,7 @@ namespace CPU_OS_Simulator.CPU
             return result;
         }
         /// <summary>
-        /// This fuction is called whenever a SHL instruction is executed
+        /// This function is called whenever a SHL instruction is executed
         /// </summary>
         /// <param name="lhs"> The left hand operand of the instruction </param>
         /// <param name="rhs"> The right hand operand of the instruction </param>
@@ -825,7 +825,7 @@ namespace CPU_OS_Simulator.CPU
             return result;
         }
         /// <summary>
-        /// This fuction is called whenever a SHR instruction is executed
+        /// This function is called whenever a SHR instruction is executed
         /// </summary>
         /// <param name="lhs"> The left hand operand of the instruction </param>
         /// <param name="rhs"> The right hand operand of the instruction </param>
@@ -858,7 +858,7 @@ namespace CPU_OS_Simulator.CPU
 
         #region Arithmetic
         /// <summary>
-        /// This fuction is called whenever a ADD instruction is executed
+        /// This function is called whenever a ADD instruction is executed
         /// </summary>
         /// <param name="lhs"> The left hand operand of the instruction </param>
         /// <param name="rhs"> The right hand operand of the instruction </param>
@@ -889,7 +889,7 @@ namespace CPU_OS_Simulator.CPU
             return result;
         }
         /// <summary>
-        /// This fuction is called whenever a SUB instruction is executed
+        /// This function is called whenever a SUB instruction is executed
         /// </summary>
         /// <param name="lhs"> The left hand operand of the instruction </param>
         /// <param name="rhs"> The right hand operand of the instruction </param>
@@ -920,7 +920,7 @@ namespace CPU_OS_Simulator.CPU
             return result;
         }
         /// <summary>
-        /// This fuction is called whenever a SUBU instruction is executed
+        /// This function is called whenever a SUBU instruction is executed
         /// </summary>
         /// <param name="lhs"> The left hand operand of the instruction </param>
         /// <param name="rhs"> The right hand operand of the instruction </param>
@@ -951,7 +951,7 @@ namespace CPU_OS_Simulator.CPU
             return result;
         }
         /// <summary>
-        /// This fuction is called whenever a MUL instruction is executed
+        /// This function is called whenever a MUL instruction is executed
         /// </summary>
         /// <param name="lhs"> The left hand operand of the instruction </param>
         /// <param name="rhs"> The right hand operand of the instruction </param>
@@ -983,7 +983,7 @@ namespace CPU_OS_Simulator.CPU
         }
 
         /// <summary>
-        /// This fuction is called whenever a DIV instruction is executed
+        /// This function is called whenever a DIV instruction is executed
         /// </summary>
         /// <param name="lhs"> The left hand operand of the instruction </param>
         /// <param name="rhs"> The right hand operand of the instruction </param>
@@ -1028,7 +1028,7 @@ namespace CPU_OS_Simulator.CPU
             return result;
         }
         /// <summary>
-        /// This fuction is called whenever a INC instruction is executed
+        /// This function is called whenever a INC instruction is executed
         /// </summary>
         /// <param name="lhs"> The left hand operand of the instruction </param>
         /// <param name="rhs"> The right hand operand of the instruction </param>
@@ -1051,7 +1051,7 @@ namespace CPU_OS_Simulator.CPU
         }
 
         /// <summary>
-        /// This fuction is called whenever a DEC instruction is executed
+        /// This function is called whenever a DEC instruction is executed
         /// </summary>
         /// <param name="lhs"> The left hand operand of the instruction </param>
         /// <param name="rhs"> The right hand operand of the instruction </param>
@@ -1265,7 +1265,7 @@ namespace CPU_OS_Simulator.CPU
         {
             Assembly windowBridge = Assembly.LoadFrom("CPU_OS_Simulator.WindowBridge.dll"); // Load the window bridge module
             Console.WriteLine(windowBridge.GetExportedTypes()[0]);
-            Type WindowType = windowBridge.GetType(windowBridge.GetExportedTypes()[0].ToString()); // get the name of the type that contains the window inatances
+            Type WindowType = windowBridge.GetType(windowBridge.GetExportedTypes()[0].ToString()); // get the name of the type that contains the window instances
             dynamic window = WindowType.GetField("MainWindowInstance").GetValue(null); // get the value of the static MainWindowInstance field
             return window;
         }

@@ -1,6 +1,9 @@
 var searchData=
 [
-  ['register',['Register',['../class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_operand.html#a8f08360f0e27922fc0377f5d58a9e67f',1,'CPU_OS_Simulator::CPU::Operand']]],
-  ['resourcemanager',['ResourceManager',['../class_c_p_u___o_s___simulator_1_1_properties_1_1_resources.html#a59a57fa23c17b7afe97c18c6cb3c30cc',1,'CPU_OS_Simulator::Properties::Resources']]],
-  ['result',['Result',['../class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_instruction.html#a8e0f7c63850af7cfd8a41c066c01838e',1,'CPU_OS_Simulator::CPU::Instruction']]]
+  ['pageindex',['PageIndex',['../class_c_p_u___o_s___simulator_1_1_memory_1_1_memory_page.html#aec80700d036a447e7e6ec204513e3a59',1,'CPU_OS_Simulator::Memory::MemoryPage']]],
+  ['pages',['Pages',['../class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_simulator_program.html#aa33b4428956a097dd710948ee51bb5f3',1,'CPU_OS_Simulator::CPU::SimulatorProgram']]],
+  ['pagesize',['PageSize',['../class_c_p_u___o_s___simulator_1_1_memory_1_1_memory_page.html#a6fba0e419e59c58fb3c5444a8e437ab3',1,'CPU_OS_Simulator::Memory::MemoryPage']]],
+  ['position',['Position',['../class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_stack_item.html#aa2e46f703d2a81a32d38f12df3718909',1,'CPU_OS_Simulator::CPU::StackItem']]],
+  ['program',['Program',['../class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_execution_unit.html#a5266ac137491de1efa6c4d707fcd162e',1,'CPU_OS_Simulator::CPU::ExecutionUnit']]],
+  ['programlist',['ProgramList',['../class_c_p_u___o_s___simulator_1_1_main_window.html#a632c91cdd16a7498bbb8dfb3e5df252c',1,'CPU_OS_Simulator::MainWindow']]]
 ];

@@ -79,7 +79,7 @@ namespace CPU_OS_Simulator.CPU
 
             if (name.Equals("SP"))
             {
-                this.Value = 8096; // initialise the stack pointer to 8096
+                this.Value = 8096; // initialize the stack pointer to 8096
             }
         }
         /// <summary>
@@ -156,7 +156,7 @@ namespace CPU_OS_Simulator.CPU
         {
             Assembly windowBridge = Assembly.LoadFrom("CPU_OS_Simulator.WindowBridge.dll"); // Load the window bridge module
             Console.WriteLine(windowBridge.GetExportedTypes()[0]);
-            Type WindowType = windowBridge.GetType(windowBridge.GetExportedTypes()[0].ToString()); // get the name of the type that contains the window inatances
+            Type WindowType = windowBridge.GetType(windowBridge.GetExportedTypes()[0].ToString()); // get the name of the type that contains the window instances
             dynamic window = WindowType.GetField("MainWindowInstance").GetValue(null); // get the value of the static MainWindowInstance field
             return window;
         }

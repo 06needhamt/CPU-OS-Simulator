@@ -40,11 +40,10 @@ var hierarchy =
     [ "CPU_OS_Simulator.Memory.MemoryPage", "class_c_p_u___o_s___simulator_1_1_memory_1_1_memory_page.html", null ],
     [ "CPU_OS_Simulator.CPU.Operand", "class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_operand.html", null ],
     [ "CPU_OS_Simulator.CPU.ProgramStack", "class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_program_stack.html", null ],
-    [ "CPU_OS_Simulator.CPU.Register", "class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_register.html", [
-      [ "CPU_OS_Simulator.CPU.SpecialRegister", "class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_special_register.html", null ]
-    ] ],
+    [ "CPU_OS_Simulator.CPU.Register", "class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_register.html", null ],
     [ "CPU_OS_Simulator.Properties.Resources", "class_c_p_u___o_s___simulator_1_1_properties_1_1_resources.html", null ],
     [ "CPU_OS_Simulator.CPU.SimulatorProgram", "class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_simulator_program.html", null ],
+    [ "CPU_OS_Simulator.CPU.SpecialRegister", "class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_special_register.html", null ],
     [ "CPU_OS_Simulator.CPU.StackItem", "class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_stack_item.html", null ],
     [ "CPU_OS_Simulator.CPU.StatusFlags", "class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_status_flags.html", null ],
     [ "Window", null, [

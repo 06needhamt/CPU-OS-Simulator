@@ -1,7 +1,20 @@
 var searchData=
 [
-  ['updateaddresses',['UpdateAddresses',['../class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_simulator_program.html#a4f7e933d4f3ca318d68471d465c6b31c',1,'CPU_OS_Simulator::CPU::SimulatorProgram']]],
-  ['updateintructions',['UpdateIntructions',['../class_c_p_u___o_s___simulator_1_1_main_window.html#a677bf9ebdb9fe30caa0f52f93e5390c9',1,'CPU_OS_Simulator::MainWindow']]],
-  ['updateregisters',['UpdateRegisters',['../class_c_p_u___o_s___simulator_1_1_main_window.html#a4fbca2d50698a847da4ab82c3f380680',1,'CPU_OS_Simulator::MainWindow']]],
-  ['updatestack',['UpdateStack',['../class_c_p_u___o_s___simulator_1_1_main_window.html#abd01bb7788b0c104045bcc93cf03c9d6',1,'CPU_OS_Simulator::MainWindow']]]
+  ['tas',['TAS',['../class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_instruction.html#a78fbef41ec65046f35456e7cb161d037',1,'CPU_OS_Simulator::CPU::Instruction']]],
+  ['toggleflag',['ToggleFlag',['../class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_status_flags.html#a435d878793ab321ac1f2aae372c2e43e',1,'CPU_OS_Simulator::CPU::StatusFlags']]],
+  ['tostring',['ToString',['../class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_instruction.html#a7d3a81ead6e3639f970901d8e898f02c',1,'CPU_OS_Simulator::CPU::Instruction']]],
+  ['txtdestinationvaluearithmetic_5fgotfocus',['txtDestinationValueArithmetic_GotFocus',['../class_c_p_u___o_s___simulator_1_1_instructions_window.html#ae969ae41ccdb44d87f180b18b11b5b29',1,'CPU_OS_Simulator::InstructionsWindow']]],
+  ['txtdestinationvaluecomparison_5fgotfocus',['txtDestinationValueComparison_GotFocus',['../class_c_p_u___o_s___simulator_1_1_instructions_window.html#a2f346b8f78940a1626ab5419af3973ef',1,'CPU_OS_Simulator::InstructionsWindow']]],
+  ['txtdestinationvaluecontroltransfer_5fgotfocus',['txtDestinationValueControlTransfer_GotFocus',['../class_c_p_u___o_s___simulator_1_1_instructions_window.html#ab9695cfa485c6cd4f6d941c93105187b',1,'CPU_OS_Simulator::InstructionsWindow']]],
+  ['txtdestinationvaluedatatransfer_5fgotfocus',['txtDestinationValueDataTransfer_GotFocus',['../class_c_p_u___o_s___simulator_1_1_instructions_window.html#a7d05b02bf62d6b920ebd1c2677e5a0dc',1,'CPU_OS_Simulator::InstructionsWindow']]],
+  ['txtdestinationvalueio_5fgotfocus',['txtDestinationValueIO_GotFocus',['../class_c_p_u___o_s___simulator_1_1_instructions_window.html#a0d69d4710419b9efea12396940b60e89',1,'CPU_OS_Simulator::InstructionsWindow']]],
+  ['txtdestinationvaluelogical_5fgotfocus',['txtDestinationValueLogical_GotFocus',['../class_c_p_u___o_s___simulator_1_1_instructions_window.html#ad56b9592b566db4c4e4756654891a045',1,'CPU_OS_Simulator::InstructionsWindow']]],
+  ['txtdestinationvaluemiscellaneous_5fgotfocus',['txtDestinationValueMiscellaneous_GotFocus',['../class_c_p_u___o_s___simulator_1_1_instructions_window.html#aceca94bcec64cbfd4cfe472e9dd34a58',1,'CPU_OS_Simulator::InstructionsWindow']]],
+  ['txtsourcevaluearithmetic_5fgotfocus',['txtSourceValueArithmetic_GotFocus',['../class_c_p_u___o_s___simulator_1_1_instructions_window.html#a82c5caec3787f079bb214dbd6a2a1505',1,'CPU_OS_Simulator::InstructionsWindow']]],
+  ['txtsourcevaluecomparison_5fgotfocus',['txtSourceValueComparison_GotFocus',['../class_c_p_u___o_s___simulator_1_1_instructions_window.html#a7fc4519d09df6fde91777a5a56101b92',1,'CPU_OS_Simulator::InstructionsWindow']]],
+  ['txtsourcevaluecontroltransfer_5fgotfocus',['txtSourceValueControlTransfer_GotFocus',['../class_c_p_u___o_s___simulator_1_1_instructions_window.html#a0d1f28315429ad5e01867bef7dbf9b6b',1,'CPU_OS_Simulator::InstructionsWindow']]],
+  ['txtsourcevaluedatatransfer_5fgotfocus',['txtSourceValueDataTransfer_GotFocus',['../class_c_p_u___o_s___simulator_1_1_instructions_window.html#ab89dd8e5416a91477aad1faa02bcbacd',1,'CPU_OS_Simulator::InstructionsWindow']]],
+  ['txtsourcevalueio_5fgotfocus',['txtSourceValueIO_GotFocus',['../class_c_p_u___o_s___simulator_1_1_instructions_window.html#a83fbca00e890edc28dd3d58c350360eb',1,'CPU_OS_Simulator::InstructionsWindow']]],
+  ['txtsourcevaluelogical_5fgotfocus',['txtSourceValueLogical_GotFocus',['../class_c_p_u___o_s___simulator_1_1_instructions_window.html#a1126bf0eb7a7e562d7c197a7300842d2',1,'CPU_OS_Simulator::InstructionsWindow']]],
+  ['txtsourcevaluemiscellaneous_5fgotfocus',['txtSourceValueMiscellaneous_GotFocus',['../class_c_p_u___o_s___simulator_1_1_instructions_window.html#ae5a577d3fa0f6abeb8239de87a4c4a48',1,'CPU_OS_Simulator::InstructionsWindow']]]
 ];

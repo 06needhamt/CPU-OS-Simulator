@@ -30,7 +30,7 @@ namespace CPU_OS_Simulator.CPU
         /// <summary>
         /// Constructor for an operand which is an intermediate value
         /// </summary>
-        /// <param name="value"> the value of the opernad </param>
+        /// <param name="value"> the value of the operand </param>
         /// <param name="type"> the type of the operand i.e memory address or intermediate value</param>
         public Operand(Int32 value, EnumOperandType type)
         {

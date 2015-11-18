@@ -5,7 +5,7 @@ using System.Windows;
 namespace CPU_OS_Simulator.CPU
 {
     /// <summary>
-    /// This class represents a Last in first out (LIFO) stack data structuee for use with simulator programs
+    /// This class represents a Last in first out (LIFO) stack data structure for use with simulator programs
     /// </summary>
     public class ProgramStack
     {
@@ -64,7 +64,7 @@ namespace CPU_OS_Simulator.CPU
         /// This method sets an annotation to a stack item
         /// BOS if the item is at the bottom of the stack
         /// TOS if the item is at the top of the stack
-        /// or an emby string if it in the middle of the stack
+        /// or an empty string if it in the middle of the stack
         /// </summary>
         private void SetAnnotations()
         {

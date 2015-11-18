@@ -11,24 +11,24 @@ namespace CPU_OS_Simulator.CPU
         #region Global Variables
 
         /// <summary>
-        /// The current program bieng executed
+        /// The current program being executed
         /// </summary>
         private SimulatorProgram program;
 
         /// <summary>
-        /// The clock speed that the cpu is running at
+        /// The clock speed that the CPU is running at
         /// </summary>
         private int clockSpeed;
 
         /// <summary>
-        /// The index of the instruction currently bieng executed
+        /// The index of the instruction currently being executed
         /// </summary>
         private int currentIndex;
 
         private int logicalAddress;
 
         /// <summary>
-        /// Whether the unit has recieved a stop signal from the main window
+        /// Whether the unit has received a stop signal from the main window
         /// </summary>
         private bool stop;
 

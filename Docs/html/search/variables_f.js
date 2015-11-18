@@ -38,5 +38,5 @@ var searchData=
   ['txtsourcevalueio',['txtSourceValueIO',['../class_c_p_u___o_s___simulator_1_1_instructions_window.html#a14161b7bebd71e7545b59f77f6254a26',1,'CPU_OS_Simulator::InstructionsWindow']]],
   ['txtsourcevaluelogical',['txtSourceValueLogical',['../class_c_p_u___o_s___simulator_1_1_instructions_window.html#afac2309550dd6f1f1589dc7451e8f878',1,'CPU_OS_Simulator::InstructionsWindow']]],
   ['txtsourcevaluemiscellaneous',['txtSourceValueMiscellaneous',['../class_c_p_u___o_s___simulator_1_1_instructions_window.html#a555d604d5869d89442a35900abc35914',1,'CPU_OS_Simulator::InstructionsWindow']]],
-  ['type',['type',['../class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_operand.html#abc8f504a22e9a5c49d91b12f61cc5119',1,'CPU_OS_Simulator.CPU.Operand.type()'],['../class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_register.html#acb2f0f96db7cdee5c175562a5f050d83',1,'CPU_OS_Simulator.CPU.Register.type()']]]
+  ['type',['type',['../class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_operand.html#abc8f504a22e9a5c49d91b12f61cc5119',1,'CPU_OS_Simulator.CPU.Operand.type()'],['../class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_register.html#acb2f0f96db7cdee5c175562a5f050d83',1,'CPU_OS_Simulator.CPU.Register.type()'],['../class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_special_register.html#aae2bca6c1354013cca156bd19c30640d',1,'CPU_OS_Simulator.CPU.SpecialRegister.type()']]]
 ];

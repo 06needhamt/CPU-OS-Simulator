@@ -36,6 +36,7 @@ var _enum_opcodes_8cs =
       [ "JGT", "_enum_opcodes_8cs.html#ac29c87bff87ad404c953b2581024043ea559a65066c0f19772ecf1ce3fa1f91dd", null ],
       [ "JGE", "_enum_opcodes_8cs.html#ac29c87bff87ad404c953b2581024043eaa28dafa80de5e3b89bb0d9a44993c42f", null ],
       [ "JLT", "_enum_opcodes_8cs.html#ac29c87bff87ad404c953b2581024043ea238d5a03c33c874f4ddaabfdc74a4b4e", null ],
+      [ "JLE", "_enum_opcodes_8cs.html#ac29c87bff87ad404c953b2581024043ea7f684bd682a2fa65c32bf83662374807", null ],
       [ "JNZ", "_enum_opcodes_8cs.html#ac29c87bff87ad404c953b2581024043ea97a63ac12c7c5761e30b9ec4ee31e993", null ],
       [ "JZR", "_enum_opcodes_8cs.html#ac29c87bff87ad404c953b2581024043eabab77d6cc9a6dc975d7402c095748ea8", null ],
       [ "CALL", "_enum_opcodes_8cs.html#ac29c87bff87ad404c953b2581024043eaca3547acb9162b49fb4a6594ed9b3030", null ],

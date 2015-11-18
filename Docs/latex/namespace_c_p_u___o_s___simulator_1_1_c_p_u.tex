@@ -8,7 +8,7 @@ class \hyperlink{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_activity1}{Activity
 class \hyperlink{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_execution_unit}{Execution\+Unit}
 \begin{DoxyCompactList}\small\item\em This class represents the part of the \hyperlink{namespace_c_p_u___o_s___simulator_1_1_c_p_u}{C\+P\+U} which executes instructions \end{DoxyCompactList}\item 
 class \hyperlink{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_extentions}{Extentions}
-\begin{DoxyCompactList}\small\item\em This class contains extention methods for getting attributes from enum items \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em This class contains extension methods for getting attributes from enum items \end{DoxyCompactList}\item 
 interface \hyperlink{interface_c_p_u___o_s___simulator_1_1_c_p_u_1_1_i_attribute}{I\+Attribute}
 \begin{DoxyCompactList}\small\item\em This interface defines a basic attribute \end{DoxyCompactList}\item 
 class \hyperlink{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_instruction}{Instruction}
@@ -18,13 +18,13 @@ class \hyperlink{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_number_of_operands_
 class \hyperlink{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_operand}{Operand}
 \begin{DoxyCompactList}\small\item\em This class represents an operand which can be passed to an instruction \end{DoxyCompactList}\item 
 class \hyperlink{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_program_stack}{Program\+Stack}
-\begin{DoxyCompactList}\small\item\em This class represents a Last in first out (L\+I\+F\+O) stack data structuee for use with simulator programs \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em This class represents a Last in first out (L\+I\+F\+O) stack data structure for use with simulator programs \end{DoxyCompactList}\item 
 class \hyperlink{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_register}{Register}
 \item 
 class \hyperlink{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_simulator_program}{Simulator\+Program}
 \begin{DoxyCompactList}\small\item\em This class represents a program that can be run within the simulator \end{DoxyCompactList}\item 
 class \hyperlink{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_special_register}{Special\+Register}
-\item 
+\begin{DoxyCompactList}\small\item\em This class represents a special register i.\+e a non general purpose register \end{DoxyCompactList}\item 
 class \hyperlink{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_stack_item}{Stack\+Item}
 \item 
 class \hyperlink{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_status_flags}{Status\+Flags}
@@ -80,27 +80,29 @@ enum \hyperlink{namespace_c_p_u___o_s___simulator_1_1_c_p_u_ac29c87bff87ad404c95
 \hyperlink{namespace_c_p_u___o_s___simulator_1_1_c_p_u_ac29c87bff87ad404c953b2581024043ea559a65066c0f19772ecf1ce3fa1f91dd}{Enum\+Opcodes.\+J\+G\+T} = 32, 
 \hyperlink{namespace_c_p_u___o_s___simulator_1_1_c_p_u_ac29c87bff87ad404c953b2581024043eaa28dafa80de5e3b89bb0d9a44993c42f}{Enum\+Opcodes.\+J\+G\+E} = 33, 
 \hyperlink{namespace_c_p_u___o_s___simulator_1_1_c_p_u_ac29c87bff87ad404c953b2581024043ea238d5a03c33c874f4ddaabfdc74a4b4e}{Enum\+Opcodes.\+J\+L\+T} = 34, 
-\hyperlink{namespace_c_p_u___o_s___simulator_1_1_c_p_u_ac29c87bff87ad404c953b2581024043ea97a63ac12c7c5761e30b9ec4ee31e993}{Enum\+Opcodes.\+J\+N\+Z} = 35, 
+\hyperlink{namespace_c_p_u___o_s___simulator_1_1_c_p_u_ac29c87bff87ad404c953b2581024043ea7f684bd682a2fa65c32bf83662374807}{Enum\+Opcodes.\+J\+L\+E} = 35, 
 \\*
-\hyperlink{namespace_c_p_u___o_s___simulator_1_1_c_p_u_ac29c87bff87ad404c953b2581024043eabab77d6cc9a6dc975d7402c095748ea8}{Enum\+Opcodes.\+J\+Z\+R} = 36, 
-\hyperlink{namespace_c_p_u___o_s___simulator_1_1_c_p_u_ac29c87bff87ad404c953b2581024043eaca3547acb9162b49fb4a6594ed9b3030}{Enum\+Opcodes.\+C\+A\+L\+L} = 37, 
-\hyperlink{namespace_c_p_u___o_s___simulator_1_1_c_p_u_ac29c87bff87ad404c953b2581024043ea9159b3578e4e1eb31ffdf90acd6f6e40}{Enum\+Opcodes.\+L\+O\+O\+P} = 38, 
-\hyperlink{namespace_c_p_u___o_s___simulator_1_1_c_p_u_ac29c87bff87ad404c953b2581024043eafc0826ecccbac715760b6eb27f60ec38}{Enum\+Opcodes.\+J\+S\+E\+L} = 39, 
+\hyperlink{namespace_c_p_u___o_s___simulator_1_1_c_p_u_ac29c87bff87ad404c953b2581024043ea97a63ac12c7c5761e30b9ec4ee31e993}{Enum\+Opcodes.\+J\+N\+Z} = 36, 
+\hyperlink{namespace_c_p_u___o_s___simulator_1_1_c_p_u_ac29c87bff87ad404c953b2581024043eabab77d6cc9a6dc975d7402c095748ea8}{Enum\+Opcodes.\+J\+Z\+R} = 37, 
+\hyperlink{namespace_c_p_u___o_s___simulator_1_1_c_p_u_ac29c87bff87ad404c953b2581024043eaca3547acb9162b49fb4a6594ed9b3030}{Enum\+Opcodes.\+C\+A\+L\+L} = 38, 
+\hyperlink{namespace_c_p_u___o_s___simulator_1_1_c_p_u_ac29c87bff87ad404c953b2581024043ea9159b3578e4e1eb31ffdf90acd6f6e40}{Enum\+Opcodes.\+L\+O\+O\+P} = 39, 
 \\*
-\hyperlink{namespace_c_p_u___o_s___simulator_1_1_c_p_u_ac29c87bff87ad404c953b2581024043eae907c6c4314f4cf9154544d7bfa12f23}{Enum\+Opcodes.\+T\+A\+B\+E} = 40, 
-\hyperlink{namespace_c_p_u___o_s___simulator_1_1_c_p_u_ac29c87bff87ad404c953b2581024043ea33b019d9c1543d3e98c584238707663c}{Enum\+Opcodes.\+T\+A\+B\+I} = 41, 
-\hyperlink{namespace_c_p_u___o_s___simulator_1_1_c_p_u_ac29c87bff87ad404c953b2581024043ea4ad5a86f50b778a2050c51335e97d234}{Enum\+Opcodes.\+M\+S\+F} = 42, 
-\hyperlink{namespace_c_p_u___o_s___simulator_1_1_c_p_u_ac29c87bff87ad404c953b2581024043eafb902bc4807c307b9309f2b528b96f2b}{Enum\+Opcodes.\+R\+E\+T} = 43, 
+\hyperlink{namespace_c_p_u___o_s___simulator_1_1_c_p_u_ac29c87bff87ad404c953b2581024043eafc0826ecccbac715760b6eb27f60ec38}{Enum\+Opcodes.\+J\+S\+E\+L} = 40, 
+\hyperlink{namespace_c_p_u___o_s___simulator_1_1_c_p_u_ac29c87bff87ad404c953b2581024043eae907c6c4314f4cf9154544d7bfa12f23}{Enum\+Opcodes.\+T\+A\+B\+E} = 41, 
+\hyperlink{namespace_c_p_u___o_s___simulator_1_1_c_p_u_ac29c87bff87ad404c953b2581024043ea33b019d9c1543d3e98c584238707663c}{Enum\+Opcodes.\+T\+A\+B\+I} = 42, 
+\hyperlink{namespace_c_p_u___o_s___simulator_1_1_c_p_u_ac29c87bff87ad404c953b2581024043ea4ad5a86f50b778a2050c51335e97d234}{Enum\+Opcodes.\+M\+S\+F} = 43, 
 \\*
-\hyperlink{namespace_c_p_u___o_s___simulator_1_1_c_p_u_ac29c87bff87ad404c953b2581024043ea21a2b29642a44b6b13f86a5dd2b13f42}{Enum\+Opcodes.\+I\+R\+E\+T} = 44, 
-\hyperlink{namespace_c_p_u___o_s___simulator_1_1_c_p_u_ac29c87bff87ad404c953b2581024043ea9088dd63dc503fab6949a52da00f0190}{Enum\+Opcodes.\+S\+W\+I} = 45, 
-\hyperlink{namespace_c_p_u___o_s___simulator_1_1_c_p_u_ac29c87bff87ad404c953b2581024043ea29fb9b237d6afacd8d086a8739433cd0}{Enum\+Opcodes.\+H\+L\+T} = 46, 
-\hyperlink{namespace_c_p_u___o_s___simulator_1_1_c_p_u_ac29c87bff87ad404c953b2581024043ea5cbc764daeacd3be7f410f42511c1edb}{Enum\+Opcodes.\+C\+M\+P} = 47, 
+\hyperlink{namespace_c_p_u___o_s___simulator_1_1_c_p_u_ac29c87bff87ad404c953b2581024043eafb902bc4807c307b9309f2b528b96f2b}{Enum\+Opcodes.\+R\+E\+T} = 44, 
+\hyperlink{namespace_c_p_u___o_s___simulator_1_1_c_p_u_ac29c87bff87ad404c953b2581024043ea21a2b29642a44b6b13f86a5dd2b13f42}{Enum\+Opcodes.\+I\+R\+E\+T} = 45, 
+\hyperlink{namespace_c_p_u___o_s___simulator_1_1_c_p_u_ac29c87bff87ad404c953b2581024043ea9088dd63dc503fab6949a52da00f0190}{Enum\+Opcodes.\+S\+W\+I} = 46, 
+\hyperlink{namespace_c_p_u___o_s___simulator_1_1_c_p_u_ac29c87bff87ad404c953b2581024043ea29fb9b237d6afacd8d086a8739433cd0}{Enum\+Opcodes.\+H\+L\+T} = 47, 
 \\*
-\hyperlink{namespace_c_p_u___o_s___simulator_1_1_c_p_u_ac29c87bff87ad404c953b2581024043eaad26b36ed4daec9b20ee600e0876f367}{Enum\+Opcodes.\+C\+P\+S} = 48, 
-\hyperlink{namespace_c_p_u___o_s___simulator_1_1_c_p_u_ac29c87bff87ad404c953b2581024043eac86ee0d9d7ed3e7b4fdbf486fa6c0ebb}{Enum\+Opcodes.\+I\+N} = 49, 
-\hyperlink{namespace_c_p_u___o_s___simulator_1_1_c_p_u_ac29c87bff87ad404c953b2581024043eaef373774188a51f80463f37b6bd9e83a}{Enum\+Opcodes.\+O\+U\+T} = 50, 
-\hyperlink{namespace_c_p_u___o_s___simulator_1_1_c_p_u_ac29c87bff87ad404c953b2581024043ea1a004f5abe2b334db21328be1ea6b593}{Enum\+Opcodes.\+N\+O\+P} = 51
+\hyperlink{namespace_c_p_u___o_s___simulator_1_1_c_p_u_ac29c87bff87ad404c953b2581024043ea5cbc764daeacd3be7f410f42511c1edb}{Enum\+Opcodes.\+C\+M\+P} = 48, 
+\hyperlink{namespace_c_p_u___o_s___simulator_1_1_c_p_u_ac29c87bff87ad404c953b2581024043eaad26b36ed4daec9b20ee600e0876f367}{Enum\+Opcodes.\+C\+P\+S} = 49, 
+\hyperlink{namespace_c_p_u___o_s___simulator_1_1_c_p_u_ac29c87bff87ad404c953b2581024043eac86ee0d9d7ed3e7b4fdbf486fa6c0ebb}{Enum\+Opcodes.\+I\+N} = 50, 
+\hyperlink{namespace_c_p_u___o_s___simulator_1_1_c_p_u_ac29c87bff87ad404c953b2581024043eaef373774188a51f80463f37b6bd9e83a}{Enum\+Opcodes.\+O\+U\+T} = 51, 
+\\*
+\hyperlink{namespace_c_p_u___o_s___simulator_1_1_c_p_u_ac29c87bff87ad404c953b2581024043ea1a004f5abe2b334db21328be1ea6b593}{Enum\+Opcodes.\+N\+O\+P} = 52
  \}\begin{DoxyCompactList}\small\item\em This enum holds the opcodes for each instruction type \end{DoxyCompactList}
 \item 
 enum \hyperlink{namespace_c_p_u___o_s___simulator_1_1_c_p_u_ad49cfe442b74115a326c03b7ae848f76}{Enum\+Operand\+Type} \{ \hyperlink{namespace_c_p_u___o_s___simulator_1_1_c_p_u_ad49cfe442b74115a326c03b7ae848f76aecc2e9c313faddb07e7da223c1dc5c3f}{Enum\+Operand\+Type.\+V\+A\+L\+U\+E} = 0, 
@@ -210,6 +212,8 @@ This enum holds the opcodes for each instruction type
 \hypertarget{namespace_c_p_u___o_s___simulator_1_1_c_p_u_ac29c87bff87ad404c953b2581024043eaa28dafa80de5e3b89bb0d9a44993c42f}{}J\+G\+E\label{namespace_c_p_u___o_s___simulator_1_1_c_p_u_ac29c87bff87ad404c953b2581024043eaa28dafa80de5e3b89bb0d9a44993c42f}
 }]\index{J\+L\+T@{J\+L\+T}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U}}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U}!J\+L\+T@{J\+L\+T}}\item[{\em 
 \hypertarget{namespace_c_p_u___o_s___simulator_1_1_c_p_u_ac29c87bff87ad404c953b2581024043ea238d5a03c33c874f4ddaabfdc74a4b4e}{}J\+L\+T\label{namespace_c_p_u___o_s___simulator_1_1_c_p_u_ac29c87bff87ad404c953b2581024043ea238d5a03c33c874f4ddaabfdc74a4b4e}
+}]\index{J\+L\+E@{J\+L\+E}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U}}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U}!J\+L\+E@{J\+L\+E}}\item[{\em 
+\hypertarget{namespace_c_p_u___o_s___simulator_1_1_c_p_u_ac29c87bff87ad404c953b2581024043ea7f684bd682a2fa65c32bf83662374807}{}J\+L\+E\label{namespace_c_p_u___o_s___simulator_1_1_c_p_u_ac29c87bff87ad404c953b2581024043ea7f684bd682a2fa65c32bf83662374807}
 }]\index{J\+N\+Z@{J\+N\+Z}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U}}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U}!J\+N\+Z@{J\+N\+Z}}\item[{\em 
 \hypertarget{namespace_c_p_u___o_s___simulator_1_1_c_p_u_ac29c87bff87ad404c953b2581024043ea97a63ac12c7c5761e30b9ec4ee31e993}{}J\+N\+Z\label{namespace_c_p_u___o_s___simulator_1_1_c_p_u_ac29c87bff87ad404c953b2581024043ea97a63ac12c7c5761e30b9ec4ee31e993}
 }]\index{J\+Z\+R@{J\+Z\+R}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U}}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U}!J\+Z\+R@{J\+Z\+R}}\item[{\em 

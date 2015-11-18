@@ -1,4 +1,6 @@
 var searchData=
 [
-  ['operand',['Operand',['../class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_operand.html#a8f6d642c2e5741c17748379c34a3052c',1,'CPU_OS_Simulator.CPU.Operand.Operand()'],['../class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_operand.html#a66ce3c1acaa5f53e1f3af5276968b6e2',1,'CPU_OS_Simulator.CPU.Operand.Operand(Int32 value, EnumOperandType type)'],['../class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_operand.html#ab1da49c3f7978edcfa8c9b95e5804f08',1,'CPU_OS_Simulator.CPU.Operand.Operand(Register reg, EnumOperandType type)']]]
+  ['not',['NOT',['../class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_instruction.html#ab639a616b188c9816dd1775ebda837d4',1,'CPU_OS_Simulator::CPU::Instruction']]],
+  ['numberofoperandsattr_3c_20t_20_3e',['NumberOfOperandsAttr&lt; T &gt;',['../class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_extentions.html#a5391dde3088335a6e3754e1273f0ff40',1,'CPU_OS_Simulator::CPU::Extentions']]],
+  ['numberofoperandsattribute',['NumberOfOperandsAttribute',['../class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_number_of_operands_attribute.html#a1976902af3b6dc92e16724d83937816e',1,'CPU_OS_Simulator::CPU::NumberOfOperandsAttribute']]]
 ];

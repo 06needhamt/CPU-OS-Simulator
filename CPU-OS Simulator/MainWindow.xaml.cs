@@ -217,7 +217,7 @@ namespace CPU_OS_Simulator
         }
 
         /// <summary>
-        /// Geta the build number of the running program
+        /// Gets the build number of the running program
         /// </summary>
         /// <returns> The build number of the running program</returns>
         private string GetProgramVersion()
@@ -560,7 +560,7 @@ namespace CPU_OS_Simulator
             bool loaded = LoadProgram(); // load a program file
             if (!loaded)
             {
-                throw new Exception("An error occured while loading the program");
+                throw new Exception("An error occurred while loading the program");
             }
             Console.WriteLine("Program Loaded Successfully");
         }
@@ -570,7 +570,7 @@ namespace CPU_OS_Simulator
             bool saved = SaveProgram(); //save a program file
             if (!saved)
             {
-                throw new Exception("An error occured while saving the program");
+                throw new Exception("An error occurred while saving the program");
             }
             Console.WriteLine("Program Saved Successfully");
         }
@@ -623,15 +623,15 @@ namespace CPU_OS_Simulator
         /// Serializes a program List.
         /// </summary>
         /// <typeparam name="T">The type of program</typeparam>
-        /// <param name="serializableObject"> the object to serialise</param>
+        /// <param name="serializableObject"> the object to serialize</param>
         /// <param name="fileName">the file to save the objects to</param>
         public void SerializeObject<T>(T serializableObject, string filePath)
         {
             if (serializableObject == null) { return; }
 
-            StreamWriter writer = new StreamWriter(filePath, true); // initialise a file writer
-            JavaScriptSerializer serializer = new JavaScriptSerializer(); // initialise a serializer
-            string json = serializer.Serialize(serializableObject); // serialise the object
+            StreamWriter writer = new StreamWriter(filePath, true); // initialize a file writer
+            JavaScriptSerializer serializer = new JavaScriptSerializer(); // initialize a serialize
+            string json = serializer.Serialize(serializableObject); // serialize the object
             writer.WriteLine(json); // write the object to the file
             writer.Flush();
             writer.Close();
@@ -639,15 +639,15 @@ namespace CPU_OS_Simulator
         }
 
         /// <summary>
-        /// Deserializes an .sas file into a program list
+        /// De-serializes an .sas file into a program list
         /// </summary>
         /// <typeparam name="T">The type to deserialise</typeparam>
         /// <param name="fileName"> the name of the file to load the objects from</param>
         public void DeSerializeObject<T>(string fileName)
         {
             if (string.IsNullOrEmpty(fileName)) { return; }
-            JavaScriptSerializer deserializer = new JavaScriptSerializer(); // initialise the deserializer
-            StreamReader reader = new StreamReader(fileName); // initialise file reader
+            JavaScriptSerializer deserializer = new JavaScriptSerializer(); // initialize the deserializer
+            StreamReader reader = new StreamReader(fileName); // initialize file reader
             string json;
             programList.Clear();
             lst_ProgramList.Items.Clear();
