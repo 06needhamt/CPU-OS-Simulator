@@ -1,0 +1,35 @@
+﻿<Window x:Class="CPU_OS_Simulator.MemoryWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CPU_OS_Simulator"
+        mc:Ignorable="d"
+        Title="MemoryWindow" Height="500" Width="600" Icon="CPU-OS Simulator 7-5-50_1.ico" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
+    <Grid x:Name="RootGrid">
+        <GroupBox x:Name="grp_DataMemory" Header="DATA MEMORY" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Height="260" Width="574">
+            <Grid x:Name="DataMemoryGrid" HorizontalAlignment="Left" Height="229" Margin="1,1,1,1" VerticalAlignment="Top" Width="564">
+                <ListView x:Name="lst_data" HorizontalAlignment="Left" Height="229" VerticalAlignment="Top" Width="564" Background="#FFFFFCC3">
+                    <ListView.View>
+                        <GridView>
+                            <GridViewColumn Header="PAdd" DisplayMemberBinding="{Binding LogicalAddress}" Width="75" />
+                            <GridViewColumn Header="LAdd" DisplayMemberBinding="{Binding PhysicalAddress}" Width="50" />
+                            <GridViewColumn Header="B0" DisplayMemberBinding="{Binding Byte0}" Width="30" />
+                            <GridViewColumn Header="B1" DisplayMemberBinding="{Binding Byte1}" Width="30" />
+                            <GridViewColumn Header="B2" DisplayMemberBinding="{Binding Byte2}" Width="30" />
+                            <GridViewColumn Header="B3" DisplayMemberBinding="{Binding Byte3}" Width="30" />
+                            <GridViewColumn Header="B4" DisplayMemberBinding="{Binding Byte4}" Width="30" />
+                            <GridViewColumn Header="B5" DisplayMemberBinding="{Binding Byte5}" Width="30" />
+                            <GridViewColumn Header="B6" DisplayMemberBinding="{Binding Byte6}" Width="30" />
+                            <GridViewColumn Header="B7" DisplayMemberBinding="{Binding Byte7}" Width="30" />
+                            <GridViewColumn Header="Data" DisplayMemberBinding="{Binding DataString}" Width="100" />
+                            
+                        </GridView>
+                    </ListView.View>
+                    <ScrollBar x:Name="scrollBar" Height="100" Width="100"/>
+                </ListView>
+            </Grid>
+        </GroupBox>
+
+    </Grid>
+</Window>

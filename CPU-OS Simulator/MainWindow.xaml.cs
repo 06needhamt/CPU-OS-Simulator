@@ -205,7 +205,7 @@ namespace CPU_OS_Simulator
 
 #if DEBUG
             this.Title += " DEBUG BUILD ";
-            MemoryPage m = new MemoryPage(0, 0, 255);
+            MemoryPage_OLD m = new MemoryPage_OLD(0, 0, 255);
             for (int i = 0; i < m.Data.GetLength(0); i++)
             {
                 for (int j = 0; j < m.Data.GetLength(1); j++)

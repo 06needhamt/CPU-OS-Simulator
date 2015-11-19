@@ -21,7 +21,7 @@ namespace CPU_OS_Simulator.CPU
         private List<Instruction> instructions;
 
         [ScriptIgnore]
-        private List<MemoryPage> memory;
+        private List<MemoryPage_OLD> memory;
 
         [ScriptIgnore]
         private ProgramStack stack;
@@ -134,7 +134,7 @@ namespace CPU_OS_Simulator.CPU
         }
 
         [ScriptIgnore]
-        public List<MemoryPage> Memory
+        public List<MemoryPage_OLD> Memory
         {
             get
             {
