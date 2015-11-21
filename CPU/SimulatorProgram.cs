@@ -17,6 +17,8 @@ namespace CPU_OS_Simulator.CPU
         private Int32 baseAddress;
         private Int32 startAddress;
         private Int32 pages;
+        [ScriptIgnore]
+        [NonSerialized]
         private ExecutionUnit unit;
         private List<Instruction> instructions;
 
@@ -24,6 +26,7 @@ namespace CPU_OS_Simulator.CPU
         private List<MemoryPage_OLD> memory;
 
         [ScriptIgnore]
+        [NonSerialized]
         private ProgramStack stack;
 
         #endregion Global Variables

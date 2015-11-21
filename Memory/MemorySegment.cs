@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CPU_OS_Simulator.Memory
 {
-    class MemorySegment
+    public class MemorySegment
     {
         #region Global Variables
         private Int32 logicalAddress;
@@ -60,6 +60,7 @@ namespace CPU_OS_Simulator.Memory
             set
             {
                 byte0 = value;
+                BuildDataString();
             }
         }
 
@@ -73,6 +74,7 @@ namespace CPU_OS_Simulator.Memory
             set
             {
                 byte1 = value;
+                BuildDataString();
             }
         }
 
@@ -86,6 +88,7 @@ namespace CPU_OS_Simulator.Memory
             set
             {
                 byte2 = value;
+                BuildDataString();
             }
         }
 
@@ -99,6 +102,7 @@ namespace CPU_OS_Simulator.Memory
             set
             {
                 byte3 = value;
+                BuildDataString();
             }
         }
 
@@ -112,6 +116,7 @@ namespace CPU_OS_Simulator.Memory
             set
             {
                 byte4 = value;
+                BuildDataString();
             }
         }
 
@@ -125,6 +130,7 @@ namespace CPU_OS_Simulator.Memory
             set
             {
                 byte5 = value;
+                BuildDataString();
             }
         }
 
@@ -138,6 +144,7 @@ namespace CPU_OS_Simulator.Memory
             set
             {
                 byte6 = value;
+                BuildDataString();
             }
         }
 
@@ -151,6 +158,7 @@ namespace CPU_OS_Simulator.Memory
             set
             {
                 byte7 = value;
+                BuildDataString();
             }
         }
 
@@ -194,19 +202,19 @@ namespace CPU_OS_Simulator.Memory
             {
                 case 0:
                     {
-                        return Byte0;
+                        return byte0;
                     }
                 case 1:
                     {
-                        return Byte1;
+                        return byte1;
                     }
                 case 2:
                     {
-                        return Byte2;
+                        return byte2;
                     }
                 case 3:
                     {
-                        return Byte3;
+                        return byte3;
                     }
                 case 4:
                     {
@@ -214,11 +222,11 @@ namespace CPU_OS_Simulator.Memory
                     }
                 case 5:
                     {
-                        return Byte5;
+                        return byte5;
                     }
                 case 6:
                     {
-                        return Byte6;
+                        return byte6;
                     }
                 case 7:
                     {
@@ -242,14 +250,14 @@ namespace CPU_OS_Simulator.Memory
         public string BuildDataString()
         {
             StringBuilder sb = new StringBuilder(8);
-            sb.Append(byte0);
-            sb.Append(byte1);
-            sb.Append(byte2);
-            sb.Append(byte3);
-            sb.Append(byte4);
-            sb.Append(byte5);
-            sb.Append(byte6);
-            sb.Append(Byte7);
+            sb.Append((char)byte0);
+            sb.Append((char)byte1);
+            sb.Append((char)byte2);
+            sb.Append((char)byte3);
+            sb.Append((char)byte4);
+            sb.Append((char)byte5);
+            sb.Append((char)byte6);
+            sb.Append((char)byte7);
             return sb.ToString();
         }
         #endregion Methods

@@ -118,7 +118,7 @@ namespace CPU_OS_Simulator
         }
 
         [DllImport("shell32.dll", CharSet = CharSet.Auto, SetLastError = true)]
-        public static extern void SHChangeNotify(uint wEventId, uint uFlags, IntPtr dwItem1, IntPtr dwItem2);
+        internal static extern void SHChangeNotify(uint wEventId, uint uFlags, IntPtr dwItem1, IntPtr dwItem2);
 
         public static void SetAssociation(string Extension, string KeyName, string OpenWith, string FileDescription)
         {
@@ -205,14 +205,17 @@ namespace CPU_OS_Simulator
 
 #if DEBUG
             this.Title += " DEBUG BUILD ";
-            MemoryPage_OLD m = new MemoryPage_OLD(0, 0, 255);
-            for (int i = 0; i < m.Data.GetLength(0); i++)
+            MemoryPage m = new MemoryPage(0, 0, 255);
+            m.Data[0] = new MemorySegment(0);
+            m.Data[0].Byte0 = (byte)'A';
+            m.Data[0].DataString = m.Data[0].BuildDataString();
+            MemoryWindow mw = new MemoryWindow();
+            foreach (MemorySegment seg in m.Data)
             {
-                for (int j = 0; j < m.Data.GetLength(1); j++)
-                {
-                    Console.WriteLine((int)m.Data[i, j]);
-                }
+                mw.lst_data.Items.Add(seg);
             }
+            //mw.lst_data.ItemsSource = m.Data.ToList<MemorySegment>();
+            mw.Show();
 #endif
         }
 
@@ -686,7 +689,7 @@ namespace CPU_OS_Simulator
         private void btn_Step_Click(object sender, RoutedEventArgs e)
         {
             SimulatorProgram prog = programList.Where(x => x.Name.Equals(currentProgram)).FirstOrDefault();
-            if (activeUnit == null || !activeUnit.Program.Equals(prog)) ;
+            if (activeUnit == null || !activeUnit.Program.Equals(prog))
             {
                 activeUnit = new ExecutionUnit(prog, (int)sld_ClockSpeed.Value, lst_InstructionsList.SelectedIndex);
             }

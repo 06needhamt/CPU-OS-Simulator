@@ -6,14 +6,64 @@ using System.Threading.Tasks;
 
 namespace CPU_OS_Simulator.Memory
 {
-    class MemoryPage
+    public class MemoryPage
     {
         private int pageIndex;
         private readonly int startOffset;
         private readonly int pageSize;
         private readonly int endOffset;
         private MemorySegment[] data;
-        
+
+        public int PageIndex
+        {
+            get
+            {
+                return pageIndex;
+            }
+
+            set
+            {
+                pageIndex = value;
+            }
+        }
+
+        public int StartOffset
+        {
+            get
+            {
+                return startOffset;
+            }
+        }
+
+        public int PageSize
+        {
+            get
+            {
+                return pageSize;
+            }
+        }
+
+        public int EndOffset
+        {
+            get
+            {
+                return endOffset;
+            }
+        }
+
+        public MemorySegment[] Data
+        {
+            get
+            {
+                return data;
+            }
+
+            set
+            {
+                data = value;
+            }
+        }
+
         #region Constructors
 
         public MemoryPage(int pageIndex, int startOffset, int pageSize)

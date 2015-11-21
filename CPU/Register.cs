@@ -98,7 +98,6 @@ namespace CPU_OS_Simulator.CPU
                 case "R00":
                     {
                         return Register.R00;
-                        break;
                     }
                 case "R01":
                     {

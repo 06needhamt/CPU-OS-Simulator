@@ -14,14 +14,14 @@
                         <GridView>
                             <GridViewColumn Header="PAdd" DisplayMemberBinding="{Binding LogicalAddress}" Width="75" />
                             <GridViewColumn Header="LAdd" DisplayMemberBinding="{Binding PhysicalAddress}" Width="50" />
-                            <GridViewColumn Header="B0" DisplayMemberBinding="{Binding Byte0}" Width="30" />
-                            <GridViewColumn Header="B1" DisplayMemberBinding="{Binding Byte1}" Width="30" />
-                            <GridViewColumn Header="B2" DisplayMemberBinding="{Binding Byte2}" Width="30" />
-                            <GridViewColumn Header="B3" DisplayMemberBinding="{Binding Byte3}" Width="30" />
-                            <GridViewColumn Header="B4" DisplayMemberBinding="{Binding Byte4}" Width="30" />
-                            <GridViewColumn Header="B5" DisplayMemberBinding="{Binding Byte5}" Width="30" />
-                            <GridViewColumn Header="B6" DisplayMemberBinding="{Binding Byte6}" Width="30" />
-                            <GridViewColumn Header="B7" DisplayMemberBinding="{Binding Byte7}" Width="30" />
+                            <GridViewColumn Header="B0" DisplayMemberBinding="{Binding Byte0,StringFormat={}{0:X2}}" Width="30" />
+                            <GridViewColumn Header="B1" DisplayMemberBinding="{Binding Byte1,StringFormat={}{0:X2}}" Width="30" />
+                            <GridViewColumn Header="B2" DisplayMemberBinding="{Binding Byte2,StringFormat={}{0:X2}}" Width="30" />
+                            <GridViewColumn Header="B3" DisplayMemberBinding="{Binding Byte3,StringFormat={}{0:X2}}" Width="30" />
+                            <GridViewColumn Header="B4" DisplayMemberBinding="{Binding Byte4,StringFormat={}{0:X2}}" Width="30" />
+                            <GridViewColumn Header="B5" DisplayMemberBinding="{Binding Byte5,StringFormat={}{0:X2}}" Width="30" />
+                            <GridViewColumn Header="B6" DisplayMemberBinding="{Binding Byte6,StringFormat={}{0:X2}}" Width="30" />
+                            <GridViewColumn Header="B7" DisplayMemberBinding="{Binding Byte7,StringFormat={}{0:X2}}" Width="30" />
                             <GridViewColumn Header="Data" DisplayMemberBinding="{Binding DataString}" Width="100" />
                             
                         </GridView>

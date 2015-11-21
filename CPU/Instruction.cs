@@ -62,6 +62,7 @@ namespace CPU_OS_Simulator.CPU
         private string instructionString;
 
         [ScriptIgnore]
+        [NonSerialized]
         private ExecutionUnit unit;
         #endregion Global Variables
 
