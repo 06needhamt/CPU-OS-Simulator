@@ -190,12 +190,20 @@ namespace CPU_OS_Simulator.CPU
         {
             int phyaddress = baseAddress;
             int logaddress = 0;
-            for (int i = 1; i < instructions.Count; i++)
+            for (int i = 0; i < instructions.Count; i++)
             {
-                logaddress += instructions[i].Size;
-                instructions[i].LogicalAddress = logaddress;
-                phyaddress += instructions[i].Size; // calculate address of the next instruction
-                instructions[i].PhysicalAddress = phyaddress;
+                if (i == 0)
+                {
+                    instructions[i].PhysicalAddress = phyaddress;
+                    instructions[i].LogicalAddress = logaddress;
+                }
+                else
+                {
+                    logaddress += instructions[i].Size;
+                    instructions[i].LogicalAddress = logaddress;
+                    phyaddress += instructions[i].Size; // calculate address of the next instruction
+                    instructions[i].PhysicalAddress = phyaddress;
+                }
             }
             //phyaddress += instruction.Size;
             //return logaddress;
@@ -205,12 +213,20 @@ namespace CPU_OS_Simulator.CPU
         {
             int phyaddress = baseAddress;
             int logaddress = 0;
-            for (int i = 1; i < index; i++)
+            for (int i = 0; i < index; i++)
             {
-                logaddress += instructions[i].Size;
-                instructions[i].LogicalAddress = logaddress;
-                phyaddress += instructions[i].Size; // calculate address of the next instruction
-                instructions[i].PhysicalAddress = phyaddress;
+                if (i == 0)
+                {
+                    instructions[i].PhysicalAddress = phyaddress;
+                    instructions[i].LogicalAddress = logaddress;
+                }
+                else
+                {
+                    logaddress += instructions[i].Size;
+                    instructions[i].LogicalAddress = logaddress;
+                    phyaddress += instructions[i].Size; // calculate address of the next instruction
+                    instructions[i].PhysicalAddress = phyaddress;
+                }
             }
             phyaddress += instruction.Size;
             return logaddress;
