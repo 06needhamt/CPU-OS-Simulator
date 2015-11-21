@@ -16,6 +16,7 @@ namespace CPU_OS_Simulator.CPU
         private string name;
         private Int32 baseAddress;
         private Int32 startAddress;
+        private Int32 logicalAddress;
         private Int32 pages;
         [ScriptIgnore]
         [NonSerialized]
@@ -49,6 +50,7 @@ namespace CPU_OS_Simulator.CPU
             this.baseAddress = baseAddress;
             this.pages = pages;
             this.instructions = new List<Instruction>();
+            this.logicalAddress = 0;
             this.startAddress = baseAddress;
             unit = new ExecutionUnit(this, 100);
             stack = new ProgramStack();
@@ -123,16 +125,16 @@ namespace CPU_OS_Simulator.CPU
             }
         }
 
-        public int StartAddress
+        public int LogicalAddress
         {
             get
             {
-                return startAddress;
+                return logicalAddress;
             }
 
             set
             {
-                startAddress = value;
+                logicalAddress = value;
             }
         }
 
@@ -171,7 +173,7 @@ namespace CPU_OS_Simulator.CPU
         public void AddInstruction(ref Instruction ins)
         {
             //int address = CalculateAddress(ins,instructions.Count);
-            //ins.Address = address;
+            //ins.LogicalAddress = address;
             instructions.Add(ins);
             UpdateAddresses();
         }
@@ -179,32 +181,39 @@ namespace CPU_OS_Simulator.CPU
         public void AddInstruction(ref Instruction ins, int index)
         {
             //int address = CalculateAddress(ins,instructions.Count);
-            //ins.Address = address;
+            //ins.LogicalAddress = address;
             instructions.Insert(index, ins);
             UpdateAddresses();
         }
 
-        private void UpdateAddresses()
+        public void UpdateAddresses()
         {
-            int address = baseAddress;
-            for (int i = 0; i < instructions.Count; i++)
+            int phyaddress = baseAddress;
+            int logaddress = 0;
+            for (int i = 1; i < instructions.Count; i++)
             {
-                address += instructions[i].Size; // calculate address of the next instruction
-                instructions[i].Address = address;
+                logaddress += instructions[i].Size;
+                instructions[i].LogicalAddress = logaddress;
+                phyaddress += instructions[i].Size; // calculate address of the next instruction
+                instructions[i].PhysicalAddress = phyaddress;
             }
-            //address += instruction.Size;
-            //return address;
+            //phyaddress += instruction.Size;
+            //return logaddress;
         }
 
         private int CalculateAddress(Instruction instruction, int index)
         {
-            int address = baseAddress;
-            for (int i = 0; i < index; i++)
+            int phyaddress = baseAddress;
+            int logaddress = 0;
+            for (int i = 1; i < index; i++)
             {
-                address += instructions[i].Size; // calculate address of the next instruction
+                logaddress += instructions[i].Size;
+                instructions[i].LogicalAddress = logaddress;
+                phyaddress += instructions[i].Size; // calculate address of the next instruction
+                instructions[i].PhysicalAddress = phyaddress;
             }
-            address += instruction.Size;
-            return address;
+            phyaddress += instruction.Size;
+            return logaddress;
         }
 
         #endregion Methods

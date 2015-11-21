@@ -25,6 +25,14 @@ namespace CPU_OS_Simulator.CPU
         /// </summary>
         private int currentIndex;
 
+        /// <summary>
+        /// The instruction currently being executed
+        /// </summary>
+        private Instruction currentInstruction;
+        
+        /// <summary>
+        /// The Logical address of the instruction currently being executed
+        /// </summary>
         private int logicalAddress;
 
         /// <summary>
@@ -51,6 +59,8 @@ namespace CPU_OS_Simulator.CPU
             this.program = program;
             this.clockSpeed = clockSpeed;
             this.currentIndex = 0;
+            this.logicalAddress = currentIndex * 4;
+            this.currentInstruction = program.Instructions.Where(x => x.LogicalAddress == this.logicalAddress).FirstOrDefault();
             stop = false;
             done = false;
         }
@@ -68,6 +78,8 @@ namespace CPU_OS_Simulator.CPU
                 currentIndex = 0;
             }
             this.currentIndex = currentIndex;
+            this.logicalAddress = currentIndex * 4;
+            this.currentInstruction = program.Instructions.Where(x => x.LogicalAddress == this.logicalAddress).FirstOrDefault();
             stop = false;
             done = false;
         }
@@ -83,14 +95,16 @@ namespace CPU_OS_Simulator.CPU
         {
             Console.WriteLine("Executing instruction");
             logicalAddress = currentIndex * 4;
-            if (program.Instructions.ElementAt(currentIndex).Opcode == (int)EnumOpcodes.JMP)
+            currentInstruction = program.Instructions.Where(x => x.LogicalAddress == this.logicalAddress).FirstOrDefault();
+            if (currentInstruction.Opcode == (int)EnumOpcodes.JMP)
             {
-                //currentIndex++;
-                program.Instructions.ElementAt(currentIndex).Execute();
+                //program.Instructions.ElementAt(currentIndex).Execute();
+                currentInstruction.Execute();
             }
             else
             {
-                program.Instructions.ElementAt(currentIndex).Execute();
+                //program.Instructions.ElementAt(currentIndex).Execute();
+                currentInstruction.Execute();
                 currentIndex++;
             }
             if (currentIndex == program.Instructions.Count)
@@ -178,6 +192,19 @@ namespace CPU_OS_Simulator.CPU
             set
             {
                 logicalAddress = value;
+            }
+        }
+
+        public Instruction CurrentInstruction
+        {
+            get
+            {
+                return currentInstruction;
+            }
+
+            set
+            {
+                currentInstruction = value;
             }
         }
 

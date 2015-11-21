@@ -44,8 +44,11 @@ namespace CPU_OS_Simulator.CPU
         /// <summary>
         /// The Logical address of this instruction within a program
         /// </summary>
-        private Int32 address;
-
+        private Int32 logicalAddress;
+        /// <summary>
+        /// The physical address of this instruction within memory
+        /// </summary>
+        private int physicalAddress;
         /// <summary>
         /// The size of the instruction within the program
         /// </summary>
@@ -220,16 +223,16 @@ namespace CPU_OS_Simulator.CPU
             }
         }
 
-        public int Address
+        public int LogicalAddress
         {
             get
             {
-                return address;
+                return logicalAddress;
             }
 
             set
             {
-                address = value;
+                logicalAddress = value;
             }
         }
 
@@ -243,6 +246,19 @@ namespace CPU_OS_Simulator.CPU
             set
             {
                 instructionString = value;
+            }
+        }
+
+        public int PhysicalAddress
+        {
+            get
+            {
+                return physicalAddress;
+            }
+
+            set
+            {
+                physicalAddress = value;
             }
         }
 
@@ -1082,7 +1098,7 @@ namespace CPU_OS_Simulator.CPU
             ExecutionUnit unit = window.ActiveUnit;
             SimulatorProgram prog = GetCurrentProgram();
             unit.LogicalAddress = lhs.Value;
-            unit.CurrentIndex = (lhs.Value - prog.BaseAddress / 4);
+            unit.CurrentIndex = (lhs.Value / 4);
             result = lhs.Value;
             unit.Done = false;
             unit.Stop = false;
@@ -1098,7 +1114,7 @@ namespace CPU_OS_Simulator.CPU
                 ExecutionUnit unit = window.ActiveUnit;
                 SimulatorProgram prog = GetCurrentProgram();
                 unit.LogicalAddress = lhs.Value;
-                unit.CurrentIndex = (lhs.Value - prog.BaseAddress / 4);
+                unit.CurrentIndex = (lhs.Value / 4);
                 result = lhs.Value;
                 unit.Done = false;
                 unit.Stop = false;
@@ -1116,7 +1132,7 @@ namespace CPU_OS_Simulator.CPU
                 ExecutionUnit unit = window.ActiveUnit;
                 SimulatorProgram prog = GetCurrentProgram();
                 unit.LogicalAddress = lhs.Value;
-                unit.CurrentIndex = (lhs.Value - prog.BaseAddress / 4);
+                unit.CurrentIndex = (lhs.Value / 4);
                 result = lhs.Value;
                 unit.Done = false;
                 unit.Stop = false;
@@ -1134,7 +1150,7 @@ namespace CPU_OS_Simulator.CPU
                 ExecutionUnit unit = window.ActiveUnit;
                 SimulatorProgram prog = GetCurrentProgram();
                 unit.LogicalAddress = lhs.Value;
-                unit.CurrentIndex = (lhs.Value - prog.BaseAddress / 4);
+                unit.CurrentIndex = (lhs.Value / 4);
                 result = lhs.Value;
                 unit.Done = false;
                 unit.Stop = false;
@@ -1152,7 +1168,7 @@ namespace CPU_OS_Simulator.CPU
                 ExecutionUnit unit = window.ActiveUnit;
                 SimulatorProgram prog = GetCurrentProgram();
                 unit.LogicalAddress = lhs.Value;
-                unit.CurrentIndex = (lhs.Value - prog.BaseAddress / 4);
+                unit.CurrentIndex = (lhs.Value / 4);
                 result = lhs.Value;
                 unit.Done = false;
                 unit.Stop = false;
@@ -1170,7 +1186,7 @@ namespace CPU_OS_Simulator.CPU
                 ExecutionUnit unit = window.ActiveUnit;
                 SimulatorProgram prog = GetCurrentProgram();
                 unit.LogicalAddress = lhs.Value;
-                unit.CurrentIndex = (lhs.Value - prog.BaseAddress / 4);
+                unit.CurrentIndex = (lhs.Value / 4);
                 result = lhs.Value;
                 unit.Done = false;
                 unit.Stop = false;
@@ -1188,7 +1204,7 @@ namespace CPU_OS_Simulator.CPU
                 ExecutionUnit unit = window.ActiveUnit;
                 SimulatorProgram prog = GetCurrentProgram();
                 unit.LogicalAddress = lhs.Value;
-                unit.CurrentIndex = (lhs.Value - prog.BaseAddress / 4);
+                unit.CurrentIndex = (lhs.Value / 4);
                 result = lhs.Value;
                 unit.Done = false;
                 unit.Stop = false;
@@ -1206,7 +1222,7 @@ namespace CPU_OS_Simulator.CPU
                 ExecutionUnit unit = window.ActiveUnit;
                 SimulatorProgram prog = GetCurrentProgram();
                 unit.LogicalAddress = lhs.Value;
-                unit.CurrentIndex = (lhs.Value - prog.BaseAddress / 4);
+                unit.CurrentIndex = (lhs.Value / 4);
                 result = lhs.Value;
                 unit.Done = false;
                 unit.Stop = false;
@@ -1224,7 +1240,7 @@ namespace CPU_OS_Simulator.CPU
                 ExecutionUnit unit = window.ActiveUnit;
                 SimulatorProgram prog = GetCurrentProgram();
                 unit.LogicalAddress = lhs.Value;
-                unit.CurrentIndex = (lhs.Value - prog.BaseAddress / 4);
+                unit.CurrentIndex = (lhs.Value / 4);
                 result = lhs.Value;
                 unit.Done = false;
                 unit.Stop = false;

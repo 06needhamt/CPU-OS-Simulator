@@ -555,6 +555,7 @@ namespace CPU_OS_Simulator
             {
                 lst_InstructionsList.ItemsSource = null;
             }
+            prog.UpdateAddresses();
             Console.WriteLine("Instructions Updated");
         }
 
@@ -695,7 +696,7 @@ namespace CPU_OS_Simulator
             }
             activeUnit.ExecuteInstruction();
             lst_InstructionsList.SelectedIndex = activeUnit.CurrentIndex;
-            SpecialRegister.FindSpecialRegister("PC").setRegisterValue(prog.Instructions.ElementAt(lst_InstructionsList.SelectedIndex).Address, EnumOperandType.VALUE);
+            SpecialRegister.FindSpecialRegister("PC").setRegisterValue(prog.Instructions.ElementAt(lst_InstructionsList.SelectedIndex).LogicalAddress, EnumOperandType.VALUE);
             SpecialRegister.FindSpecialRegister("IR").setRegisterValue(prog.Instructions.ElementAt(lst_InstructionsList.SelectedIndex).InstructionString, EnumOperandType.VALUE);
             UpdateRegisters();
             UpdateStack();
@@ -717,7 +718,7 @@ namespace CPU_OS_Simulator
             {
                 activeUnit.ExecuteInstruction();
                 lst_InstructionsList.SelectedIndex = activeUnit.CurrentIndex;
-                SpecialRegister.FindSpecialRegister("PC").setRegisterValue(prog.Instructions.ElementAt(lst_InstructionsList.SelectedIndex).Address, EnumOperandType.VALUE);
+                SpecialRegister.FindSpecialRegister("PC").setRegisterValue(prog.Instructions.ElementAt(lst_InstructionsList.SelectedIndex).LogicalAddress, EnumOperandType.VALUE);
                 SpecialRegister.FindSpecialRegister("IR").setRegisterValue(prog.Instructions.ElementAt(lst_InstructionsList.SelectedIndex).InstructionString, EnumOperandType.VALUE);
                 UpdateRegisters();
                 UpdateStack();

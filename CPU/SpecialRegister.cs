@@ -53,7 +53,7 @@ namespace CPU_OS_Simulator.CPU
         /// </summary>
         public static SpecialRegister MDR = new SpecialRegister("MDR");
         /// <summary>
-        /// The Memory Address Register
+        /// The Memory LogicalAddress Register
         /// </summary>
         public static SpecialRegister MAR = new SpecialRegister("MAR");
 
