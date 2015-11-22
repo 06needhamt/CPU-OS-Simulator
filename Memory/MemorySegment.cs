@@ -60,7 +60,7 @@ namespace CPU_OS_Simulator.Memory
             set
             {
                 byte0 = value;
-                BuildDataString();
+                dataString = BuildDataString();
             }
         }
 
@@ -74,7 +74,7 @@ namespace CPU_OS_Simulator.Memory
             set
             {
                 byte1 = value;
-                BuildDataString();
+                dataString = BuildDataString();
             }
         }
 
@@ -88,7 +88,7 @@ namespace CPU_OS_Simulator.Memory
             set
             {
                 byte2 = value;
-                BuildDataString();
+                dataString = BuildDataString();
             }
         }
 
@@ -102,7 +102,7 @@ namespace CPU_OS_Simulator.Memory
             set
             {
                 byte3 = value;
-                BuildDataString();
+                dataString = BuildDataString();
             }
         }
 
@@ -116,7 +116,7 @@ namespace CPU_OS_Simulator.Memory
             set
             {
                 byte4 = value;
-                BuildDataString();
+                dataString = BuildDataString();
             }
         }
 
@@ -130,7 +130,7 @@ namespace CPU_OS_Simulator.Memory
             set
             {
                 byte5 = value;
-                BuildDataString();
+                dataString = BuildDataString();
             }
         }
 
@@ -144,7 +144,7 @@ namespace CPU_OS_Simulator.Memory
             set
             {
                 byte6 = value;
-                BuildDataString();
+                dataString = BuildDataString();
             }
         }
 
@@ -158,7 +158,7 @@ namespace CPU_OS_Simulator.Memory
             set
             {
                 byte7 = value;
-                BuildDataString();
+                dataString = BuildDataString();
             }
         }
 

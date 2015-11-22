@@ -208,7 +208,8 @@ namespace CPU_OS_Simulator
             MemoryPage m = new MemoryPage(0, 0, 255);
             m.Data[0] = new MemorySegment(0);
             m.Data[0].Byte0 = (byte)'A';
-            m.Data[0].DataString = m.Data[0].BuildDataString();
+            m.Data[0].Byte1 = (byte)'B';
+            //m.Data[0].DataString = m.Data[0].BuildDataString();
             MemoryWindow mw = new MemoryWindow();
             foreach (MemorySegment seg in m.Data)
             {
