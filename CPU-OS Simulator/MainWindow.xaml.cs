@@ -197,10 +197,10 @@ namespace CPU_OS_Simulator
             this.Title += " " + GetProgramVersion();
             SpecialRegister.FindSpecialRegister("BR").setRegisterValue(Convert.ToInt32(txt_BR.Text), EnumOperandType.VALUE);
             SpecialRegister.FindSpecialRegister("IR").setRegisterValue(txt_IR.Text, EnumOperandType.VALUE);
-            SpecialRegister.FindSpecialRegister("MAR").setRegisterValue(Convert.ToInt32(txt_MAR.Text), EnumOperandType.VALUE);
+            SpecialRegister.FindSpecialRegister("MAR").setRegisterValue(Convert.ToInt32(txt_MAR.Text), EnumOperandType.ADDRESS);
             SpecialRegister.FindSpecialRegister("MDR").setRegisterValue(txt_MDR.Text, EnumOperandType.VALUE);
-            SpecialRegister.FindSpecialRegister("PC").setRegisterValue(Convert.ToInt32(txt_PC.Text), EnumOperandType.VALUE);
-            SpecialRegister.FindSpecialRegister("SP").setRegisterValue(Convert.ToInt32(txt_SP.Text), EnumOperandType.VALUE);
+            SpecialRegister.FindSpecialRegister("PC").setRegisterValue(Convert.ToInt32(txt_PC.Text), EnumOperandType.ADDRESS);
+            SpecialRegister.FindSpecialRegister("SP").setRegisterValue(Convert.ToInt32(txt_SP.Text), EnumOperandType.ADDRESS);
             SpecialRegister.FindSpecialRegister("SR").setRegisterValue(Convert.ToInt32(txt_SR.Text), EnumOperandType.VALUE);
 
 #if DEBUG
@@ -209,14 +209,8 @@ namespace CPU_OS_Simulator
             m.Data[0] = new MemorySegment(0);
             m.Data[0].Byte0 = (byte)'A';
             m.Data[0].Byte1 = (byte)'B';
-            //m.Data[0].DataString = m.Data[0].BuildDataString();
-            MemoryWindow mw = new MemoryWindow();
-            foreach (MemorySegment seg in m.Data)
-            {
-                mw.lst_data.Items.Add(seg);
-            }
-            //mw.lst_data.ItemsSource = m.Data.ToList<MemorySegment>();
-            mw.Show();
+            MemoryWindow wind = new MemoryWindow(this, m);
+            wind.Show();
 #endif
         }
 

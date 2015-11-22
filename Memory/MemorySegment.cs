@@ -260,6 +260,57 @@ namespace CPU_OS_Simulator.Memory
             sb.Append((char)byte7);
             return sb.ToString();
         }
-        #endregion Methods
+
+        public void SetByte(int number, byte value)
+        {
+            switch (number)
+            {
+                case 0:
+                    {
+                        Byte0 = value;
+                        break;
+                    }
+                case 1:
+                    {
+                        Byte1 = value;
+                        break;
+                    }
+                case 2:
+                    {
+                        Byte2 = value;
+                        break;
+                    }
+                case 3:
+                    {
+                        Byte3 = value;
+                        break;
+                    }
+                case 4:
+                    {
+                        Byte4 = value;
+                        break;
+                    }
+                case 5:
+                    {
+                        Byte5 = value;
+                        break;
+                    }
+                case 6:
+                    {
+                        Byte6 = value;
+                        break;
+                    }
+                case 7:
+                    {
+                        Byte7 = value;
+                        break;
+                    }
+                default:
+                    {
+                        throw new InvalidOperationException("Invalid byte number");
+                    }
+            }
+            #endregion Methods
+        }
     }
 }

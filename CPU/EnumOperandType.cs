@@ -6,6 +6,6 @@
     public enum EnumOperandType
     {
         VALUE = 0,
-        ADRESS = 1
+        ADDRESS = 1
     }
 }

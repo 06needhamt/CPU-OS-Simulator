@@ -3,5 +3,6 @@
     public class WindowInstances
     {
         public static MainWindow MainWindowInstance = MainWindow.currentInstance;
+        public static MemoryWindow MemoryWindowInstance = MemoryWindow.currentInstance;
     }
 }
