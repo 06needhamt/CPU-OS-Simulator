@@ -15,9 +15,9 @@
             this.value = value;
         }
 
-        public void ToggleFlag(StatusFlags flag)
+        public void ToggleFlag()
         {
-            flag.isSet = !flag.isSet;
+            this.isSet = !this.isSet;
         }
 
         public bool IsSet

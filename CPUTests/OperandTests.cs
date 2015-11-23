@@ -13,7 +13,8 @@ namespace CPU_OS_Simulator.CPU.Tests
         [TestMethod()]
         public void OperandTest()
         {
-            Assert.Inconclusive();
+            Operand op = new Operand();
+            Assert.IsInstanceOfType(op, typeof(Operand));
         }
 
         [TestMethod()]

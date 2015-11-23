@@ -13,7 +13,8 @@ namespace CPU_OS_Simulator.CPU.Tests
         [TestMethod()]
         public void InstructionTest()
         {
-            Assert.Inconclusive();
+            Instruction ins = new Instruction();
+            Assert.IsInstanceOfType(ins, typeof(Instruction));
         }
 
         [TestMethod()]

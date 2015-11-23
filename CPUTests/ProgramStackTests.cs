@@ -22,13 +22,15 @@ namespace CPU_OS_Simulator.CPU.Tests
         {
             ProgramStack stack = new ProgramStack();
             stack.pushItem(new StackItem(10));
-            Assert.AreEqual(stack.popItem(), 10);
+            Assert.AreEqual(stack.StackItems.Count, 1);
         }
 
         [TestMethod()]
         public void popItemTest()
         {
-            Assert.Fail();
+            ProgramStack stack = new ProgramStack();
+            stack.pushItem(new StackItem(10));
+            Assert.AreEqual(stack.popItem(), 10);
         }
     }
 }

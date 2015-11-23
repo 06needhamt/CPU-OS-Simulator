@@ -13,19 +13,24 @@ namespace CPU_OS_Simulator.Tests
         [TestMethod()]
         public void InstructionsWindowTest()
         {
-            Assert.Inconclusive();
+            InstructionsWindow window = new InstructionsWindow();
+            Assert.IsInstanceOfType(window, typeof(InstructionsWindow));
         }
 
         [TestMethod()]
         public void InstructionsWindowTest1()
         {
-            Assert.Inconclusive();
+            MainWindow mainwindow = new MainWindow();
+            InstructionsWindow window = new InstructionsWindow(mainwindow);
+            Assert.IsInstanceOfType(window, typeof(InstructionsWindow));
         }
 
         [TestMethod()]
         public void InstructionsWindowTest2()
         {
-            Assert.Inconclusive();
+            MainWindow mainwindow = new MainWindow();
+            InstructionsWindow window = new InstructionsWindow(mainwindow,EnumInstructionMode.ADD_NEW);
+            Assert.IsInstanceOfType(window, typeof(InstructionsWindow));
         }
     }
 }

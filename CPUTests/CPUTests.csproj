@@ -57,6 +57,11 @@
     <Compile Include="OperandTests.cs" />
     <Compile Include="ProgramStackTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RegisterTests.cs" />
+    <Compile Include="SimulatorProgramTests.cs" />
+    <Compile Include="SpecialRegisterTests.cs" />
+    <Compile Include="StackItemTests.cs" />
+    <Compile Include="StatusFlagsTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\CPU\CPU.csproj">
