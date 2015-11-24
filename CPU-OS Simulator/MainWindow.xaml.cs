@@ -76,19 +76,7 @@ namespace CPU_OS_Simulator
             }
         }
 
-        public ExecutionUnit ActiveUnit1
-        {
-            get
-            {
-                return activeUnit;
-            }
-
-            set
-            {
-                activeUnit = value;
-            }
-        }
-
+     
         #endregion Properties
 
         #region Constructors
@@ -716,7 +704,9 @@ namespace CPU_OS_Simulator
             executionWorker.RunWorkerAsync(prog);
             
         }
-
+        /// <summary>
+        /// Creates a background worker for the execution thread to run on
+        /// </summary>
         private void CreateBackgroundWorker()
         {
             executionWorker = new BackgroundWorker();
@@ -726,7 +716,11 @@ namespace CPU_OS_Simulator
             executionWorker.RunWorkerCompleted += new RunWorkerCompletedEventHandler(DisplayTime);
 
         }
-
+        /// <summary>
+        /// Asynchronous method called after every instruction is executed to update required values and user interface asynchronously
+        /// </summary>
+        /// <param name="sender"> the object that triggered this event</param>
+        /// <param name="args" The parameters passed to this event ></param>
         private async void UpdateInterface(object sender, ProgressChangedEventArgs args)
         {
             SimulatorProgram prog = programList.Where(x => x.Name.Equals(currentProgram)).FirstOrDefault();
@@ -737,6 +731,11 @@ namespace CPU_OS_Simulator
             UpdateStack();
             UpdateSpecialRegisters();
         }
+        /// <summary>
+        /// Asynchronous method called to begin executing a program on the execution thread
+        /// </summary>
+        /// <param name="sender"> The object that triggered this event</param>
+        /// <param name="args"> The parameters passed to this event </param>
         private async void ExecuteProgram(object sender, DoWorkEventArgs args)
         {
             SimulatorProgram prog = (SimulatorProgram)args.Argument;
@@ -746,10 +745,14 @@ namespace CPU_OS_Simulator
             {
                 activeUnit.ExecuteInstruction();
                 executionWorker.ReportProgress(0, prog);
-                Thread.Sleep(15);
+                Thread.Sleep(10); // Sleep the execution thread here to give the main thread time to update all required values
             }
         }
-
+        /// <summary>
+        /// Asynchronous method called to display how long the program took to execute 
+        /// </summary>
+        /// <param name="sender"> the object that triggered this event</param>
+        /// <param name="args"> The parameters passed to this event </param>
         private async void DisplayTime(object sender, RunWorkerCompletedEventArgs args)
         {
             s.Stop();

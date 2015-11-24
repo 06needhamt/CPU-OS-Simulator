@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Linq;
+using System.Threading;
 
 namespace CPU_OS_Simulator.CPU
 {
@@ -95,6 +96,7 @@ namespace CPU_OS_Simulator.CPU
         {
             Console.WriteLine("Executing instruction");
             logicalAddress = currentIndex * 4;
+            Console.WriteLine(logicalAddress);
             currentInstruction = program.Instructions.Where(x => x.LogicalAddress == this.logicalAddress).FirstOrDefault();
             if (currentInstruction.Opcode == (int)EnumOpcodes.JMP)
             {
@@ -111,6 +113,7 @@ namespace CPU_OS_Simulator.CPU
             {
                 Done = true;
             }
+            Thread.Sleep(clockSpeed);
         }
 
         #endregion Methods
