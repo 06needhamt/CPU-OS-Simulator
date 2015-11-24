@@ -183,7 +183,7 @@
                         <Button x:Name="btn_Stop" Content="STOP" HorizontalAlignment="Left" Margin="10,119,0,0" VerticalAlignment="Top" Width="75" Height="40" Click="btn_Stop_Click" />
                         <RadioButton x:Name="rdb_ByInstruction" Content="By Instruction" HorizontalAlignment="Left" Margin="90,32,0,0" VerticalAlignment="Top" GroupName="StepType" IsChecked="True" />
                         <RadioButton x:Name="rdb_BySingleTick" Content="By Single Tick" HorizontalAlignment="Left" Margin="90,58,0,0" VerticalAlignment="Top" />
-                        <Slider x:Name="sld_ClockSpeed" HorizontalAlignment="Left" Margin="90,78,0,0" VerticalAlignment="Top" Height="85" Width="71" Orientation="Vertical" Maximum="1000" Minimum="10" SmallChange="10" TickFrequency="100" LargeChange="100" TickPlacement="BottomRight" ValueChanged="sld_ClockSpeed_ValueChanged" IsDirectionReversed="True" Value="1000" />
+                        <Slider x:Name="sld_ClockSpeed" HorizontalAlignment="Left" Margin="90,78,0,0" VerticalAlignment="Top" Height="85" Width="71" Orientation="Vertical" Maximum="1000" Minimum="40" SmallChange="10" TickFrequency="100" LargeChange="100" TickPlacement="BottomRight" ValueChanged="sld_ClockSpeed_ValueChanged" IsDirectionReversed="True" Value="1000" />
                         <Label x:Name="label7" Content="Slow" HorizontalAlignment="Left" Margin="123,141,0,0" VerticalAlignment="Top" />
                         <Label x:Name="label8" Content="Fast" HorizontalAlignment="Left" Margin="123,77,0,0" VerticalAlignment="Top" />
                         <Button x:Name="btn_ResetProgram"  HorizontalAlignment="Left" Margin="163,75,0,0" VerticalAlignment="Top" Width="75" Height="40" Click="btn_ResetProgram_Click">

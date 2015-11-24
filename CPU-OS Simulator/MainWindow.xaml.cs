@@ -12,6 +12,8 @@ using System.Security.Principal;
 using System.Web.Script.Serialization;
 using System.Windows;
 using System.Windows.Controls;
+using System.Threading;
+using System.ComponentModel;
 
 namespace CPU_OS_Simulator
 {
@@ -27,6 +29,8 @@ namespace CPU_OS_Simulator
         private EnumInstructionMode instructionMode;
         public string currentProgram = string.Empty;
         private ExecutionUnit activeUnit;
+        BackgroundWorker executionWorker;
+        Stopwatch s;
         public static MainWindow currentInstance;
 
         #endregion Global Variables
@@ -72,19 +76,7 @@ namespace CPU_OS_Simulator
             }
         }
 
-        public ExecutionUnit ActiveUnit1
-        {
-            get
-            {
-                return activeUnit;
-            }
-
-            set
-            {
-                activeUnit = value;
-            }
-        }
-
+     
         #endregion Properties
 
         #region Constructors
@@ -707,19 +699,62 @@ namespace CPU_OS_Simulator
             {
                 activeUnit = new ExecutionUnit(prog, (int)sld_ClockSpeed.Value, lst_InstructionsList.SelectedIndex);
             }
+            
+            CreateBackgroundWorker();
+            executionWorker.RunWorkerAsync(prog);
+            
+        }
+        /// <summary>
+        /// Creates a background worker for the execution thread to run on
+        /// </summary>
+        private void CreateBackgroundWorker()
+        {
+            executionWorker = new BackgroundWorker();
+            executionWorker.DoWork += new DoWorkEventHandler(ExecuteProgram);
+            executionWorker.WorkerReportsProgress = true;
+            executionWorker.ProgressChanged += new ProgressChangedEventHandler(UpdateInterface);
+            executionWorker.RunWorkerCompleted += new RunWorkerCompletedEventHandler(DisplayTime);
+
+        }
+        /// <summary>
+        /// Asynchronous method called after every instruction is executed to update required values and user interface asynchronously
+        /// </summary>
+        /// <param name="sender"> the object that triggered this event</param>
+        /// <param name="args" The parameters passed to this event ></param>
+        private async void UpdateInterface(object sender, ProgressChangedEventArgs args)
+        {
+            SimulatorProgram prog = programList.Where(x => x.Name.Equals(currentProgram)).FirstOrDefault();
+            lst_InstructionsList.SelectedIndex = activeUnit.CurrentIndex;
+            SpecialRegister.FindSpecialRegister("PC").setRegisterValue(prog.Instructions.ElementAt(lst_InstructionsList.SelectedIndex).LogicalAddress, EnumOperandType.VALUE);
+            SpecialRegister.FindSpecialRegister("IR").setRegisterValue(prog.Instructions.ElementAt(lst_InstructionsList.SelectedIndex).InstructionString, EnumOperandType.VALUE);
+            UpdateRegisters();
+            UpdateStack();
+            UpdateSpecialRegisters();
+        }
+        /// <summary>
+        /// Asynchronous method called to begin executing a program on the execution thread
+        /// </summary>
+        /// <param name="sender"> The object that triggered this event</param>
+        /// <param name="args"> The parameters passed to this event </param>
+        private async void ExecuteProgram(object sender, DoWorkEventArgs args)
+        {
+            SimulatorProgram prog = (SimulatorProgram)args.Argument;
             Stopwatch s = new Stopwatch();
             s.Start();
             while (!activeUnit.Done)
             {
                 activeUnit.ExecuteInstruction();
-                lst_InstructionsList.SelectedIndex = activeUnit.CurrentIndex;
-                SpecialRegister.FindSpecialRegister("PC").setRegisterValue(prog.Instructions.ElementAt(lst_InstructionsList.SelectedIndex).LogicalAddress, EnumOperandType.VALUE);
-                SpecialRegister.FindSpecialRegister("IR").setRegisterValue(prog.Instructions.ElementAt(lst_InstructionsList.SelectedIndex).InstructionString, EnumOperandType.VALUE);
-                UpdateRegisters();
-                UpdateStack();
-                UpdateSpecialRegisters();
-
+                executionWorker.ReportProgress(0, prog);
+                Thread.Sleep(10); // Sleep the execution thread here to give the main thread time to update all required values
             }
+        }
+        /// <summary>
+        /// Asynchronous method called to display how long the program took to execute 
+        /// </summary>
+        /// <param name="sender"> the object that triggered this event</param>
+        /// <param name="args"> The parameters passed to this event </param>
+        private async void DisplayTime(object sender, RunWorkerCompletedEventArgs args)
+        {
             s.Stop();
             MessageBox.Show("Program Completed in: " + CalculateTime(s.ElapsedMilliseconds) + " Seconds", "", MessageBoxButton.OK, MessageBoxImage.Information);
         }
