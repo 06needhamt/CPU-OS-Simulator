@@ -711,9 +711,10 @@ namespace CPU_OS_Simulator
         {
             executionWorker = new BackgroundWorker();
             executionWorker.DoWork += new DoWorkEventHandler(ExecuteProgram);
+            executionWorker.WorkerSupportsCancellation = true;
             executionWorker.WorkerReportsProgress = true;
             executionWorker.ProgressChanged += new ProgressChangedEventHandler(UpdateInterface);
-            executionWorker.RunWorkerCompleted += new RunWorkerCompletedEventHandler(DisplayTime);
+            executionWorker.RunWorkerCompleted += new RunWorkerCompletedEventHandler(ExecutionCompleted);
 
         }
         /// <summary>
@@ -741,22 +742,23 @@ namespace CPU_OS_Simulator
             SimulatorProgram prog = (SimulatorProgram)args.Argument;
             Stopwatch s = new Stopwatch();
             s.Start();
-            while (!activeUnit.Done)
+            while (!activeUnit.Done && !activeUnit.Stop && !executionWorker.CancellationPending)
             {
                 activeUnit.ExecuteInstruction();
                 executionWorker.ReportProgress(0, prog);
                 Thread.Sleep(10); // Sleep the execution thread here to give the main thread time to update all required values
             }
+            s.Stop();
+            MessageBox.Show("Program Completed in: " + CalculateTime(s.ElapsedMilliseconds) + " Seconds", "", MessageBoxButton.OK, MessageBoxImage.Information);
         }
         /// <summary>
-        /// Asynchronous method called to display how long the program took to execute 
+        /// Asynchronous method called when the executing program has been terminated
         /// </summary>
         /// <param name="sender"> the object that triggered this event</param>
         /// <param name="args"> The parameters passed to this event </param>
-        private async void DisplayTime(object sender, RunWorkerCompletedEventArgs args)
+        private async void ExecutionCompleted(object sender, RunWorkerCompletedEventArgs args)
         {
-            s.Stop();
-            MessageBox.Show("Program Completed in: " + CalculateTime(s.ElapsedMilliseconds) + " Seconds", "", MessageBoxButton.OK, MessageBoxImage.Information);
+            return;
         }
 
         /// <summary>
@@ -775,7 +777,8 @@ namespace CPU_OS_Simulator
 
         private void btn_Stop_Click(object sender, RoutedEventArgs e)
         {
-            bool stopped = activeUnit != null ? activeUnit.Stop = true : activeUnit.Stop = false;
+            executionWorker.CancelAsync();
+            //DisplayTime(sender, new RunWorkerCompletedEventArgs(sender,null,true));
         }
 
         #endregion Methods
