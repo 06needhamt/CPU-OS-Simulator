@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyTitle("CPU-OS Simulator Memory Module")]
 [assembly: AssemblyDescription("CPU-OS Simulator Memory Module")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
+[assembly: AssemblyCompany("Edge Hill University UK")]
 [assembly: AssemblyProduct("CPU-OS Simulator")]
 [assembly: AssemblyCopyright("Copyright © Thomas Needham 2015")]
 [assembly: AssemblyTrademark("")]
@@ -32,6 +32,6 @@ using System.Runtime.InteropServices;
 // You can specify all the values or you can default the Build and Revision Numbers
 // by using the '*' as shown below:
 // [assembly: AssemblyVersion("1.0.*")]
-[assembly: AssemblyVersion("2015.11.24.1351")]
-[assembly: AssemblyFileVersion("2015.11.24.1351")]
+[assembly: AssemblyVersion("2015.11.24.1647")]
+[assembly: AssemblyFileVersion("2015.11.24.1647")]
 [assembly: NeutralResourcesLanguage("en-GB")]

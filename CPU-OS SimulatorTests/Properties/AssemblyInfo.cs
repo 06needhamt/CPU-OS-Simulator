@@ -1,16 +1,17 @@
-﻿using System.Reflection;
+﻿using System.Resources;
+using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("CPU-OS SimulatorTests")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyTitle("CPU-OS Simulator Unit Test Module")]
+[assembly: AssemblyDescription("CPU-OS Simulator Unit Test Module")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("CPU-OS SimulatorTests")]
-[assembly: AssemblyCopyright("Copyright ©  2015")]
+[assembly: AssemblyCompany("Edge Hill University UK")]
+[assembly: AssemblyProduct("CPU-OS Simulator")]
+[assembly: AssemblyCopyright("Copyright © Thomas Needham 2015")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
@@ -32,5 +33,7 @@ using System.Runtime.InteropServices;
 // You can specify all the values or you can default the Build and Revision Numbers 
 // by using the '*' as shown below:
 // [assembly: AssemblyVersion("1.0.*")]
-[assembly: AssemblyVersion("2015.11.23.1934")]
-[assembly: AssemblyFileVersion("2015.11.23.1934")]
+[assembly: AssemblyVersion("2015.11.24.1647")]
+[assembly: AssemblyFileVersion("2015.11.24.1647")]
+[assembly: NeutralResourcesLanguage("en-GB")]
+

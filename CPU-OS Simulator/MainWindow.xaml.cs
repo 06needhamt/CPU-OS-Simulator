@@ -178,7 +178,7 @@ namespace CPU_OS_Simulator
             txt_BR.Text = SpecialRegister.FindSpecialRegister("BR").Value.ToString();
             txt_IR.Text = SpecialRegister.FindSpecialRegister("IR").ValueString.ToString();
             txt_MAR.Text = SpecialRegister.FindSpecialRegister("MAR").Value.ToString();
-            txt_MDR.Text = SpecialRegister.FindSpecialRegister("MDR").Value.ToString();
+            txt_MDR.Text = SpecialRegister.FindSpecialRegister("MDR").ValueString.ToString();
             txt_PC.Text = SpecialRegister.FindSpecialRegister("PC").Value.ToString();
             txt_SP.Text = SpecialRegister.FindSpecialRegister("SP").Value.ToString();
             txt_SR.Text = SpecialRegister.FindSpecialRegister("SR").Value.ToString();
@@ -685,6 +685,8 @@ namespace CPU_OS_Simulator
             lst_InstructionsList.SelectedIndex = activeUnit.CurrentIndex;
             SpecialRegister.FindSpecialRegister("PC").setRegisterValue(prog.Instructions.ElementAt(lst_InstructionsList.SelectedIndex).LogicalAddress, EnumOperandType.VALUE);
             SpecialRegister.FindSpecialRegister("IR").setRegisterValue(prog.Instructions.ElementAt(lst_InstructionsList.SelectedIndex).InstructionString, EnumOperandType.VALUE);
+            SpecialRegister.FindSpecialRegister("MDR").setRegisterValue(prog.Instructions.ElementAt(lst_InstructionsList.SelectedIndex).InstructionString, EnumOperandType.VALUE);
+            SpecialRegister.FindSpecialRegister("MAR").setRegisterValue(prog.Instructions.ElementAt(lst_InstructionsList.SelectedIndex).PhysicalAddress, EnumOperandType.VALUE);
             UpdateRegisters();
             UpdateStack();
             UpdateSpecialRegisters();
@@ -728,6 +730,8 @@ namespace CPU_OS_Simulator
             lst_InstructionsList.SelectedIndex = activeUnit.CurrentIndex;
             SpecialRegister.FindSpecialRegister("PC").setRegisterValue(prog.Instructions.ElementAt(lst_InstructionsList.SelectedIndex).LogicalAddress, EnumOperandType.VALUE);
             SpecialRegister.FindSpecialRegister("IR").setRegisterValue(prog.Instructions.ElementAt(lst_InstructionsList.SelectedIndex).InstructionString, EnumOperandType.VALUE);
+            SpecialRegister.FindSpecialRegister("MDR").setRegisterValue(prog.Instructions.ElementAt(lst_InstructionsList.SelectedIndex).InstructionString, EnumOperandType.VALUE);
+            SpecialRegister.FindSpecialRegister("MAR").setRegisterValue(prog.Instructions.ElementAt(lst_InstructionsList.SelectedIndex).PhysicalAddress, EnumOperandType.VALUE);
             UpdateRegisters();
             UpdateStack();
             UpdateSpecialRegisters();

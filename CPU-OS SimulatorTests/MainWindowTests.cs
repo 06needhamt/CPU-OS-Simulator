@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using CPU_OS_Simulator;
 using CPU_OS_Simulator.CPU;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+
 namespace CPU_OS_Simulator.Tests
 {
     [TestClass()]
