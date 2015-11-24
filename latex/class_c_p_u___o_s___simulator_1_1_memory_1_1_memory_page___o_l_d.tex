@@ -1,0 +1,181 @@
+\hypertarget{class_c_p_u___o_s___simulator_1_1_memory_1_1_memory_page___o_l_d}{}\section{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Memory.\+Memory\+Page\+\_\+\+O\+L\+D Class Reference}
+\label{class_c_p_u___o_s___simulator_1_1_memory_1_1_memory_page___o_l_d}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Memory.\+Memory\+Page\+\_\+\+O\+L\+D@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Memory.\+Memory\+Page\+\_\+\+O\+L\+D}}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_c_p_u___o_s___simulator_1_1_memory_1_1_memory_page___o_l_d_a8bcba1ca981b4fd6c04dbdf9422b072b}{Memory\+Page\+\_\+\+O\+L\+D} (int \hyperlink{class_c_p_u___o_s___simulator_1_1_memory_1_1_memory_page___o_l_d_a378522c3baf4d7cf4a7eaa8c164d3de8}{page\+Index}, int \hyperlink{class_c_p_u___o_s___simulator_1_1_memory_1_1_memory_page___o_l_d_a9114e60bd23b6a77765e73520fb5ddc1}{start\+Offset}, int \hyperlink{class_c_p_u___o_s___simulator_1_1_memory_1_1_memory_page___o_l_d_afb00546c1b356df209e380cf9b1b25d2}{page\+Size})
+\item 
+char \hyperlink{class_c_p_u___o_s___simulator_1_1_memory_1_1_memory_page___o_l_d_ad1259ac2ae7957ab4fd99e847ace40a6}{get\+Byte} (int address)
+\item 
+void \hyperlink{class_c_p_u___o_s___simulator_1_1_memory_1_1_memory_page___o_l_d_a00f0207abb0f969a24765c7a38aab574}{set\+Byte} (int address, char value)
+\item 
+void \hyperlink{class_c_p_u___o_s___simulator_1_1_memory_1_1_memory_page___o_l_d_a892ba24ecfb3feb81aa2fe2e9304b8fb}{Populate\+Array$<$ T $>$} (ref T\mbox{[},\mbox{]} \hyperlink{class_c_p_u___o_s___simulator_1_1_memory_1_1_memory_page___o_l_d_a0de587e2918454bff3fdb5cb30c67d49}{data}, T Value)
+\end{DoxyCompactItemize}
+\subsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+char\mbox{[},\mbox{]} \hyperlink{class_c_p_u___o_s___simulator_1_1_memory_1_1_memory_page___o_l_d_a203944883e8102c6aad517d1474bdc0b}{Data}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\item 
+int \hyperlink{class_c_p_u___o_s___simulator_1_1_memory_1_1_memory_page___o_l_d_a92429e7bf791e6bc4d2c1ed54a999394}{Page\+Index}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\item 
+int \hyperlink{class_c_p_u___o_s___simulator_1_1_memory_1_1_memory_page___o_l_d_aabc0df1123ef7c01b14a5b3a23615760}{Start\+Offset}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\item 
+int \hyperlink{class_c_p_u___o_s___simulator_1_1_memory_1_1_memory_page___o_l_d_a1610e4a6a7f9d94412a831f269d0281d}{End\+Offset}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\item 
+int \hyperlink{class_c_p_u___o_s___simulator_1_1_memory_1_1_memory_page___o_l_d_a058448789b0f5223ef410b223f2e9bb3}{Page\+Size}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+char\mbox{[},\mbox{]} \hyperlink{class_c_p_u___o_s___simulator_1_1_memory_1_1_memory_page___o_l_d_a0de587e2918454bff3fdb5cb30c67d49}{data}
+\item 
+int \hyperlink{class_c_p_u___o_s___simulator_1_1_memory_1_1_memory_page___o_l_d_a378522c3baf4d7cf4a7eaa8c164d3de8}{page\+Index}
+\item 
+readonly int \hyperlink{class_c_p_u___o_s___simulator_1_1_memory_1_1_memory_page___o_l_d_a9114e60bd23b6a77765e73520fb5ddc1}{start\+Offset}
+\item 
+readonly int \hyperlink{class_c_p_u___o_s___simulator_1_1_memory_1_1_memory_page___o_l_d_ad255a5229701ca9f7bb9c7fa90faf2ae}{end\+Offset}
+\item 
+readonly int \hyperlink{class_c_p_u___o_s___simulator_1_1_memory_1_1_memory_page___o_l_d_afb00546c1b356df209e380cf9b1b25d2}{page\+Size}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 5 of file Memory\+Page\+\_\+\+O\+L\+D.\+cs.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_c_p_u___o_s___simulator_1_1_memory_1_1_memory_page___o_l_d_a8bcba1ca981b4fd6c04dbdf9422b072b}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Memory\+::\+Memory\+Page\+\_\+\+O\+L\+D@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Memory\+::\+Memory\+Page\+\_\+\+O\+L\+D}!Memory\+Page\+\_\+\+O\+L\+D@{Memory\+Page\+\_\+\+O\+L\+D}}
+\index{Memory\+Page\+\_\+\+O\+L\+D@{Memory\+Page\+\_\+\+O\+L\+D}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Memory\+::\+Memory\+Page\+\_\+\+O\+L\+D@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Memory\+::\+Memory\+Page\+\_\+\+O\+L\+D}}
+\subsubsection[{Memory\+Page\+\_\+\+O\+L\+D(int page\+Index, int start\+Offset, int page\+Size)}]{\setlength{\rightskip}{0pt plus 5cm}C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Memory.\+Memory\+Page\+\_\+\+O\+L\+D.\+Memory\+Page\+\_\+\+O\+L\+D (
+\begin{DoxyParamCaption}
+\item[{int}]{page\+Index, }
+\item[{int}]{start\+Offset, }
+\item[{int}]{page\+Size}
+\end{DoxyParamCaption}
+)}\label{class_c_p_u___o_s___simulator_1_1_memory_1_1_memory_page___o_l_d_a8bcba1ca981b4fd6c04dbdf9422b072b}
+
+
+Definition at line 73 of file Memory\+Page\+\_\+\+O\+L\+D.\+cs.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_c_p_u___o_s___simulator_1_1_memory_1_1_memory_page___o_l_d_ad1259ac2ae7957ab4fd99e847ace40a6}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Memory\+::\+Memory\+Page\+\_\+\+O\+L\+D@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Memory\+::\+Memory\+Page\+\_\+\+O\+L\+D}!get\+Byte@{get\+Byte}}
+\index{get\+Byte@{get\+Byte}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Memory\+::\+Memory\+Page\+\_\+\+O\+L\+D@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Memory\+::\+Memory\+Page\+\_\+\+O\+L\+D}}
+\subsubsection[{get\+Byte(int address)}]{\setlength{\rightskip}{0pt plus 5cm}char C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Memory.\+Memory\+Page\+\_\+\+O\+L\+D.\+get\+Byte (
+\begin{DoxyParamCaption}
+\item[{int}]{address}
+\end{DoxyParamCaption}
+)}\label{class_c_p_u___o_s___simulator_1_1_memory_1_1_memory_page___o_l_d_ad1259ac2ae7957ab4fd99e847ace40a6}
+
+
+Definition at line 87 of file Memory\+Page\+\_\+\+O\+L\+D.\+cs.
+
+\hypertarget{class_c_p_u___o_s___simulator_1_1_memory_1_1_memory_page___o_l_d_a892ba24ecfb3feb81aa2fe2e9304b8fb}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Memory\+::\+Memory\+Page\+\_\+\+O\+L\+D@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Memory\+::\+Memory\+Page\+\_\+\+O\+L\+D}!Populate\+Array$<$ T $>$@{Populate\+Array$<$ T $>$}}
+\index{Populate\+Array$<$ T $>$@{Populate\+Array$<$ T $>$}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Memory\+::\+Memory\+Page\+\_\+\+O\+L\+D@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Memory\+::\+Memory\+Page\+\_\+\+O\+L\+D}}
+\subsubsection[{Populate\+Array$<$ T $>$(ref T[,] data, T Value)}]{\setlength{\rightskip}{0pt plus 5cm}void C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Memory.\+Memory\+Page\+\_\+\+O\+L\+D.\+Populate\+Array$<$ T $>$ (
+\begin{DoxyParamCaption}
+\item[{ref T}]{data\mbox{[},\mbox{]}, }
+\item[{T}]{Value}
+\end{DoxyParamCaption}
+)}\label{class_c_p_u___o_s___simulator_1_1_memory_1_1_memory_page___o_l_d_a892ba24ecfb3feb81aa2fe2e9304b8fb}
+
+
+Definition at line 101 of file Memory\+Page\+\_\+\+O\+L\+D.\+cs.
+
+\hypertarget{class_c_p_u___o_s___simulator_1_1_memory_1_1_memory_page___o_l_d_a00f0207abb0f969a24765c7a38aab574}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Memory\+::\+Memory\+Page\+\_\+\+O\+L\+D@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Memory\+::\+Memory\+Page\+\_\+\+O\+L\+D}!set\+Byte@{set\+Byte}}
+\index{set\+Byte@{set\+Byte}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Memory\+::\+Memory\+Page\+\_\+\+O\+L\+D@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Memory\+::\+Memory\+Page\+\_\+\+O\+L\+D}}
+\subsubsection[{set\+Byte(int address, char value)}]{\setlength{\rightskip}{0pt plus 5cm}void C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Memory.\+Memory\+Page\+\_\+\+O\+L\+D.\+set\+Byte (
+\begin{DoxyParamCaption}
+\item[{int}]{address, }
+\item[{char}]{value}
+\end{DoxyParamCaption}
+)}\label{class_c_p_u___o_s___simulator_1_1_memory_1_1_memory_page___o_l_d_a00f0207abb0f969a24765c7a38aab574}
+
+
+Definition at line 94 of file Memory\+Page\+\_\+\+O\+L\+D.\+cs.
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{class_c_p_u___o_s___simulator_1_1_memory_1_1_memory_page___o_l_d_a0de587e2918454bff3fdb5cb30c67d49}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Memory\+::\+Memory\+Page\+\_\+\+O\+L\+D@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Memory\+::\+Memory\+Page\+\_\+\+O\+L\+D}!data@{data}}
+\index{data@{data}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Memory\+::\+Memory\+Page\+\_\+\+O\+L\+D@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Memory\+::\+Memory\+Page\+\_\+\+O\+L\+D}}
+\subsubsection[{data}]{\setlength{\rightskip}{0pt plus 5cm}char \mbox{[},\mbox{]} C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Memory.\+Memory\+Page\+\_\+\+O\+L\+D.\+data\hspace{0.3cm}{\ttfamily [private]}}\label{class_c_p_u___o_s___simulator_1_1_memory_1_1_memory_page___o_l_d_a0de587e2918454bff3fdb5cb30c67d49}
+
+
+Definition at line 9 of file Memory\+Page\+\_\+\+O\+L\+D.\+cs.
+
+\hypertarget{class_c_p_u___o_s___simulator_1_1_memory_1_1_memory_page___o_l_d_ad255a5229701ca9f7bb9c7fa90faf2ae}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Memory\+::\+Memory\+Page\+\_\+\+O\+L\+D@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Memory\+::\+Memory\+Page\+\_\+\+O\+L\+D}!end\+Offset@{end\+Offset}}
+\index{end\+Offset@{end\+Offset}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Memory\+::\+Memory\+Page\+\_\+\+O\+L\+D@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Memory\+::\+Memory\+Page\+\_\+\+O\+L\+D}}
+\subsubsection[{end\+Offset}]{\setlength{\rightskip}{0pt plus 5cm}readonly int C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Memory.\+Memory\+Page\+\_\+\+O\+L\+D.\+end\+Offset\hspace{0.3cm}{\ttfamily [private]}}\label{class_c_p_u___o_s___simulator_1_1_memory_1_1_memory_page___o_l_d_ad255a5229701ca9f7bb9c7fa90faf2ae}
+
+
+Definition at line 12 of file Memory\+Page\+\_\+\+O\+L\+D.\+cs.
+
+\hypertarget{class_c_p_u___o_s___simulator_1_1_memory_1_1_memory_page___o_l_d_a378522c3baf4d7cf4a7eaa8c164d3de8}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Memory\+::\+Memory\+Page\+\_\+\+O\+L\+D@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Memory\+::\+Memory\+Page\+\_\+\+O\+L\+D}!page\+Index@{page\+Index}}
+\index{page\+Index@{page\+Index}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Memory\+::\+Memory\+Page\+\_\+\+O\+L\+D@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Memory\+::\+Memory\+Page\+\_\+\+O\+L\+D}}
+\subsubsection[{page\+Index}]{\setlength{\rightskip}{0pt plus 5cm}int C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Memory.\+Memory\+Page\+\_\+\+O\+L\+D.\+page\+Index\hspace{0.3cm}{\ttfamily [private]}}\label{class_c_p_u___o_s___simulator_1_1_memory_1_1_memory_page___o_l_d_a378522c3baf4d7cf4a7eaa8c164d3de8}
+
+
+Definition at line 10 of file Memory\+Page\+\_\+\+O\+L\+D.\+cs.
+
+\hypertarget{class_c_p_u___o_s___simulator_1_1_memory_1_1_memory_page___o_l_d_afb00546c1b356df209e380cf9b1b25d2}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Memory\+::\+Memory\+Page\+\_\+\+O\+L\+D@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Memory\+::\+Memory\+Page\+\_\+\+O\+L\+D}!page\+Size@{page\+Size}}
+\index{page\+Size@{page\+Size}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Memory\+::\+Memory\+Page\+\_\+\+O\+L\+D@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Memory\+::\+Memory\+Page\+\_\+\+O\+L\+D}}
+\subsubsection[{page\+Size}]{\setlength{\rightskip}{0pt plus 5cm}readonly int C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Memory.\+Memory\+Page\+\_\+\+O\+L\+D.\+page\+Size\hspace{0.3cm}{\ttfamily [private]}}\label{class_c_p_u___o_s___simulator_1_1_memory_1_1_memory_page___o_l_d_afb00546c1b356df209e380cf9b1b25d2}
+
+
+Definition at line 13 of file Memory\+Page\+\_\+\+O\+L\+D.\+cs.
+
+\hypertarget{class_c_p_u___o_s___simulator_1_1_memory_1_1_memory_page___o_l_d_a9114e60bd23b6a77765e73520fb5ddc1}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Memory\+::\+Memory\+Page\+\_\+\+O\+L\+D@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Memory\+::\+Memory\+Page\+\_\+\+O\+L\+D}!start\+Offset@{start\+Offset}}
+\index{start\+Offset@{start\+Offset}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Memory\+::\+Memory\+Page\+\_\+\+O\+L\+D@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Memory\+::\+Memory\+Page\+\_\+\+O\+L\+D}}
+\subsubsection[{start\+Offset}]{\setlength{\rightskip}{0pt plus 5cm}readonly int C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Memory.\+Memory\+Page\+\_\+\+O\+L\+D.\+start\+Offset\hspace{0.3cm}{\ttfamily [private]}}\label{class_c_p_u___o_s___simulator_1_1_memory_1_1_memory_page___o_l_d_a9114e60bd23b6a77765e73520fb5ddc1}
+
+
+Definition at line 11 of file Memory\+Page\+\_\+\+O\+L\+D.\+cs.
+
+
+
+\subsection{Property Documentation}
+\hypertarget{class_c_p_u___o_s___simulator_1_1_memory_1_1_memory_page___o_l_d_a203944883e8102c6aad517d1474bdc0b}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Memory\+::\+Memory\+Page\+\_\+\+O\+L\+D@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Memory\+::\+Memory\+Page\+\_\+\+O\+L\+D}!Data@{Data}}
+\index{Data@{Data}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Memory\+::\+Memory\+Page\+\_\+\+O\+L\+D@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Memory\+::\+Memory\+Page\+\_\+\+O\+L\+D}}
+\subsubsection[{Data}]{\setlength{\rightskip}{0pt plus 5cm}char \mbox{[},\mbox{]} C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Memory.\+Memory\+Page\+\_\+\+O\+L\+D.\+Data\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}\label{class_c_p_u___o_s___simulator_1_1_memory_1_1_memory_page___o_l_d_a203944883e8102c6aad517d1474bdc0b}
+
+
+Definition at line 20 of file Memory\+Page\+\_\+\+O\+L\+D.\+cs.
+
+\hypertarget{class_c_p_u___o_s___simulator_1_1_memory_1_1_memory_page___o_l_d_a1610e4a6a7f9d94412a831f269d0281d}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Memory\+::\+Memory\+Page\+\_\+\+O\+L\+D@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Memory\+::\+Memory\+Page\+\_\+\+O\+L\+D}!End\+Offset@{End\+Offset}}
+\index{End\+Offset@{End\+Offset}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Memory\+::\+Memory\+Page\+\_\+\+O\+L\+D@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Memory\+::\+Memory\+Page\+\_\+\+O\+L\+D}}
+\subsubsection[{End\+Offset}]{\setlength{\rightskip}{0pt plus 5cm}int C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Memory.\+Memory\+Page\+\_\+\+O\+L\+D.\+End\+Offset\hspace{0.3cm}{\ttfamily [get]}}\label{class_c_p_u___o_s___simulator_1_1_memory_1_1_memory_page___o_l_d_a1610e4a6a7f9d94412a831f269d0281d}
+
+
+Definition at line 54 of file Memory\+Page\+\_\+\+O\+L\+D.\+cs.
+
+\hypertarget{class_c_p_u___o_s___simulator_1_1_memory_1_1_memory_page___o_l_d_a92429e7bf791e6bc4d2c1ed54a999394}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Memory\+::\+Memory\+Page\+\_\+\+O\+L\+D@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Memory\+::\+Memory\+Page\+\_\+\+O\+L\+D}!Page\+Index@{Page\+Index}}
+\index{Page\+Index@{Page\+Index}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Memory\+::\+Memory\+Page\+\_\+\+O\+L\+D@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Memory\+::\+Memory\+Page\+\_\+\+O\+L\+D}}
+\subsubsection[{Page\+Index}]{\setlength{\rightskip}{0pt plus 5cm}int C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Memory.\+Memory\+Page\+\_\+\+O\+L\+D.\+Page\+Index\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}\label{class_c_p_u___o_s___simulator_1_1_memory_1_1_memory_page___o_l_d_a92429e7bf791e6bc4d2c1ed54a999394}
+
+
+Definition at line 33 of file Memory\+Page\+\_\+\+O\+L\+D.\+cs.
+
+\hypertarget{class_c_p_u___o_s___simulator_1_1_memory_1_1_memory_page___o_l_d_a058448789b0f5223ef410b223f2e9bb3}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Memory\+::\+Memory\+Page\+\_\+\+O\+L\+D@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Memory\+::\+Memory\+Page\+\_\+\+O\+L\+D}!Page\+Size@{Page\+Size}}
+\index{Page\+Size@{Page\+Size}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Memory\+::\+Memory\+Page\+\_\+\+O\+L\+D@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Memory\+::\+Memory\+Page\+\_\+\+O\+L\+D}}
+\subsubsection[{Page\+Size}]{\setlength{\rightskip}{0pt plus 5cm}int C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Memory.\+Memory\+Page\+\_\+\+O\+L\+D.\+Page\+Size\hspace{0.3cm}{\ttfamily [get]}}\label{class_c_p_u___o_s___simulator_1_1_memory_1_1_memory_page___o_l_d_a058448789b0f5223ef410b223f2e9bb3}
+
+
+Definition at line 62 of file Memory\+Page\+\_\+\+O\+L\+D.\+cs.
+
+\hypertarget{class_c_p_u___o_s___simulator_1_1_memory_1_1_memory_page___o_l_d_aabc0df1123ef7c01b14a5b3a23615760}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Memory\+::\+Memory\+Page\+\_\+\+O\+L\+D@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Memory\+::\+Memory\+Page\+\_\+\+O\+L\+D}!Start\+Offset@{Start\+Offset}}
+\index{Start\+Offset@{Start\+Offset}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Memory\+::\+Memory\+Page\+\_\+\+O\+L\+D@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Memory\+::\+Memory\+Page\+\_\+\+O\+L\+D}}
+\subsubsection[{Start\+Offset}]{\setlength{\rightskip}{0pt plus 5cm}int C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Memory.\+Memory\+Page\+\_\+\+O\+L\+D.\+Start\+Offset\hspace{0.3cm}{\ttfamily [get]}}\label{class_c_p_u___o_s___simulator_1_1_memory_1_1_memory_page___o_l_d_aabc0df1123ef7c01b14a5b3a23615760}
+
+
+Definition at line 46 of file Memory\+Page\+\_\+\+O\+L\+D.\+cs.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Memory/\hyperlink{_memory_page___o_l_d_8cs}{Memory\+Page\+\_\+\+O\+L\+D.\+cs}\end{DoxyCompactItemize}

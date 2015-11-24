@@ -1,0 +1,383 @@
+\hypertarget{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_special_register}{}\section{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+C\+P\+U.\+Special\+Register Class Reference}
+\label{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_special_register}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+C\+P\+U.\+Special\+Register@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+C\+P\+U.\+Special\+Register}}
+
+
+This class represents a special register i.\+e a non general purpose register  
+
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_special_register_a697f3e6f938ad7ab0ceee0555fe2c312}{Special\+Register} ()
+\begin{DoxyCompactList}\small\item\em Default constructor for Special \hyperlink{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_register}{Register} used when deserialising a special register. 
+
+N\+O\+T\+E Do Not use in code \end{DoxyCompactList}\item 
+void \hyperlink{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_special_register_ab76c9ab94069230fdf14821495ac9e9c}{set\+Register\+Value} (int \hyperlink{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_special_register_a90d144e675bb3fe7bbc1f75bafdfde36}{value}, \hyperlink{namespace_c_p_u___o_s___simulator_1_1_c_p_u_ad49cfe442b74115a326c03b7ae848f76}{Enum\+Operand\+Type} \hyperlink{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_special_register_aae2bca6c1354013cca156bd19c30640d}{type})
+\begin{DoxyCompactList}\small\item\em Sets the value in a special register \end{DoxyCompactList}\item 
+void \hyperlink{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_special_register_a6c2605883e6349c10e92f5453c2ad9ea}{set\+Register\+Value} (string \hyperlink{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_special_register_a90d144e675bb3fe7bbc1f75bafdfde36}{value}, \hyperlink{namespace_c_p_u___o_s___simulator_1_1_c_p_u_ad49cfe442b74115a326c03b7ae848f76}{Enum\+Operand\+Type} \hyperlink{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_special_register_aae2bca6c1354013cca156bd19c30640d}{type})
+\begin{DoxyCompactList}\small\item\em Sets the string value in a special register \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_special_register}{Special\+Register} \hyperlink{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_special_register_aa8c2e88c7311076eb6fd42ecb5d64e38}{Find\+Special\+Register} (string \hyperlink{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_special_register_ac521aef66f5fe6a88486e70f5ade8326}{name})
+\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_special_register}{Special\+Register} \hyperlink{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_special_register_afc3205003157a5f135752e6a4f8ffb8a}{P\+C} = new \hyperlink{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_special_register}{Special\+Register}(\char`\"{}P\+C\char`\"{})
+\begin{DoxyCompactList}\small\item\em The Program Counter register \end{DoxyCompactList}\item 
+static \hyperlink{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_special_register}{Special\+Register} \hyperlink{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_special_register_a556243e1c3c891e685bf884771c1575c}{S\+R} = new \hyperlink{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_special_register}{Special\+Register}(\char`\"{}S\+R\char`\"{})
+\begin{DoxyCompactList}\small\item\em The Stack \hyperlink{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_register}{Register} \end{DoxyCompactList}\item 
+static \hyperlink{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_special_register}{Special\+Register} \hyperlink{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_special_register_ae1699c7972763e73e3f1cfe467cc82e9}{S\+P} = new \hyperlink{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_special_register}{Special\+Register}(\char`\"{}S\+P\char`\"{})
+\begin{DoxyCompactList}\small\item\em The Stack Pointer \hyperlink{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_register}{Register} \end{DoxyCompactList}\item 
+static \hyperlink{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_special_register}{Special\+Register} \hyperlink{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_special_register_a08c44f677cc5e830000382725ce8ab9f}{B\+R} = new \hyperlink{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_special_register}{Special\+Register}(\char`\"{}B\+R\char`\"{})
+\item 
+static \hyperlink{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_special_register}{Special\+Register} \hyperlink{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_special_register_a96fde61578e06f00ab7b19a4b05b9885}{I\+R} = new \hyperlink{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_special_register}{Special\+Register}(\char`\"{}I\+R\char`\"{})
+\begin{DoxyCompactList}\small\item\em The \hyperlink{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_instruction}{Instruction} \hyperlink{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_register}{Register} \end{DoxyCompactList}\item 
+static \hyperlink{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_special_register}{Special\+Register} \hyperlink{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_special_register_aabf7c761e1f8a9994b7c0b131c53924d}{M\+D\+R} = new \hyperlink{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_special_register}{Special\+Register}(\char`\"{}M\+D\+R\char`\"{})
+\begin{DoxyCompactList}\small\item\em The \hyperlink{namespace_c_p_u___o_s___simulator_1_1_memory}{Memory} Data \hyperlink{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_register}{Register} \end{DoxyCompactList}\item 
+static \hyperlink{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_special_register}{Special\+Register} \hyperlink{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_special_register_a2ae89cee8b74f9985f43ee4e6f994bad}{M\+A\+R} = new \hyperlink{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_special_register}{Special\+Register}(\char`\"{}M\+A\+R\char`\"{})
+\begin{DoxyCompactList}\small\item\em The \hyperlink{namespace_c_p_u___o_s___simulator_1_1_memory}{Memory} Logical\+Address \hyperlink{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_register}{Register} \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_special_register_a0328b3388027aa409a68191685753f4a}{Special\+Register} (string \hyperlink{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_special_register_ac521aef66f5fe6a88486e70f5ade8326}{name})
+\begin{DoxyCompactList}\small\item\em Primary constructor for a special register \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+string \hyperlink{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_special_register_ad8ad1efaf680db5471184a74f911b558}{Name}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\item 
+int \hyperlink{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_special_register_aeff33618d376eeaef1e62d6833074bd4}{Value}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\item 
+\hyperlink{namespace_c_p_u___o_s___simulator_1_1_c_p_u_ad49cfe442b74115a326c03b7ae848f76}{Enum\+Operand\+Type} \hyperlink{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_special_register_afd9e45080d792861e577dde31cdb6d3e}{Type}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\item 
+string \hyperlink{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_special_register_a60a2bcd516cedf8bb485c2e36bbc3235}{Value\+String}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\end{DoxyCompactItemize}
+\subsection*{Static Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static dynamic \hyperlink{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_special_register_a0ed54c8fcd7674bcb87fef3eda712af2}{Get\+Main\+Window\+Instance} ()
+\begin{DoxyCompactList}\small\item\em This function gets the main window instance from the window bridge \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+string \hyperlink{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_special_register_ac521aef66f5fe6a88486e70f5ade8326}{name}
+\begin{DoxyCompactList}\small\item\em The name of the Special \hyperlink{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_register}{Register} \end{DoxyCompactList}\item 
+Int32 \hyperlink{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_special_register_a90d144e675bb3fe7bbc1f75bafdfde36}{value}
+\begin{DoxyCompactList}\small\item\em The integer value of the special register \end{DoxyCompactList}\item 
+string \hyperlink{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_special_register_a540a55b17a53591312e76689d051abac}{value\+String}
+\begin{DoxyCompactList}\small\item\em The string value of the register used 
+
+for the instruction register (I\+R) 
+
+and the memory data register (M\+D\+R) \end{DoxyCompactList}\item 
+\hyperlink{namespace_c_p_u___o_s___simulator_1_1_c_p_u_ad49cfe442b74115a326c03b7ae848f76}{Enum\+Operand\+Type} \hyperlink{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_special_register_aae2bca6c1354013cca156bd19c30640d}{type}
+\begin{DoxyCompactList}\small\item\em The type of value stored in the register 
+
+i.\+e intermediate value or memory address \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This class represents a special register i.\+e a non general purpose register 
+
+
+
+Definition at line 10 of file Special\+Register.\+cs.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_special_register_a697f3e6f938ad7ab0ceee0555fe2c312}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Special\+Register@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Special\+Register}!Special\+Register@{Special\+Register}}
+\index{Special\+Register@{Special\+Register}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Special\+Register@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Special\+Register}}
+\subsubsection[{Special\+Register()}]{\setlength{\rightskip}{0pt plus 5cm}C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+C\+P\+U.\+Special\+Register.\+Special\+Register (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_special_register_a697f3e6f938ad7ab0ceee0555fe2c312}
+
+
+Default constructor for Special \hyperlink{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_register}{Register} used when deserialising a special register. 
+
+N\+O\+T\+E Do Not use in code 
+
+
+
+Definition at line 65 of file Special\+Register.\+cs.
+
+\hypertarget{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_special_register_a0328b3388027aa409a68191685753f4a}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Special\+Register@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Special\+Register}!Special\+Register@{Special\+Register}}
+\index{Special\+Register@{Special\+Register}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Special\+Register@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Special\+Register}}
+\subsubsection[{Special\+Register(string name)}]{\setlength{\rightskip}{0pt plus 5cm}C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+C\+P\+U.\+Special\+Register.\+Special\+Register (
+\begin{DoxyParamCaption}
+\item[{string}]{name}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}\label{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_special_register_a0328b3388027aa409a68191685753f4a}
+
+
+Primary constructor for a special register 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & The name of the register\\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 74 of file Special\+Register.\+cs.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_special_register_aa8c2e88c7311076eb6fd42ecb5d64e38}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Special\+Register@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Special\+Register}!Find\+Special\+Register@{Find\+Special\+Register}}
+\index{Find\+Special\+Register@{Find\+Special\+Register}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Special\+Register@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Special\+Register}}
+\subsubsection[{Find\+Special\+Register(string name)}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf Special\+Register} C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+C\+P\+U.\+Special\+Register.\+Find\+Special\+Register (
+\begin{DoxyParamCaption}
+\item[{string}]{name}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_special_register_aa8c2e88c7311076eb6fd42ecb5d64e38}
+
+
+
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Definition at line 90 of file Special\+Register.\+cs.
+
+\hypertarget{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_special_register_a0ed54c8fcd7674bcb87fef3eda712af2}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Special\+Register@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Special\+Register}!Get\+Main\+Window\+Instance@{Get\+Main\+Window\+Instance}}
+\index{Get\+Main\+Window\+Instance@{Get\+Main\+Window\+Instance}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Special\+Register@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Special\+Register}}
+\subsubsection[{Get\+Main\+Window\+Instance()}]{\setlength{\rightskip}{0pt plus 5cm}static dynamic C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+C\+P\+U.\+Special\+Register.\+Get\+Main\+Window\+Instance (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}\label{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_special_register_a0ed54c8fcd7674bcb87fef3eda712af2}
+
+
+This function gets the main window instance from the window bridge 
+
+\begin{DoxyReturn}{Returns}
+the active instance of main window 
+\end{DoxyReturn}
+
+
+Definition at line 155 of file Special\+Register.\+cs.
+
+\hypertarget{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_special_register_ab76c9ab94069230fdf14821495ac9e9c}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Special\+Register@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Special\+Register}!set\+Register\+Value@{set\+Register\+Value}}
+\index{set\+Register\+Value@{set\+Register\+Value}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Special\+Register@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Special\+Register}}
+\subsubsection[{set\+Register\+Value(int value, Enum\+Operand\+Type type)}]{\setlength{\rightskip}{0pt plus 5cm}void C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+C\+P\+U.\+Special\+Register.\+set\+Register\+Value (
+\begin{DoxyParamCaption}
+\item[{int}]{value, }
+\item[{{\bf Enum\+Operand\+Type}}]{type}
+\end{DoxyParamCaption}
+)}\label{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_special_register_ab76c9ab94069230fdf14821495ac9e9c}
+
+
+Sets the value in a special register 
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & the value to store in the register\\
+\hline
+{\em type} & the type of data memory or value\\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 134 of file Special\+Register.\+cs.
+
+\hypertarget{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_special_register_a6c2605883e6349c10e92f5453c2ad9ea}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Special\+Register@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Special\+Register}!set\+Register\+Value@{set\+Register\+Value}}
+\index{set\+Register\+Value@{set\+Register\+Value}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Special\+Register@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Special\+Register}}
+\subsubsection[{set\+Register\+Value(string value, Enum\+Operand\+Type type)}]{\setlength{\rightskip}{0pt plus 5cm}void C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+C\+P\+U.\+Special\+Register.\+set\+Register\+Value (
+\begin{DoxyParamCaption}
+\item[{string}]{value, }
+\item[{{\bf Enum\+Operand\+Type}}]{type}
+\end{DoxyParamCaption}
+)}\label{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_special_register_a6c2605883e6349c10e92f5453c2ad9ea}
+
+
+Sets the string value in a special register 
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & the value to store in the register\\
+\hline
+{\em type} & the type of data memory or value\\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 145 of file Special\+Register.\+cs.
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_special_register_a08c44f677cc5e830000382725ce8ab9f}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Special\+Register@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Special\+Register}!B\+R@{B\+R}}
+\index{B\+R@{B\+R}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Special\+Register@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Special\+Register}}
+\subsubsection[{B\+R}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Special\+Register} C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+C\+P\+U.\+Special\+Register.\+B\+R = new {\bf Special\+Register}(\char`\"{}B\+R\char`\"{})\hspace{0.3cm}{\ttfamily [static]}}\label{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_special_register_a08c44f677cc5e830000382725ce8ab9f}
+
+
+
+
+
+
+Definition at line 46 of file Special\+Register.\+cs.
+
+\hypertarget{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_special_register_a96fde61578e06f00ab7b19a4b05b9885}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Special\+Register@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Special\+Register}!I\+R@{I\+R}}
+\index{I\+R@{I\+R}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Special\+Register@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Special\+Register}}
+\subsubsection[{I\+R}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Special\+Register} C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+C\+P\+U.\+Special\+Register.\+I\+R = new {\bf Special\+Register}(\char`\"{}I\+R\char`\"{})\hspace{0.3cm}{\ttfamily [static]}}\label{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_special_register_a96fde61578e06f00ab7b19a4b05b9885}
+
+
+The \hyperlink{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_instruction}{Instruction} \hyperlink{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_register}{Register} 
+
+
+
+Definition at line 50 of file Special\+Register.\+cs.
+
+\hypertarget{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_special_register_a2ae89cee8b74f9985f43ee4e6f994bad}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Special\+Register@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Special\+Register}!M\+A\+R@{M\+A\+R}}
+\index{M\+A\+R@{M\+A\+R}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Special\+Register@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Special\+Register}}
+\subsubsection[{M\+A\+R}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Special\+Register} C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+C\+P\+U.\+Special\+Register.\+M\+A\+R = new {\bf Special\+Register}(\char`\"{}M\+A\+R\char`\"{})\hspace{0.3cm}{\ttfamily [static]}}\label{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_special_register_a2ae89cee8b74f9985f43ee4e6f994bad}
+
+
+The \hyperlink{namespace_c_p_u___o_s___simulator_1_1_memory}{Memory} Logical\+Address \hyperlink{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_register}{Register} 
+
+
+
+Definition at line 58 of file Special\+Register.\+cs.
+
+\hypertarget{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_special_register_aabf7c761e1f8a9994b7c0b131c53924d}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Special\+Register@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Special\+Register}!M\+D\+R@{M\+D\+R}}
+\index{M\+D\+R@{M\+D\+R}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Special\+Register@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Special\+Register}}
+\subsubsection[{M\+D\+R}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Special\+Register} C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+C\+P\+U.\+Special\+Register.\+M\+D\+R = new {\bf Special\+Register}(\char`\"{}M\+D\+R\char`\"{})\hspace{0.3cm}{\ttfamily [static]}}\label{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_special_register_aabf7c761e1f8a9994b7c0b131c53924d}
+
+
+The \hyperlink{namespace_c_p_u___o_s___simulator_1_1_memory}{Memory} Data \hyperlink{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_register}{Register} 
+
+
+
+Definition at line 54 of file Special\+Register.\+cs.
+
+\hypertarget{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_special_register_ac521aef66f5fe6a88486e70f5ade8326}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Special\+Register@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Special\+Register}!name@{name}}
+\index{name@{name}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Special\+Register@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Special\+Register}}
+\subsubsection[{name}]{\setlength{\rightskip}{0pt plus 5cm}string C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+C\+P\+U.\+Special\+Register.\+name\hspace{0.3cm}{\ttfamily [private]}}\label{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_special_register_ac521aef66f5fe6a88486e70f5ade8326}
+
+
+The name of the Special \hyperlink{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_register}{Register} 
+
+
+
+Definition at line 15 of file Special\+Register.\+cs.
+
+\hypertarget{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_special_register_afc3205003157a5f135752e6a4f8ffb8a}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Special\+Register@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Special\+Register}!P\+C@{P\+C}}
+\index{P\+C@{P\+C}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Special\+Register@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Special\+Register}}
+\subsubsection[{P\+C}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Special\+Register} C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+C\+P\+U.\+Special\+Register.\+P\+C = new {\bf Special\+Register}(\char`\"{}P\+C\char`\"{})\hspace{0.3cm}{\ttfamily [static]}}\label{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_special_register_afc3205003157a5f135752e6a4f8ffb8a}
+
+
+The Program Counter register 
+
+
+
+Definition at line 34 of file Special\+Register.\+cs.
+
+\hypertarget{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_special_register_ae1699c7972763e73e3f1cfe467cc82e9}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Special\+Register@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Special\+Register}!S\+P@{S\+P}}
+\index{S\+P@{S\+P}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Special\+Register@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Special\+Register}}
+\subsubsection[{S\+P}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Special\+Register} C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+C\+P\+U.\+Special\+Register.\+S\+P = new {\bf Special\+Register}(\char`\"{}S\+P\char`\"{})\hspace{0.3cm}{\ttfamily [static]}}\label{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_special_register_ae1699c7972763e73e3f1cfe467cc82e9}
+
+
+The Stack Pointer \hyperlink{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_register}{Register} 
+
+
+
+Definition at line 42 of file Special\+Register.\+cs.
+
+\hypertarget{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_special_register_a556243e1c3c891e685bf884771c1575c}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Special\+Register@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Special\+Register}!S\+R@{S\+R}}
+\index{S\+R@{S\+R}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Special\+Register@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Special\+Register}}
+\subsubsection[{S\+R}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Special\+Register} C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+C\+P\+U.\+Special\+Register.\+S\+R = new {\bf Special\+Register}(\char`\"{}S\+R\char`\"{})\hspace{0.3cm}{\ttfamily [static]}}\label{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_special_register_a556243e1c3c891e685bf884771c1575c}
+
+
+The Stack \hyperlink{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_register}{Register} 
+
+
+
+Definition at line 38 of file Special\+Register.\+cs.
+
+\hypertarget{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_special_register_aae2bca6c1354013cca156bd19c30640d}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Special\+Register@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Special\+Register}!type@{type}}
+\index{type@{type}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Special\+Register@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Special\+Register}}
+\subsubsection[{type}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Enum\+Operand\+Type} C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+C\+P\+U.\+Special\+Register.\+type\hspace{0.3cm}{\ttfamily [private]}}\label{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_special_register_aae2bca6c1354013cca156bd19c30640d}
+
+
+The type of value stored in the register 
+
+i.\+e intermediate value or memory address 
+
+
+
+Definition at line 30 of file Special\+Register.\+cs.
+
+\hypertarget{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_special_register_a90d144e675bb3fe7bbc1f75bafdfde36}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Special\+Register@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Special\+Register}!value@{value}}
+\index{value@{value}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Special\+Register@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Special\+Register}}
+\subsubsection[{value}]{\setlength{\rightskip}{0pt plus 5cm}Int32 C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+C\+P\+U.\+Special\+Register.\+value\hspace{0.3cm}{\ttfamily [private]}}\label{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_special_register_a90d144e675bb3fe7bbc1f75bafdfde36}
+
+
+The integer value of the special register 
+
+
+
+Definition at line 19 of file Special\+Register.\+cs.
+
+\hypertarget{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_special_register_a540a55b17a53591312e76689d051abac}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Special\+Register@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Special\+Register}!value\+String@{value\+String}}
+\index{value\+String@{value\+String}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Special\+Register@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Special\+Register}}
+\subsubsection[{value\+String}]{\setlength{\rightskip}{0pt plus 5cm}string C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+C\+P\+U.\+Special\+Register.\+value\+String\hspace{0.3cm}{\ttfamily [private]}}\label{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_special_register_a540a55b17a53591312e76689d051abac}
+
+
+The string value of the register used 
+
+for the instruction register (I\+R) 
+
+and the memory data register (M\+D\+R) 
+
+
+
+Definition at line 25 of file Special\+Register.\+cs.
+
+
+
+\subsection{Property Documentation}
+\hypertarget{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_special_register_ad8ad1efaf680db5471184a74f911b558}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Special\+Register@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Special\+Register}!Name@{Name}}
+\index{Name@{Name}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Special\+Register@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Special\+Register}}
+\subsubsection[{Name}]{\setlength{\rightskip}{0pt plus 5cm}string C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+C\+P\+U.\+Special\+Register.\+Name\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}\label{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_special_register_ad8ad1efaf680db5471184a74f911b558}
+
+
+Definition at line 165 of file Special\+Register.\+cs.
+
+\hypertarget{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_special_register_afd9e45080d792861e577dde31cdb6d3e}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Special\+Register@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Special\+Register}!Type@{Type}}
+\index{Type@{Type}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Special\+Register@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Special\+Register}}
+\subsubsection[{Type}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Enum\+Operand\+Type} C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+C\+P\+U.\+Special\+Register.\+Type\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}\label{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_special_register_afd9e45080d792861e577dde31cdb6d3e}
+
+
+Definition at line 191 of file Special\+Register.\+cs.
+
+\hypertarget{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_special_register_aeff33618d376eeaef1e62d6833074bd4}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Special\+Register@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Special\+Register}!Value@{Value}}
+\index{Value@{Value}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Special\+Register@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Special\+Register}}
+\subsubsection[{Value}]{\setlength{\rightskip}{0pt plus 5cm}int C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+C\+P\+U.\+Special\+Register.\+Value\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}\label{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_special_register_aeff33618d376eeaef1e62d6833074bd4}
+
+
+Definition at line 178 of file Special\+Register.\+cs.
+
+\hypertarget{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_special_register_a60a2bcd516cedf8bb485c2e36bbc3235}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Special\+Register@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Special\+Register}!Value\+String@{Value\+String}}
+\index{Value\+String@{Value\+String}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Special\+Register@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Special\+Register}}
+\subsubsection[{Value\+String}]{\setlength{\rightskip}{0pt plus 5cm}string C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+C\+P\+U.\+Special\+Register.\+Value\+String\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}\label{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_special_register_a60a2bcd516cedf8bb485c2e36bbc3235}
+
+
+Definition at line 204 of file Special\+Register.\+cs.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+P\+U/\hyperlink{_special_register_8cs}{Special\+Register.\+cs}\end{DoxyCompactItemize}
