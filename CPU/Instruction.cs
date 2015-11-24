@@ -714,6 +714,8 @@ namespace CPU_OS_Simulator.CPU
                 int rightvalue = rhs.Register.Value;
                 lhs.Register.Value = rightvalue;
                 rhs.Register.Value = leftvalue;
+                Register.FindRegister(rhs.Register.Name).setRegisterValue(lhs.Register.Value,EnumOperandType.VALUE);
+                Register.FindRegister(lhs.Register.Name).setRegisterValue(rhs.Register.Value, EnumOperandType.VALUE);
                 result = lhs.Register.Value;
                 return result;
             }
