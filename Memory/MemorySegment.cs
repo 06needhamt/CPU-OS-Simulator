@@ -1,14 +1,12 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace CPU_OS_Simulator.Memory
 {
     public class MemorySegment
     {
         #region Global Variables
+
         private Int32 logicalAddress;
         private Int32 physicalAddress;
         private byte byte0;
@@ -21,9 +19,11 @@ namespace CPU_OS_Simulator.Memory
         private byte byte7;
         private IntPtr[] bytePointers;
         private string dataString;
+
         #endregion Global Variables
 
         #region Properties
+
         public int LogicalAddress
         {
             get
@@ -178,6 +178,7 @@ namespace CPU_OS_Simulator.Memory
         #endregion Properties
 
         #region Constructors
+
         public MemorySegment()
         {
             logicalAddress = 0;
@@ -192,10 +193,12 @@ namespace CPU_OS_Simulator.Memory
             byte7 = 0;
             dataString = BuildDataString();
         }
+
         public MemorySegment(int physicalAddress) : this()
         {
             this.physicalAddress = physicalAddress;
         }
+
         public byte GetByte(int number)
         {
             switch (number)
@@ -242,6 +245,7 @@ namespace CPU_OS_Simulator.Memory
         #endregion Constructors
 
         #region Methods
+
         public override string ToString()
         {
             return BuildDataString();
@@ -310,6 +314,7 @@ namespace CPU_OS_Simulator.Memory
                         throw new InvalidOperationException("Invalid byte number");
                     }
             }
+
             #endregion Methods
         }
     }

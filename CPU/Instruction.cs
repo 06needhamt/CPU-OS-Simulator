@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Diagnostics;
 using System.Linq;
 using System.Reflection;
 using System.Web.Script.Serialization;
@@ -46,10 +45,12 @@ namespace CPU_OS_Simulator.CPU
         /// The Logical address of this instruction within a program
         /// </summary>
         private Int32 logicalAddress;
+
         /// <summary>
         /// The physical address of this instruction within memory
         /// </summary>
         private int physicalAddress;
+
         /// <summary>
         /// The size of the instruction within the program
         /// </summary>
@@ -68,6 +69,7 @@ namespace CPU_OS_Simulator.CPU
         [ScriptIgnore]
         [NonSerialized]
         private ExecutionUnit unit;
+
         #endregion Global Variables
 
         #region Constructors
@@ -88,10 +90,10 @@ namespace CPU_OS_Simulator.CPU
         public Instruction(Int32 opcode, Int32 size)
         {
             this.opcode = opcode;
-            this.operand1 = null;
-            this.operand2 = null;
+            operand1 = null;
+            operand2 = null;
             this.size = size;
-            instructionString = this.ToString();
+            instructionString = ToString();
             BindDelegate();
         }
 
@@ -104,10 +106,10 @@ namespace CPU_OS_Simulator.CPU
         public Instruction(Int32 opcode, Operand op1, Int32 size)
         {
             this.opcode = opcode;
-            this.operand1 = op1;
-            this.operand2 = null;
+            operand1 = op1;
+            operand2 = null;
             this.size = size;
-            instructionString = this.ToString();
+            instructionString = ToString();
             BindDelegate();
         }
 
@@ -121,10 +123,10 @@ namespace CPU_OS_Simulator.CPU
         public Instruction(Int32 opcode, Operand op1, Operand op2, Int32 size)
         {
             this.opcode = opcode;
-            this.operand1 = op1;
-            this.operand2 = op2;
+            operand1 = op1;
+            operand2 = op2;
             this.size = size;
-            instructionString = this.ToString();
+            instructionString = ToString();
             BindDelegate();
         }
 
@@ -277,152 +279,152 @@ namespace CPU_OS_Simulator.CPU
             {
                 case 0:
                     {
-                        this.execute = () => MOV(operand1, operand2); // save the function in memory to call later
+                        execute = () => MOV(operand1, operand2); // save the function in memory to call later
                         break;
                     }
                 case 1:
                     {
-                        this.execute = () => MVS(operand1, operand2); // save the function in memory to call later
+                        execute = () => MVS(operand1, operand2); // save the function in memory to call later
                         break;
                     }
                 case 2:
                     {
-                        this.execute = () => CVS(operand1, operand2); // save the function in memory to call later
+                        execute = () => CVS(operand1, operand2); // save the function in memory to call later
                         break;
                     }
                 case 3:
                     {
-                        this.execute = () => CVI(operand1, operand2); // save the function in memory to call later
+                        execute = () => CVI(operand1, operand2); // save the function in memory to call later
                         break;
                     }
                 case 4:
                     {
-                        this.execute = () => LDB(operand1, operand2); // save the function in memory to call later
+                        execute = () => LDB(operand1, operand2); // save the function in memory to call later
                         break;
                     }
                 case 5:
                     {
-                        this.execute = () => LDW(operand1, operand2); // save the function in memory to call later
+                        execute = () => LDW(operand1, operand2); // save the function in memory to call later
                         break;
                     }
                 case 6:
                     {
-                        this.execute = () => LNS(operand1, operand2); // save the function in memory to call later
+                        execute = () => LNS(operand1, operand2); // save the function in memory to call later
                         break;
                     }
                 case 7:
                     {
-                        this.execute = () => LDBI(operand1, operand2); // save the function in memory to call later
+                        execute = () => LDBI(operand1, operand2); // save the function in memory to call later
                         break;
                     }
                 case 8:
                     {
-                        this.execute = () => LDWI(operand1, operand2); // save the function in memory to call later
+                        execute = () => LDWI(operand1, operand2); // save the function in memory to call later
                         break;
                     }
                 case 9:
                     {
-                        this.execute = () => TAS(operand1, operand2); // save the function in memory to call later
+                        execute = () => TAS(operand1, operand2); // save the function in memory to call later
                         break;
                     }
                 case 10:
                     {
-                        this.execute = () => STB(operand1, operand2); // save the function in memory to call later
+                        execute = () => STB(operand1, operand2); // save the function in memory to call later
                         break;
                     }
                 case 11:
                     {
-                        this.execute = () => STW(operand1, operand2); // save the function in memory to call later
+                        execute = () => STW(operand1, operand2); // save the function in memory to call later
                         break;
                     }
                 case 12:
                     {
-                        this.execute = () => STBI(operand1, operand2); // save the function in memory to call later
+                        execute = () => STBI(operand1, operand2); // save the function in memory to call later
                         break;
                     }
                 case 13:
                     {
-                        this.execute = () => STWI(operand1, operand2); // save the function in memory to call later
+                        execute = () => STWI(operand1, operand2); // save the function in memory to call later
                         break;
                     }
                 case 14:
                     {
-                        this.execute = () => PUSH(operand1, operand2); // save the function in memory to call later
+                        execute = () => PUSH(operand1, operand2); // save the function in memory to call later
                         break;
                     }
                 case 15:
                     {
-                        this.execute = () => POP(operand1, operand2); // save the function in memory to call later
+                        execute = () => POP(operand1, operand2); // save the function in memory to call later
                         break;
                     }
                 case 16:
                     {
-                        this.execute = () => SWP(operand1, operand2); // save the function in memory to call later
+                        execute = () => SWP(operand1, operand2); // save the function in memory to call later
                         break;
                     }
                 case 17:
                     {
-                        this.execute = () => AND(operand1, operand2); // save the function in memory to call later
+                        execute = () => AND(operand1, operand2); // save the function in memory to call later
                         break;
                     }
                 case 18:
                     {
-                        this.execute = () => OR(operand1, operand2); // save the function in memory to call later
+                        execute = () => OR(operand1, operand2); // save the function in memory to call later
                         break;
                     }
                 case 19:
                     {
-                        this.execute = () => NOT(operand1, operand2); // save the function in memory to call later
+                        execute = () => NOT(operand1, operand2); // save the function in memory to call later
                         break;
                     }
                 case 20:
                     {
-                        this.execute = () => SHL(operand1, operand2); // save the function in memory to call later
+                        execute = () => SHL(operand1, operand2); // save the function in memory to call later
                         break;
                     }
                 case 21:
                     {
-                        this.execute = () => SHR(operand1, operand2); // save the function in memory to call later
+                        execute = () => SHR(operand1, operand2); // save the function in memory to call later
                         break;
                     }
                 case 22:
                     {
-                        this.execute = () => ADD(operand1, operand2); // save the function in memory to call later
+                        execute = () => ADD(operand1, operand2); // save the function in memory to call later
                         break;
                     }
                 case 23:
                     {
-                        this.execute = () => SUB(operand1, operand2); // save the function in memory to call later
+                        execute = () => SUB(operand1, operand2); // save the function in memory to call later
                         break;
                     }
                 case 24:
                     {
-                        this.execute = () => SUBU(operand1, operand2); // save the function in memory to call later
+                        execute = () => SUBU(operand1, operand2); // save the function in memory to call later
                         break;
                     }
                 case 25:
                     {
-                        this.execute = () => MUL(operand1, operand2); // save the function in memory to call later
+                        execute = () => MUL(operand1, operand2); // save the function in memory to call later
                         break;
                     }
                 case 26:
                     {
-                        this.execute = () => DIV(operand1, operand2); // save the function in memory to call later
+                        execute = () => DIV(operand1, operand2); // save the function in memory to call later
                         break;
                     }
                 case 27:
                     {
-                        this.execute = () => INC(operand1, operand2); // save the function in memory to call later
+                        execute = () => INC(operand1, operand2); // save the function in memory to call later
                         break;
                     }
                 case 28:
                     {
-                        this.execute = () => DEC(operand1, operand2); // save the function in memory to call later
+                        execute = () => DEC(operand1, operand2); // save the function in memory to call later
                         break;
                     }
                 case 29:
                     {
-                        this.execute = () => JMP(operand1, operand2); // save the function in memory to call later
+                        execute = () => JMP(operand1, operand2); // save the function in memory to call later
                         break;
                     }
                 case 48:
@@ -714,15 +716,17 @@ namespace CPU_OS_Simulator.CPU
                 int rightvalue = rhs.Register.Value;
                 lhs.Register.Value = rightvalue;
                 rhs.Register.Value = leftvalue;
-                Register.FindRegister(rhs.Register.Name).setRegisterValue(lhs.Register.Value,EnumOperandType.VALUE);
+                Register.FindRegister(rhs.Register.Name).setRegisterValue(lhs.Register.Value, EnumOperandType.VALUE);
                 Register.FindRegister(lhs.Register.Name).setRegisterValue(rhs.Register.Value, EnumOperandType.VALUE);
                 result = lhs.Register.Value;
                 return result;
             }
         }
+
         #endregion Data Transfer
+
         #region Logical
-        
+
         /// <summary>
         /// This function is called whenever a AND instruction is executed
         /// </summary>
@@ -743,7 +747,7 @@ namespace CPU_OS_Simulator.CPU
             }
             if (rhs.IsRegister)
             {
-                lhs.Register.Value &= Register.FindRegister(rhs.Register.Name).Value; 
+                lhs.Register.Value &= Register.FindRegister(rhs.Register.Name).Value;
             }
             else
             {
@@ -784,6 +788,7 @@ namespace CPU_OS_Simulator.CPU
             Register.FindRegister(lhs.Register.Name).setRegisterValue(result, EnumOperandType.VALUE);
             return result;
         }
+
         /// <summary>
         /// This function is called whenever a NOT instruction is executed
         /// </summary>
@@ -814,6 +819,7 @@ namespace CPU_OS_Simulator.CPU
             Register.FindRegister(lhs.Register.Name).setRegisterValue(result, EnumOperandType.VALUE);
             return result;
         }
+
         /// <summary>
         /// This function is called whenever a SHL instruction is executed
         /// </summary>
@@ -844,6 +850,7 @@ namespace CPU_OS_Simulator.CPU
             Register.FindRegister(lhs.Register.Name).setRegisterValue(result, EnumOperandType.VALUE);
             return result;
         }
+
         /// <summary>
         /// This function is called whenever a SHR instruction is executed
         /// </summary>
@@ -874,9 +881,11 @@ namespace CPU_OS_Simulator.CPU
             Register.FindRegister(lhs.Register.Name).setRegisterValue(result, EnumOperandType.VALUE);
             return result;
         }
+
         #endregion Logical
 
         #region Arithmetic
+
         /// <summary>
         /// This function is called whenever a ADD instruction is executed
         /// </summary>
@@ -908,6 +917,7 @@ namespace CPU_OS_Simulator.CPU
             Register.FindRegister(lhs.Register.Name).setRegisterValue(result, EnumOperandType.VALUE);
             return result;
         }
+
         /// <summary>
         /// This function is called whenever a SUB instruction is executed
         /// </summary>
@@ -939,6 +949,7 @@ namespace CPU_OS_Simulator.CPU
             Register.FindRegister(lhs.Register.Name).setRegisterValue(result, EnumOperandType.VALUE);
             return result;
         }
+
         /// <summary>
         /// This function is called whenever a SUBU instruction is executed
         /// </summary>
@@ -970,6 +981,7 @@ namespace CPU_OS_Simulator.CPU
             Register.FindRegister(lhs.Register.Name).setRegisterValue(result, EnumOperandType.VALUE);
             return result;
         }
+
         /// <summary>
         /// This function is called whenever a MUL instruction is executed
         /// </summary>
@@ -1034,7 +1046,7 @@ namespace CPU_OS_Simulator.CPU
             }
             else
             {
-                if(rhs.Value == 0)
+                if (rhs.Value == 0)
                 {
                     MessageBox.Show("Cannot Divide by ZERO", "", MessageBoxButton.OK, MessageBoxImage.Information);
                     lhs.Register.Value = 0;
@@ -1047,6 +1059,7 @@ namespace CPU_OS_Simulator.CPU
             Register.FindRegister(lhs.Register.Name).setRegisterValue(result, EnumOperandType.VALUE);
             return result;
         }
+
         /// <summary>
         /// This function is called whenever a INC instruction is executed
         /// </summary>
@@ -1092,9 +1105,11 @@ namespace CPU_OS_Simulator.CPU
                 return int.MinValue;
             }
         }
+
         #endregion Arithmetic
 
         #region Control Transfer
+
         private int JMP(Operand lhs, Operand rhs)
         {
             dynamic window = GetMainWindowInstance();
@@ -1252,6 +1267,7 @@ namespace CPU_OS_Simulator.CPU
             }
             return 0;
         }
+
         #endregion Control Transfer
 
         #region Comparison
@@ -1262,17 +1278,19 @@ namespace CPU_OS_Simulator.CPU
             StatusFlags.N.IsSet = false;
             StatusFlags.Z.IsSet = false;
 
-            if((lhs.Value - rhs.Value) == 0)
+            if ((lhs.Value - rhs.Value) == 0)
             {
                 StatusFlags.Z.IsSet = true;
             }
-            else if((lhs.Value - rhs.Value) < 0)
+            else if ((lhs.Value - rhs.Value) < 0)
             {
                 StatusFlags.N.IsSet = true;
             }
             return 0;
         }
+
         #endregion Comparison
+
         #endregion Instruction Execution Functions
 
         #region Window Accessor Methods

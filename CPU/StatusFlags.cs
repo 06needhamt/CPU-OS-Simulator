@@ -11,13 +11,13 @@
 
         protected StatusFlags(bool set, int value)
         {
-            this.isSet = set;
+            isSet = set;
             this.value = value;
         }
 
         public void ToggleFlag()
         {
-            this.isSet = !this.isSet;
+            isSet = !isSet;
         }
 
         public bool IsSet

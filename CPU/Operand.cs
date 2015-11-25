@@ -37,7 +37,7 @@ namespace CPU_OS_Simulator.CPU
             this.value = value;
             this.type = type;
             IsRegister = false;
-            this.register = null;
+            register = null;
         }
 
         /// <summary>
@@ -47,9 +47,9 @@ namespace CPU_OS_Simulator.CPU
         /// <param name="type"> the type of the operand i.e memory address or intermediate value</param>
         public Operand(Register reg, EnumOperandType type)
         {
-            this.isRegister = true;
-            this.register = reg;
-            this.value = reg.Value;
+            isRegister = true;
+            register = reg;
+            value = reg.Value;
             this.type = type;
         }
 

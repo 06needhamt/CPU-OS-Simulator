@@ -1,10 +1,4 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using CPU_OS_Simulator.CPU;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace CPU_OS_Simulator.CPU.Tests
 {
@@ -38,7 +32,7 @@ namespace CPU_OS_Simulator.CPU.Tests
         public void setRegisterValueTest1()
         {
             SpecialRegister sp = SpecialRegister.FindSpecialRegister("IR");
-            sp.setRegisterValue("MOV R00,10",EnumOperandType.VALUE);
+            sp.setRegisterValue("MOV R00,10", EnumOperandType.VALUE);
             Assert.IsTrue(sp.ValueString.Equals("MOV R00,10"));
         }
     }

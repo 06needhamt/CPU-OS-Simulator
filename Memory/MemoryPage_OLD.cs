@@ -75,7 +75,7 @@ namespace CPU_OS_Simulator.Memory
             this.pageIndex = pageIndex;
             this.startOffset = startOffset;
             this.pageSize = pageSize;
-            this.endOffset = startOffset + pageSize;
+            endOffset = startOffset + pageSize;
             data = new char[pageSize / 8, 8];
             PopulateArray<Char>(ref data, (char)0);
         }

@@ -13,58 +13,67 @@ namespace CPU_OS_Simulator.CPU
         /// The name of the Special Register
         /// </summary>
         private string name;
+
         /// <summary>
         /// The integer value of the special register
         /// </summary>
         private Int32 value;
+
         /// <summary>
         /// The string value of the register used </para>
         /// for the instruction register (IR) </para>
         /// and the memory data register (MDR) </para>
         /// </summary>
         private string valueString;
+
         /// <summary>
         /// The type of value stored in the register </para>
         /// i.e intermediate value or memory address
         /// </summary>
-        EnumOperandType type;
+        private EnumOperandType type;
+
         /// <summary>
         /// The Program Counter register
         /// </summary>
         public static SpecialRegister PC = new SpecialRegister("PC");
+
         /// <summary>
         /// The Stack Register
         /// </summary>
         public static SpecialRegister SR = new SpecialRegister("SR");
+
         /// <summary>
         /// The Stack Pointer Register
         /// </summary>
         public static SpecialRegister SP = new SpecialRegister("SP");
+
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static SpecialRegister BR = new SpecialRegister("BR");
+
         /// <summary>
         /// The Instruction Register
         /// </summary>
         public static SpecialRegister IR = new SpecialRegister("IR");
+
         /// <summary>
         /// The Memory Data Register
         /// </summary>
         public static SpecialRegister MDR = new SpecialRegister("MDR");
+
         /// <summary>
         /// The Memory LogicalAddress Register
         /// </summary>
         public static SpecialRegister MAR = new SpecialRegister("MAR");
 
         /// <summary>
-        /// Default constructor for Special Register 
+        /// Default constructor for Special Register
         /// used when deserialising a special register. </para>
         /// NOTE Do Not use in code
         /// </summary>
         public SpecialRegister()
         {
-
         }
 
         /// <summary>
@@ -74,16 +83,17 @@ namespace CPU_OS_Simulator.CPU
         protected SpecialRegister(string name)
         {
             this.name = name;
-            this.value = 0;
-            this.type = EnumOperandType.VALUE;
+            value = 0;
+            type = EnumOperandType.VALUE;
 
             if (name.Equals("SP"))
             {
-                this.Value = 8096; // initialize the stack pointer to 8096
+                Value = 8096; // initialize the stack pointer to 8096
             }
         }
+
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="name"></param>
         /// <returns></returns>
@@ -93,31 +103,31 @@ namespace CPU_OS_Simulator.CPU
             {
                 case "PC":
                     {
-                        return SpecialRegister.PC;
+                        return PC;
                     }
                 case "SR":
                     {
-                        return SpecialRegister.SR;
+                        return SR;
                     }
                 case "SP":
                     {
-                        return SpecialRegister.SP;
+                        return SP;
                     }
                 case "BR":
                     {
-                        return SpecialRegister.BR;
+                        return BR;
                     }
                 case "IR":
                     {
-                        return SpecialRegister.IR;
+                        return IR;
                     }
                 case "MDR":
                     {
-                        return SpecialRegister.MDR;
+                        return MDR;
                     }
                 case "MAR":
                     {
-                        return SpecialRegister.MAR;
+                        return MAR;
                     }
                 default:
                     {
@@ -144,7 +154,7 @@ namespace CPU_OS_Simulator.CPU
         /// <param name="type">the type of data memory or value</param>
         public void setRegisterValue(string value, EnumOperandType type)
         {
-            this.valueString = value;
+            valueString = value;
             this.type = type;
         }
 

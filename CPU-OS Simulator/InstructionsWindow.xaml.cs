@@ -131,7 +131,7 @@ namespace CPU_OS_Simulator
         /// <param name="e"> the eventargs associated with this event</param>
         private void btn_Close_Click(object sender, RoutedEventArgs e)
         {
-            this.Close();
+            Close();
         }
 
         /// <summary>
@@ -348,7 +348,9 @@ namespace CPU_OS_Simulator
                 CreateInstruction();
             }
         }
+
         #region Instruction Creation Functions
+
         private int CreateDataTransferInstruction()
         {
             TabItem SelectedTab = (TabItem)InstructionTabs.SelectedItem;
@@ -648,7 +650,9 @@ namespace CPU_OS_Simulator
             owner.AddInstruction(i, index);
             return 0;
         }
+
         #endregion Instruction Creation Functions
+
         /// <summary>
         /// Creates an instruction based on selected options
         /// </summary>

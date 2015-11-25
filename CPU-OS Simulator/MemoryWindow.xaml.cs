@@ -1,17 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using CPU_OS_Simulator.Memory;
+using System;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
-using CPU_OS_Simulator.Memory;
 
 namespace CPU_OS_Simulator
 {
@@ -59,7 +48,7 @@ namespace CPU_OS_Simulator
                 int value = Convert.ToInt32(txt_IntegerValue.Text);
                 int address = Convert.ToInt32(txt_AddressLocation.Text);
                 int offset = address / currentPage.PageSize;
-                
+
                 if (offset == 0)
                 {
                     offset = address % currentPage.PageSize;
@@ -86,7 +75,7 @@ namespace CPU_OS_Simulator
                 int address = Convert.ToInt32(txt_AddressLocation.Text);
                 int offset = address / currentPage.PageSize;
                 char[] chars = value.ToCharArray();
-                if(offset == 0)
+                if (offset == 0)
                 {
                     offset = address % currentPage.PageSize;
                 }
@@ -95,15 +84,15 @@ namespace CPU_OS_Simulator
                     // TODO Swap in required page
                     MessageBox.Show("Required Page is not in memory");
                 }
-                for(int i = 0; i < chars.Length; i++)
+                for (int i = 0; i < chars.Length; i++)
                 {
-                    currentPage.Data[offset / 8].SetByte(offset % 8, (byte) chars[i]);
+                    currentPage.Data[offset / 8].SetByte(offset % 8, (byte)chars[i]);
                     offset++;
                 }
             }
             else if (rdb_Boolean.IsChecked.Value)
             {
-                bool value = (bool) cmb_BooleanValue.SelectedItem;
+                bool value = (bool)cmb_BooleanValue.SelectedItem;
                 int address = Convert.ToInt32(txt_AddressLocation.Text);
                 int offset = address / currentPage.PageSize;
                 if (offset == 0)

@@ -30,7 +30,7 @@ namespace CPU_OS_Simulator.CPU
         /// The instruction currently being executed
         /// </summary>
         private Instruction currentInstruction;
-        
+
         /// <summary>
         /// The Logical address of the instruction currently being executed
         /// </summary>
@@ -59,12 +59,12 @@ namespace CPU_OS_Simulator.CPU
         {
             this.program = program;
             this.clockSpeed = clockSpeed;
-            this.currentIndex = 0;
-            this.logicalAddress = currentIndex * 4;
-            this.currentInstruction = program.Instructions.Where(x => x.LogicalAddress == this.logicalAddress).FirstOrDefault();
+            currentIndex = 0;
+            logicalAddress = currentIndex * 4;
+            currentInstruction = program.Instructions.Where(x => x.LogicalAddress == logicalAddress).FirstOrDefault();
             stop = false;
             done = false;
-            SpecialRegister.FindSpecialRegister("BR").setRegisterValue(program.BaseAddress,EnumOperandType.ADDRESS);
+            SpecialRegister.FindSpecialRegister("BR").setRegisterValue(program.BaseAddress, EnumOperandType.ADDRESS);
         }
 
         /// <summary>
@@ -80,8 +80,8 @@ namespace CPU_OS_Simulator.CPU
                 currentIndex = 0;
             }
             this.currentIndex = currentIndex;
-            this.logicalAddress = currentIndex * 4;
-            this.currentInstruction = program.Instructions.Where(x => x.LogicalAddress == this.logicalAddress).FirstOrDefault();
+            logicalAddress = currentIndex * 4;
+            currentInstruction = program.Instructions.Where(x => x.LogicalAddress == logicalAddress).FirstOrDefault();
             stop = false;
             done = false;
             SpecialRegister.FindSpecialRegister("BR").setRegisterValue(program.BaseAddress, EnumOperandType.ADDRESS);
@@ -99,7 +99,7 @@ namespace CPU_OS_Simulator.CPU
             Console.WriteLine("Executing instruction");
             logicalAddress = currentIndex * 4;
             Console.WriteLine(logicalAddress);
-            currentInstruction = program.Instructions.Where(x => x.LogicalAddress == this.logicalAddress).FirstOrDefault();
+            currentInstruction = program.Instructions.Where(x => x.LogicalAddress == logicalAddress).FirstOrDefault();
             if (currentInstruction.Opcode == (int)EnumOpcodes.JMP)
             {
                 //program.Instructions.ElementAt(currentIndex).Execute();

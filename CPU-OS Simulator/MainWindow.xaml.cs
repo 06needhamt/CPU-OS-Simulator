@@ -3,17 +3,17 @@ using CPU_OS_Simulator.Memory;
 using Microsoft.Win32;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Reflection;
 using System.Runtime.InteropServices;
 using System.Security.Principal;
+using System.Threading;
 using System.Web.Script.Serialization;
 using System.Windows;
 using System.Windows.Controls;
-using System.Threading;
-using System.ComponentModel;
 
 namespace CPU_OS_Simulator
 {
@@ -29,8 +29,8 @@ namespace CPU_OS_Simulator
         private EnumInstructionMode instructionMode;
         public string currentProgram = string.Empty;
         private ExecutionUnit activeUnit;
-        BackgroundWorker executionWorker;
-        Stopwatch s;
+        private BackgroundWorker executionWorker;
+        private Stopwatch s;
         public static MainWindow currentInstance;
 
         #endregion Global Variables
@@ -76,7 +76,6 @@ namespace CPU_OS_Simulator
             }
         }
 
-     
         #endregion Properties
 
         #region Constructors
@@ -89,7 +88,7 @@ namespace CPU_OS_Simulator
             InitializeComponent();
             if (IsAdministrator())
             {
-                string path = (new System.Uri(Assembly.GetExecutingAssembly().CodeBase)).AbsolutePath;
+                string path = (new Uri(Assembly.GetExecutingAssembly().CodeBase)).AbsolutePath;
                 SetAssociation(".sas", "Simulator Program File", path, "CPU-OS Simulator Program File");
             }
             programList = new List<SimulatorProgram>();
@@ -170,6 +169,7 @@ namespace CPU_OS_Simulator
             lst_Registers.Items.Clear();
             PopulateRegisters();
         }
+
         /// <summary>
         /// This function updates the values in the UI for the special registers
         /// </summary>
@@ -186,7 +186,7 @@ namespace CPU_OS_Simulator
 
         private void MainWindow2_Loaded(object sender, RoutedEventArgs e)
         {
-            this.Title += " " + GetProgramVersion();
+            Title += " " + GetProgramVersion();
             SpecialRegister.FindSpecialRegister("BR").setRegisterValue(Convert.ToInt32(txt_BR.Text), EnumOperandType.VALUE);
             SpecialRegister.FindSpecialRegister("IR").setRegisterValue(txt_IR.Text, EnumOperandType.VALUE);
             SpecialRegister.FindSpecialRegister("MAR").setRegisterValue(Convert.ToInt32(txt_MAR.Text), EnumOperandType.ADDRESS);
@@ -196,7 +196,7 @@ namespace CPU_OS_Simulator
             SpecialRegister.FindSpecialRegister("SR").setRegisterValue(Convert.ToInt32(txt_SR.Text), EnumOperandType.VALUE);
 
 #if DEBUG
-            this.Title += " DEBUG BUILD ";
+            Title += " DEBUG BUILD ";
             MemoryPage m = new MemoryPage(0, 0, 255);
             m.Data[0] = new MemorySegment(0);
             m.Data[0].Byte0 = (byte)'A';
@@ -210,7 +210,7 @@ namespace CPU_OS_Simulator
         /// Gets the build number of the running program
         /// </summary>
         /// <returns> The build number of the running program</returns>
-        private string GetProgramVersion()
+        private static string GetProgramVersion()
         {
             Assembly ExecutingAssembly = Assembly.GetExecutingAssembly();
             FileVersionInfo VersionInfo = FileVersionInfo.GetVersionInfo(ExecutingAssembly.Location);
@@ -327,7 +327,7 @@ namespace CPU_OS_Simulator
         /// </summary>
         /// <param name="sender">the object that initiated the event</param>
         /// <param name="e"> the eventargs</param>
-        private void MainWindow2_Closing(object sender, System.ComponentModel.CancelEventArgs e)
+        private void MainWindow2_Closing(object sender, CancelEventArgs e)
         {
             if (programList.Count > 0)
             {
@@ -461,13 +461,12 @@ namespace CPU_OS_Simulator
 
         private void lst_InstructionsList_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            if(activeUnit != null)
+            if (activeUnit != null)
             {
                 activeUnit.CurrentIndex = lst_InstructionsList.SelectedIndex;
                 activeUnit.Stop = false;
                 activeUnit.Done = false;
             }
-            
         }
 
         private void lst_ProgramList_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -690,8 +689,6 @@ namespace CPU_OS_Simulator
             UpdateRegisters();
             UpdateStack();
             UpdateSpecialRegisters();
-
-
         }
 
         private void btn_Run_Click(object sender, RoutedEventArgs e)
@@ -701,11 +698,11 @@ namespace CPU_OS_Simulator
             {
                 activeUnit = new ExecutionUnit(prog, (int)sld_ClockSpeed.Value, lst_InstructionsList.SelectedIndex);
             }
-            
+
             CreateBackgroundWorker();
             executionWorker.RunWorkerAsync(prog);
-            
         }
+
         /// <summary>
         /// Creates a background worker for the execution thread to run on
         /// </summary>
@@ -717,8 +714,8 @@ namespace CPU_OS_Simulator
             executionWorker.WorkerReportsProgress = true;
             executionWorker.ProgressChanged += new ProgressChangedEventHandler(UpdateInterface);
             executionWorker.RunWorkerCompleted += new RunWorkerCompletedEventHandler(ExecutionCompleted);
-
         }
+
         /// <summary>
         /// Asynchronous method called after every instruction is executed to update required values and user interface asynchronously
         /// </summary>
@@ -736,6 +733,7 @@ namespace CPU_OS_Simulator
             UpdateStack();
             UpdateSpecialRegisters();
         }
+
         /// <summary>
         /// Asynchronous method called to begin executing a program on the execution thread
         /// </summary>
@@ -755,6 +753,7 @@ namespace CPU_OS_Simulator
             s.Stop();
             MessageBox.Show("Program Completed in: " + CalculateTime(s.ElapsedMilliseconds) + " Seconds", "", MessageBoxButton.OK, MessageBoxImage.Information);
         }
+
         /// <summary>
         /// Asynchronous method called when the executing program has been terminated
         /// </summary>

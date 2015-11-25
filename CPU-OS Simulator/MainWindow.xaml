@@ -9,8 +9,8 @@
         Title="CPU-OS Simulator" Height="768" Width="1280" Icon="CPU-OS Simulator 7-5-50_1.ico" ResizeMode="NoResize" Closing="MainWindow2_Closing" Loaded="MainWindow2_Loaded" WindowStartupLocation="CenterScreen">
     <Grid x:Name="MainWindowGrid" Cursor="Arrow">
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="443*"/>
-            <ColumnDefinition Width="831*"/>
+            <ColumnDefinition Width="443*" />
+            <ColumnDefinition Width="831*" />
         </Grid.ColumnDefinitions>
         <Grid x:Name="InstructionsGrid" HorizontalAlignment="Left" Height="479" Margin="10,10,0,0" VerticalAlignment="Top" Width="436" Grid.ColumnSpan="2">
             <GroupBox x:Name="grp_InstructionsBox" Header="CPU INSTRUCTIONS IM MEMORY (RAM)" HorizontalAlignment="Left" VerticalAlignment="Top" Height="479" Width="436">

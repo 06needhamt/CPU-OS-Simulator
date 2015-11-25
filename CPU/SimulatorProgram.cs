@@ -18,9 +18,11 @@ namespace CPU_OS_Simulator.CPU
         private Int32 startAddress;
         private Int32 logicalAddress;
         private Int32 pages;
+
         [ScriptIgnore]
         [NonSerialized]
         private ExecutionUnit unit;
+
         private List<Instruction> instructions;
 
         [ScriptIgnore]
@@ -49,9 +51,9 @@ namespace CPU_OS_Simulator.CPU
             this.name = name;
             this.baseAddress = baseAddress;
             this.pages = pages;
-            this.instructions = new List<Instruction>();
-            this.logicalAddress = 0;
-            this.startAddress = baseAddress;
+            instructions = new List<Instruction>();
+            logicalAddress = 0;
+            startAddress = baseAddress;
             unit = new ExecutionUnit(this, 100);
             stack = new ProgramStack();
             Console.WriteLine("Program Created");

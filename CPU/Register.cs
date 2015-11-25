@@ -37,8 +37,8 @@ namespace CPU_OS_Simulator.CPU
         protected Register(string name)
         {
             this.name = name;
-            this.value = 0;
-            this.type = EnumOperandType.VALUE;
+            value = 0;
+            type = EnumOperandType.VALUE;
         }
 
         public string Name
@@ -97,87 +97,87 @@ namespace CPU_OS_Simulator.CPU
             {
                 case "R00":
                     {
-                        return Register.R00;
+                        return R00;
                     }
                 case "R01":
                     {
-                        return Register.R01;
+                        return R01;
                     }
                 case "R02":
                     {
-                        return Register.R02;
+                        return R02;
                     }
                 case "R03":
                     {
-                        return Register.R03;
+                        return R03;
                     }
                 case "R04":
                     {
-                        return Register.R04;
+                        return R04;
                     }
                 case "R05":
                     {
-                        return Register.R05;
+                        return R05;
                     }
                 case "R06":
                     {
-                        return Register.R06;
+                        return R06;
                     }
                 case "R07":
                     {
-                        return Register.R07;
+                        return R07;
                     }
                 case "R08":
                     {
-                        return Register.R08;
+                        return R08;
                     }
                 case "R09":
                     {
-                        return Register.R09;
+                        return R09;
                     }
                 case "R10":
                     {
-                        return Register.R10;
+                        return R10;
                     }
                 case "R11":
                     {
-                        return Register.R11;
+                        return R11;
                     }
                 case "R12":
                     {
-                        return Register.R12;
+                        return R12;
                     }
                 case "R13":
                     {
-                        return Register.R13;
+                        return R13;
                     }
                 case "R14":
                     {
-                        return Register.R14;
+                        return R14;
                     }
                 case "R15":
                     {
-                        return Register.R15;
+                        return R15;
                     }
                 case "R16":
                     {
-                        return Register.R16;
+                        return R16;
                     }
                 case "R17":
                     {
-                        return Register.R17;
+                        return R17;
                     }
                 case "R18":
                     {
-                        return Register.R18;
+                        return R18;
                     }
                 case "R19":
                     {
-                        return Register.R19;
+                        return R19;
                     }
                 case "R20":
                     {
-                        return Register.R20;
+                        return R20;
                     }
 
                 default:

@@ -24,34 +24,32 @@
                             <GridViewColumn Header="B6" DisplayMemberBinding="{Binding Byte6, StringFormat=\{0:X2\}}" Width="30" />
                             <GridViewColumn Header="B7" DisplayMemberBinding="{Binding Byte7, StringFormat=\{0:X2\}}" Width="30" />
                             <GridViewColumn Header="Data" DisplayMemberBinding="{Binding DataString}" Width="100" />
-
                         </GridView>
                     </ListView.View>
-                    <ScrollBar x:Name="scrollBar" Height="100" Width="100"/>
+                    <ScrollBar x:Name="scrollBar" Height="100" Width="100" />
                 </ListView>
             </Grid>
         </GroupBox>
         <Grid x:Name="InitialiseDataGrid" HorizontalAlignment="Left" Height="143" Margin="10,275,0,0" VerticalAlignment="Top" Width="286">
             <GroupBox x:Name="grp_InitialiseData" Header="Initialize Data" HorizontalAlignment="Left" VerticalAlignment="Top" Height="143" Width="286">
                 <Grid x:Name="InitialiseDataInnerGrid" HorizontalAlignment="Left" Height="133" VerticalAlignment="Top" Width="276" Margin="0,0,-2,-12">
-                    <RadioButton x:Name="rdb_Integer" Content="Integer" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" GroupName="DataType" IsChecked="True"/>
-                    <RadioButton x:Name="rdb_Boolean" Content="Boolean" HorizontalAlignment="Left" Margin="10,33,0,0" VerticalAlignment="Top" GroupName="DataType"/>
-                    <RadioButton x:Name="rdb_String" Content="String" HorizontalAlignment="Left" Margin="10,56,0,0" VerticalAlignment="Top" GroupName="DataType"/>
-                    <Label x:Name="label" Content="Value: " HorizontalAlignment="Left" Margin="110,10,0,0" VerticalAlignment="Top"/>
-                    <Label x:Name="label_Copy" Content="Value: " HorizontalAlignment="Left" Margin="110,33,0,0" VerticalAlignment="Top"/>
-                    <Label x:Name="label_Copy1" Content="Value: " HorizontalAlignment="Left" Margin="110,56,0,0" VerticalAlignment="Top"/>
-                    <TextBox x:Name="txt_IntegerValue" HorizontalAlignment="Left" Height="23" Margin="155,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="65"/>
-                    <TextBox x:Name="txt_StringValue" HorizontalAlignment="Left" Height="23" Margin="155,56,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="111"/>
+                    <RadioButton x:Name="rdb_Integer" Content="Integer" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" GroupName="DataType" IsChecked="True" />
+                    <RadioButton x:Name="rdb_Boolean" Content="Boolean" HorizontalAlignment="Left" Margin="10,33,0,0" VerticalAlignment="Top" GroupName="DataType" />
+                    <RadioButton x:Name="rdb_String" Content="String" HorizontalAlignment="Left" Margin="10,56,0,0" VerticalAlignment="Top" GroupName="DataType" />
+                    <Label x:Name="label" Content="Value: " HorizontalAlignment="Left" Margin="110,10,0,0" VerticalAlignment="Top" />
+                    <Label x:Name="label_Copy" Content="Value: " HorizontalAlignment="Left" Margin="110,33,0,0" VerticalAlignment="Top" />
+                    <Label x:Name="label_Copy1" Content="Value: " HorizontalAlignment="Left" Margin="110,56,0,0" VerticalAlignment="Top" />
+                    <TextBox x:Name="txt_IntegerValue" HorizontalAlignment="Left" Height="23" Margin="155,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="65" />
+                    <TextBox x:Name="txt_StringValue" HorizontalAlignment="Left" Height="23" Margin="155,56,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="111" />
                     <ComboBox x:Name="cmb_BooleanValue" HorizontalAlignment="Left" Margin="155,34,0,0" VerticalAlignment="Top" Width="65">
                         <System:Boolean>True</System:Boolean>
                         <System:Boolean>False</System:Boolean>
                     </ComboBox>
-                    <Label x:Name="label1" Content="Address " HorizontalAlignment="Left" Margin="10,87,0,0" VerticalAlignment="Top" Width="62" Height="27"/>
-                    <TextBox x:Name="txt_AddressLocation" HorizontalAlignment="Left" Height="23" Margin="77,91,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="57"/>
-                    <Button x:Name="btn_Update" Content="UPDATE" HorizontalAlignment="Left" Margin="168,87,0,0" VerticalAlignment="Top" Width="75" Height="33" Click="btn_Update_Click"/>
+                    <Label x:Name="label1" Content="Address " HorizontalAlignment="Left" Margin="10,87,0,0" VerticalAlignment="Top" Width="62" Height="27" />
+                    <TextBox x:Name="txt_AddressLocation" HorizontalAlignment="Left" Height="23" Margin="77,91,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="57" />
+                    <Button x:Name="btn_Update" Content="UPDATE" HorizontalAlignment="Left" Margin="168,87,0,0" VerticalAlignment="Top" Width="75" Height="33" Click="btn_Update_Click" />
                 </Grid>
             </GroupBox>
         </Grid>
-
     </Grid>
 </Window>
