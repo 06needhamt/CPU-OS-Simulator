@@ -11,9 +11,11 @@ using System.Reflection;
 using System.Runtime.InteropServices;
 using System.Security.Principal;
 using System.Threading;
+using System.Threading.Tasks;
 using System.Web.Script.Serialization;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Threading;
 
 namespace CPU_OS_Simulator
 {
@@ -29,9 +31,9 @@ namespace CPU_OS_Simulator
         private EnumInstructionMode instructionMode;
         public string currentProgram = string.Empty;
         private ExecutionUnit activeUnit;
-        private BackgroundWorker executionWorker;
         private Stopwatch s;
         public static MainWindow currentInstance;
+        Dispatcher dispatcher = Dispatcher.CurrentDispatcher;
 
         #endregion Global Variables
 
@@ -698,30 +700,31 @@ namespace CPU_OS_Simulator
             {
                 activeUnit = new ExecutionUnit(prog, (int)sld_ClockSpeed.Value, lst_InstructionsList.SelectedIndex);
             }
-
-            CreateBackgroundWorker();
-            executionWorker.RunWorkerAsync(prog);
+            var executionThread = new Thread(ExecuteProgram);
+            executionThread.Start();
+            //CreateBackgroundWorker();
+            //executionWorker.RunWorkerAsync(prog);
         }
 
         /// <summary>
         /// Creates a background worker for the execution thread to run on
         /// </summary>
-        private void CreateBackgroundWorker()
-        {
-            executionWorker = new BackgroundWorker();
-            executionWorker.DoWork += new DoWorkEventHandler(ExecuteProgram);
-            executionWorker.WorkerSupportsCancellation = true;
-            executionWorker.WorkerReportsProgress = true;
-            executionWorker.ProgressChanged += new ProgressChangedEventHandler(UpdateInterface);
-            executionWorker.RunWorkerCompleted += new RunWorkerCompletedEventHandler(ExecutionCompleted);
-        }
+        //private void CreateBackgroundWorker()
+        //{
+        //    executionWorker = new BackgroundWorker();
+        //    executionWorker.DoWork += new DoWorkEventHandler(ExecuteProgram);
+        //    executionWorker.WorkerSupportsCancellation = true;
+        //    executionWorker.WorkerReportsProgress = true;
+        //    executionWorker.ProgressChanged += new ProgressChangedEventHandler(UpdateInterface);
+        //    executionWorker.RunWorkerCompleted += new RunWorkerCompletedEventHandler(ExecutionCompleted);
+        //}
 
         /// <summary>
         /// Asynchronous method called after every instruction is executed to update required values and user interface asynchronously
         /// </summary>
         /// <param name="sender"> the object that triggered this event</param>
         /// <param name="args" The parameters passed to this event ></param>
-        private async void UpdateInterface(object sender, ProgressChangedEventArgs args)
+        private async Task<int> UpdateInterface()
         {
             SimulatorProgram prog = programList.Where(x => x.Name.Equals(currentProgram)).FirstOrDefault();
             lst_InstructionsList.SelectedIndex = activeUnit.CurrentIndex;
@@ -732,6 +735,7 @@ namespace CPU_OS_Simulator
             UpdateRegisters();
             UpdateStack();
             UpdateSpecialRegisters();
+            return 0;
         }
 
         /// <summary>
@@ -739,31 +743,25 @@ namespace CPU_OS_Simulator
         /// </summary>
         /// <param name="sender"> The object that triggered this event</param>
         /// <param name="args"> The parameters passed to this event </param>
-        private async void ExecuteProgram(object sender, DoWorkEventArgs args)
+        private async void ExecuteProgram(object program)
         {
-            SimulatorProgram prog = (SimulatorProgram)args.Argument;
             Stopwatch s = new Stopwatch();
             s.Start();
-            while (!activeUnit.Done && !activeUnit.Stop && !executionWorker.CancellationPending)
+            while (!activeUnit.Done && !activeUnit.Stop)
             {
                 activeUnit.ExecuteInstruction();
-                executionWorker.ReportProgress(0, prog);
-                Thread.Sleep(10); // Sleep the execution thread here to give the main thread time to update all required values
+                await CallFromMainThread(UpdateInterface);
+                //Thread.Sleep(10); // Sleep the execution thread here to give the main thread time to update all required values
             }
             s.Stop();
             MessageBox.Show("Program Completed in: " + CalculateTime(s.ElapsedMilliseconds) + " Seconds", "", MessageBoxButton.OK, MessageBoxImage.Information);
+            //Thread.CurrentThread.Join();
         }
-
-        /// <summary>
-        /// Asynchronous method called when the executing program has been terminated
-        /// </summary>
-        /// <param name="sender"> the object that triggered this event</param>
-        /// <param name="args"> The parameters passed to this event </param>
-        private async void ExecutionCompleted(object sender, RunWorkerCompletedEventArgs args)
+        private async Task<int> CallFromMainThread(Func<Task<int>> FunctionPointer)
         {
-            return;
+            dispatcher?.Invoke(FunctionPointer);
+            return 0;
         }
-
         /// <summary>
         /// This function calculates the time in seconds the last program took to execute
         /// </summary>
@@ -780,8 +778,7 @@ namespace CPU_OS_Simulator
 
         private void btn_Stop_Click(object sender, RoutedEventArgs e)
         {
-            executionWorker.CancelAsync();
-            //DisplayTime(sender, new RunWorkerCompletedEventArgs(sender,null,true));
+            //TODO Stop Program
         }
 
         #endregion Methods
