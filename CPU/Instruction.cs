@@ -694,6 +694,7 @@ namespace CPU_OS_Simulator.CPU
             result = lhs.Register.Value;
             Register.FindRegister(lhs.Register.Name).setRegisterValue(result, EnumOperandType.VALUE);
             //MessageBox.Show("POP Instruction is not currently implemented", "", MessageBoxButton.OK, MessageBoxImage.Information);
+            
             return result;
         }
 

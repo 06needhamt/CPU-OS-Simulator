@@ -34,6 +34,7 @@ namespace CPU_OS_Simulator
         private Stopwatch s;
         public static MainWindow currentInstance;
         Dispatcher dispatcher = Dispatcher.CurrentDispatcher;
+        private BackgroundWorker executionWorker;
 
         #endregion Global Variables
 
@@ -700,24 +701,43 @@ namespace CPU_OS_Simulator
             {
                 activeUnit = new ExecutionUnit(prog, (int)sld_ClockSpeed.Value, lst_InstructionsList.SelectedIndex);
             }
-            var executionThread = new Thread(ExecuteProgram);
-            executionThread.Start();
-            //CreateBackgroundWorker();
-            //executionWorker.RunWorkerAsync(prog);
+            CreateBackgroundWorker();
+            executionWorker.RunWorkerAsync(null);
+            //var executionThread = new Thread(ExecuteProgram);
+            //executionThread.Start();
         }
 
         /// <summary>
         /// Creates a background worker for the execution thread to run on
         /// </summary>
-        //private void CreateBackgroundWorker()
-        //{
-        //    executionWorker = new BackgroundWorker();
-        //    executionWorker.DoWork += new DoWorkEventHandler(ExecuteProgram);
-        //    executionWorker.WorkerSupportsCancellation = true;
-        //    executionWorker.WorkerReportsProgress = true;
-        //    executionWorker.ProgressChanged += new ProgressChangedEventHandler(UpdateInterface);
-        //    executionWorker.RunWorkerCompleted += new RunWorkerCompletedEventHandler(ExecutionCompleted);
-        //}
+        private void CreateBackgroundWorker()
+        {
+            executionWorker = new BackgroundWorker();
+            executionWorker.DoWork += new DoWorkEventHandler(CreateExecutionThread);
+            executionWorker.WorkerSupportsCancellation = true;
+            executionWorker.WorkerReportsProgress = true;
+            executionWorker.ProgressChanged += new ProgressChangedEventHandler(UpdateInterface);
+        }
+
+        private void UpdateInterface(object sender, ProgressChangedEventArgs e)
+        {
+            SimulatorProgram prog = programList.Where(x => x.Name.Equals(currentProgram)).FirstOrDefault();
+            lst_InstructionsList.SelectedIndex = activeUnit.CurrentIndex;
+            SpecialRegister.FindSpecialRegister("PC").setRegisterValue(prog.Instructions.ElementAt(lst_InstructionsList.SelectedIndex).LogicalAddress, EnumOperandType.VALUE);
+            SpecialRegister.FindSpecialRegister("IR").setRegisterValue(prog.Instructions.ElementAt(lst_InstructionsList.SelectedIndex).InstructionString, EnumOperandType.VALUE);
+            SpecialRegister.FindSpecialRegister("MDR").setRegisterValue(prog.Instructions.ElementAt(lst_InstructionsList.SelectedIndex).InstructionString, EnumOperandType.VALUE);
+            SpecialRegister.FindSpecialRegister("MAR").setRegisterValue(prog.Instructions.ElementAt(lst_InstructionsList.SelectedIndex).PhysicalAddress, EnumOperandType.VALUE);
+            UpdateRegisters();
+            UpdateStack();
+            UpdateSpecialRegisters();
+            
+        }
+
+        private void CreateExecutionThread(object sender, DoWorkEventArgs e)
+        {
+            var executionThread = new Thread(ExecuteProgram);
+            executionThread.Start();
+        }
 
         /// <summary>
         /// Asynchronous method called after every instruction is executed to update required values and user interface asynchronously
@@ -735,6 +755,7 @@ namespace CPU_OS_Simulator
             UpdateRegisters();
             UpdateStack();
             UpdateSpecialRegisters();
+            //executionWorker.ReportProgress(0,null);
             return 0;
         }
 
@@ -747,7 +768,7 @@ namespace CPU_OS_Simulator
         {
             Stopwatch s = new Stopwatch();
             s.Start();
-            while (!activeUnit.Done && !activeUnit.Stop)
+            while (!activeUnit.Done && !activeUnit.Stop && !executionWorker.CancellationPending)
             {
                 activeUnit.ExecuteInstruction();
                 await CallFromMainThread(UpdateInterface);
@@ -779,6 +800,7 @@ namespace CPU_OS_Simulator
         private void btn_Stop_Click(object sender, RoutedEventArgs e)
         {
             //TODO Stop Program
+            executionWorker.CancelAsync();
         }
 
         #endregion Methods
