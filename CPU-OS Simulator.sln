@@ -15,10 +15,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CPU-OS SimulatorTests", "CP
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CPUTests", "CPUTests\CPUTests.csproj", "{061896D5-B674-4FE8-9970-542A108CA392}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{3E6B5123-3DC3-4913-98EF-78B7F4B41755}"
-	ProjectSection(SolutionItems) = preProject
-		TextFile1.txt = TextFile1.txt
-	EndProjectSection
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MemoryTests", "MemoryTests\MemoryTests.csproj", "{27E6D686-6A07-4540-80C5-3608E3C44488}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -50,6 +47,10 @@ Global
 		{061896D5-B674-4FE8-9970-542A108CA392}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{061896D5-B674-4FE8-9970-542A108CA392}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{061896D5-B674-4FE8-9970-542A108CA392}.Release|Any CPU.Build.0 = Release|Any CPU
+		{27E6D686-6A07-4540-80C5-3608E3C44488}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{27E6D686-6A07-4540-80C5-3608E3C44488}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{27E6D686-6A07-4540-80C5-3608E3C44488}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{27E6D686-6A07-4540-80C5-3608E3C44488}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

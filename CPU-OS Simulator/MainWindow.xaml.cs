@@ -768,7 +768,7 @@ namespace CPU_OS_Simulator
         /// <param name="program"> The program object to execute</param>
         private async void ExecuteProgram(object program)
         {
-            Stopwatch s = new Stopwatch();
+            s = new Stopwatch();
             s.Start();
             while (!activeUnit.Done && !activeUnit.Stop && !executionWorker.CancellationPending)
             {
@@ -777,7 +777,7 @@ namespace CPU_OS_Simulator
                 //Thread.Sleep(10); // Sleep the execution thread here to give the main thread time to update all required values
             }
             s.Stop();
-            MessageBox.Show("Program Completed in: " + CalculateTime(s.ElapsedMilliseconds) + " Seconds", "", MessageBoxButton.OK, MessageBoxImage.Information);
+            MessageBox.Show("Program Completed in: " + await CalculateTime(s.ElapsedMilliseconds) + " Seconds", "", MessageBoxButton.OK, MessageBoxImage.Information);
             //Thread.CurrentThread.Join();
         }
         /// <summary>
@@ -787,15 +787,17 @@ namespace CPU_OS_Simulator
         /// <returns>A task to indicate to the main thread that the method has finished executing</returns>
         private async Task<int> CallFromMainThread(Func<Task<int>> FunctionPointer)
         {
-            dispatcher?.Invoke(FunctionPointer);
+            var invoke = dispatcher?.Invoke(FunctionPointer);
+            if (invoke != null) await invoke;
             return 0;
         }
+
         /// <summary>
         /// This function calculates the time in seconds the last program took to execute
         /// </summary>
         /// <param name="mills"> the number of milliseconds the last program took to execute</param>
         /// <returns></returns>
-        private string CalculateTime(long mills)
+        private async Task<string> CalculateTime(long mills)
         {
             long mils = 0;
             long secs = 0;
