@@ -2,6 +2,9 @@ var searchData=
 [
   ['unit',['unit',['../class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_instruction.html#a0337c93fbfb5993eab37f1d052ca5f43',1,'CPU_OS_Simulator.CPU.Instruction.unit()'],['../class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_simulator_program.html#a10e4c29c3ed9b84c0fb8aee7613cabf9',1,'CPU_OS_Simulator.CPU.SimulatorProgram.unit()']]],
   ['updateaddresses',['UpdateAddresses',['../class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_simulator_program.html#a4f7e933d4f3ca318d68471d465c6b31c',1,'CPU_OS_Simulator::CPU::SimulatorProgram']]],
+  ['updateaddressestest',['UpdateAddressesTest',['../class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_tests_1_1_simulator_program_tests.html#a21f054ad89eae1b93628e9ea94a32092',1,'CPU_OS_Simulator::CPU::Tests::SimulatorProgramTests']]],
+  ['updatedata',['UpdateData',['../class_c_p_u___o_s___simulator_1_1_memory_window.html#ab0cb156466262b3d90f19acd422dc65b',1,'CPU_OS_Simulator::MemoryWindow']]],
+  ['updateinterface',['UpdateInterface',['../class_c_p_u___o_s___simulator_1_1_main_window.html#a10f38a4699847dd70069ca66aef16c5b',1,'CPU_OS_Simulator.MainWindow.UpdateInterface(object sender, ProgressChangedEventArgs e)'],['../class_c_p_u___o_s___simulator_1_1_main_window.html#adbb759abbf37061f785e82a9e7f7b3e1',1,'CPU_OS_Simulator.MainWindow.UpdateInterface()']]],
   ['updateintructions',['UpdateIntructions',['../class_c_p_u___o_s___simulator_1_1_main_window.html#a677bf9ebdb9fe30caa0f52f93e5390c9',1,'CPU_OS_Simulator::MainWindow']]],
   ['updateregisters',['UpdateRegisters',['../class_c_p_u___o_s___simulator_1_1_main_window.html#a4fbca2d50698a847da4ab82c3f380680',1,'CPU_OS_Simulator::MainWindow']]],
   ['updatespecialregisters',['UpdateSpecialRegisters',['../class_c_p_u___o_s___simulator_1_1_main_window.html#a798838ad3fae6117c8e624047a591931',1,'CPU_OS_Simulator::MainWindow']]],

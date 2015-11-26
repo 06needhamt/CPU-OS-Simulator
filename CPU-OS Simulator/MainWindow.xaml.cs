@@ -718,8 +718,12 @@ namespace CPU_OS_Simulator
             executionWorker.WorkerReportsProgress = true;
             executionWorker.ProgressChanged += new ProgressChangedEventHandler(UpdateInterface);
         }
-
-        private void UpdateInterface(object sender, ProgressChangedEventArgs e)
+        /// <summary>
+        /// Asynchronous method called after every instruction is executed to update required values and user interface asynchronously
+        /// </summary>
+        /// <param name="sender"> the object that triggered this event</param>
+        /// <param name="args" The parameters passed to this event ></param>
+        private async void UpdateInterface(object sender, ProgressChangedEventArgs e)
         {
             SimulatorProgram prog = programList.Where(x => x.Name.Equals(currentProgram)).FirstOrDefault();
             lst_InstructionsList.SelectedIndex = activeUnit.CurrentIndex;
@@ -742,8 +746,7 @@ namespace CPU_OS_Simulator
         /// <summary>
         /// Asynchronous method called after every instruction is executed to update required values and user interface asynchronously
         /// </summary>
-        /// <param name="sender"> the object that triggered this event</param>
-        /// <param name="args" The parameters passed to this event ></param>
+        /// <returns> A task to indicate to the main thread that the method has finished executing</returns>
         private async Task<int> UpdateInterface()
         {
             SimulatorProgram prog = programList.Where(x => x.Name.Equals(currentProgram)).FirstOrDefault();
@@ -762,8 +765,7 @@ namespace CPU_OS_Simulator
         /// <summary>
         /// Asynchronous method called to begin executing a program on the execution thread
         /// </summary>
-        /// <param name="sender"> The object that triggered this event</param>
-        /// <param name="args"> The parameters passed to this event </param>
+        /// <param name="program"> The program object to execute</param>
         private async void ExecuteProgram(object program)
         {
             Stopwatch s = new Stopwatch();
@@ -778,6 +780,11 @@ namespace CPU_OS_Simulator
             MessageBox.Show("Program Completed in: " + CalculateTime(s.ElapsedMilliseconds) + " Seconds", "", MessageBoxButton.OK, MessageBoxImage.Information);
             //Thread.CurrentThread.Join();
         }
+        /// <summary>
+        /// Bridge function used to call functions on the main thread from within the background thread
+        /// </summary>
+        /// <param name="FunctionPointer"> The function to call </param>
+        /// <returns>A task to indicate to the main thread that the method has finished executing</returns>
         private async Task<int> CallFromMainThread(Func<Task<int>> FunctionPointer)
         {
             dispatcher?.Invoke(FunctionPointer);
@@ -799,7 +806,6 @@ namespace CPU_OS_Simulator
 
         private void btn_Stop_Click(object sender, RoutedEventArgs e)
         {
-            //TODO Stop Program
             executionWorker.CancelAsync();
         }
 

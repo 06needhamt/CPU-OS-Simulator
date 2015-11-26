@@ -1,5 +1,7 @@
 var searchData=
 [
+  ['initialisedatagrid',['InitialiseDataGrid',['../class_c_p_u___o_s___simulator_1_1_memory_window.html#aed90d987403a12a322183d032544c507',1,'CPU_OS_Simulator::MemoryWindow']]],
+  ['initialisedatainnergrid',['InitialiseDataInnerGrid',['../class_c_p_u___o_s___simulator_1_1_memory_window.html#a2f298db1546fe63bca79b0a810304381',1,'CPU_OS_Simulator::MemoryWindow']]],
   ['instructioncreationfunctions',['InstructionCreationFunctions',['../class_c_p_u___o_s___simulator_1_1_instructions_window.html#ae303b32cfc2f5e7cc5ab18df94fd574b',1,'CPU_OS_Simulator::InstructionsWindow']]],
   ['instructiondescriptions',['instructionDescriptions',['../class_c_p_u___o_s___simulator_1_1_instructions_window.html#a678ab4df2b78758142472eeed8c5d7ba',1,'CPU_OS_Simulator::InstructionsWindow']]],
   ['instructionlistgrid',['InstructionListGrid',['../class_c_p_u___o_s___simulator_1_1_instructions_window.html#af568f7891b3381f9bec2f0d5b2d0d8c6',1,'CPU_OS_Simulator::InstructionsWindow']]],

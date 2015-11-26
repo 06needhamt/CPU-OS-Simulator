@@ -6,6 +6,7 @@ var searchData=
   ['chk_5fov',['chk_OV',['../class_c_p_u___o_s___simulator_1_1_main_window.html#adfbc519740506214093673b8015ea67d',1,'CPU_OS_Simulator::MainWindow']]],
   ['chk_5fz',['chk_Z',['../class_c_p_u___o_s___simulator_1_1_main_window.html#a70c1a75df218201391cf5e0615a600f1',1,'CPU_OS_Simulator::MainWindow']]],
   ['clockspeed',['clockSpeed',['../class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_execution_unit.html#a0deb0a3e0c9fa402598bbf18be6535cc',1,'CPU_OS_Simulator::CPU::ExecutionUnit']]],
+  ['cmb_5fbooleanvalue',['cmb_BooleanValue',['../class_c_p_u___o_s___simulator_1_1_memory_window.html#a2a1da5df6a425ce20c7b639fa66c58f2',1,'CPU_OS_Simulator::MemoryWindow']]],
   ['cmb_5fdestinationregisterarithmetic',['cmb_DestinationRegisterArithmetic',['../class_c_p_u___o_s___simulator_1_1_instructions_window.html#ad1fafd2bef9ad3f94fab585ea58fc38c',1,'CPU_OS_Simulator::InstructionsWindow']]],
   ['cmb_5fdestinationregistercomparison',['cmb_DestinationRegisterComparison',['../class_c_p_u___o_s___simulator_1_1_instructions_window.html#af209ebdcd0b9ae6c267388b382dac245',1,'CPU_OS_Simulator::InstructionsWindow']]],
   ['cmb_5fdestinationregistercontroltransfer',['cmb_DestinationRegisterControlTransfer',['../class_c_p_u___o_s___simulator_1_1_instructions_window.html#a9017d3508e5dde75eafec25e94611c97',1,'CPU_OS_Simulator::InstructionsWindow']]],
@@ -29,6 +30,8 @@ var searchData=
   ['controlunitinnergrid',['ControlUnitInnerGrid',['../class_c_p_u___o_s___simulator_1_1_main_window.html#a0bb4b4233380c349ee3bef69813a684b',1,'CPU_OS_Simulator::MainWindow']]],
   ['cpumodegrid',['CPUModeGrid',['../class_c_p_u___o_s___simulator_1_1_main_window.html#ab6afb45d3f05517e9df6af167752be77',1,'CPU_OS_Simulator::MainWindow']]],
   ['currentindex',['currentIndex',['../class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_execution_unit.html#af6807cb5343acc2c40a08166c748f1f0',1,'CPU_OS_Simulator::CPU::ExecutionUnit']]],
-  ['currentinstance',['currentInstance',['../class_c_p_u___o_s___simulator_1_1_main_window.html#a1280266cc57403a91f08a8350dee05cc',1,'CPU_OS_Simulator::MainWindow']]],
+  ['currentinstance',['currentInstance',['../class_c_p_u___o_s___simulator_1_1_main_window.html#a1280266cc57403a91f08a8350dee05cc',1,'CPU_OS_Simulator.MainWindow.currentInstance()'],['../class_c_p_u___o_s___simulator_1_1_memory_window.html#a870b795e3b919a82888ad608ab24d61a',1,'CPU_OS_Simulator.MemoryWindow.currentInstance()']]],
+  ['currentinstruction',['currentInstruction',['../class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_execution_unit.html#a12fc8d1fd19eab177941b9f98675eb7f',1,'CPU_OS_Simulator::CPU::ExecutionUnit']]],
+  ['currentpage',['currentPage',['../class_c_p_u___o_s___simulator_1_1_memory_window.html#ae1b974c8b976e19dde1a5491e3fe0e37',1,'CPU_OS_Simulator::MemoryWindow']]],
   ['currentprogram',['currentProgram',['../class_c_p_u___o_s___simulator_1_1_main_window.html#a91f063d9cf776004dc74e719ef942907',1,'CPU_OS_Simulator::MainWindow']]]
 ];

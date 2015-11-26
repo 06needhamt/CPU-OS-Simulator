@@ -1,8 +1,10 @@
 var searchData=
 [
   ['tas',['TAS',['../class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_instruction.html#a78fbef41ec65046f35456e7cb161d037',1,'CPU_OS_Simulator::CPU::Instruction']]],
-  ['toggleflag',['ToggleFlag',['../class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_status_flags.html#a435d878793ab321ac1f2aae372c2e43e',1,'CPU_OS_Simulator::CPU::StatusFlags']]],
-  ['tostring',['ToString',['../class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_instruction.html#a7d3a81ead6e3639f970901d8e898f02c',1,'CPU_OS_Simulator::CPU::Instruction']]],
+  ['toggleflag',['ToggleFlag',['../class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_status_flags.html#aca93016e4ad4e70951b071ba2ae575c1',1,'CPU_OS_Simulator::CPU::StatusFlags']]],
+  ['toggleflagtest',['ToggleFlagTest',['../class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_tests_1_1_status_flags_tests.html#aab15b337dbf5f2be06927f6332d1ac59',1,'CPU_OS_Simulator::CPU::Tests::StatusFlagsTests']]],
+  ['tostring',['ToString',['../class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_instruction.html#a7d3a81ead6e3639f970901d8e898f02c',1,'CPU_OS_Simulator.CPU.Instruction.ToString()'],['../class_c_p_u___o_s___simulator_1_1_memory_1_1_memory_segment.html#a1c94b824fe1fdfc4a0b817a031f3d51d',1,'CPU_OS_Simulator.Memory.MemorySegment.ToString()']]],
+  ['tostringtest',['ToStringTest',['../class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_tests_1_1_instruction_tests.html#a4966086b23824a6795e3325ab747eeba',1,'CPU_OS_Simulator::CPU::Tests::InstructionTests']]],
   ['txtdestinationvaluearithmetic_5fgotfocus',['txtDestinationValueArithmetic_GotFocus',['../class_c_p_u___o_s___simulator_1_1_instructions_window.html#ae969ae41ccdb44d87f180b18b11b5b29',1,'CPU_OS_Simulator::InstructionsWindow']]],
   ['txtdestinationvaluecomparison_5fgotfocus',['txtDestinationValueComparison_GotFocus',['../class_c_p_u___o_s___simulator_1_1_instructions_window.html#a2f346b8f78940a1626ab5419af3973ef',1,'CPU_OS_Simulator::InstructionsWindow']]],
   ['txtdestinationvaluecontroltransfer_5fgotfocus',['txtDestinationValueControlTransfer_GotFocus',['../class_c_p_u___o_s___simulator_1_1_instructions_window.html#ab9695cfa485c6cd4f6d941c93105187b',1,'CPU_OS_Simulator::InstructionsWindow']]],

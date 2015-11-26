@@ -1,7 +1,6 @@
 var searchData=
 [
-  ['endinit',['EndInit',['../class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_activity1.html#a7d9c8128517a9b4a1a8860b3cc8ffd43',1,'CPU_OS_Simulator::CPU::Activity1']]],
-  ['endoffset',['endOffset',['../class_c_p_u___o_s___simulator_1_1_memory_1_1_memory_page.html#ae2f8f419909326ce5449d37af9ff7c89',1,'CPU_OS_Simulator.Memory.MemoryPage.endOffset()'],['../class_c_p_u___o_s___simulator_1_1_memory_1_1_memory_page.html#abe850b4a088a820ecf598af1cd9a7deb',1,'CPU_OS_Simulator.Memory.MemoryPage.EndOffset()']]],
+  ['endoffset',['endOffset',['../class_c_p_u___o_s___simulator_1_1_memory_1_1_memory_page.html#ae2f8f419909326ce5449d37af9ff7c89',1,'CPU_OS_Simulator.Memory.MemoryPage.endOffset()'],['../class_c_p_u___o_s___simulator_1_1_memory_1_1_memory_page___o_l_d.html#ad255a5229701ca9f7bb9c7fa90faf2ae',1,'CPU_OS_Simulator.Memory.MemoryPage_OLD.endOffset()'],['../class_c_p_u___o_s___simulator_1_1_memory_1_1_memory_page.html#abe850b4a088a820ecf598af1cd9a7deb',1,'CPU_OS_Simulator.Memory.MemoryPage.EndOffset()'],['../class_c_p_u___o_s___simulator_1_1_memory_1_1_memory_page___o_l_d.html#a1610e4a6a7f9d94412a831f269d0281d',1,'CPU_OS_Simulator.Memory.MemoryPage_OLD.EndOffset()']]],
   ['enuminstructionmode',['EnumInstructionMode',['../namespace_c_p_u___o_s___simulator.html#adc17a5a5e004084f05dc8e4d3f70e31f',1,'CPU_OS_Simulator']]],
   ['enuminstructionmode_2ecs',['EnumInstructionMode.cs',['../_enum_instruction_mode_8cs.html',1,'']]],
   ['enuminstructionsize',['EnumInstructionSize',['../namespace_c_p_u___o_s___simulator_1_1_c_p_u.html#af322082b9b46482202165fb547c052a7',1,'CPU_OS_Simulator::CPU']]],
@@ -12,9 +11,16 @@ var searchData=
   ['enumoperandtype_2ecs',['EnumOperandType.cs',['../_enum_operand_type_8cs.html',1,'']]],
   ['execute',['execute',['../class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_instruction.html#ae6c5e3409f33f49c745ab57ca9a885a9',1,'CPU_OS_Simulator.CPU.Instruction.execute()'],['../class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_instruction.html#afc4c52737c07181195a29413cf09d2a5',1,'CPU_OS_Simulator.CPU.Instruction.Execute()']]],
   ['executeinstruction',['ExecuteInstruction',['../class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_execution_unit.html#ae0298423e5e7aad47e342e3960a361ac',1,'CPU_OS_Simulator::CPU::ExecutionUnit']]],
+  ['executeinstructiontest',['ExecuteInstructionTest',['../class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_tests_1_1_execution_unit_tests.html#a5316a7da14de055e3c3d06ca62832f03',1,'CPU_OS_Simulator::CPU::Tests::ExecutionUnitTests']]],
+  ['executeprogram',['ExecuteProgram',['../class_c_p_u___o_s___simulator_1_1_main_window.html#a03d4ec6b5990ad572db709f5305dd7ca',1,'CPU_OS_Simulator::MainWindow']]],
   ['executionunit',['ExecutionUnit',['../class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_execution_unit.html#aaa72bccee27d810d5bbfa9ed02215fa9',1,'CPU_OS_Simulator.CPU.ExecutionUnit.ExecutionUnit(SimulatorProgram program, int clockSpeed)'],['../class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_execution_unit.html#a0b69abfef40692e266fee90b2321797e',1,'CPU_OS_Simulator.CPU.ExecutionUnit.ExecutionUnit(SimulatorProgram program, int clockSpeed, int currentIndex)']]],
   ['executionunit',['ExecutionUnit',['../class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_execution_unit.html',1,'CPU_OS_Simulator::CPU']]],
   ['executionunit_2ecs',['ExecutionUnit.cs',['../_execution_unit_8cs.html',1,'']]],
+  ['executionunittest',['ExecutionUnitTest',['../class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_tests_1_1_execution_unit_tests.html#aaf269c98f9007b95804b7968a60824f4',1,'CPU_OS_Simulator::CPU::Tests::ExecutionUnitTests']]],
+  ['executionunittest1',['ExecutionUnitTest1',['../class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_tests_1_1_execution_unit_tests.html#a1fbe0d28afb517a2d633d88189f01b68',1,'CPU_OS_Simulator::CPU::Tests::ExecutionUnitTests']]],
+  ['executionunittests',['ExecutionUnitTests',['../class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_tests_1_1_execution_unit_tests.html',1,'CPU_OS_Simulator::CPU::Tests']]],
+  ['executionunittests_2ecs',['ExecutionUnitTests.cs',['../_execution_unit_tests_8cs.html',1,'']]],
+  ['executionworker',['executionWorker',['../class_c_p_u___o_s___simulator_1_1_main_window.html#a80e0a87480e4b7f4cfdb47739985b7c7',1,'CPU_OS_Simulator::MainWindow']]],
   ['extentions',['Extentions',['../class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_extentions.html',1,'CPU_OS_Simulator::CPU']]],
   ['extentions_2ecs',['Extentions.cs',['../_extentions_8cs.html',1,'']]]
 ];

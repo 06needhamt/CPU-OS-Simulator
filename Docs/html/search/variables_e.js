@@ -1,6 +1,7 @@
 var searchData=
 [
-  ['schemacontextfield',['schemaContextField',['../class_xaml_static_helper_namespace_1_1___xaml_static_helper.html#a4a6305e6ff660caf4aea99a620f62961',1,'XamlStaticHelperNamespace::_XamlStaticHelper']]],
+  ['s',['s',['../class_c_p_u___o_s___simulator_1_1_main_window.html#a880dc01f7c4f093b77ace064d93be1f3',1,'CPU_OS_Simulator::MainWindow']]],
+  ['scrollbar',['scrollBar',['../class_c_p_u___o_s___simulator_1_1_memory_window.html#a2ab8c6459135d66de58829173f0bee5b',1,'CPU_OS_Simulator::MemoryWindow']]],
   ['scrollbar1',['scrollBar1',['../class_c_p_u___o_s___simulator_1_1_main_window.html#a014812a0e9cd159be05250d94d9a5a8b',1,'CPU_OS_Simulator::MainWindow']]],
   ['size',['size',['../class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_instruction.html#ac8c820f3e522e4fefaa510856ed11fb0',1,'CPU_OS_Simulator::CPU::Instruction']]],
   ['sld_5fclockspeed',['sld_ClockSpeed',['../class_c_p_u___o_s___simulator_1_1_main_window.html#a39cd3af9bb0f8a3ccd06fdd44c9ed6a3',1,'CPU_OS_Simulator::MainWindow']]],
@@ -26,7 +27,7 @@ var searchData=
   ['stackitems',['stackItems',['../class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_program_stack.html#ada087487ee69e4e38e2f2591bdc28f37',1,'CPU_OS_Simulator::CPU::ProgramStack']]],
   ['stacksize',['stackSize',['../class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_program_stack.html#ab0667a30e4d6e10c3ffddfdfbc084102',1,'CPU_OS_Simulator::CPU::ProgramStack']]],
   ['startaddress',['startAddress',['../class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_simulator_program.html#a7b2581eff41da814292bf29936ab5318',1,'CPU_OS_Simulator::CPU::SimulatorProgram']]],
-  ['startoffset',['startOffset',['../class_c_p_u___o_s___simulator_1_1_memory_1_1_memory_page.html#a6fe2e28385db19a1968a41efe3df3f38',1,'CPU_OS_Simulator::Memory::MemoryPage']]],
+  ['startoffset',['startOffset',['../class_c_p_u___o_s___simulator_1_1_memory_1_1_memory_page.html#a6fe2e28385db19a1968a41efe3df3f38',1,'CPU_OS_Simulator.Memory.MemoryPage.startOffset()'],['../class_c_p_u___o_s___simulator_1_1_memory_1_1_memory_page___o_l_d.html#a9114e60bd23b6a77765e73520fb5ddc1',1,'CPU_OS_Simulator.Memory.MemoryPage_OLD.startOffset()']]],
   ['statusflagsgrid',['StatusFlagsGrid',['../class_c_p_u___o_s___simulator_1_1_main_window.html#afdda5e5a39c6e3b99300284ea2640e7c',1,'CPU_OS_Simulator::MainWindow']]],
   ['stop',['stop',['../class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_execution_unit.html#aad508435c1085ec880b75723260b0439',1,'CPU_OS_Simulator::CPU::ExecutionUnit']]]
 ];

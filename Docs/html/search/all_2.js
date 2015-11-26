@@ -1,9 +1,8 @@
 var searchData=
 [
   ['baseaddress',['baseAddress',['../class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_simulator_program.html#aaea4fb02fb8d22806ce58b957f9b573d',1,'CPU_OS_Simulator.CPU.SimulatorProgram.baseAddress()'],['../class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_simulator_program.html#ad07bee447d47fb07243a4484b5740c21',1,'CPU_OS_Simulator.CPU.SimulatorProgram.BaseAddress()']]],
-  ['beforeinitializecomponent',['BeforeInitializeComponent',['../class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_activity1.html#a40e21e1735bdef0af255ee9f07fcb3d8',1,'CPU_OS_Simulator::CPU::Activity1']]],
-  ['begininit',['BeginInit',['../class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_activity1.html#ae02f7230ddf93bd55c74ad47d9dc72e5',1,'CPU_OS_Simulator::CPU::Activity1']]],
   ['binddelegate',['BindDelegate',['../class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_instruction.html#ab3bbd51fd889e3bbeb656ea717a7fe9c',1,'CPU_OS_Simulator::CPU::Instruction']]],
+  ['binddelegatetest',['BindDelegateTest',['../class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_tests_1_1_instruction_tests.html#a08e3bc0d16c5a749657986cfb06d7544',1,'CPU_OS_Simulator::CPU::Tests::InstructionTests']]],
   ['bindinstructiondelegates',['BindInstructionDelegates',['../class_c_p_u___o_s___simulator_1_1_main_window.html#afe4c815db0eb51ebc480374f5af09d0c',1,'CPU_OS_Simulator::MainWindow']]],
   ['br',['BR',['../class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_special_register.html#a08c44f677cc5e830000382725ce8ab9f',1,'CPU_OS_Simulator::CPU::SpecialRegister']]],
   ['btn_5faddnew',['btn_AddNew',['../class_c_p_u___o_s___simulator_1_1_main_window.html#a50fb8fcd9e592c4987fac4bcb8762785',1,'CPU_OS_Simulator::MainWindow']]],
@@ -38,7 +37,19 @@ var searchData=
   ['btn_5fstop',['btn_Stop',['../class_c_p_u___o_s___simulator_1_1_main_window.html#a1b6b541d9765ca230f537d1d6b6c83aa',1,'CPU_OS_Simulator::MainWindow']]],
   ['btn_5fstop_5fclick',['btn_Stop_Click',['../class_c_p_u___o_s___simulator_1_1_main_window.html#acbdc92abd94c317f978cee0d28af9448',1,'CPU_OS_Simulator::MainWindow']]],
   ['btn_5fundo',['btn_Undo',['../class_c_p_u___o_s___simulator_1_1_main_window.html#ac30720a1b345a3d59312d2d68f742359',1,'CPU_OS_Simulator::MainWindow']]],
+  ['btn_5fupdate',['btn_Update',['../class_c_p_u___o_s___simulator_1_1_memory_window.html#a9274df08bf008c43b325e50d6db6067f',1,'CPU_OS_Simulator::MemoryWindow']]],
+  ['btn_5fupdate_5fclick',['btn_Update_Click',['../class_c_p_u___o_s___simulator_1_1_memory_window.html#a91ec1c8081b85d3c07eaa31ee524f5d9',1,'CPU_OS_Simulator::MemoryWindow']]],
   ['btnmovedown',['btnMoveDown',['../class_c_p_u___o_s___simulator_1_1_main_window.html#ac6bfabebf21c92a905764305b789df46',1,'CPU_OS_Simulator::MainWindow']]],
   ['btnmoveup',['btnMoveUp',['../class_c_p_u___o_s___simulator_1_1_main_window.html#aa85d9301fed773f44a352aad64a9d80d',1,'CPU_OS_Simulator::MainWindow']]],
-  ['btnpasteabove',['btnPasteAbove',['../class_c_p_u___o_s___simulator_1_1_main_window.html#ae2ef9b73d0b5776415c7f3e91c1eaf21',1,'CPU_OS_Simulator::MainWindow']]]
+  ['btnpasteabove',['btnPasteAbove',['../class_c_p_u___o_s___simulator_1_1_main_window.html#ae2ef9b73d0b5776415c7f3e91c1eaf21',1,'CPU_OS_Simulator::MainWindow']]],
+  ['builddatastring',['BuildDataString',['../class_c_p_u___o_s___simulator_1_1_memory_1_1_memory_segment.html#a7ad206d46b52b795ba48018afe0174ed',1,'CPU_OS_Simulator::Memory::MemorySegment']]],
+  ['byte0',['byte0',['../class_c_p_u___o_s___simulator_1_1_memory_1_1_memory_segment.html#a97b8721f717e2fd03673d9dd96882ef8',1,'CPU_OS_Simulator.Memory.MemorySegment.byte0()'],['../class_c_p_u___o_s___simulator_1_1_memory_1_1_memory_segment.html#af1355b8170ad0461d479785ff6e1420d',1,'CPU_OS_Simulator.Memory.MemorySegment.Byte0()']]],
+  ['byte1',['byte1',['../class_c_p_u___o_s___simulator_1_1_memory_1_1_memory_segment.html#aa64e7a88f9cdf5dbb5b0c846cc570a77',1,'CPU_OS_Simulator.Memory.MemorySegment.byte1()'],['../class_c_p_u___o_s___simulator_1_1_memory_1_1_memory_segment.html#aba977f51dac4aeaa069fc14f877c7367',1,'CPU_OS_Simulator.Memory.MemorySegment.Byte1()']]],
+  ['byte2',['byte2',['../class_c_p_u___o_s___simulator_1_1_memory_1_1_memory_segment.html#a4f6ad3b2d132bfc1c4bd16d8fcca8d56',1,'CPU_OS_Simulator.Memory.MemorySegment.byte2()'],['../class_c_p_u___o_s___simulator_1_1_memory_1_1_memory_segment.html#af33632597b874fbb501068a9285f5ad6',1,'CPU_OS_Simulator.Memory.MemorySegment.Byte2()']]],
+  ['byte3',['byte3',['../class_c_p_u___o_s___simulator_1_1_memory_1_1_memory_segment.html#a48874b9f9dede6546e365d3bc1e28926',1,'CPU_OS_Simulator.Memory.MemorySegment.byte3()'],['../class_c_p_u___o_s___simulator_1_1_memory_1_1_memory_segment.html#aa8c335116132ff754331eadb12355247',1,'CPU_OS_Simulator.Memory.MemorySegment.Byte3()']]],
+  ['byte4',['byte4',['../class_c_p_u___o_s___simulator_1_1_memory_1_1_memory_segment.html#a1979475ad1134e07235880ccbd6b82f7',1,'CPU_OS_Simulator.Memory.MemorySegment.byte4()'],['../class_c_p_u___o_s___simulator_1_1_memory_1_1_memory_segment.html#acc659c001dde3c6f6b0875df933b5bec',1,'CPU_OS_Simulator.Memory.MemorySegment.Byte4()']]],
+  ['byte5',['byte5',['../class_c_p_u___o_s___simulator_1_1_memory_1_1_memory_segment.html#a6d35dbdcd3428e9a1869fda265341123',1,'CPU_OS_Simulator.Memory.MemorySegment.byte5()'],['../class_c_p_u___o_s___simulator_1_1_memory_1_1_memory_segment.html#a8ef49453e406cd41eacc4e2ef16a8420',1,'CPU_OS_Simulator.Memory.MemorySegment.Byte5()']]],
+  ['byte6',['byte6',['../class_c_p_u___o_s___simulator_1_1_memory_1_1_memory_segment.html#a242f25c3861a3c0d1d51484203ea8603',1,'CPU_OS_Simulator.Memory.MemorySegment.byte6()'],['../class_c_p_u___o_s___simulator_1_1_memory_1_1_memory_segment.html#ade6f265c081bbfd184e344cb8af45c0b',1,'CPU_OS_Simulator.Memory.MemorySegment.Byte6()']]],
+  ['byte7',['byte7',['../class_c_p_u___o_s___simulator_1_1_memory_1_1_memory_segment.html#af4a4ab7c802e0a5b5f3684c0cfac5f80',1,'CPU_OS_Simulator.Memory.MemorySegment.byte7()'],['../class_c_p_u___o_s___simulator_1_1_memory_1_1_memory_segment.html#a62699911957af71d57e7cb5cd21d5246',1,'CPU_OS_Simulator.Memory.MemorySegment.Byte7()']]],
+  ['bytepointers',['bytePointers',['../class_c_p_u___o_s___simulator_1_1_memory_1_1_memory_segment.html#a8ac7f7e71e129c194aa2b33b4929b25e',1,'CPU_OS_Simulator::Memory::MemorySegment']]]
 ];

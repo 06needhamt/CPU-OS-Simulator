@@ -4,45 +4,44 @@
 \begin{DoxyCompactItemize}
 \item 
 \hyperlink{class_c_p_u___o_s___simulator_1_1_memory_1_1_memory_page_ab471d5de4e2b4e5f6585ae3782fa2ae7}{Memory\+Page} (int \hyperlink{class_c_p_u___o_s___simulator_1_1_memory_1_1_memory_page_acf60a7bdefab6120fe080854b5f0b38b}{page\+Index}, int \hyperlink{class_c_p_u___o_s___simulator_1_1_memory_1_1_memory_page_a6fe2e28385db19a1968a41efe3df3f38}{start\+Offset}, int \hyperlink{class_c_p_u___o_s___simulator_1_1_memory_1_1_memory_page_abbbd3ea0ef99dac19c6bd9694dbdfd3a}{page\+Size})
-\item 
-char \hyperlink{class_c_p_u___o_s___simulator_1_1_memory_1_1_memory_page_acb107b35713d8fe3d5032c3a8b0e878d}{get\+Byte} (int address)
-\item 
-void \hyperlink{class_c_p_u___o_s___simulator_1_1_memory_1_1_memory_page_aad04f4e5938283889df2190e826aa5bf}{set\+Byte} (int address, char value)
-\item 
-void \hyperlink{class_c_p_u___o_s___simulator_1_1_memory_1_1_memory_page_a31eb94b943ac28738406a5c571d2a450}{Populate\+Array$<$ T $>$} (ref T\mbox{[},\mbox{]} \hyperlink{class_c_p_u___o_s___simulator_1_1_memory_1_1_memory_page_a7d78ae9ac993f94a476e930eb81a46b3}{data}, T Value)
 \end{DoxyCompactItemize}
 \subsection*{Properties}
 \begin{DoxyCompactItemize}
-\item 
-char\mbox{[},\mbox{]} \hyperlink{class_c_p_u___o_s___simulator_1_1_memory_1_1_memory_page_a18016209f4fc4f4a09e034c30caaf3e4}{Data}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
 \item 
 int \hyperlink{class_c_p_u___o_s___simulator_1_1_memory_1_1_memory_page_aec80700d036a447e7e6ec204513e3a59}{Page\+Index}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
 \item 
 int \hyperlink{class_c_p_u___o_s___simulator_1_1_memory_1_1_memory_page_ad700979e51dd3d05470c681588c6fa79}{Start\+Offset}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
 \item 
+int \hyperlink{class_c_p_u___o_s___simulator_1_1_memory_1_1_memory_page_a6fba0e419e59c58fb3c5444a8e437ab3}{Page\+Size}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\item 
 int \hyperlink{class_c_p_u___o_s___simulator_1_1_memory_1_1_memory_page_abe850b4a088a820ecf598af1cd9a7deb}{End\+Offset}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
 \item 
-int \hyperlink{class_c_p_u___o_s___simulator_1_1_memory_1_1_memory_page_a6fba0e419e59c58fb3c5444a8e437ab3}{Page\+Size}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\hyperlink{class_c_p_u___o_s___simulator_1_1_memory_1_1_memory_segment}{Memory\+Segment}\mbox{[}$\,$\mbox{]} \hyperlink{class_c_p_u___o_s___simulator_1_1_memory_1_1_memory_page_a8bf84e82146f9ff35ffbcc32b93a9db0}{Data}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{class_c_p_u___o_s___simulator_1_1_memory_1_1_memory_page_a4006da1460cb3bf17076dfbade9d0038}{Populate\+Data} ()
 \end{DoxyCompactItemize}
 \subsection*{Private Attributes}
 \begin{DoxyCompactItemize}
-\item 
-char\mbox{[},\mbox{]} \hyperlink{class_c_p_u___o_s___simulator_1_1_memory_1_1_memory_page_a7d78ae9ac993f94a476e930eb81a46b3}{data}
 \item 
 int \hyperlink{class_c_p_u___o_s___simulator_1_1_memory_1_1_memory_page_acf60a7bdefab6120fe080854b5f0b38b}{page\+Index}
 \item 
 readonly int \hyperlink{class_c_p_u___o_s___simulator_1_1_memory_1_1_memory_page_a6fe2e28385db19a1968a41efe3df3f38}{start\+Offset}
 \item 
+readonly int \hyperlink{class_c_p_u___o_s___simulator_1_1_memory_1_1_memory_page_abbbd3ea0ef99dac19c6bd9694dbdfd3a}{page\+Size}
+\item 
 readonly int \hyperlink{class_c_p_u___o_s___simulator_1_1_memory_1_1_memory_page_ae2f8f419909326ce5449d37af9ff7c89}{end\+Offset}
 \item 
-readonly int \hyperlink{class_c_p_u___o_s___simulator_1_1_memory_1_1_memory_page_abbbd3ea0ef99dac19c6bd9694dbdfd3a}{page\+Size}
+\hyperlink{class_c_p_u___o_s___simulator_1_1_memory_1_1_memory_segment}{Memory\+Segment}\mbox{[}$\,$\mbox{]} \hyperlink{class_c_p_u___o_s___simulator_1_1_memory_1_1_memory_page_af9ab25101e7920de2344e0fa5ddfaa27}{data}
 \end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
 
 
-Definition at line 5 of file Memory\+Page.\+cs.
+Definition at line 3 of file Memory\+Page.\+cs.
 
 
 
@@ -58,52 +57,28 @@ Definition at line 5 of file Memory\+Page.\+cs.
 )}\label{class_c_p_u___o_s___simulator_1_1_memory_1_1_memory_page_ab471d5de4e2b4e5f6585ae3782fa2ae7}
 
 
-Definition at line 73 of file Memory\+Page.\+cs.
+Definition at line 63 of file Memory\+Page.\+cs.
 
 
 
 \subsection{Member Function Documentation}
-\hypertarget{class_c_p_u___o_s___simulator_1_1_memory_1_1_memory_page_acb107b35713d8fe3d5032c3a8b0e878d}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Memory\+::\+Memory\+Page@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Memory\+::\+Memory\+Page}!get\+Byte@{get\+Byte}}
-\index{get\+Byte@{get\+Byte}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Memory\+::\+Memory\+Page@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Memory\+::\+Memory\+Page}}
-\subsubsection[{get\+Byte(int address)}]{\setlength{\rightskip}{0pt plus 5cm}char C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Memory.\+Memory\+Page.\+get\+Byte (
+\hypertarget{class_c_p_u___o_s___simulator_1_1_memory_1_1_memory_page_a4006da1460cb3bf17076dfbade9d0038}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Memory\+::\+Memory\+Page@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Memory\+::\+Memory\+Page}!Populate\+Data@{Populate\+Data}}
+\index{Populate\+Data@{Populate\+Data}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Memory\+::\+Memory\+Page@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Memory\+::\+Memory\+Page}}
+\subsubsection[{Populate\+Data()}]{\setlength{\rightskip}{0pt plus 5cm}void C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Memory.\+Memory\+Page.\+Populate\+Data (
 \begin{DoxyParamCaption}
-\item[{int}]{address}
+{}
 \end{DoxyParamCaption}
-)}\label{class_c_p_u___o_s___simulator_1_1_memory_1_1_memory_page_acb107b35713d8fe3d5032c3a8b0e878d}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{class_c_p_u___o_s___simulator_1_1_memory_1_1_memory_page_a4006da1460cb3bf17076dfbade9d0038}
 
 
-Definition at line 87 of file Memory\+Page.\+cs.
-
-\hypertarget{class_c_p_u___o_s___simulator_1_1_memory_1_1_memory_page_a31eb94b943ac28738406a5c571d2a450}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Memory\+::\+Memory\+Page@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Memory\+::\+Memory\+Page}!Populate\+Array$<$ T $>$@{Populate\+Array$<$ T $>$}}
-\index{Populate\+Array$<$ T $>$@{Populate\+Array$<$ T $>$}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Memory\+::\+Memory\+Page@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Memory\+::\+Memory\+Page}}
-\subsubsection[{Populate\+Array$<$ T $>$(ref T[,] data, T Value)}]{\setlength{\rightskip}{0pt plus 5cm}void C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Memory.\+Memory\+Page.\+Populate\+Array$<$ T $>$ (
-\begin{DoxyParamCaption}
-\item[{ref T}]{data\mbox{[},\mbox{]}, }
-\item[{T}]{Value}
-\end{DoxyParamCaption}
-)}\label{class_c_p_u___o_s___simulator_1_1_memory_1_1_memory_page_a31eb94b943ac28738406a5c571d2a450}
-
-
-Definition at line 101 of file Memory\+Page.\+cs.
-
-\hypertarget{class_c_p_u___o_s___simulator_1_1_memory_1_1_memory_page_aad04f4e5938283889df2190e826aa5bf}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Memory\+::\+Memory\+Page@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Memory\+::\+Memory\+Page}!set\+Byte@{set\+Byte}}
-\index{set\+Byte@{set\+Byte}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Memory\+::\+Memory\+Page@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Memory\+::\+Memory\+Page}}
-\subsubsection[{set\+Byte(int address, char value)}]{\setlength{\rightskip}{0pt plus 5cm}void C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Memory.\+Memory\+Page.\+set\+Byte (
-\begin{DoxyParamCaption}
-\item[{int}]{address, }
-\item[{char}]{value}
-\end{DoxyParamCaption}
-)}\label{class_c_p_u___o_s___simulator_1_1_memory_1_1_memory_page_aad04f4e5938283889df2190e826aa5bf}
-
-
-Definition at line 94 of file Memory\+Page.\+cs.
+Definition at line 73 of file Memory\+Page.\+cs.
 
 
 
 \subsection{Member Data Documentation}
-\hypertarget{class_c_p_u___o_s___simulator_1_1_memory_1_1_memory_page_a7d78ae9ac993f94a476e930eb81a46b3}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Memory\+::\+Memory\+Page@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Memory\+::\+Memory\+Page}!data@{data}}
+\hypertarget{class_c_p_u___o_s___simulator_1_1_memory_1_1_memory_page_af9ab25101e7920de2344e0fa5ddfaa27}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Memory\+::\+Memory\+Page@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Memory\+::\+Memory\+Page}!data@{data}}
 \index{data@{data}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Memory\+::\+Memory\+Page@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Memory\+::\+Memory\+Page}}
-\subsubsection[{data}]{\setlength{\rightskip}{0pt plus 5cm}char \mbox{[},\mbox{]} C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Memory.\+Memory\+Page.\+data\hspace{0.3cm}{\ttfamily [private]}}\label{class_c_p_u___o_s___simulator_1_1_memory_1_1_memory_page_a7d78ae9ac993f94a476e930eb81a46b3}
+\subsubsection[{data}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Memory\+Segment} \mbox{[}$\,$\mbox{]} C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Memory.\+Memory\+Page.\+data\hspace{0.3cm}{\ttfamily [private]}}\label{class_c_p_u___o_s___simulator_1_1_memory_1_1_memory_page_af9ab25101e7920de2344e0fa5ddfaa27}
 
 
 Definition at line 9 of file Memory\+Page.\+cs.
@@ -113,66 +88,66 @@ Definition at line 9 of file Memory\+Page.\+cs.
 \subsubsection[{end\+Offset}]{\setlength{\rightskip}{0pt plus 5cm}readonly int C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Memory.\+Memory\+Page.\+end\+Offset\hspace{0.3cm}{\ttfamily [private]}}\label{class_c_p_u___o_s___simulator_1_1_memory_1_1_memory_page_ae2f8f419909326ce5449d37af9ff7c89}
 
 
-Definition at line 12 of file Memory\+Page.\+cs.
+Definition at line 8 of file Memory\+Page.\+cs.
 
 \hypertarget{class_c_p_u___o_s___simulator_1_1_memory_1_1_memory_page_acf60a7bdefab6120fe080854b5f0b38b}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Memory\+::\+Memory\+Page@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Memory\+::\+Memory\+Page}!page\+Index@{page\+Index}}
 \index{page\+Index@{page\+Index}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Memory\+::\+Memory\+Page@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Memory\+::\+Memory\+Page}}
 \subsubsection[{page\+Index}]{\setlength{\rightskip}{0pt plus 5cm}int C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Memory.\+Memory\+Page.\+page\+Index\hspace{0.3cm}{\ttfamily [private]}}\label{class_c_p_u___o_s___simulator_1_1_memory_1_1_memory_page_acf60a7bdefab6120fe080854b5f0b38b}
 
 
-Definition at line 10 of file Memory\+Page.\+cs.
+Definition at line 5 of file Memory\+Page.\+cs.
 
 \hypertarget{class_c_p_u___o_s___simulator_1_1_memory_1_1_memory_page_abbbd3ea0ef99dac19c6bd9694dbdfd3a}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Memory\+::\+Memory\+Page@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Memory\+::\+Memory\+Page}!page\+Size@{page\+Size}}
 \index{page\+Size@{page\+Size}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Memory\+::\+Memory\+Page@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Memory\+::\+Memory\+Page}}
 \subsubsection[{page\+Size}]{\setlength{\rightskip}{0pt plus 5cm}readonly int C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Memory.\+Memory\+Page.\+page\+Size\hspace{0.3cm}{\ttfamily [private]}}\label{class_c_p_u___o_s___simulator_1_1_memory_1_1_memory_page_abbbd3ea0ef99dac19c6bd9694dbdfd3a}
 
 
-Definition at line 13 of file Memory\+Page.\+cs.
+Definition at line 7 of file Memory\+Page.\+cs.
 
 \hypertarget{class_c_p_u___o_s___simulator_1_1_memory_1_1_memory_page_a6fe2e28385db19a1968a41efe3df3f38}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Memory\+::\+Memory\+Page@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Memory\+::\+Memory\+Page}!start\+Offset@{start\+Offset}}
 \index{start\+Offset@{start\+Offset}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Memory\+::\+Memory\+Page@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Memory\+::\+Memory\+Page}}
 \subsubsection[{start\+Offset}]{\setlength{\rightskip}{0pt plus 5cm}readonly int C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Memory.\+Memory\+Page.\+start\+Offset\hspace{0.3cm}{\ttfamily [private]}}\label{class_c_p_u___o_s___simulator_1_1_memory_1_1_memory_page_a6fe2e28385db19a1968a41efe3df3f38}
 
 
-Definition at line 11 of file Memory\+Page.\+cs.
+Definition at line 6 of file Memory\+Page.\+cs.
 
 
 
 \subsection{Property Documentation}
-\hypertarget{class_c_p_u___o_s___simulator_1_1_memory_1_1_memory_page_a18016209f4fc4f4a09e034c30caaf3e4}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Memory\+::\+Memory\+Page@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Memory\+::\+Memory\+Page}!Data@{Data}}
+\hypertarget{class_c_p_u___o_s___simulator_1_1_memory_1_1_memory_page_a8bf84e82146f9ff35ffbcc32b93a9db0}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Memory\+::\+Memory\+Page@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Memory\+::\+Memory\+Page}!Data@{Data}}
 \index{Data@{Data}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Memory\+::\+Memory\+Page@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Memory\+::\+Memory\+Page}}
-\subsubsection[{Data}]{\setlength{\rightskip}{0pt plus 5cm}char \mbox{[},\mbox{]} C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Memory.\+Memory\+Page.\+Data\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}\label{class_c_p_u___o_s___simulator_1_1_memory_1_1_memory_page_a18016209f4fc4f4a09e034c30caaf3e4}
+\subsubsection[{Data}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Memory\+Segment} \mbox{[}$\,$\mbox{]} C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Memory.\+Memory\+Page.\+Data\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}\label{class_c_p_u___o_s___simulator_1_1_memory_1_1_memory_page_a8bf84e82146f9ff35ffbcc32b93a9db0}
 
 
-Definition at line 20 of file Memory\+Page.\+cs.
+Definition at line 49 of file Memory\+Page.\+cs.
 
 \hypertarget{class_c_p_u___o_s___simulator_1_1_memory_1_1_memory_page_abe850b4a088a820ecf598af1cd9a7deb}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Memory\+::\+Memory\+Page@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Memory\+::\+Memory\+Page}!End\+Offset@{End\+Offset}}
 \index{End\+Offset@{End\+Offset}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Memory\+::\+Memory\+Page@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Memory\+::\+Memory\+Page}}
 \subsubsection[{End\+Offset}]{\setlength{\rightskip}{0pt plus 5cm}int C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Memory.\+Memory\+Page.\+End\+Offset\hspace{0.3cm}{\ttfamily [get]}}\label{class_c_p_u___o_s___simulator_1_1_memory_1_1_memory_page_abe850b4a088a820ecf598af1cd9a7deb}
 
 
-Definition at line 54 of file Memory\+Page.\+cs.
+Definition at line 41 of file Memory\+Page.\+cs.
 
 \hypertarget{class_c_p_u___o_s___simulator_1_1_memory_1_1_memory_page_aec80700d036a447e7e6ec204513e3a59}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Memory\+::\+Memory\+Page@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Memory\+::\+Memory\+Page}!Page\+Index@{Page\+Index}}
 \index{Page\+Index@{Page\+Index}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Memory\+::\+Memory\+Page@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Memory\+::\+Memory\+Page}}
 \subsubsection[{Page\+Index}]{\setlength{\rightskip}{0pt plus 5cm}int C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Memory.\+Memory\+Page.\+Page\+Index\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}\label{class_c_p_u___o_s___simulator_1_1_memory_1_1_memory_page_aec80700d036a447e7e6ec204513e3a59}
 
 
-Definition at line 33 of file Memory\+Page.\+cs.
+Definition at line 12 of file Memory\+Page.\+cs.
 
 \hypertarget{class_c_p_u___o_s___simulator_1_1_memory_1_1_memory_page_a6fba0e419e59c58fb3c5444a8e437ab3}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Memory\+::\+Memory\+Page@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Memory\+::\+Memory\+Page}!Page\+Size@{Page\+Size}}
 \index{Page\+Size@{Page\+Size}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Memory\+::\+Memory\+Page@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Memory\+::\+Memory\+Page}}
 \subsubsection[{Page\+Size}]{\setlength{\rightskip}{0pt plus 5cm}int C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Memory.\+Memory\+Page.\+Page\+Size\hspace{0.3cm}{\ttfamily [get]}}\label{class_c_p_u___o_s___simulator_1_1_memory_1_1_memory_page_a6fba0e419e59c58fb3c5444a8e437ab3}
 
 
-Definition at line 62 of file Memory\+Page.\+cs.
+Definition at line 33 of file Memory\+Page.\+cs.
 
 \hypertarget{class_c_p_u___o_s___simulator_1_1_memory_1_1_memory_page_ad700979e51dd3d05470c681588c6fa79}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Memory\+::\+Memory\+Page@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Memory\+::\+Memory\+Page}!Start\+Offset@{Start\+Offset}}
 \index{Start\+Offset@{Start\+Offset}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Memory\+::\+Memory\+Page@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Memory\+::\+Memory\+Page}}
 \subsubsection[{Start\+Offset}]{\setlength{\rightskip}{0pt plus 5cm}int C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Memory.\+Memory\+Page.\+Start\+Offset\hspace{0.3cm}{\ttfamily [get]}}\label{class_c_p_u___o_s___simulator_1_1_memory_1_1_memory_page_ad700979e51dd3d05470c681588c6fa79}
 
 
-Definition at line 46 of file Memory\+Page.\+cs.
+Definition at line 25 of file Memory\+Page.\+cs.
 
 
 

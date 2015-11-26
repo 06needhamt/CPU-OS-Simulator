@@ -145,6 +145,8 @@ Properties</h2></td></tr>
 <tr class="separator:a14d2a23bdc679ed2758733f34f79db63"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac939e9a08b30b2cc3a9438d6c1cc5a61"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_execution_unit.html#ac939e9a08b30b2cc3a9438d6c1cc5a61">LogicalAddress</a><code> [get, set]</code></td></tr>
 <tr class="separator:ac939e9a08b30b2cc3a9438d6c1cc5a61"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a285d7b487a3ac5eff07c640e438ceb11"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_instruction.html">Instruction</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_execution_unit.html#a285d7b487a3ac5eff07c640e438ceb11">CurrentInstruction</a><code> [get, set]</code></td></tr>
+<tr class="separator:a285d7b487a3ac5eff07c640e438ceb11"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
@@ -157,7 +159,11 @@ Private Attributes</h2></td></tr>
 <tr class="memitem:af6807cb5343acc2c40a08166c748f1f0"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_execution_unit.html#af6807cb5343acc2c40a08166c748f1f0">currentIndex</a></td></tr>
 <tr class="memdesc:af6807cb5343acc2c40a08166c748f1f0"><td class="mdescLeft">&#160;</td><td class="mdescRight">The index of the instruction currently being executed  <a href="#af6807cb5343acc2c40a08166c748f1f0">More...</a><br /></td></tr>
 <tr class="separator:af6807cb5343acc2c40a08166c748f1f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a12fc8d1fd19eab177941b9f98675eb7f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_instruction.html">Instruction</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_execution_unit.html#a12fc8d1fd19eab177941b9f98675eb7f">currentInstruction</a></td></tr>
+<tr class="memdesc:a12fc8d1fd19eab177941b9f98675eb7f"><td class="mdescLeft">&#160;</td><td class="mdescRight">The instruction currently being executed  <a href="#a12fc8d1fd19eab177941b9f98675eb7f">More...</a><br /></td></tr>
+<tr class="separator:a12fc8d1fd19eab177941b9f98675eb7f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa387f2bbbf0de1c75cbd1c79e27a630c"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_execution_unit.html#aa387f2bbbf0de1c75cbd1c79e27a630c">logicalAddress</a></td></tr>
+<tr class="memdesc:aa387f2bbbf0de1c75cbd1c79e27a630c"><td class="mdescLeft">&#160;</td><td class="mdescRight">The Logical address of the instruction currently being executed  <a href="#aa387f2bbbf0de1c75cbd1c79e27a630c">More...</a><br /></td></tr>
 <tr class="separator:aa387f2bbbf0de1c75cbd1c79e27a630c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aad508435c1085ec880b75723260b0439"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_execution_unit.html#aad508435c1085ec880b75723260b0439">stop</a></td></tr>
 <tr class="memdesc:aad508435c1085ec880b75723260b0439"><td class="mdescLeft">&#160;</td><td class="mdescRight">Whether the unit has received a stop signal from the main window  <a href="#aad508435c1085ec880b75723260b0439">More...</a><br /></td></tr>
@@ -169,7 +175,7 @@ Private Attributes</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>This class represents the part of the <a class="el" href="namespace_c_p_u___o_s___simulator_1_1_c_p_u.html">CPU</a> which executes instructions </p>
 
-<p>Definition at line <a class="el" href="_execution_unit_8cs_source.html#l00009">9</a> of file <a class="el" href="_execution_unit_8cs_source.html">ExecutionUnit.cs</a>.</p>
+<p>Definition at line <a class="el" href="_execution_unit_8cs_source.html#l00010">10</a> of file <a class="el" href="_execution_unit_8cs_source.html">ExecutionUnit.cs</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="aaa72bccee27d810d5bbfa9ed02215fa9"></a>
 <div class="memitem">
@@ -204,7 +210,7 @@ Private Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="_execution_unit_8cs_source.html#l00049">49</a> of file <a class="el" href="_execution_unit_8cs_source.html">ExecutionUnit.cs</a>.</p>
+<p>Definition at line <a class="el" href="_execution_unit_8cs_source.html#l00058">58</a> of file <a class="el" href="_execution_unit_8cs_source.html">ExecutionUnit.cs</a>.</p>
 
 </div>
 </div>
@@ -248,7 +254,7 @@ Private Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="_execution_unit_8cs_source.html#l00064">64</a> of file <a class="el" href="_execution_unit_8cs_source.html">ExecutionUnit.cs</a>.</p>
+<p>Definition at line <a class="el" href="_execution_unit_8cs_source.html#l00076">76</a> of file <a class="el" href="_execution_unit_8cs_source.html">ExecutionUnit.cs</a>.</p>
 
 </div>
 </div>
@@ -268,7 +274,7 @@ Private Attributes</h2></td></tr>
 
 <p>This function executes an instruction by calling its delegate function </p>
 
-<p>Definition at line <a class="el" href="_execution_unit_8cs_source.html#l00082">82</a> of file <a class="el" href="_execution_unit_8cs_source.html">ExecutionUnit.cs</a>.</p>
+<p>Definition at line <a class="el" href="_execution_unit_8cs_source.html#l00097">97</a> of file <a class="el" href="_execution_unit_8cs_source.html">ExecutionUnit.cs</a>.</p>
 
 </div>
 </div>
@@ -293,7 +299,7 @@ Private Attributes</h2></td></tr>
 
 <p>The clock speed that the <a class="el" href="namespace_c_p_u___o_s___simulator_1_1_c_p_u.html">CPU</a> is running at </p>
 
-<p>Definition at line <a class="el" href="_execution_unit_8cs_source.html#l00021">21</a> of file <a class="el" href="_execution_unit_8cs_source.html">ExecutionUnit.cs</a>.</p>
+<p>Definition at line <a class="el" href="_execution_unit_8cs_source.html#l00022">22</a> of file <a class="el" href="_execution_unit_8cs_source.html">ExecutionUnit.cs</a>.</p>
 
 </div>
 </div>
@@ -317,7 +323,31 @@ Private Attributes</h2></td></tr>
 
 <p>The index of the instruction currently being executed </p>
 
-<p>Definition at line <a class="el" href="_execution_unit_8cs_source.html#l00026">26</a> of file <a class="el" href="_execution_unit_8cs_source.html">ExecutionUnit.cs</a>.</p>
+<p>Definition at line <a class="el" href="_execution_unit_8cs_source.html#l00027">27</a> of file <a class="el" href="_execution_unit_8cs_source.html">ExecutionUnit.cs</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a12fc8d1fd19eab177941b9f98675eb7f"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_instruction.html">Instruction</a> CPU_OS_Simulator.CPU.ExecutionUnit.currentInstruction</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>The instruction currently being executed </p>
+
+<p>Definition at line <a class="el" href="_execution_unit_8cs_source.html#l00032">32</a> of file <a class="el" href="_execution_unit_8cs_source.html">ExecutionUnit.cs</a>.</p>
 
 </div>
 </div>
@@ -341,7 +371,7 @@ Private Attributes</h2></td></tr>
 
 <p>Whether the unit has reached the end of the program </p>
 
-<p>Definition at line <a class="el" href="_execution_unit_8cs_source.html#l00038">38</a> of file <a class="el" href="_execution_unit_8cs_source.html">ExecutionUnit.cs</a>.</p>
+<p>Definition at line <a class="el" href="_execution_unit_8cs_source.html#l00047">47</a> of file <a class="el" href="_execution_unit_8cs_source.html">ExecutionUnit.cs</a>.</p>
 
 </div>
 </div>
@@ -363,7 +393,9 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_execution_unit_8cs_source.html#l00028">28</a> of file <a class="el" href="_execution_unit_8cs_source.html">ExecutionUnit.cs</a>.</p>
+<p>The Logical address of the instruction currently being executed </p>
+
+<p>Definition at line <a class="el" href="_execution_unit_8cs_source.html#l00037">37</a> of file <a class="el" href="_execution_unit_8cs_source.html">ExecutionUnit.cs</a>.</p>
 
 </div>
 </div>
@@ -387,7 +419,7 @@ Private Attributes</h2></td></tr>
 
 <p>The current program being executed </p>
 
-<p>Definition at line <a class="el" href="_execution_unit_8cs_source.html#l00016">16</a> of file <a class="el" href="_execution_unit_8cs_source.html">ExecutionUnit.cs</a>.</p>
+<p>Definition at line <a class="el" href="_execution_unit_8cs_source.html#l00017">17</a> of file <a class="el" href="_execution_unit_8cs_source.html">ExecutionUnit.cs</a>.</p>
 
 </div>
 </div>
@@ -411,7 +443,7 @@ Private Attributes</h2></td></tr>
 
 <p>Whether the unit has received a stop signal from the main window </p>
 
-<p>Definition at line <a class="el" href="_execution_unit_8cs_source.html#l00033">33</a> of file <a class="el" href="_execution_unit_8cs_source.html">ExecutionUnit.cs</a>.</p>
+<p>Definition at line <a class="el" href="_execution_unit_8cs_source.html#l00042">42</a> of file <a class="el" href="_execution_unit_8cs_source.html">ExecutionUnit.cs</a>.</p>
 
 </div>
 </div>
@@ -434,7 +466,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_execution_unit_8cs_source.html#l00120">120</a> of file <a class="el" href="_execution_unit_8cs_source.html">ExecutionUnit.cs</a>.</p>
+<p>Definition at line <a class="el" href="_execution_unit_8cs_source.html#l00139">139</a> of file <a class="el" href="_execution_unit_8cs_source.html">ExecutionUnit.cs</a>.</p>
 
 </div>
 </div>
@@ -456,7 +488,29 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_execution_unit_8cs_source.html#l00159">159</a> of file <a class="el" href="_execution_unit_8cs_source.html">ExecutionUnit.cs</a>.</p>
+<p>Definition at line <a class="el" href="_execution_unit_8cs_source.html#l00178">178</a> of file <a class="el" href="_execution_unit_8cs_source.html">ExecutionUnit.cs</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a285d7b487a3ac5eff07c640e438ceb11"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_instruction.html">Instruction</a> CPU_OS_Simulator.CPU.ExecutionUnit.CurrentInstruction</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">get</span><span class="mlabel">set</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_execution_unit_8cs_source.html#l00204">204</a> of file <a class="el" href="_execution_unit_8cs_source.html">ExecutionUnit.cs</a>.</p>
 
 </div>
 </div>
@@ -478,7 +532,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_execution_unit_8cs_source.html#l00146">146</a> of file <a class="el" href="_execution_unit_8cs_source.html">ExecutionUnit.cs</a>.</p>
+<p>Definition at line <a class="el" href="_execution_unit_8cs_source.html#l00165">165</a> of file <a class="el" href="_execution_unit_8cs_source.html">ExecutionUnit.cs</a>.</p>
 
 </div>
 </div>
@@ -500,7 +554,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_execution_unit_8cs_source.html#l00172">172</a> of file <a class="el" href="_execution_unit_8cs_source.html">ExecutionUnit.cs</a>.</p>
+<p>Definition at line <a class="el" href="_execution_unit_8cs_source.html#l00191">191</a> of file <a class="el" href="_execution_unit_8cs_source.html">ExecutionUnit.cs</a>.</p>
 
 </div>
 </div>
@@ -522,7 +576,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_execution_unit_8cs_source.html#l00107">107</a> of file <a class="el" href="_execution_unit_8cs_source.html">ExecutionUnit.cs</a>.</p>
+<p>Definition at line <a class="el" href="_execution_unit_8cs_source.html#l00126">126</a> of file <a class="el" href="_execution_unit_8cs_source.html">ExecutionUnit.cs</a>.</p>
 
 </div>
 </div>
@@ -544,7 +598,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_execution_unit_8cs_source.html#l00133">133</a> of file <a class="el" href="_execution_unit_8cs_source.html">ExecutionUnit.cs</a>.</p>
+<p>Definition at line <a class="el" href="_execution_unit_8cs_source.html#l00152">152</a> of file <a class="el" href="_execution_unit_8cs_source.html">ExecutionUnit.cs</a>.</p>
 
 </div>
 </div>

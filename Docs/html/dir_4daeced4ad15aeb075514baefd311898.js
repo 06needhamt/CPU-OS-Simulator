@@ -11,5 +11,8 @@ var dir_4daeced4ad15aeb075514baefd311898 =
     ] ],
     [ "MainWindow.xaml.cs", "_main_window_8xaml_8cs.html", [
       [ "MainWindow", "class_c_p_u___o_s___simulator_1_1_main_window.html", "class_c_p_u___o_s___simulator_1_1_main_window" ]
+    ] ],
+    [ "MemoryWindow.xaml.cs", "_memory_window_8xaml_8cs.html", [
+      [ "MemoryWindow", "class_c_p_u___o_s___simulator_1_1_memory_window.html", "class_c_p_u___o_s___simulator_1_1_memory_window" ]
     ] ]
 ];

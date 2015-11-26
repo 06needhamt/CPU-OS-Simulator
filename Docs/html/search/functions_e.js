@@ -29,5 +29,6 @@ var searchData=
   ['rdb_5fsourcevaluelogical_5fchecked',['rdb_SourceValueLogical_Checked',['../class_c_p_u___o_s___simulator_1_1_instructions_window.html#ad1c6df35e2658c60a531a1f651f47434',1,'CPU_OS_Simulator::InstructionsWindow']]],
   ['rdb_5fsourcevaluemiscellaneous_5fchecked',['rdb_SourceValueMiscellaneous_Checked',['../class_c_p_u___o_s___simulator_1_1_instructions_window.html#a245dad441fcbc7e910e7f2ab6d10563c',1,'CPU_OS_Simulator::InstructionsWindow']]],
   ['register',['Register',['../class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_register.html#a1ee1fb682bf9349209b31a50aff2de45',1,'CPU_OS_Simulator.CPU.Register.Register()'],['../class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_register.html#a17e76aef3bd00389ac1473b4edda8855',1,'CPU_OS_Simulator.CPU.Register.Register(string name)']]],
+  ['registertest',['RegisterTest',['../class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_tests_1_1_register_tests.html#a1fdf6a35fde71647f9b85c74d9893476',1,'CPU_OS_Simulator::CPU::Tests::RegisterTests']]],
   ['resources',['Resources',['../class_c_p_u___o_s___simulator_1_1_properties_1_1_resources.html#ae830a892b90306383137816b2194f777',1,'CPU_OS_Simulator::Properties::Resources']]]
 ];

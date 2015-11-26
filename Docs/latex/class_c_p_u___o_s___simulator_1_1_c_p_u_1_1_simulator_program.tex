@@ -15,6 +15,8 @@ This class represents a program that can be run within the simulator
 void \hyperlink{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_simulator_program_a6b6df3400e406b1dc6de3787f1a8fc61}{Add\+Instruction} (ref \hyperlink{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_instruction}{Instruction} ins)
 \item 
 void \hyperlink{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_simulator_program_a1142bf081f4173d0276504db3d232968}{Add\+Instruction} (ref \hyperlink{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_instruction}{Instruction} ins, int index)
+\item 
+void \hyperlink{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_simulator_program_a4f7e933d4f3ca318d68471d465c6b31c}{Update\+Addresses} ()
 \end{DoxyCompactItemize}
 \subsection*{Properties}
 \begin{DoxyCompactItemize}
@@ -27,16 +29,14 @@ int \hyperlink{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_simulator_program_aa3
 \begin{DoxyCompactList}\small\item\em Property for the number of memory pages in the program \end{DoxyCompactList}\item 
 List$<$ \hyperlink{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_instruction}{Instruction} $>$ \hyperlink{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_simulator_program_ae64c462081a1806d5f194c271dbb2686}{Instructions}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
 \begin{DoxyCompactList}\small\item\em Property for the linked list of instructions that make up the program \end{DoxyCompactList}\item 
-int \hyperlink{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_simulator_program_aeeb09200864db79b4a41f35cda644b87}{Start\+Address}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+int \hyperlink{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_simulator_program_afda25ae1ba65b33787dfc1f9af1c1d8a}{Logical\+Address}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
 \item 
-List$<$ \hyperlink{class_c_p_u___o_s___simulator_1_1_memory_1_1_memory_page}{Memory\+Page} $>$ \hyperlink{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_simulator_program_ac3f520f751426a1e09f350096f0d2341}{Memory}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+List$<$ \hyperlink{class_c_p_u___o_s___simulator_1_1_memory_1_1_memory_page___o_l_d}{Memory\+Page\+\_\+\+O\+L\+D} $>$ \hyperlink{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_simulator_program_a529a2c7d7e4fd209d2f771fe0916c8e6}{Memory}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
 \item 
 \hyperlink{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_program_stack}{Program\+Stack} \hyperlink{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_simulator_program_ac6065e57e8d108a0aefd27840f3bf01c}{Stack}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
 \end{DoxyCompactItemize}
 \subsection*{Private Member Functions}
 \begin{DoxyCompactItemize}
-\item 
-void \hyperlink{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_simulator_program_a4f7e933d4f3ca318d68471d465c6b31c}{Update\+Addresses} ()
 \item 
 int \hyperlink{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_simulator_program_a6ab84d4093d03fc387e4288dfc566388}{Calculate\+Address} (\hyperlink{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_instruction}{Instruction} instruction, int index)
 \end{DoxyCompactItemize}
@@ -49,13 +49,15 @@ Int32 \hyperlink{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_simulator_program_a
 \item 
 Int32 \hyperlink{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_simulator_program_a7b2581eff41da814292bf29936ab5318}{start\+Address}
 \item 
+Int32 \hyperlink{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_simulator_program_acc3f9414f8e4092ac504378d28cbffa7}{logical\+Address}
+\item 
 Int32 \hyperlink{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_simulator_program_ac4d19d17c7ee206ad6343884f3390054}{pages}
 \item 
 \hyperlink{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_execution_unit}{Execution\+Unit} \hyperlink{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_simulator_program_a10e4c29c3ed9b84c0fb8aee7613cabf9}{unit}
 \item 
 List$<$ \hyperlink{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_instruction}{Instruction} $>$ \hyperlink{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_simulator_program_a30b501e0b2d012212077059be49857cf}{instructions}
 \item 
-List$<$ \hyperlink{class_c_p_u___o_s___simulator_1_1_memory_1_1_memory_page}{Memory\+Page} $>$ \hyperlink{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_simulator_program_a402e53ae5daf1b6be0d5b7b705091c9c}{memory}
+List$<$ \hyperlink{class_c_p_u___o_s___simulator_1_1_memory_1_1_memory_page___o_l_d}{Memory\+Page\+\_\+\+O\+L\+D} $>$ \hyperlink{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_simulator_program_a6f6d6f2bd8f87bab4225655d7f939f2f}{memory}
 \item 
 \hyperlink{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_program_stack}{Program\+Stack} \hyperlink{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_simulator_program_a85f44af349486db4b141b3946bf21a64}{stack}
 \end{DoxyCompactItemize}
@@ -80,7 +82,7 @@ Definition at line 12 of file Simulator\+Program.\+cs.
 )}\label{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_simulator_program_a92873858cd0a0d7e506f5718788a9e5e}
 
 
-Definition at line 33 of file Simulator\+Program.\+cs.
+Definition at line 39 of file Simulator\+Program.\+cs.
 
 \hypertarget{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_simulator_program_af30bc76187c64b374a48d6d7f9e94d54}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Simulator\+Program@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Simulator\+Program}!Simulator\+Program@{Simulator\+Program}}
 \index{Simulator\+Program@{Simulator\+Program}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Simulator\+Program@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Simulator\+Program}}
@@ -106,7 +108,7 @@ Constructor for simulator program
 \end{DoxyParams}
 
 
-Definition at line 43 of file Simulator\+Program.\+cs.
+Definition at line 49 of file Simulator\+Program.\+cs.
 
 
 
@@ -120,7 +122,7 @@ Definition at line 43 of file Simulator\+Program.\+cs.
 )}\label{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_simulator_program_a6b6df3400e406b1dc6de3787f1a8fc61}
 
 
-Definition at line 168 of file Simulator\+Program.\+cs.
+Definition at line 175 of file Simulator\+Program.\+cs.
 
 \hypertarget{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_simulator_program_a1142bf081f4173d0276504db3d232968}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Simulator\+Program@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Simulator\+Program}!Add\+Instruction@{Add\+Instruction}}
 \index{Add\+Instruction@{Add\+Instruction}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Simulator\+Program@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Simulator\+Program}}
@@ -132,7 +134,7 @@ Definition at line 168 of file Simulator\+Program.\+cs.
 )}\label{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_simulator_program_a1142bf081f4173d0276504db3d232968}
 
 
-Definition at line 176 of file Simulator\+Program.\+cs.
+Definition at line 183 of file Simulator\+Program.\+cs.
 
 \hypertarget{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_simulator_program_a6ab84d4093d03fc387e4288dfc566388}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Simulator\+Program@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Simulator\+Program}!Calculate\+Address@{Calculate\+Address}}
 \index{Calculate\+Address@{Calculate\+Address}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Simulator\+Program@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Simulator\+Program}}
@@ -144,7 +146,7 @@ Definition at line 176 of file Simulator\+Program.\+cs.
 )\hspace{0.3cm}{\ttfamily [private]}}\label{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_simulator_program_a6ab84d4093d03fc387e4288dfc566388}
 
 
-Definition at line 196 of file Simulator\+Program.\+cs.
+Definition at line 214 of file Simulator\+Program.\+cs.
 
 \hypertarget{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_simulator_program_a4f7e933d4f3ca318d68471d465c6b31c}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Simulator\+Program@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Simulator\+Program}!Update\+Addresses@{Update\+Addresses}}
 \index{Update\+Addresses@{Update\+Addresses}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Simulator\+Program@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Simulator\+Program}}
@@ -152,10 +154,10 @@ Definition at line 196 of file Simulator\+Program.\+cs.
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [private]}}\label{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_simulator_program_a4f7e933d4f3ca318d68471d465c6b31c}
+)}\label{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_simulator_program_a4f7e933d4f3ca318d68471d465c6b31c}
 
 
-Definition at line 184 of file Simulator\+Program.\+cs.
+Definition at line 191 of file Simulator\+Program.\+cs.
 
 
 
@@ -172,14 +174,21 @@ Definition at line 17 of file Simulator\+Program.\+cs.
 \subsubsection[{instructions}]{\setlength{\rightskip}{0pt plus 5cm}List$<${\bf Instruction}$>$ C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+C\+P\+U.\+Simulator\+Program.\+instructions\hspace{0.3cm}{\ttfamily [private]}}\label{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_simulator_program_a30b501e0b2d012212077059be49857cf}
 
 
-Definition at line 21 of file Simulator\+Program.\+cs.
+Definition at line 26 of file Simulator\+Program.\+cs.
 
-\hypertarget{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_simulator_program_a402e53ae5daf1b6be0d5b7b705091c9c}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Simulator\+Program@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Simulator\+Program}!memory@{memory}}
+\hypertarget{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_simulator_program_acc3f9414f8e4092ac504378d28cbffa7}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Simulator\+Program@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Simulator\+Program}!logical\+Address@{logical\+Address}}
+\index{logical\+Address@{logical\+Address}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Simulator\+Program@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Simulator\+Program}}
+\subsubsection[{logical\+Address}]{\setlength{\rightskip}{0pt plus 5cm}Int32 C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+C\+P\+U.\+Simulator\+Program.\+logical\+Address\hspace{0.3cm}{\ttfamily [private]}}\label{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_simulator_program_acc3f9414f8e4092ac504378d28cbffa7}
+
+
+Definition at line 19 of file Simulator\+Program.\+cs.
+
+\hypertarget{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_simulator_program_a6f6d6f2bd8f87bab4225655d7f939f2f}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Simulator\+Program@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Simulator\+Program}!memory@{memory}}
 \index{memory@{memory}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Simulator\+Program@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Simulator\+Program}}
-\subsubsection[{memory}]{\setlength{\rightskip}{0pt plus 5cm}List$<${\bf Memory\+Page}$>$ C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+C\+P\+U.\+Simulator\+Program.\+memory\hspace{0.3cm}{\ttfamily [private]}}\label{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_simulator_program_a402e53ae5daf1b6be0d5b7b705091c9c}
+\subsubsection[{memory}]{\setlength{\rightskip}{0pt plus 5cm}List$<${\bf Memory\+Page\+\_\+\+O\+L\+D}$>$ C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+C\+P\+U.\+Simulator\+Program.\+memory\hspace{0.3cm}{\ttfamily [private]}}\label{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_simulator_program_a6f6d6f2bd8f87bab4225655d7f939f2f}
 
 
-Definition at line 24 of file Simulator\+Program.\+cs.
+Definition at line 29 of file Simulator\+Program.\+cs.
 
 \hypertarget{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_simulator_program_ad4797b5d81ceb01cd4207a97b7af36c5}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Simulator\+Program@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Simulator\+Program}!name@{name}}
 \index{name@{name}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Simulator\+Program@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Simulator\+Program}}
@@ -193,14 +202,14 @@ Definition at line 16 of file Simulator\+Program.\+cs.
 \subsubsection[{pages}]{\setlength{\rightskip}{0pt plus 5cm}Int32 C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+C\+P\+U.\+Simulator\+Program.\+pages\hspace{0.3cm}{\ttfamily [private]}}\label{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_simulator_program_ac4d19d17c7ee206ad6343884f3390054}
 
 
-Definition at line 19 of file Simulator\+Program.\+cs.
+Definition at line 20 of file Simulator\+Program.\+cs.
 
 \hypertarget{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_simulator_program_a85f44af349486db4b141b3946bf21a64}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Simulator\+Program@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Simulator\+Program}!stack@{stack}}
 \index{stack@{stack}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Simulator\+Program@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Simulator\+Program}}
 \subsubsection[{stack}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Program\+Stack} C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+C\+P\+U.\+Simulator\+Program.\+stack\hspace{0.3cm}{\ttfamily [private]}}\label{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_simulator_program_a85f44af349486db4b141b3946bf21a64}
 
 
-Definition at line 27 of file Simulator\+Program.\+cs.
+Definition at line 33 of file Simulator\+Program.\+cs.
 
 \hypertarget{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_simulator_program_a7b2581eff41da814292bf29936ab5318}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Simulator\+Program@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Simulator\+Program}!start\+Address@{start\+Address}}
 \index{start\+Address@{start\+Address}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Simulator\+Program@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Simulator\+Program}}
@@ -214,7 +223,7 @@ Definition at line 18 of file Simulator\+Program.\+cs.
 \subsubsection[{unit}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Execution\+Unit} C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+C\+P\+U.\+Simulator\+Program.\+unit\hspace{0.3cm}{\ttfamily [private]}}\label{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_simulator_program_a10e4c29c3ed9b84c0fb8aee7613cabf9}
 
 
-Definition at line 20 of file Simulator\+Program.\+cs.
+Definition at line 24 of file Simulator\+Program.\+cs.
 
 
 
@@ -228,7 +237,7 @@ Property for the base address of the program
 
 
 
-Definition at line 79 of file Simulator\+Program.\+cs.
+Definition at line 86 of file Simulator\+Program.\+cs.
 
 \hypertarget{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_simulator_program_ae64c462081a1806d5f194c271dbb2686}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Simulator\+Program@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Simulator\+Program}!Instructions@{Instructions}}
 \index{Instructions@{Instructions}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Simulator\+Program@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Simulator\+Program}}
@@ -239,14 +248,21 @@ Property for the linked list of instructions that make up the program
 
 
 
-Definition at line 111 of file Simulator\+Program.\+cs.
+Definition at line 118 of file Simulator\+Program.\+cs.
 
-\hypertarget{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_simulator_program_ac3f520f751426a1e09f350096f0d2341}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Simulator\+Program@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Simulator\+Program}!Memory@{Memory}}
+\hypertarget{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_simulator_program_afda25ae1ba65b33787dfc1f9af1c1d8a}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Simulator\+Program@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Simulator\+Program}!Logical\+Address@{Logical\+Address}}
+\index{Logical\+Address@{Logical\+Address}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Simulator\+Program@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Simulator\+Program}}
+\subsubsection[{Logical\+Address}]{\setlength{\rightskip}{0pt plus 5cm}int C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+C\+P\+U.\+Simulator\+Program.\+Logical\+Address\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}\label{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_simulator_program_afda25ae1ba65b33787dfc1f9af1c1d8a}
+
+
+Definition at line 131 of file Simulator\+Program.\+cs.
+
+\hypertarget{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_simulator_program_a529a2c7d7e4fd209d2f771fe0916c8e6}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Simulator\+Program@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Simulator\+Program}!Memory@{Memory}}
 \index{Memory@{Memory}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Simulator\+Program@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Simulator\+Program}}
-\subsubsection[{Memory}]{\setlength{\rightskip}{0pt plus 5cm}List$<${\bf Memory\+Page}$>$ C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+C\+P\+U.\+Simulator\+Program.\+Memory\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}\label{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_simulator_program_ac3f520f751426a1e09f350096f0d2341}
+\subsubsection[{Memory}]{\setlength{\rightskip}{0pt plus 5cm}List$<${\bf Memory\+Page\+\_\+\+O\+L\+D}$>$ C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+C\+P\+U.\+Simulator\+Program.\+Memory\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}\label{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_simulator_program_a529a2c7d7e4fd209d2f771fe0916c8e6}
 
 
-Definition at line 138 of file Simulator\+Program.\+cs.
+Definition at line 145 of file Simulator\+Program.\+cs.
 
 \hypertarget{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_simulator_program_a29b077a3403773010be9efe912d11b92}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Simulator\+Program@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Simulator\+Program}!Name@{Name}}
 \index{Name@{Name}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Simulator\+Program@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Simulator\+Program}}
@@ -257,7 +273,7 @@ Property for the name of the program
 
 
 
-Definition at line 63 of file Simulator\+Program.\+cs.
+Definition at line 70 of file Simulator\+Program.\+cs.
 
 \hypertarget{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_simulator_program_aa33b4428956a097dd710948ee51bb5f3}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Simulator\+Program@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Simulator\+Program}!Pages@{Pages}}
 \index{Pages@{Pages}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Simulator\+Program@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Simulator\+Program}}
@@ -268,21 +284,14 @@ Property for the number of memory pages in the program
 
 
 
-Definition at line 95 of file Simulator\+Program.\+cs.
+Definition at line 102 of file Simulator\+Program.\+cs.
 
 \hypertarget{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_simulator_program_ac6065e57e8d108a0aefd27840f3bf01c}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Simulator\+Program@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Simulator\+Program}!Stack@{Stack}}
 \index{Stack@{Stack}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Simulator\+Program@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Simulator\+Program}}
 \subsubsection[{Stack}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Program\+Stack} C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+C\+P\+U.\+Simulator\+Program.\+Stack\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}\label{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_simulator_program_ac6065e57e8d108a0aefd27840f3bf01c}
 
 
-Definition at line 152 of file Simulator\+Program.\+cs.
-
-\hypertarget{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_simulator_program_aeeb09200864db79b4a41f35cda644b87}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Simulator\+Program@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Simulator\+Program}!Start\+Address@{Start\+Address}}
-\index{Start\+Address@{Start\+Address}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Simulator\+Program@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Simulator\+Program}}
-\subsubsection[{Start\+Address}]{\setlength{\rightskip}{0pt plus 5cm}int C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+C\+P\+U.\+Simulator\+Program.\+Start\+Address\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}\label{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_simulator_program_aeeb09200864db79b4a41f35cda644b87}
-
-
-Definition at line 124 of file Simulator\+Program.\+cs.
+Definition at line 159 of file Simulator\+Program.\+cs.
 
 
 

@@ -1,7 +1,7 @@
 var class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_status_flags =
 [
     [ "StatusFlags", "class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_status_flags.html#ab99e9cd2522d43a7dfd3224ff9ae0d79", null ],
-    [ "ToggleFlag", "class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_status_flags.html#a435d878793ab321ac1f2aae372c2e43e", null ],
+    [ "ToggleFlag", "class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_status_flags.html#aca93016e4ad4e70951b071ba2ae575c1", null ],
     [ "isSet", "class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_status_flags.html#a09019f0ab60c6be65f427e84bc488d6b", null ],
     [ "N", "class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_status_flags.html#a48a766c8a99690112570b884b09e9b10", null ],
     [ "OV", "class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_status_flags.html#ad4725b32f8d1718df7e6a1b6b4a21170", null ],

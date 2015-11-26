@@ -1,4 +1,0 @@
-var class__c__p__u______o__s______simulator__1__1__properties__1__1__resources_8js =
-[
-    [ "class_c_p_u___o_s___simulator_1_1_properties_1_1_resources", "class__c__p__u______o__s______simulator__1__1__properties__1__1__resources_8js.html#aef517c2fa615cf800d124d980ff63db2", null ]
-];
