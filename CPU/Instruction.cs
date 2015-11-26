@@ -94,7 +94,7 @@ namespace CPU_OS_Simulator.CPU
             operand1 = null;
             operand2 = null;
             this.size = size;
-            instructionString = ToString();
+            instructionString = this.ToString();
             BindDelegate();
         }
 

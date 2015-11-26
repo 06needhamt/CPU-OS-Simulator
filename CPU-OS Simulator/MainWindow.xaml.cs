@@ -23,7 +23,7 @@ namespace CPU_OS_Simulator
     /// Interaction logic for MainWindow.xaml
     /// </summary>
     ///
-    public partial class MainWindow : Window
+    public partial class MainWindow : Window, IDisposable
     {
         #region Global Variables
 
@@ -864,6 +864,12 @@ namespace CPU_OS_Simulator
             StatusFlags.N.IsSet = true;
             SpecialRegister.FindSpecialRegister("SR").Value -= StatusFlags.N.Value;
             UpdateSpecialRegisters();
+        }
+
+        public void Dispose()
+        {
+            executionWorker.Dispose();
+            executionWorker = null;
         }
     }
 }

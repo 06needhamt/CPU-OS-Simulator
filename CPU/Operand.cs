@@ -13,6 +13,7 @@ namespace CPU_OS_Simulator.CPU
         private Int32 value;
         private EnumOperandType type;
         private bool isRegister;
+        [NonSerialized]
         private Register register;
 
         #endregion Global Variables
