@@ -2,7 +2,7 @@
 
 namespace CPU_OS_Simulator.Memory
 {
-    public class MemoryPage
+    public class MemoryPage : ISwappable
     {
         private int pageIndex;
         private readonly int startOffset;
@@ -82,5 +82,15 @@ namespace CPU_OS_Simulator.Memory
         }
 
         #endregion Constructors
+
+        public void SwapOut(int LocationToSwap, int FrameNumber)
+        {
+            //TODO Implement ME!
+        }
+
+        public void SwapIn(int LocationToSwap, int FrameNumber)
+        {
+            //TODO Implement ME!
+        }
     }
 }
