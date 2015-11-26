@@ -19,7 +19,7 @@ namespace CPU_OS_Simulator.CPU
         /// <summary>
         /// The opcode for the instruction
         /// </summary>
-        private Int32 opcode;
+        private int opcode;
 
         /// <summary>
         /// The category in which the instruction will be displayed within the interface
@@ -45,7 +45,7 @@ namespace CPU_OS_Simulator.CPU
         /// <summary>
         /// The Logical address of this instruction within a program
         /// </summary>
-        private Int32 logicalAddress;
+        private int logicalAddress;
 
         /// <summary>
         /// The physical address of this instruction within memory
@@ -55,12 +55,12 @@ namespace CPU_OS_Simulator.CPU
         /// <summary>
         /// The size of the instruction within the program
         /// </summary>
-        private Int32 size;
+        private int size;
 
         /// <summary>
         /// The result of the instruction once executed e.g. the result of ADD 1,1 would be 2
         /// </summary>
-        private Int32 result;
+        private int result;
 
         /// <summary>
         /// The string representation of this instruction e.g. ADD R01,10
@@ -88,7 +88,7 @@ namespace CPU_OS_Simulator.CPU
         /// </summary>
         /// <param name="opcode"> the opcode for the instruction</param>
         /// <param name="size"> the size of the instruction </param>
-        public Instruction(Int32 opcode, Int32 size)
+        public Instruction(int opcode, int size)
         {
             this.opcode = opcode;
             operand1 = null;
@@ -104,7 +104,7 @@ namespace CPU_OS_Simulator.CPU
         /// <param name="opcode"> the opcode for the instruction</param>
         /// <param name="op1"> the first operand of the instruction</param>
         /// <param name="size"> the size of the instruction </param>
-        public Instruction(Int32 opcode, Operand op1, Int32 size)
+        public Instruction(int opcode, Operand op1, int size)
         {
             this.opcode = opcode;
             operand1 = op1;
@@ -121,7 +121,7 @@ namespace CPU_OS_Simulator.CPU
         /// <param name="op1"> the first operand of the instruction</param>
         /// <param name="op2"> the second operand of the instruction</param>
         /// <param name="size"> the size of the instruction </param>
-        public Instruction(Int32 opcode, Operand op1, Operand op2, Int32 size)
+        public Instruction(int opcode, Operand op1, Operand op2, int size)
         {
             this.opcode = opcode;
             operand1 = op1;
@@ -506,6 +506,7 @@ namespace CPU_OS_Simulator.CPU
         /// <returns> the result of the instruction or int.MINVALUE if no result is returned </returns>
         private int MVS(Operand lhs, Operand rhs)
         {
+           
             MessageBox.Show("MVS Instruction is not currently implemented", "", MessageBoxButton.OK, MessageBoxImage.Information);
             return 0;
         }
@@ -615,8 +616,31 @@ namespace CPU_OS_Simulator.CPU
         /// <returns> the result of the instruction or int.MINVALUE if no result is returned </returns>
         private int STB(Operand lhs, Operand rhs)
         {
-            MessageBox.Show("STB Instruction is not currently implemented", "", MessageBoxButton.OK, MessageBoxImage.Information);
-            return 0;
+            int address;
+            byte value;
+            if (lhs.IsRegister)
+                address = Register.FindRegister(lhs.Register.Name).Value;
+            else
+                address = lhs.Value;
+            if (rhs.IsRegister)
+            {
+                SimulatorProgram program = GetCurrentProgram();
+                value = (byte)Register.FindRegister(rhs.Register.Name).Value;
+                int pagenumber = address / program.Memory[0].PageSize;
+                int pageOffset = address - (address / program.Memory[0].PageSize);
+                program.Memory.ElementAt(pagenumber).Data[pageOffset / 8].SetByte(pageOffset % 8, Convert.ToByte(value));
+            }
+            else
+            {
+                SimulatorProgram program = GetCurrentProgram();
+                int pagenumber = address / program.Memory[0].PageSize;
+                int pageOffset = address - (address / program.Memory[0].PageSize);
+                value = (byte)rhs.Value;
+
+                program.Memory.ElementAt(pagenumber).Data[pageOffset / 8].SetByte(pageOffset % 8, Convert.ToByte(value));
+            }
+            //MessageBox.Show("STB Instruction is not currently implemented", "", MessageBoxButton.OK, MessageBoxImage.Information);
+            return address;
         }
 
         /// <summary>

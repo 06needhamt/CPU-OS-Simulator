@@ -14,10 +14,11 @@ namespace CPU_OS_Simulator.CPU
         #region Global Variables
 
         private string name;
-        private Int32 baseAddress;
-        private Int32 startAddress;
-        private Int32 logicalAddress;
-        private Int32 pages;
+        private int baseAddress;
+        private int startAddress;
+        private int logicalAddress;
+        private int pages;
+        private const int DEFAULT_PAGE_SIZE = 256;
 
         [ScriptIgnore]
         [NonSerialized]
@@ -26,7 +27,7 @@ namespace CPU_OS_Simulator.CPU
         private List<Instruction> instructions;
 
         [ScriptIgnore]
-        private List<MemoryPage_OLD> memory;
+        private List<MemoryPage> memory;
 
         [ScriptIgnore]
         [NonSerialized]
@@ -46,7 +47,7 @@ namespace CPU_OS_Simulator.CPU
         /// <param name="name"> The name of the program</param>
         /// <param name="baseAddress"> the base address of the program</param>
         /// <param name="pages"> the number of memory pages in the program</param>
-        public SimulatorProgram(string name, Int32 baseAddress, Int32 pages)
+        public SimulatorProgram(string name, int baseAddress, int pages)
         {
             this.name = name;
             this.baseAddress = baseAddress;
@@ -56,8 +57,10 @@ namespace CPU_OS_Simulator.CPU
             startAddress = baseAddress;
             unit = new ExecutionUnit(this, 100);
             stack = new ProgramStack();
+            memory = AllocateMemory();
             Console.WriteLine("Program Created");
         }
+
 
         #endregion Constructors
 
@@ -141,7 +144,7 @@ namespace CPU_OS_Simulator.CPU
         }
 
         [ScriptIgnore]
-        public List<MemoryPage_OLD> Memory
+        public List<MemoryPage> Memory
         {
             get
             {
@@ -171,6 +174,16 @@ namespace CPU_OS_Simulator.CPU
         #endregion Properties
 
         #region Methods
+
+        public List<MemoryPage> AllocateMemory()
+        {
+            List<MemoryPage> memoryPages = new List<MemoryPage>(pages);
+            for (int i = 0; i < pages; i++)
+            {
+                memoryPages.Add(new MemoryPage(i, (i * DEFAULT_PAGE_SIZE), DEFAULT_PAGE_SIZE));
+            }
+            return memoryPages;
+        }
 
         public void AddInstruction(ref Instruction ins)
         {

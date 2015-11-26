@@ -1,4 +1,6 @@
-﻿namespace CPU_OS_Simulator.Memory
+﻿using System.Security.Cryptography.X509Certificates;
+
+namespace CPU_OS_Simulator.Memory
 {
     public class MemoryPage
     {
@@ -74,7 +76,8 @@
         {
             for (int i = 0; i < data.Length; i++)
             {
-                data[i] = new MemorySegment();
+                data[i] = new MemorySegment(startOffset + (i*8));
+                data[i].LogicalAddress = i*8;
             }
         }
 

@@ -7,8 +7,8 @@ namespace CPU_OS_Simulator.Memory
     {
         #region Global Variables
 
-        private Int32 logicalAddress;
-        private Int32 physicalAddress;
+        private int logicalAddress;
+        private int physicalAddress;
         private byte byte0;
         private byte byte1;
         private byte byte2;

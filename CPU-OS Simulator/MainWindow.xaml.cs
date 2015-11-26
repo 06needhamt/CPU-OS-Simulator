@@ -29,6 +29,7 @@ namespace CPU_OS_Simulator
 
         private List<SimulatorProgram> programList;
         private EnumInstructionMode instructionMode;
+        // ReSharper disable once MemberCanBePrivate.Global
         public string currentProgram = string.Empty;
         private ExecutionUnit activeUnit;
         private Stopwatch s;
@@ -104,7 +105,7 @@ namespace CPU_OS_Simulator
 
         #region Methods
 
-        public static bool IsAdministrator()
+        private static bool IsAdministrator()
         {
             var identity = WindowsIdentity.GetCurrent();
             var principal = new WindowsPrincipal(identity);
@@ -112,9 +113,9 @@ namespace CPU_OS_Simulator
         }
 
         [DllImport("shell32.dll", CharSet = CharSet.Auto, SetLastError = true)]
-        internal static extern void SHChangeNotify(uint wEventId, uint uFlags, IntPtr dwItem1, IntPtr dwItem2);
+        private static extern void SHChangeNotify(uint wEventId, uint uFlags, IntPtr dwItem1, IntPtr dwItem2);
 
-        public static void SetAssociation(string Extension, string KeyName, string OpenWith, string FileDescription)
+        private static void SetAssociation(string Extension, string KeyName, string OpenWith, string FileDescription)
         {
             RegistryKey BaseKey;
             RegistryKey OpenMethod;
@@ -200,8 +201,8 @@ namespace CPU_OS_Simulator
 
 #if DEBUG
             Title += " DEBUG BUILD ";
-            MemoryPage m = new MemoryPage(0, 0, 255);
-            m.Data[0] = new MemorySegment(0);
+            MemoryPage m = new MemoryPage(0, 0, 256);
+            //m.Data[0] = new MemorySegment(0);
             m.Data[0].Byte0 = (byte)'A';
             m.Data[0].Byte1 = (byte)'B';
             MemoryWindow wind = new MemoryWindow(this, m);
@@ -228,12 +229,10 @@ namespace CPU_OS_Simulator
         private void btn_ProgramAdd_Click(object sender, RoutedEventArgs e)
         {
             SimulatorProgram prog = CreateNewProgram();
-            if (prog != null)
-            {
-                lst_ProgramList.Items.Add(prog);
-                programList.Add(prog);
-                currentProgram = prog.Name;
-            }
+            if (prog == null) return;
+            lst_ProgramList.Items.Add(prog);
+            programList.Add(prog);
+            currentProgram = prog.Name;
         }
 
         /// <summary>
@@ -253,8 +252,8 @@ namespace CPU_OS_Simulator
                 return null;
             }
             string programName = txtProgramName.Text;
-            Int32 baseAddress = Convert.ToInt32(txtBaseAddress.Text);
-            Int32 pages = Convert.ToInt32(cmb_Pages.Text);
+            int baseAddress = Convert.ToInt32(txtBaseAddress.Text);
+            int pages = Convert.ToInt32(cmb_Pages.Text);
             SimulatorProgram program = new SimulatorProgram(programName, baseAddress, pages);
             //lst_ProgramList.Items.Add(program);
             //programList.Add(program);
@@ -374,7 +373,7 @@ namespace CPU_OS_Simulator
         /// <param name="op2"> the second operand</param>
         /// <param name="Size"> the size of the instruction</param>
         /// <returns></returns>
-        public Instruction CreateInstruction(EnumOpcodes opcode, Operand op1, Operand op2, Int32 Size)
+        public Instruction CreateInstruction(EnumOpcodes opcode, Operand op1, Operand op2, int Size)
         {
             return new Instruction((int)opcode, op1, op2, Size);
         }
@@ -385,7 +384,7 @@ namespace CPU_OS_Simulator
         /// <param name="opcode"> the instruction opcode</param>
         /// <param name="op1"> the first operand</param>
         /// <param name="Size"> the size of the instruction</param>
-        public Instruction CreateInstruction(EnumOpcodes opcode, Operand op1, Int32 Size)
+        public Instruction CreateInstruction(EnumOpcodes opcode, Operand op1, int Size)
         {
             return new Instruction((int)opcode, op1, Size);
         }
@@ -395,7 +394,7 @@ namespace CPU_OS_Simulator
         /// </summary>
         /// <param name="opcode"> the instruction opcode</param>
         /// <param name="Size"> the size of the instruction</param>
-        public Instruction CreateInstruction(EnumOpcodes opcode, Int32 Size)
+        public Instruction CreateInstruction(EnumOpcodes opcode, int Size)
         {
             return new Instruction((int)opcode, Size);
         }
@@ -617,8 +616,8 @@ namespace CPU_OS_Simulator
         /// </summary>
         /// <typeparam name="T">The type of program</typeparam>
         /// <param name="serializableObject"> the object to serialize</param>
-        /// <param name="fileName">the file to save the objects to</param>
-        public void SerializeObject<T>(T serializableObject, string filePath)
+        /// <param name="filePath">the file to save the objects to</param>
+        private void SerializeObject<T>(T serializableObject, string filePath)
         {
             if (serializableObject == null) { return; }
 
@@ -636,7 +635,7 @@ namespace CPU_OS_Simulator
         /// </summary>
         /// <typeparam name="T">The type to deserialise</typeparam>
         /// <param name="fileName"> the name of the file to load the objects from</param>
-        public void DeSerializeObject<T>(string fileName)
+        private void DeSerializeObject<T>(string fileName)
         {
             if (string.IsNullOrEmpty(fileName)) { return; }
             JavaScriptSerializer deserializer = new JavaScriptSerializer(); // initialize the deserializer
@@ -651,6 +650,10 @@ namespace CPU_OS_Simulator
                 if (prog.Stack == null)
                 {
                     prog.Stack = new ProgramStack();
+                }
+                if (prog.Memory == null)
+                {
+                    prog.Memory = prog.AllocateMemory();
                 }
                 programList.Add(prog);
                 lst_ProgramList.Items.Add(prog); // add the object to the program list
@@ -870,6 +873,13 @@ namespace CPU_OS_Simulator
         {
             executionWorker.Dispose();
             executionWorker = null;
+        }
+
+        private void btn_ShowMemory_Click(object sender, RoutedEventArgs e)
+        {
+            SimulatorProgram program = programList.Where(x => x.Name.Equals(currentProgram)).FirstOrDefault();
+            MemoryWindow m = new MemoryWindow(this,program.Memory.FirstOrDefault());
+            m.Show();
         }
     }
 }

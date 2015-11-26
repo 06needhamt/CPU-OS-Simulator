@@ -10,7 +10,7 @@ namespace CPU_OS_Simulator.CPU
     {
         #region Global Variables
 
-        private Int32 value;
+        private int value;
         private EnumOperandType type;
         private bool isRegister;
         [NonSerialized]
@@ -33,7 +33,7 @@ namespace CPU_OS_Simulator.CPU
         /// </summary>
         /// <param name="value"> the value of the operand </param>
         /// <param name="type"> the type of the operand i.e memory address or intermediate value</param>
-        public Operand(Int32 value, EnumOperandType type)
+        public Operand(int value, EnumOperandType type)
         {
             this.value = value;
             this.type = type;

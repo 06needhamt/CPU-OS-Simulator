@@ -5,7 +5,7 @@ namespace CPU_OS_Simulator.CPU
     public class Register
     {
         private string name;
-        private Int32 value;
+        private int value;
         private EnumOperandType type;
 
         public static Register R00 = new Register("R00");

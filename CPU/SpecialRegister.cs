@@ -17,7 +17,7 @@ namespace CPU_OS_Simulator.CPU
         /// <summary>
         /// The integer value of the special register
         /// </summary>
-        private Int32 value;
+        private int value;
 
         /// <summary>
         /// The string value of the register used </para>
