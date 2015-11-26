@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
+using System.Threading;
 using System.Web.Script.Serialization;
 using System.Windows;
 
@@ -673,6 +674,7 @@ namespace CPU_OS_Simulator.CPU
                 p.Stack.pushItem(new StackItem(lhs.Value));
             }
             //MessageBox.Show("PUSH Instruction is not currently implemented", "", MessageBoxButton.OK, MessageBoxImage.Information);
+            Thread.Sleep(20);
             return 0;
         }
 
@@ -694,7 +696,7 @@ namespace CPU_OS_Simulator.CPU
             result = lhs.Register.Value;
             Register.FindRegister(lhs.Register.Name).setRegisterValue(result, EnumOperandType.VALUE);
             //MessageBox.Show("POP Instruction is not currently implemented", "", MessageBoxButton.OK, MessageBoxImage.Information);
-            
+            Thread.Sleep(20);
             return result;
         }
 
