@@ -651,7 +651,53 @@ namespace CPU_OS_Simulator.CPU
         /// <returns> the result of the instruction or int.MINVALUE if no result is returned </returns>
         private int STW(Operand lhs, Operand rhs)
         {
-            MessageBox.Show("STW Instruction is not currently implemented", "", MessageBoxButton.OK, MessageBoxImage.Information);
+            int address;
+            int value;
+            if (lhs.IsRegister)
+                address = Register.FindRegister(lhs.Register.Name).Value;
+            else
+                address = lhs.Value;
+            if (rhs.IsRegister)
+            {
+                SimulatorProgram program = GetCurrentProgram();
+                value = Register.FindRegister(rhs.Register.Name).Value;
+                byte lowbyte = (byte) (value & 0xFF);
+                byte highbyte = (byte)((value >> 8) & 0xFF);
+                int pagenumber = address / program.Memory[0].PageSize;
+                int pageOffset = address - (address / program.Memory[0].PageSize);
+                program.Memory.ElementAt(pagenumber).Data[pageOffset / 8].SetByte(pageOffset % 8, highbyte);
+                if (pageOffset%8 == 7)
+                {
+                    program.Memory.ElementAt(pagenumber).Data[pageOffset / 8 + 1].SetByte((pageOffset + 1) % 8, lowbyte);
+                }
+                else
+                {
+                    program.Memory.ElementAt(pagenumber).Data[pageOffset / 8].SetByte(pageOffset % 8, lowbyte);
+                }
+                
+
+            }
+            else
+            {
+                SimulatorProgram program = GetCurrentProgram();
+                int pagenumber = address / program.Memory[0].PageSize;
+                int pageOffset = address - (address / program.Memory[0].PageSize);
+                value = rhs.Value;
+                byte lowbyte = (byte)(value & 0xFF);
+                byte highbyte = (byte)((value >> 8) & 0xFF);
+
+                program.Memory.ElementAt(pagenumber).Data[pageOffset / 8].SetByte(pageOffset % 8,highbyte );
+
+                if (pageOffset % 8 == 7)
+                {
+                    program.Memory.ElementAt(pagenumber).Data[pageOffset / 8 + 1].SetByte((pageOffset + 1) % 8, lowbyte);
+                }
+                else
+                {
+                    program.Memory.ElementAt(pagenumber).Data[pageOffset / 8].SetByte(pageOffset % 8, lowbyte);
+                }
+            }
+            //MessageBox.Show("STW Instruction is not currently implemented", "", MessageBoxButton.OK, MessageBoxImage.Information);
             return 0;
         }
 
