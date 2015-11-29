@@ -36,6 +36,7 @@ namespace CPU_OS_Simulator
         public static MainWindow currentInstance;
         Dispatcher dispatcher = Dispatcher.CurrentDispatcher;
         private BackgroundWorker executionWorker;
+        private bool saved = false;
 
         #endregion Global Variables
 
@@ -255,9 +256,6 @@ namespace CPU_OS_Simulator
             int baseAddress = Convert.ToInt32(txtBaseAddress.Text);
             int pages = Convert.ToInt32(cmb_Pages.Text);
             SimulatorProgram program = new SimulatorProgram(programName, baseAddress, pages);
-            //lst_ProgramList.Items.Add(program);
-            //programList.Add(program);
-            //currentProgram = program.Name;
             Console.WriteLine("Program " + program.Name + " Created");
             return program;
         }
@@ -331,7 +329,7 @@ namespace CPU_OS_Simulator
         /// <param name="e"> the eventargs</param>
         private void MainWindow2_Closing(object sender, CancelEventArgs e)
         {
-            if (programList.Count > 0)
+            if (programList.Count > 0 && !saved)
             {
                 MessageBoxResult saveresult = MessageBox.Show("There are unsaved programs do you want to save first?", "Save", MessageBoxButton.YesNoCancel, MessageBoxImage.Question);
                 if (saveresult == MessageBoxResult.Yes)
@@ -534,7 +532,7 @@ namespace CPU_OS_Simulator
                 currentProgram = ((SimulatorProgram)lst_ProgramList.SelectedItem).Name; // load the selected item
             }
             SimulatorProgram prog = programList.Where(x => x.Name.Equals(currentProgram)).FirstOrDefault(); // find the selected program in the program list
-            //lst_InstructionsList.ItemsSource.
+           
             if (prog.Instructions != null)
             {
                 lst_InstructionsList.ItemsSource = prog.Instructions; // load the instructions into the instruction list
@@ -544,13 +542,14 @@ namespace CPU_OS_Simulator
                 lst_InstructionsList.ItemsSource = null;
             }
             prog.UpdateAddresses();
+            saved = false;
             Console.WriteLine("Instructions Updated");
         }
 
         private void btn_Load_Click(object sender, RoutedEventArgs e)
         {
-            bool loaded = LoadProgram(); // load a program file
-            if (!loaded)
+            bool isloaded = LoadProgram(); // load a program file
+            if (!isloaded)
             {
                 throw new Exception("An error occurred while loading the program");
             }
@@ -559,8 +558,8 @@ namespace CPU_OS_Simulator
 
         private void btn_Save_Click(object sender, RoutedEventArgs e)
         {
-            bool saved = SaveProgram(); //save a program file
-            if (!saved)
+            bool issaved = SaveProgram(); //save a program file
+            if (!issaved)
             {
                 throw new Exception("An error occurred while saving the program");
             }
@@ -585,11 +584,12 @@ namespace CPU_OS_Simulator
                     File.Delete(dlg.FileName); // ensure we create a new file when we overwrite
                 }
                 SimulatorProgram[] progs = programList.ToArray();
-                for (int i = 0; i < progs.Length; i++)
+                foreach (SimulatorProgram t in progs)
                 {
-                    SerializeObject<SimulatorProgram>(progs[i], dlg.FileName); // save all programs in the program list
+                    SerializeObject<SimulatorProgram>(t, dlg.FileName); // save all programs in the program list
                 }
             }
+            saved = true;
             return true;
         }
 
@@ -641,8 +641,8 @@ namespace CPU_OS_Simulator
             JavaScriptSerializer deserializer = new JavaScriptSerializer(); // initialize the deserializer
             StreamReader reader = new StreamReader(fileName); // initialize file reader
             string json;
-            programList.Clear();
-            lst_ProgramList.Items.Clear();
+            //programList.Clear();
+            //lst_ProgramList.Items.Clear();
             while ((json = reader.ReadLine()) != null) // while there are lines to read
             {
                 SimulatorProgram prog = deserializer.Deserialize<SimulatorProgram>(json); // deserialise the line into a object
@@ -665,7 +665,7 @@ namespace CPU_OS_Simulator
         /// <summary>
         /// This function rebinds the delegate function to each instruction in a program after it is loaded from a file.
         /// </summary>
-        /// <param name="prog"></param>
+        /// <param name="prog"> the program to bind its instruction delegates </param>
         private void BindInstructionDelegates(ref SimulatorProgram prog)
         {
             foreach (Instruction i in prog.Instructions)
@@ -777,7 +777,6 @@ namespace CPU_OS_Simulator
             {
                 activeUnit.ExecuteInstruction();
                 await CallFromMainThread(UpdateInterface);
-                //Thread.Sleep(10); // Sleep the execution thread here to give the main thread time to update all required values
             }
             s.Stop();
             MessageBox.Show("Program Completed in: " + await CalculateTime(s.ElapsedMilliseconds) + " Seconds", "", MessageBoxButton.OK, MessageBoxImage.Information);
@@ -806,7 +805,7 @@ namespace CPU_OS_Simulator
             long secs = 0;
             secs = mills / 1000;
             mils = mills % 1000;
-            return secs + "." + mills;
+            return secs + "." + mils;
         }
 
         private void btn_Stop_Click(object sender, RoutedEventArgs e)
@@ -864,7 +863,7 @@ namespace CPU_OS_Simulator
 
         private void chk_N_Unchecked(object sender, RoutedEventArgs e)
         {
-            StatusFlags.N.IsSet = true;
+            StatusFlags.N.IsSet = false;
             SpecialRegister.FindSpecialRegister("SR").Value -= StatusFlags.N.Value;
             UpdateSpecialRegisters();
         }
@@ -878,6 +877,7 @@ namespace CPU_OS_Simulator
         private void btn_ShowMemory_Click(object sender, RoutedEventArgs e)
         {
             SimulatorProgram program = programList.Where(x => x.Name.Equals(currentProgram)).FirstOrDefault();
+            if (program == null) return;
             MemoryWindow m = new MemoryWindow(this,program.Memory.FirstOrDefault());
             m.Show();
         }
