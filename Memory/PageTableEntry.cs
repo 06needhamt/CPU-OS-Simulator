@@ -14,6 +14,18 @@ namespace CPU_OS_Simulator.Memory
         private bool swappedOut;
         private MemoryPage page;
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="T:System.Object"/> class.
+        /// </summary>
+        public PageTableEntry(int frameNumber, int logicalAddress, int physicalAddress, bool swappedOut, MemoryPage page)
+        {
+            this.frameNumber = frameNumber;
+            this.logicalAddress = logicalAddress;
+            this.physicalAddress = physicalAddress;
+            this.swappedOut = swappedOut;
+            this.page = page;
+        }
+
         public int FrameNumber
         {
             get { return frameNumber; }

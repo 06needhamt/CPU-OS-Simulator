@@ -37,6 +37,8 @@ namespace CPU_OS_Simulator
         Dispatcher dispatcher = Dispatcher.CurrentDispatcher;
         private BackgroundWorker executionWorker;
         private bool saved = false;
+        private PageTableEntry currentPage;
+        private PhysicalMemory memory;
 
         #endregion Global Variables
 
@@ -79,6 +81,12 @@ namespace CPU_OS_Simulator
             {
                 activeUnit = value;
             }
+        }
+
+        public PhysicalMemory Memory
+        {
+            get { return memory; }
+            set { memory = value; }
         }
 
         #endregion Properties

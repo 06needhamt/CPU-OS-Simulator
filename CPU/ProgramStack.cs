@@ -1,5 +1,7 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Windows;
 
 namespace CPU_OS_Simulator.CPU
@@ -51,7 +53,7 @@ namespace CPU_OS_Simulator.CPU
             if (stackSize + 1 > maxStackSize)
             {
                 MessageBox.Show("Stack Overflow the program will now terminate", "", MessageBoxButton.OK, MessageBoxImage.Error);
-                // TODO Terminate Program
+                GetExecutionUnit().Stop = true;
                 return;
             }
             item.Position = stackItems.Count;
@@ -98,7 +100,7 @@ namespace CPU_OS_Simulator.CPU
             if (stackSize - 1 < 0)
             {
                 MessageBox.Show("Stack Underflow the program will now terminate", "", MessageBoxButton.OK, MessageBoxImage.Error);
-                // TODO Terminate Program
+                GetExecutionUnit().Stop = true;
                 return int.MinValue;
             }
             int value = stackItems.Last().Value;
@@ -106,6 +108,21 @@ namespace CPU_OS_Simulator.CPU
             stackSize--;
             SetAnnotations();
             return value;
+        }
+
+        private dynamic GetMainWindowInstance()
+        {
+            Assembly windowBridge = Assembly.LoadFrom("CPU_OS_Simulator.WindowBridge.dll"); // Load the window bridge module
+            Console.WriteLine(windowBridge.GetExportedTypes()[0]);
+            Type WindowType = windowBridge.GetType(windowBridge.GetExportedTypes()[0].ToString()); // get the name of the type that contains the window instances
+            dynamic window = WindowType.GetField("MainWindowInstance").GetValue(null); // get the value of the static MainWindowInstance field
+            return window;
+        }
+
+        private ExecutionUnit GetExecutionUnit()
+        {
+            dynamic window = GetMainWindowInstance();
+            return window.ActiveUnit;
         }
 
         #endregion Methods

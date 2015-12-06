@@ -5,6 +5,7 @@ namespace CPU_OS_Simulator.Memory
     public class MemoryPage : ISwappable
     {
         private int pageIndex;
+        private int startOffsetPhysical;
         private readonly int startOffset;
         private readonly int pageSize;
         private readonly int endOffset;
@@ -57,6 +58,19 @@ namespace CPU_OS_Simulator.Memory
             set
             {
                 data = value;
+            }
+        }
+
+        public int StartOffsetPhysical
+        {
+            get
+            {
+                return startOffsetPhysical;
+            }
+
+            set
+            {
+                startOffsetPhysical = value;
             }
         }
 
