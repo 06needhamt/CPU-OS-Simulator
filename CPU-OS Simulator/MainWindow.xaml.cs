@@ -96,6 +96,12 @@ namespace CPU_OS_Simulator
             set { swapSpace = value; }
         }
 
+        public BackgroundWorker ExecutionWorker
+        {
+            get { return executionWorker; }
+            set { executionWorker = value; }
+        }
+
         #endregion Properties
 
         #region Constructors

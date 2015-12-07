@@ -53,7 +53,8 @@ namespace CPU_OS_Simulator.CPU
             if (stackSize + 1 > maxStackSize)
             {
                 MessageBox.Show("Stack Overflow the program will now terminate", "", MessageBoxButton.OK, MessageBoxImage.Error);
-                GetExecutionUnit().Stop = true;
+                dynamic window = GetMainWindowInstance();
+                window.ExecutionWorker.CancelAsync();
                 return;
             }
             item.Position = stackItems.Count;
@@ -100,7 +101,8 @@ namespace CPU_OS_Simulator.CPU
             if (stackSize - 1 < 0)
             {
                 MessageBox.Show("Stack Underflow the program will now terminate", "", MessageBoxButton.OK, MessageBoxImage.Error);
-                GetExecutionUnit().Stop = true;
+                dynamic window = GetMainWindowInstance();
+                window.ExecutionWorker.CancelAsync();
                 return int.MinValue;
             }
             int value = stackItems.Last().Value;
@@ -119,13 +121,7 @@ namespace CPU_OS_Simulator.CPU
             return window;
         }
 
-        private ExecutionUnit GetExecutionUnit()
-        {
-            dynamic window = GetMainWindowInstance();
-            return window.ActiveUnit;
-        }
-
-        #endregion Methods
+       #endregion Methods
 
         #region Properties
 
