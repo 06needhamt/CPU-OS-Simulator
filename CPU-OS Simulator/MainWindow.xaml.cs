@@ -39,6 +39,7 @@ namespace CPU_OS_Simulator
         private bool saved = false;
         private PageTableEntry currentPage;
         private PhysicalMemory memory;
+        private SwapSpace swapSpace;
 
         #endregion Global Variables
 
@@ -89,6 +90,12 @@ namespace CPU_OS_Simulator
             set { memory = value; }
         }
 
+        public SwapSpace SwapSpace
+        {
+            get { return swapSpace; }
+            set { swapSpace = value; }
+        }
+
         #endregion Properties
 
         #region Constructors
@@ -108,6 +115,8 @@ namespace CPU_OS_Simulator
             PopulateRegisters();
             Console.WriteLine("Hello World");
             currentInstance = this;
+            memory = new PhysicalMemory(10);
+            swapSpace = new SwapSpace();
         }
 
         #endregion Constructors
@@ -200,25 +209,60 @@ namespace CPU_OS_Simulator
         private void MainWindow2_Loaded(object sender, RoutedEventArgs e)
         {
             Title += " " + GetProgramVersion();
-            SpecialRegister.FindSpecialRegister("BR").setRegisterValue(Convert.ToInt32(txt_BR.Text), EnumOperandType.VALUE);
+            SpecialRegister.FindSpecialRegister("BR")
+                .setRegisterValue(Convert.ToInt32(txt_BR.Text), EnumOperandType.VALUE);
             SpecialRegister.FindSpecialRegister("IR").setRegisterValue(txt_IR.Text, EnumOperandType.VALUE);
-            SpecialRegister.FindSpecialRegister("MAR").setRegisterValue(Convert.ToInt32(txt_MAR.Text), EnumOperandType.ADDRESS);
+            SpecialRegister.FindSpecialRegister("MAR")
+                .setRegisterValue(Convert.ToInt32(txt_MAR.Text), EnumOperandType.ADDRESS);
             SpecialRegister.FindSpecialRegister("MDR").setRegisterValue(txt_MDR.Text, EnumOperandType.VALUE);
-            SpecialRegister.FindSpecialRegister("PC").setRegisterValue(Convert.ToInt32(txt_PC.Text), EnumOperandType.ADDRESS);
-            SpecialRegister.FindSpecialRegister("SP").setRegisterValue(Convert.ToInt32(txt_SP.Text), EnumOperandType.ADDRESS);
-            SpecialRegister.FindSpecialRegister("SR").setRegisterValue(Convert.ToInt32(txt_SR.Text), EnumOperandType.VALUE);
+            SpecialRegister.FindSpecialRegister("PC")
+                .setRegisterValue(Convert.ToInt32(txt_PC.Text), EnumOperandType.ADDRESS);
+            SpecialRegister.FindSpecialRegister("SP")
+                .setRegisterValue(Convert.ToInt32(txt_SP.Text), EnumOperandType.ADDRESS);
+            SpecialRegister.FindSpecialRegister("SR")
+                .setRegisterValue(Convert.ToInt32(txt_SR.Text), EnumOperandType.VALUE);
+#if !DEBUG
+        }
 
-#if DEBUG
+#else
+            DebugFunction();
+        }
+        private void DebugFunction()
+        {
             Title += " DEBUG BUILD ";
             MemoryPage m = new MemoryPage(0, 0, 256);
             //m.Data[0] = new MemorySegment(0);
             m.Data[0].Byte0 = (byte)'A';
             m.Data[0].Byte1 = (byte)'B';
-            MemoryWindow wind = new MemoryWindow(this, m);
-            wind.Show();
-#endif
+            DebugTestSwapping(m);
+            DebugTestSwappingFromMemoryOverflow();
+            //MemoryWindow wind = new MemoryWindow(this, m);
+            //wind.Show();
         }
 
+        private void DebugTestSwappingFromMemoryOverflow()
+        {
+            for (int i = 0; i < memory.Capacity + 1; i++)
+            {
+                MemoryPage m = new MemoryPage(0, 256 * i ,256);
+                memory.AddPage(m, memory.Pages.Count);
+                Console.WriteLine("Pages in Memory = " + memory.Pages.Count);
+                Console.WriteLine("Pages Swapped Out = " + swapSpace.SwappedMemoryPages.Count);
+            }
+        }
+
+        private void DebugTestSwapping(MemoryPage memoryPage)
+        {
+            memory.AddPage(memoryPage, memory.Pages.Count);
+            PageTableEntry f = memory.Table.Entries.FirstOrDefault(p => p.Page.Equals(memoryPage));
+            memoryPage.SwapOut(f.PhysicalAddress, f.FrameNumber);
+            Console.WriteLine("Pages in Memory = " + memory.Pages.Count);
+            Console.WriteLine("Pages Swapped Out = " + swapSpace.SwappedMemoryPages.Count);
+            memoryPage.SwapIn(f.PhysicalAddress, f.FrameNumber);
+            Console.WriteLine("Pages in Memory = " + memory.Pages.Count);
+            Console.WriteLine("Pages Swapped Out = " + swapSpace.SwappedMemoryPages.Count);
+        }
+#endif
         /// <summary>
         /// Gets the build number of the running program
         /// </summary>

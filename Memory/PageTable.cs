@@ -11,6 +11,18 @@ namespace CPU_OS_Simulator.Memory
         private int tableNumber;
         private List<PageTableEntry> entries;
 
+        public PageTable(int number)
+        {
+            this.tableNumber = number;
+            entries = new List<PageTableEntry>();
+        }
+
+        public PageTable(int number, List<PageTableEntry> entries)
+        {
+            this.tableNumber = number;
+            this.entries = entries;
+        }
+
         public int TableNumber
         {
             get { return tableNumber; }

@@ -1,4 +1,7 @@
-﻿using System.Security.Cryptography.X509Certificates;
+﻿using System;
+using System.Reflection;
+using System.Security.Cryptography.X509Certificates;
+using System.Windows;
 
 namespace CPU_OS_Simulator.Memory
 {
@@ -84,6 +87,7 @@ namespace CPU_OS_Simulator.Memory
             endOffset = startOffset + pageSize;
             data = new MemorySegment[pageSize / 8];
             PopulateData();
+
         }
 
         private void PopulateData()
@@ -99,12 +103,51 @@ namespace CPU_OS_Simulator.Memory
 
         public void SwapOut(int LocationToSwap, int FrameNumber)
         {
-            //TODO Implement ME!
+            MemoryPage temp;
+            dynamic wind = GetMainWindowInstance();
+            PhysicalMemory physicalMemory = wind.Memory;
+            SwapSpace swap = wind.SwapSpace;
+            temp = physicalMemory.Pages[FrameNumber];
+            if (!physicalMemory.Table.Entries[FrameNumber].SwappedOut)
+            {
+                physicalMemory.Table.Entries[FrameNumber].SwappedOut = true;
+                physicalMemory.Pages.RemoveAt(FrameNumber);
+                swap.SwappedMemoryPages.Add(temp);
+            }
+            else
+            {
+                MessageBox.Show("Cannot swap in page that is already swapped out", "ERROR", MessageBoxButton.OK,
+                    MessageBoxImage.Error);
+            }
         }
 
         public void SwapIn(int LocationToSwap, int FrameNumber)
         {
-            //TODO Implement ME!
+            MemoryPage temp;
+            dynamic wind = GetMainWindowInstance();
+            PhysicalMemory physicalMemory = wind.Memory;
+            SwapSpace swap = wind.SwapSpace;
+            temp = swap.SwappedMemoryPages[FrameNumber];
+            if (physicalMemory.Table.Entries[FrameNumber].SwappedOut)
+            {
+                physicalMemory.Table.Entries[FrameNumber].SwappedOut = false;
+                physicalMemory.AddPage(temp, FrameNumber);
+                swap.SwappedMemoryPages.RemoveAt(FrameNumber);
+            }
+            else
+            {
+                MessageBox.Show("Cannot swap in page that is already in memory", "ERROR", MessageBoxButton.OK,
+                    MessageBoxImage.Error);
+            }
+        }
+
+        private dynamic GetMainWindowInstance()
+        {
+            Assembly windowBridge = Assembly.LoadFrom("CPU_OS_Simulator.WindowBridge.dll"); // Load the window bridge module
+            Console.WriteLine(windowBridge.GetExportedTypes()[0]);
+            Type WindowType = windowBridge.GetType(windowBridge.GetExportedTypes()[0].ToString()); // get the name of the type that contains the window instances
+            dynamic window = WindowType.GetField("MainWindowInstance").GetValue(null); // get the value of the static MainWindowInstance field
+            return window;
         }
     }
 }
