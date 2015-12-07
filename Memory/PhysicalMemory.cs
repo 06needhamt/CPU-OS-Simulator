@@ -37,8 +37,8 @@ namespace CPU_OS_Simulator.Memory
             {
                 Random R = new Random(int.MinValue);
                 int number = R.Next(0, pageTable.Entries.Count);
-                MemoryPage swappedMemoryPage = pageTable.Entries[(R.Next(0,number)].Page;
-                pageTable.Entries.ElementAt(number).SwappedOut = true;
+                MemoryPage swappedMemoryPage = pageTable.Entries[(R.Next(0,number))].Page;
+                pageTable.Entries[number].SwappedOut = true;
                 swapSpace.SwapOut(number,number);
                 pages.Insert(index,page);
                 /*pageTable.Entries.Add(new PageTableEntry(pageTable.Entries.Count + 1, page.StartOffset,
