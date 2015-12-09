@@ -10,7 +10,7 @@ namespace CPU_OS_Simulator.Memory
         private int pageIndex;
         private int startOffsetPhysical;
         private readonly int startOffset;
-        private readonly int pageSize;
+        public const int PAGE_SIZE = 256;
         private readonly int endOffset;
         private MemorySegment[] data;
 
@@ -39,7 +39,7 @@ namespace CPU_OS_Simulator.Memory
         {
             get
             {
-                return pageSize;
+                return PAGE_SIZE;
             }
         }
 
@@ -79,13 +79,13 @@ namespace CPU_OS_Simulator.Memory
 
         #region Constructors
 
-        public MemoryPage(int pageIndex, int startOffset, int pageSize)
+        public MemoryPage(int pageIndex, int startOffset)
         {
             this.pageIndex = pageIndex;
             this.startOffset = startOffset;
-            this.pageSize = pageSize;
-            endOffset = startOffset + pageSize;
-            data = new MemorySegment[pageSize / 8];
+            //this.PAGE_SIZE = pageSize;
+            endOffset = startOffset + PAGE_SIZE;
+            data = new MemorySegment[PAGE_SIZE / 8];
             PopulateData();
 
         }
@@ -149,5 +149,7 @@ namespace CPU_OS_Simulator.Memory
             dynamic window = WindowType.GetField("MainWindowInstance").GetValue(null); // get the value of the static MainWindowInstance field
             return window;
         }
+
+
     }
 }

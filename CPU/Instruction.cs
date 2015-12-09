@@ -5,6 +5,7 @@ using System.Reflection;
 using System.Threading;
 using System.Web.Script.Serialization;
 using System.Windows;
+using CPU_OS_Simulator.Memory;
 
 namespace CPU_OS_Simulator.CPU
 {
@@ -439,6 +440,24 @@ namespace CPU_OS_Simulator.CPU
             }
         }
 
+        private int FindRequiredPage(int pagenumber)
+        {
+            int programIndex = 0;
+            int frameNumber = 0;
+            dynamic wind = GetMainWindowInstance();
+            //Func<Task<List<SimulatorProgram>>> listfunc = (Func<Task<List<SimulatorProgram>>>) wind.asyncGetProgList;
+            List<SimulatorProgram> programList = wind.ProgramList;
+            if (programIndex >= 0)
+            {
+                for (int i = 0; i < programIndex; i++)
+                {
+                    frameNumber += programList[i].Pages;
+                }
+                frameNumber += pagenumber;
+            }
+            return frameNumber;
+        }
+
         /// <summary>
         /// Returns a string that represents this instruction
         /// </summary>
@@ -651,53 +670,109 @@ namespace CPU_OS_Simulator.CPU
         /// <returns> the result of the instruction or int.MINVALUE if no result is returned </returns>
         private int STW(Operand lhs, Operand rhs)
         {
-            int address;
-            int value;
-            if (lhs.IsRegister)
-                address = Register.FindRegister(lhs.Register.Name).Value;
-            else
-                address = lhs.Value;
+            int address = 0;
+            int value = 0;
+            int pagenumber = 0;
+            int pageOffset = 0;
+            byte low = 0;
+            byte high = 0;
+
+            address = lhs.IsRegister ? Register.FindRegister(lhs.Register.Name).Value : lhs.Value;
             if (rhs.IsRegister)
             {
                 SimulatorProgram program = GetCurrentProgram();
                 value = Register.FindRegister(rhs.Register.Name).Value;
-                byte lowbyte = (byte) (value & 0xFF);
-                byte highbyte = (byte)((value >> 8) & 0xFF);
-                int pagenumber = address / program.Memory[0].PageSize;
-                int pageOffset = address - (address / program.Memory[0].PageSize);
-                program.Memory.ElementAt(pagenumber).Data[pageOffset / 8].SetByte(pageOffset % 8, highbyte);
-                if (pageOffset%8 == 7)
-                {
-                    program.Memory.ElementAt(pagenumber).Data[pageOffset / 8 + 1].SetByte((pageOffset + 1) % 8, lowbyte);
-                }
-                else
-                {
-                    program.Memory.ElementAt(pagenumber).Data[pageOffset / 8].SetByte(pageOffset % 8, lowbyte);
-                }
-                
+                low = (byte)(value & 0xFF);
+                high = (byte)((value >> 8) & 0xFF);
+                pagenumber = address/MemoryPage.PAGE_SIZE;
+                pageOffset = address%MemoryPage.PAGE_SIZE;
 
             }
             else
             {
                 SimulatorProgram program = GetCurrentProgram();
-                int pagenumber = address / program.Memory[0].PageSize;
-                int pageOffset = address - (address / program.Memory[0].PageSize);
+                pagenumber = address/MemoryPage.PAGE_SIZE;
+                pageOffset = address%MemoryPage.PAGE_SIZE;
                 value = rhs.Value;
-                byte lowbyte = (byte)(value & 0xFF);
-                byte highbyte = (byte)((value >> 8) & 0xFF);
+                low = (byte)(value & 0xFF);
+                high = (byte)((value >> 8) & 0xFF);
 
-                program.Memory.ElementAt(pagenumber).Data[pageOffset / 8].SetByte(pageOffset % 8,highbyte );
 
+            }
+            dynamic wind = GetMainWindowInstance();
+            PhysicalMemory memory = wind.Memory;
+            int frameNumber = FindRequiredPage(pagenumber);
+            if (memory.RequestMemoryPage(frameNumber) != null)
+            {
+                memory.Pages[frameNumber].Data[pageOffset / 8].SetByte(pageOffset % 8, high);
+                Console.WriteLine("High Byte value = " + memory.Pages[frameNumber].Data[pageOffset/8].GetByte(pageOffset % 8));
                 if (pageOffset % 8 == 7)
                 {
-                    program.Memory.ElementAt(pagenumber).Data[pageOffset / 8 + 1].SetByte((pageOffset + 1) % 8, lowbyte);
+                    memory.Pages[frameNumber].Data[pageOffset / 8 + 1].SetByte((pageOffset + 1) % 8, low);
+                    Console.WriteLine("Low Byte value = " + memory.Pages[frameNumber].Data[pageOffset / 8 + 1].GetByte((pageOffset + 1) % 8));
+
                 }
                 else
                 {
-                    program.Memory.ElementAt(pagenumber).Data[pageOffset / 8].SetByte(pageOffset % 8, lowbyte);
+                    memory.Pages[frameNumber].Data[pageOffset / 8].SetByte((pageOffset % 8 + 1), low);
+                    Console.WriteLine("Low Byte value = " + memory.Pages[frameNumber].Data[pageOffset / 8].GetByte(pageOffset % 8 + 1));
+
                 }
             }
+            else
+            {
+                return int.MinValue;
+            }
+
+            #region OLD
+            //int address;
+            //int value;
+            //if (lhs.IsRegister)
+            //    address = Register.FindRegister(lhs.Register.Name).Value;
+            //else
+            //    address = lhs.Value;
+            //if (rhs.IsRegister)
+            //{
+            //    SimulatorProgram program = GetCurrentProgram();
+            //    value = Register.FindRegister(rhs.Register.Name).Value;
+            //    byte lowbyte = (byte) (value & 0xFF);
+            //    byte highbyte = (byte)((value >> 8) & 0xFF);
+            //    int pagenumber = address / program.Memory[0].PageSize;
+            //    int pageOffset = address - (address / program.Memory[0].PageSize);
+            //    program.Memory.ElementAt(pagenumber).Data[pageOffset / 8].SetByte(pageOffset % 8, highbyte);
+            //    if (pageOffset%8 == 7)
+            //    {
+            //        program.Memory.ElementAt(pagenumber).Data[pageOffset / 8 + 1].SetByte((pageOffset + 1) % 8, lowbyte);
+            //    }
+            //    else
+            //    {
+            //        program.Memory.ElementAt(pagenumber).Data[pageOffset / 8].SetByte(pageOffset % 8, lowbyte);
+            //    }
+
+
+            //}
+            //else
+            //{
+            //    SimulatorProgram program = GetCurrentProgram();
+            //    int pagenumber = address / program.Memory[0].PageSize;
+            //    int pageOffset = address - (address / program.Memory[0].PageSize);
+            //    value = rhs.Value;
+            //    byte lowbyte = (byte)(value & 0xFF);
+            //    byte highbyte = (byte)((value >> 8) & 0xFF);
+
+            //    program.Memory.ElementAt(pagenumber).Data[pageOffset / 8].SetByte(pageOffset % 8,highbyte );
+
+            //    if (pageOffset % 8 == 7)
+            //    {
+            //        program.Memory.ElementAt(pagenumber).Data[pageOffset / 8 + 1].SetByte((pageOffset + 1) % 8, lowbyte);
+            //    }
+            //    else
+            //    {
+            //        program.Memory.ElementAt(pagenumber).Data[pageOffset / 8].SetByte(pageOffset % 8, lowbyte);
+            //    }
+            //}
             //MessageBox.Show("STW Instruction is not currently implemented", "", MessageBoxButton.OK, MessageBoxImage.Information);
+            #endregion OLD
             return 0;
         }
 

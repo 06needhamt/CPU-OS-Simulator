@@ -124,5 +124,15 @@ namespace CPU_OS_Simulator.Memory
             return window;
         }
 
+        public MemoryPage RequestMemoryPage(int frameNumber)
+        {
+            PageTableEntry requiredPage = pageTable.Entries.FirstOrDefault(x => x.FrameNumber == frameNumber);
+            if (requiredPage.SwappedOut)
+            {
+                requiredPage.Page.SwapIn(requiredPage.Page.StartOffsetPhysical, frameNumber);
+            }
+            return pages[frameNumber];
+        }
+
     }
 }

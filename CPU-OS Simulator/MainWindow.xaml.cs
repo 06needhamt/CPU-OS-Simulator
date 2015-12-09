@@ -231,12 +231,12 @@ namespace CPU_OS_Simulator
         }
 
 #else
-            DebugFunction();
+            //DebugFunction();
         }
         private void DebugFunction()
         {
             Title += " DEBUG BUILD ";
-            MemoryPage m = new MemoryPage(0, 0, 256);
+            MemoryPage m = new MemoryPage(0, 0);
             //m.Data[0] = new MemorySegment(0);
             m.Data[0].Byte0 = (byte)'A';
             m.Data[0].Byte1 = (byte)'B';
@@ -250,7 +250,7 @@ namespace CPU_OS_Simulator
         {
             for (int i = 0; i < memory.Capacity + 1; i++)
             {
-                MemoryPage m = new MemoryPage(0, 256 * i ,256);
+                MemoryPage m = new MemoryPage(0, i * MemoryPage.PAGE_SIZE);
                 memory.AddPage(m, memory.Pages.Count);
                 Console.WriteLine("Pages in Memory = " + memory.Pages.Count);
                 Console.WriteLine("Pages Swapped Out = " + swapSpace.SwappedMemoryPages.Count);
@@ -712,6 +712,11 @@ namespace CPU_OS_Simulator
                 if (prog.Memory == null)
                 {
                     prog.Memory = prog.AllocateMemory();
+                }
+                for (int i = 0; i < prog.Pages; i++)
+                {
+                    MemoryPage memoryPage = new MemoryPage(i, (i*MemoryPage.PAGE_SIZE));
+                    memory.AddPage(memoryPage, memory.Pages.Count);
                 }
                 programList.Add(prog);
                 lst_ProgramList.Items.Add(prog); // add the object to the program list
