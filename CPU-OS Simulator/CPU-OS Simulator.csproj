@@ -165,6 +165,10 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Compiler\Compiler.csproj">
+      <Project>{9e04d3e8-9832-4b4d-98ff-52583c0365ac}</Project>
+      <Name>Compiler</Name>
+    </ProjectReference>
     <ProjectReference Include="..\CPU\CPU.csproj">
       <Project>{6ebcf9cd-c6a9-4535-9154-2fc7e303bfc4}</Project>
       <Name>CPU</Name>
