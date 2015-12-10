@@ -44,14 +44,18 @@ namespace CPU_OS_Simulator.Compiler
                 value = int.Parse(name.Substring(1, 2));
                 bytes.AddRange(BitConverter.GetBytes((int)value).ToList());
             }
-            else
+            else if (type == EnumSegmentType.VALUE && size == 5)
             {
-                bytes.Add(0x00);
+                 bytes.Add(0xEE);
                 bytes.AddRange(BitConverter.GetBytes((int)value).ToList());
             }
-            if (type == EnumSegmentType.VALUE && size == 1)
+            else if (type == EnumSegmentType.VALUE && size == 1)
             {
                 bytes.Add((byte)value);
+            }
+            else
+            {
+                throw new Exception();
             }
             return bytes;
         }
