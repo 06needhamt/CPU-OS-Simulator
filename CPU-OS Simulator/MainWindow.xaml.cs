@@ -1,4 +1,4 @@
-﻿using CPU_OS_Simulator.CPU;
+using CPU_OS_Simulator.CPU;
 using CPU_OS_Simulator.Memory;
 using Microsoft.Win32;
 using System;
@@ -16,6 +16,7 @@ using System.Web.Script.Serialization;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Threading;
+using CPU_OS_Simulator.Compiler;
 
 namespace CPU_OS_Simulator
 {
@@ -231,19 +232,38 @@ namespace CPU_OS_Simulator
         }
 
 #else
-            //DebugFunction();
+            DebugFunction();
         }
         private void DebugFunction()
         {
             Title += " DEBUG BUILD ";
-            MemoryPage m = new MemoryPage(0, 0);
-            //m.Data[0] = new MemorySegment(0);
-            m.Data[0].Byte0 = (byte)'A';
-            m.Data[0].Byte1 = (byte)'B';
-            DebugTestSwapping(m);
-            DebugTestSwappingFromMemoryOverflow();
+            DebugCompilingProgram();
+            //MemoryPage m = new MemoryPage(0, 0);
+            ////m.Data[0] = new MemorySegment(0);
+            //m.Data[0].Byte0 = (byte)'A';
+            //m.Data[0].Byte1 = (byte)'B';
+            //DebugTestSwapping(m);
+            //DebugTestSwappingFromMemoryOverflow();
             //MemoryWindow wind = new MemoryWindow(this, m);
             //wind.Show();
+        }
+
+        private void DebugCompilingProgram()
+        {
+            SimulatorProgram program = CreateNewProgram("Debug", 0, 1);
+            program.Instructions.Add(new Instruction((int) EnumOpcodes.MOV,new Operand(Register.R00, EnumOperandType.VALUE),new Operand(10,EnumOperandType.VALUE),4));
+            if (program == null) return;
+            lst_ProgramList.Items.Add(program);
+            programList.Add(program);
+            currentProgram = program.Name;
+            CompilerFrontend compiler = new CompilerFrontend(program.Instructions,program.Name);
+            List<List<InstructionSegment>> segmenrtList = compiler.CompileFromInstructions();
+            List<byte> bytes = compiler.CompileToBytes(segmenrtList);
+            CompiledProgram compiledProgram = new CompiledProgram(bytes,program.Name,bytes.Count);
+            memory.AddPage(new MemoryPage(0, 0), 0);
+            compiledProgram.LoadinMemory(0);
+            MemoryWindow wind = new MemoryWindow(this, memory.Pages[0]);
+            wind.Show();
         }
 
         private void DebugTestSwappingFromMemoryOverflow()
@@ -318,6 +338,16 @@ namespace CPU_OS_Simulator
             return program;
         }
 
+        /// <summary>
+        /// Creates a new program based on entered data
+        /// </summary>
+        /// <returns>the created program</returns>
+        private SimulatorProgram CreateNewProgram(string programName, int baseAddress, int pages)
+        {
+            SimulatorProgram program = new SimulatorProgram(programName, baseAddress, pages);
+            Console.WriteLine("Program " + program.Name + " Created");
+            return program;
+        }
         /// <summary>
         /// Called when the show button is clicked
         /// </summary>

@@ -1,4 +1,0 @@
-/// <summary>
-        /// Asynchronous method called after every instruction is executed to update required values and user interface asynchronously
-        /// </summary>
-        /// <returns> A task to indicate to the main thread that the method has finished executing</returns>

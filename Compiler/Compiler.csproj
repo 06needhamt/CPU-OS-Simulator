@@ -41,7 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Compiler.cs" />
+    <Compile Include="CompilerFrontend.cs" />
     <Compile Include="EnumCompilerMode.cs" />
     <Compile Include="EnumSegmentSizes.cs" />
     <Compile Include="InstructionSegment.cs" />
