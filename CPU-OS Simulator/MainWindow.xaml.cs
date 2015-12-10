@@ -257,10 +257,12 @@ namespace CPU_OS_Simulator
             programList.Add(program);
             currentProgram = program.Name;
             CompilerFrontend compiler = new CompilerFrontend(program.Instructions,program.Name);
-            List<List<InstructionSegment>> segmenrtList = compiler.CompileFromInstructions();
-            List<byte> bytes = compiler.CompileToBytes(segmenrtList);
+            List<List<InstructionSegment>> segmentList = compiler.CompileFromInstructions();
+            List<byte> bytes = compiler.CompileToBytes(segmentList);
             CompiledProgram compiledProgram = new CompiledProgram(bytes,program.Name,bytes.Count);
-            memory.AddPage(new MemoryPage(0, 0), 0);
+            MemoryPage m = new MemoryPage(0, 0);
+            m.ZeroMemory();
+            memory.AddPage(m,0);
             compiledProgram.LoadinMemory(0);
             MemoryWindow wind = new MemoryWindow(this, memory.Pages[0]);
             wind.Show();

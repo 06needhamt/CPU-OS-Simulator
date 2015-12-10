@@ -154,9 +154,9 @@ namespace CPU_OS_Simulator.Memory
         {
             for (int i = 0; i < data.Length; i++)
             {
-                for (int j = 0; j < 7; j++)
+                for (int j = 0; j < 8; j++)
                 {
-                    data[i].SetByte(j,0x00);
+                    data[i].SetByte(j,0xDD);
                 }
             }
         }
