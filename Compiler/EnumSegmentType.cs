@@ -1,10 +1,9 @@
 ﻿namespace CPU_OS_Simulator.Compiler
 {
-    public enum EnumSegmentSizes
+    public enum EnumSegmentType
     {
         UNKNOWN = -1,
-        OPCODE = 1,
-        OPERAND = 5,
-
+        REGISTER = 0,
+        VALUE = 1
     }
 }

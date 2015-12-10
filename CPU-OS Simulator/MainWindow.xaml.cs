@@ -251,7 +251,7 @@ namespace CPU_OS_Simulator
         private void DebugCompilingProgram()
         {
             SimulatorProgram program = CreateNewProgram("Debug", 0, 1);
-            program.Instructions.Add(new Instruction((int) EnumOpcodes.MOV,new Operand(Register.R00, EnumOperandType.VALUE),new Operand(10,EnumOperandType.VALUE),4));
+            program.Instructions.Add(new Instruction((int) EnumOpcodes.MOV,new Operand(Register.R01, EnumOperandType.VALUE),new Operand(13,EnumOperandType.VALUE),4));
             if (program == null) return;
             lst_ProgramList.Items.Add(program);
             programList.Add(program);

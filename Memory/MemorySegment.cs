@@ -257,7 +257,6 @@ namespace CPU_OS_Simulator.Memory
             sb.Append((char)byte0);
             sb.Append((char)byte1);
             sb.Append((char)byte2);
-            sb.Append((char)byte3);
             sb.Append((char)byte4);
             sb.Append((char)byte5);
             sb.Append((char)byte6);

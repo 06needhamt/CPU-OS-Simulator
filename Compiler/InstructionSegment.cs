@@ -8,11 +8,19 @@ namespace CPU_OS_Simulator.Compiler
     {
         private int value;
         private int size;
+        private string name = String.Empty;
+        private EnumSegmentType type = EnumSegmentType.UNKNOWN;
 
-        public InstructionSegment(int value, int size)
+        public InstructionSegment(int value, int size,EnumSegmentType type)
         {
             this.value = value;
             this.size = size;
+            this.type = type;
+        }
+
+        public InstructionSegment(int value, int size, EnumSegmentType type, string name) : this(value,size,type)
+        {
+            this.name = name;
         }
 
         public int Value
@@ -30,13 +38,21 @@ namespace CPU_OS_Simulator.Compiler
         public List<byte> toBytes()
         {
             List<byte> bytes = new List<byte>();
-            if (value < 2556)
+            if (type == EnumSegmentType.REGISTER && size == 5)
             {
-                this.size = sizeof(byte);
+                bytes.Add(0xFF);
+                value = int.Parse(name.Substring(1, 2));
+                bytes.AddRange(BitConverter.GetBytes((int)value).ToList());
+            }
+            else
+            {
+                bytes.Add(0x00);
+                bytes.AddRange(BitConverter.GetBytes((int)value).ToList());
+            }
+            if (type == EnumSegmentType.VALUE && size == 1)
+            {
                 bytes.Add((byte)value);
             }
-            this.size = sizeof(int);
-            bytes.AddRange(BitConverter.GetBytes((int)value).ToList());
             return bytes;
         }
     }

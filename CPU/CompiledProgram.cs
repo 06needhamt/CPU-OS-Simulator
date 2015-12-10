@@ -21,33 +21,37 @@ namespace CPU_OS_Simulator.CPU
 
         public bool LoadinMemory(int frameNumber)
         {
-            int numberOfPages = size / MemoryPage.PAGE_SIZE;
+            double DnumberOfPages = (double) size/MemoryPage.PAGE_SIZE;
+            int numberOfPages = (int) Math.Ceiling(DnumberOfPages);
             dynamic wind = GetMainWindowInstance();
-            int index = 0;
             PhysicalMemory memory = wind.Memory;
-            for (int i = 0; i < numberOfPages; i++)
+            int bytecount = 0;
+            for (int i = 0; i <= numberOfPages - 1; i++)
             {
-                memory.RequestMemoryPage(frameNumber + i);
-                memory.Pages[frameNumber + i].ZeroMemory();
-                for (int j = 0; j < memory.Pages[frameNumber + i].Data.Length; j++)
+                for (int pageoffset = 0; pageoffset < MemoryPage.PAGE_SIZE; pageoffset += 8)
                 {
-                    for (int k = 0; k < 7; k++)
+                    int row = pageoffset/8;
+                    for (int j = 0; j < 7; j++)
                     {
-                        memory.Pages[frameNumber + i].Data[j].SetByte(k,bytes[index]);
-                        index++;
+                        if (bytecount < bytes.Count)
+                        {
+                            memory.Pages[frameNumber].Data[row].SetByte(j,bytes[bytecount]);
+                            bytecount++;
+                        }
                     }
+                    
                 }
             }
             return true;
         }
 
         private dynamic GetMainWindowInstance()
-        {
-            Assembly windowBridge = Assembly.LoadFrom("CPU_OS_Simulator.WindowBridge.dll"); // Load the window bridge module
-            Console.WriteLine(windowBridge.GetExportedTypes()[0]);
-            Type WindowType = windowBridge.GetType(windowBridge.GetExportedTypes()[0].ToString()); // get the name of the type that contains the window instances
-            dynamic window = WindowType.GetField("MainWindowInstance").GetValue(null); // get the value of the static MainWindowInstance field
-            return window;
-        }
+    {
+        Assembly windowBridge = Assembly.LoadFrom("CPU_OS_Simulator.WindowBridge.dll"); // Load the window bridge module
+        Console.WriteLine(windowBridge.GetExportedTypes()[0]);
+        Type WindowType = windowBridge.GetType(windowBridge.GetExportedTypes()[0].ToString()); // get the name of the type that contains the window instances
+        dynamic window = WindowType.GetField("MainWindowInstance").GetValue(null); // get the value of the static MainWindowInstance field
+        return window;
     }
+}
 }
