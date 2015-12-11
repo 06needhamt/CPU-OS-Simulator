@@ -126,5 +126,11 @@ namespace CPU_OS_Simulator
             lst_data.Items.Clear();
             PopulateDataView();
         }
+
+        private void btn_Reset_All_Click(object sender, RoutedEventArgs e)
+        {
+            currentPage.ZeroMemory();
+            UpdateData();
+        }
     }
 }

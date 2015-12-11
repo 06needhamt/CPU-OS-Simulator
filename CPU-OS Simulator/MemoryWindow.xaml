@@ -51,5 +51,6 @@
                 </Grid>
             </GroupBox>
         </Grid>
+        <Button x:Name="btn_ResetAll" Content="RESET ALL" HorizontalAlignment="Left" Margin="383,419,0,0" VerticalAlignment="Top" Width="80" Height="42" Click="btn_Reset_All_Click"/>
     </Grid>
 </Window>
