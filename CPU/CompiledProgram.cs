@@ -31,7 +31,7 @@ namespace CPU_OS_Simulator.CPU
                 for (int pageoffset = 0; pageoffset < MemoryPage.PAGE_SIZE; pageoffset += 8)
                 {
                     int row = pageoffset/8;
-                    for (int j = 0; j < 7; j++)
+                    for (int j = 0; j < 8; j++)
                     {
                         if (bytecount < bytes.Count)
                         {
