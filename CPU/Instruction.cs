@@ -622,7 +622,6 @@ namespace CPU_OS_Simulator.CPU
         /// <returns> the result of the instruction or int.MINVALUE if no result is returned </returns>
         private int TAS(Operand lhs, Operand rhs)
         {
-            //TODO Implement TAS
             MessageBox.Show("TAS Instruction is not currently implemented", "", MessageBoxButton.OK, MessageBoxImage.Information);
             return 0;
         }

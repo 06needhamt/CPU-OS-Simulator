@@ -237,15 +237,15 @@ namespace CPU_OS_Simulator
         private void DebugFunction()
         {
             Title += " DEBUG BUILD ";
-            DebugCompilingProgram();
-            //MemoryPage m = new MemoryPage(0, 0);
-            ////m.Data[0] = new MemorySegment(0);
-            //m.Data[0].Byte0 = (byte)'A';
-            //m.Data[0].Byte1 = (byte)'B';
-            //DebugTestSwapping(m);
-            //DebugTestSwappingFromMemoryOverflow();
-            //MemoryWindow wind = new MemoryWindow(this, m);
-            //wind.Show();
+            //DebugCompilingProgram();
+            MemoryPage m = new MemoryPage(0, 0);
+            //m.Data[0] = new MemorySegment(0);
+            m.Data[0].Byte0 = (byte)'A';
+            m.Data[0].Byte1 = (byte)'B';
+            DebugTestSwapping(m);
+            DebugTestSwappingFromMemoryOverflow();
+            MemoryWindow wind = new MemoryWindow(this, m);
+            wind.Show();
         }
 
         private void DebugCompilingProgram()

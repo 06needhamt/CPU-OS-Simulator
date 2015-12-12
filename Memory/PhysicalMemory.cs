@@ -85,6 +85,7 @@ namespace CPU_OS_Simulator.Memory
             if (!physicalMemory.Table.Entries[FrameNumber].SwappedOut)
             {
                 physicalMemory.Table.Entries[FrameNumber].SwappedOut = true;
+                physicalMemory.Table.Entries[FrameNumber].Faults++;
                 physicalMemory.Pages.RemoveAt(FrameNumber);
                 swap.SwappedMemoryPages.Add(temp);
              }
@@ -106,6 +107,7 @@ namespace CPU_OS_Simulator.Memory
             if (physicalMemory.Table.Entries[FrameNumber].SwappedOut)
             {
                 physicalMemory.Table.Entries[FrameNumber].SwappedOut = false;
+                physicalMemory.Table.Entries[FrameNumber].Faults++;
                 physicalMemory.AddPage(temp,FrameNumber);
                 swap.SwappedMemoryPages.RemoveAt(FrameNumber);
             }

@@ -12,6 +12,7 @@ namespace CPU_OS_Simulator.Memory
         private int logicalAddress;
         private int physicalAddress;
         private bool swappedOut;
+        private int faults;
         private MemoryPage page;
 
         /// <summary>
@@ -23,6 +24,7 @@ namespace CPU_OS_Simulator.Memory
             this.logicalAddress = logicalAddress;
             this.physicalAddress = physicalAddress;
             this.swappedOut = swappedOut;
+            faults = 0;
             this.page = page;
         }
 
@@ -54,6 +56,12 @@ namespace CPU_OS_Simulator.Memory
         {
             get { return page; }
             set { page = value; }
+        }
+
+        public int Faults
+        {
+            get { return faults; }
+            set { faults = value; }
         }
     }
 }

@@ -9,7 +9,7 @@ namespace CPU_OS_Simulator
     /// </summary>
     public partial class MemoryWindow : Window
     {
-        private MainWindow window;
+        private MainWindow mainWindowInstance;
         private MemoryPage currentPage;
         public static MemoryWindow currentInstance;
 
@@ -18,12 +18,18 @@ namespace CPU_OS_Simulator
             InitializeComponent();
         }
 
-        public MemoryWindow(MainWindow window, MemoryPage currentPage) : this()
+        public MemoryWindow(MainWindow mainWindowInstance, MemoryPage currentPage) : this()
         {
-            this.window = window;
+            this.mainWindowInstance = mainWindowInstance;
             this.currentPage = currentPage;
             currentInstance = this;
             PopulateDataView();
+        }
+
+        public MainWindow MainWindowInstance
+        {
+            get { return mainWindowInstance; }
+            set { mainWindowInstance = value; }
         }
 
         private void PopulateDataView()
@@ -43,6 +49,7 @@ namespace CPU_OS_Simulator
 
         private void btn_Update_Click(object sender, RoutedEventArgs e)
         {
+            //TODO update to work with new memory manager
             if (rdb_Integer.IsChecked.Value)
             {
                 int value = Convert.ToInt32(txt_IntegerValue.Text);
@@ -131,6 +138,12 @@ namespace CPU_OS_Simulator
         {
             currentPage.ZeroMemory();
             UpdateData();
+        }
+
+        private void btn_ShowPageTable_Click(object sender, RoutedEventArgs e)
+        {
+            PageTableWindow window = new PageTableWindow(this);
+            window.Show();
         }
     }
 }

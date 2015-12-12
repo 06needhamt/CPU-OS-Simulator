@@ -1,0 +1,28 @@
+﻿<Window x:Name="PageTableWindow1" x:Class="CPU_OS_Simulator.PageTableWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CPU_OS_Simulator"
+        mc:Ignorable="d"
+        Title="Page Table" Height="208.486" Width="359.862" ResizeMode="NoResize" Icon="CPU-OS Simulator 7-5-50_1.ico" WindowStartupLocation="CenterScreen" Loaded="PageTableWindow1_Loaded">
+    <Grid>
+        <Grid x:Name="grid_MainGrid" HorizontalAlignment="Left" Height="179" VerticalAlignment="Top" Width="354">
+            <ListView x:Name="lst_Pages" HorizontalAlignment="Left" Height="128" VerticalAlignment="Top" Width="354" Background="#FFFFFCC3" SelectionChanged="lst_Pages_SelectionChanged">
+                <ListView.View>
+                    <GridView>
+                        <GridViewColumn Header="Page" DisplayMemberBinding="{Binding Page.PageIndex}" Width="50" />
+                        <GridViewColumn Header="Frame" DisplayMemberBinding="{Binding FrameNumber}" Width="50" />
+                        <GridViewColumn Header="Base" DisplayMemberBinding="{Binding PhysicalAddress}" Width="50" />
+                        <GridViewColumn Header="Swapped Out" DisplayMemberBinding="{Binding SwappedOut}" Width="100" />
+                        <GridViewColumn Header="Faults" DisplayMemberBinding="{Binding Faults}" Width="75" />
+                    </GridView>
+                </ListView.View>
+            </ListView>
+            <CheckBox x:Name="chk_Stay_On_Top" Content="Stay On Top" HorizontalAlignment="Left" Margin="10,147,0,0" VerticalAlignment="Top" Checked="chk_Stay_On_Top_Checked" Unchecked="chk_Stay_On_Top_Unchecked"/>
+            <Button x:Name="btn_Swap_Out" Content="SWAP OUT" HorizontalAlignment="Left" Margin="152,133,0,0" VerticalAlignment="Top" Width="75" Height="36" Click="btn_Swap_Out_Click"/>
+            <Button x:Name="btn_Close" Content="CLOSE" HorizontalAlignment="Left" Margin="269,133,0,0" VerticalAlignment="Top" Width="75" Height="36" Click="btn_Close_Click"/>
+        </Grid>
+
+    </Grid>
+</Window>
