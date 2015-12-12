@@ -43,6 +43,7 @@
     <WarningLevel>4</WarningLevel>
     <UseVSHostingProcess>true</UseVSHostingProcess>
     <NoWarn>CS1998</NoWarn>
+    <DocumentationFile>bin\Debug\CPU-OS Simulator.XML</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -97,10 +98,17 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="ConsoleWindow.xaml.cs">
+      <DependentUpon>ConsoleWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="EnumInstructionMode.cs" />
     <Compile Include="InstructionsWindow.xaml.cs">
       <DependentUpon>InstructionsWindow.xaml</DependentUpon>
     </Compile>
+    <Page Include="ConsoleWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="InstructionsWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -178,6 +186,10 @@
     <ProjectReference Include="..\Compiler\Compiler.csproj">
       <Project>{9e04d3e8-9832-4b4d-98ff-52583c0365ac}</Project>
       <Name>Compiler</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Console\Console.csproj">
+      <Project>{165e3bf3-6bbc-4b78-98e4-21dedde2d426}</Project>
+      <Name>Console</Name>
     </ProjectReference>
     <ProjectReference Include="..\CPU\CPU.csproj">
       <Project>{6ebcf9cd-c6a9-4535-9154-2fc7e303bfc4}</Project>

@@ -5,6 +5,9 @@ using System.Windows;
 
 namespace CPU_OS_Simulator.Memory
 {
+    /// <summary>
+    /// This class represents a page of data within memory
+    /// </summary>
     public class MemoryPage : ISwappable
     {
         private int pageIndex;

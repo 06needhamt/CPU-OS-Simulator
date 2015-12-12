@@ -338,7 +338,7 @@ namespace CPU_OS_Simulator
         /// <param name="e"> the eventargs associated with this event</param>
         private void InstructionsWindow1_Closing(object sender, CancelEventArgs e)
         {
-            Console.WriteLine("Instruction Window closing");
+            System.Console.WriteLine("Instruction Window closing");
             if (instructionMode.Equals(EnumInstructionMode.SHOW))
             {
                 return;

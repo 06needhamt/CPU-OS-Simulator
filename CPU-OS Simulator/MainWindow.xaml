@@ -195,5 +195,14 @@
                 </TabItem>
             </TabControl>
         </Grid>
+        <Grid x:Name="grid_Advanced" Grid.Column="1" HorizontalAlignment="Left" Height="177" Margin="295,550,0,0" VerticalAlignment="Top" Width="233">
+            <TabControl x:Name="advanced_Tabs" HorizontalAlignment="Left" Height="177" VerticalAlignment="Top" Width="233">
+                <TabItem x:Name="advanced_Tab" Header="Advanced">
+                    <Grid x:Name="advanced_Grid" Background="White">
+                        <Button x:Name="btn_Console" Content="CONSOLE" HorizontalAlignment="Left" Margin="10,54,0,0" VerticalAlignment="Top" Width="84" Height="38" Click="btn_Console_Click"/>
+                    </Grid>
+                </TabItem>
+            </TabControl>
+        </Grid>
     </Grid>
 </Window>

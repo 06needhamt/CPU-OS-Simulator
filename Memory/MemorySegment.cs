@@ -3,6 +3,9 @@ using System.Text;
 
 namespace CPU_OS_Simulator.Memory
 {
+    /// <summary>
+    /// This class represents a 8 byte segment of a memory page
+    /// </summary>
     public class MemorySegment
     {
         #region Global Variables
@@ -23,7 +26,9 @@ namespace CPU_OS_Simulator.Memory
         #endregion Global Variables
 
         #region Properties
-
+        /// <summary>
+        /// The logical address of the first byte in the segment
+        /// </summary>
         public int LogicalAddress
         {
             get
@@ -36,7 +41,9 @@ namespace CPU_OS_Simulator.Memory
                 logicalAddress = value;
             }
         }
-
+        /// <summary>
+        /// The physical address of the first byte in the segment
+        /// </summary>
         public int PhysicalAddress
         {
             get
@@ -49,7 +56,9 @@ namespace CPU_OS_Simulator.Memory
                 physicalAddress = value;
             }
         }
-
+        /// <summary>
+        /// The first byte in the segment
+        /// </summary>
         public byte Byte0
         {
             get
@@ -63,7 +72,9 @@ namespace CPU_OS_Simulator.Memory
                 dataString = BuildDataString();
             }
         }
-
+        /// <summary>
+        /// The second byte in the segment
+        /// </summary>
         public byte Byte1
         {
             get
@@ -77,7 +88,9 @@ namespace CPU_OS_Simulator.Memory
                 dataString = BuildDataString();
             }
         }
-
+        /// <summary>
+        /// The third byte in the segment
+        /// </summary>
         public byte Byte2
         {
             get
@@ -91,7 +104,9 @@ namespace CPU_OS_Simulator.Memory
                 dataString = BuildDataString();
             }
         }
-
+        /// <summary>
+        /// The forth byte in the segment
+        /// </summary>
         public byte Byte3
         {
             get
@@ -105,7 +120,9 @@ namespace CPU_OS_Simulator.Memory
                 dataString = BuildDataString();
             }
         }
-
+        /// <summary>
+        /// The fifth byte in the segment
+        /// </summary>
         public byte Byte4
         {
             get
@@ -119,7 +136,9 @@ namespace CPU_OS_Simulator.Memory
                 dataString = BuildDataString();
             }
         }
-
+        /// <summary>
+        /// The sixth byte in the segment
+        /// </summary>
         public byte Byte5
         {
             get
@@ -133,7 +152,9 @@ namespace CPU_OS_Simulator.Memory
                 dataString = BuildDataString();
             }
         }
-
+        /// <summary>
+        /// The seventh byte in the segment
+        /// </summary>
         public byte Byte6
         {
             get
@@ -147,7 +168,9 @@ namespace CPU_OS_Simulator.Memory
                 dataString = BuildDataString();
             }
         }
-
+        /// <summary>
+        /// The eighth byte in the segment
+        /// </summary>
         public byte Byte7
         {
             get
@@ -161,7 +184,9 @@ namespace CPU_OS_Simulator.Memory
                 dataString = BuildDataString();
             }
         }
-
+        /// <summary>
+        /// The string that represents the data in this segment
+        /// </summary>
         public string DataString
         {
             get
@@ -178,7 +203,9 @@ namespace CPU_OS_Simulator.Memory
         #endregion Properties
 
         #region Constructors
-
+        /// <summary>
+        /// Default constructor for a memory segment
+        /// </summary>
         public MemorySegment()
         {
             logicalAddress = 0;
@@ -193,12 +220,21 @@ namespace CPU_OS_Simulator.Memory
             byte7 = 0;
             dataString = BuildDataString();
         }
-
+        /// <summary>
+        /// Constructor for a memory segment
+        /// </summary>
+        /// <param name="physicalAddress"> the physical address of a memory segment</param>
         public MemorySegment(int physicalAddress) : this()
         {
             this.physicalAddress = physicalAddress;
         }
 
+        /// <summary>
+        /// Gets a specified byte from this memory segment
+        /// </summary>
+        /// <param name="number"> the byte number to get</param>
+        /// <returns>the value stored within the requested byte</returns>
+        /// <exception cref="InvalidOperationException"> thrown if invalid byte number is passed</exception>
         public byte GetByte(int number)
         {
             switch (number)
@@ -245,12 +281,18 @@ namespace CPU_OS_Simulator.Memory
         #endregion Constructors
 
         #region Methods
-
+        /// <summary>
+        /// Returns the data string for this memory segment
+        /// </summary>
+        /// <returns>the data string for this memory segment</returns>
         public override string ToString()
         {
             return BuildDataString();
         }
-
+        /// <summary>
+        /// Builds the data string for this memory segment
+        /// </summary>
+        /// <returns>the data string for this memory segment</returns>
         public string BuildDataString()
         {
             StringBuilder sb = new StringBuilder(8);
@@ -264,6 +306,12 @@ namespace CPU_OS_Simulator.Memory
             return sb.ToString();
         }
 
+        /// <summary>
+        /// Sets the requested byte in this memory segment
+        /// </summary>
+        /// <param name="number"> the byte number to set</param>
+        /// <param name="value"> the value to set the byte to </param>
+        /// <exception cref="InvalidOperationException"> Thrown if an invalid byte number is passed</exception>
         public void SetByte(int number, byte value)
         {
             switch (number)

@@ -120,7 +120,7 @@ namespace CPU_OS_Simulator
             }
             programList = new List<SimulatorProgram>();
             PopulateRegisters();
-            Console.WriteLine("Hello World");
+            System.Console.WriteLine("Hello World");
             currentInstance = this;
             memory = new PhysicalMemory(10);
             swapSpace = new SwapSpace();
@@ -274,8 +274,8 @@ namespace CPU_OS_Simulator
             {
                 MemoryPage m = new MemoryPage(i, i * MemoryPage.PAGE_SIZE);
                 memory.AddPage(m, memory.Pages.Count);
-                Console.WriteLine("Pages in Memory = " + memory.Pages.Count);
-                Console.WriteLine("Pages Swapped Out = " + swapSpace.SwappedMemoryPages.Count);
+                System.Console.WriteLine("Pages in Memory = " + memory.Pages.Count);
+                System.Console.WriteLine("Pages Swapped Out = " + swapSpace.SwappedMemoryPages.Count);
             }
         }
 
@@ -284,11 +284,11 @@ namespace CPU_OS_Simulator
             memory.AddPage(memoryPage, memory.Pages.Count);
             PageTableEntry f = memory.Table.Entries.FirstOrDefault(p => p.Page.Equals(memoryPage));
             memoryPage.SwapOut(f.PhysicalAddress, f.FrameNumber);
-            Console.WriteLine("Pages in Memory = " + memory.Pages.Count);
-            Console.WriteLine("Pages Swapped Out = " + swapSpace.SwappedMemoryPages.Count);
+            System.Console.WriteLine("Pages in Memory = " + memory.Pages.Count);
+            System.Console.WriteLine("Pages Swapped Out = " + swapSpace.SwappedMemoryPages.Count);
             memoryPage.SwapIn(f.PhysicalAddress, f.FrameNumber);
-            Console.WriteLine("Pages in Memory = " + memory.Pages.Count);
-            Console.WriteLine("Pages Swapped Out = " + swapSpace.SwappedMemoryPages.Count);
+            System.Console.WriteLine("Pages in Memory = " + memory.Pages.Count);
+            System.Console.WriteLine("Pages Swapped Out = " + swapSpace.SwappedMemoryPages.Count);
         }
 #endif
         /// <summary>
@@ -336,7 +336,7 @@ namespace CPU_OS_Simulator
             int baseAddress = Convert.ToInt32(txtBaseAddress.Text);
             int pages = Convert.ToInt32(cmb_Pages.Text);
             SimulatorProgram program = new SimulatorProgram(programName, baseAddress, pages);
-            Console.WriteLine("Program " + program.Name + " Created");
+            System.Console.WriteLine("Program " + program.Name + " Created");
             return program;
         }
 
@@ -347,7 +347,7 @@ namespace CPU_OS_Simulator
         private SimulatorProgram CreateNewProgram(string programName, int baseAddress, int pages)
         {
             SimulatorProgram program = new SimulatorProgram(programName, baseAddress, pages);
-            Console.WriteLine("Program " + program.Name + " Created");
+            System.Console.WriteLine("Program " + program.Name + " Created");
             return program;
         }
         /// <summary>
@@ -448,7 +448,7 @@ namespace CPU_OS_Simulator
 
         public void SayHello()
         {
-            Console.WriteLine("Hello From Main Window");
+            System.Console.WriteLine("Hello From Main Window");
         }
 
 #endif
@@ -573,7 +573,7 @@ namespace CPU_OS_Simulator
             if (currentProgram.Equals(string.Empty)) // if a program has been loaded from a file
             {
                 programList = lst_ProgramList.Items.OfType<SimulatorProgram>().ToList(); // populate the program list with the loaded programs
-                Console.WriteLine(programList.Count);
+                System.Console.WriteLine(programList.Count);
                 currentProgram = programList.First().Name; // load the first program in the list
             }
             if ((lst_ProgramList.SelectedItem) == null) // if no program is selected
@@ -596,7 +596,7 @@ namespace CPU_OS_Simulator
             {
                 lst_Stack.ItemsSource = null;
             }
-            Console.WriteLine("Stack Updated");
+            System.Console.WriteLine("Stack Updated");
         }
 
         /// <summary>
@@ -607,7 +607,7 @@ namespace CPU_OS_Simulator
             if (currentProgram.Equals(string.Empty)) // if a program has been loaded from a file
             {
                 programList = lst_ProgramList.Items.OfType<SimulatorProgram>().ToList(); // populate the program list with the loaded programs
-                Console.WriteLine(programList.Count);
+                System.Console.WriteLine(programList.Count);
                 currentProgram = programList.First().Name; // load the first program in the list
             }
             lst_InstructionsList.ItemsSource = null; // HACK item source must be set to null when modifying the items within the list
@@ -633,7 +633,7 @@ namespace CPU_OS_Simulator
             }
             prog.UpdateAddresses();
             saved = false;
-            Console.WriteLine("Instructions Updated");
+            System.Console.WriteLine("Instructions Updated");
         }
 
         private void btn_Load_Click(object sender, RoutedEventArgs e)
@@ -643,7 +643,7 @@ namespace CPU_OS_Simulator
             {
                 throw new Exception("An error occurred while loading the program");
             }
-            Console.WriteLine("Program Loaded Successfully");
+            System.Console.WriteLine("Program Loaded Successfully");
         }
 
         private void btn_Save_Click(object sender, RoutedEventArgs e)
@@ -653,7 +653,7 @@ namespace CPU_OS_Simulator
             {
                 throw new Exception("An error occurred while saving the program");
             }
-            Console.WriteLine("Program Saved Successfully");
+            System.Console.WriteLine("Program Saved Successfully");
         }
 
         /// <summary>
@@ -771,7 +771,7 @@ namespace CPU_OS_Simulator
 
         private void sld_ClockSpeed_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
         {
-            Console.WriteLine(sld_ClockSpeed.Value);
+            System.Console.WriteLine(sld_ClockSpeed.Value);
         }
 
         private void btn_Step_Click(object sender, RoutedEventArgs e)
@@ -975,6 +975,13 @@ namespace CPU_OS_Simulator
             if (program == null) return;
             MemoryWindow m = new MemoryWindow(this,program.Memory.FirstOrDefault());
             m.Show();
+        }
+
+        private void btn_Console_Click(object sender, RoutedEventArgs e)
+        {
+            ConsoleWindow cw = new ConsoleWindow(this);
+            cw.Show();
+            cw.txt_Console.Focus();
         }
     }
 }

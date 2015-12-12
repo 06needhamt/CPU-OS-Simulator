@@ -1,0 +1,26 @@
+﻿<Window x:Class="CPU_OS_Simulator.ConsoleWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CPU_OS_Simulator"
+        mc:Ignorable="d"
+        Title="ConsoleWindow" Height="326.835" Width="635.092">
+    <Grid>
+        <Grid x:Name="grid_MainGrid" HorizontalAlignment="Left" Height="256" VerticalAlignment="Top" Width="627">
+            <GroupBox x:Name="groupBox" Header="OUTPUT" HorizontalAlignment="Left" VerticalAlignment="Top" Height="256" Width="627">
+                <Grid x:Name="grid_OutputGrid" HorizontalAlignment="Left" Height="256" VerticalAlignment="Top" Width="617" Margin="0,0,-2,-4">
+                    <TextBox x:Name="txt_Console" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Height="256" Width="597" FontFamily="Consolas" FontSize="13.333" Foreground="White" Focusable="True" Margin="10,0,0,0" AcceptsReturn="True" VerticalScrollBarVisibility="Visible" PreviewKeyDown="txt_Console_PreviewKeyDown" >
+                        <TextBox.Background>
+                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                <GradientStop Color="#FF515151" Offset="0"/>
+                                <GradientStop Color="#FF515151" Offset="1"/>
+                            </LinearGradientBrush>
+                        </TextBox.Background>
+                    </TextBox>
+                </Grid>
+            </GroupBox>
+        </Grid>
+
+    </Grid>
+</Window>
