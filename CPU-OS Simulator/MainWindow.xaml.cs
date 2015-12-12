@@ -272,7 +272,7 @@ namespace CPU_OS_Simulator
         {
             for (int i = 0; i < memory.Capacity + 1; i++)
             {
-                MemoryPage m = new MemoryPage(0, i * MemoryPage.PAGE_SIZE);
+                MemoryPage m = new MemoryPage(i, i * MemoryPage.PAGE_SIZE);
                 memory.AddPage(m, memory.Pages.Count);
                 Console.WriteLine("Pages in Memory = " + memory.Pages.Count);
                 Console.WriteLine("Pages Swapped Out = " + swapSpace.SwappedMemoryPages.Count);
