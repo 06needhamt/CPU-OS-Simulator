@@ -644,15 +644,15 @@ namespace CPU_OS_Simulator.CPU
             {
                 SimulatorProgram program = GetCurrentProgram();
                 value = (byte)Register.FindRegister(rhs.Register.Name).Value;
-                int pagenumber = address / program.Memory[0].PageSize;
-                int pageOffset = address - (address / program.Memory[0].PageSize);
+                int pagenumber = address /MemoryPage.PAGE_SIZE;
+                int pageOffset = address - (address /MemoryPage.PAGE_SIZE);
                 program.Memory.ElementAt(pagenumber).Data[pageOffset / 8].SetByte(pageOffset % 8, Convert.ToByte(value));
             }
             else
             {
                 SimulatorProgram program = GetCurrentProgram();
-                int pagenumber = address / program.Memory[0].PageSize;
-                int pageOffset = address - (address / program.Memory[0].PageSize);
+                int pagenumber = address /MemoryPage.PAGE_SIZE;
+                int pageOffset = address - (address /MemoryPage.PAGE_SIZE);
                 value = (byte)rhs.Value;
 
                 program.Memory.ElementAt(pagenumber).Data[pageOffset / 8].SetByte(pageOffset % 8, Convert.ToByte(value));
@@ -736,8 +736,8 @@ namespace CPU_OS_Simulator.CPU
             //    value = Register.FindRegister(rhs.Register.Name).Value;
             //    byte lowbyte = (byte) (value & 0xFF);
             //    byte highbyte = (byte)((value >> 8) & 0xFF);
-            //    int pagenumber = address / program.Memory[0].PageSize;
-            //    int pageOffset = address - (address / program.Memory[0].PageSize);
+            //    int pagenumber = address /MemoryPage.PAGE_SIZE;
+            //    int pageOffset = address - (address /MemoryPage.PAGE_SIZE);
             //    program.Memory.ElementAt(pagenumber).Data[pageOffset / 8].SetByte(pageOffset % 8, highbyte);
             //    if (pageOffset%8 == 7)
             //    {
@@ -753,8 +753,8 @@ namespace CPU_OS_Simulator.CPU
             //else
             //{
             //    SimulatorProgram program = GetCurrentProgram();
-            //    int pagenumber = address / program.Memory[0].PageSize;
-            //    int pageOffset = address - (address / program.Memory[0].PageSize);
+            //    int pagenumber = address /MemoryPage.PAGE_SIZE;
+            //    int pageOffset = address - (address /MemoryPage.PAGE_SIZE);
             //    value = rhs.Value;
             //    byte lowbyte = (byte)(value & 0xFF);
             //    byte highbyte = (byte)((value >> 8) & 0xFF);

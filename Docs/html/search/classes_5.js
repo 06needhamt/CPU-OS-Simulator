@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['operand',['Operand',['../class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_operand.html',1,'CPU_OS_Simulator::CPU']]],
-  ['operandtests',['OperandTests',['../class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_tests_1_1_operand_tests.html',1,'CPU_OS_Simulator::CPU::Tests']]]
+  ['numberofoperandsattribute',['NumberOfOperandsAttribute',['../class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_number_of_operands_attribute.html',1,'CPU_OS_Simulator::CPU']]],
+  ['numberofparametersattribute',['NumberOfParametersAttribute',['../class_c_p_u___o_s___simulator_1_1_console_1_1_number_of_parameters_attribute.html',1,'CPU_OS_Simulator::Console']]]
 ];

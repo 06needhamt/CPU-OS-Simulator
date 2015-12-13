@@ -1,9 +1,13 @@
 var files =
 [
+    [ "Compiler", "dir_e5daf81dc821a7b8dc4c9b459b4f0b60.html", "dir_e5daf81dc821a7b8dc4c9b459b4f0b60" ],
+    [ "Console", "dir_d873817408b2bb02bebcf4414c939806.html", "dir_d873817408b2bb02bebcf4414c939806" ],
     [ "CPU", "dir_3e504b0d3bcf24da5cd743a5b933950b.html", "dir_3e504b0d3bcf24da5cd743a5b933950b" ],
     [ "CPU-OS Simulator", "dir_4daeced4ad15aeb075514baefd311898.html", "dir_4daeced4ad15aeb075514baefd311898" ],
     [ "CPU-OS SimulatorTests", "dir_e5e03790b968833b4c1f0f08694d4d49.html", "dir_e5e03790b968833b4c1f0f08694d4d49" ],
     [ "CPUTests", "dir_ebd05c3e03ab93443d0a28998f08fc4e.html", "dir_ebd05c3e03ab93443d0a28998f08fc4e" ],
     [ "Memory", "dir_4bbfcbe99b666a19955ad2d97ce526ac.html", "dir_4bbfcbe99b666a19955ad2d97ce526ac" ],
+    [ "MemoryTests", "dir_f971e193bafc5e68ea6baa407fcb3423.html", "dir_f971e193bafc5e68ea6baa407fcb3423" ],
+    [ "ThreadHandles", "dir_5ac40f36406f97e245813531ecdd7555.html", "dir_5ac40f36406f97e245813531ecdd7555" ],
     [ "WindowBridge", "dir_05c4120740551cad7e10f4e3d075d0fe.html", "dir_05c4120740551cad7e10f4e3d075d0fe" ]
 ];

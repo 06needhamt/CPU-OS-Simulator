@@ -27,11 +27,12 @@ var NAVTREE =
 
 var NAVTREEINDEX =
 [
-"_app_8g_8cs.html",
-"class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_instruction.html#a46ba0e257c0a23f35b638cc774c016bd",
-"class_c_p_u___o_s___simulator_1_1_instructions_window.html#a27c3db79ebda29b7aee40c735df07b04",
-"class_c_p_u___o_s___simulator_1_1_main_window.html#a638eee3b21f6ac5d28a5c95c4dad3fc2",
-"functions_func_d.html"
+"_app_8xaml_8cs.html",
+"_memory_2obj_2_debug_2_temporary_generated_file__5937a670-0e60-4077-877b-f7221da3dda1_8cs_source.html",
+"class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_program_stack.html#a2a30dfbb7df3408de94c883c44aff090",
+"class_c_p_u___o_s___simulator_1_1_instructions_window.html#a0d69d4710419b9efea12396940b60e89",
+"class_c_p_u___o_s___simulator_1_1_main_window.html#a37acb139db0aa54950350fdb47dfd452",
+"class_c_p_u___o_s___simulator_1_1_memory_window.html#a40473c2b8ba30a837cf2a122e0978dec"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

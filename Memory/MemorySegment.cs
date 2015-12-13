@@ -20,7 +20,6 @@ namespace CPU_OS_Simulator.Memory
         private byte byte5;
         private byte byte6;
         private byte byte7;
-        private IntPtr[] bytePointers;
         private string dataString;
 
         #endregion Global Variables

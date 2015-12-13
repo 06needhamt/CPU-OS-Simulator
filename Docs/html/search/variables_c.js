@@ -1,17 +1,10 @@
 var searchData=
 [
-  ['pageindex',['pageIndex',['../class_c_p_u___o_s___simulator_1_1_memory_1_1_memory_page.html#acf60a7bdefab6120fe080854b5f0b38b',1,'CPU_OS_Simulator.Memory.MemoryPage.pageIndex()'],['../class_c_p_u___o_s___simulator_1_1_memory_1_1_memory_page___o_l_d.html#a378522c3baf4d7cf4a7eaa8c164d3de8',1,'CPU_OS_Simulator.Memory.MemoryPage_OLD.pageIndex()']]],
-  ['pages',['pages',['../class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_simulator_program.html#ac4d19d17c7ee206ad6343884f3390054',1,'CPU_OS_Simulator::CPU::SimulatorProgram']]],
-  ['pagesize',['pageSize',['../class_c_p_u___o_s___simulator_1_1_memory_1_1_memory_page.html#abbbd3ea0ef99dac19c6bd9694dbdfd3a',1,'CPU_OS_Simulator.Memory.MemoryPage.pageSize()'],['../class_c_p_u___o_s___simulator_1_1_memory_1_1_memory_page___o_l_d.html#afb00546c1b356df209e380cf9b1b25d2',1,'CPU_OS_Simulator.Memory.MemoryPage_OLD.pageSize()']]],
-  ['pc',['PC',['../class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_special_register.html#afc3205003157a5f135752e6a4f8ffb8a',1,'CPU_OS_Simulator::CPU::SpecialRegister']]],
-  ['physicaladdress',['physicalAddress',['../class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_instruction.html#a401c8f3740b63632e17db6f80b505a17',1,'CPU_OS_Simulator.CPU.Instruction.physicalAddress()'],['../class_c_p_u___o_s___simulator_1_1_memory_1_1_memory_segment.html#a0477db48e8386456f2bd08632fd4508b',1,'CPU_OS_Simulator.Memory.MemorySegment.physicalAddress()']]],
-  ['position',['position',['../class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_stack_item.html#abc7ce976cd8474fc072eb155c4f155ac',1,'CPU_OS_Simulator::CPU::StackItem']]],
-  ['prog',['prog',['../class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_tests_1_1_execution_unit_tests.html#ac62f9fcd8038819097fcd0d32376c182',1,'CPU_OS_Simulator::CPU::Tests::ExecutionUnitTests']]],
-  ['program',['program',['../class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_execution_unit.html#a192670bee8ca089c38e9989350f658d6',1,'CPU_OS_Simulator::CPU::ExecutionUnit']]],
-  ['programlist',['programList',['../class_c_p_u___o_s___simulator_1_1_main_window.html#a48fa4dc074c098338a652dbd6a3434c7',1,'CPU_OS_Simulator::MainWindow']]],
-  ['programlistgrid',['ProgramListGrid',['../class_c_p_u___o_s___simulator_1_1_main_window.html#adb8397cdbc794d18b0379ba7251d2278',1,'CPU_OS_Simulator::MainWindow']]],
-  ['programlistviewgrid',['ProgramListViewGrid',['../class_c_p_u___o_s___simulator_1_1_main_window.html#a4e287cef9f0becaebe0777af8de2d8c9',1,'CPU_OS_Simulator::MainWindow']]],
-  ['programstackgrid',['ProgramStackGrid',['../class_c_p_u___o_s___simulator_1_1_main_window.html#a59373e8f8822e4efea670d9fb87a1b32',1,'CPU_OS_Simulator::MainWindow']]],
-  ['programstackinnergrid',['ProgramStackInnerGrid',['../class_c_p_u___o_s___simulator_1_1_main_window.html#a8c373866c86f6be0e7ef487a5ccb8c3c',1,'CPU_OS_Simulator::MainWindow']]],
-  ['programtab',['ProgramTab',['../class_c_p_u___o_s___simulator_1_1_main_window.html#a615ea960969aa9a61afdaef8cf039348',1,'CPU_OS_Simulator::MainWindow']]]
+  ['opcode',['opcode',['../class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_instruction.html#aa8fa753bf6e1b6ffff7060ec90f930af',1,'CPU_OS_Simulator::CPU::Instruction']]],
+  ['operand1',['operand1',['../class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_instruction.html#ab829270aeebc597814ded59f5265b452',1,'CPU_OS_Simulator::CPU::Instruction']]],
+  ['operand2',['operand2',['../class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_instruction.html#a76e9ca211aca72f65c8ad9e11fbdad47',1,'CPU_OS_Simulator::CPU::Instruction']]],
+  ['operationsgrid',['OperationsGrid',['../class_c_p_u___o_s___simulator_1_1_main_window.html#ae4f2459995eb2f672c0fd3c2248b79fd',1,'CPU_OS_Simulator::MainWindow']]],
+  ['optimizetab',['OptimizeTab',['../class_c_p_u___o_s___simulator_1_1_main_window.html#a47b1359d9e96abf2b0935eb3392405d4',1,'CPU_OS_Simulator::MainWindow']]],
+  ['ov',['OV',['../class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_status_flags.html#ad4725b32f8d1718df7e6a1b6b4a21170',1,'CPU_OS_Simulator::CPU::StatusFlags']]],
+  ['owner',['owner',['../class_c_p_u___o_s___simulator_1_1_instructions_window.html#a954c950c677c61a3b7ed7406b6dc7164',1,'CPU_OS_Simulator::InstructionsWindow']]]
 ];

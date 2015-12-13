@@ -1,4 +1,10 @@
 var searchData=
 [
-  ['logicaladdress',['LogicalAddress',['../class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_execution_unit.html#ac939e9a08b30b2cc3a9438d6c1cc5a61',1,'CPU_OS_Simulator.CPU.ExecutionUnit.LogicalAddress()'],['../class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_instruction.html#abfc23dbc9a978d2a1468b819f87a7614',1,'CPU_OS_Simulator.CPU.Instruction.LogicalAddress()'],['../class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_simulator_program.html#afda25ae1ba65b33787dfc1f9af1c1d8a',1,'CPU_OS_Simulator.CPU.SimulatorProgram.LogicalAddress()'],['../class_c_p_u___o_s___simulator_1_1_memory_1_1_memory_segment.html#a254cb3b68c5ea35ec44a4df264833bf4',1,'CPU_OS_Simulator.Memory.MemorySegment.LogicalAddress()']]]
+  ['instructionmode',['InstructionMode',['../class_c_p_u___o_s___simulator_1_1_main_window.html#a65916937137002c26f9eb1c88cfff519',1,'CPU_OS_Simulator::MainWindow']]],
+  ['instructions',['Instructions',['../class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_simulator_program.html#ae64c462081a1806d5f194c271dbb2686',1,'CPU_OS_Simulator::CPU::SimulatorProgram']]],
+  ['instructionstring',['InstructionString',['../class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_instruction.html#a2750b111d827f6e6a8fccd0e8520de89',1,'CPU_OS_Simulator::CPU::Instruction']]],
+  ['iscommand',['IsCommand',['../class_c_p_u___o_s___simulator_1_1_console_1_1_console_input.html#a41ebc5e7f419f80fe60ee45e54492d7e',1,'CPU_OS_Simulator::Console::ConsoleInput']]],
+  ['iscommandoutput',['IsCommandOutput',['../class_c_p_u___o_s___simulator_1_1_console_1_1_console_output.html#af544be1b6e93789edf3df9e0f573f9ba',1,'CPU_OS_Simulator::Console::ConsoleOutput']]],
+  ['isregister',['IsRegister',['../class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_operand.html#a662aacb6eb1aa9cf818181aea695e0c9',1,'CPU_OS_Simulator::CPU::Operand']]],
+  ['isset',['IsSet',['../class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_status_flags.html#a96ee01f7bcf0a1d0810c75705e462b43',1,'CPU_OS_Simulator::CPU::StatusFlags']]]
 ];

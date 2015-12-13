@@ -6,15 +6,24 @@ using System.Windows;
 
 namespace CPU_OS_Simulator.Memory
 {
+    /// <summary>
+    /// This class represents swap space where swapped outmemory pages are moved to
+    /// </summary>
     public class SwapSpace
     {
-       private List<MemoryPage> swappedMemoryPages = new List<MemoryPage>();
-
+        private List<MemoryPage> swappedMemoryPages;
+        
+        /// <summary>
+        /// Constructor for Swap Space
+        /// </summary>
         public SwapSpace()
         {
-            
+            swappedMemoryPages = new List<MemoryPage>();
         }
 
+        /// <summary>
+        /// Property for the list of swapped out memory pages
+        /// </summary>
         public List<MemoryPage> SwappedMemoryPages
         {
             get { return swappedMemoryPages; }

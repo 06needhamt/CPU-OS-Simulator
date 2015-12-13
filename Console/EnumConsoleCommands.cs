@@ -9,7 +9,9 @@
         [NumberOfParameters(0)]
         PROGRAM = 1,
         [NumberOfParameters(1)]
-        SIZE = 2
+        SIZE = 2,
+        [NumberOfParameters(0)]
+        CLEAR = 3
 
     }
 }

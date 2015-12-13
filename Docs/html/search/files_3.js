@@ -1,13 +1,15 @@
 var searchData=
 [
-  ['mainwindow_2eg_2ecs',['MainWindow.g.cs',['../_main_window_8g_8cs.html',1,'']]],
-  ['mainwindow_2eg_2ei_2ecs',['MainWindow.g.i.cs',['../_main_window_8g_8i_8cs.html',1,'']]],
-  ['mainwindow_2examl_2ecs',['MainWindow.xaml.cs',['../_main_window_8xaml_8cs.html',1,'']]],
-  ['mainwindowtests_2ecs',['MainWindowTests.cs',['../_main_window_tests_8cs.html',1,'']]],
-  ['memorypage_2ecs',['MemoryPage.cs',['../_memory_page_8cs.html',1,'']]],
-  ['memorypage_5fold_2ecs',['MemoryPage_OLD.cs',['../_memory_page___o_l_d_8cs.html',1,'']]],
-  ['memorysegment_2ecs',['MemorySegment.cs',['../_memory_segment_8cs.html',1,'']]],
-  ['memorywindow_2eg_2ecs',['MemoryWindow.g.cs',['../_memory_window_8g_8cs.html',1,'']]],
-  ['memorywindow_2eg_2ei_2ecs',['MemoryWindow.g.i.cs',['../_memory_window_8g_8i_8cs.html',1,'']]],
-  ['memorywindow_2examl_2ecs',['MemoryWindow.xaml.cs',['../_memory_window_8xaml_8cs.html',1,'']]]
+  ['iattribute_2ecs',['IAttribute.cs',['../_console_2_i_attribute_8cs.html',1,'']]],
+  ['iattribute_2ecs',['IAttribute.cs',['../_c_p_u_2_i_attribute_8cs.html',1,'']]],
+  ['instruction_2ecs',['Instruction.cs',['../_instruction_8cs.html',1,'']]],
+  ['instructionsegment_2ecs',['InstructionSegment.cs',['../_instruction_segment_8cs.html',1,'']]],
+  ['instructionswindow_2eg_2ecs',['InstructionsWindow.g.cs',['../_debug_2_instructions_window_8g_8cs.html',1,'']]],
+  ['instructionswindow_2eg_2ecs',['InstructionsWindow.g.cs',['../_release_2_instructions_window_8g_8cs.html',1,'']]],
+  ['instructionswindow_2eg_2ei_2ecs',['InstructionsWindow.g.i.cs',['../_release_2_instructions_window_8g_8i_8cs.html',1,'']]],
+  ['instructionswindow_2eg_2ei_2ecs',['InstructionsWindow.g.i.cs',['../_debug_2_instructions_window_8g_8i_8cs.html',1,'']]],
+  ['instructionswindow_2examl_2ecs',['InstructionsWindow.xaml.cs',['../_instructions_window_8xaml_8cs.html',1,'']]],
+  ['instructionswindowtests_2ecs',['InstructionsWindowTests.cs',['../_instructions_window_tests_8cs.html',1,'']]],
+  ['instructiontests_2ecs',['InstructionTests.cs',['../_instruction_tests_8cs.html',1,'']]],
+  ['iswappable_2ecs',['ISwappable.cs',['../_i_swappable_8cs.html',1,'']]]
 ];

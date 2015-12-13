@@ -15,7 +15,7 @@ var class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_special_register =
     [ "SP", "class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_special_register.html#ae1699c7972763e73e3f1cfe467cc82e9", null ],
     [ "SR", "class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_special_register.html#a556243e1c3c891e685bf884771c1575c", null ],
     [ "type", "class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_special_register.html#aae2bca6c1354013cca156bd19c30640d", null ],
-    [ "value", "class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_special_register.html#a90d144e675bb3fe7bbc1f75bafdfde36", null ],
+    [ "value", "class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_special_register.html#a040dbed0c42c3a45ccb7b01d181dd829", null ],
     [ "valueString", "class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_special_register.html#a540a55b17a53591312e76689d051abac", null ],
     [ "Name", "class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_special_register.html#ad8ad1efaf680db5471184a74f911b558", null ],
     [ "Type", "class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_special_register.html#afd9e45080d792861e577dde31cdb6d3e", null ],

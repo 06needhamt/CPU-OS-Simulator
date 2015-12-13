@@ -10,11 +10,11 @@ This class represents an instruction witch can be executed by the virtual \hyper
 \item 
 \hyperlink{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_instruction_a2038c543e7b47a5997405f56cb8c7aa9}{Instruction} ()
 \begin{DoxyCompactList}\small\item\em Default constructor for instruction used when deserialising an instruction N\+O\+T\+E Do not use in code \end{DoxyCompactList}\item 
-\hyperlink{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_instruction_afb0f711deb1e6e4dc53fa2ffa4458a66}{Instruction} (Int32 \hyperlink{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_instruction_a746bbd915670c4c18c495804ee484e57}{opcode}, Int32 \hyperlink{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_instruction_ac8c820f3e522e4fefaa510856ed11fb0}{size})
+\hyperlink{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_instruction_ac1fdbf424188acb7f10a1fa93e12a559}{Instruction} (int \hyperlink{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_instruction_aa8fa753bf6e1b6ffff7060ec90f930af}{opcode}, int \hyperlink{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_instruction_a8c533b0c08d8ac0a85b0e342f95cfeec}{size})
 \begin{DoxyCompactList}\small\item\em Constructor for an instruction that takes no operands \end{DoxyCompactList}\item 
-\hyperlink{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_instruction_a43b7a2a32e40bb61c9a17bf2f6d42baa}{Instruction} (Int32 \hyperlink{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_instruction_a746bbd915670c4c18c495804ee484e57}{opcode}, \hyperlink{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_operand}{Operand} op1, Int32 \hyperlink{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_instruction_ac8c820f3e522e4fefaa510856ed11fb0}{size})
+\hyperlink{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_instruction_a2388e9123d02cd845d84a8c8dff7a816}{Instruction} (int \hyperlink{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_instruction_aa8fa753bf6e1b6ffff7060ec90f930af}{opcode}, \hyperlink{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_operand}{Operand} op1, int \hyperlink{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_instruction_a8c533b0c08d8ac0a85b0e342f95cfeec}{size})
 \begin{DoxyCompactList}\small\item\em Constructor for an instruction that takes one operand \end{DoxyCompactList}\item 
-\hyperlink{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_instruction_a8d2f29ef83f5166c5653357fc25d9ad5}{Instruction} (Int32 \hyperlink{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_instruction_a746bbd915670c4c18c495804ee484e57}{opcode}, \hyperlink{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_operand}{Operand} op1, \hyperlink{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_operand}{Operand} op2, Int32 \hyperlink{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_instruction_ac8c820f3e522e4fefaa510856ed11fb0}{size})
+\hyperlink{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_instruction_af3092d713df3c95ad0e5414317aacc65}{Instruction} (int \hyperlink{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_instruction_aa8fa753bf6e1b6ffff7060ec90f930af}{opcode}, \hyperlink{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_operand}{Operand} op1, \hyperlink{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_operand}{Operand} op2, int \hyperlink{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_instruction_a8c533b0c08d8ac0a85b0e342f95cfeec}{size})
 \begin{DoxyCompactList}\small\item\em Constructor for an instruction that takes two operands \end{DoxyCompactList}\item 
 void \hyperlink{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_instruction_ab3bbd51fd889e3bbeb656ea717a7fe9c}{Bind\+Delegate} ()
 \begin{DoxyCompactList}\small\item\em this function binds a delegate to an instruction. The delegate bound here will be called when the instruction is executed \end{DoxyCompactList}\item 
@@ -45,6 +45,8 @@ int \hyperlink{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_instruction_a97b20c8a
 \end{DoxyCompactItemize}
 \subsection*{Private Member Functions}
 \begin{DoxyCompactItemize}
+\item 
+int \hyperlink{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_instruction_ae0e0e21063eeb9aa0dc0896e6e4c71dc}{Find\+Required\+Page} (int pagenumber)
 \item 
 int \hyperlink{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_instruction_af6548da603e7370f10de03e0da040a24}{M\+O\+V} (\hyperlink{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_operand}{Operand} lhs, \hyperlink{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_operand}{Operand} rhs)
 \begin{DoxyCompactList}\small\item\em This function is called whenever a M\+O\+V instruction is executed \end{DoxyCompactList}\item 
@@ -133,7 +135,7 @@ List$<$ Window $>$ \hyperlink{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_instru
 \subsection*{Private Attributes}
 \begin{DoxyCompactItemize}
 \item 
-Int32 \hyperlink{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_instruction_a746bbd915670c4c18c495804ee484e57}{opcode}
+int \hyperlink{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_instruction_aa8fa753bf6e1b6ffff7060ec90f930af}{opcode}
 \begin{DoxyCompactList}\small\item\em The opcode for the instruction \end{DoxyCompactList}\item 
 string \hyperlink{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_instruction_ac572af7b3bda0a6b0918069c1f3b14b4}{category}
 \begin{DoxyCompactList}\small\item\em The category in which the instruction will be displayed within the interface \end{DoxyCompactList}\item 
@@ -143,13 +145,13 @@ Func$<$ int $>$ \hyperlink{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_instructi
 \begin{DoxyCompactList}\small\item\em The first operand for the instruction \end{DoxyCompactList}\item 
 \hyperlink{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_operand}{Operand} \hyperlink{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_instruction_a76e9ca211aca72f65c8ad9e11fbdad47}{operand2}
 \begin{DoxyCompactList}\small\item\em The second operand for the instruction \end{DoxyCompactList}\item 
-Int32 \hyperlink{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_instruction_a1fec91cc29b29f1d8dd45d7d42b0560d}{logical\+Address}
+int \hyperlink{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_instruction_a6577ac8b9582e24ec928bd4b59093960}{logical\+Address}
 \begin{DoxyCompactList}\small\item\em The Logical address of this instruction within a program \end{DoxyCompactList}\item 
 int \hyperlink{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_instruction_a401c8f3740b63632e17db6f80b505a17}{physical\+Address}
 \begin{DoxyCompactList}\small\item\em The physical address of this instruction within memory \end{DoxyCompactList}\item 
-Int32 \hyperlink{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_instruction_ac8c820f3e522e4fefaa510856ed11fb0}{size}
+int \hyperlink{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_instruction_a8c533b0c08d8ac0a85b0e342f95cfeec}{size}
 \begin{DoxyCompactList}\small\item\em The size of the instruction within the program \end{DoxyCompactList}\item 
-Int32 \hyperlink{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_instruction_a8fb993dcebcd127a335a7d068a6e9de4}{result}
+int \hyperlink{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_instruction_a80637c7fae4090f9c73f468dbd6af7ee}{result}
 \begin{DoxyCompactList}\small\item\em The result of the instruction once executed e.\+g. the result of A\+D\+D 1,1 would be 2 \end{DoxyCompactList}\item 
 string \hyperlink{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_instruction_ab58373ca153de047b36c1036e07db7a8}{instruction\+String}
 \begin{DoxyCompactList}\small\item\em The string representation of this instruction e.\+g. A\+D\+D R01,10 \end{DoxyCompactList}\item 
@@ -162,7 +164,7 @@ This class represents an instruction witch can be executed by the virtual \hyper
 
 
 
-Definition at line 15 of file Instruction.\+cs.
+Definition at line 16 of file Instruction.\+cs.
 
 
 
@@ -180,16 +182,16 @@ Default constructor for instruction used when deserialising an instruction N\+O\
 
 
 
-Definition at line 82 of file Instruction.\+cs.
+Definition at line 83 of file Instruction.\+cs.
 
-\hypertarget{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_instruction_afb0f711deb1e6e4dc53fa2ffa4458a66}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Instruction@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Instruction}!Instruction@{Instruction}}
+\hypertarget{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_instruction_ac1fdbf424188acb7f10a1fa93e12a559}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Instruction@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Instruction}!Instruction@{Instruction}}
 \index{Instruction@{Instruction}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Instruction@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Instruction}}
-\subsubsection[{Instruction(\+Int32 opcode, Int32 size)}]{\setlength{\rightskip}{0pt plus 5cm}C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+C\+P\+U.\+Instruction.\+Instruction (
+\subsubsection[{Instruction(int opcode, int size)}]{\setlength{\rightskip}{0pt plus 5cm}C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+C\+P\+U.\+Instruction.\+Instruction (
 \begin{DoxyParamCaption}
-\item[{Int32}]{opcode, }
-\item[{Int32}]{size}
+\item[{int}]{opcode, }
+\item[{int}]{size}
 \end{DoxyParamCaption}
-)}\label{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_instruction_afb0f711deb1e6e4dc53fa2ffa4458a66}
+)}\label{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_instruction_ac1fdbf424188acb7f10a1fa93e12a559}
 
 
 Constructor for an instruction that takes no operands 
@@ -203,17 +205,17 @@ Constructor for an instruction that takes no operands
 \end{DoxyParams}
 
 
-Definition at line 91 of file Instruction.\+cs.
+Definition at line 92 of file Instruction.\+cs.
 
-\hypertarget{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_instruction_a43b7a2a32e40bb61c9a17bf2f6d42baa}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Instruction@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Instruction}!Instruction@{Instruction}}
+\hypertarget{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_instruction_a2388e9123d02cd845d84a8c8dff7a816}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Instruction@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Instruction}!Instruction@{Instruction}}
 \index{Instruction@{Instruction}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Instruction@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Instruction}}
-\subsubsection[{Instruction(\+Int32 opcode, Operand op1, Int32 size)}]{\setlength{\rightskip}{0pt plus 5cm}C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+C\+P\+U.\+Instruction.\+Instruction (
+\subsubsection[{Instruction(int opcode, Operand op1, int size)}]{\setlength{\rightskip}{0pt plus 5cm}C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+C\+P\+U.\+Instruction.\+Instruction (
 \begin{DoxyParamCaption}
-\item[{Int32}]{opcode, }
+\item[{int}]{opcode, }
 \item[{{\bf Operand}}]{op1, }
-\item[{Int32}]{size}
+\item[{int}]{size}
 \end{DoxyParamCaption}
-)}\label{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_instruction_a43b7a2a32e40bb61c9a17bf2f6d42baa}
+)}\label{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_instruction_a2388e9123d02cd845d84a8c8dff7a816}
 
 
 Constructor for an instruction that takes one operand 
@@ -229,18 +231,18 @@ Constructor for an instruction that takes one operand
 \end{DoxyParams}
 
 
-Definition at line 107 of file Instruction.\+cs.
+Definition at line 108 of file Instruction.\+cs.
 
-\hypertarget{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_instruction_a8d2f29ef83f5166c5653357fc25d9ad5}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Instruction@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Instruction}!Instruction@{Instruction}}
+\hypertarget{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_instruction_af3092d713df3c95ad0e5414317aacc65}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Instruction@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Instruction}!Instruction@{Instruction}}
 \index{Instruction@{Instruction}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Instruction@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Instruction}}
-\subsubsection[{Instruction(\+Int32 opcode, Operand op1, Operand op2, Int32 size)}]{\setlength{\rightskip}{0pt plus 5cm}C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+C\+P\+U.\+Instruction.\+Instruction (
+\subsubsection[{Instruction(int opcode, Operand op1, Operand op2, int size)}]{\setlength{\rightskip}{0pt plus 5cm}C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+C\+P\+U.\+Instruction.\+Instruction (
 \begin{DoxyParamCaption}
-\item[{Int32}]{opcode, }
+\item[{int}]{opcode, }
 \item[{{\bf Operand}}]{op1, }
 \item[{{\bf Operand}}]{op2, }
-\item[{Int32}]{size}
+\item[{int}]{size}
 \end{DoxyParamCaption}
-)}\label{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_instruction_a8d2f29ef83f5166c5653357fc25d9ad5}
+)}\label{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_instruction_af3092d713df3c95ad0e5414317aacc65}
 
 
 Constructor for an instruction that takes two operands 
@@ -258,7 +260,7 @@ Constructor for an instruction that takes two operands
 \end{DoxyParams}
 
 
-Definition at line 124 of file Instruction.\+cs.
+Definition at line 125 of file Instruction.\+cs.
 
 
 
@@ -287,7 +289,7 @@ the result of the instruction or int.\+M\+I\+N\+V\+A\+L\+U\+E if no result is re
 \end{DoxyReturn}
 
 
-Definition at line 898 of file Instruction.\+cs.
+Definition at line 1042 of file Instruction.\+cs.
 
 \hypertarget{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_instruction_a4b5e469acee3a32016220af620b98650}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Instruction@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Instruction}!A\+N\+D@{A\+N\+D}}
 \index{A\+N\+D@{A\+N\+D}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Instruction@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Instruction}}
@@ -313,7 +315,7 @@ the result of the instruction or int.\+M\+I\+N\+V\+A\+L\+U\+E if no result is re
 \end{DoxyReturn}
 
 
-Definition at line 739 of file Instruction.\+cs.
+Definition at line 883 of file Instruction.\+cs.
 
 \hypertarget{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_instruction_ab3bbd51fd889e3bbeb656ea717a7fe9c}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Instruction@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Instruction}!Bind\+Delegate@{Bind\+Delegate}}
 \index{Bind\+Delegate@{Bind\+Delegate}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Instruction@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Instruction}}
@@ -328,7 +330,7 @@ this function binds a delegate to an instruction. The delegate bound here will b
 
 
 
-Definition at line 277 of file Instruction.\+cs.
+Definition at line 278 of file Instruction.\+cs.
 
 \hypertarget{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_instruction_a680092159bb5618a07049546887f1073}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Instruction@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Instruction}!C\+M\+P@{C\+M\+P}}
 \index{C\+M\+P@{C\+M\+P}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Instruction@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Instruction}}
@@ -340,7 +342,7 @@ Definition at line 277 of file Instruction.\+cs.
 )\hspace{0.3cm}{\ttfamily [private]}}\label{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_instruction_a680092159bb5618a07049546887f1073}
 
 
-Definition at line 1278 of file Instruction.\+cs.
+Definition at line 1422 of file Instruction.\+cs.
 
 \hypertarget{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_instruction_af73e92c10474c39863df39c1f826ff50}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Instruction@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Instruction}!C\+V\+I@{C\+V\+I}}
 \index{C\+V\+I@{C\+V\+I}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Instruction@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Instruction}}
@@ -366,7 +368,7 @@ the result of the instruction or int.\+M\+I\+N\+V\+A\+L\+U\+E if no result is re
 \end{DoxyReturn}
 
 
-Definition at line 531 of file Instruction.\+cs.
+Definition at line 551 of file Instruction.\+cs.
 
 \hypertarget{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_instruction_a689065741dc51ddacf955b3781570546}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Instruction@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Instruction}!C\+V\+S@{C\+V\+S}}
 \index{C\+V\+S@{C\+V\+S}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Instruction@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Instruction}}
@@ -392,7 +394,7 @@ the result of the instruction or int.\+M\+I\+N\+V\+A\+L\+U\+E if no result is re
 \end{DoxyReturn}
 
 
-Definition at line 519 of file Instruction.\+cs.
+Definition at line 539 of file Instruction.\+cs.
 
 \hypertarget{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_instruction_a9cb36212a7cab42725d8a05f719e732f}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Instruction@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Instruction}!D\+E\+C@{D\+E\+C}}
 \index{D\+E\+C@{D\+E\+C}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Instruction@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Instruction}}
@@ -418,7 +420,7 @@ the result of the instruction or int.\+M\+I\+N\+V\+A\+L\+U\+E if no result is re
 \end{DoxyReturn}
 
 
-Definition at line 1095 of file Instruction.\+cs.
+Definition at line 1239 of file Instruction.\+cs.
 
 \hypertarget{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_instruction_a45a29c12e7b55d4831705d13460df4a1}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Instruction@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Instruction}!D\+I\+V@{D\+I\+V}}
 \index{D\+I\+V@{D\+I\+V}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Instruction@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Instruction}}
@@ -444,7 +446,18 @@ the result of the instruction or int.\+M\+I\+N\+V\+A\+L\+U\+E if no result is re
 \end{DoxyReturn}
 
 
-Definition at line 1026 of file Instruction.\+cs.
+Definition at line 1170 of file Instruction.\+cs.
+
+\hypertarget{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_instruction_ae0e0e21063eeb9aa0dc0896e6e4c71dc}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Instruction@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Instruction}!Find\+Required\+Page@{Find\+Required\+Page}}
+\index{Find\+Required\+Page@{Find\+Required\+Page}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Instruction@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Instruction}}
+\subsubsection[{Find\+Required\+Page(int pagenumber)}]{\setlength{\rightskip}{0pt plus 5cm}int C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+C\+P\+U.\+Instruction.\+Find\+Required\+Page (
+\begin{DoxyParamCaption}
+\item[{int}]{pagenumber}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_instruction_ae0e0e21063eeb9aa0dc0896e6e4c71dc}
+
+
+Definition at line 443 of file Instruction.\+cs.
 
 \hypertarget{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_instruction_a0db56b05531624fbe8d0075f4318cb50}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Instruction@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Instruction}!Get\+Active\+Window@{Get\+Active\+Window}}
 \index{Get\+Active\+Window@{Get\+Active\+Window}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Instruction@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Instruction}}
@@ -467,7 +480,7 @@ a list containing all active window instances
 \end{DoxyReturn}
 
 
-Definition at line 1333 of file Instruction.\+cs.
+Definition at line 1477 of file Instruction.\+cs.
 
 \hypertarget{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_instruction_a64441a8d85d6eef7e4c58794cfcdca3c}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Instruction@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Instruction}!Get\+Current\+Program@{Get\+Current\+Program}}
 \index{Get\+Current\+Program@{Get\+Current\+Program}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Instruction@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Instruction}}
@@ -485,7 +498,7 @@ the program to be executed by the \hyperlink{namespace_c_p_u___o_s___simulator_1
 \end{DoxyReturn}
 
 
-Definition at line 1318 of file Instruction.\+cs.
+Definition at line 1462 of file Instruction.\+cs.
 
 \hypertarget{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_instruction_a6b21a943b331f1c15871302e1ba66882}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Instruction@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Instruction}!Get\+Main\+Window\+Instance@{Get\+Main\+Window\+Instance}}
 \index{Get\+Main\+Window\+Instance@{Get\+Main\+Window\+Instance}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Instruction@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Instruction}}
@@ -503,7 +516,7 @@ the active instance of main window
 \end{DoxyReturn}
 
 
-Definition at line 1305 of file Instruction.\+cs.
+Definition at line 1449 of file Instruction.\+cs.
 
 \hypertarget{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_instruction_a1fd4bf15c81941456405fd7a17ab2962}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Instruction@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Instruction}!I\+N\+C@{I\+N\+C}}
 \index{I\+N\+C@{I\+N\+C}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Instruction@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Instruction}}
@@ -529,7 +542,7 @@ the result of the instruction or int.\+M\+I\+N\+V\+A\+L\+U\+E if no result is re
 \end{DoxyReturn}
 
 
-Definition at line 1072 of file Instruction.\+cs.
+Definition at line 1216 of file Instruction.\+cs.
 
 \hypertarget{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_instruction_a4b8c21ddee6ae28e5c7dcfe4ed83e5b0}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Instruction@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Instruction}!J\+E\+Q@{J\+E\+Q}}
 \index{J\+E\+Q@{J\+E\+Q}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Instruction@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Instruction}}
@@ -541,7 +554,7 @@ Definition at line 1072 of file Instruction.\+cs.
 )\hspace{0.3cm}{\ttfamily [private]}}\label{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_instruction_a4b8c21ddee6ae28e5c7dcfe4ed83e5b0}
 
 
-Definition at line 1130 of file Instruction.\+cs.
+Definition at line 1274 of file Instruction.\+cs.
 
 \hypertarget{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_instruction_ab9afe42e5248b90dcb8c93bdc738480d}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Instruction@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Instruction}!J\+G\+E@{J\+G\+E}}
 \index{J\+G\+E@{J\+G\+E}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Instruction@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Instruction}}
@@ -553,7 +566,7 @@ Definition at line 1130 of file Instruction.\+cs.
 )\hspace{0.3cm}{\ttfamily [private]}}\label{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_instruction_ab9afe42e5248b90dcb8c93bdc738480d}
 
 
-Definition at line 1184 of file Instruction.\+cs.
+Definition at line 1328 of file Instruction.\+cs.
 
 \hypertarget{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_instruction_a40005a411c3cdaad9c59d93f11df0b34}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Instruction@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Instruction}!J\+G\+T@{J\+G\+T}}
 \index{J\+G\+T@{J\+G\+T}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Instruction@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Instruction}}
@@ -565,7 +578,7 @@ Definition at line 1184 of file Instruction.\+cs.
 )\hspace{0.3cm}{\ttfamily [private]}}\label{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_instruction_a40005a411c3cdaad9c59d93f11df0b34}
 
 
-Definition at line 1166 of file Instruction.\+cs.
+Definition at line 1310 of file Instruction.\+cs.
 
 \hypertarget{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_instruction_a690dc53588584331941ef12f3b106e58}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Instruction@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Instruction}!J\+L\+E@{J\+L\+E}}
 \index{J\+L\+E@{J\+L\+E}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Instruction@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Instruction}}
@@ -577,7 +590,7 @@ Definition at line 1166 of file Instruction.\+cs.
 )\hspace{0.3cm}{\ttfamily [private]}}\label{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_instruction_a690dc53588584331941ef12f3b106e58}
 
 
-Definition at line 1220 of file Instruction.\+cs.
+Definition at line 1364 of file Instruction.\+cs.
 
 \hypertarget{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_instruction_a9604e15da40e3e59f6c50902b7abb288}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Instruction@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Instruction}!J\+L\+T@{J\+L\+T}}
 \index{J\+L\+T@{J\+L\+T}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Instruction@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Instruction}}
@@ -589,7 +602,7 @@ Definition at line 1220 of file Instruction.\+cs.
 )\hspace{0.3cm}{\ttfamily [private]}}\label{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_instruction_a9604e15da40e3e59f6c50902b7abb288}
 
 
-Definition at line 1202 of file Instruction.\+cs.
+Definition at line 1346 of file Instruction.\+cs.
 
 \hypertarget{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_instruction_aa932e1a27222a151a6f9e60454a47e32}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Instruction@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Instruction}!J\+M\+P@{J\+M\+P}}
 \index{J\+M\+P@{J\+M\+P}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Instruction@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Instruction}}
@@ -601,7 +614,7 @@ Definition at line 1202 of file Instruction.\+cs.
 )\hspace{0.3cm}{\ttfamily [private]}}\label{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_instruction_aa932e1a27222a151a6f9e60454a47e32}
 
 
-Definition at line 1116 of file Instruction.\+cs.
+Definition at line 1260 of file Instruction.\+cs.
 
 \hypertarget{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_instruction_aacc7e6dcc303f8bad362559bcda3b4f8}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Instruction@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Instruction}!J\+N\+E@{J\+N\+E}}
 \index{J\+N\+E@{J\+N\+E}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Instruction@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Instruction}}
@@ -613,7 +626,7 @@ Definition at line 1116 of file Instruction.\+cs.
 )\hspace{0.3cm}{\ttfamily [private]}}\label{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_instruction_aacc7e6dcc303f8bad362559bcda3b4f8}
 
 
-Definition at line 1148 of file Instruction.\+cs.
+Definition at line 1292 of file Instruction.\+cs.
 
 \hypertarget{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_instruction_a8341a8a333961e2a3b05eb1f34eb081f}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Instruction@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Instruction}!J\+N\+Z@{J\+N\+Z}}
 \index{J\+N\+Z@{J\+N\+Z}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Instruction@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Instruction}}
@@ -625,7 +638,7 @@ Definition at line 1148 of file Instruction.\+cs.
 )\hspace{0.3cm}{\ttfamily [private]}}\label{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_instruction_a8341a8a333961e2a3b05eb1f34eb081f}
 
 
-Definition at line 1238 of file Instruction.\+cs.
+Definition at line 1382 of file Instruction.\+cs.
 
 \hypertarget{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_instruction_a87b3f8c13535a2c595a9dafa4ba69435}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Instruction@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Instruction}!J\+Z\+R@{J\+Z\+R}}
 \index{J\+Z\+R@{J\+Z\+R}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Instruction@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Instruction}}
@@ -637,7 +650,7 @@ Definition at line 1238 of file Instruction.\+cs.
 )\hspace{0.3cm}{\ttfamily [private]}}\label{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_instruction_a87b3f8c13535a2c595a9dafa4ba69435}
 
 
-Definition at line 1256 of file Instruction.\+cs.
+Definition at line 1400 of file Instruction.\+cs.
 
 \hypertarget{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_instruction_ae09705d74d57f968b93ba1739832488f}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Instruction@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Instruction}!L\+D\+B@{L\+D\+B}}
 \index{L\+D\+B@{L\+D\+B}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Instruction@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Instruction}}
@@ -663,7 +676,7 @@ the result of the instruction or int.\+M\+I\+N\+V\+A\+L\+U\+E if no result is re
 \end{DoxyReturn}
 
 
-Definition at line 543 of file Instruction.\+cs.
+Definition at line 563 of file Instruction.\+cs.
 
 \hypertarget{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_instruction_a41d94be59f02b4ff381bed811f0c4f2e}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Instruction@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Instruction}!L\+D\+B\+I@{L\+D\+B\+I}}
 \index{L\+D\+B\+I@{L\+D\+B\+I}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Instruction@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Instruction}}
@@ -689,7 +702,7 @@ the result of the instruction or int.\+M\+I\+N\+V\+A\+L\+U\+E if no result is re
 \end{DoxyReturn}
 
 
-Definition at line 579 of file Instruction.\+cs.
+Definition at line 599 of file Instruction.\+cs.
 
 \hypertarget{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_instruction_adc1b564050331c46094af907abb34acb}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Instruction@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Instruction}!L\+D\+W@{L\+D\+W}}
 \index{L\+D\+W@{L\+D\+W}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Instruction@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Instruction}}
@@ -715,7 +728,7 @@ the result of the instruction or int.\+M\+I\+N\+V\+A\+L\+U\+E if no result is re
 \end{DoxyReturn}
 
 
-Definition at line 555 of file Instruction.\+cs.
+Definition at line 575 of file Instruction.\+cs.
 
 \hypertarget{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_instruction_a2a8c6cf1d6f14e9d219fabc5957cd586}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Instruction@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Instruction}!L\+D\+W\+I@{L\+D\+W\+I}}
 \index{L\+D\+W\+I@{L\+D\+W\+I}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Instruction@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Instruction}}
@@ -741,7 +754,7 @@ the result of the instruction or int.\+M\+I\+N\+V\+A\+L\+U\+E if no result is re
 \end{DoxyReturn}
 
 
-Definition at line 591 of file Instruction.\+cs.
+Definition at line 611 of file Instruction.\+cs.
 
 \hypertarget{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_instruction_abaa66d00b38349cd8033c8c1428a9ca3}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Instruction@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Instruction}!L\+N\+S@{L\+N\+S}}
 \index{L\+N\+S@{L\+N\+S}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Instruction@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Instruction}}
@@ -767,7 +780,7 @@ the result of the instruction or int.\+M\+I\+N\+V\+A\+L\+U\+E if no result is re
 \end{DoxyReturn}
 
 
-Definition at line 567 of file Instruction.\+cs.
+Definition at line 587 of file Instruction.\+cs.
 
 \hypertarget{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_instruction_af6548da603e7370f10de03e0da040a24}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Instruction@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Instruction}!M\+O\+V@{M\+O\+V}}
 \index{M\+O\+V@{M\+O\+V}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Instruction@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Instruction}}
@@ -793,7 +806,7 @@ the result of the instruction or int.\+M\+I\+N\+V\+A\+L\+U\+E if no result is re
 \end{DoxyReturn}
 
 
-Definition at line 490 of file Instruction.\+cs.
+Definition at line 509 of file Instruction.\+cs.
 
 \hypertarget{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_instruction_a46ba0e257c0a23f35b638cc774c016bd}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Instruction@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Instruction}!M\+U\+L@{M\+U\+L}}
 \index{M\+U\+L@{M\+U\+L}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Instruction@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Instruction}}
@@ -819,7 +832,7 @@ the result of the instruction or int.\+M\+I\+N\+V\+A\+L\+U\+E if no result is re
 \end{DoxyReturn}
 
 
-Definition at line 994 of file Instruction.\+cs.
+Definition at line 1138 of file Instruction.\+cs.
 
 \hypertarget{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_instruction_a33723518d4e117877d2ecf5b861d2eb2}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Instruction@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Instruction}!M\+V\+S@{M\+V\+S}}
 \index{M\+V\+S@{M\+V\+S}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Instruction@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Instruction}}
@@ -845,7 +858,7 @@ the result of the instruction or int.\+M\+I\+N\+V\+A\+L\+U\+E if no result is re
 \end{DoxyReturn}
 
 
-Definition at line 507 of file Instruction.\+cs.
+Definition at line 526 of file Instruction.\+cs.
 
 \hypertarget{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_instruction_ab639a616b188c9816dd1775ebda837d4}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Instruction@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Instruction}!N\+O\+T@{N\+O\+T}}
 \index{N\+O\+T@{N\+O\+T}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Instruction@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Instruction}}
@@ -871,7 +884,7 @@ the result of the instruction or int.\+M\+I\+N\+V\+A\+L\+U\+E if no result is re
 \end{DoxyReturn}
 
 
-Definition at line 801 of file Instruction.\+cs.
+Definition at line 945 of file Instruction.\+cs.
 
 \hypertarget{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_instruction_a32adcd85bab5adfeeb4effa90275dee5}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Instruction@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Instruction}!O\+R@{O\+R}}
 \index{O\+R@{O\+R}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Instruction@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Instruction}}
@@ -897,7 +910,7 @@ the result of the instruction or int.\+M\+I\+N\+V\+A\+L\+U\+E if no result is re
 \end{DoxyReturn}
 
 
-Definition at line 770 of file Instruction.\+cs.
+Definition at line 914 of file Instruction.\+cs.
 
 \hypertarget{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_instruction_a16a47493684bb30a289d337188fb77b6}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Instruction@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Instruction}!P\+O\+P@{P\+O\+P}}
 \index{P\+O\+P@{P\+O\+P}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Instruction@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Instruction}}
@@ -923,7 +936,7 @@ the result of the instruction or int.\+M\+I\+N\+V\+A\+L\+U\+E if no result is re
 \end{DoxyReturn}
 
 
-Definition at line 687 of file Instruction.\+cs.
+Definition at line 831 of file Instruction.\+cs.
 
 \hypertarget{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_instruction_a4a6711b8309af629c9460cdadc340444}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Instruction@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Instruction}!P\+U\+S\+H@{P\+U\+S\+H}}
 \index{P\+U\+S\+H@{P\+U\+S\+H}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Instruction@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Instruction}}
@@ -949,7 +962,7 @@ the result of the instruction or int.\+M\+I\+N\+V\+A\+L\+U\+E if no result is re
 \end{DoxyReturn}
 
 
-Definition at line 664 of file Instruction.\+cs.
+Definition at line 808 of file Instruction.\+cs.
 
 \hypertarget{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_instruction_ad5e8679e646e772e6fb2d7655bad9f6f}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Instruction@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Instruction}!S\+H\+L@{S\+H\+L}}
 \index{S\+H\+L@{S\+H\+L}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Instruction@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Instruction}}
@@ -975,7 +988,7 @@ the result of the instruction or int.\+M\+I\+N\+V\+A\+L\+U\+E if no result is re
 \end{DoxyReturn}
 
 
-Definition at line 832 of file Instruction.\+cs.
+Definition at line 976 of file Instruction.\+cs.
 
 \hypertarget{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_instruction_a5796880f8494dab4070d151f3e4b2301}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Instruction@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Instruction}!S\+H\+R@{S\+H\+R}}
 \index{S\+H\+R@{S\+H\+R}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Instruction@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Instruction}}
@@ -1001,7 +1014,7 @@ the result of the instruction or int.\+M\+I\+N\+V\+A\+L\+U\+E if no result is re
 \end{DoxyReturn}
 
 
-Definition at line 863 of file Instruction.\+cs.
+Definition at line 1007 of file Instruction.\+cs.
 
 \hypertarget{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_instruction_a26aa3d1a1f62f61acc3b37c7d57743f1}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Instruction@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Instruction}!S\+T\+B@{S\+T\+B}}
 \index{S\+T\+B@{S\+T\+B}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Instruction@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Instruction}}
@@ -1027,7 +1040,7 @@ the result of the instruction or int.\+M\+I\+N\+V\+A\+L\+U\+E if no result is re
 \end{DoxyReturn}
 
 
-Definition at line 616 of file Instruction.\+cs.
+Definition at line 635 of file Instruction.\+cs.
 
 \hypertarget{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_instruction_a2724896fa80e3da440271b6dba5421a3}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Instruction@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Instruction}!S\+T\+B\+I@{S\+T\+B\+I}}
 \index{S\+T\+B\+I@{S\+T\+B\+I}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Instruction@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Instruction}}
@@ -1053,7 +1066,7 @@ the result of the instruction or int.\+M\+I\+N\+V\+A\+L\+U\+E if no result is re
 \end{DoxyReturn}
 
 
-Definition at line 640 of file Instruction.\+cs.
+Definition at line 784 of file Instruction.\+cs.
 
 \hypertarget{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_instruction_aa1bc7540a41bcd8ab9273cfac88a5bf8}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Instruction@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Instruction}!S\+T\+W@{S\+T\+W}}
 \index{S\+T\+W@{S\+T\+W}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Instruction@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Instruction}}
@@ -1079,7 +1092,7 @@ the result of the instruction or int.\+M\+I\+N\+V\+A\+L\+U\+E if no result is re
 \end{DoxyReturn}
 
 
-Definition at line 628 of file Instruction.\+cs.
+Definition at line 670 of file Instruction.\+cs.
 
 \hypertarget{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_instruction_aec8b426958aee888d46d9cbb565ed548}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Instruction@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Instruction}!S\+T\+W\+I@{S\+T\+W\+I}}
 \index{S\+T\+W\+I@{S\+T\+W\+I}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Instruction@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Instruction}}
@@ -1105,7 +1118,7 @@ the result of the instruction or int.\+M\+I\+N\+V\+A\+L\+U\+E if no result is re
 \end{DoxyReturn}
 
 
-Definition at line 652 of file Instruction.\+cs.
+Definition at line 796 of file Instruction.\+cs.
 
 \hypertarget{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_instruction_a24caa7b8d57d9fa4e839b45ce2b2816e}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Instruction@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Instruction}!S\+U\+B@{S\+U\+B}}
 \index{S\+U\+B@{S\+U\+B}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Instruction@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Instruction}}
@@ -1131,7 +1144,7 @@ the result of the instruction or int.\+M\+I\+N\+V\+A\+L\+U\+E if no result is re
 \end{DoxyReturn}
 
 
-Definition at line 930 of file Instruction.\+cs.
+Definition at line 1074 of file Instruction.\+cs.
 
 \hypertarget{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_instruction_a612e041210347726cc65bfa4401af561}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Instruction@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Instruction}!S\+U\+B\+U@{S\+U\+B\+U}}
 \index{S\+U\+B\+U@{S\+U\+B\+U}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Instruction@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Instruction}}
@@ -1157,7 +1170,7 @@ the result of the instruction or int.\+M\+I\+N\+V\+A\+L\+U\+E if no result is re
 \end{DoxyReturn}
 
 
-Definition at line 962 of file Instruction.\+cs.
+Definition at line 1106 of file Instruction.\+cs.
 
 \hypertarget{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_instruction_ac86363232497de67ac268dd8942294a3}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Instruction@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Instruction}!S\+W\+P@{S\+W\+P}}
 \index{S\+W\+P@{S\+W\+P}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Instruction@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Instruction}}
@@ -1183,7 +1196,7 @@ the result of the instruction or int.\+M\+I\+N\+V\+A\+L\+U\+E if no result is re
 \end{DoxyReturn}
 
 
-Definition at line 709 of file Instruction.\+cs.
+Definition at line 853 of file Instruction.\+cs.
 
 \hypertarget{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_instruction_a78fbef41ec65046f35456e7cb161d037}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Instruction@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Instruction}!T\+A\+S@{T\+A\+S}}
 \index{T\+A\+S@{T\+A\+S}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Instruction@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Instruction}}
@@ -1209,7 +1222,7 @@ the result of the instruction or int.\+M\+I\+N\+V\+A\+L\+U\+E if no result is re
 \end{DoxyReturn}
 
 
-Definition at line 603 of file Instruction.\+cs.
+Definition at line 623 of file Instruction.\+cs.
 
 \hypertarget{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_instruction_a7d3a81ead6e3639f970901d8e898f02c}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Instruction@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Instruction}!To\+String@{To\+String}}
 \index{To\+String@{To\+String}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Instruction@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Instruction}}
@@ -1227,7 +1240,7 @@ a string that represents this instruction
 \end{DoxyReturn}
 
 
-Definition at line 446 of file Instruction.\+cs.
+Definition at line 465 of file Instruction.\+cs.
 
 
 
@@ -1241,7 +1254,7 @@ The category in which the instruction will be displayed within the interface
 
 
 
-Definition at line 27 of file Instruction.\+cs.
+Definition at line 28 of file Instruction.\+cs.
 
 \hypertarget{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_instruction_ae6c5e3409f33f49c745ab57ca9a885a9}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Instruction@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Instruction}!execute@{execute}}
 \index{execute@{execute}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Instruction@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Instruction}}
@@ -1252,7 +1265,7 @@ The function that will be executed when the instruction is executed
 
 
 
-Definition at line 33 of file Instruction.\+cs.
+Definition at line 34 of file Instruction.\+cs.
 
 \hypertarget{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_instruction_ab58373ca153de047b36c1036e07db7a8}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Instruction@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Instruction}!instruction\+String@{instruction\+String}}
 \index{instruction\+String@{instruction\+String}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Instruction@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Instruction}}
@@ -1263,29 +1276,29 @@ The string representation of this instruction e.\+g. A\+D\+D R01,10
 
 
 
-Definition at line 68 of file Instruction.\+cs.
+Definition at line 69 of file Instruction.\+cs.
 
-\hypertarget{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_instruction_a1fec91cc29b29f1d8dd45d7d42b0560d}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Instruction@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Instruction}!logical\+Address@{logical\+Address}}
+\hypertarget{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_instruction_a6577ac8b9582e24ec928bd4b59093960}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Instruction@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Instruction}!logical\+Address@{logical\+Address}}
 \index{logical\+Address@{logical\+Address}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Instruction@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Instruction}}
-\subsubsection[{logical\+Address}]{\setlength{\rightskip}{0pt plus 5cm}Int32 C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+C\+P\+U.\+Instruction.\+logical\+Address\hspace{0.3cm}{\ttfamily [private]}}\label{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_instruction_a1fec91cc29b29f1d8dd45d7d42b0560d}
+\subsubsection[{logical\+Address}]{\setlength{\rightskip}{0pt plus 5cm}int C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+C\+P\+U.\+Instruction.\+logical\+Address\hspace{0.3cm}{\ttfamily [private]}}\label{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_instruction_a6577ac8b9582e24ec928bd4b59093960}
 
 
 The Logical address of this instruction within a program 
 
 
 
-Definition at line 48 of file Instruction.\+cs.
+Definition at line 49 of file Instruction.\+cs.
 
-\hypertarget{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_instruction_a746bbd915670c4c18c495804ee484e57}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Instruction@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Instruction}!opcode@{opcode}}
+\hypertarget{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_instruction_aa8fa753bf6e1b6ffff7060ec90f930af}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Instruction@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Instruction}!opcode@{opcode}}
 \index{opcode@{opcode}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Instruction@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Instruction}}
-\subsubsection[{opcode}]{\setlength{\rightskip}{0pt plus 5cm}Int32 C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+C\+P\+U.\+Instruction.\+opcode\hspace{0.3cm}{\ttfamily [private]}}\label{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_instruction_a746bbd915670c4c18c495804ee484e57}
+\subsubsection[{opcode}]{\setlength{\rightskip}{0pt plus 5cm}int C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+C\+P\+U.\+Instruction.\+opcode\hspace{0.3cm}{\ttfamily [private]}}\label{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_instruction_aa8fa753bf6e1b6ffff7060ec90f930af}
 
 
 The opcode for the instruction 
 
 
 
-Definition at line 22 of file Instruction.\+cs.
+Definition at line 23 of file Instruction.\+cs.
 
 \hypertarget{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_instruction_ab829270aeebc597814ded59f5265b452}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Instruction@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Instruction}!operand1@{operand1}}
 \index{operand1@{operand1}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Instruction@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Instruction}}
@@ -1296,7 +1309,7 @@ The first operand for the instruction
 
 
 
-Definition at line 38 of file Instruction.\+cs.
+Definition at line 39 of file Instruction.\+cs.
 
 \hypertarget{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_instruction_a76e9ca211aca72f65c8ad9e11fbdad47}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Instruction@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Instruction}!operand2@{operand2}}
 \index{operand2@{operand2}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Instruction@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Instruction}}
@@ -1307,7 +1320,7 @@ The second operand for the instruction
 
 
 
-Definition at line 43 of file Instruction.\+cs.
+Definition at line 44 of file Instruction.\+cs.
 
 \hypertarget{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_instruction_a401c8f3740b63632e17db6f80b505a17}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Instruction@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Instruction}!physical\+Address@{physical\+Address}}
 \index{physical\+Address@{physical\+Address}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Instruction@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Instruction}}
@@ -1318,36 +1331,36 @@ The physical address of this instruction within memory
 
 
 
-Definition at line 53 of file Instruction.\+cs.
+Definition at line 54 of file Instruction.\+cs.
 
-\hypertarget{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_instruction_a8fb993dcebcd127a335a7d068a6e9de4}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Instruction@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Instruction}!result@{result}}
+\hypertarget{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_instruction_a80637c7fae4090f9c73f468dbd6af7ee}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Instruction@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Instruction}!result@{result}}
 \index{result@{result}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Instruction@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Instruction}}
-\subsubsection[{result}]{\setlength{\rightskip}{0pt plus 5cm}Int32 C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+C\+P\+U.\+Instruction.\+result\hspace{0.3cm}{\ttfamily [private]}}\label{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_instruction_a8fb993dcebcd127a335a7d068a6e9de4}
+\subsubsection[{result}]{\setlength{\rightskip}{0pt plus 5cm}int C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+C\+P\+U.\+Instruction.\+result\hspace{0.3cm}{\ttfamily [private]}}\label{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_instruction_a80637c7fae4090f9c73f468dbd6af7ee}
 
 
 The result of the instruction once executed e.\+g. the result of A\+D\+D 1,1 would be 2 
 
 
 
-Definition at line 63 of file Instruction.\+cs.
+Definition at line 64 of file Instruction.\+cs.
 
-\hypertarget{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_instruction_ac8c820f3e522e4fefaa510856ed11fb0}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Instruction@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Instruction}!size@{size}}
+\hypertarget{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_instruction_a8c533b0c08d8ac0a85b0e342f95cfeec}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Instruction@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Instruction}!size@{size}}
 \index{size@{size}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Instruction@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Instruction}}
-\subsubsection[{size}]{\setlength{\rightskip}{0pt plus 5cm}Int32 C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+C\+P\+U.\+Instruction.\+size\hspace{0.3cm}{\ttfamily [private]}}\label{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_instruction_ac8c820f3e522e4fefaa510856ed11fb0}
+\subsubsection[{size}]{\setlength{\rightskip}{0pt plus 5cm}int C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+C\+P\+U.\+Instruction.\+size\hspace{0.3cm}{\ttfamily [private]}}\label{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_instruction_a8c533b0c08d8ac0a85b0e342f95cfeec}
 
 
 The size of the instruction within the program 
 
 
 
-Definition at line 58 of file Instruction.\+cs.
+Definition at line 59 of file Instruction.\+cs.
 
 \hypertarget{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_instruction_a0337c93fbfb5993eab37f1d052ca5f43}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Instruction@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Instruction}!unit@{unit}}
 \index{unit@{unit}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Instruction@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Instruction}}
 \subsubsection[{unit}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Execution\+Unit} C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+C\+P\+U.\+Instruction.\+unit\hspace{0.3cm}{\ttfamily [private]}}\label{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_instruction_a0337c93fbfb5993eab37f1d052ca5f43}
 
 
-Definition at line 72 of file Instruction.\+cs.
+Definition at line 73 of file Instruction.\+cs.
 
 
 
@@ -1357,70 +1370,70 @@ Definition at line 72 of file Instruction.\+cs.
 \subsubsection[{Category}]{\setlength{\rightskip}{0pt plus 5cm}string C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+C\+P\+U.\+Instruction.\+Category\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}\label{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_instruction_a7b7c3068cebbf81c64b67496b20c733a}
 
 
-Definition at line 152 of file Instruction.\+cs.
+Definition at line 153 of file Instruction.\+cs.
 
 \hypertarget{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_instruction_afc4c52737c07181195a29413cf09d2a5}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Instruction@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Instruction}!Execute@{Execute}}
 \index{Execute@{Execute}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Instruction@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Instruction}}
 \subsubsection[{Execute}]{\setlength{\rightskip}{0pt plus 5cm}Func$<$int$>$ C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+C\+P\+U.\+Instruction.\+Execute\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}\label{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_instruction_afc4c52737c07181195a29413cf09d2a5}
 
 
-Definition at line 192 of file Instruction.\+cs.
+Definition at line 193 of file Instruction.\+cs.
 
 \hypertarget{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_instruction_a2750b111d827f6e6a8fccd0e8520de89}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Instruction@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Instruction}!Instruction\+String@{Instruction\+String}}
 \index{Instruction\+String@{Instruction\+String}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Instruction@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Instruction}}
 \subsubsection[{Instruction\+String}]{\setlength{\rightskip}{0pt plus 5cm}string C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+C\+P\+U.\+Instruction.\+Instruction\+String\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}\label{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_instruction_a2750b111d827f6e6a8fccd0e8520de89}
 
 
-Definition at line 244 of file Instruction.\+cs.
+Definition at line 245 of file Instruction.\+cs.
 
 \hypertarget{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_instruction_abfc23dbc9a978d2a1468b819f87a7614}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Instruction@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Instruction}!Logical\+Address@{Logical\+Address}}
 \index{Logical\+Address@{Logical\+Address}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Instruction@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Instruction}}
 \subsubsection[{Logical\+Address}]{\setlength{\rightskip}{0pt plus 5cm}int C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+C\+P\+U.\+Instruction.\+Logical\+Address\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}\label{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_instruction_abfc23dbc9a978d2a1468b819f87a7614}
 
 
-Definition at line 231 of file Instruction.\+cs.
+Definition at line 232 of file Instruction.\+cs.
 
 \hypertarget{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_instruction_af56668feff9c8dab3c9335969a25e074}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Instruction@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Instruction}!Opcode@{Opcode}}
 \index{Opcode@{Opcode}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Instruction@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Instruction}}
 \subsubsection[{Opcode}]{\setlength{\rightskip}{0pt plus 5cm}int C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+C\+P\+U.\+Instruction.\+Opcode\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}\label{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_instruction_af56668feff9c8dab3c9335969a25e074}
 
 
-Definition at line 139 of file Instruction.\+cs.
+Definition at line 140 of file Instruction.\+cs.
 
 \hypertarget{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_instruction_a5eaf08ac611da1175f38f93defdee8d5}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Instruction@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Instruction}!Operand1@{Operand1}}
 \index{Operand1@{Operand1}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Instruction@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Instruction}}
 \subsubsection[{Operand1}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Operand} C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+C\+P\+U.\+Instruction.\+Operand1\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}\label{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_instruction_a5eaf08ac611da1175f38f93defdee8d5}
 
 
-Definition at line 165 of file Instruction.\+cs.
+Definition at line 166 of file Instruction.\+cs.
 
 \hypertarget{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_instruction_ab35e6667e7c2f42dd09965995e25ff2d}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Instruction@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Instruction}!Operand2@{Operand2}}
 \index{Operand2@{Operand2}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Instruction@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Instruction}}
 \subsubsection[{Operand2}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Operand} C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+C\+P\+U.\+Instruction.\+Operand2\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}\label{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_instruction_ab35e6667e7c2f42dd09965995e25ff2d}
 
 
-Definition at line 178 of file Instruction.\+cs.
+Definition at line 179 of file Instruction.\+cs.
 
 \hypertarget{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_instruction_a97b20c8a0a7536bdddd8e791605a8bac}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Instruction@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Instruction}!Physical\+Address@{Physical\+Address}}
 \index{Physical\+Address@{Physical\+Address}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Instruction@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Instruction}}
 \subsubsection[{Physical\+Address}]{\setlength{\rightskip}{0pt plus 5cm}int C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+C\+P\+U.\+Instruction.\+Physical\+Address\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}\label{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_instruction_a97b20c8a0a7536bdddd8e791605a8bac}
 
 
-Definition at line 257 of file Instruction.\+cs.
+Definition at line 258 of file Instruction.\+cs.
 
 \hypertarget{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_instruction_a8e0f7c63850af7cfd8a41c066c01838e}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Instruction@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Instruction}!Result@{Result}}
 \index{Result@{Result}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Instruction@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Instruction}}
 \subsubsection[{Result}]{\setlength{\rightskip}{0pt plus 5cm}int C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+C\+P\+U.\+Instruction.\+Result\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}\label{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_instruction_a8e0f7c63850af7cfd8a41c066c01838e}
 
 
-Definition at line 205 of file Instruction.\+cs.
+Definition at line 206 of file Instruction.\+cs.
 
 \hypertarget{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_instruction_a7c60418808e7bd6cb1964a227dcd9dac}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Instruction@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Instruction}!Size@{Size}}
 \index{Size@{Size}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Instruction@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Instruction}}
 \subsubsection[{Size}]{\setlength{\rightskip}{0pt plus 5cm}int C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+C\+P\+U.\+Instruction.\+Size\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}\label{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_instruction_a7c60418808e7bd6cb1964a227dcd9dac}
 
 
-Definition at line 218 of file Instruction.\+cs.
+Definition at line 219 of file Instruction.\+cs.
 
 
 

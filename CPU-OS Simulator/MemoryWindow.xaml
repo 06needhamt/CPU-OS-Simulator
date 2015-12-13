@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:CPU_OS_Simulator"
         xmlns:System="clr-namespace:System;assembly=mscorlib" x:Class="CPU_OS_Simulator.MemoryWindow"
         mc:Ignorable="d"
-        Title="MemoryWindow" Height="500" Width="600" Icon="CPU-OS Simulator 7-5-50_1.ico" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
+        Title="MemoryWindow" Height="500" Width="600" Icon="CPU-OS Simulator 7-5-50_1.ico" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" Closing="Window_Closing">
     <Grid x:Name="RootGrid">
         <GroupBox x:Name="grp_DataMemory" Header="DATA MEMORY" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Height="260" Width="574">
             <Grid x:Name="DataMemoryGrid" HorizontalAlignment="Left" Height="229" Margin="1,1,1,1" VerticalAlignment="Top" Width="564">

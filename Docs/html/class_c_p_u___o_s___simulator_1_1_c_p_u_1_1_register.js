@@ -27,7 +27,7 @@ var class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_register =
     [ "R19", "class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_register.html#a1d5394eb0e63d28e96decccbdbc2ec2c", null ],
     [ "R20", "class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_register.html#a6fe52ef881281bbfdc42aa7f4cc68f4d", null ],
     [ "type", "class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_register.html#acb2f0f96db7cdee5c175562a5f050d83", null ],
-    [ "value", "class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_register.html#a2b4f4fe257f216718313f4e1187b72e9", null ],
+    [ "value", "class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_register.html#af2a05af808a3e2fa5fb086844cab1c2d", null ],
     [ "Name", "class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_register.html#a75621754d2c4c740c52b6c21a8151dc4", null ],
     [ "Type", "class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_register.html#ac9df7ddedb74ab974a57a334b42e0381", null ],
     [ "Value", "class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_register.html#a1cabe4ad65d4dc6267be9f34d682e181", null ]

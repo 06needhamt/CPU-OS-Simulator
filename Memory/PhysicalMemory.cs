@@ -5,7 +5,10 @@ using System.Reflection;
 using System.Windows;
 
 namespace CPU_OS_Simulator.Memory
-{
+{   
+    /// <summary>
+    /// This class represents physical memory (RAM)
+    /// </summary>
     public class PhysicalMemory : ISwappable
     {
         private int capacity;
@@ -13,6 +16,10 @@ namespace CPU_OS_Simulator.Memory
         private PageTable pageTable;
         private SwapSpace swapSpace;
 
+        /// <summary>
+        /// Constructor for physical memory
+        /// </summary>
+        /// <param name="capacity"> capacity of physical memory in pages</param>
         public PhysicalMemory(int capacity)
         {
             this.capacity = capacity;
@@ -20,62 +27,84 @@ namespace CPU_OS_Simulator.Memory
             pageTable = new PageTable(1);
             swapSpace = new SwapSpace();
         }
-
+        /// <summary>
+        /// Returns whether memory is currently full
+        /// </summary>
+        /// <returns>whether memory is currently full</returns>
         public bool isFull()
         {
             return pages.Count >= capacity;
         }
-
+        /// <summary>
+        /// This function adds a page into memory
+        /// </summary>
+        /// <param name="page"> the page to add to memory </param>
+        /// <param name="index"> the index to add the page to memory</param>
+        /// <returns> a reference to the page that has been added to memory</returns>
         public MemoryPage AddPage(MemoryPage page, int index)
         {
-            if (!isFull())
+            if (!isFull()) // if memory is not full
             {
                 pages.Insert(index,page);
                 pageTable.Entries.Add(new PageTableEntry(pageTable.Entries.Count, page.StartOffset,
-                    page.StartOffsetPhysical, false, page));
+                    page.StartOffsetPhysical, false, page)); // add it to memory
                 
             }
-            else
+            else // if memory is full
             {
-                Random R = new Random(int.MinValue);
+                Random R = new Random(); // generate a random number between 0 and the number of pages 
                 int number = R.Next(0, pageTable.Entries.Count);
-                while (pageTable.Entries[number].SwappedOut)
+                while (pageTable.Entries[number].SwappedOut) // if this page is already swapped out generate another number
                 {
                     number = R.Next(0, pageTable.Entries.Count);
                 }
-                MemoryPage swappedMemoryPage = pageTable.Entries[number].Page;
+                MemoryPage swappedMemoryPage = pageTable.Entries[number].Page; 
                 //pageTable.Entries[number].SwappedOut = true;
-                swappedMemoryPage.SwapOut(swappedMemoryPage.StartOffsetPhysical,number);
-                pages.Insert(index - 1,page);
+                swappedMemoryPage.SwapOut(swappedMemoryPage.StartOffsetPhysical,number); // swap out this memory page
+                pages.Insert(index - 1,page); // insert the new memory page
                 /*pageTable.Entries.Add(new PageTableEntry(pageTable.Entries.Count + 1, page.StartOffset,
                     page.StartOffsetPhysical, false, page)); */
             }
             return page;
         }
+        /// <summary>
+        /// Property for the capacity of memory
+        /// </summary>
         public int Capacity
         {
             get { return capacity; }
             set { capacity = value; }
         }
-
+        /// <summary>
+        /// Property for the list of pages currently in memory
+        /// </summary>
         public List<MemoryPage> Pages
         {
             get { return pages; }
             set { pages = value; }
         }
-
+        /// <summary>
+        /// Property for the page table
+        /// </summary>
         public PageTable Table
         {
             get { return pageTable; }
             set { pageTable = value; }
         }
-
+        /// <summary>
+        /// Property for the swap space where swapped out memory pages are held
+        /// </summary>
         public SwapSpace Space
         {
             get { return swapSpace; }
             set { swapSpace = value; }
         }
-          public void SwapOut(int LocationToSwap, int FrameNumber)
+        /// <summary>
+        /// This function swaps out this memory page
+        /// </summary>
+        /// <param name="LocationToSwap"> the physical address to swap from</param>
+        /// <param name="FrameNumber"> this page's frame number</param>
+        public void SwapOut(int LocationToSwap, int FrameNumber)
         {
             MemoryPage temp;
             dynamic wind = GetMainWindowInstance();
@@ -96,7 +125,11 @@ namespace CPU_OS_Simulator.Memory
             }
 
         }
-
+        /// <summary>
+        /// This function swaps in this memory page
+        /// </summary>
+        /// <param name="LocationToSwap"> the physical address to swap this page in to</param>
+        /// <param name="FrameNumber"> this pages frame number</param>
         public void SwapIn(int LocationToSwap, int FrameNumber)
         {
             MemoryPage temp;
@@ -117,6 +150,10 @@ namespace CPU_OS_Simulator.Memory
                     MessageBoxImage.Error);
             }
         }
+        /// <summary>
+        /// This function gets the main window instance from the window bridge
+        /// </summary>
+        /// <returns> the active instance of main window </returns>
         private dynamic GetMainWindowInstance()
         {
             Assembly windowBridge = Assembly.LoadFrom("CPU_OS_Simulator.WindowBridge.dll"); // Load the window bridge module
@@ -125,7 +162,11 @@ namespace CPU_OS_Simulator.Memory
             dynamic window = WindowType.GetField("MainWindowInstance").GetValue(null); // get the value of the static MainWindowInstance field
             return window;
         }
-
+        /// <summary>
+        /// Requests a memory page to be swapped into memory
+        /// </summary>
+        /// <param name="frameNumber"> the frame number of the requested memory page</param>
+        /// <returns> the requested memory page</returns>
         public MemoryPage RequestMemoryPage(int frameNumber)
         {
             PageTableEntry requiredPage = pageTable.Entries.FirstOrDefault(x => x.FrameNumber == frameNumber);

@@ -1,11 +1,57 @@
 \hypertarget{namespace_c_p_u___o_s___simulator_1_1_memory}{}\section{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Memory Namespace Reference}
 \label{namespace_c_p_u___o_s___simulator_1_1_memory}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Memory@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Memory}}
+\subsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \hyperlink{namespace_c_p_u___o_s___simulator_1_1_memory_1_1_tests}{Tests}
+\end{DoxyCompactItemize}
 \subsection*{Classes}
 \begin{DoxyCompactItemize}
 \item 
+interface \hyperlink{interface_c_p_u___o_s___simulator_1_1_memory_1_1_i_swappable}{I\+Swappable}
+\item 
 class \hyperlink{class_c_p_u___o_s___simulator_1_1_memory_1_1_memory_page}{Memory\+Page}
-\item 
-class \hyperlink{class_c_p_u___o_s___simulator_1_1_memory_1_1_memory_page___o_l_d}{Memory\+Page\+\_\+\+O\+L\+D}
-\item 
+\begin{DoxyCompactList}\small\item\em This class represents a page of data within memory \end{DoxyCompactList}\item 
 class \hyperlink{class_c_p_u___o_s___simulator_1_1_memory_1_1_memory_segment}{Memory\+Segment}
+\begin{DoxyCompactList}\small\item\em This class represents a 8 byte segment of a memory page \end{DoxyCompactList}\item 
+class \hyperlink{class_c_p_u___o_s___simulator_1_1_memory_1_1_page_table}{Page\+Table}
+\begin{DoxyCompactList}\small\item\em This class represents a page table where information about the loctions of memory pages are kept \end{DoxyCompactList}\item 
+class \hyperlink{class_c_p_u___o_s___simulator_1_1_memory_1_1_page_table_entry}{Page\+Table\+Entry}
+\begin{DoxyCompactList}\small\item\em This class represents an entry within a page table \end{DoxyCompactList}\item 
+class \hyperlink{class_c_p_u___o_s___simulator_1_1_memory_1_1_physical_memory}{Physical\+Memory}
+\begin{DoxyCompactList}\small\item\em This class represents physical memory (R\+A\+M) \end{DoxyCompactList}\item 
+class \hyperlink{class_c_p_u___o_s___simulator_1_1_memory_1_1_swap_space}{Swap\+Space}
+\begin{DoxyCompactList}\small\item\em This class represents swap space where swapped outmemory pages are moved to \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{namespace_c_p_u___o_s___simulator_1_1_memory_ab520cb14a9b6f052e02444d0397049aa}{Enum\+Page\+Type} \{ \hyperlink{namespace_c_p_u___o_s___simulator_1_1_memory_ab520cb14a9b6f052e02444d0397049aaa696b031073e74bf2cb98e5ef201d4aa3}{Enum\+Page\+Type.\+U\+N\+K\+N\+O\+W\+N} = -\/1, 
+\hyperlink{namespace_c_p_u___o_s___simulator_1_1_memory_ab520cb14a9b6f052e02444d0397049aaa08054846bbc9933fd0395f8be516a9f9}{Enum\+Page\+Type.\+C\+O\+D\+E} = 0, 
+\hyperlink{namespace_c_p_u___o_s___simulator_1_1_memory_ab520cb14a9b6f052e02444d0397049aaae44f9e348e41cb272efa87387728571b}{Enum\+Page\+Type.\+D\+A\+T\+A} = 1
+ \}\begin{DoxyCompactList}\small\item\em This enum represents the different types of memory pages \end{DoxyCompactList}
 \end{DoxyCompactItemize}
+
+
+\subsection{Enumeration Type Documentation}
+\hypertarget{namespace_c_p_u___o_s___simulator_1_1_memory_ab520cb14a9b6f052e02444d0397049aa}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Memory@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Memory}!Enum\+Page\+Type@{Enum\+Page\+Type}}
+\index{Enum\+Page\+Type@{Enum\+Page\+Type}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Memory@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Memory}}
+\subsubsection[{Enum\+Page\+Type}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Memory.\+Enum\+Page\+Type}\hspace{0.3cm}{\ttfamily [strong]}}\label{namespace_c_p_u___o_s___simulator_1_1_memory_ab520cb14a9b6f052e02444d0397049aa}
+
+
+This enum represents the different types of memory pages 
+
+\begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{U\+N\+K\+N\+O\+W\+N@{U\+N\+K\+N\+O\+W\+N}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Memory@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Memory}}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Memory@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Memory}!U\+N\+K\+N\+O\+W\+N@{U\+N\+K\+N\+O\+W\+N}}\item[{\em 
+\hypertarget{namespace_c_p_u___o_s___simulator_1_1_memory_ab520cb14a9b6f052e02444d0397049aaa696b031073e74bf2cb98e5ef201d4aa3}{}U\+N\+K\+N\+O\+W\+N\label{namespace_c_p_u___o_s___simulator_1_1_memory_ab520cb14a9b6f052e02444d0397049aaa696b031073e74bf2cb98e5ef201d4aa3}
+}]\index{C\+O\+D\+E@{C\+O\+D\+E}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Memory@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Memory}}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Memory@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Memory}!C\+O\+D\+E@{C\+O\+D\+E}}\item[{\em 
+\hypertarget{namespace_c_p_u___o_s___simulator_1_1_memory_ab520cb14a9b6f052e02444d0397049aaa08054846bbc9933fd0395f8be516a9f9}{}C\+O\+D\+E\label{namespace_c_p_u___o_s___simulator_1_1_memory_ab520cb14a9b6f052e02444d0397049aaa08054846bbc9933fd0395f8be516a9f9}
+}]\index{D\+A\+T\+A@{D\+A\+T\+A}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Memory@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Memory}}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Memory@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Memory}!D\+A\+T\+A@{D\+A\+T\+A}}\item[{\em 
+\hypertarget{namespace_c_p_u___o_s___simulator_1_1_memory_ab520cb14a9b6f052e02444d0397049aaae44f9e348e41cb272efa87387728571b}{}D\+A\+T\+A\label{namespace_c_p_u___o_s___simulator_1_1_memory_ab520cb14a9b6f052e02444d0397049aaae44f9e348e41cb272efa87387728571b}
+}]\end{description}
+\end{Desc}
+
+
+Definition at line 6 of file Enum\+Page\+Type.\+cs.
+

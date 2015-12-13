@@ -1,5 +1,6 @@
 ﻿using CPU_OS_Simulator.Memory;
 using System;
+using System.Reflection;
 using System.Windows;
 
 namespace CPU_OS_Simulator
@@ -16,6 +17,8 @@ namespace CPU_OS_Simulator
         public MemoryWindow()
         {
             InitializeComponent();
+            currentInstance = this;
+            SetMemoryWindowInstance();
         }
 
         public MemoryWindow(MainWindow mainWindowInstance, MemoryPage currentPage) : this()
@@ -23,6 +26,7 @@ namespace CPU_OS_Simulator
             this.mainWindowInstance = mainWindowInstance;
             this.currentPage = currentPage;
             currentInstance = this;
+            SetMemoryWindowInstance();
             PopulateDataView();
         }
 
@@ -54,11 +58,11 @@ namespace CPU_OS_Simulator
             {
                 int value = Convert.ToInt32(txt_IntegerValue.Text);
                 int address = Convert.ToInt32(txt_AddressLocation.Text);
-                int offset = address / currentPage.PageSize;
+                int offset = address / MemoryPage.PAGE_SIZE;
 
                 if (offset == 0)
                 {
-                    offset = address % currentPage.PageSize;
+                    offset = address % MemoryPage.PAGE_SIZE;
                 }
                 if (address > currentPage.EndOffset)
                 {
@@ -80,11 +84,11 @@ namespace CPU_OS_Simulator
             {
                 string value = txt_StringValue.Text;
                 int address = Convert.ToInt32(txt_AddressLocation.Text);
-                int offset = address / currentPage.PageSize;
+                int offset = address / MemoryPage.PAGE_SIZE;
                 char[] chars = value.ToCharArray();
                 if (offset == 0)
                 {
-                    offset = address % currentPage.PageSize;
+                    offset = address % MemoryPage.PAGE_SIZE;
                 }
                 if (address > currentPage.EndOffset)
                 {
@@ -101,10 +105,10 @@ namespace CPU_OS_Simulator
             {
                 bool value = (bool)cmb_BooleanValue.SelectedItem;
                 int address = Convert.ToInt32(txt_AddressLocation.Text);
-                int offset = address / currentPage.PageSize;
+                int offset = address / MemoryPage.PAGE_SIZE;
                 if (offset == 0)
                 {
-                    offset = address % currentPage.PageSize;
+                    offset = address % MemoryPage.PAGE_SIZE;
                 }
                 if (address > currentPage.EndOffset)
                 {
@@ -144,6 +148,20 @@ namespace CPU_OS_Simulator
         {
             PageTableWindow window = new PageTableWindow(this);
             window.Show();
+        }
+
+        private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            currentInstance = null;
+            SetMemoryWindowInstance();
+        }
+
+        private void SetMemoryWindowInstance()
+        {
+            Assembly windowBridge = Assembly.LoadFrom("CPU_OS_Simulator.WindowBridge.dll"); // Load the window bridge module
+            System.Console.WriteLine(windowBridge.GetExportedTypes()[0]);
+            Type WindowType = windowBridge.GetType(windowBridge.GetExportedTypes()[0].ToString()); // get the name of the type that contains the window instances
+            WindowType.GetField("MemoryWindowInstance").SetValue(null, currentInstance);
         }
     }
 }

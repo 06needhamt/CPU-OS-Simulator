@@ -108,6 +108,7 @@ $(document).ready(function(){initNavTree('class_c_p_u___o_s___simulator_1_1_memo
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pub-attribs">Public Attributes</a> &#124;
 <a href="#properties">Properties</a> &#124;
 <a href="#pri-methods">Private Member Functions</a> &#124;
 <a href="#pri-attribs">Private Attributes</a> &#124;
@@ -116,48 +117,86 @@ $(document).ready(function(){initNavTree('class_c_p_u___o_s___simulator_1_1_memo
 <div class="title">CPU_OS_Simulator.Memory.MemoryPage Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>This class represents a page of data within memory  
+ <a href="class_c_p_u___o_s___simulator_1_1_memory_1_1_memory_page.html#details">More...</a></p>
+<div class="dynheader">
+Inheritance diagram for CPU_OS_Simulator.Memory.MemoryPage:</div>
+<div class="dyncontent">
+ <div class="center">
+  <img src="class_c_p_u___o_s___simulator_1_1_memory_1_1_memory_page.png" usemap="#CPU_OS_Simulator.Memory.MemoryPage_map" alt=""/>
+  <map id="CPU_OS_Simulator.Memory.MemoryPage_map" name="CPU_OS_Simulator.Memory.MemoryPage_map">
+<area href="interface_c_p_u___o_s___simulator_1_1_memory_1_1_i_swappable.html" alt="CPU_OS_Simulator.Memory.ISwappable" shape="rect" coords="0,0,250,24"/>
+</map>
+ </div></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:ab471d5de4e2b4e5f6585ae3782fa2ae7"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_p_u___o_s___simulator_1_1_memory_1_1_memory_page.html#ab471d5de4e2b4e5f6585ae3782fa2ae7">MemoryPage</a> (int <a class="el" href="class_c_p_u___o_s___simulator_1_1_memory_1_1_memory_page.html#acf60a7bdefab6120fe080854b5f0b38b">pageIndex</a>, int <a class="el" href="class_c_p_u___o_s___simulator_1_1_memory_1_1_memory_page.html#a6fe2e28385db19a1968a41efe3df3f38">startOffset</a>, int <a class="el" href="class_c_p_u___o_s___simulator_1_1_memory_1_1_memory_page.html#abbbd3ea0ef99dac19c6bd9694dbdfd3a">pageSize</a>)</td></tr>
-<tr class="separator:ab471d5de4e2b4e5f6585ae3782fa2ae7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9b162033b9c9cc4dd28d683706fe6d2e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_p_u___o_s___simulator_1_1_memory_1_1_memory_page.html#a9b162033b9c9cc4dd28d683706fe6d2e">MemoryPage</a> (int <a class="el" href="class_c_p_u___o_s___simulator_1_1_memory_1_1_memory_page.html#acf60a7bdefab6120fe080854b5f0b38b">pageIndex</a>, int <a class="el" href="class_c_p_u___o_s___simulator_1_1_memory_1_1_memory_page.html#a6fe2e28385db19a1968a41efe3df3f38">startOffset</a>)</td></tr>
+<tr class="memdesc:a9b162033b9c9cc4dd28d683706fe6d2e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor for memory page  <a href="#a9b162033b9c9cc4dd28d683706fe6d2e">More...</a><br /></td></tr>
+<tr class="separator:a9b162033b9c9cc4dd28d683706fe6d2e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a53d6deee146e06754ea770755b17ff14"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_p_u___o_s___simulator_1_1_memory_1_1_memory_page.html#a53d6deee146e06754ea770755b17ff14">SwapOut</a> (int LocationToSwap, int FrameNumber)</td></tr>
+<tr class="memdesc:a53d6deee146e06754ea770755b17ff14"><td class="mdescLeft">&#160;</td><td class="mdescRight">This function swaps out this memory page  <a href="#a53d6deee146e06754ea770755b17ff14">More...</a><br /></td></tr>
+<tr class="separator:a53d6deee146e06754ea770755b17ff14"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a79e408c1be5efbaa6969ab66cc46930f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_p_u___o_s___simulator_1_1_memory_1_1_memory_page.html#a79e408c1be5efbaa6969ab66cc46930f">SwapIn</a> (int LocationToSwap, int FrameNumber)</td></tr>
+<tr class="memdesc:a79e408c1be5efbaa6969ab66cc46930f"><td class="mdescLeft">&#160;</td><td class="mdescRight">This function swaps in this memory page  <a href="#a79e408c1be5efbaa6969ab66cc46930f">More...</a><br /></td></tr>
+<tr class="separator:a79e408c1be5efbaa6969ab66cc46930f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0c43cf3b2640f17b8d732acbaaaead96"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_p_u___o_s___simulator_1_1_memory_1_1_memory_page.html#a0c43cf3b2640f17b8d732acbaaaead96">ZeroMemory</a> ()</td></tr>
+<tr class="memdesc:a0c43cf3b2640f17b8d732acbaaaead96"><td class="mdescLeft">&#160;</td><td class="mdescRight">This function zeros out (clears) a memory page  <a href="#a0c43cf3b2640f17b8d732acbaaaead96">More...</a><br /></td></tr>
+<tr class="separator:a0c43cf3b2640f17b8d732acbaaaead96"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
+Public Attributes</h2></td></tr>
+<tr class="memitem:a502abee83030136a808d5b5f0c0fe7ec"><td class="memItemLeft" align="right" valign="top">const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_p_u___o_s___simulator_1_1_memory_1_1_memory_page.html#a502abee83030136a808d5b5f0c0fe7ec">PAGE_SIZE</a> = 256</td></tr>
+<tr class="memdesc:a502abee83030136a808d5b5f0c0fe7ec"><td class="mdescLeft">&#160;</td><td class="mdescRight">The size of the memory pages to manage  <a href="#a502abee83030136a808d5b5f0c0fe7ec">More...</a><br /></td></tr>
+<tr class="separator:a502abee83030136a808d5b5f0c0fe7ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="properties"></a>
 Properties</h2></td></tr>
 <tr class="memitem:aec80700d036a447e7e6ec204513e3a59"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_p_u___o_s___simulator_1_1_memory_1_1_memory_page.html#aec80700d036a447e7e6ec204513e3a59">PageIndex</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:aec80700d036a447e7e6ec204513e3a59"><td class="mdescLeft">&#160;</td><td class="mdescRight">The index of the current page within its program  <a href="#aec80700d036a447e7e6ec204513e3a59">More...</a><br /></td></tr>
 <tr class="separator:aec80700d036a447e7e6ec204513e3a59"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad700979e51dd3d05470c681588c6fa79"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_p_u___o_s___simulator_1_1_memory_1_1_memory_page.html#ad700979e51dd3d05470c681588c6fa79">StartOffset</a><code> [get]</code></td></tr>
+<tr class="memdesc:ad700979e51dd3d05470c681588c6fa79"><td class="mdescLeft">&#160;</td><td class="mdescRight">The start offset of this page  <a href="#ad700979e51dd3d05470c681588c6fa79">More...</a><br /></td></tr>
 <tr class="separator:ad700979e51dd3d05470c681588c6fa79"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6fba0e419e59c58fb3c5444a8e437ab3"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_p_u___o_s___simulator_1_1_memory_1_1_memory_page.html#a6fba0e419e59c58fb3c5444a8e437ab3">PageSize</a><code> [get]</code></td></tr>
-<tr class="separator:a6fba0e419e59c58fb3c5444a8e437ab3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abe850b4a088a820ecf598af1cd9a7deb"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_p_u___o_s___simulator_1_1_memory_1_1_memory_page.html#abe850b4a088a820ecf598af1cd9a7deb">EndOffset</a><code> [get]</code></td></tr>
+<tr class="memdesc:abe850b4a088a820ecf598af1cd9a7deb"><td class="mdescLeft">&#160;</td><td class="mdescRight">the end offset of this page  <a href="#abe850b4a088a820ecf598af1cd9a7deb">More...</a><br /></td></tr>
 <tr class="separator:abe850b4a088a820ecf598af1cd9a7deb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8bf84e82146f9ff35ffbcc32b93a9db0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_c_p_u___o_s___simulator_1_1_memory_1_1_memory_segment.html">MemorySegment</a>[]&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_p_u___o_s___simulator_1_1_memory_1_1_memory_page.html#a8bf84e82146f9ff35ffbcc32b93a9db0">Data</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:a8bf84e82146f9ff35ffbcc32b93a9db0"><td class="mdescLeft">&#160;</td><td class="mdescRight">array of memory segments which collectively make up this page  <a href="#a8bf84e82146f9ff35ffbcc32b93a9db0">More...</a><br /></td></tr>
 <tr class="separator:a8bf84e82146f9ff35ffbcc32b93a9db0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af31a2243a3e68ec635315929859fa358"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_p_u___o_s___simulator_1_1_memory_1_1_memory_page.html#af31a2243a3e68ec635315929859fa358">StartOffsetPhysical</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:af31a2243a3e68ec635315929859fa358"><td class="mdescLeft">&#160;</td><td class="mdescRight">The physical address of the first byte in the page  <a href="#af31a2243a3e68ec635315929859fa358">More...</a><br /></td></tr>
+<tr class="separator:af31a2243a3e68ec635315929859fa358"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
 Private Member Functions</h2></td></tr>
 <tr class="memitem:a4006da1460cb3bf17076dfbade9d0038"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_p_u___o_s___simulator_1_1_memory_1_1_memory_page.html#a4006da1460cb3bf17076dfbade9d0038">PopulateData</a> ()</td></tr>
+<tr class="memdesc:a4006da1460cb3bf17076dfbade9d0038"><td class="mdescLeft">&#160;</td><td class="mdescRight">Populates the data in this page with its initial value (0)  <a href="#a4006da1460cb3bf17076dfbade9d0038">More...</a><br /></td></tr>
 <tr class="separator:a4006da1460cb3bf17076dfbade9d0038"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a84a305171941df5c3ae72b34ccec5485"><td class="memItemLeft" align="right" valign="top">dynamic&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_p_u___o_s___simulator_1_1_memory_1_1_memory_page.html#a84a305171941df5c3ae72b34ccec5485">GetMainWindowInstance</a> ()</td></tr>
+<tr class="memdesc:a84a305171941df5c3ae72b34ccec5485"><td class="mdescLeft">&#160;</td><td class="mdescRight">This function gets the main window instance from the window bridge  <a href="#a84a305171941df5c3ae72b34ccec5485">More...</a><br /></td></tr>
+<tr class="separator:a84a305171941df5c3ae72b34ccec5485"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
 <tr class="memitem:acf60a7bdefab6120fe080854b5f0b38b"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_p_u___o_s___simulator_1_1_memory_1_1_memory_page.html#acf60a7bdefab6120fe080854b5f0b38b">pageIndex</a></td></tr>
 <tr class="separator:acf60a7bdefab6120fe080854b5f0b38b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3cecfb0fe2f91def3db5711180442d44"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_p_u___o_s___simulator_1_1_memory_1_1_memory_page.html#a3cecfb0fe2f91def3db5711180442d44">startOffsetPhysical</a></td></tr>
+<tr class="separator:a3cecfb0fe2f91def3db5711180442d44"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6fe2e28385db19a1968a41efe3df3f38"><td class="memItemLeft" align="right" valign="top">readonly int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_p_u___o_s___simulator_1_1_memory_1_1_memory_page.html#a6fe2e28385db19a1968a41efe3df3f38">startOffset</a></td></tr>
 <tr class="separator:a6fe2e28385db19a1968a41efe3df3f38"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abbbd3ea0ef99dac19c6bd9694dbdfd3a"><td class="memItemLeft" align="right" valign="top">readonly int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_p_u___o_s___simulator_1_1_memory_1_1_memory_page.html#abbbd3ea0ef99dac19c6bd9694dbdfd3a">pageSize</a></td></tr>
-<tr class="separator:abbbd3ea0ef99dac19c6bd9694dbdfd3a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae2f8f419909326ce5449d37af9ff7c89"><td class="memItemLeft" align="right" valign="top">readonly int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_p_u___o_s___simulator_1_1_memory_1_1_memory_page.html#ae2f8f419909326ce5449d37af9ff7c89">endOffset</a></td></tr>
 <tr class="separator:ae2f8f419909326ce5449d37af9ff7c89"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af9ab25101e7920de2344e0fa5ddfaa27"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_c_p_u___o_s___simulator_1_1_memory_1_1_memory_segment.html">MemorySegment</a>[]&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_p_u___o_s___simulator_1_1_memory_1_1_memory_page.html#af9ab25101e7920de2344e0fa5ddfaa27">data</a></td></tr>
 <tr class="separator:af9ab25101e7920de2344e0fa5ddfaa27"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock">
-<p>Definition at line <a class="el" href="_memory_page_8cs_source.html#l00003">3</a> of file <a class="el" href="_memory_page_8cs_source.html">MemoryPage.cs</a>.</p>
+<div class="textblock"><p>This class represents a page of data within memory </p>
+
+<p>Definition at line <a class="el" href="_memory_page_8cs_source.html#l00011">11</a> of file <a class="el" href="_memory_page_8cs_source.html">MemoryPage.cs</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a class="anchor" id="ab471d5de4e2b4e5f6585ae3782fa2ae7"></a>
+<a class="anchor" id="a9b162033b9c9cc4dd28d683706fe6d2e"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -171,13 +210,7 @@ Private Attributes</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>startOffset</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>pageSize</em>&#160;</td>
+          <td class="paramname"><em>startOffset</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -187,11 +220,48 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_memory_page_8cs_source.html#l00063">63</a> of file <a class="el" href="_memory_page_8cs_source.html">MemoryPage.cs</a>.</p>
+<p>Constructor for memory page </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pageIndex</td><td>the index of the page within the program</td></tr>
+    <tr><td class="paramname">startOffset</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="_memory_page_8cs_source.html#l00094">94</a> of file <a class="el" href="_memory_page_8cs_source.html">MemoryPage.cs</a>.</p>
 
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a class="anchor" id="a84a305171941df5c3ae72b34ccec5485"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">dynamic CPU_OS_Simulator.Memory.MemoryPage.GetMainWindowInstance </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>This function gets the main window instance from the window bridge </p>
+<dl class="section return"><dt>Returns</dt><dd>the active instance of main window </dd></dl>
+
+<p>Definition at line <a class="el" href="_memory_page_8cs_source.html#l00171">171</a> of file <a class="el" href="_memory_page_8cs_source.html">MemoryPage.cs</a>.</p>
+
+</div>
+</div>
 <a class="anchor" id="a4006da1460cb3bf17076dfbade9d0038"></a>
 <div class="memitem">
 <div class="memproto">
@@ -213,7 +283,106 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_memory_page_8cs_source.html#l00073">73</a> of file <a class="el" href="_memory_page_8cs_source.html">MemoryPage.cs</a>.</p>
+<p>Populates the data in this page with its initial value (0) </p>
+
+<p>Definition at line <a class="el" href="_memory_page_8cs_source.html#l00107">107</a> of file <a class="el" href="_memory_page_8cs_source.html">MemoryPage.cs</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a79e408c1be5efbaa6969ab66cc46930f"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void CPU_OS_Simulator.Memory.MemoryPage.SwapIn </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>LocationToSwap</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>FrameNumber</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>This function swaps in this memory page </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">LocationToSwap</td><td>the physical address to swap this page in to</td></tr>
+    <tr><td class="paramname">FrameNumber</td><td>this pages frame number</td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Implements <a class="el" href="interface_c_p_u___o_s___simulator_1_1_memory_1_1_i_swappable.html#a38e30363486a3de53e6171da50b943af">CPU_OS_Simulator.Memory.ISwappable</a>.</p>
+
+<p>Definition at line <a class="el" href="_memory_page_8cs_source.html#l00147">147</a> of file <a class="el" href="_memory_page_8cs_source.html">MemoryPage.cs</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a53d6deee146e06754ea770755b17ff14"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void CPU_OS_Simulator.Memory.MemoryPage.SwapOut </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>LocationToSwap</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>FrameNumber</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>This function swaps out this memory page </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">LocationToSwap</td><td>the physical address to swap from</td></tr>
+    <tr><td class="paramname">FrameNumber</td><td>this page's frame number</td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Implements <a class="el" href="interface_c_p_u___o_s___simulator_1_1_memory_1_1_i_swappable.html#ae789e9deb0600d48b0dcbe4a4252220a">CPU_OS_Simulator.Memory.ISwappable</a>.</p>
+
+<p>Definition at line <a class="el" href="_memory_page_8cs_source.html#l00122">122</a> of file <a class="el" href="_memory_page_8cs_source.html">MemoryPage.cs</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a0c43cf3b2640f17b8d732acbaaaead96"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void CPU_OS_Simulator.Memory.MemoryPage.ZeroMemory </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>This function zeros out (clears) a memory page </p>
+
+<p>Definition at line <a class="el" href="_memory_page_8cs_source.html#l00182">182</a> of file <a class="el" href="_memory_page_8cs_source.html">MemoryPage.cs</a>.</p>
 
 </div>
 </div>
@@ -236,7 +405,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_memory_page_8cs_source.html#l00009">9</a> of file <a class="el" href="_memory_page_8cs_source.html">MemoryPage.cs</a>.</p>
+<p>Definition at line <a class="el" href="_memory_page_8cs_source.html#l00021">21</a> of file <a class="el" href="_memory_page_8cs_source.html">MemoryPage.cs</a>.</p>
 
 </div>
 </div>
@@ -258,7 +427,23 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_memory_page_8cs_source.html#l00008">8</a> of file <a class="el" href="_memory_page_8cs_source.html">MemoryPage.cs</a>.</p>
+<p>Definition at line <a class="el" href="_memory_page_8cs_source.html#l00020">20</a> of file <a class="el" href="_memory_page_8cs_source.html">MemoryPage.cs</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a502abee83030136a808d5b5f0c0fe7ec"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const int CPU_OS_Simulator.Memory.MemoryPage.PAGE_SIZE = 256</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>The size of the memory pages to manage </p>
+
+<p>Definition at line <a class="el" href="_memory_page_8cs_source.html#l00019">19</a> of file <a class="el" href="_memory_page_8cs_source.html">MemoryPage.cs</a>.</p>
 
 </div>
 </div>
@@ -280,29 +465,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_memory_page_8cs_source.html#l00005">5</a> of file <a class="el" href="_memory_page_8cs_source.html">MemoryPage.cs</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="abbbd3ea0ef99dac19c6bd9694dbdfd3a"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">readonly int CPU_OS_Simulator.Memory.MemoryPage.pageSize</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="_memory_page_8cs_source.html#l00007">7</a> of file <a class="el" href="_memory_page_8cs_source.html">MemoryPage.cs</a>.</p>
+<p>Definition at line <a class="el" href="_memory_page_8cs_source.html#l00013">13</a> of file <a class="el" href="_memory_page_8cs_source.html">MemoryPage.cs</a>.</p>
 
 </div>
 </div>
@@ -324,7 +487,29 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_memory_page_8cs_source.html#l00006">6</a> of file <a class="el" href="_memory_page_8cs_source.html">MemoryPage.cs</a>.</p>
+<p>Definition at line <a class="el" href="_memory_page_8cs_source.html#l00015">15</a> of file <a class="el" href="_memory_page_8cs_source.html">MemoryPage.cs</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a3cecfb0fe2f91def3db5711180442d44"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int CPU_OS_Simulator.Memory.MemoryPage.startOffsetPhysical</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_memory_page_8cs_source.html#l00014">14</a> of file <a class="el" href="_memory_page_8cs_source.html">MemoryPage.cs</a>.</p>
 
 </div>
 </div>
@@ -347,7 +532,9 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_memory_page_8cs_source.html#l00049">49</a> of file <a class="el" href="_memory_page_8cs_source.html">MemoryPage.cs</a>.</p>
+<p>array of memory segments which collectively make up this page </p>
+
+<p>Definition at line <a class="el" href="_memory_page_8cs_source.html#l00061">61</a> of file <a class="el" href="_memory_page_8cs_source.html">MemoryPage.cs</a>.</p>
 
 </div>
 </div>
@@ -369,7 +556,9 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_memory_page_8cs_source.html#l00041">41</a> of file <a class="el" href="_memory_page_8cs_source.html">MemoryPage.cs</a>.</p>
+<p>the end offset of this page </p>
+
+<p>Definition at line <a class="el" href="_memory_page_8cs_source.html#l00051">51</a> of file <a class="el" href="_memory_page_8cs_source.html">MemoryPage.cs</a>.</p>
 
 </div>
 </div>
@@ -391,29 +580,9 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_memory_page_8cs_source.html#l00012">12</a> of file <a class="el" href="_memory_page_8cs_source.html">MemoryPage.cs</a>.</p>
+<p>The index of the current page within its program </p>
 
-</div>
-</div>
-<a class="anchor" id="a6fba0e419e59c58fb3c5444a8e437ab3"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">int CPU_OS_Simulator.Memory.MemoryPage.PageSize</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">get</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="_memory_page_8cs_source.html#l00033">33</a> of file <a class="el" href="_memory_page_8cs_source.html">MemoryPage.cs</a>.</p>
+<p>Definition at line <a class="el" href="_memory_page_8cs_source.html#l00026">26</a> of file <a class="el" href="_memory_page_8cs_source.html">MemoryPage.cs</a>.</p>
 
 </div>
 </div>
@@ -435,7 +604,33 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_memory_page_8cs_source.html#l00025">25</a> of file <a class="el" href="_memory_page_8cs_source.html">MemoryPage.cs</a>.</p>
+<p>The start offset of this page </p>
+
+<p>Definition at line <a class="el" href="_memory_page_8cs_source.html#l00041">41</a> of file <a class="el" href="_memory_page_8cs_source.html">MemoryPage.cs</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="af31a2243a3e68ec635315929859fa358"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int CPU_OS_Simulator.Memory.MemoryPage.StartOffsetPhysical</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">get</span><span class="mlabel">set</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>The physical address of the first byte in the page </p>
+
+<p>Definition at line <a class="el" href="_memory_page_8cs_source.html#l00076">76</a> of file <a class="el" href="_memory_page_8cs_source.html">MemoryPage.cs</a>.</p>
 
 </div>
 </div>

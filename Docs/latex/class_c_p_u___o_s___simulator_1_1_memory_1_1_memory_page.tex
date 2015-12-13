@@ -1,36 +1,60 @@
 \hypertarget{class_c_p_u___o_s___simulator_1_1_memory_1_1_memory_page}{}\section{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Memory.\+Memory\+Page Class Reference}
 \label{class_c_p_u___o_s___simulator_1_1_memory_1_1_memory_page}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Memory.\+Memory\+Page@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Memory.\+Memory\+Page}}
+
+
+This class represents a page of data within memory  
+
+
+Inheritance diagram for C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Memory.\+Memory\+Page\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_c_p_u___o_s___simulator_1_1_memory_1_1_memory_page}
+\end{center}
+\end{figure}
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\hyperlink{class_c_p_u___o_s___simulator_1_1_memory_1_1_memory_page_ab471d5de4e2b4e5f6585ae3782fa2ae7}{Memory\+Page} (int \hyperlink{class_c_p_u___o_s___simulator_1_1_memory_1_1_memory_page_acf60a7bdefab6120fe080854b5f0b38b}{page\+Index}, int \hyperlink{class_c_p_u___o_s___simulator_1_1_memory_1_1_memory_page_a6fe2e28385db19a1968a41efe3df3f38}{start\+Offset}, int \hyperlink{class_c_p_u___o_s___simulator_1_1_memory_1_1_memory_page_abbbd3ea0ef99dac19c6bd9694dbdfd3a}{page\+Size})
-\end{DoxyCompactItemize}
+\hyperlink{class_c_p_u___o_s___simulator_1_1_memory_1_1_memory_page_a9b162033b9c9cc4dd28d683706fe6d2e}{Memory\+Page} (int \hyperlink{class_c_p_u___o_s___simulator_1_1_memory_1_1_memory_page_acf60a7bdefab6120fe080854b5f0b38b}{page\+Index}, int \hyperlink{class_c_p_u___o_s___simulator_1_1_memory_1_1_memory_page_a6fe2e28385db19a1968a41efe3df3f38}{start\+Offset})
+\begin{DoxyCompactList}\small\item\em Constructor for memory page \end{DoxyCompactList}\item 
+void \hyperlink{class_c_p_u___o_s___simulator_1_1_memory_1_1_memory_page_a53d6deee146e06754ea770755b17ff14}{Swap\+Out} (int Location\+To\+Swap, int Frame\+Number)
+\begin{DoxyCompactList}\small\item\em This function swaps out this memory page \end{DoxyCompactList}\item 
+void \hyperlink{class_c_p_u___o_s___simulator_1_1_memory_1_1_memory_page_a79e408c1be5efbaa6969ab66cc46930f}{Swap\+In} (int Location\+To\+Swap, int Frame\+Number)
+\begin{DoxyCompactList}\small\item\em This function swaps in this memory page \end{DoxyCompactList}\item 
+void \hyperlink{class_c_p_u___o_s___simulator_1_1_memory_1_1_memory_page_a0c43cf3b2640f17b8d732acbaaaead96}{Zero\+Memory} ()
+\begin{DoxyCompactList}\small\item\em This function zeros out (clears) a memory page \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+const int \hyperlink{class_c_p_u___o_s___simulator_1_1_memory_1_1_memory_page_a502abee83030136a808d5b5f0c0fe7ec}{P\+A\+G\+E\+\_\+\+S\+I\+Z\+E} = 256
+\begin{DoxyCompactList}\small\item\em The size of the memory pages to manage \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Properties}
 \begin{DoxyCompactItemize}
 \item 
 int \hyperlink{class_c_p_u___o_s___simulator_1_1_memory_1_1_memory_page_aec80700d036a447e7e6ec204513e3a59}{Page\+Index}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
-\item 
+\begin{DoxyCompactList}\small\item\em The index of the current page within its program \end{DoxyCompactList}\item 
 int \hyperlink{class_c_p_u___o_s___simulator_1_1_memory_1_1_memory_page_ad700979e51dd3d05470c681588c6fa79}{Start\+Offset}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
-\item 
-int \hyperlink{class_c_p_u___o_s___simulator_1_1_memory_1_1_memory_page_a6fba0e419e59c58fb3c5444a8e437ab3}{Page\+Size}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
-\item 
+\begin{DoxyCompactList}\small\item\em The start offset of this page \end{DoxyCompactList}\item 
 int \hyperlink{class_c_p_u___o_s___simulator_1_1_memory_1_1_memory_page_abe850b4a088a820ecf598af1cd9a7deb}{End\+Offset}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
-\item 
+\begin{DoxyCompactList}\small\item\em the end offset of this page \end{DoxyCompactList}\item 
 \hyperlink{class_c_p_u___o_s___simulator_1_1_memory_1_1_memory_segment}{Memory\+Segment}\mbox{[}$\,$\mbox{]} \hyperlink{class_c_p_u___o_s___simulator_1_1_memory_1_1_memory_page_a8bf84e82146f9ff35ffbcc32b93a9db0}{Data}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em array of memory segments which collectively make up this page \end{DoxyCompactList}\item 
+int \hyperlink{class_c_p_u___o_s___simulator_1_1_memory_1_1_memory_page_af31a2243a3e68ec635315929859fa358}{Start\+Offset\+Physical}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em The physical address of the first byte in the page \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Private Member Functions}
 \begin{DoxyCompactItemize}
 \item 
 void \hyperlink{class_c_p_u___o_s___simulator_1_1_memory_1_1_memory_page_a4006da1460cb3bf17076dfbade9d0038}{Populate\+Data} ()
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Populates the data in this page with its initial value (0) \end{DoxyCompactList}\item 
+dynamic \hyperlink{class_c_p_u___o_s___simulator_1_1_memory_1_1_memory_page_a84a305171941df5c3ae72b34ccec5485}{Get\+Main\+Window\+Instance} ()
+\begin{DoxyCompactList}\small\item\em This function gets the main window instance from the window bridge \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Private Attributes}
 \begin{DoxyCompactItemize}
 \item 
 int \hyperlink{class_c_p_u___o_s___simulator_1_1_memory_1_1_memory_page_acf60a7bdefab6120fe080854b5f0b38b}{page\+Index}
 \item 
-readonly int \hyperlink{class_c_p_u___o_s___simulator_1_1_memory_1_1_memory_page_a6fe2e28385db19a1968a41efe3df3f38}{start\+Offset}
+int \hyperlink{class_c_p_u___o_s___simulator_1_1_memory_1_1_memory_page_a3cecfb0fe2f91def3db5711180442d44}{start\+Offset\+Physical}
 \item 
-readonly int \hyperlink{class_c_p_u___o_s___simulator_1_1_memory_1_1_memory_page_abbbd3ea0ef99dac19c6bd9694dbdfd3a}{page\+Size}
+readonly int \hyperlink{class_c_p_u___o_s___simulator_1_1_memory_1_1_memory_page_a6fe2e28385db19a1968a41efe3df3f38}{start\+Offset}
 \item 
 readonly int \hyperlink{class_c_p_u___o_s___simulator_1_1_memory_1_1_memory_page_ae2f8f419909326ce5449d37af9ff7c89}{end\+Offset}
 \item 
@@ -39,29 +63,59 @@ readonly int \hyperlink{class_c_p_u___o_s___simulator_1_1_memory_1_1_memory_page
 
 
 \subsection{Detailed Description}
+This class represents a page of data within memory 
 
 
-Definition at line 3 of file Memory\+Page.\+cs.
+
+Definition at line 11 of file Memory\+Page.\+cs.
 
 
 
 \subsection{Constructor \& Destructor Documentation}
-\hypertarget{class_c_p_u___o_s___simulator_1_1_memory_1_1_memory_page_ab471d5de4e2b4e5f6585ae3782fa2ae7}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Memory\+::\+Memory\+Page@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Memory\+::\+Memory\+Page}!Memory\+Page@{Memory\+Page}}
+\hypertarget{class_c_p_u___o_s___simulator_1_1_memory_1_1_memory_page_a9b162033b9c9cc4dd28d683706fe6d2e}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Memory\+::\+Memory\+Page@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Memory\+::\+Memory\+Page}!Memory\+Page@{Memory\+Page}}
 \index{Memory\+Page@{Memory\+Page}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Memory\+::\+Memory\+Page@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Memory\+::\+Memory\+Page}}
-\subsubsection[{Memory\+Page(int page\+Index, int start\+Offset, int page\+Size)}]{\setlength{\rightskip}{0pt plus 5cm}C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Memory.\+Memory\+Page.\+Memory\+Page (
+\subsubsection[{Memory\+Page(int page\+Index, int start\+Offset)}]{\setlength{\rightskip}{0pt plus 5cm}C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Memory.\+Memory\+Page.\+Memory\+Page (
 \begin{DoxyParamCaption}
 \item[{int}]{page\+Index, }
-\item[{int}]{start\+Offset, }
-\item[{int}]{page\+Size}
+\item[{int}]{start\+Offset}
 \end{DoxyParamCaption}
-)}\label{class_c_p_u___o_s___simulator_1_1_memory_1_1_memory_page_ab471d5de4e2b4e5f6585ae3782fa2ae7}
+)}\label{class_c_p_u___o_s___simulator_1_1_memory_1_1_memory_page_a9b162033b9c9cc4dd28d683706fe6d2e}
 
 
-Definition at line 63 of file Memory\+Page.\+cs.
+Constructor for memory page 
+
+
+\begin{DoxyParams}{Parameters}
+{\em page\+Index} & the index of the page within the program\\
+\hline
+{\em start\+Offset} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 94 of file Memory\+Page.\+cs.
 
 
 
 \subsection{Member Function Documentation}
+\hypertarget{class_c_p_u___o_s___simulator_1_1_memory_1_1_memory_page_a84a305171941df5c3ae72b34ccec5485}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Memory\+::\+Memory\+Page@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Memory\+::\+Memory\+Page}!Get\+Main\+Window\+Instance@{Get\+Main\+Window\+Instance}}
+\index{Get\+Main\+Window\+Instance@{Get\+Main\+Window\+Instance}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Memory\+::\+Memory\+Page@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Memory\+::\+Memory\+Page}}
+\subsubsection[{Get\+Main\+Window\+Instance()}]{\setlength{\rightskip}{0pt plus 5cm}dynamic C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Memory.\+Memory\+Page.\+Get\+Main\+Window\+Instance (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{class_c_p_u___o_s___simulator_1_1_memory_1_1_memory_page_a84a305171941df5c3ae72b34ccec5485}
+
+
+This function gets the main window instance from the window bridge 
+
+\begin{DoxyReturn}{Returns}
+the active instance of main window 
+\end{DoxyReturn}
+
+
+Definition at line 171 of file Memory\+Page.\+cs.
+
 \hypertarget{class_c_p_u___o_s___simulator_1_1_memory_1_1_memory_page_a4006da1460cb3bf17076dfbade9d0038}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Memory\+::\+Memory\+Page@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Memory\+::\+Memory\+Page}!Populate\+Data@{Populate\+Data}}
 \index{Populate\+Data@{Populate\+Data}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Memory\+::\+Memory\+Page@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Memory\+::\+Memory\+Page}}
 \subsubsection[{Populate\+Data()}]{\setlength{\rightskip}{0pt plus 5cm}void C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Memory.\+Memory\+Page.\+Populate\+Data (
@@ -71,7 +125,80 @@ Definition at line 63 of file Memory\+Page.\+cs.
 )\hspace{0.3cm}{\ttfamily [private]}}\label{class_c_p_u___o_s___simulator_1_1_memory_1_1_memory_page_a4006da1460cb3bf17076dfbade9d0038}
 
 
-Definition at line 73 of file Memory\+Page.\+cs.
+Populates the data in this page with its initial value (0) 
+
+
+
+Definition at line 107 of file Memory\+Page.\+cs.
+
+\hypertarget{class_c_p_u___o_s___simulator_1_1_memory_1_1_memory_page_a79e408c1be5efbaa6969ab66cc46930f}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Memory\+::\+Memory\+Page@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Memory\+::\+Memory\+Page}!Swap\+In@{Swap\+In}}
+\index{Swap\+In@{Swap\+In}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Memory\+::\+Memory\+Page@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Memory\+::\+Memory\+Page}}
+\subsubsection[{Swap\+In(int Location\+To\+Swap, int Frame\+Number)}]{\setlength{\rightskip}{0pt plus 5cm}void C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Memory.\+Memory\+Page.\+Swap\+In (
+\begin{DoxyParamCaption}
+\item[{int}]{Location\+To\+Swap, }
+\item[{int}]{Frame\+Number}
+\end{DoxyParamCaption}
+)}\label{class_c_p_u___o_s___simulator_1_1_memory_1_1_memory_page_a79e408c1be5efbaa6969ab66cc46930f}
+
+
+This function swaps in this memory page 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Location\+To\+Swap} & the physical address to swap this page in to\\
+\hline
+{\em Frame\+Number} & this pages frame number\\
+\hline
+\end{DoxyParams}
+
+
+Implements \hyperlink{interface_c_p_u___o_s___simulator_1_1_memory_1_1_i_swappable_a38e30363486a3de53e6171da50b943af}{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Memory.\+I\+Swappable}.
+
+
+
+Definition at line 147 of file Memory\+Page.\+cs.
+
+\hypertarget{class_c_p_u___o_s___simulator_1_1_memory_1_1_memory_page_a53d6deee146e06754ea770755b17ff14}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Memory\+::\+Memory\+Page@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Memory\+::\+Memory\+Page}!Swap\+Out@{Swap\+Out}}
+\index{Swap\+Out@{Swap\+Out}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Memory\+::\+Memory\+Page@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Memory\+::\+Memory\+Page}}
+\subsubsection[{Swap\+Out(int Location\+To\+Swap, int Frame\+Number)}]{\setlength{\rightskip}{0pt plus 5cm}void C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Memory.\+Memory\+Page.\+Swap\+Out (
+\begin{DoxyParamCaption}
+\item[{int}]{Location\+To\+Swap, }
+\item[{int}]{Frame\+Number}
+\end{DoxyParamCaption}
+)}\label{class_c_p_u___o_s___simulator_1_1_memory_1_1_memory_page_a53d6deee146e06754ea770755b17ff14}
+
+
+This function swaps out this memory page 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Location\+To\+Swap} & the physical address to swap from\\
+\hline
+{\em Frame\+Number} & this page\textquotesingle{}s frame number\\
+\hline
+\end{DoxyParams}
+
+
+Implements \hyperlink{interface_c_p_u___o_s___simulator_1_1_memory_1_1_i_swappable_ae789e9deb0600d48b0dcbe4a4252220a}{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Memory.\+I\+Swappable}.
+
+
+
+Definition at line 122 of file Memory\+Page.\+cs.
+
+\hypertarget{class_c_p_u___o_s___simulator_1_1_memory_1_1_memory_page_a0c43cf3b2640f17b8d732acbaaaead96}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Memory\+::\+Memory\+Page@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Memory\+::\+Memory\+Page}!Zero\+Memory@{Zero\+Memory}}
+\index{Zero\+Memory@{Zero\+Memory}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Memory\+::\+Memory\+Page@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Memory\+::\+Memory\+Page}}
+\subsubsection[{Zero\+Memory()}]{\setlength{\rightskip}{0pt plus 5cm}void C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Memory.\+Memory\+Page.\+Zero\+Memory (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{class_c_p_u___o_s___simulator_1_1_memory_1_1_memory_page_a0c43cf3b2640f17b8d732acbaaaead96}
+
+
+This function zeros out (clears) a memory page 
+
+
+
+Definition at line 182 of file Memory\+Page.\+cs.
 
 
 
@@ -81,35 +208,46 @@ Definition at line 73 of file Memory\+Page.\+cs.
 \subsubsection[{data}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Memory\+Segment} \mbox{[}$\,$\mbox{]} C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Memory.\+Memory\+Page.\+data\hspace{0.3cm}{\ttfamily [private]}}\label{class_c_p_u___o_s___simulator_1_1_memory_1_1_memory_page_af9ab25101e7920de2344e0fa5ddfaa27}
 
 
-Definition at line 9 of file Memory\+Page.\+cs.
+Definition at line 21 of file Memory\+Page.\+cs.
 
 \hypertarget{class_c_p_u___o_s___simulator_1_1_memory_1_1_memory_page_ae2f8f419909326ce5449d37af9ff7c89}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Memory\+::\+Memory\+Page@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Memory\+::\+Memory\+Page}!end\+Offset@{end\+Offset}}
 \index{end\+Offset@{end\+Offset}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Memory\+::\+Memory\+Page@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Memory\+::\+Memory\+Page}}
 \subsubsection[{end\+Offset}]{\setlength{\rightskip}{0pt plus 5cm}readonly int C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Memory.\+Memory\+Page.\+end\+Offset\hspace{0.3cm}{\ttfamily [private]}}\label{class_c_p_u___o_s___simulator_1_1_memory_1_1_memory_page_ae2f8f419909326ce5449d37af9ff7c89}
 
 
-Definition at line 8 of file Memory\+Page.\+cs.
+Definition at line 20 of file Memory\+Page.\+cs.
+
+\hypertarget{class_c_p_u___o_s___simulator_1_1_memory_1_1_memory_page_a502abee83030136a808d5b5f0c0fe7ec}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Memory\+::\+Memory\+Page@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Memory\+::\+Memory\+Page}!P\+A\+G\+E\+\_\+\+S\+I\+Z\+E@{P\+A\+G\+E\+\_\+\+S\+I\+Z\+E}}
+\index{P\+A\+G\+E\+\_\+\+S\+I\+Z\+E@{P\+A\+G\+E\+\_\+\+S\+I\+Z\+E}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Memory\+::\+Memory\+Page@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Memory\+::\+Memory\+Page}}
+\subsubsection[{P\+A\+G\+E\+\_\+\+S\+I\+Z\+E}]{\setlength{\rightskip}{0pt plus 5cm}const int C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Memory.\+Memory\+Page.\+P\+A\+G\+E\+\_\+\+S\+I\+Z\+E = 256}\label{class_c_p_u___o_s___simulator_1_1_memory_1_1_memory_page_a502abee83030136a808d5b5f0c0fe7ec}
+
+
+The size of the memory pages to manage 
+
+
+
+Definition at line 19 of file Memory\+Page.\+cs.
 
 \hypertarget{class_c_p_u___o_s___simulator_1_1_memory_1_1_memory_page_acf60a7bdefab6120fe080854b5f0b38b}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Memory\+::\+Memory\+Page@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Memory\+::\+Memory\+Page}!page\+Index@{page\+Index}}
 \index{page\+Index@{page\+Index}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Memory\+::\+Memory\+Page@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Memory\+::\+Memory\+Page}}
 \subsubsection[{page\+Index}]{\setlength{\rightskip}{0pt plus 5cm}int C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Memory.\+Memory\+Page.\+page\+Index\hspace{0.3cm}{\ttfamily [private]}}\label{class_c_p_u___o_s___simulator_1_1_memory_1_1_memory_page_acf60a7bdefab6120fe080854b5f0b38b}
 
 
-Definition at line 5 of file Memory\+Page.\+cs.
-
-\hypertarget{class_c_p_u___o_s___simulator_1_1_memory_1_1_memory_page_abbbd3ea0ef99dac19c6bd9694dbdfd3a}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Memory\+::\+Memory\+Page@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Memory\+::\+Memory\+Page}!page\+Size@{page\+Size}}
-\index{page\+Size@{page\+Size}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Memory\+::\+Memory\+Page@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Memory\+::\+Memory\+Page}}
-\subsubsection[{page\+Size}]{\setlength{\rightskip}{0pt plus 5cm}readonly int C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Memory.\+Memory\+Page.\+page\+Size\hspace{0.3cm}{\ttfamily [private]}}\label{class_c_p_u___o_s___simulator_1_1_memory_1_1_memory_page_abbbd3ea0ef99dac19c6bd9694dbdfd3a}
-
-
-Definition at line 7 of file Memory\+Page.\+cs.
+Definition at line 13 of file Memory\+Page.\+cs.
 
 \hypertarget{class_c_p_u___o_s___simulator_1_1_memory_1_1_memory_page_a6fe2e28385db19a1968a41efe3df3f38}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Memory\+::\+Memory\+Page@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Memory\+::\+Memory\+Page}!start\+Offset@{start\+Offset}}
 \index{start\+Offset@{start\+Offset}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Memory\+::\+Memory\+Page@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Memory\+::\+Memory\+Page}}
 \subsubsection[{start\+Offset}]{\setlength{\rightskip}{0pt plus 5cm}readonly int C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Memory.\+Memory\+Page.\+start\+Offset\hspace{0.3cm}{\ttfamily [private]}}\label{class_c_p_u___o_s___simulator_1_1_memory_1_1_memory_page_a6fe2e28385db19a1968a41efe3df3f38}
 
 
-Definition at line 6 of file Memory\+Page.\+cs.
+Definition at line 15 of file Memory\+Page.\+cs.
+
+\hypertarget{class_c_p_u___o_s___simulator_1_1_memory_1_1_memory_page_a3cecfb0fe2f91def3db5711180442d44}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Memory\+::\+Memory\+Page@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Memory\+::\+Memory\+Page}!start\+Offset\+Physical@{start\+Offset\+Physical}}
+\index{start\+Offset\+Physical@{start\+Offset\+Physical}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Memory\+::\+Memory\+Page@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Memory\+::\+Memory\+Page}}
+\subsubsection[{start\+Offset\+Physical}]{\setlength{\rightskip}{0pt plus 5cm}int C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Memory.\+Memory\+Page.\+start\+Offset\+Physical\hspace{0.3cm}{\ttfamily [private]}}\label{class_c_p_u___o_s___simulator_1_1_memory_1_1_memory_page_a3cecfb0fe2f91def3db5711180442d44}
+
+
+Definition at line 14 of file Memory\+Page.\+cs.
 
 
 
@@ -119,35 +257,55 @@ Definition at line 6 of file Memory\+Page.\+cs.
 \subsubsection[{Data}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Memory\+Segment} \mbox{[}$\,$\mbox{]} C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Memory.\+Memory\+Page.\+Data\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}\label{class_c_p_u___o_s___simulator_1_1_memory_1_1_memory_page_a8bf84e82146f9ff35ffbcc32b93a9db0}
 
 
-Definition at line 49 of file Memory\+Page.\+cs.
+array of memory segments which collectively make up this page 
+
+
+
+Definition at line 61 of file Memory\+Page.\+cs.
 
 \hypertarget{class_c_p_u___o_s___simulator_1_1_memory_1_1_memory_page_abe850b4a088a820ecf598af1cd9a7deb}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Memory\+::\+Memory\+Page@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Memory\+::\+Memory\+Page}!End\+Offset@{End\+Offset}}
 \index{End\+Offset@{End\+Offset}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Memory\+::\+Memory\+Page@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Memory\+::\+Memory\+Page}}
 \subsubsection[{End\+Offset}]{\setlength{\rightskip}{0pt plus 5cm}int C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Memory.\+Memory\+Page.\+End\+Offset\hspace{0.3cm}{\ttfamily [get]}}\label{class_c_p_u___o_s___simulator_1_1_memory_1_1_memory_page_abe850b4a088a820ecf598af1cd9a7deb}
 
 
-Definition at line 41 of file Memory\+Page.\+cs.
+the end offset of this page 
+
+
+
+Definition at line 51 of file Memory\+Page.\+cs.
 
 \hypertarget{class_c_p_u___o_s___simulator_1_1_memory_1_1_memory_page_aec80700d036a447e7e6ec204513e3a59}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Memory\+::\+Memory\+Page@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Memory\+::\+Memory\+Page}!Page\+Index@{Page\+Index}}
 \index{Page\+Index@{Page\+Index}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Memory\+::\+Memory\+Page@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Memory\+::\+Memory\+Page}}
 \subsubsection[{Page\+Index}]{\setlength{\rightskip}{0pt plus 5cm}int C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Memory.\+Memory\+Page.\+Page\+Index\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}\label{class_c_p_u___o_s___simulator_1_1_memory_1_1_memory_page_aec80700d036a447e7e6ec204513e3a59}
 
 
-Definition at line 12 of file Memory\+Page.\+cs.
-
-\hypertarget{class_c_p_u___o_s___simulator_1_1_memory_1_1_memory_page_a6fba0e419e59c58fb3c5444a8e437ab3}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Memory\+::\+Memory\+Page@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Memory\+::\+Memory\+Page}!Page\+Size@{Page\+Size}}
-\index{Page\+Size@{Page\+Size}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Memory\+::\+Memory\+Page@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Memory\+::\+Memory\+Page}}
-\subsubsection[{Page\+Size}]{\setlength{\rightskip}{0pt plus 5cm}int C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Memory.\+Memory\+Page.\+Page\+Size\hspace{0.3cm}{\ttfamily [get]}}\label{class_c_p_u___o_s___simulator_1_1_memory_1_1_memory_page_a6fba0e419e59c58fb3c5444a8e437ab3}
+The index of the current page within its program 
 
 
-Definition at line 33 of file Memory\+Page.\+cs.
+
+Definition at line 26 of file Memory\+Page.\+cs.
 
 \hypertarget{class_c_p_u___o_s___simulator_1_1_memory_1_1_memory_page_ad700979e51dd3d05470c681588c6fa79}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Memory\+::\+Memory\+Page@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Memory\+::\+Memory\+Page}!Start\+Offset@{Start\+Offset}}
 \index{Start\+Offset@{Start\+Offset}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Memory\+::\+Memory\+Page@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Memory\+::\+Memory\+Page}}
 \subsubsection[{Start\+Offset}]{\setlength{\rightskip}{0pt plus 5cm}int C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Memory.\+Memory\+Page.\+Start\+Offset\hspace{0.3cm}{\ttfamily [get]}}\label{class_c_p_u___o_s___simulator_1_1_memory_1_1_memory_page_ad700979e51dd3d05470c681588c6fa79}
 
 
-Definition at line 25 of file Memory\+Page.\+cs.
+The start offset of this page 
+
+
+
+Definition at line 41 of file Memory\+Page.\+cs.
+
+\hypertarget{class_c_p_u___o_s___simulator_1_1_memory_1_1_memory_page_af31a2243a3e68ec635315929859fa358}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Memory\+::\+Memory\+Page@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Memory\+::\+Memory\+Page}!Start\+Offset\+Physical@{Start\+Offset\+Physical}}
+\index{Start\+Offset\+Physical@{Start\+Offset\+Physical}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Memory\+::\+Memory\+Page@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Memory\+::\+Memory\+Page}}
+\subsubsection[{Start\+Offset\+Physical}]{\setlength{\rightskip}{0pt plus 5cm}int C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Memory.\+Memory\+Page.\+Start\+Offset\+Physical\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}\label{class_c_p_u___o_s___simulator_1_1_memory_1_1_memory_page_af31a2243a3e68ec635315929859fa358}
+
+
+The physical address of the first byte in the page 
+
+
+
+Definition at line 76 of file Memory\+Page.\+cs.
 
 
 

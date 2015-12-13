@@ -41,13 +41,19 @@ namespace CPU_OS_Simulator.Console
             this.parameters = parameters;
             BindFunction();
         }
-
+        /// <summary>
+        /// The function to execute when the command is being executed
+        /// </summary>
         public Func<string> Execute
         {
             get { return execute; }
             set { execute = value; }
         }
 
+        /// <summary>
+        /// This function binds a function pointer to a command
+        /// the function pointer bound here will be executed when the command it inputted into the console
+        /// </summary>
         private void BindFunction()
         {
             EnumConsoleCommands temp = (EnumConsoleCommands) Enum.Parse(typeof (EnumConsoleCommands), name.ToUpper());
@@ -72,6 +78,11 @@ namespace CPU_OS_Simulator.Console
                     this.execute = () => SizeCommand(name, parameters);
                         break;
                 }
+                case EnumConsoleCommands.CLEAR:
+                {
+                    this.execute = () => ClearCommand(name, parameters);
+                    break;
+                }
                 case EnumConsoleCommands.UNKNOWN:
                 {
                     this.execute = () => UnknownCommand(name, parameters);
@@ -83,13 +94,33 @@ namespace CPU_OS_Simulator.Console
                 }
             }
         }
-
+        /// <summary>
+        /// Function that handles the Clear Command
+        /// </summary>
+        /// <param name="name"> the command that is being executed</param>
+        /// <param name="parameters"> any parameters for that command</param>
+        /// <returns> the result of the command</returns>
+        private string ClearCommand(string name, string[] parameters)
+        {
+            return "\"Clear\"";
+        }
+        /// <summary>
+        /// Function that handles when an unknown command is entered into the console
+        /// </summary>
+        /// <param name="name"> the command that is being executed</param>
+        /// <param name="parameters"> any parameters for that command</param>
+        /// <returns> the result of the command</returns>
         private string UnknownCommand(string name, string[] parameters)
         {
             string unknownString = "Unknown command type \"//help\" for help on using the console. \n";
             return unknownString;
         }
-
+        /// <summary>
+        /// Function that handles the size command
+        /// </summary>
+        /// <param name="name"> the command that is being executed</param>
+        /// <param name="parameters"> any parameters for that command</param>
+        /// <returns> the result of the command</returns>
         private string SizeCommand(string name, string[] parameters)
         {
             if (parameters.Length != 1 && (!parameters[0].Equals("pages") || !parameters[0].Equals("bytes")))
@@ -121,7 +152,12 @@ namespace CPU_OS_Simulator.Console
             return "Invalid Command syntax use like this: \n"
                       + "//size <bytes|pages> \n ";
         }
-
+        /// <summary>
+        /// Function that handles the program command
+        /// </summary>
+        /// <param name="name"> the command that is being executed</param>
+        /// <param name="parameters"> any parameters for that command</param>
+        /// <returns> the result of the command</returns>
         private string ProgramCommand(string name, string[] parameters)
         {
             dynamic wind = GetMainWindowInstance();
@@ -140,7 +176,8 @@ namespace CPU_OS_Simulator.Console
                                 + "Commands: \n "
                                 + "help : Display console help message \n"
                                 + "program: Display the name of the currently loaded program \n"
-                                + "size: Display the size in bytes of the currently loaded program \n";
+                                + "size: Display the size in bytes of the currently loaded program \n"
+                                + "clear: Clears The Console output \n";
             return helpString;
         }
 

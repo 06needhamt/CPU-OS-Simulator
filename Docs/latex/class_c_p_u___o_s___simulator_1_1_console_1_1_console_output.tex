@@ -1,0 +1,177 @@
+\hypertarget{class_c_p_u___o_s___simulator_1_1_console_1_1_console_output}{}\section{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Console.\+Console\+Output Class Reference}
+\label{class_c_p_u___o_s___simulator_1_1_console_1_1_console_output}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Console.\+Console\+Output@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Console.\+Console\+Output}}
+
+
+This class represents an output made through the console  
+
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_c_p_u___o_s___simulator_1_1_console_1_1_console_output_a8d641979b1d7dee40a2f4a4088f3779f}{Console\+Output} (string \hyperlink{class_c_p_u___o_s___simulator_1_1_console_1_1_console_output_a3bc577f947d51bc1b5c3880d5a7d5158}{value}, string \hyperlink{class_c_p_u___o_s___simulator_1_1_console_1_1_console_output_a3873d00cdb36068d1108fb012857504a}{source})
+\begin{DoxyCompactList}\small\item\em Constructor for a console output that is a string \end{DoxyCompactList}\item 
+\hyperlink{class_c_p_u___o_s___simulator_1_1_console_1_1_console_output_a26f0d6c6aa1f94d28171ee61c9ae4183}{Console\+Output} (\hyperlink{class_c_p_u___o_s___simulator_1_1_console_1_1_console_command}{Console\+Command} \hyperlink{class_c_p_u___o_s___simulator_1_1_console_1_1_console_output_aef6097d68fb3e2e83043c3857fdb8d56}{command}, string \hyperlink{class_c_p_u___o_s___simulator_1_1_console_1_1_console_output_a3873d00cdb36068d1108fb012857504a}{source})
+\begin{DoxyCompactList}\small\item\em Constructor for a console output resulting from a command \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+string \hyperlink{class_c_p_u___o_s___simulator_1_1_console_1_1_console_output_a1a5c833114630e4739546948e8622cbd}{Value}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em The string representation of the output \end{DoxyCompactList}\item 
+string \hyperlink{class_c_p_u___o_s___simulator_1_1_console_1_1_console_output_a9772128aaf7ca7854af11b63ae6e1579}{Source}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em The source of the output \end{DoxyCompactList}\item 
+bool \hyperlink{class_c_p_u___o_s___simulator_1_1_console_1_1_console_output_af544be1b6e93789edf3df9e0f573f9ba}{Is\+Command\+Output}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em whether this output was created by a command \end{DoxyCompactList}\item 
+\hyperlink{class_c_p_u___o_s___simulator_1_1_console_1_1_console_command}{Console\+Command} \hyperlink{class_c_p_u___o_s___simulator_1_1_console_1_1_console_output_a15b8bc11762105b9b984135cf892a0b5}{Command}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em The command that created this output \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+string \hyperlink{class_c_p_u___o_s___simulator_1_1_console_1_1_console_output_a3bc577f947d51bc1b5c3880d5a7d5158}{value} = String.\+Empty
+\item 
+string \hyperlink{class_c_p_u___o_s___simulator_1_1_console_1_1_console_output_a3873d00cdb36068d1108fb012857504a}{source} = String.\+Empty
+\item 
+bool \hyperlink{class_c_p_u___o_s___simulator_1_1_console_1_1_console_output_a916cf1368a1974e808ce0f77e850bc98}{is\+Command\+Output} = false
+\item 
+\hyperlink{class_c_p_u___o_s___simulator_1_1_console_1_1_console_command}{Console\+Command} \hyperlink{class_c_p_u___o_s___simulator_1_1_console_1_1_console_output_aef6097d68fb3e2e83043c3857fdb8d56}{command} = null
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This class represents an output made through the console 
+
+
+
+Definition at line 13 of file Console\+Output.\+cs.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_c_p_u___o_s___simulator_1_1_console_1_1_console_output_a8d641979b1d7dee40a2f4a4088f3779f}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Console\+::\+Console\+Output@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Console\+::\+Console\+Output}!Console\+Output@{Console\+Output}}
+\index{Console\+Output@{Console\+Output}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Console\+::\+Console\+Output@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Console\+::\+Console\+Output}}
+\subsubsection[{Console\+Output(string value, string source)}]{\setlength{\rightskip}{0pt plus 5cm}C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Console.\+Console\+Output.\+Console\+Output (
+\begin{DoxyParamCaption}
+\item[{string}]{value, }
+\item[{string}]{source}
+\end{DoxyParamCaption}
+)}\label{class_c_p_u___o_s___simulator_1_1_console_1_1_console_output_a8d641979b1d7dee40a2f4a4088f3779f}
+
+
+Constructor for a console output that is a string 
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & the value to be outputted \\
+\hline
+{\em source} & the source of the output\\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 25 of file Console\+Output.\+cs.
+
+\hypertarget{class_c_p_u___o_s___simulator_1_1_console_1_1_console_output_a26f0d6c6aa1f94d28171ee61c9ae4183}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Console\+::\+Console\+Output@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Console\+::\+Console\+Output}!Console\+Output@{Console\+Output}}
+\index{Console\+Output@{Console\+Output}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Console\+::\+Console\+Output@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Console\+::\+Console\+Output}}
+\subsubsection[{Console\+Output(\+Console\+Command command, string source)}]{\setlength{\rightskip}{0pt plus 5cm}C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Console.\+Console\+Output.\+Console\+Output (
+\begin{DoxyParamCaption}
+\item[{{\bf Console\+Command}}]{command, }
+\item[{string}]{source}
+\end{DoxyParamCaption}
+)}\label{class_c_p_u___o_s___simulator_1_1_console_1_1_console_output_a26f0d6c6aa1f94d28171ee61c9ae4183}
+
+
+Constructor for a console output resulting from a command 
+
+
+\begin{DoxyParams}{Parameters}
+{\em command} & the command that produced the output\\
+\hline
+{\em source} & the source of the output\\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 36 of file Console\+Output.\+cs.
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{class_c_p_u___o_s___simulator_1_1_console_1_1_console_output_aef6097d68fb3e2e83043c3857fdb8d56}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Console\+::\+Console\+Output@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Console\+::\+Console\+Output}!command@{command}}
+\index{command@{command}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Console\+::\+Console\+Output@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Console\+::\+Console\+Output}}
+\subsubsection[{command}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Console\+Command} C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Console.\+Console\+Output.\+command = null\hspace{0.3cm}{\ttfamily [private]}}\label{class_c_p_u___o_s___simulator_1_1_console_1_1_console_output_aef6097d68fb3e2e83043c3857fdb8d56}
+
+
+Definition at line 18 of file Console\+Output.\+cs.
+
+\hypertarget{class_c_p_u___o_s___simulator_1_1_console_1_1_console_output_a916cf1368a1974e808ce0f77e850bc98}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Console\+::\+Console\+Output@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Console\+::\+Console\+Output}!is\+Command\+Output@{is\+Command\+Output}}
+\index{is\+Command\+Output@{is\+Command\+Output}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Console\+::\+Console\+Output@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Console\+::\+Console\+Output}}
+\subsubsection[{is\+Command\+Output}]{\setlength{\rightskip}{0pt plus 5cm}bool C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Console.\+Console\+Output.\+is\+Command\+Output = false\hspace{0.3cm}{\ttfamily [private]}}\label{class_c_p_u___o_s___simulator_1_1_console_1_1_console_output_a916cf1368a1974e808ce0f77e850bc98}
+
+
+Definition at line 17 of file Console\+Output.\+cs.
+
+\hypertarget{class_c_p_u___o_s___simulator_1_1_console_1_1_console_output_a3873d00cdb36068d1108fb012857504a}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Console\+::\+Console\+Output@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Console\+::\+Console\+Output}!source@{source}}
+\index{source@{source}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Console\+::\+Console\+Output@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Console\+::\+Console\+Output}}
+\subsubsection[{source}]{\setlength{\rightskip}{0pt plus 5cm}string C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Console.\+Console\+Output.\+source = String.\+Empty\hspace{0.3cm}{\ttfamily [private]}}\label{class_c_p_u___o_s___simulator_1_1_console_1_1_console_output_a3873d00cdb36068d1108fb012857504a}
+
+
+Definition at line 16 of file Console\+Output.\+cs.
+
+\hypertarget{class_c_p_u___o_s___simulator_1_1_console_1_1_console_output_a3bc577f947d51bc1b5c3880d5a7d5158}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Console\+::\+Console\+Output@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Console\+::\+Console\+Output}!value@{value}}
+\index{value@{value}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Console\+::\+Console\+Output@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Console\+::\+Console\+Output}}
+\subsubsection[{value}]{\setlength{\rightskip}{0pt plus 5cm}string C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Console.\+Console\+Output.\+value = String.\+Empty\hspace{0.3cm}{\ttfamily [private]}}\label{class_c_p_u___o_s___simulator_1_1_console_1_1_console_output_a3bc577f947d51bc1b5c3880d5a7d5158}
+
+
+Definition at line 15 of file Console\+Output.\+cs.
+
+
+
+\subsection{Property Documentation}
+\hypertarget{class_c_p_u___o_s___simulator_1_1_console_1_1_console_output_a15b8bc11762105b9b984135cf892a0b5}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Console\+::\+Console\+Output@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Console\+::\+Console\+Output}!Command@{Command}}
+\index{Command@{Command}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Console\+::\+Console\+Output@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Console\+::\+Console\+Output}}
+\subsubsection[{Command}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Console\+Command} C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Console.\+Console\+Output.\+Command\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}\label{class_c_p_u___o_s___simulator_1_1_console_1_1_console_output_a15b8bc11762105b9b984135cf892a0b5}
+
+
+The command that created this output 
+
+
+
+Definition at line 70 of file Console\+Output.\+cs.
+
+\hypertarget{class_c_p_u___o_s___simulator_1_1_console_1_1_console_output_af544be1b6e93789edf3df9e0f573f9ba}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Console\+::\+Console\+Output@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Console\+::\+Console\+Output}!Is\+Command\+Output@{Is\+Command\+Output}}
+\index{Is\+Command\+Output@{Is\+Command\+Output}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Console\+::\+Console\+Output@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Console\+::\+Console\+Output}}
+\subsubsection[{Is\+Command\+Output}]{\setlength{\rightskip}{0pt plus 5cm}bool C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Console.\+Console\+Output.\+Is\+Command\+Output\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}\label{class_c_p_u___o_s___simulator_1_1_console_1_1_console_output_af544be1b6e93789edf3df9e0f573f9ba}
+
+
+whether this output was created by a command 
+
+
+
+Definition at line 62 of file Console\+Output.\+cs.
+
+\hypertarget{class_c_p_u___o_s___simulator_1_1_console_1_1_console_output_a9772128aaf7ca7854af11b63ae6e1579}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Console\+::\+Console\+Output@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Console\+::\+Console\+Output}!Source@{Source}}
+\index{Source@{Source}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Console\+::\+Console\+Output@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Console\+::\+Console\+Output}}
+\subsubsection[{Source}]{\setlength{\rightskip}{0pt plus 5cm}string C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Console.\+Console\+Output.\+Source\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}\label{class_c_p_u___o_s___simulator_1_1_console_1_1_console_output_a9772128aaf7ca7854af11b63ae6e1579}
+
+
+The source of the output 
+
+
+
+Definition at line 54 of file Console\+Output.\+cs.
+
+\hypertarget{class_c_p_u___o_s___simulator_1_1_console_1_1_console_output_a1a5c833114630e4739546948e8622cbd}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Console\+::\+Console\+Output@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Console\+::\+Console\+Output}!Value@{Value}}
+\index{Value@{Value}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Console\+::\+Console\+Output@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Console\+::\+Console\+Output}}
+\subsubsection[{Value}]{\setlength{\rightskip}{0pt plus 5cm}string C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Console.\+Console\+Output.\+Value\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}\label{class_c_p_u___o_s___simulator_1_1_console_1_1_console_output_a1a5c833114630e4739546948e8622cbd}
+
+
+The string representation of the output 
+
+
+
+Definition at line 46 of file Console\+Output.\+cs.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Console/\hyperlink{_console_output_8cs}{Console\+Output.\+cs}\end{DoxyCompactItemize}

@@ -820,7 +820,7 @@ namespace CPU_OS_Simulator
         /// Asynchronous method called after every instruction is executed to update required values and user interface asynchronously
         /// </summary>
         /// <param name="sender"> the object that triggered this event</param>
-        /// <param name="args" The parameters passed to this event ></param>
+        /// <param name="args">The parameters passed to this event ></param>
         private async void UpdateInterface(object sender, ProgressChangedEventArgs e)
         {
             SimulatorProgram prog = programList.Where(x => x.Name.Equals(currentProgram)).FirstOrDefault();

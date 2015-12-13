@@ -3,6 +3,8 @@ var searchData=
   ['shl',['SHL',['../namespace_c_p_u___o_s___simulator_1_1_c_p_u.html#ac29c87bff87ad404c953b2581024043eabb0b9165d75b1fd27d0a869b036baa3c',1,'CPU_OS_Simulator::CPU']]],
   ['show',['SHOW',['../namespace_c_p_u___o_s___simulator.html#adc17a5a5e004084f05dc8e4d3f70e31fac34fbad9a5e2a1d0c8f7cf8d226808b9',1,'CPU_OS_Simulator']]],
   ['shr',['SHR',['../namespace_c_p_u___o_s___simulator_1_1_c_p_u.html#ac29c87bff87ad404c953b2581024043ea10ab606ab9efe239a011d327d9301edd',1,'CPU_OS_Simulator::CPU']]],
+  ['size',['SIZE',['../namespace_c_p_u___o_s___simulator_1_1_console.html#a5d9f2366d41d3eb074f056be426272d7a62e5cef85d46f1a5a2144d9fd463b79e',1,'CPU_OS_Simulator::Console']]],
+  ['source_5fcode',['SOURCE_CODE',['../namespace_c_p_u___o_s___simulator_1_1_compiler.html#ada8d93b571fa15a0f2eac8c9647a89feac31dd0847839ccae1447bac2f474a003',1,'CPU_OS_Simulator::Compiler']]],
   ['stb',['STB',['../namespace_c_p_u___o_s___simulator_1_1_c_p_u.html#ac29c87bff87ad404c953b2581024043eaecd472e37d2e3d8542fd5e9ff63e3450',1,'CPU_OS_Simulator::CPU']]],
   ['stbi',['STBI',['../namespace_c_p_u___o_s___simulator_1_1_c_p_u.html#ac29c87bff87ad404c953b2581024043ea26fd3ec72d54c38bca35ee4b53933ebf',1,'CPU_OS_Simulator::CPU']]],
   ['stw',['STW',['../namespace_c_p_u___o_s___simulator_1_1_c_p_u.html#ac29c87bff87ad404c953b2581024043eac88e338a7ffbd66e4c473d249baeb2fb',1,'CPU_OS_Simulator::CPU']]],

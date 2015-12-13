@@ -1,15 +1,25 @@
 var class_c_p_u___o_s___simulator_1_1_memory_window =
 [
     [ "MemoryWindow", "class_c_p_u___o_s___simulator_1_1_memory_window.html#a9c72b7aa51f734437bd5e4aa26a230a2", null ],
-    [ "MemoryWindow", "class_c_p_u___o_s___simulator_1_1_memory_window.html#aa1c30713f286b1051e86478fbf8ebad5", null ],
+    [ "MemoryWindow", "class_c_p_u___o_s___simulator_1_1_memory_window.html#a983d730d6caccfeadb419b26a70b0150", null ],
+    [ "btn_Reset_All_Click", "class_c_p_u___o_s___simulator_1_1_memory_window.html#ac77beff86f4dd6322bdcf2430892d2aa", null ],
+    [ "btn_ShowPageTable_Click", "class_c_p_u___o_s___simulator_1_1_memory_window.html#a0540a495053120e2572a106dbbc391de", null ],
     [ "btn_Update_Click", "class_c_p_u___o_s___simulator_1_1_memory_window.html#a91ec1c8081b85d3c07eaa31ee524f5d9", null ],
     [ "Connect", "class_c_p_u___o_s___simulator_1_1_memory_window.html#aba65e66795c99052ebed93162110e908", null ],
     [ "Connect", "class_c_p_u___o_s___simulator_1_1_memory_window.html#aba65e66795c99052ebed93162110e908", null ],
+    [ "Connect", "class_c_p_u___o_s___simulator_1_1_memory_window.html#aba65e66795c99052ebed93162110e908", null ],
+    [ "Connect", "class_c_p_u___o_s___simulator_1_1_memory_window.html#aba65e66795c99052ebed93162110e908", null ],
+    [ "InitializeComponent", "class_c_p_u___o_s___simulator_1_1_memory_window.html#a40473c2b8ba30a837cf2a122e0978dec", null ],
+    [ "InitializeComponent", "class_c_p_u___o_s___simulator_1_1_memory_window.html#a40473c2b8ba30a837cf2a122e0978dec", null ],
     [ "InitializeComponent", "class_c_p_u___o_s___simulator_1_1_memory_window.html#a40473c2b8ba30a837cf2a122e0978dec", null ],
     [ "InitializeComponent", "class_c_p_u___o_s___simulator_1_1_memory_window.html#a40473c2b8ba30a837cf2a122e0978dec", null ],
     [ "PopulateDataView", "class_c_p_u___o_s___simulator_1_1_memory_window.html#a8811287064d6315e3a8c01531148ed81", null ],
+    [ "SetMemoryWindowInstance", "class_c_p_u___o_s___simulator_1_1_memory_window.html#a5100fa341de6de08d11967198cd82208", null ],
     [ "UpdateData", "class_c_p_u___o_s___simulator_1_1_memory_window.html#ab0cb156466262b3d90f19acd422dc65b", null ],
+    [ "Window_Closing", "class_c_p_u___o_s___simulator_1_1_memory_window.html#a6123a0a8b93cb6636ed3c039391948a5", null ],
     [ "_contentLoaded", "class_c_p_u___o_s___simulator_1_1_memory_window.html#af20b67929b49d4289e1d81d141cbd950", null ],
+    [ "btn_ResetAll", "class_c_p_u___o_s___simulator_1_1_memory_window.html#aeeefcad9b4510fd7fd5899f3a2db4786", null ],
+    [ "btn_ShowPageTable", "class_c_p_u___o_s___simulator_1_1_memory_window.html#a62372edf818561f1584160d41c2f67f7", null ],
     [ "btn_Update", "class_c_p_u___o_s___simulator_1_1_memory_window.html#a9274df08bf008c43b325e50d6db6067f", null ],
     [ "cmb_BooleanValue", "class_c_p_u___o_s___simulator_1_1_memory_window.html#a2a1da5df6a425ce20c7b639fa66c58f2", null ],
     [ "currentInstance", "class_c_p_u___o_s___simulator_1_1_memory_window.html#a870b795e3b919a82888ad608ab24d61a", null ],
@@ -24,6 +34,7 @@ var class_c_p_u___o_s___simulator_1_1_memory_window =
     [ "label_Copy", "class_c_p_u___o_s___simulator_1_1_memory_window.html#a663f25aef0cd9c3755f100b3507b5f84", null ],
     [ "label_Copy1", "class_c_p_u___o_s___simulator_1_1_memory_window.html#a0f501c04b3319ae43e681335e50eeba4", null ],
     [ "lst_data", "class_c_p_u___o_s___simulator_1_1_memory_window.html#a00f6d6a33f4c35800f2e316de335e4dd", null ],
+    [ "mainWindowInstance", "class_c_p_u___o_s___simulator_1_1_memory_window.html#a349bd876862c9360ccd4533dc8de8bf3", null ],
     [ "rdb_Boolean", "class_c_p_u___o_s___simulator_1_1_memory_window.html#a728a4d572f38d0fe2063005d138d8c32", null ],
     [ "rdb_Integer", "class_c_p_u___o_s___simulator_1_1_memory_window.html#ae54a50c88d1e1479fceddd6d3a51a974", null ],
     [ "rdb_String", "class_c_p_u___o_s___simulator_1_1_memory_window.html#a68b5f36b0514cacaa8e4eeb3415fcd5a", null ],
@@ -32,5 +43,5 @@ var class_c_p_u___o_s___simulator_1_1_memory_window =
     [ "txt_AddressLocation", "class_c_p_u___o_s___simulator_1_1_memory_window.html#a3f766ac6c531af3b14248819947d9023", null ],
     [ "txt_IntegerValue", "class_c_p_u___o_s___simulator_1_1_memory_window.html#af1ad9478de6dac0b4476c51b42849ecf", null ],
     [ "txt_StringValue", "class_c_p_u___o_s___simulator_1_1_memory_window.html#aca8e57432af036b698d0eeaaa765c483", null ],
-    [ "window", "class_c_p_u___o_s___simulator_1_1_memory_window.html#a5c5ad5428992e3fda5a6fae375e11d58", null ]
+    [ "MainWindowInstance", "class_c_p_u___o_s___simulator_1_1_memory_window.html#aaa625aed8c7670aed16f9ab0f9e5e080", null ]
 ];

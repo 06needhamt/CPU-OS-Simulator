@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Reflection.Emit;
 using System.Text;
 using System.Threading.Tasks;
@@ -22,16 +23,21 @@ namespace CPU_OS_Simulator
     public partial class ConsoleWindow : Window
     {
         private MainWindow parent = null;
+        public static ConsoleWindow currentInstance;
 
         public ConsoleWindow()
         {
             InitializeComponent();
+            currentInstance = this;
+            SetConsoleWindowInstance();
         }
 
         public ConsoleWindow(MainWindow window)
         {
             parent = window;
             InitializeComponent();
+            currentInstance = this;
+            SetConsoleWindowInstance();
         }
 
         private void ParseInput(String text)
@@ -46,8 +52,17 @@ namespace CPU_OS_Simulator
                 string commandString = splitInputStrings[0];
                 splitInputStrings.RemoveAt(0);
                 ConsoleCommand command = new ConsoleCommand(commandString,splitInputStrings.ToArray());
-                txt_Console.Text += "\n" + command.Execute();
-                txt_Console.CaretIndex = txt_Console.Text.Length;
+                string result = command.Execute();
+                if (result.Equals("\"Clear\""))
+                {
+                    txt_Console.Clear();
+                    txt_Console.CaretIndex = txt_Console.Text.Length;
+                }
+                else
+                {
+                    txt_Console.Text += "\n" + result;
+                    txt_Console.CaretIndex = txt_Console.Text.Length;
+                }
             }
 
         }
@@ -64,6 +79,25 @@ namespace CPU_OS_Simulator
             {
                 e.Handled = false;
             }
+        }
+
+        private void btn_SetColour_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void ConsoleWindow1_Closing(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            currentInstance = null;
+            SetConsoleWindowInstance();
+        }
+
+        private void SetConsoleWindowInstance()
+        {
+            Assembly windowBridge = Assembly.LoadFrom("CPU_OS_Simulator.WindowBridge.dll"); // Load the window bridge module
+            System.Console.WriteLine(windowBridge.GetExportedTypes()[0]);
+            Type WindowType = windowBridge.GetType(windowBridge.GetExportedTypes()[0].ToString()); // get the name of the type that contains the window instances
+            WindowType.GetField("ConsoleWindowInstance").SetValue(null,currentInstance);
         }
 
 
