@@ -16,8 +16,8 @@ Inheritance diagram for C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Console\+Window\+
 \item 
 \hyperlink{class_c_p_u___o_s___simulator_1_1_console_window_abdd222b591f72c19297dc5805059ee7e}{Console\+Window} ()
 \begin{DoxyCompactList}\small\item\em Default Constructor for console window \end{DoxyCompactList}\item 
-\hyperlink{class_c_p_u___o_s___simulator_1_1_console_window_a3c20f504dabf2d202564fdde8d54bab4}{Console\+Window} (\hyperlink{class_c_p_u___o_s___simulator_1_1_main_window}{Main\+Window} window)
-\begin{DoxyCompactList}\small\item\em Constructor for console window that has a parent window \end{DoxyCompactList}\item 
+\hyperlink{class_c_p_u___o_s___simulator_1_1_console_window_a4e79b8ceea62fb4bb44c63b7fdd7c6bb}{Console\+Window} (\hyperlink{class_c_p_u___o_s___simulator_1_1_main_window}{Main\+Window} \hyperlink{class_c_p_u___o_s___simulator_1_1_console_window_a1e38326bb40f4ed44c4964d94dc6f809}{parent})
+\begin{DoxyCompactList}\small\item\em Constructor for console window that takes the window instance that is creating this window P\+L\+E\+A\+S\+E N\+O\+T\+E\+: This constructor should always be used so data can be passed back to the main window \end{DoxyCompactList}\item 
 void \hyperlink{class_c_p_u___o_s___simulator_1_1_console_window_a5961ed9b274d16fab841f34bc178b52f}{Initialize\+Component} ()
 \begin{DoxyCompactList}\small\item\em Initialize\+Component \end{DoxyCompactList}\item 
 void \hyperlink{class_c_p_u___o_s___simulator_1_1_console_window_a5961ed9b274d16fab841f34bc178b52f}{Initialize\+Component} ()
@@ -101,25 +101,25 @@ Default Constructor for console window
 
 Definition at line 34 of file Console\+Window.\+xaml.\+cs.
 
-\hypertarget{class_c_p_u___o_s___simulator_1_1_console_window_a3c20f504dabf2d202564fdde8d54bab4}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Console\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Console\+Window}!Console\+Window@{Console\+Window}}
+\hypertarget{class_c_p_u___o_s___simulator_1_1_console_window_a4e79b8ceea62fb4bb44c63b7fdd7c6bb}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Console\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Console\+Window}!Console\+Window@{Console\+Window}}
 \index{Console\+Window@{Console\+Window}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Console\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Console\+Window}}
-\subsubsection[{Console\+Window(\+Main\+Window window)}]{\setlength{\rightskip}{0pt plus 5cm}C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Console\+Window.\+Console\+Window (
+\subsubsection[{Console\+Window(\+Main\+Window parent)}]{\setlength{\rightskip}{0pt plus 5cm}C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Console\+Window.\+Console\+Window (
 \begin{DoxyParamCaption}
-\item[{{\bf Main\+Window}}]{window}
+\item[{{\bf Main\+Window}}]{parent}
 \end{DoxyParamCaption}
-)}\label{class_c_p_u___o_s___simulator_1_1_console_window_a3c20f504dabf2d202564fdde8d54bab4}
+)}\label{class_c_p_u___o_s___simulator_1_1_console_window_a4e79b8ceea62fb4bb44c63b7fdd7c6bb}
 
 
-Constructor for console window that has a parent window 
+Constructor for console window that takes the window instance that is creating this window P\+L\+E\+A\+S\+E N\+O\+T\+E\+: This constructor should always be used so data can be passed back to the main window 
 
 
 \begin{DoxyParams}{Parameters}
-{\em window} & the parent window\\
+{\em parent} & The window that is creating this window \\
 \hline
 \end{DoxyParams}
 
 
-Definition at line 44 of file Console\+Window.\+xaml.\+cs.
+Definition at line 45 of file Console\+Window.\+xaml.\+cs.
 
 
 
@@ -134,7 +134,7 @@ Definition at line 44 of file Console\+Window.\+xaml.\+cs.
 )\hspace{0.3cm}{\ttfamily [private]}}\label{class_c_p_u___o_s___simulator_1_1_console_window_a1de6be8bb7f4f581a9e4131a0408e632}
 
 
-Definition at line 96 of file Console\+Window.\+xaml.\+cs.
+Definition at line 102 of file Console\+Window.\+xaml.\+cs.
 
 \hypertarget{class_c_p_u___o_s___simulator_1_1_console_window_a8fc3e3f38ff00f6239dca33ff68de0d2}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Console\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Console\+Window}!Connect@{Connect}}
 \index{Connect@{Connect}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Console\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Console\+Window}}
@@ -170,7 +170,7 @@ Definition at line 150 of file Console\+Window.\+g.\+cs.
 )\hspace{0.3cm}{\ttfamily [private]}}\label{class_c_p_u___o_s___simulator_1_1_console_window_a3d026ba3c0def2d09cc0dd1e92e4cd0d}
 
 
-Definition at line 101 of file Console\+Window.\+xaml.\+cs.
+Definition at line 108 of file Console\+Window.\+xaml.\+cs.
 
 \hypertarget{class_c_p_u___o_s___simulator_1_1_console_window_a5961ed9b274d16fab841f34bc178b52f}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Console\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Console\+Window}!Initialize\+Component@{Initialize\+Component}}
 \index{Initialize\+Component@{Initialize\+Component}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Console\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Console\+Window}}
@@ -220,7 +220,7 @@ This function parses a line of input into a console command
 \end{DoxyParams}
 
 
-Definition at line 55 of file Console\+Window.\+xaml.\+cs.
+Definition at line 56 of file Console\+Window.\+xaml.\+cs.
 
 \hypertarget{class_c_p_u___o_s___simulator_1_1_console_window_a8719d25b2617a32a78511d9e584d90a0}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Console\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Console\+Window}!Set\+Console\+Window\+Instance@{Set\+Console\+Window\+Instance}}
 \index{Set\+Console\+Window\+Instance@{Set\+Console\+Window\+Instance}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Console\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Console\+Window}}
@@ -235,7 +235,7 @@ This method sets the console window instance in the window bridge o it can be ac
 
 
 
-Definition at line 109 of file Console\+Window.\+xaml.\+cs.
+Definition at line 116 of file Console\+Window.\+xaml.\+cs.
 
 \hypertarget{class_c_p_u___o_s___simulator_1_1_console_window_aabd331e8c3a83c87ccd2e09c3959408d}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Console\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Console\+Window}!txt\+\_\+\+Console\+\_\+\+Preview\+Key\+Down@{txt\+\_\+\+Console\+\_\+\+Preview\+Key\+Down}}
 \index{txt\+\_\+\+Console\+\_\+\+Preview\+Key\+Down@{txt\+\_\+\+Console\+\_\+\+Preview\+Key\+Down}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Console\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Console\+Window}}
@@ -247,7 +247,7 @@ Definition at line 109 of file Console\+Window.\+xaml.\+cs.
 )\hspace{0.3cm}{\ttfamily [private]}}\label{class_c_p_u___o_s___simulator_1_1_console_window_aabd331e8c3a83c87ccd2e09c3959408d}
 
 
-Definition at line 82 of file Console\+Window.\+xaml.\+cs.
+Definition at line 88 of file Console\+Window.\+xaml.\+cs.
 
 
 

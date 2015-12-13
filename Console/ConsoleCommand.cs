@@ -56,8 +56,8 @@ namespace CPU_OS_Simulator.Console
         /// </summary>
         private void BindFunction()
         {
-            EnumConsoleCommands temp = (EnumConsoleCommands) Enum.Parse(typeof (EnumConsoleCommands), name.ToUpper());
-            if (temp == null)
+            EnumConsoleCommands temp;
+            if(!Enum.TryParse(name, true, out temp))
             {
                 temp = EnumConsoleCommands.UNKNOWN;
             }

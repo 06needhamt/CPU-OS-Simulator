@@ -38,12 +38,13 @@ namespace CPU_OS_Simulator
             SetConsoleWindowInstance();
         }
         /// <summary>
-        /// Constructor for console window that has a parent window
+        /// Constructor for console window that takes the window instance that is creating this window
+        /// PLEASE NOTE: This constructor should always be used so data can be passed back to the main window
         /// </summary>
-        /// <param name="window"> the parent window</param>
-        public ConsoleWindow(MainWindow window)
+        /// <param name="parent">The window that is creating this window </param>
+        public ConsoleWindow(MainWindow parent)
         {
-            parent = window;
+            this.parent = parent;
             InitializeComponent();
             currentInstance = this;
             SetConsoleWindowInstance();
@@ -76,6 +77,11 @@ namespace CPU_OS_Simulator
                     txt_Console.CaretIndex = txt_Console.Text.Length;
                 }
             }
+            else
+            {
+                txt_Console.Text += "\n";
+                txt_Console.CaretIndex = txt_Console.Text.Length;
+            }
 
         }
 
@@ -95,7 +101,8 @@ namespace CPU_OS_Simulator
 
         private void btn_SetColour_Click(object sender, RoutedEventArgs e)
         {
-
+            ColourPickerWindow window = new ColourPickerWindow(this);
+            window.Show();
         }
 
         private void ConsoleWindow1_Closing(object sender, System.ComponentModel.CancelEventArgs e)

@@ -53,10 +53,10 @@ namespace CPU_OS_Simulator.Memory
             else // if memory is full
             {
                 Random R = new Random(); // generate a random number between 0 and the number of pages 
-                int number = R.Next(0, pageTable.Entries.Count);
+                int number = R.Next(0, pageTable.Entries.Count - 1);
                 while (pageTable.Entries[number].SwappedOut) // if this page is already swapped out generate another number
                 {
-                    number = R.Next(0, pageTable.Entries.Count);
+                    number = R.Next(0, pageTable.Entries.Count - 1 );
                 }
                 MemoryPage swappedMemoryPage = pageTable.Entries[number].Page; 
                 //pageTable.Entries[number].SwappedOut = true;

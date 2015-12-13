@@ -27,7 +27,7 @@ namespace CPU_OS_Simulator
         }
         /// <summary>
         /// Constructor for memory window that takes the window instance that is creating this window
-        /// PLEASE NOTE: This constructor should always be used so data can be passed back to the main window
+        /// PLEASE NOTE: This constructor should always be used so data can be passed back to the parent window
         /// </summary>
         /// <param name="parentWindow">The window that is creating this window </param>
         /// <param name="currentPage"> The memory page to be displayed in the window </param>

@@ -1,7 +1,7 @@
 var class_c_p_u___o_s___simulator_1_1_console_window =
 [
     [ "ConsoleWindow", "class_c_p_u___o_s___simulator_1_1_console_window.html#abdd222b591f72c19297dc5805059ee7e", null ],
-    [ "ConsoleWindow", "class_c_p_u___o_s___simulator_1_1_console_window.html#a3c20f504dabf2d202564fdde8d54bab4", null ],
+    [ "ConsoleWindow", "class_c_p_u___o_s___simulator_1_1_console_window.html#a4e79b8ceea62fb4bb44c63b7fdd7c6bb", null ],
     [ "btn_SetColour_Click", "class_c_p_u___o_s___simulator_1_1_console_window.html#a1de6be8bb7f4f581a9e4131a0408e632", null ],
     [ "Connect", "class_c_p_u___o_s___simulator_1_1_console_window.html#a8fc3e3f38ff00f6239dca33ff68de0d2", null ],
     [ "Connect", "class_c_p_u___o_s___simulator_1_1_console_window.html#a8fc3e3f38ff00f6239dca33ff68de0d2", null ],

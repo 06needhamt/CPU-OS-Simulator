@@ -1,12 +1,12 @@
-﻿<Window x:Class="CPU_OS_Simulator.ColourPickerWindow"
+﻿<Window x:Name="Colour_Picker_Window" x:Class="CPU_OS_Simulator.ColourPickerWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CPU_OS_Simulator"
         mc:Ignorable="d"
-        Title="ColourPickerWindow" Height="300" Width="300">
-    <Grid>
+        Title="ColourPickerWindow" Height="800" Width="800" Icon="CPU-OS Simulator 7-5-50_1.ico" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
+    <Grid x:Name="root_Grid">
         
     </Grid>
 </Window>

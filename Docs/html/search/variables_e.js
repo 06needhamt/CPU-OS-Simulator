@@ -64,5 +64,7 @@ var searchData=
   ['resourceculture',['resourceCulture',['../class_c_p_u___o_s___simulator_1_1_properties_1_1_resources.html#a08c56eb92abfbde7a18635199c6f28cf',1,'CPU_OS_Simulator::Properties::Resources']]],
   ['resourceman',['resourceMan',['../class_c_p_u___o_s___simulator_1_1_properties_1_1_resources.html#abc80953d3d68ed223e07e8efabc17b79',1,'CPU_OS_Simulator::Properties::Resources']]],
   ['result',['result',['../class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_instruction.html#a80637c7fae4090f9c73f468dbd6af7ee',1,'CPU_OS_Simulator::CPU::Instruction']]],
-  ['rootgrid',['RootGrid',['../class_c_p_u___o_s___simulator_1_1_memory_window.html#ae2c7b1b6f5c337af62d18b0e2a4d098c',1,'CPU_OS_Simulator::MemoryWindow']]]
+  ['root_5fgrid',['root_Grid',['../class_c_p_u___o_s___simulator_1_1_colour_picker_window.html#ad3f58999085d75f00e86e4796aa87ed3',1,'CPU_OS_Simulator::ColourPickerWindow']]],
+  ['rootgrid',['RootGrid',['../class_c_p_u___o_s___simulator_1_1_memory_window.html#ae2c7b1b6f5c337af62d18b0e2a4d098c',1,'CPU_OS_Simulator::MemoryWindow']]],
+  ['row_5fsize',['ROW_SIZE',['../class_c_p_u___o_s___simulator_1_1_colour_picker_window.html#a82dedb596267fba0813f7d710d96e6af',1,'CPU_OS_Simulator::ColourPickerWindow']]]
 ];

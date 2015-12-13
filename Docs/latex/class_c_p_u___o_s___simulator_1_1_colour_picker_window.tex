@@ -15,13 +15,20 @@ Inheritance diagram for C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Colour\+Picker\+W
 \begin{DoxyCompactItemize}
 \item 
 \hyperlink{class_c_p_u___o_s___simulator_1_1_colour_picker_window_afd196933703b7ee4bcac6cbfde73e65f}{Colour\+Picker\+Window} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Constructor for Colour picker window \end{DoxyCompactList}\item 
 \hyperlink{class_c_p_u___o_s___simulator_1_1_colour_picker_window_a6d0c7265a93ca643ad296a8664489508}{Colour\+Picker\+Window} (\hyperlink{class_c_p_u___o_s___simulator_1_1_console_window}{Console\+Window} \hyperlink{class_c_p_u___o_s___simulator_1_1_colour_picker_window_a0a40b478316b3e45a63c67347ff9fc63}{parent})
-\item 
+\begin{DoxyCompactList}\small\item\em Constructor for colour picker window that takes the window instance that is creating this window P\+L\+E\+A\+S\+E N\+O\+T\+E\+: This constructor should always be used so data can be passed back to the main window \end{DoxyCompactList}\item 
 void \hyperlink{class_c_p_u___o_s___simulator_1_1_colour_picker_window_a83c3f68e51fd577446e25cfb2a8d05ed}{Initialize\+Component} ()
 \begin{DoxyCompactList}\small\item\em Initialize\+Component \end{DoxyCompactList}\item 
 void \hyperlink{class_c_p_u___o_s___simulator_1_1_colour_picker_window_a83c3f68e51fd577446e25cfb2a8d05ed}{Initialize\+Component} ()
 \begin{DoxyCompactList}\small\item\em Initialize\+Component \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Package Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_c_p_u___o_s___simulator_1_1_colour_picker_window}{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Colour\+Picker\+Window} \hyperlink{class_c_p_u___o_s___simulator_1_1_colour_picker_window_ae1fb4e0b93aecac6fdff7fe54382e033}{Colour\+\_\+\+Picker\+\_\+\+Window}
+\item 
+System.\+Windows.\+Controls.\+Grid \hyperlink{class_c_p_u___o_s___simulator_1_1_colour_picker_window_ad3f58999085d75f00e86e4796aa87ed3}{root\+\_\+\+Grid}
+\end{DoxyCompactItemize}
 \subsection*{Properties}
 \begin{DoxyCompactItemize}
 \item 
@@ -30,6 +37,10 @@ Color \hyperlink{class_c_p_u___o_s___simulator_1_1_colour_picker_window_a4e51070
 \subsection*{Private Member Functions}
 \begin{DoxyCompactItemize}
 \item 
+void \hyperlink{class_c_p_u___o_s___simulator_1_1_colour_picker_window_aed4e40744fb046fb84cebd2c406b8a99}{Create\+Grid} ()
+\begin{DoxyCompactList}\small\item\em This function creates the grid where the colour picker buttons are displayed \end{DoxyCompactList}\item 
+void \hyperlink{class_c_p_u___o_s___simulator_1_1_colour_picker_window_a2969d055fb398db5c470dd91d89abffd}{Create\+Buttons} (ref Grid Dynamic\+Grid)
+\begin{DoxyCompactList}\small\item\em This method populates the grid with colour picking buttons \end{DoxyCompactList}\item 
 void System.\+Windows.\+Markup.\+I\+Component\+Connector. \hyperlink{class_c_p_u___o_s___simulator_1_1_colour_picker_window_a857b5ab5ebf06a29846e0595c3c442ad}{Connect} (int connection\+Id, object target)
 \item 
 void System.\+Windows.\+Markup.\+I\+Component\+Connector. \hyperlink{class_c_p_u___o_s___simulator_1_1_colour_picker_window_a857b5ab5ebf06a29846e0595c3c442ad}{Connect} (int connection\+Id, object target)
@@ -41,6 +52,8 @@ void System.\+Windows.\+Markup.\+I\+Component\+Connector. \hyperlink{class_c_p_u
 \item 
 Color \hyperlink{class_c_p_u___o_s___simulator_1_1_colour_picker_window_a1c1653bebad209bd313da5a18ecea9bc}{selected\+Color}
 \item 
+const double \hyperlink{class_c_p_u___o_s___simulator_1_1_colour_picker_window_a82dedb596267fba0813f7d710d96e6af}{R\+O\+W\+\_\+\+S\+I\+Z\+E} = 25.\+0
+\item 
 bool \hyperlink{class_c_p_u___o_s___simulator_1_1_colour_picker_window_aeb35df31199f12fcf32b741db20a1546}{\+\_\+content\+Loaded}
 \end{DoxyCompactItemize}
 
@@ -50,7 +63,7 @@ Interaction logic for Colour\+Picker\+Window.\+xaml
 
 \hyperlink{class_c_p_u___o_s___simulator_1_1_colour_picker_window}{Colour\+Picker\+Window} 
 
-Definition at line 20 of file Colour\+Picker\+Window.\+xaml.\+cs.
+Definition at line 12 of file Colour\+Picker\+Window.\+xaml.\+cs.
 
 
 
@@ -64,7 +77,11 @@ Definition at line 20 of file Colour\+Picker\+Window.\+xaml.\+cs.
 )}\label{class_c_p_u___o_s___simulator_1_1_colour_picker_window_afd196933703b7ee4bcac6cbfde73e65f}
 
 
-Definition at line 25 of file Colour\+Picker\+Window.\+xaml.\+cs.
+Constructor for Colour picker window 
+
+
+
+Definition at line 21 of file Colour\+Picker\+Window.\+xaml.\+cs.
 
 \hypertarget{class_c_p_u___o_s___simulator_1_1_colour_picker_window_a6d0c7265a93ca643ad296a8664489508}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Colour\+Picker\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Colour\+Picker\+Window}!Colour\+Picker\+Window@{Colour\+Picker\+Window}}
 \index{Colour\+Picker\+Window@{Colour\+Picker\+Window}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Colour\+Picker\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Colour\+Picker\+Window}}
@@ -75,7 +92,16 @@ Definition at line 25 of file Colour\+Picker\+Window.\+xaml.\+cs.
 )}\label{class_c_p_u___o_s___simulator_1_1_colour_picker_window_a6d0c7265a93ca643ad296a8664489508}
 
 
-Definition at line 30 of file Colour\+Picker\+Window.\+xaml.\+cs.
+Constructor for colour picker window that takes the window instance that is creating this window P\+L\+E\+A\+S\+E N\+O\+T\+E\+: This constructor should always be used so data can be passed back to the main window 
+
+
+\begin{DoxyParams}{Parameters}
+{\em parent} & The window that is creating this window \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 31 of file Colour\+Picker\+Window.\+xaml.\+cs.
 
 
 
@@ -90,7 +116,7 @@ Definition at line 30 of file Colour\+Picker\+Window.\+xaml.\+cs.
 )\hspace{0.3cm}{\ttfamily [private]}}\label{class_c_p_u___o_s___simulator_1_1_colour_picker_window_a857b5ab5ebf06a29846e0595c3c442ad}
 
 
-Definition at line 70 of file Colour\+Picker\+Window.\+g.\+cs.
+Definition at line 86 of file Colour\+Picker\+Window.\+g.\+cs.
 
 \hypertarget{class_c_p_u___o_s___simulator_1_1_colour_picker_window_a857b5ab5ebf06a29846e0595c3c442ad}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Colour\+Picker\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Colour\+Picker\+Window}!Connect@{Connect}}
 \index{Connect@{Connect}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Colour\+Picker\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Colour\+Picker\+Window}}
@@ -102,7 +128,42 @@ Definition at line 70 of file Colour\+Picker\+Window.\+g.\+cs.
 )\hspace{0.3cm}{\ttfamily [private]}}\label{class_c_p_u___o_s___simulator_1_1_colour_picker_window_a857b5ab5ebf06a29846e0595c3c442ad}
 
 
-Definition at line 70 of file Colour\+Picker\+Window.\+g.\+i.\+cs.
+Definition at line 86 of file Colour\+Picker\+Window.\+g.\+i.\+cs.
+
+\hypertarget{class_c_p_u___o_s___simulator_1_1_colour_picker_window_a2969d055fb398db5c470dd91d89abffd}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Colour\+Picker\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Colour\+Picker\+Window}!Create\+Buttons@{Create\+Buttons}}
+\index{Create\+Buttons@{Create\+Buttons}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Colour\+Picker\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Colour\+Picker\+Window}}
+\subsubsection[{Create\+Buttons(ref Grid Dynamic\+Grid)}]{\setlength{\rightskip}{0pt plus 5cm}void C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Colour\+Picker\+Window.\+Create\+Buttons (
+\begin{DoxyParamCaption}
+\item[{ref Grid}]{Dynamic\+Grid}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{class_c_p_u___o_s___simulator_1_1_colour_picker_window_a2969d055fb398db5c470dd91d89abffd}
+
+
+This method populates the grid with colour picking buttons 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Dynamic\+Grid} & a reference to the grid that the buttons should be displayed in\\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 77 of file Colour\+Picker\+Window.\+xaml.\+cs.
+
+\hypertarget{class_c_p_u___o_s___simulator_1_1_colour_picker_window_aed4e40744fb046fb84cebd2c406b8a99}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Colour\+Picker\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Colour\+Picker\+Window}!Create\+Grid@{Create\+Grid}}
+\index{Create\+Grid@{Create\+Grid}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Colour\+Picker\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Colour\+Picker\+Window}}
+\subsubsection[{Create\+Grid()}]{\setlength{\rightskip}{0pt plus 5cm}void C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Colour\+Picker\+Window.\+Create\+Grid (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{class_c_p_u___o_s___simulator_1_1_colour_picker_window_aed4e40744fb046fb84cebd2c406b8a99}
+
+
+This function creates the grid where the colour picker buttons are displayed 
+
+
+
+Definition at line 40 of file Colour\+Picker\+Window.\+xaml.\+cs.
 
 \hypertarget{class_c_p_u___o_s___simulator_1_1_colour_picker_window_a83c3f68e51fd577446e25cfb2a8d05ed}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Colour\+Picker\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Colour\+Picker\+Window}!Initialize\+Component@{Initialize\+Component}}
 \index{Initialize\+Component@{Initialize\+Component}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Colour\+Picker\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Colour\+Picker\+Window}}
@@ -117,7 +178,7 @@ Initialize\+Component
 
 
 
-Definition at line 50 of file Colour\+Picker\+Window.\+g.\+i.\+cs.
+Definition at line 66 of file Colour\+Picker\+Window.\+g.\+cs.
 
 \hypertarget{class_c_p_u___o_s___simulator_1_1_colour_picker_window_a83c3f68e51fd577446e25cfb2a8d05ed}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Colour\+Picker\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Colour\+Picker\+Window}!Initialize\+Component@{Initialize\+Component}}
 \index{Initialize\+Component@{Initialize\+Component}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Colour\+Picker\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Colour\+Picker\+Window}}
@@ -132,7 +193,7 @@ Initialize\+Component
 
 
 
-Definition at line 50 of file Colour\+Picker\+Window.\+g.\+cs.
+Definition at line 66 of file Colour\+Picker\+Window.\+g.\+i.\+cs.
 
 
 
@@ -142,21 +203,42 @@ Definition at line 50 of file Colour\+Picker\+Window.\+g.\+cs.
 \subsubsection[{\+\_\+content\+Loaded}]{\setlength{\rightskip}{0pt plus 5cm}bool C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Colour\+Picker\+Window.\+\_\+content\+Loaded\hspace{0.3cm}{\ttfamily [private]}}\label{class_c_p_u___o_s___simulator_1_1_colour_picker_window_aeb35df31199f12fcf32b741db20a1546}
 
 
-Definition at line 43 of file Colour\+Picker\+Window.\+g.\+cs.
+Definition at line 59 of file Colour\+Picker\+Window.\+g.\+cs.
+
+\hypertarget{class_c_p_u___o_s___simulator_1_1_colour_picker_window_ae1fb4e0b93aecac6fdff7fe54382e033}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Colour\+Picker\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Colour\+Picker\+Window}!Colour\+\_\+\+Picker\+\_\+\+Window@{Colour\+\_\+\+Picker\+\_\+\+Window}}
+\index{Colour\+\_\+\+Picker\+\_\+\+Window@{Colour\+\_\+\+Picker\+\_\+\+Window}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Colour\+Picker\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Colour\+Picker\+Window}}
+\subsubsection[{Colour\+\_\+\+Picker\+\_\+\+Window}]{\setlength{\rightskip}{0pt plus 5cm}C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator {\bf Colour\+Picker\+Window} C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Colour\+Picker\+Window.\+Colour\+\_\+\+Picker\+\_\+\+Window\hspace{0.3cm}{\ttfamily [package]}}\label{class_c_p_u___o_s___simulator_1_1_colour_picker_window_ae1fb4e0b93aecac6fdff7fe54382e033}
+
+
+Definition at line 46 of file Colour\+Picker\+Window.\+g.\+cs.
 
 \hypertarget{class_c_p_u___o_s___simulator_1_1_colour_picker_window_a0a40b478316b3e45a63c67347ff9fc63}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Colour\+Picker\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Colour\+Picker\+Window}!parent@{parent}}
 \index{parent@{parent}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Colour\+Picker\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Colour\+Picker\+Window}}
 \subsubsection[{parent}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Console\+Window} C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Colour\+Picker\+Window.\+parent\hspace{0.3cm}{\ttfamily [private]}}\label{class_c_p_u___o_s___simulator_1_1_colour_picker_window_a0a40b478316b3e45a63c67347ff9fc63}
 
 
-Definition at line 22 of file Colour\+Picker\+Window.\+xaml.\+cs.
+Definition at line 14 of file Colour\+Picker\+Window.\+xaml.\+cs.
+
+\hypertarget{class_c_p_u___o_s___simulator_1_1_colour_picker_window_ad3f58999085d75f00e86e4796aa87ed3}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Colour\+Picker\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Colour\+Picker\+Window}!root\+\_\+\+Grid@{root\+\_\+\+Grid}}
+\index{root\+\_\+\+Grid@{root\+\_\+\+Grid}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Colour\+Picker\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Colour\+Picker\+Window}}
+\subsubsection[{root\+\_\+\+Grid}]{\setlength{\rightskip}{0pt plus 5cm}System Windows Controls Grid C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Colour\+Picker\+Window.\+root\+\_\+\+Grid\hspace{0.3cm}{\ttfamily [package]}}\label{class_c_p_u___o_s___simulator_1_1_colour_picker_window_ad3f58999085d75f00e86e4796aa87ed3}
+
+
+Definition at line 54 of file Colour\+Picker\+Window.\+g.\+cs.
+
+\hypertarget{class_c_p_u___o_s___simulator_1_1_colour_picker_window_a82dedb596267fba0813f7d710d96e6af}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Colour\+Picker\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Colour\+Picker\+Window}!R\+O\+W\+\_\+\+S\+I\+Z\+E@{R\+O\+W\+\_\+\+S\+I\+Z\+E}}
+\index{R\+O\+W\+\_\+\+S\+I\+Z\+E@{R\+O\+W\+\_\+\+S\+I\+Z\+E}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Colour\+Picker\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Colour\+Picker\+Window}}
+\subsubsection[{R\+O\+W\+\_\+\+S\+I\+Z\+E}]{\setlength{\rightskip}{0pt plus 5cm}const double C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Colour\+Picker\+Window.\+R\+O\+W\+\_\+\+S\+I\+Z\+E = 25.\+0\hspace{0.3cm}{\ttfamily [private]}}\label{class_c_p_u___o_s___simulator_1_1_colour_picker_window_a82dedb596267fba0813f7d710d96e6af}
+
+
+Definition at line 16 of file Colour\+Picker\+Window.\+xaml.\+cs.
 
 \hypertarget{class_c_p_u___o_s___simulator_1_1_colour_picker_window_a1c1653bebad209bd313da5a18ecea9bc}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Colour\+Picker\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Colour\+Picker\+Window}!selected\+Color@{selected\+Color}}
 \index{selected\+Color@{selected\+Color}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Colour\+Picker\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Colour\+Picker\+Window}}
 \subsubsection[{selected\+Color}]{\setlength{\rightskip}{0pt plus 5cm}Color C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Colour\+Picker\+Window.\+selected\+Color\hspace{0.3cm}{\ttfamily [private]}}\label{class_c_p_u___o_s___simulator_1_1_colour_picker_window_a1c1653bebad209bd313da5a18ecea9bc}
 
 
-Definition at line 23 of file Colour\+Picker\+Window.\+xaml.\+cs.
+Definition at line 15 of file Colour\+Picker\+Window.\+xaml.\+cs.
 
 
 
@@ -170,7 +252,7 @@ Property for the selected colour
 
 
 
-Definition at line 39 of file Colour\+Picker\+Window.\+xaml.\+cs.
+Definition at line 116 of file Colour\+Picker\+Window.\+xaml.\+cs.
 
 
 
