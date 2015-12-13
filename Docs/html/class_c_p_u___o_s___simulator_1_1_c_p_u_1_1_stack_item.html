@@ -115,21 +115,29 @@ $(document).ready(function(){initNavTree('class_c_p_u___o_s___simulator_1_1_c_p_
 <div class="title">CPU_OS_Simulator.CPU.StackItem Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>This class represents an item that is stored on the stack  
+ <a href="class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_stack_item.html#details">More...</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a7925b78a92c2561df2396e93b858147d"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_stack_item.html#a7925b78a92c2561df2396e93b858147d">StackItem</a> (int <a class="el" href="class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_stack_item.html#a114a8ae5aae9b8c45e2e0c36ce856cd2">value</a>)</td></tr>
+<tr class="memdesc:a7925b78a92c2561df2396e93b858147d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor for stack item  <a href="#a7925b78a92c2561df2396e93b858147d">More...</a><br /></td></tr>
 <tr class="separator:a7925b78a92c2561df2396e93b858147d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="properties"></a>
 Properties</h2></td></tr>
 <tr class="memitem:a13f182fa7a19bcb7d78aadbd4cc04c98"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_stack_item.html#a13f182fa7a19bcb7d78aadbd4cc04c98">Annotation</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:a13f182fa7a19bcb7d78aadbd4cc04c98"><td class="mdescLeft">&#160;</td><td class="mdescRight">Property to store the annotation associated with this stack item. i.e. "TOS" if the item is at the top of the stack. And "BOS" if the item is at the bottom of the stack.  <a href="#a13f182fa7a19bcb7d78aadbd4cc04c98">More...</a><br /></td></tr>
 <tr class="separator:a13f182fa7a19bcb7d78aadbd4cc04c98"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac8e518e9111640d56d59efbff2fa3161"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_stack_item.html#ac8e518e9111640d56d59efbff2fa3161">Value</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:ac8e518e9111640d56d59efbff2fa3161"><td class="mdescLeft">&#160;</td><td class="mdescRight">Property to store the value within this stack item  <a href="#ac8e518e9111640d56d59efbff2fa3161">More...</a><br /></td></tr>
 <tr class="separator:ac8e518e9111640d56d59efbff2fa3161"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa2e46f703d2a81a32d38f12df3718909"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_stack_item.html#aa2e46f703d2a81a32d38f12df3718909">Position</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:aa2e46f703d2a81a32d38f12df3718909"><td class="mdescLeft">&#160;</td><td class="mdescRight">Property to store the position of this item within the stack  <a href="#aa2e46f703d2a81a32d38f12df3718909">More...</a><br /></td></tr>
 <tr class="separator:aa2e46f703d2a81a32d38f12df3718909"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a44f4c5bd346e25e81c54b01012768bc5"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_stack_item.html#a44f4c5bd346e25e81c54b01012768bc5">Address</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:a44f4c5bd346e25e81c54b01012768bc5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Property to store the address of this stack item within memory  <a href="#a44f4c5bd346e25e81c54b01012768bc5">More...</a><br /></td></tr>
 <tr class="separator:a44f4c5bd346e25e81c54b01012768bc5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
@@ -144,8 +152,9 @@ Private Attributes</h2></td></tr>
 <tr class="separator:aa3d343371c939e5279496e374ba7da1c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock">
-<p>Definition at line <a class="el" href="_stack_item_8cs_source.html#l00003">3</a> of file <a class="el" href="_stack_item_8cs_source.html">StackItem.cs</a>.</p>
+<div class="textblock"><p>This class represents an item that is stored on the stack </p>
+
+<p>Definition at line <a class="el" href="_stack_item_8cs_source.html#l00006">6</a> of file <a class="el" href="_stack_item_8cs_source.html">StackItem.cs</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="a7925b78a92c2561df2396e93b858147d"></a>
 <div class="memitem">
@@ -161,7 +170,15 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_stack_item_8cs_source.html#l00010">10</a> of file <a class="el" href="_stack_item_8cs_source.html">StackItem.cs</a>.</p>
+<p>Constructor for stack item </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">value</td><td>the value to store on the stack</td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="_stack_item_8cs_source.html#l00017">17</a> of file <a class="el" href="_stack_item_8cs_source.html">StackItem.cs</a>.</p>
 
 </div>
 </div>
@@ -184,7 +201,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_stack_item_8cs_source.html#l00008">8</a> of file <a class="el" href="_stack_item_8cs_source.html">StackItem.cs</a>.</p>
+<p>Definition at line <a class="el" href="_stack_item_8cs_source.html#l00011">11</a> of file <a class="el" href="_stack_item_8cs_source.html">StackItem.cs</a>.</p>
 
 </div>
 </div>
@@ -206,7 +223,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_stack_item_8cs_source.html#l00005">5</a> of file <a class="el" href="_stack_item_8cs_source.html">StackItem.cs</a>.</p>
+<p>Definition at line <a class="el" href="_stack_item_8cs_source.html#l00008">8</a> of file <a class="el" href="_stack_item_8cs_source.html">StackItem.cs</a>.</p>
 
 </div>
 </div>
@@ -228,7 +245,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_stack_item_8cs_source.html#l00007">7</a> of file <a class="el" href="_stack_item_8cs_source.html">StackItem.cs</a>.</p>
+<p>Definition at line <a class="el" href="_stack_item_8cs_source.html#l00010">10</a> of file <a class="el" href="_stack_item_8cs_source.html">StackItem.cs</a>.</p>
 
 </div>
 </div>
@@ -250,7 +267,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_stack_item_8cs_source.html#l00006">6</a> of file <a class="el" href="_stack_item_8cs_source.html">StackItem.cs</a>.</p>
+<p>Definition at line <a class="el" href="_stack_item_8cs_source.html#l00009">9</a> of file <a class="el" href="_stack_item_8cs_source.html">StackItem.cs</a>.</p>
 
 </div>
 </div>
@@ -273,7 +290,9 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_stack_item_8cs_source.html#l00055">55</a> of file <a class="el" href="_stack_item_8cs_source.html">StackItem.cs</a>.</p>
+<p>Property to store the address of this stack item within memory </p>
+
+<p>Definition at line <a class="el" href="_stack_item_8cs_source.html#l00072">72</a> of file <a class="el" href="_stack_item_8cs_source.html">StackItem.cs</a>.</p>
 
 </div>
 </div>
@@ -295,7 +314,9 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_stack_item_8cs_source.html#l00016">16</a> of file <a class="el" href="_stack_item_8cs_source.html">StackItem.cs</a>.</p>
+<p>Property to store the annotation associated with this stack item. i.e. "TOS" if the item is at the top of the stack. And "BOS" if the item is at the bottom of the stack. </p>
+
+<p>Definition at line <a class="el" href="_stack_item_8cs_source.html#l00027">27</a> of file <a class="el" href="_stack_item_8cs_source.html">StackItem.cs</a>.</p>
 
 </div>
 </div>
@@ -317,7 +338,9 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_stack_item_8cs_source.html#l00042">42</a> of file <a class="el" href="_stack_item_8cs_source.html">StackItem.cs</a>.</p>
+<p>Property to store the position of this item within the stack </p>
+
+<p>Definition at line <a class="el" href="_stack_item_8cs_source.html#l00057">57</a> of file <a class="el" href="_stack_item_8cs_source.html">StackItem.cs</a>.</p>
 
 </div>
 </div>
@@ -339,7 +362,9 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_stack_item_8cs_source.html#l00029">29</a> of file <a class="el" href="_stack_item_8cs_source.html">StackItem.cs</a>.</p>
+<p>Property to store the value within this stack item </p>
+
+<p>Definition at line <a class="el" href="_stack_item_8cs_source.html#l00042">42</a> of file <a class="el" href="_stack_item_8cs_source.html">StackItem.cs</a>.</p>
 
 </div>
 </div>

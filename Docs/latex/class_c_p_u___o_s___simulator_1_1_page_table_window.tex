@@ -19,7 +19,7 @@ void \hyperlink{class_c_p_u___o_s___simulator_1_1_page_table_window_aac86b3b08e7
 void \hyperlink{class_c_p_u___o_s___simulator_1_1_page_table_window_aac86b3b08e7e32708ac357042af6cbb2}{Initialize\+Component} ()
 \begin{DoxyCompactList}\small\item\em Initialize\+Component \end{DoxyCompactList}\item 
 \hyperlink{class_c_p_u___o_s___simulator_1_1_page_table_window_a7d71ad4194ceafa3573e5f65e8dbe90a}{Page\+Table\+Window} (\hyperlink{class_c_p_u___o_s___simulator_1_1_memory_window}{Memory\+Window} \hyperlink{class_c_p_u___o_s___simulator_1_1_page_table_window_a1903e0b83820829549f74207cd209337}{parent})
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Constructor for page table window that takes the window instance that is creating this window P\+L\+E\+A\+S\+E N\+O\+T\+E\+: This constructor should always be used so data can be passed back to the parent window \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Package Attributes}
 \begin{DoxyCompactItemize}
 \item 
@@ -43,7 +43,7 @@ void System.\+Windows.\+Markup.\+I\+Component\+Connector. \hyperlink{class_c_p_u
 void System.\+Windows.\+Markup.\+I\+Component\+Connector. \hyperlink{class_c_p_u___o_s___simulator_1_1_page_table_window_a5843f37edba076f17d15fe9f9f20d930}{Connect} (int connection\+Id, object target)
 \item 
 \hyperlink{class_c_p_u___o_s___simulator_1_1_page_table_window_a9ddde0b8d78abd882007a4d919e5a082}{Page\+Table\+Window} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Default Constructor for page table window \end{DoxyCompactList}\item 
 void \hyperlink{class_c_p_u___o_s___simulator_1_1_page_table_window_a32fcbb5d7acdefedbf7b81194f046f40}{Page\+Table\+Window1\+\_\+\+Loaded} (object sender, Routed\+Event\+Args e)
 \item 
 void \hyperlink{class_c_p_u___o_s___simulator_1_1_page_table_window_a4fca878351d58351729a016149ab037e}{chk\+\_\+\+Stay\+\_\+\+On\+\_\+\+Top\+\_\+\+Checked} (object sender, Routed\+Event\+Args e)
@@ -55,7 +55,7 @@ void \hyperlink{class_c_p_u___o_s___simulator_1_1_page_table_window_ae072e4c12e2
 void \hyperlink{class_c_p_u___o_s___simulator_1_1_page_table_window_a0a18aa563b2185c73dac319969a24c43}{btn\+\_\+\+Swap\+\_\+\+Out\+\_\+\+Click} (object sender, Routed\+Event\+Args e)
 \item 
 void \hyperlink{class_c_p_u___o_s___simulator_1_1_page_table_window_aea28126046f84b8a2cced2d22f21804d}{Update\+Entries} ()
-\item 
+\begin{DoxyCompactList}\small\item\em This function updates the page table entries shown in the user interface \end{DoxyCompactList}\item 
 void \hyperlink{class_c_p_u___o_s___simulator_1_1_page_table_window_ab6e40cd99ff3eedb1719774c9a123650}{lst\+\_\+\+Pages\+\_\+\+Selection\+Changed} (object sender, Selection\+Changed\+Event\+Args e)
 \end{DoxyCompactItemize}
 \subsection*{Private Attributes}
@@ -86,7 +86,11 @@ Definition at line 41 of file Page\+Table\+Window.\+g.\+cs.
 )\hspace{0.3cm}{\ttfamily [private]}}\label{class_c_p_u___o_s___simulator_1_1_page_table_window_a9ddde0b8d78abd882007a4d919e5a082}
 
 
-Definition at line 25 of file Page\+Table\+Window.\+xaml.\+cs.
+Default Constructor for page table window 
+
+
+
+Definition at line 28 of file Page\+Table\+Window.\+xaml.\+cs.
 
 \hypertarget{class_c_p_u___o_s___simulator_1_1_page_table_window_a7d71ad4194ceafa3573e5f65e8dbe90a}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Page\+Table\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Page\+Table\+Window}!Page\+Table\+Window@{Page\+Table\+Window}}
 \index{Page\+Table\+Window@{Page\+Table\+Window}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Page\+Table\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Page\+Table\+Window}}
@@ -97,7 +101,16 @@ Definition at line 25 of file Page\+Table\+Window.\+xaml.\+cs.
 )}\label{class_c_p_u___o_s___simulator_1_1_page_table_window_a7d71ad4194ceafa3573e5f65e8dbe90a}
 
 
-Definition at line 30 of file Page\+Table\+Window.\+xaml.\+cs.
+Constructor for page table window that takes the window instance that is creating this window P\+L\+E\+A\+S\+E N\+O\+T\+E\+: This constructor should always be used so data can be passed back to the parent window 
+
+
+\begin{DoxyParams}{Parameters}
+{\em parent} & The window that is creating this window \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 37 of file Page\+Table\+Window.\+xaml.\+cs.
 
 
 
@@ -112,7 +125,7 @@ Definition at line 30 of file Page\+Table\+Window.\+xaml.\+cs.
 )\hspace{0.3cm}{\ttfamily [private]}}\label{class_c_p_u___o_s___simulator_1_1_page_table_window_ae072e4c12e228104c4e3b201c1c9d812}
 
 
-Definition at line 54 of file Page\+Table\+Window.\+xaml.\+cs.
+Definition at line 61 of file Page\+Table\+Window.\+xaml.\+cs.
 
 \hypertarget{class_c_p_u___o_s___simulator_1_1_page_table_window_a0a18aa563b2185c73dac319969a24c43}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Page\+Table\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Page\+Table\+Window}!btn\+\_\+\+Swap\+\_\+\+Out\+\_\+\+Click@{btn\+\_\+\+Swap\+\_\+\+Out\+\_\+\+Click}}
 \index{btn\+\_\+\+Swap\+\_\+\+Out\+\_\+\+Click@{btn\+\_\+\+Swap\+\_\+\+Out\+\_\+\+Click}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Page\+Table\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Page\+Table\+Window}}
@@ -124,7 +137,7 @@ Definition at line 54 of file Page\+Table\+Window.\+xaml.\+cs.
 )\hspace{0.3cm}{\ttfamily [private]}}\label{class_c_p_u___o_s___simulator_1_1_page_table_window_a0a18aa563b2185c73dac319969a24c43}
 
 
-Definition at line 59 of file Page\+Table\+Window.\+xaml.\+cs.
+Definition at line 66 of file Page\+Table\+Window.\+xaml.\+cs.
 
 \hypertarget{class_c_p_u___o_s___simulator_1_1_page_table_window_a4fca878351d58351729a016149ab037e}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Page\+Table\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Page\+Table\+Window}!chk\+\_\+\+Stay\+\_\+\+On\+\_\+\+Top\+\_\+\+Checked@{chk\+\_\+\+Stay\+\_\+\+On\+\_\+\+Top\+\_\+\+Checked}}
 \index{chk\+\_\+\+Stay\+\_\+\+On\+\_\+\+Top\+\_\+\+Checked@{chk\+\_\+\+Stay\+\_\+\+On\+\_\+\+Top\+\_\+\+Checked}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Page\+Table\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Page\+Table\+Window}}
@@ -136,7 +149,7 @@ Definition at line 59 of file Page\+Table\+Window.\+xaml.\+cs.
 )\hspace{0.3cm}{\ttfamily [private]}}\label{class_c_p_u___o_s___simulator_1_1_page_table_window_a4fca878351d58351729a016149ab037e}
 
 
-Definition at line 44 of file Page\+Table\+Window.\+xaml.\+cs.
+Definition at line 51 of file Page\+Table\+Window.\+xaml.\+cs.
 
 \hypertarget{class_c_p_u___o_s___simulator_1_1_page_table_window_a7d678a6670baff37546ea625ae36a63c}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Page\+Table\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Page\+Table\+Window}!chk\+\_\+\+Stay\+\_\+\+On\+\_\+\+Top\+\_\+\+Unchecked@{chk\+\_\+\+Stay\+\_\+\+On\+\_\+\+Top\+\_\+\+Unchecked}}
 \index{chk\+\_\+\+Stay\+\_\+\+On\+\_\+\+Top\+\_\+\+Unchecked@{chk\+\_\+\+Stay\+\_\+\+On\+\_\+\+Top\+\_\+\+Unchecked}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Page\+Table\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Page\+Table\+Window}}
@@ -148,7 +161,7 @@ Definition at line 44 of file Page\+Table\+Window.\+xaml.\+cs.
 )\hspace{0.3cm}{\ttfamily [private]}}\label{class_c_p_u___o_s___simulator_1_1_page_table_window_a7d678a6670baff37546ea625ae36a63c}
 
 
-Definition at line 49 of file Page\+Table\+Window.\+xaml.\+cs.
+Definition at line 56 of file Page\+Table\+Window.\+xaml.\+cs.
 
 \hypertarget{class_c_p_u___o_s___simulator_1_1_page_table_window_a5843f37edba076f17d15fe9f9f20d930}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Page\+Table\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Page\+Table\+Window}!Connect@{Connect}}
 \index{Connect@{Connect}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Page\+Table\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Page\+Table\+Window}}
@@ -214,7 +227,7 @@ Definition at line 98 of file Page\+Table\+Window.\+g.\+i.\+cs.
 )\hspace{0.3cm}{\ttfamily [private]}}\label{class_c_p_u___o_s___simulator_1_1_page_table_window_ab6e40cd99ff3eedb1719774c9a123650}
 
 
-Definition at line 85 of file Page\+Table\+Window.\+xaml.\+cs.
+Definition at line 94 of file Page\+Table\+Window.\+xaml.\+cs.
 
 \hypertarget{class_c_p_u___o_s___simulator_1_1_page_table_window_a32fcbb5d7acdefedbf7b81194f046f40}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Page\+Table\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Page\+Table\+Window}!Page\+Table\+Window1\+\_\+\+Loaded@{Page\+Table\+Window1\+\_\+\+Loaded}}
 \index{Page\+Table\+Window1\+\_\+\+Loaded@{Page\+Table\+Window1\+\_\+\+Loaded}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Page\+Table\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Page\+Table\+Window}}
@@ -226,7 +239,7 @@ Definition at line 85 of file Page\+Table\+Window.\+xaml.\+cs.
 )\hspace{0.3cm}{\ttfamily [private]}}\label{class_c_p_u___o_s___simulator_1_1_page_table_window_a32fcbb5d7acdefedbf7b81194f046f40}
 
 
-Definition at line 36 of file Page\+Table\+Window.\+xaml.\+cs.
+Definition at line 43 of file Page\+Table\+Window.\+xaml.\+cs.
 
 \hypertarget{class_c_p_u___o_s___simulator_1_1_page_table_window_aea28126046f84b8a2cced2d22f21804d}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Page\+Table\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Page\+Table\+Window}!Update\+Entries@{Update\+Entries}}
 \index{Update\+Entries@{Update\+Entries}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Page\+Table\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Page\+Table\+Window}}
@@ -237,7 +250,11 @@ Definition at line 36 of file Page\+Table\+Window.\+xaml.\+cs.
 )\hspace{0.3cm}{\ttfamily [private]}}\label{class_c_p_u___o_s___simulator_1_1_page_table_window_aea28126046f84b8a2cced2d22f21804d}
 
 
-Definition at line 78 of file Page\+Table\+Window.\+xaml.\+cs.
+This function updates the page table entries shown in the user interface 
+
+
+
+Definition at line 87 of file Page\+Table\+Window.\+xaml.\+cs.
 
 
 

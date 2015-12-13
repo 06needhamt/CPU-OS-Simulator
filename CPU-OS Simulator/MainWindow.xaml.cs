@@ -30,10 +30,15 @@ namespace CPU_OS_Simulator
 
         private List<SimulatorProgram> programList;
         private EnumInstructionMode instructionMode;
-        // ReSharper disable once MemberCanBePrivate.Global
+        /// <summary>
+        /// String variable to hold the name of the currently loaded program
+        /// </summary>
         public string currentProgram = string.Empty;
         private ExecutionUnit activeUnit;
         private Stopwatch s;
+        /// <summary>
+        /// Variable to hold the current instance of this window
+        /// </summary>
         public static MainWindow currentInstance;
         Dispatcher dispatcher = Dispatcher.CurrentDispatcher;
         private BackgroundWorker executionWorker;
@@ -45,7 +50,9 @@ namespace CPU_OS_Simulator
         #endregion Global Variables
 
         #region Properties
-
+        /// <summary>
+        /// Property to hold the list of loaded programs
+        /// </summary>
         public List<SimulatorProgram> ProgramList
         {
             get
@@ -58,7 +65,9 @@ namespace CPU_OS_Simulator
                 programList = value;
             }
         }
-
+        /// <summary>
+        /// Property to hold the selected instruction mode
+        /// </summary>
         public EnumInstructionMode InstructionMode
         {
             get
@@ -71,7 +80,9 @@ namespace CPU_OS_Simulator
                 instructionMode = value;
             }
         }
-
+        /// <summary>
+        /// Property yo hold the active execution unit
+        /// </summary>
         public ExecutionUnit ActiveUnit
         {
             get
@@ -84,19 +95,25 @@ namespace CPU_OS_Simulator
                 activeUnit = value;
             }
         }
-
+        /// <summary>
+        /// Property yo hold the active physical memory
+        /// </summary>
         public PhysicalMemory Memory
         {
             get { return memory; }
             set { memory = value; }
         }
-
+        /// <summary>
+        /// Property to hold the active swap space
+        /// </summary>
         public SwapSpace SwapSpace
         {
             get { return swapSpace; }
             set { swapSpace = value; }
         }
-
+        /// <summary>
+        /// Property to hold the active background worker
+        /// </summary>
         public BackgroundWorker ExecutionWorker
         {
             get { return executionWorker; }
@@ -443,15 +460,6 @@ namespace CPU_OS_Simulator
                 return;
             }
         }
-
-#if DEBUG
-
-        public void SayHello()
-        {
-            System.Console.WriteLine("Hello From Main Window");
-        }
-
-#endif
 
         /// <summary>
         /// Creates an instruction with 2 operands
@@ -816,7 +824,7 @@ namespace CPU_OS_Simulator
         /// Asynchronous function called after every instruction is executed to update required values and user interface asynchronously
         /// </summary>
         /// <param name="sender"> the object that triggered this event</param>
-        /// <param name="args">The parameters passed to this event ></param>
+        /// <param name="e">The parameters passed to this event ></param>
         private async void UpdateInterface(object sender, ProgressChangedEventArgs e)
         {
             SimulatorProgram prog = programList.Where(x => x.Name.Equals(currentProgram)).FirstOrDefault();
@@ -958,7 +966,9 @@ namespace CPU_OS_Simulator
             SpecialRegister.FindSpecialRegister("SR").Value -= StatusFlags.N.Value;
             UpdateSpecialRegisters();
         }
-
+        /// <summary>
+        /// This method is called when the window is getting disposed
+        /// </summary>
         public void Dispose()
         {
             executionWorker.Dispose();

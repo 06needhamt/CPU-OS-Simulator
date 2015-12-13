@@ -5,6 +5,9 @@ var dir_4daeced4ad15aeb075514baefd311898 =
     [ "App.xaml.cs", "_app_8xaml_8cs.html", [
       [ "App", "class_c_p_u___o_s___simulator_1_1_app.html", "class_c_p_u___o_s___simulator_1_1_app" ]
     ] ],
+    [ "ColourPickerWindow.xaml.cs", "_colour_picker_window_8xaml_8cs.html", [
+      [ "ColourPickerWindow", "class_c_p_u___o_s___simulator_1_1_colour_picker_window.html", "class_c_p_u___o_s___simulator_1_1_colour_picker_window" ]
+    ] ],
     [ "ConsoleWindow.xaml.cs", "_console_window_8xaml_8cs.html", [
       [ "ConsoleWindow", "class_c_p_u___o_s___simulator_1_1_console_window.html", "class_c_p_u___o_s___simulator_1_1_console_window" ]
     ] ],

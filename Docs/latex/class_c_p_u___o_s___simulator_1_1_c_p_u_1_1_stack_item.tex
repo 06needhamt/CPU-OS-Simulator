@@ -1,21 +1,26 @@
 \hypertarget{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_stack_item}{}\section{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+C\+P\+U.\+Stack\+Item Class Reference}
 \label{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_stack_item}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+C\+P\+U.\+Stack\+Item@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+C\+P\+U.\+Stack\+Item}}
+
+
+This class represents an item that is stored on the stack  
+
+
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
 \hyperlink{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_stack_item_a7925b78a92c2561df2396e93b858147d}{Stack\+Item} (int \hyperlink{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_stack_item_a114a8ae5aae9b8c45e2e0c36ce856cd2}{value})
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Constructor for stack item \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Properties}
 \begin{DoxyCompactItemize}
 \item 
 string \hyperlink{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_stack_item_a13f182fa7a19bcb7d78aadbd4cc04c98}{Annotation}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
-\item 
+\begin{DoxyCompactList}\small\item\em Property to store the annotation associated with this stack item. i.\+e. \char`\"{}\+T\+O\+S\char`\"{} if the item is at the top of the stack. And \char`\"{}\+B\+O\+S\char`\"{} if the item is at the bottom of the stack. \end{DoxyCompactList}\item 
 int \hyperlink{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_stack_item_ac8e518e9111640d56d59efbff2fa3161}{Value}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
-\item 
+\begin{DoxyCompactList}\small\item\em Property to store the value within this stack item \end{DoxyCompactList}\item 
 int \hyperlink{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_stack_item_aa2e46f703d2a81a32d38f12df3718909}{Position}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
-\item 
+\begin{DoxyCompactList}\small\item\em Property to store the position of this item within the stack \end{DoxyCompactList}\item 
 int \hyperlink{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_stack_item_a44f4c5bd346e25e81c54b01012768bc5}{Address}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Property to store the address of this stack item within memory \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Private Attributes}
 \begin{DoxyCompactItemize}
 \item 
@@ -30,9 +35,11 @@ int \hyperlink{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_stack_item_aa3d343371
 
 
 \subsection{Detailed Description}
+This class represents an item that is stored on the stack 
 
 
-Definition at line 3 of file Stack\+Item.\+cs.
+
+Definition at line 6 of file Stack\+Item.\+cs.
 
 
 
@@ -46,7 +53,16 @@ Definition at line 3 of file Stack\+Item.\+cs.
 )}\label{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_stack_item_a7925b78a92c2561df2396e93b858147d}
 
 
-Definition at line 10 of file Stack\+Item.\+cs.
+Constructor for stack item 
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & the value to store on the stack\\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 17 of file Stack\+Item.\+cs.
 
 
 
@@ -56,28 +72,28 @@ Definition at line 10 of file Stack\+Item.\+cs.
 \subsubsection[{address}]{\setlength{\rightskip}{0pt plus 5cm}int C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+C\+P\+U.\+Stack\+Item.\+address\hspace{0.3cm}{\ttfamily [private]}}\label{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_stack_item_aa3d343371c939e5279496e374ba7da1c}
 
 
-Definition at line 8 of file Stack\+Item.\+cs.
+Definition at line 11 of file Stack\+Item.\+cs.
 
 \hypertarget{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_stack_item_ae73bf2077598fcf2849a0fb1024b2d77}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Stack\+Item@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Stack\+Item}!annotation@{annotation}}
 \index{annotation@{annotation}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Stack\+Item@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Stack\+Item}}
 \subsubsection[{annotation}]{\setlength{\rightskip}{0pt plus 5cm}string C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+C\+P\+U.\+Stack\+Item.\+annotation\hspace{0.3cm}{\ttfamily [private]}}\label{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_stack_item_ae73bf2077598fcf2849a0fb1024b2d77}
 
 
-Definition at line 5 of file Stack\+Item.\+cs.
+Definition at line 8 of file Stack\+Item.\+cs.
 
 \hypertarget{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_stack_item_abc7ce976cd8474fc072eb155c4f155ac}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Stack\+Item@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Stack\+Item}!position@{position}}
 \index{position@{position}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Stack\+Item@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Stack\+Item}}
 \subsubsection[{position}]{\setlength{\rightskip}{0pt plus 5cm}int C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+C\+P\+U.\+Stack\+Item.\+position\hspace{0.3cm}{\ttfamily [private]}}\label{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_stack_item_abc7ce976cd8474fc072eb155c4f155ac}
 
 
-Definition at line 7 of file Stack\+Item.\+cs.
+Definition at line 10 of file Stack\+Item.\+cs.
 
 \hypertarget{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_stack_item_a114a8ae5aae9b8c45e2e0c36ce856cd2}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Stack\+Item@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Stack\+Item}!value@{value}}
 \index{value@{value}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Stack\+Item@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Stack\+Item}}
 \subsubsection[{value}]{\setlength{\rightskip}{0pt plus 5cm}int C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+C\+P\+U.\+Stack\+Item.\+value\hspace{0.3cm}{\ttfamily [private]}}\label{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_stack_item_a114a8ae5aae9b8c45e2e0c36ce856cd2}
 
 
-Definition at line 6 of file Stack\+Item.\+cs.
+Definition at line 9 of file Stack\+Item.\+cs.
 
 
 
@@ -87,28 +103,44 @@ Definition at line 6 of file Stack\+Item.\+cs.
 \subsubsection[{Address}]{\setlength{\rightskip}{0pt plus 5cm}int C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+C\+P\+U.\+Stack\+Item.\+Address\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}\label{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_stack_item_a44f4c5bd346e25e81c54b01012768bc5}
 
 
-Definition at line 55 of file Stack\+Item.\+cs.
+Property to store the address of this stack item within memory 
+
+
+
+Definition at line 72 of file Stack\+Item.\+cs.
 
 \hypertarget{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_stack_item_a13f182fa7a19bcb7d78aadbd4cc04c98}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Stack\+Item@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Stack\+Item}!Annotation@{Annotation}}
 \index{Annotation@{Annotation}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Stack\+Item@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Stack\+Item}}
 \subsubsection[{Annotation}]{\setlength{\rightskip}{0pt plus 5cm}string C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+C\+P\+U.\+Stack\+Item.\+Annotation\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}\label{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_stack_item_a13f182fa7a19bcb7d78aadbd4cc04c98}
 
 
-Definition at line 16 of file Stack\+Item.\+cs.
+Property to store the annotation associated with this stack item. i.\+e. \char`\"{}\+T\+O\+S\char`\"{} if the item is at the top of the stack. And \char`\"{}\+B\+O\+S\char`\"{} if the item is at the bottom of the stack. 
+
+
+
+Definition at line 27 of file Stack\+Item.\+cs.
 
 \hypertarget{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_stack_item_aa2e46f703d2a81a32d38f12df3718909}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Stack\+Item@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Stack\+Item}!Position@{Position}}
 \index{Position@{Position}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Stack\+Item@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Stack\+Item}}
 \subsubsection[{Position}]{\setlength{\rightskip}{0pt plus 5cm}int C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+C\+P\+U.\+Stack\+Item.\+Position\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}\label{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_stack_item_aa2e46f703d2a81a32d38f12df3718909}
 
 
-Definition at line 42 of file Stack\+Item.\+cs.
+Property to store the position of this item within the stack 
+
+
+
+Definition at line 57 of file Stack\+Item.\+cs.
 
 \hypertarget{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_stack_item_ac8e518e9111640d56d59efbff2fa3161}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Stack\+Item@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Stack\+Item}!Value@{Value}}
 \index{Value@{Value}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Stack\+Item@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Stack\+Item}}
 \subsubsection[{Value}]{\setlength{\rightskip}{0pt plus 5cm}int C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+C\+P\+U.\+Stack\+Item.\+Value\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}\label{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_stack_item_ac8e518e9111640d56d59efbff2fa3161}
 
 
-Definition at line 29 of file Stack\+Item.\+cs.
+Property to store the value within this stack item 
+
+
+
+Definition at line 42 of file Stack\+Item.\+cs.
 
 
 

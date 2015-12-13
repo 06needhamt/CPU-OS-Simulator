@@ -22,6 +22,8 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <DocumentationFile>bin\Debug\CPU-OS Simulator.Compiler.XML</DocumentationFile>
+    <NoWarn>
+    </NoWarn>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -44,7 +46,7 @@
   <ItemGroup>
     <Compile Include="CompilerFrontend.cs" />
     <Compile Include="EnumCompilerMode.cs" />
-    <Compile Include="EnumSegmentSizes.cs" />
+    <Compile Include="EnumInstructionSegmentSizes.cs" />
     <Compile Include="EnumSegmentType.cs" />
     <Compile Include="InstructionSegment.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

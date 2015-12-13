@@ -167,6 +167,10 @@ namespace CPU_OS_Simulator.CPU
         #endregion Properties
 
         #region Methods
+        /// <summary>
+        /// Obsolete
+        /// </summary>
+        /// <returns> Obsolete</returns>
         [Obsolete("function no longer used with new memory manager",true)]
         public List<MemoryPage> AllocateMemory()
         {

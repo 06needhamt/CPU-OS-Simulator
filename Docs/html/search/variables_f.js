@@ -4,6 +4,7 @@ var searchData=
   ['saved',['saved',['../class_c_p_u___o_s___simulator_1_1_main_window.html#afcd7446d65f9b9370ddf07499c2b8113',1,'CPU_OS_Simulator::MainWindow']]],
   ['scrollbar',['scrollBar',['../class_c_p_u___o_s___simulator_1_1_memory_window.html#a2ab8c6459135d66de58829173f0bee5b',1,'CPU_OS_Simulator::MemoryWindow']]],
   ['scrollbar1',['scrollBar1',['../class_c_p_u___o_s___simulator_1_1_main_window.html#a014812a0e9cd159be05250d94d9a5a8b',1,'CPU_OS_Simulator::MainWindow']]],
+  ['selectedcolor',['selectedColor',['../class_c_p_u___o_s___simulator_1_1_colour_picker_window.html#a1c1653bebad209bd313da5a18ecea9bc',1,'CPU_OS_Simulator::ColourPickerWindow']]],
   ['size',['size',['../class_c_p_u___o_s___simulator_1_1_compiler_1_1_instruction_segment.html#a3fbe26c38889c028d98a423f91824a9f',1,'CPU_OS_Simulator.Compiler.InstructionSegment.size()'],['../class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_compiled_program.html#ac3d1adb46ebd2132f53d3a1b880acc58',1,'CPU_OS_Simulator.CPU.CompiledProgram.size()'],['../class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_instruction.html#a8c533b0c08d8ac0a85b0e342f95cfeec',1,'CPU_OS_Simulator.CPU.Instruction.size()']]],
   ['sld_5fclockspeed',['sld_ClockSpeed',['../class_c_p_u___o_s___simulator_1_1_main_window.html#a39cd3af9bb0f8a3ccd06fdd44c9ed6a3',1,'CPU_OS_Simulator::MainWindow']]],
   ['source',['source',['../class_c_p_u___o_s___simulator_1_1_console_1_1_console_output.html#a3873d00cdb36068d1108fb012857504a',1,'CPU_OS_Simulator::Console::ConsoleOutput']]],

@@ -5,13 +5,17 @@
 This class represents a special register i.\+e a non general purpose register  
 
 
+Inheritance diagram for C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+C\+P\+U.\+Special\+Register\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_special_register}
+\end{center}
+\end{figure}
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
 \hyperlink{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_special_register_a697f3e6f938ad7ab0ceee0555fe2c312}{Special\+Register} ()
-\begin{DoxyCompactList}\small\item\em Default constructor for Special \hyperlink{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_register}{Register} used when deserialising a special register. 
-
-N\+O\+T\+E Do Not use in code \end{DoxyCompactList}\item 
+\item 
 void \hyperlink{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_special_register_ab76c9ab94069230fdf14821495ac9e9c}{set\+Register\+Value} (int \hyperlink{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_special_register_a040dbed0c42c3a45ccb7b01d181dd829}{value}, \hyperlink{namespace_c_p_u___o_s___simulator_1_1_c_p_u_ad49cfe442b74115a326c03b7ae848f76}{Enum\+Operand\+Type} \hyperlink{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_special_register_aae2bca6c1354013cca156bd19c30640d}{type})
 \begin{DoxyCompactList}\small\item\em Sets the value in a special register \end{DoxyCompactList}\item 
 void \hyperlink{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_special_register_a6c2605883e6349c10e92f5453c2ad9ea}{set\+Register\+Value} (string \hyperlink{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_special_register_a040dbed0c42c3a45ccb7b01d181dd829}{value}, \hyperlink{namespace_c_p_u___o_s___simulator_1_1_c_p_u_ad49cfe442b74115a326c03b7ae848f76}{Enum\+Operand\+Type} \hyperlink{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_special_register_aae2bca6c1354013cca156bd19c30640d}{type})
@@ -47,13 +51,13 @@ static \hyperlink{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_special_register}{
 \begin{DoxyCompactItemize}
 \item 
 string \hyperlink{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_special_register_ad8ad1efaf680db5471184a74f911b558}{Name}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
-\item 
+\begin{DoxyCompactList}\small\item\em Property for the name of the special register \end{DoxyCompactList}\item 
 int \hyperlink{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_special_register_aeff33618d376eeaef1e62d6833074bd4}{Value}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
-\item 
+\begin{DoxyCompactList}\small\item\em Property for the value stored in the special register \end{DoxyCompactList}\item 
 \hyperlink{namespace_c_p_u___o_s___simulator_1_1_c_p_u_ad49cfe442b74115a326c03b7ae848f76}{Enum\+Operand\+Type} \hyperlink{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_special_register_afd9e45080d792861e577dde31cdb6d3e}{Type}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
-\item 
+\begin{DoxyCompactList}\small\item\em Property for the type of data in the special register i.\+e. Value or \hyperlink{namespace_c_p_u___o_s___simulator_1_1_memory}{Memory} Address \end{DoxyCompactList}\item 
 string \hyperlink{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_special_register_a60a2bcd516cedf8bb485c2e36bbc3235}{Value\+String}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Property for the value stored in the special register \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Static Private Member Functions}
 \begin{DoxyCompactItemize}
 \item 
@@ -67,15 +71,9 @@ string \hyperlink{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_special_register_a
 int \hyperlink{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_special_register_a040dbed0c42c3a45ccb7b01d181dd829}{value}
 \begin{DoxyCompactList}\small\item\em The integer value of the special register \end{DoxyCompactList}\item 
 string \hyperlink{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_special_register_a540a55b17a53591312e76689d051abac}{value\+String}
-\begin{DoxyCompactList}\small\item\em The string value of the register used 
-
-for the instruction register (I\+R) 
-
-and the memory data register (M\+D\+R) \end{DoxyCompactList}\item 
+\item 
 \hyperlink{namespace_c_p_u___o_s___simulator_1_1_c_p_u_ad49cfe442b74115a326c03b7ae848f76}{Enum\+Operand\+Type} \hyperlink{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_special_register_aae2bca6c1354013cca156bd19c30640d}{type}
-\begin{DoxyCompactList}\small\item\em The type of value stored in the register 
-
-i.\+e intermediate value or memory address \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
@@ -97,11 +95,11 @@ Definition at line 10 of file Special\+Register.\+cs.
 )}\label{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_special_register_a697f3e6f938ad7ab0ceee0555fe2c312}
 
 
+
+
 Default constructor for Special \hyperlink{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_register}{Register} used when deserialising a special register. 
 
 N\+O\+T\+E Do Not use in code 
-
-
 
 Definition at line 75 of file Special\+Register.\+cs.
 
@@ -311,11 +309,11 @@ Definition at line 43 of file Special\+Register.\+cs.
 \subsubsection[{type}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Enum\+Operand\+Type} C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+C\+P\+U.\+Special\+Register.\+type\hspace{0.3cm}{\ttfamily [private]}}\label{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_special_register_aae2bca6c1354013cca156bd19c30640d}
 
 
+
+
 The type of value stored in the register 
 
 i.\+e intermediate value or memory address 
-
-
 
 Definition at line 33 of file Special\+Register.\+cs.
 
@@ -335,13 +333,13 @@ Definition at line 20 of file Special\+Register.\+cs.
 \subsubsection[{value\+String}]{\setlength{\rightskip}{0pt plus 5cm}string C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+C\+P\+U.\+Special\+Register.\+value\+String\hspace{0.3cm}{\ttfamily [private]}}\label{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_special_register_a540a55b17a53591312e76689d051abac}
 
 
+
+
 The string value of the register used 
 
 for the instruction register (I\+R) 
 
 and the memory data register (M\+D\+R) 
-
-
 
 Definition at line 27 of file Special\+Register.\+cs.
 
@@ -353,28 +351,44 @@ Definition at line 27 of file Special\+Register.\+cs.
 \subsubsection[{Name}]{\setlength{\rightskip}{0pt plus 5cm}string C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+C\+P\+U.\+Special\+Register.\+Name\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}\label{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_special_register_ad8ad1efaf680db5471184a74f911b558}
 
 
-Definition at line 175 of file Special\+Register.\+cs.
+Property for the name of the special register 
+
+
+
+Definition at line 177 of file Special\+Register.\+cs.
 
 \hypertarget{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_special_register_afd9e45080d792861e577dde31cdb6d3e}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Special\+Register@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Special\+Register}!Type@{Type}}
 \index{Type@{Type}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Special\+Register@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Special\+Register}}
 \subsubsection[{Type}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Enum\+Operand\+Type} C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+C\+P\+U.\+Special\+Register.\+Type\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}\label{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_special_register_afd9e45080d792861e577dde31cdb6d3e}
 
 
-Definition at line 201 of file Special\+Register.\+cs.
+Property for the type of data in the special register i.\+e. Value or \hyperlink{namespace_c_p_u___o_s___simulator_1_1_memory}{Memory} Address 
+
+
+
+Definition at line 208 of file Special\+Register.\+cs.
 
 \hypertarget{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_special_register_aeff33618d376eeaef1e62d6833074bd4}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Special\+Register@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Special\+Register}!Value@{Value}}
 \index{Value@{Value}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Special\+Register@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Special\+Register}}
 \subsubsection[{Value}]{\setlength{\rightskip}{0pt plus 5cm}int C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+C\+P\+U.\+Special\+Register.\+Value\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}\label{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_special_register_aeff33618d376eeaef1e62d6833074bd4}
 
 
-Definition at line 188 of file Special\+Register.\+cs.
+Property for the value stored in the special register 
+
+
+
+Definition at line 192 of file Special\+Register.\+cs.
 
 \hypertarget{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_special_register_a60a2bcd516cedf8bb485c2e36bbc3235}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Special\+Register@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Special\+Register}!Value\+String@{Value\+String}}
 \index{Value\+String@{Value\+String}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Special\+Register@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Special\+Register}}
 \subsubsection[{Value\+String}]{\setlength{\rightskip}{0pt plus 5cm}string C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+C\+P\+U.\+Special\+Register.\+Value\+String\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}\label{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_special_register_a60a2bcd516cedf8bb485c2e36bbc3235}
 
 
-Definition at line 214 of file Special\+Register.\+cs.
+Property for the value stored in the special register 
+
+
+
+Definition at line 223 of file Special\+Register.\+cs.
 
 
 

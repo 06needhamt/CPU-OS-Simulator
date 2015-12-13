@@ -22,11 +22,18 @@ namespace CPU_OS_Simulator
     {
         private MemoryWindow parent;
 
+        /// <summary>
+        /// Default Constructor for page table window
+        /// </summary>
         private PageTableWindow()
         {
             InitializeComponent();
         }
-
+        /// <summary>
+        /// Constructor for page table window that takes the window instance that is creating this window
+        /// PLEASE NOTE: This constructor should always be used so data can be passed back to the parent window
+        /// </summary>
+        /// <param name="parent">The window that is creating this window </param>
         public PageTableWindow(MemoryWindow parent)
         {
             this.parent = parent;
@@ -37,7 +44,7 @@ namespace CPU_OS_Simulator
         {
             lst_Pages.ItemsSource = null;
             lst_Pages.Items.Clear();
-            lst_Pages.ItemsSource = parent.MainWindowInstance.Memory.Table.Entries;
+            lst_Pages.ItemsSource = parent.ParentWindow.Memory.Table.Entries;
 
         }
 
@@ -61,12 +68,12 @@ namespace CPU_OS_Simulator
             if (((Button) sender).Content.ToString().Equals("SWAP OUT"))
             {
                 int index = lst_Pages.SelectedIndex;
-                parent.MainWindowInstance.Memory.Table.Entries[index].Page.SwapOut(0, index);
+                parent.ParentWindow.Memory.Table.Entries[index].Page.SwapOut(0, index);
             }
             else if (((Button) sender).Content.ToString().Equals("SWAP IN"))
             {
                 int index = lst_Pages.SelectedIndex;
-                parent.MainWindowInstance.Memory.Table.Entries[index].Page.SwapIn(0, index);
+                parent.ParentWindow.Memory.Table.Entries[index].Page.SwapIn(0, index);
             }
             else
             {
@@ -74,12 +81,14 @@ namespace CPU_OS_Simulator
             }
             UpdateEntries();
         }
-
+        /// <summary>
+        /// This function updates the page table entries shown in the user interface
+        /// </summary>
         private void UpdateEntries()
         {
             lst_Pages.ItemsSource = null;
             lst_Pages.Items.Clear();
-            lst_Pages.ItemsSource = parent.MainWindowInstance.Memory.Table.Entries;
+            lst_Pages.ItemsSource = parent.ParentWindow.Memory.Table.Entries;
         }
 
         private void lst_Pages_SelectionChanged(object sender, SelectionChangedEventArgs e)

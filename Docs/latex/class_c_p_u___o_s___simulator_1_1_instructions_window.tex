@@ -19,7 +19,7 @@ Inheritance diagram for C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Instructions\+Win
 \hyperlink{class_c_p_u___o_s___simulator_1_1_instructions_window_a5ed238dc308dcc976400105a3973deb0}{Instructions\+Window} (\hyperlink{class_c_p_u___o_s___simulator_1_1_main_window}{Main\+Window} \hyperlink{class_c_p_u___o_s___simulator_1_1_instructions_window_a954c950c677c61a3b7ed7406b6dc7164}{owner})
 \begin{DoxyCompactList}\small\item\em Constructor for instruction window that takes the window instance that is creating this window P\+L\+E\+A\+S\+E N\+O\+T\+E\+: This constructor should always be used so data can be passed back to the main window \end{DoxyCompactList}\item 
 \hyperlink{class_c_p_u___o_s___simulator_1_1_instructions_window_afa6f0e58a20268fa56006a775c7959e4}{Instructions\+Window} (\hyperlink{class_c_p_u___o_s___simulator_1_1_main_window}{Main\+Window} \hyperlink{class_c_p_u___o_s___simulator_1_1_instructions_window_a954c950c677c61a3b7ed7406b6dc7164}{owner}, \hyperlink{namespace_c_p_u___o_s___simulator_adc17a5a5e004084f05dc8e4d3f70e31f}{Enum\+Instruction\+Mode} \hyperlink{class_c_p_u___o_s___simulator_1_1_instructions_window_aae7addf8e362e26e981b36b9940a53c0}{instruction\+Mode})
-\item 
+\begin{DoxyCompactList}\small\item\em Constructor for instruction window that takes the window instance that is creating this window P\+L\+E\+A\+S\+E N\+O\+T\+E\+: This constructor should always be used so data can be passed back to the main window and the correct instruction mode if necessary \end{DoxyCompactList}\item 
 void \hyperlink{class_c_p_u___o_s___simulator_1_1_instructions_window_a8ad79899f3d5210d66fb5973b721895a}{Initialize\+Component} ()
 \begin{DoxyCompactList}\small\item\em Initialize\+Component \end{DoxyCompactList}\item 
 void \hyperlink{class_c_p_u___o_s___simulator_1_1_instructions_window_a8ad79899f3d5210d66fb5973b721895a}{Initialize\+Component} ()
@@ -333,7 +333,7 @@ int \hyperlink{class_c_p_u___o_s___simulator_1_1_instructions_window_af4fcd7a0d5
 void \hyperlink{class_c_p_u___o_s___simulator_1_1_instructions_window_aafdc8c843b7f2d0e4c434edc569923c6}{Create\+Instruction} ()
 \begin{DoxyCompactList}\small\item\em Creates an instruction based on selected options \end{DoxyCompactList}\item 
 void \hyperlink{class_c_p_u___o_s___simulator_1_1_instructions_window_adce5e32de39213723ea06d279681b8ea}{rdb\+\_\+\+Source\+Value\+Data\+Transfer\+\_\+\+Checked} (object sender, Routed\+Event\+Args e)
-\begin{DoxyCompactList}\small\item\em Finds the register object for the selected register \end{DoxyCompactList}\item 
+\item 
 void \hyperlink{class_c_p_u___o_s___simulator_1_1_instructions_window_aec7d6be51c8cd95dce4db01a5c66047e}{rdb\+\_\+\+Source\+Register\+Data\+Transfer\+\_\+\+Checked} (object sender, Routed\+Event\+Args e)
 \item 
 void \hyperlink{class_c_p_u___o_s___simulator_1_1_instructions_window_a8572bfa72449f43f800dd55961ad7837}{rdb\+\_\+\+Destination\+Value\+Data\+Transfer\+\_\+\+Checked} (object sender, Routed\+Event\+Args e)
@@ -524,7 +524,18 @@ Definition at line 52 of file Instructions\+Window.\+xaml.\+cs.
 )}\label{class_c_p_u___o_s___simulator_1_1_instructions_window_afa6f0e58a20268fa56006a775c7959e4}
 
 
-Definition at line 61 of file Instructions\+Window.\+xaml.\+cs.
+Constructor for instruction window that takes the window instance that is creating this window P\+L\+E\+A\+S\+E N\+O\+T\+E\+: This constructor should always be used so data can be passed back to the main window and the correct instruction mode if necessary 
+
+
+\begin{DoxyParams}{Parameters}
+{\em owner} & The window that is creating this window \\
+\hline
+{\em instruction\+Mode} & the selected instruction mode\\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 64 of file Instructions\+Window.\+xaml.\+cs.
 
 
 
@@ -550,7 +561,7 @@ This event handler is called when the close button is clicked
 \end{DoxyParams}
 
 
-Definition at line 132 of file Instructions\+Window.\+xaml.\+cs.
+Definition at line 135 of file Instructions\+Window.\+xaml.\+cs.
 
 \hypertarget{class_c_p_u___o_s___simulator_1_1_instructions_window_a9c964d2e398c2ed0699652c67c80422a}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Instructions\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Instructions\+Window}!cmb\+\_\+\+Destination\+Register\+Arithmetic\+\_\+\+Got\+Focus@{cmb\+\_\+\+Destination\+Register\+Arithmetic\+\_\+\+Got\+Focus}}
 \index{cmb\+\_\+\+Destination\+Register\+Arithmetic\+\_\+\+Got\+Focus@{cmb\+\_\+\+Destination\+Register\+Arithmetic\+\_\+\+Got\+Focus}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Instructions\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Instructions\+Window}}
@@ -562,7 +573,7 @@ Definition at line 132 of file Instructions\+Window.\+xaml.\+cs.
 )\hspace{0.3cm}{\ttfamily [private]}}\label{class_c_p_u___o_s___simulator_1_1_instructions_window_a9c964d2e398c2ed0699652c67c80422a}
 
 
-Definition at line 924 of file Instructions\+Window.\+xaml.\+cs.
+Definition at line 921 of file Instructions\+Window.\+xaml.\+cs.
 
 \hypertarget{class_c_p_u___o_s___simulator_1_1_instructions_window_a867a9b46a598bfb0b067da68707961ca}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Instructions\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Instructions\+Window}!cmb\+\_\+\+Destination\+Register\+Comparison\+\_\+\+Got\+Focus@{cmb\+\_\+\+Destination\+Register\+Comparison\+\_\+\+Got\+Focus}}
 \index{cmb\+\_\+\+Destination\+Register\+Comparison\+\_\+\+Got\+Focus@{cmb\+\_\+\+Destination\+Register\+Comparison\+\_\+\+Got\+Focus}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Instructions\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Instructions\+Window}}
@@ -574,7 +585,7 @@ Definition at line 924 of file Instructions\+Window.\+xaml.\+cs.
 )\hspace{0.3cm}{\ttfamily [private]}}\label{class_c_p_u___o_s___simulator_1_1_instructions_window_a867a9b46a598bfb0b067da68707961ca}
 
 
-Definition at line 964 of file Instructions\+Window.\+xaml.\+cs.
+Definition at line 961 of file Instructions\+Window.\+xaml.\+cs.
 
 \hypertarget{class_c_p_u___o_s___simulator_1_1_instructions_window_a5f5a0d30cab0406f864a56163f7996ba}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Instructions\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Instructions\+Window}!cmb\+\_\+\+Destination\+Register\+Control\+Transfer\+\_\+\+Got\+Focus@{cmb\+\_\+\+Destination\+Register\+Control\+Transfer\+\_\+\+Got\+Focus}}
 \index{cmb\+\_\+\+Destination\+Register\+Control\+Transfer\+\_\+\+Got\+Focus@{cmb\+\_\+\+Destination\+Register\+Control\+Transfer\+\_\+\+Got\+Focus}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Instructions\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Instructions\+Window}}
@@ -586,7 +597,7 @@ Definition at line 964 of file Instructions\+Window.\+xaml.\+cs.
 )\hspace{0.3cm}{\ttfamily [private]}}\label{class_c_p_u___o_s___simulator_1_1_instructions_window_a5f5a0d30cab0406f864a56163f7996ba}
 
 
-Definition at line 944 of file Instructions\+Window.\+xaml.\+cs.
+Definition at line 941 of file Instructions\+Window.\+xaml.\+cs.
 
 \hypertarget{class_c_p_u___o_s___simulator_1_1_instructions_window_a94becba2935eb5b5213fce4a90a639e2}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Instructions\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Instructions\+Window}!cmb\+\_\+\+Destination\+Register\+Data\+Transfer\+\_\+\+Got\+Focus@{cmb\+\_\+\+Destination\+Register\+Data\+Transfer\+\_\+\+Got\+Focus}}
 \index{cmb\+\_\+\+Destination\+Register\+Data\+Transfer\+\_\+\+Got\+Focus@{cmb\+\_\+\+Destination\+Register\+Data\+Transfer\+\_\+\+Got\+Focus}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Instructions\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Instructions\+Window}}
@@ -598,7 +609,7 @@ Definition at line 944 of file Instructions\+Window.\+xaml.\+cs.
 )\hspace{0.3cm}{\ttfamily [private]}}\label{class_c_p_u___o_s___simulator_1_1_instructions_window_a94becba2935eb5b5213fce4a90a639e2}
 
 
-Definition at line 884 of file Instructions\+Window.\+xaml.\+cs.
+Definition at line 881 of file Instructions\+Window.\+xaml.\+cs.
 
 \hypertarget{class_c_p_u___o_s___simulator_1_1_instructions_window_a565cca857d005347574918cdc5cab5b9}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Instructions\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Instructions\+Window}!cmb\+\_\+\+Destination\+Register\+I\+O\+\_\+\+Got\+Focus@{cmb\+\_\+\+Destination\+Register\+I\+O\+\_\+\+Got\+Focus}}
 \index{cmb\+\_\+\+Destination\+Register\+I\+O\+\_\+\+Got\+Focus@{cmb\+\_\+\+Destination\+Register\+I\+O\+\_\+\+Got\+Focus}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Instructions\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Instructions\+Window}}
@@ -610,7 +621,7 @@ Definition at line 884 of file Instructions\+Window.\+xaml.\+cs.
 )\hspace{0.3cm}{\ttfamily [private]}}\label{class_c_p_u___o_s___simulator_1_1_instructions_window_a565cca857d005347574918cdc5cab5b9}
 
 
-Definition at line 984 of file Instructions\+Window.\+xaml.\+cs.
+Definition at line 981 of file Instructions\+Window.\+xaml.\+cs.
 
 \hypertarget{class_c_p_u___o_s___simulator_1_1_instructions_window_a596ecf3b64608b39235b662565469b3e}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Instructions\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Instructions\+Window}!cmb\+\_\+\+Destination\+Register\+Logical\+\_\+\+Got\+Focus@{cmb\+\_\+\+Destination\+Register\+Logical\+\_\+\+Got\+Focus}}
 \index{cmb\+\_\+\+Destination\+Register\+Logical\+\_\+\+Got\+Focus@{cmb\+\_\+\+Destination\+Register\+Logical\+\_\+\+Got\+Focus}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Instructions\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Instructions\+Window}}
@@ -622,7 +633,7 @@ Definition at line 984 of file Instructions\+Window.\+xaml.\+cs.
 )\hspace{0.3cm}{\ttfamily [private]}}\label{class_c_p_u___o_s___simulator_1_1_instructions_window_a596ecf3b64608b39235b662565469b3e}
 
 
-Definition at line 904 of file Instructions\+Window.\+xaml.\+cs.
+Definition at line 901 of file Instructions\+Window.\+xaml.\+cs.
 
 \hypertarget{class_c_p_u___o_s___simulator_1_1_instructions_window_aa05471f59f3884c72353dd2fd41fbabf}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Instructions\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Instructions\+Window}!cmb\+\_\+\+Destination\+Register\+Miscellaneous\+\_\+\+Got\+Focus@{cmb\+\_\+\+Destination\+Register\+Miscellaneous\+\_\+\+Got\+Focus}}
 \index{cmb\+\_\+\+Destination\+Register\+Miscellaneous\+\_\+\+Got\+Focus@{cmb\+\_\+\+Destination\+Register\+Miscellaneous\+\_\+\+Got\+Focus}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Instructions\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Instructions\+Window}}
@@ -634,7 +645,7 @@ Definition at line 904 of file Instructions\+Window.\+xaml.\+cs.
 )\hspace{0.3cm}{\ttfamily [private]}}\label{class_c_p_u___o_s___simulator_1_1_instructions_window_aa05471f59f3884c72353dd2fd41fbabf}
 
 
-Definition at line 1004 of file Instructions\+Window.\+xaml.\+cs.
+Definition at line 1001 of file Instructions\+Window.\+xaml.\+cs.
 
 \hypertarget{class_c_p_u___o_s___simulator_1_1_instructions_window_aded465dc161799c6ae52c988e3f8882c}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Instructions\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Instructions\+Window}!cmb\+\_\+\+Source\+Register\+Arithmetic\+\_\+\+Got\+Focus@{cmb\+\_\+\+Source\+Register\+Arithmetic\+\_\+\+Got\+Focus}}
 \index{cmb\+\_\+\+Source\+Register\+Arithmetic\+\_\+\+Got\+Focus@{cmb\+\_\+\+Source\+Register\+Arithmetic\+\_\+\+Got\+Focus}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Instructions\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Instructions\+Window}}
@@ -646,7 +657,7 @@ Definition at line 1004 of file Instructions\+Window.\+xaml.\+cs.
 )\hspace{0.3cm}{\ttfamily [private]}}\label{class_c_p_u___o_s___simulator_1_1_instructions_window_aded465dc161799c6ae52c988e3f8882c}
 
 
-Definition at line 914 of file Instructions\+Window.\+xaml.\+cs.
+Definition at line 911 of file Instructions\+Window.\+xaml.\+cs.
 
 \hypertarget{class_c_p_u___o_s___simulator_1_1_instructions_window_a832c901ee54eaab86d0a10cac789e114}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Instructions\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Instructions\+Window}!cmb\+\_\+\+Source\+Register\+Comparison\+\_\+\+Got\+Focus@{cmb\+\_\+\+Source\+Register\+Comparison\+\_\+\+Got\+Focus}}
 \index{cmb\+\_\+\+Source\+Register\+Comparison\+\_\+\+Got\+Focus@{cmb\+\_\+\+Source\+Register\+Comparison\+\_\+\+Got\+Focus}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Instructions\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Instructions\+Window}}
@@ -658,7 +669,7 @@ Definition at line 914 of file Instructions\+Window.\+xaml.\+cs.
 )\hspace{0.3cm}{\ttfamily [private]}}\label{class_c_p_u___o_s___simulator_1_1_instructions_window_a832c901ee54eaab86d0a10cac789e114}
 
 
-Definition at line 954 of file Instructions\+Window.\+xaml.\+cs.
+Definition at line 951 of file Instructions\+Window.\+xaml.\+cs.
 
 \hypertarget{class_c_p_u___o_s___simulator_1_1_instructions_window_a035689dfb95c248b0cadb714a326b714}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Instructions\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Instructions\+Window}!cmb\+\_\+\+Source\+Register\+Control\+Transfer\+\_\+\+Got\+Focus@{cmb\+\_\+\+Source\+Register\+Control\+Transfer\+\_\+\+Got\+Focus}}
 \index{cmb\+\_\+\+Source\+Register\+Control\+Transfer\+\_\+\+Got\+Focus@{cmb\+\_\+\+Source\+Register\+Control\+Transfer\+\_\+\+Got\+Focus}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Instructions\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Instructions\+Window}}
@@ -670,7 +681,7 @@ Definition at line 954 of file Instructions\+Window.\+xaml.\+cs.
 )\hspace{0.3cm}{\ttfamily [private]}}\label{class_c_p_u___o_s___simulator_1_1_instructions_window_a035689dfb95c248b0cadb714a326b714}
 
 
-Definition at line 934 of file Instructions\+Window.\+xaml.\+cs.
+Definition at line 931 of file Instructions\+Window.\+xaml.\+cs.
 
 \hypertarget{class_c_p_u___o_s___simulator_1_1_instructions_window_a3435ee12d0f01d5095fa3229b4d9c972}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Instructions\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Instructions\+Window}!cmb\+\_\+\+Source\+Register\+Data\+Transfer\+\_\+\+Got\+Focus@{cmb\+\_\+\+Source\+Register\+Data\+Transfer\+\_\+\+Got\+Focus}}
 \index{cmb\+\_\+\+Source\+Register\+Data\+Transfer\+\_\+\+Got\+Focus@{cmb\+\_\+\+Source\+Register\+Data\+Transfer\+\_\+\+Got\+Focus}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Instructions\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Instructions\+Window}}
@@ -682,7 +693,7 @@ Definition at line 934 of file Instructions\+Window.\+xaml.\+cs.
 )\hspace{0.3cm}{\ttfamily [private]}}\label{class_c_p_u___o_s___simulator_1_1_instructions_window_a3435ee12d0f01d5095fa3229b4d9c972}
 
 
-Definition at line 874 of file Instructions\+Window.\+xaml.\+cs.
+Definition at line 871 of file Instructions\+Window.\+xaml.\+cs.
 
 \hypertarget{class_c_p_u___o_s___simulator_1_1_instructions_window_a7046f3fb03ffcc336bcc0af4db5857de}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Instructions\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Instructions\+Window}!cmb\+\_\+\+Source\+Register\+I\+O\+\_\+\+Got\+Focus@{cmb\+\_\+\+Source\+Register\+I\+O\+\_\+\+Got\+Focus}}
 \index{cmb\+\_\+\+Source\+Register\+I\+O\+\_\+\+Got\+Focus@{cmb\+\_\+\+Source\+Register\+I\+O\+\_\+\+Got\+Focus}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Instructions\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Instructions\+Window}}
@@ -694,7 +705,7 @@ Definition at line 874 of file Instructions\+Window.\+xaml.\+cs.
 )\hspace{0.3cm}{\ttfamily [private]}}\label{class_c_p_u___o_s___simulator_1_1_instructions_window_a7046f3fb03ffcc336bcc0af4db5857de}
 
 
-Definition at line 974 of file Instructions\+Window.\+xaml.\+cs.
+Definition at line 971 of file Instructions\+Window.\+xaml.\+cs.
 
 \hypertarget{class_c_p_u___o_s___simulator_1_1_instructions_window_abe93d8b72aefc8adcf3b5bb26cc55a1b}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Instructions\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Instructions\+Window}!cmb\+\_\+\+Source\+Register\+Logical\+\_\+\+Got\+Focus@{cmb\+\_\+\+Source\+Register\+Logical\+\_\+\+Got\+Focus}}
 \index{cmb\+\_\+\+Source\+Register\+Logical\+\_\+\+Got\+Focus@{cmb\+\_\+\+Source\+Register\+Logical\+\_\+\+Got\+Focus}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Instructions\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Instructions\+Window}}
@@ -706,7 +717,7 @@ Definition at line 974 of file Instructions\+Window.\+xaml.\+cs.
 )\hspace{0.3cm}{\ttfamily [private]}}\label{class_c_p_u___o_s___simulator_1_1_instructions_window_abe93d8b72aefc8adcf3b5bb26cc55a1b}
 
 
-Definition at line 894 of file Instructions\+Window.\+xaml.\+cs.
+Definition at line 891 of file Instructions\+Window.\+xaml.\+cs.
 
 \hypertarget{class_c_p_u___o_s___simulator_1_1_instructions_window_aebeed4545e10bda489f1f73f4c09a20c}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Instructions\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Instructions\+Window}!cmb\+\_\+\+Source\+Register\+Miscellaneous\+\_\+\+Got\+Focus@{cmb\+\_\+\+Source\+Register\+Miscellaneous\+\_\+\+Got\+Focus}}
 \index{cmb\+\_\+\+Source\+Register\+Miscellaneous\+\_\+\+Got\+Focus@{cmb\+\_\+\+Source\+Register\+Miscellaneous\+\_\+\+Got\+Focus}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Instructions\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Instructions\+Window}}
@@ -718,7 +729,7 @@ Definition at line 894 of file Instructions\+Window.\+xaml.\+cs.
 )\hspace{0.3cm}{\ttfamily [private]}}\label{class_c_p_u___o_s___simulator_1_1_instructions_window_aebeed4545e10bda489f1f73f4c09a20c}
 
 
-Definition at line 994 of file Instructions\+Window.\+xaml.\+cs.
+Definition at line 991 of file Instructions\+Window.\+xaml.\+cs.
 
 \hypertarget{class_c_p_u___o_s___simulator_1_1_instructions_window_a0efa7624a59a6abc64d0940ffaa100b0}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Instructions\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Instructions\+Window}!Connect@{Connect}}
 \index{Connect@{Connect}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Instructions\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Instructions\+Window}}
@@ -777,7 +788,7 @@ Definition at line 1110 of file Instructions\+Window.\+g.\+i.\+cs.
 )\hspace{0.3cm}{\ttfamily [private]}}\label{class_c_p_u___o_s___simulator_1_1_instructions_window_a1d375720d3132849a446bbfb2b3507c5}
 
 
-Definition at line 440 of file Instructions\+Window.\+xaml.\+cs.
+Definition at line 443 of file Instructions\+Window.\+xaml.\+cs.
 
 \hypertarget{class_c_p_u___o_s___simulator_1_1_instructions_window_af33b0726386a647d00bfd7ab3a7b3450}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Instructions\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Instructions\+Window}!Create\+Comparison\+Instruction@{Create\+Comparison\+Instruction}}
 \index{Create\+Comparison\+Instruction@{Create\+Comparison\+Instruction}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Instructions\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Instructions\+Window}}
@@ -788,7 +799,7 @@ Definition at line 440 of file Instructions\+Window.\+xaml.\+cs.
 )\hspace{0.3cm}{\ttfamily [private]}}\label{class_c_p_u___o_s___simulator_1_1_instructions_window_af33b0726386a647d00bfd7ab3a7b3450}
 
 
-Definition at line 525 of file Instructions\+Window.\+xaml.\+cs.
+Definition at line 528 of file Instructions\+Window.\+xaml.\+cs.
 
 \hypertarget{class_c_p_u___o_s___simulator_1_1_instructions_window_a93f0cc6a87afcac6e2d579c6a95a1e91}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Instructions\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Instructions\+Window}!Create\+Control\+Transfer\+Instruction@{Create\+Control\+Transfer\+Instruction}}
 \index{Create\+Control\+Transfer\+Instruction@{Create\+Control\+Transfer\+Instruction}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Instructions\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Instructions\+Window}}
@@ -799,7 +810,7 @@ Definition at line 525 of file Instructions\+Window.\+xaml.\+cs.
 )\hspace{0.3cm}{\ttfamily [private]}}\label{class_c_p_u___o_s___simulator_1_1_instructions_window_a93f0cc6a87afcac6e2d579c6a95a1e91}
 
 
-Definition at line 482 of file Instructions\+Window.\+xaml.\+cs.
+Definition at line 485 of file Instructions\+Window.\+xaml.\+cs.
 
 \hypertarget{class_c_p_u___o_s___simulator_1_1_instructions_window_abe4b97375077fb5bfe686b84fd2a7b77}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Instructions\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Instructions\+Window}!Create\+Data\+Transfer\+Instruction@{Create\+Data\+Transfer\+Instruction}}
 \index{Create\+Data\+Transfer\+Instruction@{Create\+Data\+Transfer\+Instruction}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Instructions\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Instructions\+Window}}
@@ -810,7 +821,7 @@ Definition at line 482 of file Instructions\+Window.\+xaml.\+cs.
 )\hspace{0.3cm}{\ttfamily [private]}}\label{class_c_p_u___o_s___simulator_1_1_instructions_window_abe4b97375077fb5bfe686b84fd2a7b77}
 
 
-Definition at line 354 of file Instructions\+Window.\+xaml.\+cs.
+Definition at line 357 of file Instructions\+Window.\+xaml.\+cs.
 
 \hypertarget{class_c_p_u___o_s___simulator_1_1_instructions_window_aafdc8c843b7f2d0e4c434edc569923c6}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Instructions\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Instructions\+Window}!Create\+Instruction@{Create\+Instruction}}
 \index{Create\+Instruction@{Create\+Instruction}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Instructions\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Instructions\+Window}}
@@ -825,7 +836,7 @@ Creates an instruction based on selected options
 
 
 
-Definition at line 659 of file Instructions\+Window.\+xaml.\+cs.
+Definition at line 662 of file Instructions\+Window.\+xaml.\+cs.
 
 \hypertarget{class_c_p_u___o_s___simulator_1_1_instructions_window_a27c3db79ebda29b7aee40c735df07b04}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Instructions\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Instructions\+Window}!Create\+I\+O\+Instruction@{Create\+I\+O\+Instruction}}
 \index{Create\+I\+O\+Instruction@{Create\+I\+O\+Instruction}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Instructions\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Instructions\+Window}}
@@ -836,7 +847,7 @@ Definition at line 659 of file Instructions\+Window.\+xaml.\+cs.
 )\hspace{0.3cm}{\ttfamily [private]}}\label{class_c_p_u___o_s___simulator_1_1_instructions_window_a27c3db79ebda29b7aee40c735df07b04}
 
 
-Definition at line 568 of file Instructions\+Window.\+xaml.\+cs.
+Definition at line 571 of file Instructions\+Window.\+xaml.\+cs.
 
 \hypertarget{class_c_p_u___o_s___simulator_1_1_instructions_window_a3511269feda0bd105c495efef59bbfdd}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Instructions\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Instructions\+Window}!Create\+Logical\+Instruction@{Create\+Logical\+Instruction}}
 \index{Create\+Logical\+Instruction@{Create\+Logical\+Instruction}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Instructions\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Instructions\+Window}}
@@ -847,7 +858,7 @@ Definition at line 568 of file Instructions\+Window.\+xaml.\+cs.
 )\hspace{0.3cm}{\ttfamily [private]}}\label{class_c_p_u___o_s___simulator_1_1_instructions_window_a3511269feda0bd105c495efef59bbfdd}
 
 
-Definition at line 398 of file Instructions\+Window.\+xaml.\+cs.
+Definition at line 401 of file Instructions\+Window.\+xaml.\+cs.
 
 \hypertarget{class_c_p_u___o_s___simulator_1_1_instructions_window_af4fcd7a0d54d2cfcdf44a209eefa7d93}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Instructions\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Instructions\+Window}!Create\+Miscellaneous\+Instruction@{Create\+Miscellaneous\+Instruction}}
 \index{Create\+Miscellaneous\+Instruction@{Create\+Miscellaneous\+Instruction}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Instructions\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Instructions\+Window}}
@@ -858,7 +869,7 @@ Definition at line 398 of file Instructions\+Window.\+xaml.\+cs.
 )\hspace{0.3cm}{\ttfamily [private]}}\label{class_c_p_u___o_s___simulator_1_1_instructions_window_af4fcd7a0d54d2cfcdf44a209eefa7d93}
 
 
-Definition at line 611 of file Instructions\+Window.\+xaml.\+cs.
+Definition at line 614 of file Instructions\+Window.\+xaml.\+cs.
 
 \hypertarget{class_c_p_u___o_s___simulator_1_1_instructions_window_a8ad79899f3d5210d66fb5973b721895a}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Instructions\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Instructions\+Window}!Initialize\+Component@{Initialize\+Component}}
 \index{Initialize\+Component@{Initialize\+Component}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Instructions\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Instructions\+Window}}
@@ -941,7 +952,7 @@ This event handler is called when the window is closing
 \end{DoxyParams}
 
 
-Definition at line 339 of file Instructions\+Window.\+xaml.\+cs.
+Definition at line 342 of file Instructions\+Window.\+xaml.\+cs.
 
 \hypertarget{class_c_p_u___o_s___simulator_1_1_instructions_window_ab4001352180ad08e3b335bf80c7dd9b8}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Instructions\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Instructions\+Window}!lst\+\_\+\+Opcode\+List\+Arithmetic\+\_\+\+Selection\+Changed@{lst\+\_\+\+Opcode\+List\+Arithmetic\+\_\+\+Selection\+Changed}}
 \index{lst\+\_\+\+Opcode\+List\+Arithmetic\+\_\+\+Selection\+Changed@{lst\+\_\+\+Opcode\+List\+Arithmetic\+\_\+\+Selection\+Changed}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Instructions\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Instructions\+Window}}
@@ -953,7 +964,7 @@ Definition at line 339 of file Instructions\+Window.\+xaml.\+cs.
 )\hspace{0.3cm}{\ttfamily [private]}}\label{class_c_p_u___o_s___simulator_1_1_instructions_window_ab4001352180ad08e3b335bf80c7dd9b8}
 
 
-Definition at line 207 of file Instructions\+Window.\+xaml.\+cs.
+Definition at line 210 of file Instructions\+Window.\+xaml.\+cs.
 
 \hypertarget{class_c_p_u___o_s___simulator_1_1_instructions_window_a2533f28aaeacd5ef8b931670e9716e1f}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Instructions\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Instructions\+Window}!lst\+\_\+\+Opcode\+List\+Comparison\+\_\+\+Selection\+Changed@{lst\+\_\+\+Opcode\+List\+Comparison\+\_\+\+Selection\+Changed}}
 \index{lst\+\_\+\+Opcode\+List\+Comparison\+\_\+\+Selection\+Changed@{lst\+\_\+\+Opcode\+List\+Comparison\+\_\+\+Selection\+Changed}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Instructions\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Instructions\+Window}}
@@ -965,7 +976,7 @@ Definition at line 207 of file Instructions\+Window.\+xaml.\+cs.
 )\hspace{0.3cm}{\ttfamily [private]}}\label{class_c_p_u___o_s___simulator_1_1_instructions_window_a2533f28aaeacd5ef8b931670e9716e1f}
 
 
-Definition at line 257 of file Instructions\+Window.\+xaml.\+cs.
+Definition at line 260 of file Instructions\+Window.\+xaml.\+cs.
 
 \hypertarget{class_c_p_u___o_s___simulator_1_1_instructions_window_a1173e7310199c8312dabdf6905b53b73}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Instructions\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Instructions\+Window}!lst\+\_\+\+Opcode\+List\+Control\+Transfer\+\_\+\+Selection\+Changed@{lst\+\_\+\+Opcode\+List\+Control\+Transfer\+\_\+\+Selection\+Changed}}
 \index{lst\+\_\+\+Opcode\+List\+Control\+Transfer\+\_\+\+Selection\+Changed@{lst\+\_\+\+Opcode\+List\+Control\+Transfer\+\_\+\+Selection\+Changed}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Instructions\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Instructions\+Window}}
@@ -977,7 +988,7 @@ Definition at line 257 of file Instructions\+Window.\+xaml.\+cs.
 )\hspace{0.3cm}{\ttfamily [private]}}\label{class_c_p_u___o_s___simulator_1_1_instructions_window_a1173e7310199c8312dabdf6905b53b73}
 
 
-Definition at line 232 of file Instructions\+Window.\+xaml.\+cs.
+Definition at line 235 of file Instructions\+Window.\+xaml.\+cs.
 
 \hypertarget{class_c_p_u___o_s___simulator_1_1_instructions_window_a380aec4afa9900f7dd9ef964a5b86503}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Instructions\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Instructions\+Window}!lst\+\_\+\+Opcode\+List\+Data\+Transfer\+\_\+\+Selection\+Changed@{lst\+\_\+\+Opcode\+List\+Data\+Transfer\+\_\+\+Selection\+Changed}}
 \index{lst\+\_\+\+Opcode\+List\+Data\+Transfer\+\_\+\+Selection\+Changed@{lst\+\_\+\+Opcode\+List\+Data\+Transfer\+\_\+\+Selection\+Changed}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Instructions\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Instructions\+Window}}
@@ -989,7 +1000,7 @@ Definition at line 232 of file Instructions\+Window.\+xaml.\+cs.
 )\hspace{0.3cm}{\ttfamily [private]}}\label{class_c_p_u___o_s___simulator_1_1_instructions_window_a380aec4afa9900f7dd9ef964a5b86503}
 
 
-Definition at line 157 of file Instructions\+Window.\+xaml.\+cs.
+Definition at line 160 of file Instructions\+Window.\+xaml.\+cs.
 
 \hypertarget{class_c_p_u___o_s___simulator_1_1_instructions_window_a48ff23d2cce66f2bb2c5219fabfb7f9b}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Instructions\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Instructions\+Window}!lst\+\_\+\+Opcode\+List\+I\+O\+\_\+\+Selection\+Changed@{lst\+\_\+\+Opcode\+List\+I\+O\+\_\+\+Selection\+Changed}}
 \index{lst\+\_\+\+Opcode\+List\+I\+O\+\_\+\+Selection\+Changed@{lst\+\_\+\+Opcode\+List\+I\+O\+\_\+\+Selection\+Changed}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Instructions\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Instructions\+Window}}
@@ -1001,7 +1012,7 @@ Definition at line 157 of file Instructions\+Window.\+xaml.\+cs.
 )\hspace{0.3cm}{\ttfamily [private]}}\label{class_c_p_u___o_s___simulator_1_1_instructions_window_a48ff23d2cce66f2bb2c5219fabfb7f9b}
 
 
-Definition at line 282 of file Instructions\+Window.\+xaml.\+cs.
+Definition at line 285 of file Instructions\+Window.\+xaml.\+cs.
 
 \hypertarget{class_c_p_u___o_s___simulator_1_1_instructions_window_a245baef3e788a01e6cf752f2c48f1843}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Instructions\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Instructions\+Window}!lst\+\_\+\+Opcode\+List\+Logical\+\_\+\+Selection\+Changed@{lst\+\_\+\+Opcode\+List\+Logical\+\_\+\+Selection\+Changed}}
 \index{lst\+\_\+\+Opcode\+List\+Logical\+\_\+\+Selection\+Changed@{lst\+\_\+\+Opcode\+List\+Logical\+\_\+\+Selection\+Changed}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Instructions\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Instructions\+Window}}
@@ -1013,7 +1024,7 @@ Definition at line 282 of file Instructions\+Window.\+xaml.\+cs.
 )\hspace{0.3cm}{\ttfamily [private]}}\label{class_c_p_u___o_s___simulator_1_1_instructions_window_a245baef3e788a01e6cf752f2c48f1843}
 
 
-Definition at line 182 of file Instructions\+Window.\+xaml.\+cs.
+Definition at line 185 of file Instructions\+Window.\+xaml.\+cs.
 
 \hypertarget{class_c_p_u___o_s___simulator_1_1_instructions_window_aec022b9a8b3fb4d538f674336275dd81}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Instructions\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Instructions\+Window}!lst\+\_\+\+Opcode\+List\+Miscellaneous\+\_\+\+Selection\+Changed@{lst\+\_\+\+Opcode\+List\+Miscellaneous\+\_\+\+Selection\+Changed}}
 \index{lst\+\_\+\+Opcode\+List\+Miscellaneous\+\_\+\+Selection\+Changed@{lst\+\_\+\+Opcode\+List\+Miscellaneous\+\_\+\+Selection\+Changed}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Instructions\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Instructions\+Window}}
@@ -1025,7 +1036,7 @@ Definition at line 182 of file Instructions\+Window.\+xaml.\+cs.
 )\hspace{0.3cm}{\ttfamily [private]}}\label{class_c_p_u___o_s___simulator_1_1_instructions_window_aec022b9a8b3fb4d538f674336275dd81}
 
 
-Definition at line 307 of file Instructions\+Window.\+xaml.\+cs.
+Definition at line 310 of file Instructions\+Window.\+xaml.\+cs.
 
 \hypertarget{class_c_p_u___o_s___simulator_1_1_instructions_window_a52685f2ecc3d1cf7216716401d2621e0}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Instructions\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Instructions\+Window}!Populate\+Instructions@{Populate\+Instructions}}
 \index{Populate\+Instructions@{Populate\+Instructions}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Instructions\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Instructions\+Window}}
@@ -1040,7 +1051,7 @@ this function populates each of the instruction list boxes with the correct inst
 
 
 
-Definition at line 69 of file Instructions\+Window.\+xaml.\+cs.
+Definition at line 72 of file Instructions\+Window.\+xaml.\+cs.
 
 \hypertarget{class_c_p_u___o_s___simulator_1_1_instructions_window_a4625e511a95aa3cce6550f2b0fd60aea}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Instructions\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Instructions\+Window}!rdb\+\_\+\+Destination\+Register\+Arithmetic\+\_\+\+Checked@{rdb\+\_\+\+Destination\+Register\+Arithmetic\+\_\+\+Checked}}
 \index{rdb\+\_\+\+Destination\+Register\+Arithmetic\+\_\+\+Checked@{rdb\+\_\+\+Destination\+Register\+Arithmetic\+\_\+\+Checked}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Instructions\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Instructions\+Window}}
@@ -1052,7 +1063,7 @@ Definition at line 69 of file Instructions\+Window.\+xaml.\+cs.
 )\hspace{0.3cm}{\ttfamily [private]}}\label{class_c_p_u___o_s___simulator_1_1_instructions_window_a4625e511a95aa3cce6550f2b0fd60aea}
 
 
-Definition at line 750 of file Instructions\+Window.\+xaml.\+cs.
+Definition at line 747 of file Instructions\+Window.\+xaml.\+cs.
 
 \hypertarget{class_c_p_u___o_s___simulator_1_1_instructions_window_afacc5e2bbf9eae3af4d00a65824ac22d}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Instructions\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Instructions\+Window}!rdb\+\_\+\+Destination\+Register\+Comparison\+\_\+\+Checked@{rdb\+\_\+\+Destination\+Register\+Comparison\+\_\+\+Checked}}
 \index{rdb\+\_\+\+Destination\+Register\+Comparison\+\_\+\+Checked@{rdb\+\_\+\+Destination\+Register\+Comparison\+\_\+\+Checked}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Instructions\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Instructions\+Window}}
@@ -1064,7 +1075,7 @@ Definition at line 750 of file Instructions\+Window.\+xaml.\+cs.
 )\hspace{0.3cm}{\ttfamily [private]}}\label{class_c_p_u___o_s___simulator_1_1_instructions_window_afacc5e2bbf9eae3af4d00a65824ac22d}
 
 
-Definition at line 806 of file Instructions\+Window.\+xaml.\+cs.
+Definition at line 803 of file Instructions\+Window.\+xaml.\+cs.
 
 \hypertarget{class_c_p_u___o_s___simulator_1_1_instructions_window_a0abcc3b1c9dbbc04379f35bfc645b58b}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Instructions\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Instructions\+Window}!rdb\+\_\+\+Destination\+Register\+Control\+Transfer\+\_\+\+Checked@{rdb\+\_\+\+Destination\+Register\+Control\+Transfer\+\_\+\+Checked}}
 \index{rdb\+\_\+\+Destination\+Register\+Control\+Transfer\+\_\+\+Checked@{rdb\+\_\+\+Destination\+Register\+Control\+Transfer\+\_\+\+Checked}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Instructions\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Instructions\+Window}}
@@ -1076,7 +1087,7 @@ Definition at line 806 of file Instructions\+Window.\+xaml.\+cs.
 )\hspace{0.3cm}{\ttfamily [private]}}\label{class_c_p_u___o_s___simulator_1_1_instructions_window_a0abcc3b1c9dbbc04379f35bfc645b58b}
 
 
-Definition at line 778 of file Instructions\+Window.\+xaml.\+cs.
+Definition at line 775 of file Instructions\+Window.\+xaml.\+cs.
 
 \hypertarget{class_c_p_u___o_s___simulator_1_1_instructions_window_a61a12a00e2f822ca948b2216b5dd85db}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Instructions\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Instructions\+Window}!rdb\+\_\+\+Destination\+Register\+Data\+Transfer\+\_\+\+Checked@{rdb\+\_\+\+Destination\+Register\+Data\+Transfer\+\_\+\+Checked}}
 \index{rdb\+\_\+\+Destination\+Register\+Data\+Transfer\+\_\+\+Checked@{rdb\+\_\+\+Destination\+Register\+Data\+Transfer\+\_\+\+Checked}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Instructions\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Instructions\+Window}}
@@ -1088,7 +1099,7 @@ Definition at line 778 of file Instructions\+Window.\+xaml.\+cs.
 )\hspace{0.3cm}{\ttfamily [private]}}\label{class_c_p_u___o_s___simulator_1_1_instructions_window_a61a12a00e2f822ca948b2216b5dd85db}
 
 
-Definition at line 694 of file Instructions\+Window.\+xaml.\+cs.
+Definition at line 691 of file Instructions\+Window.\+xaml.\+cs.
 
 \hypertarget{class_c_p_u___o_s___simulator_1_1_instructions_window_a7dd3bf48ece5f6e627be01710e7efed8}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Instructions\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Instructions\+Window}!rdb\+\_\+\+Destination\+Register\+I\+O\+\_\+\+Checked@{rdb\+\_\+\+Destination\+Register\+I\+O\+\_\+\+Checked}}
 \index{rdb\+\_\+\+Destination\+Register\+I\+O\+\_\+\+Checked@{rdb\+\_\+\+Destination\+Register\+I\+O\+\_\+\+Checked}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Instructions\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Instructions\+Window}}
@@ -1100,7 +1111,7 @@ Definition at line 694 of file Instructions\+Window.\+xaml.\+cs.
 )\hspace{0.3cm}{\ttfamily [private]}}\label{class_c_p_u___o_s___simulator_1_1_instructions_window_a7dd3bf48ece5f6e627be01710e7efed8}
 
 
-Definition at line 834 of file Instructions\+Window.\+xaml.\+cs.
+Definition at line 831 of file Instructions\+Window.\+xaml.\+cs.
 
 \hypertarget{class_c_p_u___o_s___simulator_1_1_instructions_window_af0d373665806dc4e8798761c967ead81}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Instructions\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Instructions\+Window}!rdb\+\_\+\+Destination\+Register\+Logical\+\_\+\+Checked@{rdb\+\_\+\+Destination\+Register\+Logical\+\_\+\+Checked}}
 \index{rdb\+\_\+\+Destination\+Register\+Logical\+\_\+\+Checked@{rdb\+\_\+\+Destination\+Register\+Logical\+\_\+\+Checked}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Instructions\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Instructions\+Window}}
@@ -1112,7 +1123,7 @@ Definition at line 834 of file Instructions\+Window.\+xaml.\+cs.
 )\hspace{0.3cm}{\ttfamily [private]}}\label{class_c_p_u___o_s___simulator_1_1_instructions_window_af0d373665806dc4e8798761c967ead81}
 
 
-Definition at line 722 of file Instructions\+Window.\+xaml.\+cs.
+Definition at line 719 of file Instructions\+Window.\+xaml.\+cs.
 
 \hypertarget{class_c_p_u___o_s___simulator_1_1_instructions_window_a1d014230db7d7462aba012a8d61cd2f3}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Instructions\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Instructions\+Window}!rdb\+\_\+\+Destination\+Register\+Miscellaneous\+\_\+\+Checked@{rdb\+\_\+\+Destination\+Register\+Miscellaneous\+\_\+\+Checked}}
 \index{rdb\+\_\+\+Destination\+Register\+Miscellaneous\+\_\+\+Checked@{rdb\+\_\+\+Destination\+Register\+Miscellaneous\+\_\+\+Checked}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Instructions\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Instructions\+Window}}
@@ -1124,7 +1135,7 @@ Definition at line 722 of file Instructions\+Window.\+xaml.\+cs.
 )\hspace{0.3cm}{\ttfamily [private]}}\label{class_c_p_u___o_s___simulator_1_1_instructions_window_a1d014230db7d7462aba012a8d61cd2f3}
 
 
-Definition at line 862 of file Instructions\+Window.\+xaml.\+cs.
+Definition at line 859 of file Instructions\+Window.\+xaml.\+cs.
 
 \hypertarget{class_c_p_u___o_s___simulator_1_1_instructions_window_a41782c6995180cad160c5e8f46ce5739}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Instructions\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Instructions\+Window}!rdb\+\_\+\+Destination\+Value\+Arithmetic\+\_\+\+Checked@{rdb\+\_\+\+Destination\+Value\+Arithmetic\+\_\+\+Checked}}
 \index{rdb\+\_\+\+Destination\+Value\+Arithmetic\+\_\+\+Checked@{rdb\+\_\+\+Destination\+Value\+Arithmetic\+\_\+\+Checked}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Instructions\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Instructions\+Window}}
@@ -1136,7 +1147,7 @@ Definition at line 862 of file Instructions\+Window.\+xaml.\+cs.
 )\hspace{0.3cm}{\ttfamily [private]}}\label{class_c_p_u___o_s___simulator_1_1_instructions_window_a41782c6995180cad160c5e8f46ce5739}
 
 
-Definition at line 743 of file Instructions\+Window.\+xaml.\+cs.
+Definition at line 740 of file Instructions\+Window.\+xaml.\+cs.
 
 \hypertarget{class_c_p_u___o_s___simulator_1_1_instructions_window_a8d499408578787c03f1e8ce58db03506}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Instructions\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Instructions\+Window}!rdb\+\_\+\+Destination\+Value\+Comparison\+\_\+\+Checked@{rdb\+\_\+\+Destination\+Value\+Comparison\+\_\+\+Checked}}
 \index{rdb\+\_\+\+Destination\+Value\+Comparison\+\_\+\+Checked@{rdb\+\_\+\+Destination\+Value\+Comparison\+\_\+\+Checked}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Instructions\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Instructions\+Window}}
@@ -1148,7 +1159,7 @@ Definition at line 743 of file Instructions\+Window.\+xaml.\+cs.
 )\hspace{0.3cm}{\ttfamily [private]}}\label{class_c_p_u___o_s___simulator_1_1_instructions_window_a8d499408578787c03f1e8ce58db03506}
 
 
-Definition at line 799 of file Instructions\+Window.\+xaml.\+cs.
+Definition at line 796 of file Instructions\+Window.\+xaml.\+cs.
 
 \hypertarget{class_c_p_u___o_s___simulator_1_1_instructions_window_a308ca537f9fb659b301b92c426840088}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Instructions\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Instructions\+Window}!rdb\+\_\+\+Destination\+Value\+Control\+Transfer\+\_\+\+Checked@{rdb\+\_\+\+Destination\+Value\+Control\+Transfer\+\_\+\+Checked}}
 \index{rdb\+\_\+\+Destination\+Value\+Control\+Transfer\+\_\+\+Checked@{rdb\+\_\+\+Destination\+Value\+Control\+Transfer\+\_\+\+Checked}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Instructions\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Instructions\+Window}}
@@ -1160,7 +1171,7 @@ Definition at line 799 of file Instructions\+Window.\+xaml.\+cs.
 )\hspace{0.3cm}{\ttfamily [private]}}\label{class_c_p_u___o_s___simulator_1_1_instructions_window_a308ca537f9fb659b301b92c426840088}
 
 
-Definition at line 771 of file Instructions\+Window.\+xaml.\+cs.
+Definition at line 768 of file Instructions\+Window.\+xaml.\+cs.
 
 \hypertarget{class_c_p_u___o_s___simulator_1_1_instructions_window_a8572bfa72449f43f800dd55961ad7837}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Instructions\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Instructions\+Window}!rdb\+\_\+\+Destination\+Value\+Data\+Transfer\+\_\+\+Checked@{rdb\+\_\+\+Destination\+Value\+Data\+Transfer\+\_\+\+Checked}}
 \index{rdb\+\_\+\+Destination\+Value\+Data\+Transfer\+\_\+\+Checked@{rdb\+\_\+\+Destination\+Value\+Data\+Transfer\+\_\+\+Checked}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Instructions\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Instructions\+Window}}
@@ -1172,7 +1183,7 @@ Definition at line 771 of file Instructions\+Window.\+xaml.\+cs.
 )\hspace{0.3cm}{\ttfamily [private]}}\label{class_c_p_u___o_s___simulator_1_1_instructions_window_a8572bfa72449f43f800dd55961ad7837}
 
 
-Definition at line 687 of file Instructions\+Window.\+xaml.\+cs.
+Definition at line 684 of file Instructions\+Window.\+xaml.\+cs.
 
 \hypertarget{class_c_p_u___o_s___simulator_1_1_instructions_window_a6b3d3a23e92def88a459a22d3b020cf7}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Instructions\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Instructions\+Window}!rdb\+\_\+\+Destination\+Value\+I\+O\+\_\+\+Checked@{rdb\+\_\+\+Destination\+Value\+I\+O\+\_\+\+Checked}}
 \index{rdb\+\_\+\+Destination\+Value\+I\+O\+\_\+\+Checked@{rdb\+\_\+\+Destination\+Value\+I\+O\+\_\+\+Checked}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Instructions\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Instructions\+Window}}
@@ -1184,7 +1195,7 @@ Definition at line 687 of file Instructions\+Window.\+xaml.\+cs.
 )\hspace{0.3cm}{\ttfamily [private]}}\label{class_c_p_u___o_s___simulator_1_1_instructions_window_a6b3d3a23e92def88a459a22d3b020cf7}
 
 
-Definition at line 827 of file Instructions\+Window.\+xaml.\+cs.
+Definition at line 824 of file Instructions\+Window.\+xaml.\+cs.
 
 \hypertarget{class_c_p_u___o_s___simulator_1_1_instructions_window_ae4f933abbff92c008d38f9b3e9008315}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Instructions\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Instructions\+Window}!rdb\+\_\+\+Destination\+Value\+Logical\+\_\+\+Checked@{rdb\+\_\+\+Destination\+Value\+Logical\+\_\+\+Checked}}
 \index{rdb\+\_\+\+Destination\+Value\+Logical\+\_\+\+Checked@{rdb\+\_\+\+Destination\+Value\+Logical\+\_\+\+Checked}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Instructions\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Instructions\+Window}}
@@ -1196,7 +1207,7 @@ Definition at line 827 of file Instructions\+Window.\+xaml.\+cs.
 )\hspace{0.3cm}{\ttfamily [private]}}\label{class_c_p_u___o_s___simulator_1_1_instructions_window_ae4f933abbff92c008d38f9b3e9008315}
 
 
-Definition at line 715 of file Instructions\+Window.\+xaml.\+cs.
+Definition at line 712 of file Instructions\+Window.\+xaml.\+cs.
 
 \hypertarget{class_c_p_u___o_s___simulator_1_1_instructions_window_a71fc15afd802fb93c7991e437ef9fd19}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Instructions\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Instructions\+Window}!rdb\+\_\+\+Destination\+Value\+Miscellaneous\+\_\+\+Checked@{rdb\+\_\+\+Destination\+Value\+Miscellaneous\+\_\+\+Checked}}
 \index{rdb\+\_\+\+Destination\+Value\+Miscellaneous\+\_\+\+Checked@{rdb\+\_\+\+Destination\+Value\+Miscellaneous\+\_\+\+Checked}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Instructions\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Instructions\+Window}}
@@ -1208,7 +1219,7 @@ Definition at line 715 of file Instructions\+Window.\+xaml.\+cs.
 )\hspace{0.3cm}{\ttfamily [private]}}\label{class_c_p_u___o_s___simulator_1_1_instructions_window_a71fc15afd802fb93c7991e437ef9fd19}
 
 
-Definition at line 855 of file Instructions\+Window.\+xaml.\+cs.
+Definition at line 852 of file Instructions\+Window.\+xaml.\+cs.
 
 \hypertarget{class_c_p_u___o_s___simulator_1_1_instructions_window_aed7531afdb080427f98bc26b5488fd18}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Instructions\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Instructions\+Window}!rdb\+\_\+\+Source\+Register\+Arithmetic\+\_\+\+Checked@{rdb\+\_\+\+Source\+Register\+Arithmetic\+\_\+\+Checked}}
 \index{rdb\+\_\+\+Source\+Register\+Arithmetic\+\_\+\+Checked@{rdb\+\_\+\+Source\+Register\+Arithmetic\+\_\+\+Checked}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Instructions\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Instructions\+Window}}
@@ -1220,7 +1231,7 @@ Definition at line 855 of file Instructions\+Window.\+xaml.\+cs.
 )\hspace{0.3cm}{\ttfamily [private]}}\label{class_c_p_u___o_s___simulator_1_1_instructions_window_aed7531afdb080427f98bc26b5488fd18}
 
 
-Definition at line 736 of file Instructions\+Window.\+xaml.\+cs.
+Definition at line 733 of file Instructions\+Window.\+xaml.\+cs.
 
 \hypertarget{class_c_p_u___o_s___simulator_1_1_instructions_window_a21a7262f1fc85de3f833bc1a88e1b384}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Instructions\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Instructions\+Window}!rdb\+\_\+\+Source\+Register\+Comparison\+\_\+\+Checked@{rdb\+\_\+\+Source\+Register\+Comparison\+\_\+\+Checked}}
 \index{rdb\+\_\+\+Source\+Register\+Comparison\+\_\+\+Checked@{rdb\+\_\+\+Source\+Register\+Comparison\+\_\+\+Checked}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Instructions\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Instructions\+Window}}
@@ -1232,7 +1243,7 @@ Definition at line 736 of file Instructions\+Window.\+xaml.\+cs.
 )\hspace{0.3cm}{\ttfamily [private]}}\label{class_c_p_u___o_s___simulator_1_1_instructions_window_a21a7262f1fc85de3f833bc1a88e1b384}
 
 
-Definition at line 792 of file Instructions\+Window.\+xaml.\+cs.
+Definition at line 789 of file Instructions\+Window.\+xaml.\+cs.
 
 \hypertarget{class_c_p_u___o_s___simulator_1_1_instructions_window_a6f9bce58d8e409879131619b7316b990}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Instructions\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Instructions\+Window}!rdb\+\_\+\+Source\+Register\+Control\+Transfer\+\_\+\+Checked@{rdb\+\_\+\+Source\+Register\+Control\+Transfer\+\_\+\+Checked}}
 \index{rdb\+\_\+\+Source\+Register\+Control\+Transfer\+\_\+\+Checked@{rdb\+\_\+\+Source\+Register\+Control\+Transfer\+\_\+\+Checked}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Instructions\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Instructions\+Window}}
@@ -1244,7 +1255,7 @@ Definition at line 792 of file Instructions\+Window.\+xaml.\+cs.
 )\hspace{0.3cm}{\ttfamily [private]}}\label{class_c_p_u___o_s___simulator_1_1_instructions_window_a6f9bce58d8e409879131619b7316b990}
 
 
-Definition at line 764 of file Instructions\+Window.\+xaml.\+cs.
+Definition at line 761 of file Instructions\+Window.\+xaml.\+cs.
 
 \hypertarget{class_c_p_u___o_s___simulator_1_1_instructions_window_aec7d6be51c8cd95dce4db01a5c66047e}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Instructions\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Instructions\+Window}!rdb\+\_\+\+Source\+Register\+Data\+Transfer\+\_\+\+Checked@{rdb\+\_\+\+Source\+Register\+Data\+Transfer\+\_\+\+Checked}}
 \index{rdb\+\_\+\+Source\+Register\+Data\+Transfer\+\_\+\+Checked@{rdb\+\_\+\+Source\+Register\+Data\+Transfer\+\_\+\+Checked}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Instructions\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Instructions\+Window}}
@@ -1256,7 +1267,7 @@ Definition at line 764 of file Instructions\+Window.\+xaml.\+cs.
 )\hspace{0.3cm}{\ttfamily [private]}}\label{class_c_p_u___o_s___simulator_1_1_instructions_window_aec7d6be51c8cd95dce4db01a5c66047e}
 
 
-Definition at line 680 of file Instructions\+Window.\+xaml.\+cs.
+Definition at line 677 of file Instructions\+Window.\+xaml.\+cs.
 
 \hypertarget{class_c_p_u___o_s___simulator_1_1_instructions_window_a2bb662bda02027f69c3ac5eda1131bb5}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Instructions\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Instructions\+Window}!rdb\+\_\+\+Source\+Register\+I\+O\+\_\+\+Checked@{rdb\+\_\+\+Source\+Register\+I\+O\+\_\+\+Checked}}
 \index{rdb\+\_\+\+Source\+Register\+I\+O\+\_\+\+Checked@{rdb\+\_\+\+Source\+Register\+I\+O\+\_\+\+Checked}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Instructions\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Instructions\+Window}}
@@ -1268,7 +1279,7 @@ Definition at line 680 of file Instructions\+Window.\+xaml.\+cs.
 )\hspace{0.3cm}{\ttfamily [private]}}\label{class_c_p_u___o_s___simulator_1_1_instructions_window_a2bb662bda02027f69c3ac5eda1131bb5}
 
 
-Definition at line 820 of file Instructions\+Window.\+xaml.\+cs.
+Definition at line 817 of file Instructions\+Window.\+xaml.\+cs.
 
 \hypertarget{class_c_p_u___o_s___simulator_1_1_instructions_window_af6e5871e2b68c4922775ea1f65309bac}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Instructions\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Instructions\+Window}!rdb\+\_\+\+Source\+Register\+Logical\+\_\+\+Checked@{rdb\+\_\+\+Source\+Register\+Logical\+\_\+\+Checked}}
 \index{rdb\+\_\+\+Source\+Register\+Logical\+\_\+\+Checked@{rdb\+\_\+\+Source\+Register\+Logical\+\_\+\+Checked}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Instructions\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Instructions\+Window}}
@@ -1280,7 +1291,7 @@ Definition at line 820 of file Instructions\+Window.\+xaml.\+cs.
 )\hspace{0.3cm}{\ttfamily [private]}}\label{class_c_p_u___o_s___simulator_1_1_instructions_window_af6e5871e2b68c4922775ea1f65309bac}
 
 
-Definition at line 708 of file Instructions\+Window.\+xaml.\+cs.
+Definition at line 705 of file Instructions\+Window.\+xaml.\+cs.
 
 \hypertarget{class_c_p_u___o_s___simulator_1_1_instructions_window_affbdaf2f0b660f1d0a96b06bb1d038d9}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Instructions\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Instructions\+Window}!rdb\+\_\+\+Source\+Register\+Miscellaneous\+\_\+\+Checked@{rdb\+\_\+\+Source\+Register\+Miscellaneous\+\_\+\+Checked}}
 \index{rdb\+\_\+\+Source\+Register\+Miscellaneous\+\_\+\+Checked@{rdb\+\_\+\+Source\+Register\+Miscellaneous\+\_\+\+Checked}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Instructions\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Instructions\+Window}}
@@ -1292,7 +1303,7 @@ Definition at line 708 of file Instructions\+Window.\+xaml.\+cs.
 )\hspace{0.3cm}{\ttfamily [private]}}\label{class_c_p_u___o_s___simulator_1_1_instructions_window_affbdaf2f0b660f1d0a96b06bb1d038d9}
 
 
-Definition at line 848 of file Instructions\+Window.\+xaml.\+cs.
+Definition at line 845 of file Instructions\+Window.\+xaml.\+cs.
 
 \hypertarget{class_c_p_u___o_s___simulator_1_1_instructions_window_a8a693624b1b25769de9cccfaea819daf}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Instructions\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Instructions\+Window}!rdb\+\_\+\+Source\+Value\+Arithmetic\+\_\+\+Checked@{rdb\+\_\+\+Source\+Value\+Arithmetic\+\_\+\+Checked}}
 \index{rdb\+\_\+\+Source\+Value\+Arithmetic\+\_\+\+Checked@{rdb\+\_\+\+Source\+Value\+Arithmetic\+\_\+\+Checked}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Instructions\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Instructions\+Window}}
@@ -1304,7 +1315,7 @@ Definition at line 848 of file Instructions\+Window.\+xaml.\+cs.
 )\hspace{0.3cm}{\ttfamily [private]}}\label{class_c_p_u___o_s___simulator_1_1_instructions_window_a8a693624b1b25769de9cccfaea819daf}
 
 
-Definition at line 729 of file Instructions\+Window.\+xaml.\+cs.
+Definition at line 726 of file Instructions\+Window.\+xaml.\+cs.
 
 \hypertarget{class_c_p_u___o_s___simulator_1_1_instructions_window_aa5413c4f240c448298867dfca5474d52}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Instructions\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Instructions\+Window}!rdb\+\_\+\+Source\+Value\+Comparison\+\_\+\+Checked@{rdb\+\_\+\+Source\+Value\+Comparison\+\_\+\+Checked}}
 \index{rdb\+\_\+\+Source\+Value\+Comparison\+\_\+\+Checked@{rdb\+\_\+\+Source\+Value\+Comparison\+\_\+\+Checked}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Instructions\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Instructions\+Window}}
@@ -1316,7 +1327,7 @@ Definition at line 729 of file Instructions\+Window.\+xaml.\+cs.
 )\hspace{0.3cm}{\ttfamily [private]}}\label{class_c_p_u___o_s___simulator_1_1_instructions_window_aa5413c4f240c448298867dfca5474d52}
 
 
-Definition at line 785 of file Instructions\+Window.\+xaml.\+cs.
+Definition at line 782 of file Instructions\+Window.\+xaml.\+cs.
 
 \hypertarget{class_c_p_u___o_s___simulator_1_1_instructions_window_a05f9924f69791130e674933886386965}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Instructions\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Instructions\+Window}!rdb\+\_\+\+Source\+Value\+Control\+Transfer\+\_\+\+Checked@{rdb\+\_\+\+Source\+Value\+Control\+Transfer\+\_\+\+Checked}}
 \index{rdb\+\_\+\+Source\+Value\+Control\+Transfer\+\_\+\+Checked@{rdb\+\_\+\+Source\+Value\+Control\+Transfer\+\_\+\+Checked}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Instructions\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Instructions\+Window}}
@@ -1328,7 +1339,7 @@ Definition at line 785 of file Instructions\+Window.\+xaml.\+cs.
 )\hspace{0.3cm}{\ttfamily [private]}}\label{class_c_p_u___o_s___simulator_1_1_instructions_window_a05f9924f69791130e674933886386965}
 
 
-Definition at line 757 of file Instructions\+Window.\+xaml.\+cs.
+Definition at line 754 of file Instructions\+Window.\+xaml.\+cs.
 
 \hypertarget{class_c_p_u___o_s___simulator_1_1_instructions_window_adce5e32de39213723ea06d279681b8ea}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Instructions\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Instructions\+Window}!rdb\+\_\+\+Source\+Value\+Data\+Transfer\+\_\+\+Checked@{rdb\+\_\+\+Source\+Value\+Data\+Transfer\+\_\+\+Checked}}
 \index{rdb\+\_\+\+Source\+Value\+Data\+Transfer\+\_\+\+Checked@{rdb\+\_\+\+Source\+Value\+Data\+Transfer\+\_\+\+Checked}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Instructions\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Instructions\+Window}}
@@ -1340,19 +1351,7 @@ Definition at line 757 of file Instructions\+Window.\+xaml.\+cs.
 )\hspace{0.3cm}{\ttfamily [private]}}\label{class_c_p_u___o_s___simulator_1_1_instructions_window_adce5e32de39213723ea06d279681b8ea}
 
 
-Finds the register object for the selected register 
-
-
-\begin{DoxyParams}{Parameters}
-{\em selected\+Item} & the selected register\\
-\hline
-\end{DoxyParams}
-\begin{DoxyReturn}{Returns}
-The register object of the selected register
-\end{DoxyReturn}
-
-
-Definition at line 673 of file Instructions\+Window.\+xaml.\+cs.
+Definition at line 670 of file Instructions\+Window.\+xaml.\+cs.
 
 \hypertarget{class_c_p_u___o_s___simulator_1_1_instructions_window_aa84c68252386686704bfc50fc0013377}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Instructions\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Instructions\+Window}!rdb\+\_\+\+Source\+Value\+I\+O\+\_\+\+Checked@{rdb\+\_\+\+Source\+Value\+I\+O\+\_\+\+Checked}}
 \index{rdb\+\_\+\+Source\+Value\+I\+O\+\_\+\+Checked@{rdb\+\_\+\+Source\+Value\+I\+O\+\_\+\+Checked}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Instructions\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Instructions\+Window}}
@@ -1364,7 +1363,7 @@ Definition at line 673 of file Instructions\+Window.\+xaml.\+cs.
 )\hspace{0.3cm}{\ttfamily [private]}}\label{class_c_p_u___o_s___simulator_1_1_instructions_window_aa84c68252386686704bfc50fc0013377}
 
 
-Definition at line 813 of file Instructions\+Window.\+xaml.\+cs.
+Definition at line 810 of file Instructions\+Window.\+xaml.\+cs.
 
 \hypertarget{class_c_p_u___o_s___simulator_1_1_instructions_window_ad1c6df35e2658c60a531a1f651f47434}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Instructions\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Instructions\+Window}!rdb\+\_\+\+Source\+Value\+Logical\+\_\+\+Checked@{rdb\+\_\+\+Source\+Value\+Logical\+\_\+\+Checked}}
 \index{rdb\+\_\+\+Source\+Value\+Logical\+\_\+\+Checked@{rdb\+\_\+\+Source\+Value\+Logical\+\_\+\+Checked}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Instructions\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Instructions\+Window}}
@@ -1376,7 +1375,7 @@ Definition at line 813 of file Instructions\+Window.\+xaml.\+cs.
 )\hspace{0.3cm}{\ttfamily [private]}}\label{class_c_p_u___o_s___simulator_1_1_instructions_window_ad1c6df35e2658c60a531a1f651f47434}
 
 
-Definition at line 701 of file Instructions\+Window.\+xaml.\+cs.
+Definition at line 698 of file Instructions\+Window.\+xaml.\+cs.
 
 \hypertarget{class_c_p_u___o_s___simulator_1_1_instructions_window_a245dad441fcbc7e910e7f2ab6d10563c}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Instructions\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Instructions\+Window}!rdb\+\_\+\+Source\+Value\+Miscellaneous\+\_\+\+Checked@{rdb\+\_\+\+Source\+Value\+Miscellaneous\+\_\+\+Checked}}
 \index{rdb\+\_\+\+Source\+Value\+Miscellaneous\+\_\+\+Checked@{rdb\+\_\+\+Source\+Value\+Miscellaneous\+\_\+\+Checked}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Instructions\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Instructions\+Window}}
@@ -1388,7 +1387,7 @@ Definition at line 701 of file Instructions\+Window.\+xaml.\+cs.
 )\hspace{0.3cm}{\ttfamily [private]}}\label{class_c_p_u___o_s___simulator_1_1_instructions_window_a245dad441fcbc7e910e7f2ab6d10563c}
 
 
-Definition at line 841 of file Instructions\+Window.\+xaml.\+cs.
+Definition at line 838 of file Instructions\+Window.\+xaml.\+cs.
 
 \hypertarget{class_c_p_u___o_s___simulator_1_1_instructions_window_ae969ae41ccdb44d87f180b18b11b5b29}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Instructions\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Instructions\+Window}!txt\+Destination\+Value\+Arithmetic\+\_\+\+Got\+Focus@{txt\+Destination\+Value\+Arithmetic\+\_\+\+Got\+Focus}}
 \index{txt\+Destination\+Value\+Arithmetic\+\_\+\+Got\+Focus@{txt\+Destination\+Value\+Arithmetic\+\_\+\+Got\+Focus}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Instructions\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Instructions\+Window}}
@@ -1400,7 +1399,7 @@ Definition at line 841 of file Instructions\+Window.\+xaml.\+cs.
 )\hspace{0.3cm}{\ttfamily [private]}}\label{class_c_p_u___o_s___simulator_1_1_instructions_window_ae969ae41ccdb44d87f180b18b11b5b29}
 
 
-Definition at line 919 of file Instructions\+Window.\+xaml.\+cs.
+Definition at line 916 of file Instructions\+Window.\+xaml.\+cs.
 
 \hypertarget{class_c_p_u___o_s___simulator_1_1_instructions_window_a2f346b8f78940a1626ab5419af3973ef}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Instructions\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Instructions\+Window}!txt\+Destination\+Value\+Comparison\+\_\+\+Got\+Focus@{txt\+Destination\+Value\+Comparison\+\_\+\+Got\+Focus}}
 \index{txt\+Destination\+Value\+Comparison\+\_\+\+Got\+Focus@{txt\+Destination\+Value\+Comparison\+\_\+\+Got\+Focus}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Instructions\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Instructions\+Window}}
@@ -1412,7 +1411,7 @@ Definition at line 919 of file Instructions\+Window.\+xaml.\+cs.
 )\hspace{0.3cm}{\ttfamily [private]}}\label{class_c_p_u___o_s___simulator_1_1_instructions_window_a2f346b8f78940a1626ab5419af3973ef}
 
 
-Definition at line 959 of file Instructions\+Window.\+xaml.\+cs.
+Definition at line 956 of file Instructions\+Window.\+xaml.\+cs.
 
 \hypertarget{class_c_p_u___o_s___simulator_1_1_instructions_window_ab9695cfa485c6cd4f6d941c93105187b}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Instructions\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Instructions\+Window}!txt\+Destination\+Value\+Control\+Transfer\+\_\+\+Got\+Focus@{txt\+Destination\+Value\+Control\+Transfer\+\_\+\+Got\+Focus}}
 \index{txt\+Destination\+Value\+Control\+Transfer\+\_\+\+Got\+Focus@{txt\+Destination\+Value\+Control\+Transfer\+\_\+\+Got\+Focus}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Instructions\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Instructions\+Window}}
@@ -1424,7 +1423,7 @@ Definition at line 959 of file Instructions\+Window.\+xaml.\+cs.
 )\hspace{0.3cm}{\ttfamily [private]}}\label{class_c_p_u___o_s___simulator_1_1_instructions_window_ab9695cfa485c6cd4f6d941c93105187b}
 
 
-Definition at line 939 of file Instructions\+Window.\+xaml.\+cs.
+Definition at line 936 of file Instructions\+Window.\+xaml.\+cs.
 
 \hypertarget{class_c_p_u___o_s___simulator_1_1_instructions_window_a7d05b02bf62d6b920ebd1c2677e5a0dc}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Instructions\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Instructions\+Window}!txt\+Destination\+Value\+Data\+Transfer\+\_\+\+Got\+Focus@{txt\+Destination\+Value\+Data\+Transfer\+\_\+\+Got\+Focus}}
 \index{txt\+Destination\+Value\+Data\+Transfer\+\_\+\+Got\+Focus@{txt\+Destination\+Value\+Data\+Transfer\+\_\+\+Got\+Focus}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Instructions\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Instructions\+Window}}
@@ -1436,7 +1435,7 @@ Definition at line 939 of file Instructions\+Window.\+xaml.\+cs.
 )\hspace{0.3cm}{\ttfamily [private]}}\label{class_c_p_u___o_s___simulator_1_1_instructions_window_a7d05b02bf62d6b920ebd1c2677e5a0dc}
 
 
-Definition at line 879 of file Instructions\+Window.\+xaml.\+cs.
+Definition at line 876 of file Instructions\+Window.\+xaml.\+cs.
 
 \hypertarget{class_c_p_u___o_s___simulator_1_1_instructions_window_a0d69d4710419b9efea12396940b60e89}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Instructions\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Instructions\+Window}!txt\+Destination\+Value\+I\+O\+\_\+\+Got\+Focus@{txt\+Destination\+Value\+I\+O\+\_\+\+Got\+Focus}}
 \index{txt\+Destination\+Value\+I\+O\+\_\+\+Got\+Focus@{txt\+Destination\+Value\+I\+O\+\_\+\+Got\+Focus}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Instructions\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Instructions\+Window}}
@@ -1448,7 +1447,7 @@ Definition at line 879 of file Instructions\+Window.\+xaml.\+cs.
 )\hspace{0.3cm}{\ttfamily [private]}}\label{class_c_p_u___o_s___simulator_1_1_instructions_window_a0d69d4710419b9efea12396940b60e89}
 
 
-Definition at line 979 of file Instructions\+Window.\+xaml.\+cs.
+Definition at line 976 of file Instructions\+Window.\+xaml.\+cs.
 
 \hypertarget{class_c_p_u___o_s___simulator_1_1_instructions_window_ad56b9592b566db4c4e4756654891a045}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Instructions\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Instructions\+Window}!txt\+Destination\+Value\+Logical\+\_\+\+Got\+Focus@{txt\+Destination\+Value\+Logical\+\_\+\+Got\+Focus}}
 \index{txt\+Destination\+Value\+Logical\+\_\+\+Got\+Focus@{txt\+Destination\+Value\+Logical\+\_\+\+Got\+Focus}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Instructions\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Instructions\+Window}}
@@ -1460,7 +1459,7 @@ Definition at line 979 of file Instructions\+Window.\+xaml.\+cs.
 )\hspace{0.3cm}{\ttfamily [private]}}\label{class_c_p_u___o_s___simulator_1_1_instructions_window_ad56b9592b566db4c4e4756654891a045}
 
 
-Definition at line 899 of file Instructions\+Window.\+xaml.\+cs.
+Definition at line 896 of file Instructions\+Window.\+xaml.\+cs.
 
 \hypertarget{class_c_p_u___o_s___simulator_1_1_instructions_window_aceca94bcec64cbfd4cfe472e9dd34a58}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Instructions\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Instructions\+Window}!txt\+Destination\+Value\+Miscellaneous\+\_\+\+Got\+Focus@{txt\+Destination\+Value\+Miscellaneous\+\_\+\+Got\+Focus}}
 \index{txt\+Destination\+Value\+Miscellaneous\+\_\+\+Got\+Focus@{txt\+Destination\+Value\+Miscellaneous\+\_\+\+Got\+Focus}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Instructions\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Instructions\+Window}}
@@ -1472,7 +1471,7 @@ Definition at line 899 of file Instructions\+Window.\+xaml.\+cs.
 )\hspace{0.3cm}{\ttfamily [private]}}\label{class_c_p_u___o_s___simulator_1_1_instructions_window_aceca94bcec64cbfd4cfe472e9dd34a58}
 
 
-Definition at line 999 of file Instructions\+Window.\+xaml.\+cs.
+Definition at line 996 of file Instructions\+Window.\+xaml.\+cs.
 
 \hypertarget{class_c_p_u___o_s___simulator_1_1_instructions_window_a82c5caec3787f079bb214dbd6a2a1505}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Instructions\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Instructions\+Window}!txt\+Source\+Value\+Arithmetic\+\_\+\+Got\+Focus@{txt\+Source\+Value\+Arithmetic\+\_\+\+Got\+Focus}}
 \index{txt\+Source\+Value\+Arithmetic\+\_\+\+Got\+Focus@{txt\+Source\+Value\+Arithmetic\+\_\+\+Got\+Focus}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Instructions\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Instructions\+Window}}
@@ -1484,7 +1483,7 @@ Definition at line 999 of file Instructions\+Window.\+xaml.\+cs.
 )\hspace{0.3cm}{\ttfamily [private]}}\label{class_c_p_u___o_s___simulator_1_1_instructions_window_a82c5caec3787f079bb214dbd6a2a1505}
 
 
-Definition at line 909 of file Instructions\+Window.\+xaml.\+cs.
+Definition at line 906 of file Instructions\+Window.\+xaml.\+cs.
 
 \hypertarget{class_c_p_u___o_s___simulator_1_1_instructions_window_a7fc4519d09df6fde91777a5a56101b92}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Instructions\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Instructions\+Window}!txt\+Source\+Value\+Comparison\+\_\+\+Got\+Focus@{txt\+Source\+Value\+Comparison\+\_\+\+Got\+Focus}}
 \index{txt\+Source\+Value\+Comparison\+\_\+\+Got\+Focus@{txt\+Source\+Value\+Comparison\+\_\+\+Got\+Focus}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Instructions\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Instructions\+Window}}
@@ -1496,7 +1495,7 @@ Definition at line 909 of file Instructions\+Window.\+xaml.\+cs.
 )\hspace{0.3cm}{\ttfamily [private]}}\label{class_c_p_u___o_s___simulator_1_1_instructions_window_a7fc4519d09df6fde91777a5a56101b92}
 
 
-Definition at line 949 of file Instructions\+Window.\+xaml.\+cs.
+Definition at line 946 of file Instructions\+Window.\+xaml.\+cs.
 
 \hypertarget{class_c_p_u___o_s___simulator_1_1_instructions_window_a0d1f28315429ad5e01867bef7dbf9b6b}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Instructions\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Instructions\+Window}!txt\+Source\+Value\+Control\+Transfer\+\_\+\+Got\+Focus@{txt\+Source\+Value\+Control\+Transfer\+\_\+\+Got\+Focus}}
 \index{txt\+Source\+Value\+Control\+Transfer\+\_\+\+Got\+Focus@{txt\+Source\+Value\+Control\+Transfer\+\_\+\+Got\+Focus}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Instructions\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Instructions\+Window}}
@@ -1508,7 +1507,7 @@ Definition at line 949 of file Instructions\+Window.\+xaml.\+cs.
 )\hspace{0.3cm}{\ttfamily [private]}}\label{class_c_p_u___o_s___simulator_1_1_instructions_window_a0d1f28315429ad5e01867bef7dbf9b6b}
 
 
-Definition at line 929 of file Instructions\+Window.\+xaml.\+cs.
+Definition at line 926 of file Instructions\+Window.\+xaml.\+cs.
 
 \hypertarget{class_c_p_u___o_s___simulator_1_1_instructions_window_ab89dd8e5416a91477aad1faa02bcbacd}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Instructions\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Instructions\+Window}!txt\+Source\+Value\+Data\+Transfer\+\_\+\+Got\+Focus@{txt\+Source\+Value\+Data\+Transfer\+\_\+\+Got\+Focus}}
 \index{txt\+Source\+Value\+Data\+Transfer\+\_\+\+Got\+Focus@{txt\+Source\+Value\+Data\+Transfer\+\_\+\+Got\+Focus}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Instructions\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Instructions\+Window}}
@@ -1520,7 +1519,7 @@ Definition at line 929 of file Instructions\+Window.\+xaml.\+cs.
 )\hspace{0.3cm}{\ttfamily [private]}}\label{class_c_p_u___o_s___simulator_1_1_instructions_window_ab89dd8e5416a91477aad1faa02bcbacd}
 
 
-Definition at line 869 of file Instructions\+Window.\+xaml.\+cs.
+Definition at line 866 of file Instructions\+Window.\+xaml.\+cs.
 
 \hypertarget{class_c_p_u___o_s___simulator_1_1_instructions_window_a83fbca00e890edc28dd3d58c350360eb}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Instructions\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Instructions\+Window}!txt\+Source\+Value\+I\+O\+\_\+\+Got\+Focus@{txt\+Source\+Value\+I\+O\+\_\+\+Got\+Focus}}
 \index{txt\+Source\+Value\+I\+O\+\_\+\+Got\+Focus@{txt\+Source\+Value\+I\+O\+\_\+\+Got\+Focus}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Instructions\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Instructions\+Window}}
@@ -1532,7 +1531,7 @@ Definition at line 869 of file Instructions\+Window.\+xaml.\+cs.
 )\hspace{0.3cm}{\ttfamily [private]}}\label{class_c_p_u___o_s___simulator_1_1_instructions_window_a83fbca00e890edc28dd3d58c350360eb}
 
 
-Definition at line 969 of file Instructions\+Window.\+xaml.\+cs.
+Definition at line 966 of file Instructions\+Window.\+xaml.\+cs.
 
 \hypertarget{class_c_p_u___o_s___simulator_1_1_instructions_window_a1126bf0eb7a7e562d7c197a7300842d2}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Instructions\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Instructions\+Window}!txt\+Source\+Value\+Logical\+\_\+\+Got\+Focus@{txt\+Source\+Value\+Logical\+\_\+\+Got\+Focus}}
 \index{txt\+Source\+Value\+Logical\+\_\+\+Got\+Focus@{txt\+Source\+Value\+Logical\+\_\+\+Got\+Focus}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Instructions\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Instructions\+Window}}
@@ -1544,7 +1543,7 @@ Definition at line 969 of file Instructions\+Window.\+xaml.\+cs.
 )\hspace{0.3cm}{\ttfamily [private]}}\label{class_c_p_u___o_s___simulator_1_1_instructions_window_a1126bf0eb7a7e562d7c197a7300842d2}
 
 
-Definition at line 889 of file Instructions\+Window.\+xaml.\+cs.
+Definition at line 886 of file Instructions\+Window.\+xaml.\+cs.
 
 \hypertarget{class_c_p_u___o_s___simulator_1_1_instructions_window_ae5a577d3fa0f6abeb8239de87a4c4a48}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Instructions\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Instructions\+Window}!txt\+Source\+Value\+Miscellaneous\+\_\+\+Got\+Focus@{txt\+Source\+Value\+Miscellaneous\+\_\+\+Got\+Focus}}
 \index{txt\+Source\+Value\+Miscellaneous\+\_\+\+Got\+Focus@{txt\+Source\+Value\+Miscellaneous\+\_\+\+Got\+Focus}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Instructions\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Instructions\+Window}}
@@ -1556,7 +1555,7 @@ Definition at line 889 of file Instructions\+Window.\+xaml.\+cs.
 )\hspace{0.3cm}{\ttfamily [private]}}\label{class_c_p_u___o_s___simulator_1_1_instructions_window_ae5a577d3fa0f6abeb8239de87a4c4a48}
 
 
-Definition at line 989 of file Instructions\+Window.\+xaml.\+cs.
+Definition at line 986 of file Instructions\+Window.\+xaml.\+cs.
 
 \hypertarget{class_c_p_u___o_s___simulator_1_1_instructions_window_a7d985ca63f2e27bc03a2198ec6879b49}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Instructions\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Instructions\+Window}!Window\+\_\+\+Loaded@{Window\+\_\+\+Loaded}}
 \index{Window\+\_\+\+Loaded@{Window\+\_\+\+Loaded}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Instructions\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Instructions\+Window}}
@@ -1579,7 +1578,7 @@ This event handler is called when the window first loads
 \end{DoxyParams}
 
 
-Definition at line 142 of file Instructions\+Window.\+xaml.\+cs.
+Definition at line 145 of file Instructions\+Window.\+xaml.\+cs.
 
 
 

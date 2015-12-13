@@ -6,6 +6,12 @@ var dir_790b8aebf840f26c283b5b7095b9b97b =
     [ "App.g.i.cs", "_debug_2_app_8g_8i_8cs.html", [
       [ "App", "class_c_p_u___o_s___simulator_1_1_app.html", "class_c_p_u___o_s___simulator_1_1_app" ]
     ] ],
+    [ "ColourPickerWindow.g.cs", "_colour_picker_window_8g_8cs.html", [
+      [ "ColourPickerWindow", "class_c_p_u___o_s___simulator_1_1_colour_picker_window.html", "class_c_p_u___o_s___simulator_1_1_colour_picker_window" ]
+    ] ],
+    [ "ColourPickerWindow.g.i.cs", "_colour_picker_window_8g_8i_8cs.html", [
+      [ "ColourPickerWindow", "class_c_p_u___o_s___simulator_1_1_colour_picker_window.html", "class_c_p_u___o_s___simulator_1_1_colour_picker_window" ]
+    ] ],
     [ "ConsoleWindow.g.cs", "_console_window_8g_8cs.html", [
       [ "ConsoleWindow", "class_c_p_u___o_s___simulator_1_1_console_window.html", "class_c_p_u___o_s___simulator_1_1_console_window" ]
     ] ],

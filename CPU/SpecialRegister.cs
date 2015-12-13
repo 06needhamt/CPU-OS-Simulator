@@ -7,7 +7,7 @@ namespace CPU_OS_Simulator.CPU
     /// This class represents a special register i.e a non general purpose register
     /// </summary>
     [Serializable]
-    public class SpecialRegister
+    public class SpecialRegister : Register
     {
         /// <summary>
         /// The name of the Special Register
@@ -20,14 +20,14 @@ namespace CPU_OS_Simulator.CPU
         private int value;
 
         /// <summary>
-        /// The string value of the register used </para>
-        /// for the instruction register (IR) </para>
-        /// and the memory data register (MDR) </para>
+        /// <para> The string value of the register used </para>
+        /// <para> for the instruction register (IR) </para>
+        /// <para>and the memory data register (MDR) </para>
         /// </summary>
         private string valueString;
 
         /// <summary>
-        /// The type of value stored in the register </para>
+        /// <para>The type of value stored in the register </para>
         /// i.e intermediate value or memory address
         /// </summary>
         private EnumOperandType type;
@@ -68,7 +68,7 @@ namespace CPU_OS_Simulator.CPU
         public static SpecialRegister MAR = new SpecialRegister("MAR");
 
         /// <summary>
-        /// Default constructor for Special Register
+        /// <para> Default constructor for Special Register
         /// used when deserialising a special register. </para>
         /// NOTE Do Not use in code
         /// </summary>
@@ -170,7 +170,9 @@ namespace CPU_OS_Simulator.CPU
             dynamic window = WindowType.GetField("MainWindowInstance").GetValue(null); // get the value of the static MainWindowInstance field
             return window;
         }
-
+        /// <summary>
+        /// Property for the name of the special register
+        /// </summary>
         public string Name
         {
             get
@@ -183,7 +185,9 @@ namespace CPU_OS_Simulator.CPU
                 name = value;
             }
         }
-
+        /// <summary>
+        /// Property for the value stored in the special register 
+        /// </summary>
         public int Value
         {
             get
@@ -196,7 +200,10 @@ namespace CPU_OS_Simulator.CPU
                 this.value = value;
             }
         }
-
+        /// <summary>
+        /// Property for the type of data in the special register
+        /// i.e. Value or Memory Address
+        /// </summary>
         public EnumOperandType Type
         {
             get
@@ -209,7 +216,9 @@ namespace CPU_OS_Simulator.CPU
                 type = value;
             }
         }
-
+        /// <summary>
+        /// Property for the value stored in the special register 
+        /// </summary>
         public string ValueString
         {
             get

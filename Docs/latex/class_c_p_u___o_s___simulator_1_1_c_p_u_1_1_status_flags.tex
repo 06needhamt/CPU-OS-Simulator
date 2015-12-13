@@ -1,31 +1,36 @@
 \hypertarget{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_status_flags}{}\section{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+C\+P\+U.\+Status\+Flags Class Reference}
 \label{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_status_flags}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+C\+P\+U.\+Status\+Flags@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+C\+P\+U.\+Status\+Flags}}
+
+
+This class represents a status flag used within the \hyperlink{namespace_c_p_u___o_s___simulator_1_1_c_p_u}{C\+P\+U} to determine whether a condition has been met.  
+
+
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
 void \hyperlink{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_status_flags_aca93016e4ad4e70951b071ba2ae575c1}{Toggle\+Flag} ()
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em This function toggles a flag i.\+e. if it is set it will be reset if it is reset it will be set. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Static Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
 static \hyperlink{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_status_flags}{Status\+Flags} \hyperlink{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_status_flags_ad4725b32f8d1718df7e6a1b6b4a21170}{O\+V} = new \hyperlink{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_status_flags}{Status\+Flags}(false, 4)
-\item 
+\begin{DoxyCompactList}\small\item\em This variable represents the Overflow flag which is set when an integer overflow occurs \end{DoxyCompactList}\item 
 static \hyperlink{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_status_flags}{Status\+Flags} \hyperlink{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_status_flags_aa38943c12054a3f613161ecde5580f27}{Z} = new \hyperlink{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_status_flags}{Status\+Flags}(false, 1)
-\item 
+\begin{DoxyCompactList}\small\item\em This variable represents the zero flag which is set when a value is equal to zero (0) \end{DoxyCompactList}\item 
 static \hyperlink{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_status_flags}{Status\+Flags} \hyperlink{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_status_flags_a48a766c8a99690112570b884b09e9b10}{N} = new \hyperlink{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_status_flags}{Status\+Flags}(false, 2)
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em This variable represents the negative flag which is set when a value is less than zero (0) \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Protected Member Functions}
 \begin{DoxyCompactItemize}
 \item 
 \hyperlink{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_status_flags_ab99e9cd2522d43a7dfd3224ff9ae0d79}{Status\+Flags} (bool set, int \hyperlink{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_status_flags_a289edb09fa9bef509188db5619be8dee}{value})
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Constructor for status flags \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Properties}
 \begin{DoxyCompactItemize}
 \item 
 bool \hyperlink{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_status_flags_a96ee01f7bcf0a1d0810c75705e462b43}{Is\+Set}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
-\item 
+\begin{DoxyCompactList}\small\item\em Property to store whether the flag is set \end{DoxyCompactList}\item 
 int \hyperlink{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_status_flags_a2978a3bc6493134bb9546c879e625fc2}{Value}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em property to store the integral value of the flag \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Private Attributes}
 \begin{DoxyCompactItemize}
 \item 
@@ -36,9 +41,11 @@ int \hyperlink{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_status_flags_a289edb0
 
 
 \subsection{Detailed Description}
+This class represents a status flag used within the \hyperlink{namespace_c_p_u___o_s___simulator_1_1_c_p_u}{C\+P\+U} to determine whether a condition has been met. 
 
 
-Definition at line 3 of file Status\+Flags.\+cs.
+
+Definition at line 6 of file Status\+Flags.\+cs.
 
 
 
@@ -53,7 +60,18 @@ Definition at line 3 of file Status\+Flags.\+cs.
 )\hspace{0.3cm}{\ttfamily [protected]}}\label{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_status_flags_ab99e9cd2522d43a7dfd3224ff9ae0d79}
 
 
-Definition at line 12 of file Status\+Flags.\+cs.
+Constructor for status flags 
+
+
+\begin{DoxyParams}{Parameters}
+{\em set} & weather the flag should be set\\
+\hline
+{\em value} & the integral value of this flag\\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 29 of file Status\+Flags.\+cs.
 
 
 
@@ -67,7 +85,11 @@ Definition at line 12 of file Status\+Flags.\+cs.
 )}\label{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_status_flags_aca93016e4ad4e70951b071ba2ae575c1}
 
 
-Definition at line 18 of file Status\+Flags.\+cs.
+This function toggles a flag i.\+e. if it is set it will be reset if it is reset it will be set. 
+
+
+
+Definition at line 39 of file Status\+Flags.\+cs.
 
 
 
@@ -77,35 +99,47 @@ Definition at line 18 of file Status\+Flags.\+cs.
 \subsubsection[{is\+Set}]{\setlength{\rightskip}{0pt plus 5cm}bool C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+C\+P\+U.\+Status\+Flags.\+is\+Set\hspace{0.3cm}{\ttfamily [private]}}\label{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_status_flags_a09019f0ab60c6be65f427e84bc488d6b}
 
 
-Definition at line 9 of file Status\+Flags.\+cs.
+Definition at line 21 of file Status\+Flags.\+cs.
 
 \hypertarget{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_status_flags_a48a766c8a99690112570b884b09e9b10}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Status\+Flags@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Status\+Flags}!N@{N}}
 \index{N@{N}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Status\+Flags@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Status\+Flags}}
 \subsubsection[{N}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Status\+Flags} C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+C\+P\+U.\+Status\+Flags.\+N = new {\bf Status\+Flags}(false, 2)\hspace{0.3cm}{\ttfamily [static]}}\label{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_status_flags_a48a766c8a99690112570b884b09e9b10}
 
 
-Definition at line 7 of file Status\+Flags.\+cs.
+This variable represents the negative flag which is set when a value is less than zero (0) 
+
+
+
+Definition at line 19 of file Status\+Flags.\+cs.
 
 \hypertarget{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_status_flags_ad4725b32f8d1718df7e6a1b6b4a21170}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Status\+Flags@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Status\+Flags}!O\+V@{O\+V}}
 \index{O\+V@{O\+V}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Status\+Flags@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Status\+Flags}}
 \subsubsection[{O\+V}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Status\+Flags} C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+C\+P\+U.\+Status\+Flags.\+O\+V = new {\bf Status\+Flags}(false, 4)\hspace{0.3cm}{\ttfamily [static]}}\label{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_status_flags_ad4725b32f8d1718df7e6a1b6b4a21170}
 
 
-Definition at line 5 of file Status\+Flags.\+cs.
+This variable represents the Overflow flag which is set when an integer overflow occurs 
+
+
+
+Definition at line 11 of file Status\+Flags.\+cs.
 
 \hypertarget{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_status_flags_a289edb09fa9bef509188db5619be8dee}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Status\+Flags@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Status\+Flags}!value@{value}}
 \index{value@{value}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Status\+Flags@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Status\+Flags}}
 \subsubsection[{value}]{\setlength{\rightskip}{0pt plus 5cm}int C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+C\+P\+U.\+Status\+Flags.\+value\hspace{0.3cm}{\ttfamily [private]}}\label{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_status_flags_a289edb09fa9bef509188db5619be8dee}
 
 
-Definition at line 10 of file Status\+Flags.\+cs.
+Definition at line 22 of file Status\+Flags.\+cs.
 
 \hypertarget{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_status_flags_aa38943c12054a3f613161ecde5580f27}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Status\+Flags@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Status\+Flags}!Z@{Z}}
 \index{Z@{Z}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Status\+Flags@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Status\+Flags}}
 \subsubsection[{Z}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Status\+Flags} C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+C\+P\+U.\+Status\+Flags.\+Z = new {\bf Status\+Flags}(false, 1)\hspace{0.3cm}{\ttfamily [static]}}\label{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_status_flags_aa38943c12054a3f613161ecde5580f27}
 
 
-Definition at line 6 of file Status\+Flags.\+cs.
+This variable represents the zero flag which is set when a value is equal to zero (0) 
+
+
+
+Definition at line 15 of file Status\+Flags.\+cs.
 
 
 
@@ -115,14 +149,22 @@ Definition at line 6 of file Status\+Flags.\+cs.
 \subsubsection[{Is\+Set}]{\setlength{\rightskip}{0pt plus 5cm}bool C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+C\+P\+U.\+Status\+Flags.\+Is\+Set\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}\label{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_status_flags_a96ee01f7bcf0a1d0810c75705e462b43}
 
 
-Definition at line 24 of file Status\+Flags.\+cs.
+Property to store whether the flag is set 
+
+
+
+Definition at line 47 of file Status\+Flags.\+cs.
 
 \hypertarget{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_status_flags_a2978a3bc6493134bb9546c879e625fc2}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Status\+Flags@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Status\+Flags}!Value@{Value}}
 \index{Value@{Value}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Status\+Flags@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Status\+Flags}}
 \subsubsection[{Value}]{\setlength{\rightskip}{0pt plus 5cm}int C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+C\+P\+U.\+Status\+Flags.\+Value\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}\label{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_status_flags_a2978a3bc6493134bb9546c879e625fc2}
 
 
-Definition at line 37 of file Status\+Flags.\+cs.
+property to store the integral value of the flag 
+
+
+
+Definition at line 62 of file Status\+Flags.\+cs.
 
 
 

@@ -133,9 +133,11 @@ Inheritance diagram for CPU_OS_Simulator.MemoryWindow:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a9c72b7aa51f734437bd5e4aa26a230a2"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_p_u___o_s___simulator_1_1_memory_window.html#a9c72b7aa51f734437bd5e4aa26a230a2">MemoryWindow</a> ()</td></tr>
+<tr class="memdesc:a9c72b7aa51f734437bd5e4aa26a230a2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default constructor for memory window  <a href="#a9c72b7aa51f734437bd5e4aa26a230a2">More...</a><br /></td></tr>
 <tr class="separator:a9c72b7aa51f734437bd5e4aa26a230a2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a983d730d6caccfeadb419b26a70b0150"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_p_u___o_s___simulator_1_1_memory_window.html#a983d730d6caccfeadb419b26a70b0150">MemoryWindow</a> (<a class="el" href="class_c_p_u___o_s___simulator_1_1_main_window.html">MainWindow</a> <a class="el" href="class_c_p_u___o_s___simulator_1_1_memory_window.html#a349bd876862c9360ccd4533dc8de8bf3">mainWindowInstance</a>, <a class="el" href="class_c_p_u___o_s___simulator_1_1_memory_1_1_memory_page.html">MemoryPage</a> <a class="el" href="class_c_p_u___o_s___simulator_1_1_memory_window.html#ae1b974c8b976e19dde1a5491e3fe0e37">currentPage</a>)</td></tr>
-<tr class="separator:a983d730d6caccfeadb419b26a70b0150"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7b4208dc517300279d4cf3cd8cac6243"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_p_u___o_s___simulator_1_1_memory_window.html#a7b4208dc517300279d4cf3cd8cac6243">MemoryWindow</a> (<a class="el" href="class_c_p_u___o_s___simulator_1_1_main_window.html">MainWindow</a> <a class="el" href="class_c_p_u___o_s___simulator_1_1_memory_window.html#afecdd32e0a0b0215d51f0630367dee3d">parentWindow</a>, <a class="el" href="class_c_p_u___o_s___simulator_1_1_memory_1_1_memory_page.html">MemoryPage</a> <a class="el" href="class_c_p_u___o_s___simulator_1_1_memory_window.html#ae1b974c8b976e19dde1a5491e3fe0e37">currentPage</a>)</td></tr>
+<tr class="memdesc:a7b4208dc517300279d4cf3cd8cac6243"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor for memory window that takes the window instance that is creating this window PLEASE NOTE: This constructor should always be used so data can be passed back to the main window  <a href="#a7b4208dc517300279d4cf3cd8cac6243">More...</a><br /></td></tr>
+<tr class="separator:a7b4208dc517300279d4cf3cd8cac6243"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a40473c2b8ba30a837cf2a122e0978dec"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_p_u___o_s___simulator_1_1_memory_window.html#a40473c2b8ba30a837cf2a122e0978dec">InitializeComponent</a> ()</td></tr>
 <tr class="memdesc:a40473c2b8ba30a837cf2a122e0978dec"><td class="mdescLeft">&#160;</td><td class="mdescRight">InitializeComponent  <a href="#a40473c2b8ba30a837cf2a122e0978dec">More...</a><br /></td></tr>
 <tr class="separator:a40473c2b8ba30a837cf2a122e0978dec"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -152,6 +154,7 @@ Public Member Functions</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-attribs"></a>
 Static Public Attributes</h2></td></tr>
 <tr class="memitem:a870b795e3b919a82888ad608ab24d61a"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="class_c_p_u___o_s___simulator_1_1_memory_window.html">MemoryWindow</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_p_u___o_s___simulator_1_1_memory_window.html#a870b795e3b919a82888ad608ab24d61a">currentInstance</a></td></tr>
+<tr class="memdesc:a870b795e3b919a82888ad608ab24d61a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Variable to hold the current instance of the memory window  <a href="#a870b795e3b919a82888ad608ab24d61a">More...</a><br /></td></tr>
 <tr class="separator:a870b795e3b919a82888ad608ab24d61a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pac-attribs"></a>
@@ -203,12 +206,14 @@ Package Attributes</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="properties"></a>
 Properties</h2></td></tr>
-<tr class="memitem:aaa625aed8c7670aed16f9ab0f9e5e080"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_c_p_u___o_s___simulator_1_1_main_window.html">MainWindow</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_p_u___o_s___simulator_1_1_memory_window.html#aaa625aed8c7670aed16f9ab0f9e5e080">MainWindowInstance</a><code> [get, set]</code></td></tr>
-<tr class="separator:aaa625aed8c7670aed16f9ab0f9e5e080"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad61b6543a424be98fd0a4e0fa732f3d4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_c_p_u___o_s___simulator_1_1_main_window.html">MainWindow</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_p_u___o_s___simulator_1_1_memory_window.html#ad61b6543a424be98fd0a4e0fa732f3d4">ParentWindow</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:ad61b6543a424be98fd0a4e0fa732f3d4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Property to hold the current instance of the memory window  <a href="#ad61b6543a424be98fd0a4e0fa732f3d4">More...</a><br /></td></tr>
+<tr class="separator:ad61b6543a424be98fd0a4e0fa732f3d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
 Private Member Functions</h2></td></tr>
 <tr class="memitem:a8811287064d6315e3a8c01531148ed81"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_p_u___o_s___simulator_1_1_memory_window.html#a8811287064d6315e3a8c01531148ed81">PopulateDataView</a> ()</td></tr>
+<tr class="memdesc:a8811287064d6315e3a8c01531148ed81"><td class="mdescLeft">&#160;</td><td class="mdescRight">This function populates the data view with the contents of the current memoryPage  <a href="#a8811287064d6315e3a8c01531148ed81">More...</a><br /></td></tr>
 <tr class="separator:a8811287064d6315e3a8c01531148ed81"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a91ec1c8081b85d3c07eaa31ee524f5d9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_p_u___o_s___simulator_1_1_memory_window.html#a91ec1c8081b85d3c07eaa31ee524f5d9">btn_Update_Click</a> (object sender, RoutedEventArgs e)</td></tr>
 <tr class="separator:a91ec1c8081b85d3c07eaa31ee524f5d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -221,6 +226,7 @@ Private Member Functions</h2></td></tr>
 <tr class="memitem:a6123a0a8b93cb6636ed3c039391948a5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_p_u___o_s___simulator_1_1_memory_window.html#a6123a0a8b93cb6636ed3c039391948a5">Window_Closing</a> (object sender, System.ComponentModel.CancelEventArgs e)</td></tr>
 <tr class="separator:a6123a0a8b93cb6636ed3c039391948a5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5100fa341de6de08d11967198cd82208"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_p_u___o_s___simulator_1_1_memory_window.html#a5100fa341de6de08d11967198cd82208">SetMemoryWindowInstance</a> ()</td></tr>
+<tr class="memdesc:a5100fa341de6de08d11967198cd82208"><td class="mdescLeft">&#160;</td><td class="mdescRight">This method sets the current instance of memory window in the window bridge so it can be accessed by other modules  <a href="#a5100fa341de6de08d11967198cd82208">More...</a><br /></td></tr>
 <tr class="separator:a5100fa341de6de08d11967198cd82208"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aba65e66795c99052ebed93162110e908"><td class="memItemLeft" align="right" valign="top">void System.Windows.Markup.IComponentConnector.&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_p_u___o_s___simulator_1_1_memory_window.html#aba65e66795c99052ebed93162110e908">Connect</a> (int connectionId, object target)</td></tr>
 <tr class="separator:aba65e66795c99052ebed93162110e908"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -233,8 +239,8 @@ Private Member Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
-<tr class="memitem:a349bd876862c9360ccd4533dc8de8bf3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_c_p_u___o_s___simulator_1_1_main_window.html">MainWindow</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_p_u___o_s___simulator_1_1_memory_window.html#a349bd876862c9360ccd4533dc8de8bf3">mainWindowInstance</a></td></tr>
-<tr class="separator:a349bd876862c9360ccd4533dc8de8bf3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afecdd32e0a0b0215d51f0630367dee3d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_c_p_u___o_s___simulator_1_1_main_window.html">MainWindow</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_p_u___o_s___simulator_1_1_memory_window.html#afecdd32e0a0b0215d51f0630367dee3d">parentWindow</a></td></tr>
+<tr class="separator:afecdd32e0a0b0215d51f0630367dee3d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae1b974c8b976e19dde1a5491e3fe0e37"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_c_p_u___o_s___simulator_1_1_memory_1_1_memory_page.html">MemoryPage</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_p_u___o_s___simulator_1_1_memory_window.html#ae1b974c8b976e19dde1a5491e3fe0e37">currentPage</a></td></tr>
 <tr class="separator:ae1b974c8b976e19dde1a5491e3fe0e37"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af20b67929b49d4289e1d81d141cbd950"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_p_u___o_s___simulator_1_1_memory_window.html#af20b67929b49d4289e1d81d141cbd950">_contentLoaded</a></td></tr>
@@ -259,11 +265,13 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_memory_window_8xaml_8cs_source.html#l00017">17</a> of file <a class="el" href="_memory_window_8xaml_8cs_source.html">MemoryWindow.xaml.cs</a>.</p>
+<p>Default constructor for memory window </p>
+
+<p>Definition at line <a class="el" href="_memory_window_8xaml_8cs_source.html#l00022">22</a> of file <a class="el" href="_memory_window_8xaml_8cs_source.html">MemoryWindow.xaml.cs</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="a983d730d6caccfeadb419b26a70b0150"></a>
+<a class="anchor" id="a7b4208dc517300279d4cf3cd8cac6243"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -271,7 +279,7 @@ Private Attributes</h2></td></tr>
           <td class="memname">CPU_OS_Simulator.MemoryWindow.MemoryWindow </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="class_c_p_u___o_s___simulator_1_1_main_window.html">MainWindow</a>&#160;</td>
-          <td class="paramname"><em>mainWindowInstance</em>, </td>
+          <td class="paramname"><em>parentWindow</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -287,7 +295,16 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_memory_window_8xaml_8cs_source.html#l00024">24</a> of file <a class="el" href="_memory_window_8xaml_8cs_source.html">MemoryWindow.xaml.cs</a>.</p>
+<p>Constructor for memory window that takes the window instance that is creating this window PLEASE NOTE: This constructor should always be used so data can be passed back to the main window </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">parentWindow</td><td>The window that is creating this window </td></tr>
+    <tr><td class="paramname">currentPage</td><td>The memory page to be displayed in the window </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="_memory_window_8xaml_8cs_source.html#l00034">34</a> of file <a class="el" href="_memory_window_8xaml_8cs_source.html">MemoryWindow.xaml.cs</a>.</p>
 
 </div>
 </div>
@@ -324,7 +341,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_memory_window_8xaml_8cs_source.html#l00141">141</a> of file <a class="el" href="_memory_window_8xaml_8cs_source.html">MemoryWindow.xaml.cs</a>.</p>
+<p>Definition at line <a class="el" href="_memory_window_8xaml_8cs_source.html#l00155">155</a> of file <a class="el" href="_memory_window_8xaml_8cs_source.html">MemoryWindow.xaml.cs</a>.</p>
 
 </div>
 </div>
@@ -360,7 +377,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_memory_window_8xaml_8cs_source.html#l00147">147</a> of file <a class="el" href="_memory_window_8xaml_8cs_source.html">MemoryWindow.xaml.cs</a>.</p>
+<p>Definition at line <a class="el" href="_memory_window_8xaml_8cs_source.html#l00161">161</a> of file <a class="el" href="_memory_window_8xaml_8cs_source.html">MemoryWindow.xaml.cs</a>.</p>
 
 </div>
 </div>
@@ -396,7 +413,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_memory_window_8xaml_8cs_source.html#l00054">54</a> of file <a class="el" href="_memory_window_8xaml_8cs_source.html">MemoryWindow.xaml.cs</a>.</p>
+<p>Definition at line <a class="el" href="_memory_window_8xaml_8cs_source.html#l00068">68</a> of file <a class="el" href="_memory_window_8xaml_8cs_source.html">MemoryWindow.xaml.cs</a>.</p>
 
 </div>
 </div>
@@ -641,7 +658,9 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_memory_window_8xaml_8cs_source.html#l00039">39</a> of file <a class="el" href="_memory_window_8xaml_8cs_source.html">MemoryWindow.xaml.cs</a>.</p>
+<p>This function populates the data view with the contents of the current memoryPage </p>
+
+<p>Definition at line <a class="el" href="_memory_window_8xaml_8cs_source.html#l00053">53</a> of file <a class="el" href="_memory_window_8xaml_8cs_source.html">MemoryWindow.xaml.cs</a>.</p>
 
 </div>
 </div>
@@ -666,7 +685,9 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_memory_window_8xaml_8cs_source.html#l00159">159</a> of file <a class="el" href="_memory_window_8xaml_8cs_source.html">MemoryWindow.xaml.cs</a>.</p>
+<p>This method sets the current instance of memory window in the window bridge so it can be accessed by other modules </p>
+
+<p>Definition at line <a class="el" href="_memory_window_8xaml_8cs_source.html#l00176">176</a> of file <a class="el" href="_memory_window_8xaml_8cs_source.html">MemoryWindow.xaml.cs</a>.</p>
 
 </div>
 </div>
@@ -691,7 +712,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_memory_window_8xaml_8cs_source.html#l00134">134</a> of file <a class="el" href="_memory_window_8xaml_8cs_source.html">MemoryWindow.xaml.cs</a>.</p>
+<p>Definition at line <a class="el" href="_memory_window_8xaml_8cs_source.html#l00148">148</a> of file <a class="el" href="_memory_window_8xaml_8cs_source.html">MemoryWindow.xaml.cs</a>.</p>
 
 </div>
 </div>
@@ -727,7 +748,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_memory_window_8xaml_8cs_source.html#l00153">153</a> of file <a class="el" href="_memory_window_8xaml_8cs_source.html">MemoryWindow.xaml.cs</a>.</p>
+<p>Definition at line <a class="el" href="_memory_window_8xaml_8cs_source.html#l00167">167</a> of file <a class="el" href="_memory_window_8xaml_8cs_source.html">MemoryWindow.xaml.cs</a>.</p>
 
 </div>
 </div>
@@ -860,7 +881,9 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_memory_window_8xaml_8cs_source.html#l00015">15</a> of file <a class="el" href="_memory_window_8xaml_8cs_source.html">MemoryWindow.xaml.cs</a>.</p>
+<p>Variable to hold the current instance of the memory window </p>
+
+<p>Definition at line <a class="el" href="_memory_window_8xaml_8cs_source.html#l00018">18</a> of file <a class="el" href="_memory_window_8xaml_8cs_source.html">MemoryWindow.xaml.cs</a>.</p>
 
 </div>
 </div>
@@ -1106,7 +1129,7 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a349bd876862c9360ccd4533dc8de8bf3"></a>
+<a class="anchor" id="afecdd32e0a0b0215d51f0630367dee3d"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -1114,7 +1137,7 @@ Private Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="class_c_p_u___o_s___simulator_1_1_main_window.html">MainWindow</a> CPU_OS_Simulator.MemoryWindow.mainWindowInstance</td>
+          <td class="memname"><a class="el" href="class_c_p_u___o_s___simulator_1_1_main_window.html">MainWindow</a> CPU_OS_Simulator.MemoryWindow.parentWindow</td>
         </tr>
       </table>
   </td>
@@ -1305,7 +1328,7 @@ Private Attributes</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Property Documentation</h2>
-<a class="anchor" id="aaa625aed8c7670aed16f9ab0f9e5e080"></a>
+<a class="anchor" id="ad61b6543a424be98fd0a4e0fa732f3d4"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -1313,7 +1336,7 @@ Private Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="class_c_p_u___o_s___simulator_1_1_main_window.html">MainWindow</a> CPU_OS_Simulator.MemoryWindow.MainWindowInstance</td>
+          <td class="memname"><a class="el" href="class_c_p_u___o_s___simulator_1_1_main_window.html">MainWindow</a> CPU_OS_Simulator.MemoryWindow.ParentWindow</td>
         </tr>
       </table>
   </td>
@@ -1323,7 +1346,9 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_memory_window_8xaml_8cs_source.html#l00034">34</a> of file <a class="el" href="_memory_window_8xaml_8cs_source.html">MemoryWindow.xaml.cs</a>.</p>
+<p>Property to hold the current instance of the memory window </p>
+
+<p>Definition at line <a class="el" href="_memory_window_8xaml_8cs_source.html#l00046">46</a> of file <a class="el" href="_memory_window_8xaml_8cs_source.html">MemoryWindow.xaml.cs</a>.</p>
 
 </div>
 </div>

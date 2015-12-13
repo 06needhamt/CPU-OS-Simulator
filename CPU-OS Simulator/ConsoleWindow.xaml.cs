@@ -23,15 +23,24 @@ namespace CPU_OS_Simulator
     public partial class ConsoleWindow : Window
     {
         private MainWindow parent = null;
+        /// <summary>
+        /// The current active instance of the console window
+        /// </summary>
         public static ConsoleWindow currentInstance;
 
+        /// <summary>
+        /// Default Constructor for console window
+        /// </summary>
         public ConsoleWindow()
         {
             InitializeComponent();
             currentInstance = this;
             SetConsoleWindowInstance();
         }
-
+        /// <summary>
+        /// Constructor for console window that has a parent window
+        /// </summary>
+        /// <param name="window"> the parent window</param>
         public ConsoleWindow(MainWindow window)
         {
             parent = window;
@@ -39,8 +48,11 @@ namespace CPU_OS_Simulator
             currentInstance = this;
             SetConsoleWindowInstance();
         }
-
-        private void ParseInput(String text)
+        /// <summary>
+        /// This function parses a line of input into a console command
+        /// </summary>
+        /// <param name="text"> the line of input to parse</param>
+        private void ParseInput(string text)
         {
             string[] input = text.Split(new char[] {'\n'});
             string inputLine = input[input.Length - 1];
@@ -91,7 +103,9 @@ namespace CPU_OS_Simulator
             currentInstance = null;
             SetConsoleWindowInstance();
         }
-
+        /// <summary>
+        /// This method sets the console window instance in the window bridge o it can be accessed by other modules
+        /// </summary>
         private void SetConsoleWindowInstance()
         {
             Assembly windowBridge = Assembly.LoadFrom("CPU_OS_Simulator.WindowBridge.dll"); // Load the window bridge module

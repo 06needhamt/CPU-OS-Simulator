@@ -1,5 +1,8 @@
 ﻿namespace CPU_OS_Simulator.Console
 {
+    /// <summary>
+    /// This enum represents all of the console commands that can be executed in the console
+    /// </summary>
     public enum EnumConsoleCommands
     {
         [NumberOfParameters(0)]

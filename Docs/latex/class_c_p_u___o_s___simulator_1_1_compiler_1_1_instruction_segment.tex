@@ -1,21 +1,26 @@
 \hypertarget{class_c_p_u___o_s___simulator_1_1_compiler_1_1_instruction_segment}{}\section{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Compiler.\+Instruction\+Segment Class Reference}
 \label{class_c_p_u___o_s___simulator_1_1_compiler_1_1_instruction_segment}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Compiler.\+Instruction\+Segment@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Compiler.\+Instruction\+Segment}}
+
+
+this class represents a segment of an instruction i.\+e the opcode or an operand  
+
+
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
 \hyperlink{class_c_p_u___o_s___simulator_1_1_compiler_1_1_instruction_segment_a7527be7b5f737230c36648e4d9774a19}{Instruction\+Segment} (int \hyperlink{class_c_p_u___o_s___simulator_1_1_compiler_1_1_instruction_segment_acdf33d1614b2f7c9125f97793d0b6f8b}{value}, int \hyperlink{class_c_p_u___o_s___simulator_1_1_compiler_1_1_instruction_segment_a3fbe26c38889c028d98a423f91824a9f}{size}, \hyperlink{namespace_c_p_u___o_s___simulator_1_1_compiler_aa05e0a6530329354660230dd223cca81}{Enum\+Segment\+Type} \hyperlink{class_c_p_u___o_s___simulator_1_1_compiler_1_1_instruction_segment_aa6b21639fca4949423b6a4d0473450be}{type})
-\item 
+\begin{DoxyCompactList}\small\item\em Constructor for an instruction segment that is a literal value \end{DoxyCompactList}\item 
 \hyperlink{class_c_p_u___o_s___simulator_1_1_compiler_1_1_instruction_segment_aba9cbbcf68c9577c5a263d9692f2efde}{Instruction\+Segment} (int \hyperlink{class_c_p_u___o_s___simulator_1_1_compiler_1_1_instruction_segment_acdf33d1614b2f7c9125f97793d0b6f8b}{value}, int \hyperlink{class_c_p_u___o_s___simulator_1_1_compiler_1_1_instruction_segment_a3fbe26c38889c028d98a423f91824a9f}{size}, \hyperlink{namespace_c_p_u___o_s___simulator_1_1_compiler_aa05e0a6530329354660230dd223cca81}{Enum\+Segment\+Type} \hyperlink{class_c_p_u___o_s___simulator_1_1_compiler_1_1_instruction_segment_aa6b21639fca4949423b6a4d0473450be}{type}, string \hyperlink{class_c_p_u___o_s___simulator_1_1_compiler_1_1_instruction_segment_a00b501a442f98f8541515c708eda0b2f}{name})
-\item 
+\begin{DoxyCompactList}\small\item\em Constructor for an instruction segment that is a register \end{DoxyCompactList}\item 
 List$<$ byte $>$ \hyperlink{class_c_p_u___o_s___simulator_1_1_compiler_1_1_instruction_segment_aa75fb3d98ca3ed0434f1d8a77689e621}{to\+Bytes} ()
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em This function converts an instruction segment to bytes \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Properties}
 \begin{DoxyCompactItemize}
 \item 
 int \hyperlink{class_c_p_u___o_s___simulator_1_1_compiler_1_1_instruction_segment_a1e8c5f60cda7233d75e61d44cc43b6b8}{Value}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
-\item 
+\begin{DoxyCompactList}\small\item\em Property to store the value of this segment \end{DoxyCompactList}\item 
 int \hyperlink{class_c_p_u___o_s___simulator_1_1_compiler_1_1_instruction_segment_a6bdea24d923f03277868b53412a6a424}{Size}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Property to store the size of the segment \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Private Attributes}
 \begin{DoxyCompactItemize}
 \item 
@@ -30,9 +35,11 @@ string \hyperlink{class_c_p_u___o_s___simulator_1_1_compiler_1_1_instruction_seg
 
 
 \subsection{Detailed Description}
+this class represents a segment of an instruction i.\+e the opcode or an operand 
 
 
-Definition at line 7 of file Instruction\+Segment.\+cs.
+
+Definition at line 11 of file Instruction\+Segment.\+cs.
 
 
 
@@ -48,7 +55,20 @@ Definition at line 7 of file Instruction\+Segment.\+cs.
 )}\label{class_c_p_u___o_s___simulator_1_1_compiler_1_1_instruction_segment_a7527be7b5f737230c36648e4d9774a19}
 
 
-Definition at line 14 of file Instruction\+Segment.\+cs.
+Constructor for an instruction segment that is a literal value 
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & the value\\
+\hline
+{\em size} & the size of the segment\\
+\hline
+{\em type} & the type of the segment\\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 24 of file Instruction\+Segment.\+cs.
 
 \hypertarget{class_c_p_u___o_s___simulator_1_1_compiler_1_1_instruction_segment_aba9cbbcf68c9577c5a263d9692f2efde}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Instruction\+Segment@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Instruction\+Segment}!Instruction\+Segment@{Instruction\+Segment}}
 \index{Instruction\+Segment@{Instruction\+Segment}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Instruction\+Segment@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Instruction\+Segment}}
@@ -62,7 +82,22 @@ Definition at line 14 of file Instruction\+Segment.\+cs.
 )}\label{class_c_p_u___o_s___simulator_1_1_compiler_1_1_instruction_segment_aba9cbbcf68c9577c5a263d9692f2efde}
 
 
-Definition at line 21 of file Instruction\+Segment.\+cs.
+Constructor for an instruction segment that is a register 
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & the value\\
+\hline
+{\em size} & the size of the segment\\
+\hline
+{\em type} & the type of the segment\\
+\hline
+{\em name} & the name of the segment\\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 37 of file Instruction\+Segment.\+cs.
 
 
 
@@ -76,7 +111,19 @@ Definition at line 21 of file Instruction\+Segment.\+cs.
 )}\label{class_c_p_u___o_s___simulator_1_1_compiler_1_1_instruction_segment_aa75fb3d98ca3ed0434f1d8a77689e621}
 
 
-Definition at line 38 of file Instruction\+Segment.\+cs.
+This function converts an instruction segment to bytes 
+
+\begin{DoxyReturn}{Returns}
+the bytes that represent the instruction segment
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Exception} & Thrown if the segment matches no known pattern\\
+\hline
+\end{DoxyExceptions}
+
+
+Definition at line 65 of file Instruction\+Segment.\+cs.
 
 
 
@@ -86,28 +133,28 @@ Definition at line 38 of file Instruction\+Segment.\+cs.
 \subsubsection[{name}]{\setlength{\rightskip}{0pt plus 5cm}string C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Compiler.\+Instruction\+Segment.\+name = String.\+Empty\hspace{0.3cm}{\ttfamily [private]}}\label{class_c_p_u___o_s___simulator_1_1_compiler_1_1_instruction_segment_a00b501a442f98f8541515c708eda0b2f}
 
 
-Definition at line 11 of file Instruction\+Segment.\+cs.
+Definition at line 15 of file Instruction\+Segment.\+cs.
 
 \hypertarget{class_c_p_u___o_s___simulator_1_1_compiler_1_1_instruction_segment_a3fbe26c38889c028d98a423f91824a9f}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Instruction\+Segment@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Instruction\+Segment}!size@{size}}
 \index{size@{size}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Instruction\+Segment@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Instruction\+Segment}}
 \subsubsection[{size}]{\setlength{\rightskip}{0pt plus 5cm}int C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Compiler.\+Instruction\+Segment.\+size\hspace{0.3cm}{\ttfamily [private]}}\label{class_c_p_u___o_s___simulator_1_1_compiler_1_1_instruction_segment_a3fbe26c38889c028d98a423f91824a9f}
 
 
-Definition at line 10 of file Instruction\+Segment.\+cs.
+Definition at line 14 of file Instruction\+Segment.\+cs.
 
 \hypertarget{class_c_p_u___o_s___simulator_1_1_compiler_1_1_instruction_segment_aa6b21639fca4949423b6a4d0473450be}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Instruction\+Segment@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Instruction\+Segment}!type@{type}}
 \index{type@{type}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Instruction\+Segment@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Instruction\+Segment}}
 \subsubsection[{type}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Enum\+Segment\+Type} C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Compiler.\+Instruction\+Segment.\+type = {\bf Enum\+Segment\+Type.\+U\+N\+K\+N\+O\+W\+N}\hspace{0.3cm}{\ttfamily [private]}}\label{class_c_p_u___o_s___simulator_1_1_compiler_1_1_instruction_segment_aa6b21639fca4949423b6a4d0473450be}
 
 
-Definition at line 12 of file Instruction\+Segment.\+cs.
+Definition at line 16 of file Instruction\+Segment.\+cs.
 
 \hypertarget{class_c_p_u___o_s___simulator_1_1_compiler_1_1_instruction_segment_acdf33d1614b2f7c9125f97793d0b6f8b}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Instruction\+Segment@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Instruction\+Segment}!value@{value}}
 \index{value@{value}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Instruction\+Segment@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Instruction\+Segment}}
 \subsubsection[{value}]{\setlength{\rightskip}{0pt plus 5cm}int C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Compiler.\+Instruction\+Segment.\+value\hspace{0.3cm}{\ttfamily [private]}}\label{class_c_p_u___o_s___simulator_1_1_compiler_1_1_instruction_segment_acdf33d1614b2f7c9125f97793d0b6f8b}
 
 
-Definition at line 9 of file Instruction\+Segment.\+cs.
+Definition at line 13 of file Instruction\+Segment.\+cs.
 
 
 
@@ -117,14 +164,22 @@ Definition at line 9 of file Instruction\+Segment.\+cs.
 \subsubsection[{Size}]{\setlength{\rightskip}{0pt plus 5cm}int C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Compiler.\+Instruction\+Segment.\+Size\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}\label{class_c_p_u___o_s___simulator_1_1_compiler_1_1_instruction_segment_a6bdea24d923f03277868b53412a6a424}
 
 
-Definition at line 33 of file Instruction\+Segment.\+cs.
+Property to store the size of the segment 
+
+
+
+Definition at line 55 of file Instruction\+Segment.\+cs.
 
 \hypertarget{class_c_p_u___o_s___simulator_1_1_compiler_1_1_instruction_segment_a1e8c5f60cda7233d75e61d44cc43b6b8}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Instruction\+Segment@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Instruction\+Segment}!Value@{Value}}
 \index{Value@{Value}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Instruction\+Segment@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Instruction\+Segment}}
 \subsubsection[{Value}]{\setlength{\rightskip}{0pt plus 5cm}int C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Compiler.\+Instruction\+Segment.\+Value\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}\label{class_c_p_u___o_s___simulator_1_1_compiler_1_1_instruction_segment_a1e8c5f60cda7233d75e61d44cc43b6b8}
 
 
-Definition at line 27 of file Instruction\+Segment.\+cs.
+Property to store the value of this segment 
+
+
+
+Definition at line 46 of file Instruction\+Segment.\+cs.
 
 
 

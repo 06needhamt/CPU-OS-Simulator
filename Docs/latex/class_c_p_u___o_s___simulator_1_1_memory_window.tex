@@ -15,9 +15,9 @@ Inheritance diagram for C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Memory\+Window\+:
 \begin{DoxyCompactItemize}
 \item 
 \hyperlink{class_c_p_u___o_s___simulator_1_1_memory_window_a9c72b7aa51f734437bd5e4aa26a230a2}{Memory\+Window} ()
-\item 
-\hyperlink{class_c_p_u___o_s___simulator_1_1_memory_window_a983d730d6caccfeadb419b26a70b0150}{Memory\+Window} (\hyperlink{class_c_p_u___o_s___simulator_1_1_main_window}{Main\+Window} \hyperlink{class_c_p_u___o_s___simulator_1_1_memory_window_a349bd876862c9360ccd4533dc8de8bf3}{main\+Window\+Instance}, \hyperlink{class_c_p_u___o_s___simulator_1_1_memory_1_1_memory_page}{Memory\+Page} \hyperlink{class_c_p_u___o_s___simulator_1_1_memory_window_ae1b974c8b976e19dde1a5491e3fe0e37}{current\+Page})
-\item 
+\begin{DoxyCompactList}\small\item\em Default constructor for memory window \end{DoxyCompactList}\item 
+\hyperlink{class_c_p_u___o_s___simulator_1_1_memory_window_a7b4208dc517300279d4cf3cd8cac6243}{Memory\+Window} (\hyperlink{class_c_p_u___o_s___simulator_1_1_main_window}{Main\+Window} \hyperlink{class_c_p_u___o_s___simulator_1_1_memory_window_afecdd32e0a0b0215d51f0630367dee3d}{parent\+Window}, \hyperlink{class_c_p_u___o_s___simulator_1_1_memory_1_1_memory_page}{Memory\+Page} \hyperlink{class_c_p_u___o_s___simulator_1_1_memory_window_ae1b974c8b976e19dde1a5491e3fe0e37}{current\+Page})
+\begin{DoxyCompactList}\small\item\em Constructor for memory window that takes the window instance that is creating this window P\+L\+E\+A\+S\+E N\+O\+T\+E\+: This constructor should always be used so data can be passed back to the main window \end{DoxyCompactList}\item 
 void \hyperlink{class_c_p_u___o_s___simulator_1_1_memory_window_a40473c2b8ba30a837cf2a122e0978dec}{Initialize\+Component} ()
 \begin{DoxyCompactList}\small\item\em Initialize\+Component \end{DoxyCompactList}\item 
 void \hyperlink{class_c_p_u___o_s___simulator_1_1_memory_window_a40473c2b8ba30a837cf2a122e0978dec}{Initialize\+Component} ()
@@ -30,7 +30,7 @@ void \hyperlink{class_c_p_u___o_s___simulator_1_1_memory_window_a40473c2b8ba30a8
 \begin{DoxyCompactItemize}
 \item 
 static \hyperlink{class_c_p_u___o_s___simulator_1_1_memory_window}{Memory\+Window} \hyperlink{class_c_p_u___o_s___simulator_1_1_memory_window_a870b795e3b919a82888ad608ab24d61a}{current\+Instance}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Variable to hold the current instance of the memory window \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Package Attributes}
 \begin{DoxyCompactItemize}
 \item 
@@ -81,13 +81,13 @@ System.\+Windows.\+Controls.\+Button \hyperlink{class_c_p_u___o_s___simulator_1_
 \subsection*{Properties}
 \begin{DoxyCompactItemize}
 \item 
-\hyperlink{class_c_p_u___o_s___simulator_1_1_main_window}{Main\+Window} \hyperlink{class_c_p_u___o_s___simulator_1_1_memory_window_aaa625aed8c7670aed16f9ab0f9e5e080}{Main\+Window\+Instance}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
-\end{DoxyCompactItemize}
+\hyperlink{class_c_p_u___o_s___simulator_1_1_main_window}{Main\+Window} \hyperlink{class_c_p_u___o_s___simulator_1_1_memory_window_ad61b6543a424be98fd0a4e0fa732f3d4}{Parent\+Window}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Property to hold the current instance of the memory window \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Private Member Functions}
 \begin{DoxyCompactItemize}
 \item 
 void \hyperlink{class_c_p_u___o_s___simulator_1_1_memory_window_a8811287064d6315e3a8c01531148ed81}{Populate\+Data\+View} ()
-\item 
+\begin{DoxyCompactList}\small\item\em This function populates the data view with the contents of the current memory\+Page \end{DoxyCompactList}\item 
 void \hyperlink{class_c_p_u___o_s___simulator_1_1_memory_window_a91ec1c8081b85d3c07eaa31ee524f5d9}{btn\+\_\+\+Update\+\_\+\+Click} (object sender, Routed\+Event\+Args e)
 \item 
 void \hyperlink{class_c_p_u___o_s___simulator_1_1_memory_window_ab0cb156466262b3d90f19acd422dc65b}{Update\+Data} ()
@@ -99,7 +99,7 @@ void \hyperlink{class_c_p_u___o_s___simulator_1_1_memory_window_a0540a495053120e
 void \hyperlink{class_c_p_u___o_s___simulator_1_1_memory_window_a6123a0a8b93cb6636ed3c039391948a5}{Window\+\_\+\+Closing} (object sender, System.\+Component\+Model.\+Cancel\+Event\+Args e)
 \item 
 void \hyperlink{class_c_p_u___o_s___simulator_1_1_memory_window_a5100fa341de6de08d11967198cd82208}{Set\+Memory\+Window\+Instance} ()
-\item 
+\begin{DoxyCompactList}\small\item\em This method sets the current instance of memory window in the window bridge so it can be accessed by other modules \end{DoxyCompactList}\item 
 void System.\+Windows.\+Markup.\+I\+Component\+Connector. \hyperlink{class_c_p_u___o_s___simulator_1_1_memory_window_aba65e66795c99052ebed93162110e908}{Connect} (int connection\+Id, object target)
 \item 
 void System.\+Windows.\+Markup.\+I\+Component\+Connector. \hyperlink{class_c_p_u___o_s___simulator_1_1_memory_window_aba65e66795c99052ebed93162110e908}{Connect} (int connection\+Id, object target)
@@ -111,7 +111,7 @@ void System.\+Windows.\+Markup.\+I\+Component\+Connector. \hyperlink{class_c_p_u
 \subsection*{Private Attributes}
 \begin{DoxyCompactItemize}
 \item 
-\hyperlink{class_c_p_u___o_s___simulator_1_1_main_window}{Main\+Window} \hyperlink{class_c_p_u___o_s___simulator_1_1_memory_window_a349bd876862c9360ccd4533dc8de8bf3}{main\+Window\+Instance}
+\hyperlink{class_c_p_u___o_s___simulator_1_1_main_window}{Main\+Window} \hyperlink{class_c_p_u___o_s___simulator_1_1_memory_window_afecdd32e0a0b0215d51f0630367dee3d}{parent\+Window}
 \item 
 \hyperlink{class_c_p_u___o_s___simulator_1_1_memory_1_1_memory_page}{Memory\+Page} \hyperlink{class_c_p_u___o_s___simulator_1_1_memory_window_ae1b974c8b976e19dde1a5491e3fe0e37}{current\+Page}
 \item 
@@ -138,19 +138,34 @@ Definition at line 11 of file Memory\+Window.\+xaml.\+cs.
 )}\label{class_c_p_u___o_s___simulator_1_1_memory_window_a9c72b7aa51f734437bd5e4aa26a230a2}
 
 
-Definition at line 17 of file Memory\+Window.\+xaml.\+cs.
+Default constructor for memory window 
 
-\hypertarget{class_c_p_u___o_s___simulator_1_1_memory_window_a983d730d6caccfeadb419b26a70b0150}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Memory\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Memory\+Window}!Memory\+Window@{Memory\+Window}}
+
+
+Definition at line 22 of file Memory\+Window.\+xaml.\+cs.
+
+\hypertarget{class_c_p_u___o_s___simulator_1_1_memory_window_a7b4208dc517300279d4cf3cd8cac6243}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Memory\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Memory\+Window}!Memory\+Window@{Memory\+Window}}
 \index{Memory\+Window@{Memory\+Window}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Memory\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Memory\+Window}}
-\subsubsection[{Memory\+Window(\+Main\+Window main\+Window\+Instance, Memory\+Page current\+Page)}]{\setlength{\rightskip}{0pt plus 5cm}C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Memory\+Window.\+Memory\+Window (
+\subsubsection[{Memory\+Window(\+Main\+Window parent\+Window, Memory\+Page current\+Page)}]{\setlength{\rightskip}{0pt plus 5cm}C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Memory\+Window.\+Memory\+Window (
 \begin{DoxyParamCaption}
-\item[{{\bf Main\+Window}}]{main\+Window\+Instance, }
+\item[{{\bf Main\+Window}}]{parent\+Window, }
 \item[{{\bf Memory\+Page}}]{current\+Page}
 \end{DoxyParamCaption}
-)}\label{class_c_p_u___o_s___simulator_1_1_memory_window_a983d730d6caccfeadb419b26a70b0150}
+)}\label{class_c_p_u___o_s___simulator_1_1_memory_window_a7b4208dc517300279d4cf3cd8cac6243}
 
 
-Definition at line 24 of file Memory\+Window.\+xaml.\+cs.
+Constructor for memory window that takes the window instance that is creating this window P\+L\+E\+A\+S\+E N\+O\+T\+E\+: This constructor should always be used so data can be passed back to the main window 
+
+
+\begin{DoxyParams}{Parameters}
+{\em parent\+Window} & The window that is creating this window \\
+\hline
+{\em current\+Page} & The memory page to be displayed in the window \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 34 of file Memory\+Window.\+xaml.\+cs.
 
 
 
@@ -165,7 +180,7 @@ Definition at line 24 of file Memory\+Window.\+xaml.\+cs.
 )\hspace{0.3cm}{\ttfamily [private]}}\label{class_c_p_u___o_s___simulator_1_1_memory_window_ac77beff86f4dd6322bdcf2430892d2aa}
 
 
-Definition at line 141 of file Memory\+Window.\+xaml.\+cs.
+Definition at line 155 of file Memory\+Window.\+xaml.\+cs.
 
 \hypertarget{class_c_p_u___o_s___simulator_1_1_memory_window_a0540a495053120e2572a106dbbc391de}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Memory\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Memory\+Window}!btn\+\_\+\+Show\+Page\+Table\+\_\+\+Click@{btn\+\_\+\+Show\+Page\+Table\+\_\+\+Click}}
 \index{btn\+\_\+\+Show\+Page\+Table\+\_\+\+Click@{btn\+\_\+\+Show\+Page\+Table\+\_\+\+Click}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Memory\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Memory\+Window}}
@@ -177,7 +192,7 @@ Definition at line 141 of file Memory\+Window.\+xaml.\+cs.
 )\hspace{0.3cm}{\ttfamily [private]}}\label{class_c_p_u___o_s___simulator_1_1_memory_window_a0540a495053120e2572a106dbbc391de}
 
 
-Definition at line 147 of file Memory\+Window.\+xaml.\+cs.
+Definition at line 161 of file Memory\+Window.\+xaml.\+cs.
 
 \hypertarget{class_c_p_u___o_s___simulator_1_1_memory_window_a91ec1c8081b85d3c07eaa31ee524f5d9}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Memory\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Memory\+Window}!btn\+\_\+\+Update\+\_\+\+Click@{btn\+\_\+\+Update\+\_\+\+Click}}
 \index{btn\+\_\+\+Update\+\_\+\+Click@{btn\+\_\+\+Update\+\_\+\+Click}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Memory\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Memory\+Window}}
@@ -189,7 +204,7 @@ Definition at line 147 of file Memory\+Window.\+xaml.\+cs.
 )\hspace{0.3cm}{\ttfamily [private]}}\label{class_c_p_u___o_s___simulator_1_1_memory_window_a91ec1c8081b85d3c07eaa31ee524f5d9}
 
 
-Definition at line 54 of file Memory\+Window.\+xaml.\+cs.
+Definition at line 68 of file Memory\+Window.\+xaml.\+cs.
 
 \hypertarget{class_c_p_u___o_s___simulator_1_1_memory_window_aba65e66795c99052ebed93162110e908}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Memory\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Memory\+Window}!Connect@{Connect}}
 \index{Connect@{Connect}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Memory\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Memory\+Window}}
@@ -308,7 +323,11 @@ Definition at line 226 of file Memory\+Window.\+g.\+i.\+cs.
 )\hspace{0.3cm}{\ttfamily [private]}}\label{class_c_p_u___o_s___simulator_1_1_memory_window_a8811287064d6315e3a8c01531148ed81}
 
 
-Definition at line 39 of file Memory\+Window.\+xaml.\+cs.
+This function populates the data view with the contents of the current memory\+Page 
+
+
+
+Definition at line 53 of file Memory\+Window.\+xaml.\+cs.
 
 \hypertarget{class_c_p_u___o_s___simulator_1_1_memory_window_a5100fa341de6de08d11967198cd82208}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Memory\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Memory\+Window}!Set\+Memory\+Window\+Instance@{Set\+Memory\+Window\+Instance}}
 \index{Set\+Memory\+Window\+Instance@{Set\+Memory\+Window\+Instance}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Memory\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Memory\+Window}}
@@ -319,7 +338,11 @@ Definition at line 39 of file Memory\+Window.\+xaml.\+cs.
 )\hspace{0.3cm}{\ttfamily [private]}}\label{class_c_p_u___o_s___simulator_1_1_memory_window_a5100fa341de6de08d11967198cd82208}
 
 
-Definition at line 159 of file Memory\+Window.\+xaml.\+cs.
+This method sets the current instance of memory window in the window bridge so it can be accessed by other modules 
+
+
+
+Definition at line 176 of file Memory\+Window.\+xaml.\+cs.
 
 \hypertarget{class_c_p_u___o_s___simulator_1_1_memory_window_ab0cb156466262b3d90f19acd422dc65b}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Memory\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Memory\+Window}!Update\+Data@{Update\+Data}}
 \index{Update\+Data@{Update\+Data}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Memory\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Memory\+Window}}
@@ -330,7 +353,7 @@ Definition at line 159 of file Memory\+Window.\+xaml.\+cs.
 )\hspace{0.3cm}{\ttfamily [private]}}\label{class_c_p_u___o_s___simulator_1_1_memory_window_ab0cb156466262b3d90f19acd422dc65b}
 
 
-Definition at line 134 of file Memory\+Window.\+xaml.\+cs.
+Definition at line 148 of file Memory\+Window.\+xaml.\+cs.
 
 \hypertarget{class_c_p_u___o_s___simulator_1_1_memory_window_a6123a0a8b93cb6636ed3c039391948a5}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Memory\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Memory\+Window}!Window\+\_\+\+Closing@{Window\+\_\+\+Closing}}
 \index{Window\+\_\+\+Closing@{Window\+\_\+\+Closing}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Memory\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Memory\+Window}}
@@ -342,7 +365,7 @@ Definition at line 134 of file Memory\+Window.\+xaml.\+cs.
 )\hspace{0.3cm}{\ttfamily [private]}}\label{class_c_p_u___o_s___simulator_1_1_memory_window_a6123a0a8b93cb6636ed3c039391948a5}
 
 
-Definition at line 153 of file Memory\+Window.\+xaml.\+cs.
+Definition at line 167 of file Memory\+Window.\+xaml.\+cs.
 
 
 
@@ -387,7 +410,11 @@ Definition at line 174 of file Memory\+Window.\+g.\+cs.
 \subsubsection[{current\+Instance}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Memory\+Window} C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Memory\+Window.\+current\+Instance\hspace{0.3cm}{\ttfamily [static]}}\label{class_c_p_u___o_s___simulator_1_1_memory_window_a870b795e3b919a82888ad608ab24d61a}
 
 
-Definition at line 15 of file Memory\+Window.\+xaml.\+cs.
+Variable to hold the current instance of the memory window 
+
+
+
+Definition at line 18 of file Memory\+Window.\+xaml.\+cs.
 
 \hypertarget{class_c_p_u___o_s___simulator_1_1_memory_window_ae1b974c8b976e19dde1a5491e3fe0e37}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Memory\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Memory\+Window}!current\+Page@{current\+Page}}
 \index{current\+Page@{current\+Page}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Memory\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Memory\+Window}}
@@ -466,9 +493,9 @@ Definition at line 150 of file Memory\+Window.\+g.\+cs.
 
 Definition at line 70 of file Memory\+Window.\+g.\+cs.
 
-\hypertarget{class_c_p_u___o_s___simulator_1_1_memory_window_a349bd876862c9360ccd4533dc8de8bf3}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Memory\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Memory\+Window}!main\+Window\+Instance@{main\+Window\+Instance}}
-\index{main\+Window\+Instance@{main\+Window\+Instance}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Memory\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Memory\+Window}}
-\subsubsection[{main\+Window\+Instance}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Main\+Window} C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Memory\+Window.\+main\+Window\+Instance\hspace{0.3cm}{\ttfamily [private]}}\label{class_c_p_u___o_s___simulator_1_1_memory_window_a349bd876862c9360ccd4533dc8de8bf3}
+\hypertarget{class_c_p_u___o_s___simulator_1_1_memory_window_afecdd32e0a0b0215d51f0630367dee3d}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Memory\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Memory\+Window}!parent\+Window@{parent\+Window}}
+\index{parent\+Window@{parent\+Window}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Memory\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Memory\+Window}}
+\subsubsection[{parent\+Window}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Main\+Window} C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Memory\+Window.\+parent\+Window\hspace{0.3cm}{\ttfamily [private]}}\label{class_c_p_u___o_s___simulator_1_1_memory_window_afecdd32e0a0b0215d51f0630367dee3d}
 
 
 Definition at line 13 of file Memory\+Window.\+xaml.\+cs.
@@ -532,12 +559,16 @@ Definition at line 166 of file Memory\+Window.\+g.\+cs.
 
 
 \subsection{Property Documentation}
-\hypertarget{class_c_p_u___o_s___simulator_1_1_memory_window_aaa625aed8c7670aed16f9ab0f9e5e080}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Memory\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Memory\+Window}!Main\+Window\+Instance@{Main\+Window\+Instance}}
-\index{Main\+Window\+Instance@{Main\+Window\+Instance}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Memory\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Memory\+Window}}
-\subsubsection[{Main\+Window\+Instance}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Main\+Window} C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Memory\+Window.\+Main\+Window\+Instance\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}\label{class_c_p_u___o_s___simulator_1_1_memory_window_aaa625aed8c7670aed16f9ab0f9e5e080}
+\hypertarget{class_c_p_u___o_s___simulator_1_1_memory_window_ad61b6543a424be98fd0a4e0fa732f3d4}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Memory\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Memory\+Window}!Parent\+Window@{Parent\+Window}}
+\index{Parent\+Window@{Parent\+Window}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Memory\+Window@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Memory\+Window}}
+\subsubsection[{Parent\+Window}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Main\+Window} C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Memory\+Window.\+Parent\+Window\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}\label{class_c_p_u___o_s___simulator_1_1_memory_window_ad61b6543a424be98fd0a4e0fa732f3d4}
 
 
-Definition at line 34 of file Memory\+Window.\+xaml.\+cs.
+Property to hold the current instance of the memory window 
+
+
+
+Definition at line 46 of file Memory\+Window.\+xaml.\+cs.
 
 
 

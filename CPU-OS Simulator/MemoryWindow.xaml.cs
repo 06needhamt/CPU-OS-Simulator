@@ -10,32 +10,46 @@ namespace CPU_OS_Simulator
     /// </summary>
     public partial class MemoryWindow : Window
     {
-        private MainWindow mainWindowInstance;
+        private MainWindow parentWindow;
         private MemoryPage currentPage;
+        /// <summary>
+        /// Variable to hold the current instance of the memory window
+        /// </summary>
         public static MemoryWindow currentInstance;
-
+        /// <summary>
+        /// Default constructor for memory window
+        /// </summary>
         public MemoryWindow()
         {
             InitializeComponent();
             currentInstance = this;
             SetMemoryWindowInstance();
         }
-
-        public MemoryWindow(MainWindow mainWindowInstance, MemoryPage currentPage) : this()
+        /// <summary>
+        /// Constructor for memory window that takes the window instance that is creating this window
+        /// PLEASE NOTE: This constructor should always be used so data can be passed back to the main window
+        /// </summary>
+        /// <param name="parentWindow">The window that is creating this window </param>
+        /// <param name="currentPage"> The memory page to be displayed in the window </param>
+        public MemoryWindow(MainWindow parentWindow, MemoryPage currentPage) : this()
         {
-            this.mainWindowInstance = mainWindowInstance;
+            this.parentWindow = parentWindow;
             this.currentPage = currentPage;
             currentInstance = this;
             SetMemoryWindowInstance();
             PopulateDataView();
         }
-
-        public MainWindow MainWindowInstance
+        /// <summary>
+        /// Property to hold the current instance of the memory window
+        /// </summary>
+        public MainWindow ParentWindow
         {
-            get { return mainWindowInstance; }
-            set { mainWindowInstance = value; }
+            get { return parentWindow; }
+            set { parentWindow = value; }
         }
-
+        /// <summary>
+        /// This function populates the data view with the contents of the current memoryPage
+        /// </summary>
         private void PopulateDataView()
         {
             if (currentPage != null)
@@ -155,7 +169,10 @@ namespace CPU_OS_Simulator
             currentInstance = null;
             SetMemoryWindowInstance();
         }
-
+        /// <summary>
+        /// This method sets the current instance of memory window in the window bridge 
+        /// so it can be accessed by other modules 
+        /// </summary>
         private void SetMemoryWindowInstance()
         {
             Assembly windowBridge = Assembly.LoadFrom("CPU_OS_Simulator.WindowBridge.dll"); // Load the window bridge module

@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CPU_OS_Simulator"
         mc:Ignorable="d"
-        Title="ConsoleWindow" Height="404.796" Width="635.092" Closing="ConsoleWindow1_Closing">
+        Title="ConsoleWindow" Height="404.796" Width="635.092" Closing="ConsoleWindow1_Closing" ResizeMode="NoResize" Icon="CPU-OS Simulator 7-5-50_1.ico">
     <Grid Height="296" VerticalAlignment="Top">
         <Grid x:Name="grid_MainGrid" HorizontalAlignment="Left" Height="400
               " VerticalAlignment="Top" Width="627">

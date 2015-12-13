@@ -25,13 +25,15 @@ var hierarchy =
     [ "CPU_OS_Simulator.Console.Extentions", "class_c_p_u___o_s___simulator_1_1_console_1_1_extentions.html", null ],
     [ "CPU_OS_Simulator.Console.IAttribute< T >", "interface_c_p_u___o_s___simulator_1_1_console_1_1_i_attribute.html", null ],
     [ "CPU_OS_Simulator.CPU.IAttribute< T >", "interface_c_p_u___o_s___simulator_1_1_c_p_u_1_1_i_attribute.html", null ],
-    [ "CPU_OS_Simulator.Console.IAttribute< int >", "interface_c_p_u___o_s___simulator_1_1_console_1_1_i_attribute.html", [
-      [ "CPU_OS_Simulator.Console.NumberOfParametersAttribute", "class_c_p_u___o_s___simulator_1_1_console_1_1_number_of_parameters_attribute.html", null ]
-    ] ],
     [ "CPU_OS_Simulator.CPU.IAttribute< int >", "interface_c_p_u___o_s___simulator_1_1_c_p_u_1_1_i_attribute.html", [
       [ "CPU_OS_Simulator.CPU.NumberOfOperandsAttribute", "class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_number_of_operands_attribute.html", null ]
     ] ],
+    [ "CPU_OS_Simulator.Console.IAttribute< int >", "interface_c_p_u___o_s___simulator_1_1_console_1_1_i_attribute.html", [
+      [ "CPU_OS_Simulator.Console.NumberOfParametersAttribute", "class_c_p_u___o_s___simulator_1_1_console_1_1_number_of_parameters_attribute.html", null ]
+    ] ],
     [ "IComponentConnector", null, [
+      [ "CPU_OS_Simulator.ColourPickerWindow", "class_c_p_u___o_s___simulator_1_1_colour_picker_window.html", null ],
+      [ "CPU_OS_Simulator.ColourPickerWindow", "class_c_p_u___o_s___simulator_1_1_colour_picker_window.html", null ],
       [ "CPU_OS_Simulator.ConsoleWindow", "class_c_p_u___o_s___simulator_1_1_console_window.html", null ],
       [ "CPU_OS_Simulator.ConsoleWindow", "class_c_p_u___o_s___simulator_1_1_console_window.html", null ],
       [ "CPU_OS_Simulator.InstructionsWindow", "class_c_p_u___o_s___simulator_1_1_instructions_window.html", null ],
@@ -70,13 +72,14 @@ var hierarchy =
     [ "CPU_OS_Simulator.Memory.PageTableEntry", "class_c_p_u___o_s___simulator_1_1_memory_1_1_page_table_entry.html", null ],
     [ "CPU_OS_Simulator.CPU.ProgramStack", "class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_program_stack.html", null ],
     [ "CPU_OS_Simulator.CPU.Tests.ProgramStackTests", "class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_tests_1_1_program_stack_tests.html", null ],
-    [ "CPU_OS_Simulator.CPU.Register", "class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_register.html", null ],
+    [ "CPU_OS_Simulator.CPU.Register", "class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_register.html", [
+      [ "CPU_OS_Simulator.CPU.SpecialRegister", "class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_special_register.html", null ]
+    ] ],
     [ "CPU_OS_Simulator.CPU.Tests.RegisterTests", "class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_tests_1_1_register_tests.html", null ],
     [ "CPU_OS_Simulator.Properties.Resources", "class_c_p_u___o_s___simulator_1_1_properties_1_1_resources.html", null ],
     [ "CPU_OS_Simulator.CPU.SimulatorProgram", "class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_simulator_program.html", null ],
     [ "CPU_OS_Simulator.CPU.Tests.SimulatorProgramTests", "class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_tests_1_1_simulator_program_tests.html", null ],
     [ "CPU_OS_Simulator.Compiler.SourceFile", "class_c_p_u___o_s___simulator_1_1_compiler_1_1_source_file.html", null ],
-    [ "CPU_OS_Simulator.CPU.SpecialRegister", "class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_special_register.html", null ],
     [ "CPU_OS_Simulator.CPU.Tests.SpecialRegisterTests", "class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_tests_1_1_special_register_tests.html", null ],
     [ "CPU_OS_Simulator.CPU.StackItem", "class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_stack_item.html", null ],
     [ "CPU_OS_Simulator.CPU.Tests.StackItemTests", "class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_tests_1_1_stack_item_tests.html", null ],
@@ -84,6 +87,9 @@ var hierarchy =
     [ "CPU_OS_Simulator.CPU.Tests.StatusFlagsTests", "class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_tests_1_1_status_flags_tests.html", null ],
     [ "CPU_OS_Simulator.Memory.SwapSpace", "class_c_p_u___o_s___simulator_1_1_memory_1_1_swap_space.html", null ],
     [ "Window", null, [
+      [ "CPU_OS_Simulator.ColourPickerWindow", "class_c_p_u___o_s___simulator_1_1_colour_picker_window.html", null ],
+      [ "CPU_OS_Simulator.ColourPickerWindow", "class_c_p_u___o_s___simulator_1_1_colour_picker_window.html", null ],
+      [ "CPU_OS_Simulator.ColourPickerWindow", "class_c_p_u___o_s___simulator_1_1_colour_picker_window.html", null ],
       [ "CPU_OS_Simulator.ConsoleWindow", "class_c_p_u___o_s___simulator_1_1_console_window.html", null ],
       [ "CPU_OS_Simulator.ConsoleWindow", "class_c_p_u___o_s___simulator_1_1_console_window.html", null ],
       [ "CPU_OS_Simulator.ConsoleWindow", "class_c_p_u___o_s___simulator_1_1_console_window.html", null ],

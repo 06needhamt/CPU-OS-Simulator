@@ -53,11 +53,14 @@ namespace CPU_OS_Simulator
         {
             //InitializeComponent();
             this.owner = owner;
-#if DEBUG
-            owner.SayHello();
-#endif
         }
-
+        /// <summary>
+        /// Constructor for instruction window that takes the window instance that is creating this window
+        /// PLEASE NOTE: This constructor should always be used so data can be passed back to the main window
+        /// and the correct instruction mode if necessary 
+        /// </summary>
+        /// <param name="owner">The window that is creating this window </param>
+        /// <param name="instructionMode"> the selected instruction mode</param>
         public InstructionsWindow(MainWindow owner, EnumInstructionMode instructionMode) : this(owner)
         {
             this.instructionMode = instructionMode;
@@ -661,12 +664,6 @@ namespace CPU_OS_Simulator
             int SelectedTab = InstructionTabs.SelectedIndex;
             InstructionCreationFunctions[SelectedTab]();
         }
-
-        /// <summary>
-        /// Finds the register object for the selected register
-        /// </summary>
-        /// <param name="selectedItem"> the selected register</param>
-        /// <returns>The register object of the selected register</returns>
 
         #region UI control
 

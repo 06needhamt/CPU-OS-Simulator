@@ -1,5 +1,8 @@
 var searchData=
 [
+  ['colourpickerwindow_2eg_2ecs',['ColourPickerWindow.g.cs',['../_colour_picker_window_8g_8cs.html',1,'']]],
+  ['colourpickerwindow_2eg_2ei_2ecs',['ColourPickerWindow.g.i.cs',['../_colour_picker_window_8g_8i_8cs.html',1,'']]],
+  ['colourpickerwindow_2examl_2ecs',['ColourPickerWindow.xaml.cs',['../_colour_picker_window_8xaml_8cs.html',1,'']]],
   ['compiledprogram_2ecs',['CompiledProgram.cs',['../_compiled_program_8cs.html',1,'']]],
   ['compilerfrontend_2ecs',['CompilerFrontend.cs',['../_compiler_frontend_8cs.html',1,'']]],
   ['consolecommand_2ecs',['ConsoleCommand.cs',['../_console_command_8cs.html',1,'']]],

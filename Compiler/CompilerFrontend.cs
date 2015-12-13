@@ -46,7 +46,7 @@ namespace CPU_OS_Simulator.Compiler
             foreach (Instruction ins in instructions)
             {
                 List<InstructionSegment> segList = new List<InstructionSegment>();
-                segList.Add(new InstructionSegment((byte)ins.Opcode,(int) EnumSegmentSizes.OPCODE,EnumSegmentType.VALUE));
+                segList.Add(new InstructionSegment((byte)ins.Opcode,(int) EnumInstructionSegmentSizes.OPCODE,EnumSegmentType.VALUE));
                 if (ins.Operand1 == null && ins.Operand1 == null) // if the instruction takes no operands
                 {
                     continue;
@@ -55,12 +55,12 @@ namespace CPU_OS_Simulator.Compiler
                 {
                     if (ins.Operand1.IsRegister) // if the first operand is a register
                     {
-                        segList.Add(new InstructionSegment(ins.Operand1.Value, (int) EnumSegmentSizes.OPERAND,
+                        segList.Add(new InstructionSegment(ins.Operand1.Value, (int) EnumInstructionSegmentSizes.OPERAND,
                             EnumSegmentType.REGISTER, ins.Operand1.Register.Name));
                     }
                     else // if the first operand is a value
                     {
-                        segList.Add(new InstructionSegment(ins.Operand1.Value, (int) EnumSegmentSizes.OPERAND,
+                        segList.Add(new InstructionSegment(ins.Operand1.Value, (int) EnumInstructionSegmentSizes.OPERAND,
                             EnumSegmentType.VALUE));
                     }
                 }
@@ -68,22 +68,22 @@ namespace CPU_OS_Simulator.Compiler
                 {
                     if (ins.Operand1.IsRegister) // if the first operand is a register
                     {
-                        segList.Add(new InstructionSegment(ins.Operand1.Value, (int) EnumSegmentSizes.OPERAND,
+                        segList.Add(new InstructionSegment(ins.Operand1.Value, (int) EnumInstructionSegmentSizes.OPERAND,
                             EnumSegmentType.REGISTER,ins.Operand1.Register.Name));
                     }
                     else // if the second operand is a value
                     {
-                        segList.Add(new InstructionSegment(ins.Operand1.Value, (int) EnumSegmentSizes.OPERAND,
+                        segList.Add(new InstructionSegment(ins.Operand1.Value, (int) EnumInstructionSegmentSizes.OPERAND,
                             EnumSegmentType.VALUE));
                     }
                     if (ins.Operand2.IsRegister) // if the second operand is a register
                     {
-                        segList.Add(new InstructionSegment(ins.Operand2.Value, (int) EnumSegmentSizes.OPERAND,
+                        segList.Add(new InstructionSegment(ins.Operand2.Value, (int) EnumInstructionSegmentSizes.OPERAND,
                             EnumSegmentType.REGISTER, ins.Operand1.Register.Name));
                     }
                     else // if the first operand is a value
                     {
-                        segList.Add(new InstructionSegment(ins.Operand2.Value, (int) EnumSegmentSizes.OPERAND,
+                        segList.Add(new InstructionSegment(ins.Operand2.Value, (int) EnumInstructionSegmentSizes.OPERAND,
                             EnumSegmentType.VALUE));
                     }
                 }
