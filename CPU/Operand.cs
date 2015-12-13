@@ -57,7 +57,9 @@ namespace CPU_OS_Simulator.CPU
         #endregion Constructors
 
         #region Properties
-
+        /// <summary>
+        /// Property for the value of the operand
+        /// </summary>
         public int Value
         {
             get
@@ -70,8 +72,10 @@ namespace CPU_OS_Simulator.CPU
                 this.value = value;
             }
         }
-
-        internal EnumOperandType Type
+        /// <summary>
+        /// Property For the type of the operand
+        /// </summary>
+        public EnumOperandType Type
         {
             get
             {
@@ -83,7 +87,9 @@ namespace CPU_OS_Simulator.CPU
                 type = value;
             }
         }
-
+        /// <summary>
+        /// Property for whether the operand is a register or not
+        /// </summary>
         public bool IsRegister
         {
             get
@@ -96,7 +102,10 @@ namespace CPU_OS_Simulator.CPU
                 isRegister = value;
             }
         }
-
+        /// <summary>
+        /// Property for the register that this operand represents
+        /// or null if the operand is not a register
+        /// </summary>
         public Register Register
         {
             get

@@ -37,6 +37,10 @@ namespace CPU_OS_Simulator.CPU
 
         #region Constructors
 
+        /// <summary>
+        /// Default constructor used when deserialising a simulator program
+        /// NOTE: Do not use in code!
+        /// </summary>
         public SimulatorProgram()
         {
         }
@@ -57,7 +61,6 @@ namespace CPU_OS_Simulator.CPU
             startAddress = baseAddress;
             unit = new ExecutionUnit(this, 100);
             stack = new ProgramStack();
-            memory = AllocateMemory();
             Console.WriteLine("Program Created");
         }
 
@@ -129,7 +132,9 @@ namespace CPU_OS_Simulator.CPU
                 instructions = value;
             }
         }
-
+        /// <summary>
+        /// Property for the logical address of the program
+        /// </summary>
         public int LogicalAddress
         {
             get
@@ -142,21 +147,9 @@ namespace CPU_OS_Simulator.CPU
                 logicalAddress = value;
             }
         }
-
-        [ScriptIgnore]
-        public List<MemoryPage> Memory
-        {
-            get
-            {
-                return memory;
-            }
-
-            set
-            {
-                memory = value;
-            }
-        }
-
+        /// <summary>
+        /// Property for the stack of the program
+        /// </summary>
         [ScriptIgnore]
         public ProgramStack Stack
         {
@@ -174,17 +167,20 @@ namespace CPU_OS_Simulator.CPU
         #endregion Properties
 
         #region Methods
-
+        [Obsolete("function no longer used with new memory manager",true)]
         public List<MemoryPage> AllocateMemory()
         {
             List<MemoryPage> memoryPages = new List<MemoryPage>(pages);
             for (int i = 0; i < pages; i++)
             {
-                memoryPages.Add(new MemoryPage(i, (i *MemoryPage.PAGE_SIZE)));
+                memoryPages.Add(new MemoryPage(i, (i * MemoryPage.PAGE_SIZE)));
             }
             return memoryPages;
         }
-
+        /// <summary>
+        /// This function adds an instruction to the end of the program
+        /// </summary>
+        /// <param name="ins">The instruction to add</param>
         public void AddInstruction(ref Instruction ins)
         {
             //int address = CalculateAddress(ins,instructions.Count);
@@ -193,6 +189,11 @@ namespace CPU_OS_Simulator.CPU
             UpdateAddresses();
         }
 
+        /// <summary>
+        /// This function adds an instruction to the program at the passed index
+        /// </summary>
+        /// <param name="ins"> the instruction to add</param>
+        /// <param name="index"> the index to add the instruction at</param>
         public void AddInstruction(ref Instruction ins, int index)
         {
             //int address = CalculateAddress(ins,instructions.Count);
@@ -200,7 +201,10 @@ namespace CPU_OS_Simulator.CPU
             instructions.Insert(index, ins);
             UpdateAddresses();
         }
-
+        /// <summary>
+        /// This function updates the addresses of the instructions 
+        /// after an instruction is moved or deleted
+        /// </summary>
         public void UpdateAddresses()
         {
             int phyaddress = baseAddress;
@@ -223,7 +227,12 @@ namespace CPU_OS_Simulator.CPU
             //phyaddress += instruction.Size;
             //return logaddress;
         }
-
+        /// <summary>
+        /// This function calculates an address for an instruction
+        /// </summary>
+        /// <param name="instruction"> the instruction to calculate the address for</param>
+        /// <param name="index"> the index of the instruction </param>
+        /// <returns></returns>
         private int CalculateAddress(Instruction instruction, int index)
         {
             int phyaddress = baseAddress;

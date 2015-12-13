@@ -2,6 +2,9 @@
 
 namespace CPU_OS_Simulator.CPU
 {
+    /// <summary>
+    /// This class represents a CPU register
+    /// </summary>
     public class Register
     {
         private string name;
@@ -30,17 +33,28 @@ namespace CPU_OS_Simulator.CPU
         public static Register R19 = new Register("R19");
         public static Register R20 = new Register("R20");
 
+        /// <summary>
+        /// Default constructor for a register used when deserialising a register
+        /// NOTE: Do not use in code!
+        /// </summary>
         public Register()
         {
         }
 
+        /// <summary>
+        /// Protected constructor for a register
+        /// this is the primary constructor for a register.
+        /// </summary>
+        /// <param name="name"> the name of the register</param>
         protected Register(string name)
         {
             this.name = name;
             value = 0;
             type = EnumOperandType.VALUE;
         }
-
+        /// <summary>
+        /// Property for the name of the register
+        /// </summary>
         public string Name
         {
             get
@@ -53,7 +67,9 @@ namespace CPU_OS_Simulator.CPU
                 name = value;
             }
         }
-
+        /// <summary>
+        /// Property of the value stored within the register
+        /// </summary>
         public int Value
         {
             get
@@ -66,7 +82,10 @@ namespace CPU_OS_Simulator.CPU
                 this.value = value;
             }
         }
-
+        /// <summary>
+        /// Property for the type of data in the register
+        /// i.e. Value or Memory Address
+        /// </summary>
         public EnumOperandType Type
         {
             get
@@ -90,10 +109,14 @@ namespace CPU_OS_Simulator.CPU
             this.value = value;
             this.type = type;
         }
-
-        public static Register FindRegister(string selectedItem)
+        /// <summary>
+        /// This function finds a register by its name
+        /// </summary>
+        /// <param name="name"> the name of the register to find</param>
+        /// <returns> the requested register</returns>
+        public static Register FindRegister(string name)
         {
-            switch (selectedItem)
+            switch (name)
             {
                 case "R00":
                     {

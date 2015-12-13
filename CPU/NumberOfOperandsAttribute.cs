@@ -20,7 +20,9 @@ namespace CPU_OS_Simulator.CPU
         {
             this.value = value;
         }
-
+        /// <summary>
+        ///  Property for the value of the attribute
+        /// </summary>
         public int Value
         {
             get

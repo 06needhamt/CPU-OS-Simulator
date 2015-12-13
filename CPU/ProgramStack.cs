@@ -64,7 +64,7 @@ namespace CPU_OS_Simulator.CPU
         }
 
         /// <summary>
-        /// This method sets an annotation to a stack item
+        /// This function sets an annotation to a stack item
         /// BOS if the item is at the bottom of the stack
         /// TOS if the item is at the top of the stack
         /// or an empty string if it in the middle of the stack
@@ -111,7 +111,10 @@ namespace CPU_OS_Simulator.CPU
             SetAnnotations();
             return value;
         }
-
+        /// <summary>
+        /// This function gets the main window instance from the window bridge
+        /// </summary>
+        /// <returns> the active instance of main window </returns>
         private dynamic GetMainWindowInstance()
         {
             Assembly windowBridge = Assembly.LoadFrom("CPU_OS_Simulator.WindowBridge.dll"); // Load the window bridge module
@@ -124,7 +127,9 @@ namespace CPU_OS_Simulator.CPU
        #endregion Methods
 
         #region Properties
-
+        /// <summary>
+        /// Property for the list of items that are currently on the stack
+        /// </summary>
         public List<StackItem> StackItems
         {
             get
@@ -138,7 +143,9 @@ namespace CPU_OS_Simulator.CPU
                 stackSize = stackItems.Count;
             }
         }
-
+        /// <summary>
+        /// Property for the maximum stack size
+        /// </summary>
         public int MaxStackSize
         {
             get
@@ -146,7 +153,9 @@ namespace CPU_OS_Simulator.CPU
                 return maxStackSize;
             }
         }
-
+        /// <summary>
+        /// Property for the current stack size
+        /// </summary>
         public int StackSize
         {
             get

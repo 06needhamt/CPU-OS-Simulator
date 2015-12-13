@@ -741,10 +741,6 @@ namespace CPU_OS_Simulator
                 {
                     prog.Stack = new ProgramStack();
                 }
-                if (prog.Memory == null)
-                {
-                    prog.Memory = prog.AllocateMemory();
-                }
                 for (int i = 0; i < prog.Pages; i++)
                 {
                     MemoryPage memoryPage = new MemoryPage(i, (i*MemoryPage.PAGE_SIZE));
@@ -817,7 +813,7 @@ namespace CPU_OS_Simulator
             executionWorker.ProgressChanged += new ProgressChangedEventHandler(UpdateInterface);
         }
         /// <summary>
-        /// Asynchronous method called after every instruction is executed to update required values and user interface asynchronously
+        /// Asynchronous function called after every instruction is executed to update required values and user interface asynchronously
         /// </summary>
         /// <param name="sender"> the object that triggered this event</param>
         /// <param name="args">The parameters passed to this event ></param>
@@ -842,9 +838,9 @@ namespace CPU_OS_Simulator
         }
 
         /// <summary>
-        /// Asynchronous method called after every instruction is executed to update required values and user interface asynchronously
+        /// Asynchronous function called after every instruction is executed to update required values and user interface asynchronously
         /// </summary>
-        /// <returns> A task to indicate to the main thread that the method has finished executing</returns>
+        /// <returns> A task to indicate to the main thread that the function has finished executing</returns>
         private async Task<int> UpdateInterface()
         {
             SimulatorProgram prog = programList.Where(x => x.Name.Equals(currentProgram)).FirstOrDefault();
@@ -861,7 +857,7 @@ namespace CPU_OS_Simulator
         }
 
         /// <summary>
-        /// Asynchronous method called to begin executing a program on the execution thread
+        /// Asynchronous function called to begin executing a program on the execution thread
         /// </summary>
         /// <param name="program"> The program object to execute</param>
         private async void ExecuteProgram(object program)
@@ -881,7 +877,7 @@ namespace CPU_OS_Simulator
         /// Bridge function used to call functions on the main thread from within the background thread
         /// </summary>
         /// <param name="FunctionPointer"> The function to call </param>
-        /// <returns>A task to indicate to the main thread that the method has finished executing</returns>
+        /// <returns>A task to indicate to the main thread that the function has finished executing</returns>
         private async Task<int> CallFromMainThread(Func<Task<int>> FunctionPointer)
         {
             var invoke = dispatcher?.Invoke(FunctionPointer);
@@ -971,10 +967,13 @@ namespace CPU_OS_Simulator
 
         private void btn_ShowMemory_Click(object sender, RoutedEventArgs e)
         {
-            SimulatorProgram program = programList.Where(x => x.Name.Equals(currentProgram)).FirstOrDefault();
-            if (program == null) return;
-            MemoryWindow m = new MemoryWindow(this,program.Memory.FirstOrDefault());
-            m.Show();
+            //SimulatorProgram program = programList.Where(x => x.Name.Equals(currentProgram)).FirstOrDefault();
+            //if (program == null) return;
+            //MemoryWindow m = new MemoryWindow(this,program.Memory.FirstOrDefault());
+            //m.Show();
+
+            MessageBox.Show("This Button is not implemented yet", "Not implemented", MessageBoxButton.OK,
+                MessageBoxImage.Information);
         }
 
         private void btn_Console_Click(object sender, RoutedEventArgs e)

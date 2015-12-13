@@ -18,18 +18,18 @@ int \hyperlink{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_program_stack_a32a272
 \begin{DoxyCompactItemize}
 \item 
 List$<$ \hyperlink{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_stack_item}{Stack\+Item} $>$ \hyperlink{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_program_stack_a13eb0a485bbcdba8a38bbf80e78692c7}{Stack\+Items}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
-\item 
+\begin{DoxyCompactList}\small\item\em Property for the list of items that are currently on the stack \end{DoxyCompactList}\item 
 int \hyperlink{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_program_stack_a5ed770e83658cfcde6e451c27342dca3}{Max\+Stack\+Size}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
-\item 
+\begin{DoxyCompactList}\small\item\em Property for the maximum stack size \end{DoxyCompactList}\item 
 int \hyperlink{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_program_stack_ac9cedcbfdf26ffa757042280f21da367}{Stack\+Size}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Property for the current stack size \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Private Member Functions}
 \begin{DoxyCompactItemize}
 \item 
 void \hyperlink{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_program_stack_a64ba20aa2a49863d1197a9aeb31b4a13}{Set\+Annotations} ()
-\begin{DoxyCompactList}\small\item\em This method sets an annotation to a stack item B\+O\+S if the item is at the bottom of the stack T\+O\+S if the item is at the top of the stack or an empty string if it in the middle of the stack \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em This function sets an annotation to a stack item B\+O\+S if the item is at the bottom of the stack T\+O\+S if the item is at the top of the stack or an empty string if it in the middle of the stack \end{DoxyCompactList}\item 
 dynamic \hyperlink{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_program_stack_a5e86416fb4e4bdff3605a40f521ea211}{Get\+Main\+Window\+Instance} ()
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em This function gets the main window instance from the window bridge \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Private Attributes}
 \begin{DoxyCompactItemize}
 \item 
@@ -78,7 +78,14 @@ Definition at line 38 of file Program\+Stack.\+cs.
 )\hspace{0.3cm}{\ttfamily [private]}}\label{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_program_stack_a5e86416fb4e4bdff3605a40f521ea211}
 
 
-Definition at line 115 of file Program\+Stack.\+cs.
+This function gets the main window instance from the window bridge 
+
+\begin{DoxyReturn}{Returns}
+the active instance of main window 
+\end{DoxyReturn}
+
+
+Definition at line 118 of file Program\+Stack.\+cs.
 
 \hypertarget{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_program_stack_a32a272fedcd1d8ac5673b3ef90689519}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Program\+Stack@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Program\+Stack}!pop\+Item@{pop\+Item}}
 \index{pop\+Item@{pop\+Item}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Program\+Stack@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Program\+Stack}}
@@ -127,7 +134,7 @@ Definition at line 51 of file Program\+Stack.\+cs.
 )\hspace{0.3cm}{\ttfamily [private]}}\label{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_program_stack_a64ba20aa2a49863d1197a9aeb31b4a13}
 
 
-This method sets an annotation to a stack item B\+O\+S if the item is at the bottom of the stack T\+O\+S if the item is at the top of the stack or an empty string if it in the middle of the stack 
+This function sets an annotation to a stack item B\+O\+S if the item is at the bottom of the stack T\+O\+S if the item is at the top of the stack or an empty string if it in the middle of the stack 
 
 
 
@@ -177,21 +184,33 @@ Definition at line 29 of file Program\+Stack.\+cs.
 \subsubsection[{Max\+Stack\+Size}]{\setlength{\rightskip}{0pt plus 5cm}int C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+C\+P\+U.\+Program\+Stack.\+Max\+Stack\+Size\hspace{0.3cm}{\ttfamily [get]}}\label{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_program_stack_a5ed770e83658cfcde6e451c27342dca3}
 
 
-Definition at line 143 of file Program\+Stack.\+cs.
+Property for the maximum stack size 
+
+
+
+Definition at line 150 of file Program\+Stack.\+cs.
 
 \hypertarget{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_program_stack_a13eb0a485bbcdba8a38bbf80e78692c7}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Program\+Stack@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Program\+Stack}!Stack\+Items@{Stack\+Items}}
 \index{Stack\+Items@{Stack\+Items}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Program\+Stack@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Program\+Stack}}
 \subsubsection[{Stack\+Items}]{\setlength{\rightskip}{0pt plus 5cm}List$<${\bf Stack\+Item}$>$ C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+C\+P\+U.\+Program\+Stack.\+Stack\+Items\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}\label{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_program_stack_a13eb0a485bbcdba8a38bbf80e78692c7}
 
 
-Definition at line 129 of file Program\+Stack.\+cs.
+Property for the list of items that are currently on the stack 
+
+
+
+Definition at line 134 of file Program\+Stack.\+cs.
 
 \hypertarget{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_program_stack_ac9cedcbfdf26ffa757042280f21da367}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Program\+Stack@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Program\+Stack}!Stack\+Size@{Stack\+Size}}
 \index{Stack\+Size@{Stack\+Size}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Program\+Stack@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Program\+Stack}}
 \subsubsection[{Stack\+Size}]{\setlength{\rightskip}{0pt plus 5cm}int C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+C\+P\+U.\+Program\+Stack.\+Stack\+Size\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}\label{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_program_stack_ac9cedcbfdf26ffa757042280f21da367}
 
 
-Definition at line 151 of file Program\+Stack.\+cs.
+Property for the current stack size 
+
+
+
+Definition at line 160 of file Program\+Stack.\+cs.
 
 
 

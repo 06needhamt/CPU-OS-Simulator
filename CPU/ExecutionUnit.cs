@@ -121,7 +121,9 @@ namespace CPU_OS_Simulator.CPU
         #endregion Methods
 
         #region Properties
-
+        /// <summary>
+        /// Property for the current program being executed
+        /// </summary>
         public SimulatorProgram Program
         {
             get
@@ -134,7 +136,9 @@ namespace CPU_OS_Simulator.CPU
                 program = value;
             }
         }
-
+        /// <summary>
+        /// Property for the clock speed that the virtual CPU is running at
+        /// </summary>
         public int ClockSpeed
         {
             get
@@ -147,7 +151,9 @@ namespace CPU_OS_Simulator.CPU
                 clockSpeed = value;
             }
         }
-
+        /// <summary>
+        /// Property for whether the execution unit should be stopped
+        /// </summary>
         public bool Stop
         {
             get
@@ -160,7 +166,9 @@ namespace CPU_OS_Simulator.CPU
                 stop = value;
             }
         }
-
+        /// <summary>
+        /// Property for whether the execution unit has reached the end of the program
+        /// </summary>
         public bool Done
         {
             get
@@ -173,7 +181,9 @@ namespace CPU_OS_Simulator.CPU
                 done = value;
             }
         }
-
+        /// <summary>
+        /// Property for the index of the instruction currently being executed
+        /// </summary>
         public int CurrentIndex
         {
             get
@@ -186,7 +196,9 @@ namespace CPU_OS_Simulator.CPU
                 currentIndex = value;
             }
         }
-
+        /// <summary>
+        /// Property for the logical address of the instruction currently being executed
+        /// </summary>
         public int LogicalAddress
         {
             get
@@ -199,7 +211,9 @@ namespace CPU_OS_Simulator.CPU
                 logicalAddress = value;
             }
         }
-
+        /// <summary>
+        /// Property for the current instruction being executed
+        /// </summary>
         public Instruction CurrentInstruction
         {
             get

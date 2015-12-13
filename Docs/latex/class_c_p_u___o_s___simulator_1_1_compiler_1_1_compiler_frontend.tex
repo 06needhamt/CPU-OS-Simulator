@@ -1,16 +1,21 @@
 \hypertarget{class_c_p_u___o_s___simulator_1_1_compiler_1_1_compiler_frontend}{}\section{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Compiler.\+Compiler\+Frontend Class Reference}
 \label{class_c_p_u___o_s___simulator_1_1_compiler_1_1_compiler_frontend}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Compiler.\+Compiler\+Frontend@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Compiler.\+Compiler\+Frontend}}
+
+
+This class represents the front end of the compiler which is responsible for compiling programs  
+
+
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
 \hyperlink{class_c_p_u___o_s___simulator_1_1_compiler_1_1_compiler_frontend_ac3122a57986de8d3bfb16a78af8e49a1}{Compiler\+Frontend} (\hyperlink{class_c_p_u___o_s___simulator_1_1_compiler_1_1_source_file}{Source\+File} \hyperlink{class_c_p_u___o_s___simulator_1_1_compiler_1_1_compiler_frontend_a57d54910e0df9189cf333b95d9123641}{file})
-\item 
+\begin{DoxyCompactList}\small\item\em Constructor for \hyperlink{namespace_c_p_u___o_s___simulator_1_1_compiler}{Compiler} front end when compiling source files \end{DoxyCompactList}\item 
 \hyperlink{class_c_p_u___o_s___simulator_1_1_compiler_1_1_compiler_frontend_a57babee24613e50fd2b9ed00578d707e}{Compiler\+Frontend} (List$<$ \hyperlink{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_instruction}{Instruction} $>$ \hyperlink{class_c_p_u___o_s___simulator_1_1_compiler_1_1_compiler_frontend_aec71846f593e4bdcbd7d63a49b3b25bd}{instructions}, string \hyperlink{class_c_p_u___o_s___simulator_1_1_compiler_1_1_compiler_frontend_a2b4facf897341f61d4db60dc7fdc67c4}{name})
-\item 
+\begin{DoxyCompactList}\small\item\em Constructor for compiler front end when compiling instructions \end{DoxyCompactList}\item 
 List$<$ List$<$ \hyperlink{class_c_p_u___o_s___simulator_1_1_compiler_1_1_instruction_segment}{Instruction\+Segment} $>$ $>$ \hyperlink{class_c_p_u___o_s___simulator_1_1_compiler_1_1_compiler_frontend_abe29382de80d0cc7c0803477b6904850}{Compile\+From\+Instructions} ()
-\item 
+\begin{DoxyCompactList}\small\item\em This function compiles a program from instructions \end{DoxyCompactList}\item 
 List$<$ byte $>$ \hyperlink{class_c_p_u___o_s___simulator_1_1_compiler_1_1_compiler_frontend_adcf4f8a206954bd1b4aa637430c630fb}{Compile\+To\+Bytes} (List$<$ List$<$ \hyperlink{class_c_p_u___o_s___simulator_1_1_compiler_1_1_instruction_segment}{Instruction\+Segment} $>$$>$ segment\+Lists)
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em This function compiles a list of lists of instruction segments to their byte values \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Private Attributes}
 \begin{DoxyCompactItemize}
 \item 
@@ -25,9 +30,11 @@ string \hyperlink{class_c_p_u___o_s___simulator_1_1_compiler_1_1_compiler_fronte
 
 
 \subsection{Detailed Description}
+This class represents the front end of the compiler which is responsible for compiling programs 
 
 
-Definition at line 8 of file Compiler\+Frontend.\+cs.
+
+Definition at line 12 of file Compiler\+Frontend.\+cs.
 
 
 
@@ -41,7 +48,16 @@ Definition at line 8 of file Compiler\+Frontend.\+cs.
 )}\label{class_c_p_u___o_s___simulator_1_1_compiler_1_1_compiler_frontend_ac3122a57986de8d3bfb16a78af8e49a1}
 
 
-Definition at line 15 of file Compiler\+Frontend.\+cs.
+Constructor for \hyperlink{namespace_c_p_u___o_s___simulator_1_1_compiler}{Compiler} front end when compiling source files 
+
+
+\begin{DoxyParams}{Parameters}
+{\em file} & the source file to compile\\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 23 of file Compiler\+Frontend.\+cs.
 
 \hypertarget{class_c_p_u___o_s___simulator_1_1_compiler_1_1_compiler_frontend_a57babee24613e50fd2b9ed00578d707e}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Compiler\+Frontend@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Compiler\+Frontend}!Compiler\+Frontend@{Compiler\+Frontend}}
 \index{Compiler\+Frontend@{Compiler\+Frontend}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Compiler\+Frontend@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Compiler\+Frontend}}
@@ -53,7 +69,18 @@ Definition at line 15 of file Compiler\+Frontend.\+cs.
 )}\label{class_c_p_u___o_s___simulator_1_1_compiler_1_1_compiler_frontend_a57babee24613e50fd2b9ed00578d707e}
 
 
-Definition at line 21 of file Compiler\+Frontend.\+cs.
+Constructor for compiler front end when compiling instructions 
+
+
+\begin{DoxyParams}{Parameters}
+{\em instructions} & the instructions to compile\\
+\hline
+{\em name} & the name of the program to compile\\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 33 of file Compiler\+Frontend.\+cs.
 
 
 
@@ -67,7 +94,14 @@ Definition at line 21 of file Compiler\+Frontend.\+cs.
 )}\label{class_c_p_u___o_s___simulator_1_1_compiler_1_1_compiler_frontend_abe29382de80d0cc7c0803477b6904850}
 
 
-Definition at line 28 of file Compiler\+Frontend.\+cs.
+This function compiles a program from instructions 
+
+\begin{DoxyReturn}{Returns}
+a list of lists of instruction segments that represent the original instructions
+\end{DoxyReturn}
+
+
+Definition at line 43 of file Compiler\+Frontend.\+cs.
 
 \hypertarget{class_c_p_u___o_s___simulator_1_1_compiler_1_1_compiler_frontend_adcf4f8a206954bd1b4aa637430c630fb}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Compiler\+Frontend@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Compiler\+Frontend}!Compile\+To\+Bytes@{Compile\+To\+Bytes}}
 \index{Compile\+To\+Bytes@{Compile\+To\+Bytes}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Compiler\+Frontend@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Compiler\+Frontend}}
@@ -78,7 +112,19 @@ Definition at line 28 of file Compiler\+Frontend.\+cs.
 )}\label{class_c_p_u___o_s___simulator_1_1_compiler_1_1_compiler_frontend_adcf4f8a206954bd1b4aa637430c630fb}
 
 
-Definition at line 80 of file Compiler\+Frontend.\+cs.
+This function compiles a list of lists of instruction segments to their byte values 
+
+
+\begin{DoxyParams}{Parameters}
+{\em segment\+Lists} & a list of lists of instruction segments to be compiled\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a list of bytes that represent the instruction segments
+\end{DoxyReturn}
+
+
+Definition at line 99 of file Compiler\+Frontend.\+cs.
 
 
 
@@ -88,28 +134,28 @@ Definition at line 80 of file Compiler\+Frontend.\+cs.
 \subsubsection[{file}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Source\+File} C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Compiler.\+Compiler\+Frontend.\+file = null\hspace{0.3cm}{\ttfamily [private]}}\label{class_c_p_u___o_s___simulator_1_1_compiler_1_1_compiler_frontend_a57d54910e0df9189cf333b95d9123641}
 
 
-Definition at line 11 of file Compiler\+Frontend.\+cs.
+Definition at line 15 of file Compiler\+Frontend.\+cs.
 
 \hypertarget{class_c_p_u___o_s___simulator_1_1_compiler_1_1_compiler_frontend_aec71846f593e4bdcbd7d63a49b3b25bd}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Compiler\+Frontend@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Compiler\+Frontend}!instructions@{instructions}}
 \index{instructions@{instructions}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Compiler\+Frontend@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Compiler\+Frontend}}
 \subsubsection[{instructions}]{\setlength{\rightskip}{0pt plus 5cm}List$<${\bf Instruction}$>$ C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Compiler.\+Compiler\+Frontend.\+instructions = null\hspace{0.3cm}{\ttfamily [private]}}\label{class_c_p_u___o_s___simulator_1_1_compiler_1_1_compiler_frontend_aec71846f593e4bdcbd7d63a49b3b25bd}
 
 
-Definition at line 12 of file Compiler\+Frontend.\+cs.
+Definition at line 16 of file Compiler\+Frontend.\+cs.
 
 \hypertarget{class_c_p_u___o_s___simulator_1_1_compiler_1_1_compiler_frontend_aa02bf709b3e3b19e45f89c8c2864afb4}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Compiler\+Frontend@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Compiler\+Frontend}!mode@{mode}}
 \index{mode@{mode}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Compiler\+Frontend@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Compiler\+Frontend}}
 \subsubsection[{mode}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Enum\+Compiler\+Mode} C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Compiler.\+Compiler\+Frontend.\+mode = {\bf Enum\+Compiler\+Mode.\+U\+N\+K\+N\+O\+W\+N}\hspace{0.3cm}{\ttfamily [private]}}\label{class_c_p_u___o_s___simulator_1_1_compiler_1_1_compiler_frontend_aa02bf709b3e3b19e45f89c8c2864afb4}
 
 
-Definition at line 10 of file Compiler\+Frontend.\+cs.
+Definition at line 14 of file Compiler\+Frontend.\+cs.
 
 \hypertarget{class_c_p_u___o_s___simulator_1_1_compiler_1_1_compiler_frontend_a2b4facf897341f61d4db60dc7fdc67c4}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Compiler\+Frontend@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Compiler\+Frontend}!name@{name}}
 \index{name@{name}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Compiler\+Frontend@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Compiler\+Frontend}}
 \subsubsection[{name}]{\setlength{\rightskip}{0pt plus 5cm}string C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Compiler.\+Compiler\+Frontend.\+name = String.\+Empty\hspace{0.3cm}{\ttfamily [private]}}\label{class_c_p_u___o_s___simulator_1_1_compiler_1_1_compiler_frontend_a2b4facf897341f61d4db60dc7fdc67c4}
 
 
-Definition at line 13 of file Compiler\+Frontend.\+cs.
+Definition at line 17 of file Compiler\+Frontend.\+cs.
 
 
 

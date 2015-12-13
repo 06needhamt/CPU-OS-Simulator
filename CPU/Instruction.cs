@@ -136,6 +136,9 @@ namespace CPU_OS_Simulator.CPU
 
         #region Properties
 
+        /// <summary>
+        /// The opcode for the instruction
+        /// </summary>
         public int Opcode
         {
             get
@@ -148,7 +151,9 @@ namespace CPU_OS_Simulator.CPU
                 opcode = value;
             }
         }
-
+        /// <summary>
+        /// The category in which the instruction will be displayed within the interface
+        /// </summary>
         public string Category
         {
             get
@@ -161,7 +166,9 @@ namespace CPU_OS_Simulator.CPU
                 category = value;
             }
         }
-
+        /// <summary>
+        /// The first operand for the instruction
+        /// </summary>
         public Operand Operand1
         {
             get
@@ -174,7 +181,9 @@ namespace CPU_OS_Simulator.CPU
                 operand1 = value;
             }
         }
-
+        /// <summary>
+        /// The second operand for the instruction
+        /// </summary>
         public Operand Operand2
         {
             get
@@ -187,7 +196,9 @@ namespace CPU_OS_Simulator.CPU
                 operand2 = value;
             }
         }
-
+        /// <summary>
+        /// The function that will be executed when the instruction is executed
+        /// </summary>
         [ScriptIgnore]
         public Func<int> Execute
         {
@@ -201,7 +212,9 @@ namespace CPU_OS_Simulator.CPU
                 execute = value;
             }
         }
-
+        /// <summary>
+        /// The result of the instruction once executed e.g. the result of ADD 1,1 would be 2
+        /// </summary>
         public int Result
         {
             get
@@ -214,7 +227,9 @@ namespace CPU_OS_Simulator.CPU
                 result = value;
             }
         }
-
+        /// <summary>
+        /// The size of the instruction within the program
+        /// </summary>
         public int Size
         {
             get
@@ -227,7 +242,9 @@ namespace CPU_OS_Simulator.CPU
                 size = value;
             }
         }
-
+        /// <summary>
+        /// The Logical address of this instruction within a program
+        /// </summary>
         public int LogicalAddress
         {
             get
@@ -240,7 +257,9 @@ namespace CPU_OS_Simulator.CPU
                 logicalAddress = value;
             }
         }
-
+        /// <summary>
+        /// The string representation of this instruction e.g. ADD R01,10
+        /// </summary>
         public string InstructionString
         {
             get
@@ -253,7 +272,9 @@ namespace CPU_OS_Simulator.CPU
                 instructionString = value;
             }
         }
-
+        /// <summary>
+        /// The physical address of this instruction within memory
+        /// </summary>
         public int PhysicalAddress
         {
             get
@@ -634,31 +655,34 @@ namespace CPU_OS_Simulator.CPU
         /// <returns> the result of the instruction or int.MINVALUE if no result is returned </returns>
         private int STB(Operand lhs, Operand rhs)
         {
-            int address;
-            byte value;
-            if (lhs.IsRegister)
-                address = Register.FindRegister(lhs.Register.Name).Value;
-            else
-                address = lhs.Value;
-            if (rhs.IsRegister)
-            {
-                SimulatorProgram program = GetCurrentProgram();
-                value = (byte)Register.FindRegister(rhs.Register.Name).Value;
-                int pagenumber = address /MemoryPage.PAGE_SIZE;
-                int pageOffset = address - (address /MemoryPage.PAGE_SIZE);
-                program.Memory.ElementAt(pagenumber).Data[pageOffset / 8].SetByte(pageOffset % 8, Convert.ToByte(value));
-            }
-            else
-            {
-                SimulatorProgram program = GetCurrentProgram();
-                int pagenumber = address /MemoryPage.PAGE_SIZE;
-                int pageOffset = address - (address /MemoryPage.PAGE_SIZE);
-                value = (byte)rhs.Value;
+            MessageBox.Show("STB Instruction is not currently implemented", "", MessageBoxButton.OK, MessageBoxImage.Information);
+            #region OLD
+            //int address;
+            //byte value;
+            //if (lhs.IsRegister)
+            //    address = Register.FindRegister(lhs.Register.Name).Value;
+            //else
+            //    address = lhs.Value;
+            //if (rhs.IsRegister)
+            //{
+            //    SimulatorProgram program = GetCurrentProgram();
+            //    value = (byte)Register.FindRegister(rhs.Register.Name).Value;
+            //    int pagenumber = address /MemoryPage.PAGE_SIZE;
+            //    int pageOffset = address - (address /MemoryPage.PAGE_SIZE);
+            //    program.Memory.ElementAt(pagenumber).Data[pageOffset / 8].SetByte(pageOffset % 8, Convert.ToByte(value));
+            //}
+            //else
+            //{
+            //    SimulatorProgram program = GetCurrentProgram();
+            //    int pagenumber = address /MemoryPage.PAGE_SIZE;
+            //    int pageOffset = address - (address /MemoryPage.PAGE_SIZE);
+            //    value = (byte)rhs.Value;
 
-                program.Memory.ElementAt(pagenumber).Data[pageOffset / 8].SetByte(pageOffset % 8, Convert.ToByte(value));
-            }
+            //    program.Memory.ElementAt(pagenumber).Data[pageOffset / 8].SetByte(pageOffset % 8, Convert.ToByte(value));
+            //}
             //MessageBox.Show("STB Instruction is not currently implemented", "", MessageBoxButton.OK, MessageBoxImage.Information);
-            return address;
+            #endregion OLD
+            return 0;
         }
 
         /// <summary>
@@ -1469,7 +1493,7 @@ namespace CPU_OS_Simulator.CPU
         }
 
         /// <summary>
-        /// This method returns all of the active window instances of a specific type
+        /// This function returns all of the active window instances of a specific type
         /// </summary>
         /// <param name="WindowType"> the type of window to return</param>
         /// <returns> a list containing all active window instances</returns>

@@ -20,7 +20,6 @@ var class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_simulator_program =
     [ "BaseAddress", "class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_simulator_program.html#ad07bee447d47fb07243a4484b5740c21", null ],
     [ "Instructions", "class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_simulator_program.html#ae64c462081a1806d5f194c271dbb2686", null ],
     [ "LogicalAddress", "class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_simulator_program.html#afda25ae1ba65b33787dfc1f9af1c1d8a", null ],
-    [ "Memory", "class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_simulator_program.html#ac3f520f751426a1e09f350096f0d2341", null ],
     [ "Name", "class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_simulator_program.html#a29b077a3403773010be9efe912d11b92", null ],
     [ "Pages", "class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_simulator_program.html#aa33b4428956a097dd710948ee51bb5f3", null ],
     [ "Stack", "class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_simulator_program.html#ac6065e57e8d108a0aefd27840f3bf01c", null ]

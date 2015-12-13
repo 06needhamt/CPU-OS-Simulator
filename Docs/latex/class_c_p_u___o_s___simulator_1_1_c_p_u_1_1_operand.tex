@@ -18,13 +18,13 @@ This class represents an operand which can be passed to an instruction
 \begin{DoxyCompactItemize}
 \item 
 int \hyperlink{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_operand_ab109292eba2094db4d7f21cbdbd5bc9e}{Value}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
-\item 
+\begin{DoxyCompactList}\small\item\em Property for the value of the operand \end{DoxyCompactList}\item 
 \hyperlink{namespace_c_p_u___o_s___simulator_1_1_c_p_u_ad49cfe442b74115a326c03b7ae848f76}{Enum\+Operand\+Type} \hyperlink{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_operand_a0b0deae57b760df3a083dc54535b0891}{Type}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
-\item 
+\begin{DoxyCompactList}\small\item\em Property For the type of the operand \end{DoxyCompactList}\item 
 bool \hyperlink{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_operand_a662aacb6eb1aa9cf818181aea695e0c9}{Is\+Register}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
-\item 
+\begin{DoxyCompactList}\small\item\em Property for whether the operand is a register or not \end{DoxyCompactList}\item 
 \hyperlink{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_register}{Register} \hyperlink{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_operand_a8f08360f0e27922fc0377f5d58a9e67f}{Register}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Property for the register that this operand represents or null if the operand is not a register \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Private Attributes}
 \begin{DoxyCompactItemize}
 \item 
@@ -148,28 +148,44 @@ Definition at line 13 of file Operand.\+cs.
 \subsubsection[{Is\+Register}]{\setlength{\rightskip}{0pt plus 5cm}bool C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+C\+P\+U.\+Operand.\+Is\+Register\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}\label{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_operand_a662aacb6eb1aa9cf818181aea695e0c9}
 
 
-Definition at line 88 of file Operand.\+cs.
+Property for whether the operand is a register or not 
+
+
+
+Definition at line 94 of file Operand.\+cs.
 
 \hypertarget{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_operand_a8f08360f0e27922fc0377f5d58a9e67f}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Operand@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Operand}!Register@{Register}}
 \index{Register@{Register}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Operand@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Operand}}
 \subsubsection[{Register}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Register} C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+C\+P\+U.\+Operand.\+Register\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}\label{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_operand_a8f08360f0e27922fc0377f5d58a9e67f}
 
 
-Definition at line 101 of file Operand.\+cs.
+Property for the register that this operand represents or null if the operand is not a register 
+
+
+
+Definition at line 110 of file Operand.\+cs.
 
 \hypertarget{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_operand_a0b0deae57b760df3a083dc54535b0891}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Operand@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Operand}!Type@{Type}}
 \index{Type@{Type}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Operand@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Operand}}
-\subsubsection[{Type}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Enum\+Operand\+Type} C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+C\+P\+U.\+Operand.\+Type\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}, {\ttfamily [package]}}\label{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_operand_a0b0deae57b760df3a083dc54535b0891}
+\subsubsection[{Type}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Enum\+Operand\+Type} C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+C\+P\+U.\+Operand.\+Type\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}\label{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_operand_a0b0deae57b760df3a083dc54535b0891}
 
 
-Definition at line 75 of file Operand.\+cs.
+Property For the type of the operand 
+
+
+
+Definition at line 79 of file Operand.\+cs.
 
 \hypertarget{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_operand_ab109292eba2094db4d7f21cbdbd5bc9e}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Operand@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Operand}!Value@{Value}}
 \index{Value@{Value}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Operand@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Operand}}
 \subsubsection[{Value}]{\setlength{\rightskip}{0pt plus 5cm}int C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+C\+P\+U.\+Operand.\+Value\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}\label{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_operand_ab109292eba2094db4d7f21cbdbd5bc9e}
 
 
-Definition at line 62 of file Operand.\+cs.
+Property for the value of the operand 
+
+
+
+Definition at line 64 of file Operand.\+cs.
 
 
 
