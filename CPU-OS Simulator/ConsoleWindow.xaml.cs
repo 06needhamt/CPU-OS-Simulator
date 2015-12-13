@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
+using System.Drawing.Printing;
 using System.Linq;
 using System.Reflection;
 using System.Reflection.Emit;
@@ -11,9 +13,13 @@ using System.Windows.Data;
 using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
+using System.Windows.Media.Animation;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using CPU_OS_Simulator.Console;
+using Brush = System.Drawing.Brush;
+using Color = System.Windows.Media.Color;
+using FontFamily = System.Drawing.FontFamily;
 
 namespace CPU_OS_Simulator
 {
@@ -23,6 +29,8 @@ namespace CPU_OS_Simulator
     public partial class ConsoleWindow : Window
     {
         private MainWindow parent = null;
+        private Color textColor;
+        private FontFamily textFontFamily;
         /// <summary>
         /// The current active instance of the console window
         /// </summary>
@@ -49,6 +57,19 @@ namespace CPU_OS_Simulator
             currentInstance = this;
             SetConsoleWindowInstance();
         }
+
+        public Color TextColor
+        {
+            get { return textColor; }
+            set { textColor = value; }
+        }
+
+        public FontFamily TextFontFamily
+        {
+            get { return textFontFamily; }
+            set { textFontFamily = value; }
+        }
+
         /// <summary>
         /// This function parses a line of input into a console command
         /// </summary>
@@ -119,6 +140,36 @@ namespace CPU_OS_Simulator
             System.Console.WriteLine(windowBridge.GetExportedTypes()[0]);
             Type WindowType = windowBridge.GetType(windowBridge.GetExportedTypes()[0].ToString()); // get the name of the type that contains the window instances
             WindowType.GetField("ConsoleWindowInstance").SetValue(null,currentInstance);
+        }
+
+        private void btn_Print_Click(object sender, RoutedEventArgs e)
+        {
+            string textToPrint = txt_Console.Text;
+            string fontName = textFontFamily.Name;
+            textColor = ((SolidColorBrush) txt_Console.Foreground).Color;
+            PrintableDocument printableDocument = new PrintableDocument();
+            printableDocument.PrintPage += delegate(object o, PrintPageEventArgs args)
+            {
+                args.Graphics.DrawString(textToPrint, new Font(fontName, 16), new SolidBrush(System.Drawing.Color.Black),0,0);
+            };
+        }
+
+        private void btn_Clear_Click(object sender, RoutedEventArgs e)
+        {
+            txt_Console.Clear();
+            txt_Console.CaretIndex = 0;
+        }
+
+        private void btn_Close_Click(object sender, RoutedEventArgs e)
+        {
+            currentInstance = null;
+            SetConsoleWindowInstance();
+            this.Close();
+        }
+
+        private void btn_SetFonts_Click(object sender, RoutedEventArgs e)
+        {
+
         }
 
 

@@ -92,11 +92,12 @@ namespace CPU_OS_Simulator
                     {
                         if (parent.rdb_TextColour.IsChecked.Value) // if we are choosing the text colour
                         {
-                            parent.txt_Console.Foreground = (((SolidColorBrush) ((Button)sender).Background)); // set the text colour
+                            parent.txt_Console.Foreground = ((SolidColorBrush) ((Button)sender).Background); // set the text colour
+                            parent.TextColor = ((SolidColorBrush) ((Button) sender).Background).Color;
                         }
                         else if(parent.rdb_ScreenColour.IsChecked.Value) // if we are choosing the screen colour
                         {
-                            parent.txt_Console.Background = (((SolidColorBrush)((Button)sender).Background)); // set the screen colour
+                            parent.txt_Console.Background = ((SolidColorBrush) ((Button)sender).Background); // set the screen colour
 
                         }
                         this.Close(); // close the colour picker window

@@ -7,8 +7,7 @@
         mc:Ignorable="d"
         Title="ConsoleWindow" Height="404.796" Width="635.092" Closing="ConsoleWindow1_Closing" ResizeMode="NoResize" Icon="CPU-OS Simulator 7-5-50_1.ico" WindowStartupLocation="CenterScreen">
     <Grid Height="296" VerticalAlignment="Top">
-        <Grid x:Name="grid_MainGrid" HorizontalAlignment="Left" Height="400
-              " VerticalAlignment="Top" Width="627">
+        <Grid x:Name="grid_MainGrid" HorizontalAlignment="Left" Height="296" VerticalAlignment="Top" Width="627">
             <GroupBox x:Name="groupBox" Header="OUTPUT" HorizontalAlignment="Left" VerticalAlignment="Top" Height="256" Width="627">
                 <Grid x:Name="grid_OutputGrid" HorizontalAlignment="Left" Height="246" VerticalAlignment="Top" Width="617" Margin="0,0,-2,-12">
                     <TextBox x:Name="txt_Console" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Height="240" Width="597" FontFamily="Consolas" FontSize="13.333" Foreground="White" Focusable="True" Margin="10,0,0,0" AcceptsReturn="True" VerticalScrollBarVisibility="Visible" PreviewKeyDown="txt_Console_PreviewKeyDown" >
@@ -27,6 +26,15 @@
                 <RadioButton x:Name="rdb_ScreenColour" Content="Screen Colour" HorizontalAlignment="Left" Margin="0,10,0,0" VerticalAlignment="Top" GroupName="Colours" IsChecked="True"/>
                 <RadioButton x:Name="rdb_TextColour" Content="Text Colour" HorizontalAlignment="Left" Margin="0,30,0,0" VerticalAlignment="Top" GroupName="Colours"/>
                 <Button x:Name="btn_SetColour" Content="SET" HorizontalAlignment="Left" Margin="98,7,0,0" VerticalAlignment="Top" Width="45" Height="38" Click="btn_SetColour_Click"/>
+
+            </Grid>
+        </GroupBox>
+        <Button x:Name="btn_Print" Content="PRINT" HorizontalAlignment="Left" Height="35" Margin="438,320,0,-59" VerticalAlignment="Top" Width="54" Click="btn_Print_Click"/>
+        <Button x:Name="btn_Clear" Content="CLEAR" HorizontalAlignment="Left" Height="35" Margin="498,320,0,-59" VerticalAlignment="Top" Width="54" Click="btn_Clear_Click"/>
+        <Button x:Name="btn_Close" Content="CLOSE" HorizontalAlignment="Left" Height="35" Margin="558,320,0,-59" VerticalAlignment="Top" Width="54" Click="btn_Close_Click"/>
+        <GroupBox x:Name="grp_Fonts" Header="FONTS" HorizontalAlignment="Left" Height="74" Margin="348,294,0,-72" VerticalAlignment="Top" Width="85">
+            <Grid x:Name="grid_Fonts" HorizontalAlignment="Left" Height="62" Margin="0,-10,-2,0" VerticalAlignment="Top" Width="75">
+                <Button x:Name="btn_SetFonts" Content="SET" HorizontalAlignment="Left" Margin="10,17,0,0" VerticalAlignment="Top" Width="55" Height="32" Click="btn_SetFonts_Click"/>
             </Grid>
         </GroupBox>
 
