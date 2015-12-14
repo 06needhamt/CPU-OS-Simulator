@@ -145,6 +145,11 @@ namespace CPU_OS_Simulator
         private void btn_Print_Click(object sender, RoutedEventArgs e)
         {
             string textToPrint = txt_Console.Text;
+            if (textFontFamily == null)
+            {
+                textFontFamily = System.Drawing.FontFamily.Families.FirstOrDefault(x => x.Name.Equals("Consolas"));
+            }
+            
             string fontName = textFontFamily.Name;
             textColor = ((SolidColorBrush) txt_Console.Foreground).Color;
             PrintableDocument printableDocument = new PrintableDocument();
@@ -152,6 +157,7 @@ namespace CPU_OS_Simulator
             {
                 args.Graphics.DrawString(textToPrint, new Font(fontName, 16), new SolidBrush(System.Drawing.Color.Black),0,0);
             };
+            printableDocument.Print();
         }
 
         private void btn_Clear_Click(object sender, RoutedEventArgs e)

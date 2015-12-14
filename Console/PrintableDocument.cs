@@ -26,7 +26,7 @@ namespace CPU_OS_Simulator.Console
         {
             base.OnBeginPrint(e);
             dynamic window = GetConsoleWindowInstance();
-            window.txt_Console.Text += "Printing Document...";
+            window.txt_Console.Text += "\n Printing Document... \n";
             window.txt_Console.CaretIndex = window.txt_Console.Text.Length;
         }
 
@@ -38,7 +38,7 @@ namespace CPU_OS_Simulator.Console
         {
             base.OnEndPrint(e);
             dynamic window = GetConsoleWindowInstance();
-            window.txt_Console.Text += "Finished Printing Document";
+            window.txt_Console.Text += "Finished Printing Document \n";
             window.txt_Console.CaretIndex = window.txt_Console.Text.Length;
         }
         /// <summary>

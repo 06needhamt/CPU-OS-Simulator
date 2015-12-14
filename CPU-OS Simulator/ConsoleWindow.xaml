@@ -10,7 +10,7 @@
         <Grid x:Name="grid_MainGrid" HorizontalAlignment="Left" Height="296" VerticalAlignment="Top" Width="627">
             <GroupBox x:Name="groupBox" Header="OUTPUT" HorizontalAlignment="Left" VerticalAlignment="Top" Height="256" Width="627">
                 <Grid x:Name="grid_OutputGrid" HorizontalAlignment="Left" Height="246" VerticalAlignment="Top" Width="617" Margin="0,0,-2,-12">
-                    <TextBox x:Name="txt_Console" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Height="240" Width="597" FontFamily="Consolas" FontSize="13.333" Foreground="White" Focusable="True" Margin="10,0,0,0" AcceptsReturn="True" VerticalScrollBarVisibility="Visible" PreviewKeyDown="txt_Console_PreviewKeyDown" >
+                    <TextBox x:Name="txt_Console" x:FieldModifier="public" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Height="240" Width="597" FontFamily="Consolas" FontSize="13.333" Foreground="White" Focusable="True" Margin="10,0,0,0" AcceptsReturn="True" VerticalScrollBarVisibility="Visible" PreviewKeyDown="txt_Console_PreviewKeyDown" >
                         <TextBox.Background>
                             <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                                 <GradientStop Color="#FF515151" Offset="0"/>
