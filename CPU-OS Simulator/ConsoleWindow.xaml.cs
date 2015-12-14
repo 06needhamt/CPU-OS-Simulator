@@ -1,25 +1,14 @@
-﻿using System;
+﻿using CPU_OS_Simulator.Console;
+using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Drawing.Printing;
 using System.Linq;
 using System.Reflection;
-using System.Reflection.Emit;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
-using System.Windows.Media.Animation;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
-using CPU_OS_Simulator.Console;
-using Brush = System.Drawing.Brush;
 using Color = System.Windows.Media.Color;
-using FontFamily = System.Drawing.FontFamily;
 using FontStyle = System.Drawing.FontStyle;
 using SolidBrush = System.Drawing.SolidBrush;
 
@@ -35,6 +24,7 @@ namespace CPU_OS_Simulator
         private string fontName = String.Empty;
         private int fontSize = 12;
         private int fontStyles = 0;
+
         /// <summary>
         /// The current active instance of the console window
         /// </summary>
@@ -49,6 +39,7 @@ namespace CPU_OS_Simulator
             currentInstance = this;
             SetConsoleWindowInstance();
         }
+
         /// <summary>
         /// Constructor for console window that takes the window instance that is creating this window
         /// PLEASE NOTE: This constructor should always be used so data can be passed back to the main window
@@ -92,16 +83,16 @@ namespace CPU_OS_Simulator
         /// <param name="text"> the line of input to parse</param>
         private void ParseInput(string text)
         {
-            string[] input = text.Split(new char[] {'\n'});
+            string[] input = text.Split(new char[] { '\n' });
             string inputLine = input[input.Length - 1];
             if (inputLine.StartsWith("//"))
             {
                 //txt_Console.Clear();
                 inputLine = inputLine.Substring(2);
-                List<string> splitInputStrings = inputLine.Split(new char[] {' '}).ToList();
+                List<string> splitInputStrings = inputLine.Split(new char[] { ' ' }).ToList();
                 string commandString = splitInputStrings[0];
                 splitInputStrings.RemoveAt(0);
-                ConsoleCommand command = new ConsoleCommand(commandString,splitInputStrings.ToArray());
+                ConsoleCommand command = new ConsoleCommand(commandString, splitInputStrings.ToArray());
                 string result = command.Execute();
                 if (result.Equals("\"Clear\""))
                 {
@@ -119,7 +110,6 @@ namespace CPU_OS_Simulator
                 txt_Console.Text += "\n";
                 txt_Console.CaretIndex = txt_Console.Text.Length;
             }
-
         }
 
         private void txt_Console_PreviewKeyDown(object sender, KeyEventArgs e)
@@ -147,6 +137,7 @@ namespace CPU_OS_Simulator
             currentInstance = null;
             SetConsoleWindowInstance();
         }
+
         /// <summary>
         /// This method sets the console window instance in the window bridge o it can be accessed by other modules
         /// </summary>
@@ -155,7 +146,7 @@ namespace CPU_OS_Simulator
             Assembly windowBridge = Assembly.LoadFrom("CPU_OS_Simulator.WindowBridge.dll"); // Load the window bridge module
             System.Console.WriteLine(windowBridge.GetExportedTypes()[0]);
             Type WindowType = windowBridge.GetType(windowBridge.GetExportedTypes()[0].ToString()); // get the name of the type that contains the window instances
-            WindowType.GetField("ConsoleWindowInstance").SetValue(null,currentInstance);
+            WindowType.GetField("ConsoleWindowInstance").SetValue(null, currentInstance);
         }
 
         private void btn_Print_Click(object sender, RoutedEventArgs e)
@@ -167,12 +158,12 @@ namespace CPU_OS_Simulator
                 fontStyles = 0;
                 fontSize = 12;
             }
-            textColor = ((SolidColorBrush) txt_Console.Foreground).Color;
+            textColor = ((SolidColorBrush)txt_Console.Foreground).Color;
             PrintableDocument printableDocument = new PrintableDocument();
-            Font f = new Font(fontName,fontSize,(FontStyle) fontStyles);
-            printableDocument.PrintPage += delegate(object o, PrintPageEventArgs args)
+            Font f = new Font(fontName, fontSize, (FontStyle)fontStyles);
+            printableDocument.PrintPage += delegate (object o, PrintPageEventArgs args)
             {
-                args.Graphics.DrawString(textToPrint,f,new SolidBrush(System.Drawing.Color.Black),0,0);
+                args.Graphics.DrawString(textToPrint, f, new SolidBrush(System.Drawing.Color.Black), 0, 0);
             };
 #if DEBUG
             printableDocument.PrinterSettings.PrintToFile = true;
@@ -205,8 +196,6 @@ namespace CPU_OS_Simulator
             window.Show();
         }
 
-
-
         //private void txt_Console_KeyDown(object sender, KeyEventArgs e)
         //{
         //    if (e.Key == Key.Enter)
@@ -222,6 +211,5 @@ namespace CPU_OS_Simulator
         //        e.Handled = false;
         //    }
         //}
-
     }
 }

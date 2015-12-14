@@ -9,7 +9,7 @@ namespace CPU_OS_Simulator.Compiler
     /// This class represents the front end of the compiler which is responsible
     /// for compiling programs
     /// </summary>
-    public class CompilerFrontend
+    public class CompilerMain
     {
         private EnumCompilerMode mode = EnumCompilerMode.UNKNOWN;
         private SourceFile file = null;
@@ -20,7 +20,7 @@ namespace CPU_OS_Simulator.Compiler
         /// Constructor for Compiler front end when compiling source files
         /// </summary>
         /// <param name="file"> the source file to compile</param>
-        public CompilerFrontend(SourceFile file)
+        public CompilerMain(SourceFile file)
         {
             this.file = file;
             this.mode = EnumCompilerMode.SOURCE_CODE;
@@ -30,7 +30,7 @@ namespace CPU_OS_Simulator.Compiler
         /// </summary>
         /// <param name="instructions"> the instructions to compile</param>
         /// <param name="name"> the name of the program to compile</param>
-        public CompilerFrontend(List<Instruction> instructions, string name )
+        public CompilerMain(List<Instruction> instructions, string name )
         {
             this.instructions = instructions;
             this.mode = EnumCompilerMode.INSTRUCTIONS;

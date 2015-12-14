@@ -273,7 +273,7 @@ namespace CPU_OS_Simulator
             lst_ProgramList.Items.Add(program);
             programList.Add(program);
             currentProgram = program.Name;
-            CompilerFrontend compiler = new CompilerFrontend(program.Instructions,program.Name);
+            CompilerMain compiler = new CompilerMain(program.Instructions,program.Name);
             List<List<InstructionSegment>> segmentList = compiler.CompileFromInstructions();
             List<byte> bytes = compiler.CompileToBytes(segmentList);
             CompiledProgram compiledProgram = new CompiledProgram(bytes,program.Name,bytes.Count);
