@@ -20,6 +20,8 @@ using CPU_OS_Simulator.Console;
 using Brush = System.Drawing.Brush;
 using Color = System.Windows.Media.Color;
 using FontFamily = System.Drawing.FontFamily;
+using FontStyle = System.Drawing.FontStyle;
+using SolidBrush = System.Drawing.SolidBrush;
 
 namespace CPU_OS_Simulator
 {
@@ -29,8 +31,10 @@ namespace CPU_OS_Simulator
     public partial class ConsoleWindow : Window
     {
         private MainWindow parent = null;
-        private Color textColor;
-        private FontFamily textFontFamily;
+        private Color textColor = Colors.Black;
+        private string fontName = String.Empty;
+        private int fontSize = 12;
+        private int fontStyles = 0;
         /// <summary>
         /// The current active instance of the console window
         /// </summary>
@@ -64,10 +68,22 @@ namespace CPU_OS_Simulator
             set { textColor = value; }
         }
 
-        public FontFamily TextFontFamily
+        public string FontName
         {
-            get { return textFontFamily; }
-            set { textFontFamily = value; }
+            get { return fontName; }
+            set { fontName = value; }
+        }
+
+        public int FontSizes
+        {
+            get { return fontSize; }
+            set { fontSize = value; }
+        }
+
+        public int FontStyles
+        {
+            get { return fontStyles; }
+            set { fontStyles = value; }
         }
 
         /// <summary>
@@ -145,19 +161,29 @@ namespace CPU_OS_Simulator
         private void btn_Print_Click(object sender, RoutedEventArgs e)
         {
             string textToPrint = txt_Console.Text;
-            if (textFontFamily == null)
+            if (fontName == String.Empty)
             {
-                textFontFamily = System.Drawing.FontFamily.Families.FirstOrDefault(x => x.Name.Equals("Consolas"));
+                fontName = "Consolas";
+                fontStyles = 0;
+                fontSize = 12;
             }
-            
-            string fontName = textFontFamily.Name;
             textColor = ((SolidColorBrush) txt_Console.Foreground).Color;
             PrintableDocument printableDocument = new PrintableDocument();
+            Font f = new Font(fontName,fontSize,(FontStyle) fontStyles);
             printableDocument.PrintPage += delegate(object o, PrintPageEventArgs args)
             {
-                args.Graphics.DrawString(textToPrint, new Font(fontName, 16), new SolidBrush(System.Drawing.Color.Black),0,0);
+                args.Graphics.DrawString(textToPrint,f,new SolidBrush(System.Drawing.Color.Black),0,0);
             };
+#if DEBUG
+            printableDocument.PrinterSettings.PrintToFile = true;
+            printableDocument.PrinterSettings.PrintFileName = "Test File \n";
+            txt_Console.Text += "\n Printing To File: " + printableDocument.PrinterSettings.PrintFileName + "\n";
+            txt_Console.CaretIndex = txt_Console.Text.Length;
             printableDocument.Print();
+#else
+            printableDocument.PrinterSettings.PrintToFile = false;
+            printableDocument.Print();
+#endif
         }
 
         private void btn_Clear_Click(object sender, RoutedEventArgs e)
@@ -175,7 +201,8 @@ namespace CPU_OS_Simulator
 
         private void btn_SetFonts_Click(object sender, RoutedEventArgs e)
         {
-
+            FontPickerWindow window = new FontPickerWindow(this);
+            window.Show();
         }
 
 

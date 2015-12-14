@@ -1,0 +1,38 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CPU_OS_Simulator"
+        xmlns:System="clr-namespace:System;assembly=mscorlib" x:Name="FontPickerWindow1" x:Class="CPU_OS_Simulator.FontPickerWindow"
+        mc:Ignorable="d"
+        Title="FontPickerWindow" Height="300" Width="440" Icon="CPU-OS Simulator 7-5-50_1.ico" ResizeMode="NoResize" Loaded="FontPickerWindow1_Loaded">
+    <Grid x:Name="Root_Grid">
+        <Label x:Name="label" Content="Font" HorizontalAlignment="Left" Margin="71,21,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="label_Copy" Content="Size" HorizontalAlignment="Left" Margin="172,21,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="label_Copy1" Content="Style" HorizontalAlignment="Left" Margin="276,21,0,0" VerticalAlignment="Top"/>
+        <Button x:Name="btn_OK" Content="OK" HorizontalAlignment="Left" Margin="243,235,0,0" VerticalAlignment="Top" Width="75" Click="btn_OK_Click"/>
+        <Button x:Name="btn_Cancel" Content="Cancel" HorizontalAlignment="Left" Margin="323,235,0,0" VerticalAlignment="Top" Width="75" Click="btn_Cancel_Click"/>
+        <ListBox x:Name="lstbx_Font" HorizontalAlignment="Left" Height="178" Margin="38,52,0,0" VerticalAlignment="Top" Width="100"/>
+        <ListBox x:Name="lstbx_Size" HorizontalAlignment="Left" Height="178" Margin="142,52,0,0" VerticalAlignment="Top" Width="100">
+            <System:Int32>8</System:Int32>
+            <System:Int32>9</System:Int32>
+            <System:Int32>10</System:Int32>
+            <System:Int32>11</System:Int32>
+            <System:Int32>12</System:Int32>
+            <System:Int32>14</System:Int32>
+            <System:Int32>16</System:Int32>
+            <System:Int32>18</System:Int32>
+            <System:Int32>20</System:Int32>
+            <System:Int32>22</System:Int32>
+            <System:Int32>24</System:Int32>
+            <System:Int32>26</System:Int32>
+            <System:Int32>28</System:Int32>
+            <System:Int32>36</System:Int32>
+            <System:Int32>48</System:Int32>
+            <System:Int32>72</System:Int32>
+        </ListBox>
+        <ListBox x:Name="lstbx_Style" HorizontalAlignment="Left" Height="178" Margin="248,52,0,0" VerticalAlignment="Top" Width="100" SelectionMode="Multiple"/>
+
+    </Grid>
+</Window>
