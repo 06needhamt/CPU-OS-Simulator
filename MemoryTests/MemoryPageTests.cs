@@ -1,12 +1,7 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using CPU_OS_Simulator.Memory;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using CPU_OS_Simulator.Memory;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace CPU_OS_Simulator.Memory.Tests
+namespace MemoryTests
 {
     [TestClass()]
     public class MemoryPageTests

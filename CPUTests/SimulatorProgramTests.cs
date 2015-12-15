@@ -1,7 +1,8 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using System.Linq;
+﻿using System.Linq;
+using CPU_OS_Simulator.CPU;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace CPU_OS_Simulator.CPU.Tests
+namespace CPUTests
 {
     [TestClass()]
     public class SimulatorProgramTests

@@ -1,4 +1,4 @@
-﻿namespace CPU_OS_Simulator.Compiler.Frontend
+﻿namespace CPU_OS_Simulator.Compiler.Frontend.Tokens
 {
     public enum EnumKeywordType
     {
@@ -36,6 +36,8 @@
         READ = 31,
         WRITE = 32,
         VAR = 33,
-        SEND = 34
+        END_SELECT = 34,
+        END_SUB = 35,
+        AS = 36
     }
 }

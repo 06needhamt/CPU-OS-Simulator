@@ -1,0 +1,4 @@
+program p
+	var i integer
+	i = 0
+end

@@ -1,11 +1,9 @@
 ﻿using System;
 
-namespace CPU_OS_Simulator.Compiler.Frontend
+namespace CPU_OS_Simulator.Compiler.Frontend.Tokens
 {
     public class Keyword : Token
     {
-        private EnumKeywordType type = EnumKeywordType.UNKNOWN;
-
         public Keyword(string value)
         {
             this.value = value;
@@ -42,8 +40,8 @@ namespace CPU_OS_Simulator.Compiler.Frontend
                     return EnumKeywordType.CASE;
                 case "default":
                     return EnumKeywordType.DEFAULT;
-                case "send":
-                    return EnumKeywordType.SEND;
+                case "end select":
+                    return EnumKeywordType.END_SELECT;
                 case "thread":
                     return EnumKeywordType.THREAD;
                 case "synchronise":
@@ -64,6 +62,8 @@ namespace CPU_OS_Simulator.Compiler.Frontend
                     return EnumKeywordType.RESOURCE;
                 case "sub":
                     return EnumKeywordType.SUB;
+                case "end sub":
+                    return EnumKeywordType.END_SUB;
                 case "fun":
                     return EnumKeywordType.FUN;
                 case "do":
@@ -82,10 +82,16 @@ namespace CPU_OS_Simulator.Compiler.Frontend
                     return EnumKeywordType.CALL;
                 case "goto":
                     return EnumKeywordType.GOTO;
+                case "as":
+                    return EnumKeywordType.END;
                 default:
                     return EnumKeywordType.DEFAULT;
-
             }
+        }
+
+        public EnumKeywordType GetKeywordType()
+        {
+            return (EnumKeywordType) type;
         }
     }
 }

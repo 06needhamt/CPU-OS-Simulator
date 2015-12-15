@@ -54,14 +54,17 @@
     <Compile Include="Backend\EnumSegmentType.cs" />
     <Compile Include="Backend\InstructionSegment.cs" />
     <Compile Include="Frontend\AST.cs" />
-    <Compile Include="Frontend\EnumKeywordType.cs" />
-    <Compile Include="Frontend\EnumOperatorType.cs" />
-    <Compile Include="Frontend\EnumTokenType.cs" />
-    <Compile Include="Frontend\Keyword.cs" />
+    <Compile Include="Frontend\Tokens\EnumKeywordType.cs" />
+    <Compile Include="Frontend\Tokens\EnumOperatorType.cs" />
+    <Compile Include="Frontend\Tokens\EnumTokenType.cs" />
+    <Compile Include="Frontend\Tokens\EnumTypes.cs" />
+    <Compile Include="Frontend\Tokens\GenericToken.cs" />
+    <Compile Include="Frontend\Tokens\Keyword.cs" />
     <Compile Include="Frontend\Lexer.cs" />
-    <Compile Include="Frontend\Operator.cs" />
+    <Compile Include="Frontend\Tokens\Operator.cs" />
     <Compile Include="Frontend\Parser.cs" />
-    <Compile Include="Frontend\Token.cs" />
+    <Compile Include="Frontend\Tokens\Token.cs" />
+    <Compile Include="Frontend\Tokens\Typename.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SourceFile.cs" />
   </ItemGroup>

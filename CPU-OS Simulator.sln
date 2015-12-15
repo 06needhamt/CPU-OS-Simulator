@@ -21,6 +21,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Compiler", "Compiler\Compil
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Console", "Console\Console.csproj", "{165E3BF3-6BBC-4B78-98E4-21DEDDE2D426}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CompilerTester", "CompilerTester\CompilerTester.csproj", "{B7C81F7F-BFF5-46C8-9196-F7D6D2209CC8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -63,6 +65,10 @@ Global
 		{165E3BF3-6BBC-4B78-98E4-21DEDDE2D426}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{165E3BF3-6BBC-4B78-98E4-21DEDDE2D426}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{165E3BF3-6BBC-4B78-98E4-21DEDDE2D426}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B7C81F7F-BFF5-46C8-9196-F7D6D2209CC8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B7C81F7F-BFF5-46C8-9196-F7D6D2209CC8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B7C81F7F-BFF5-46C8-9196-F7D6D2209CC8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B7C81F7F-BFF5-46C8-9196-F7D6D2209CC8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

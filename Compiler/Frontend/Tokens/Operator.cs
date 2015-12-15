@@ -1,15 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading;
-using System.Threading.Tasks;
 
-namespace CPU_OS_Simulator.Compiler.Frontend
+namespace CPU_OS_Simulator.Compiler.Frontend.Tokens
 {
     public class Operator : Token
     {
-        private EnumOperatorType opType = EnumOperatorType.UNKNOWN;
         private int operandCount;
 
         public Operator(string value)
@@ -40,11 +34,18 @@ namespace CPU_OS_Simulator.Compiler.Frontend
                     return EnumOperatorType.OR;
                 case "~":
                     return EnumOperatorType.NOT;
+                case "^":
+                    return EnumOperatorType.XOR;
                 case "=":
                     return EnumOperatorType.ASSIGNMENT;
                 default:
                     return EnumOperatorType.UNKNOWN;
             }
+        }
+
+        public EnumOperatorType GetOperatorType()
+        {
+            return (EnumOperatorType) type;
         }
     }
 }

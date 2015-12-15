@@ -1,4 +1,4 @@
-﻿namespace CPU_OS_Simulator.Compiler
+﻿namespace CPU_OS_Simulator.Compiler.Backend
 {
     public enum EnumSegmentType
     {

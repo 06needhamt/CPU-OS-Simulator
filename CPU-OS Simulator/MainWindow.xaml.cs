@@ -17,6 +17,7 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Threading;
 using CPU_OS_Simulator.Compiler;
+using CPU_OS_Simulator.Compiler.Backend;
 
 namespace CPU_OS_Simulator
 {

@@ -1,6 +1,8 @@
 ﻿using System;
 using System.CodeDom.Compiler;
 using System.Collections.Generic;
+using CPU_OS_Simulator.Compiler.Backend;
+using CPU_OS_Simulator.Compiler.Frontend;
 using CPU_OS_Simulator.CPU;
 
 namespace CPU_OS_Simulator.Compiler
@@ -24,6 +26,7 @@ namespace CPU_OS_Simulator.Compiler
         {
             this.file = file;
             this.mode = EnumCompilerMode.SOURCE_CODE;
+
         }
         /// <summary>
         /// Constructor for compiler front end when compiling instructions
@@ -35,6 +38,16 @@ namespace CPU_OS_Simulator.Compiler
             this.instructions = instructions;
             this.mode = EnumCompilerMode.INSTRUCTIONS;
             this.name = name;
+        }
+
+        [Obsolete("TODO Finish implementing this once lexer and parser are working",true)]
+        public List<List<InstructionSegment>> CompileFromSourceFile()
+        {
+            Lexer lexical = new Lexer(file.FileContents);
+            lexical.WritingToCompilerTester = false;
+            lexical.Output = null;
+            //TODO Finish implementing this once lexer and parser are working
+            return null;
         }
         /// <summary>
         /// This function compiles a program from instructions 

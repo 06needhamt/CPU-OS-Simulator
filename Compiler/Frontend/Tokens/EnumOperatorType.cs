@@ -1,4 +1,4 @@
-﻿namespace CPU_OS_Simulator.Compiler.Frontend
+﻿namespace CPU_OS_Simulator.Compiler.Frontend.Tokens
 {
     public enum EnumOperatorType
     {

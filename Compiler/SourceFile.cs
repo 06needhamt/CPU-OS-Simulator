@@ -3,6 +3,7 @@ using System.Windows;
 using System.Windows.Controls;
 using System.IO;
 using System.Security;
+using CPU_OS_Simulator.Compiler.Frontend;
 
 namespace CPU_OS_Simulator.Compiler
 {
@@ -56,7 +57,18 @@ namespace CPU_OS_Simulator.Compiler
                 
             }
             fileContents = textbox.Text;
+        }
 
+        public string FileContents
+        {
+            get { return fileContents; }
+            set { fileContents = value; }
+        }
+
+        public string Path1
+        {
+            get { return path; }
+            set { path = value; }
         }
     }
 }

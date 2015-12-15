@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 
-namespace CPU_OS_Simulator.Compiler
+namespace CPU_OS_Simulator.Compiler.Backend
 {
     /// <summary>
     /// this class represents a segment of an instruction 
