@@ -85,7 +85,7 @@ namespace CPU_OS_Simulator.Compiler.Frontend.Tokens
                 case "as":
                     return EnumKeywordType.END;
                 default:
-                    return EnumKeywordType.DEFAULT;
+                    return EnumKeywordType.UNKNOWN;
             }
         }
 
