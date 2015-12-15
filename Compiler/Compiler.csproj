@@ -53,6 +53,7 @@
     <Compile Include="Backend\EnumInstructionSegmentSizes.cs" />
     <Compile Include="Backend\EnumSegmentType.cs" />
     <Compile Include="Backend\InstructionSegment.cs" />
+    <Compile Include="Frontend\EnumErrorCodes.cs" />
     <Compile Include="Frontend\SyntaxTree\AST.cs" />
     <Compile Include="Frontend\Symbol.cs" />
     <Compile Include="Frontend\SymbolTable.cs" />

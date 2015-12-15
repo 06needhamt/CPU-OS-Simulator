@@ -40,7 +40,10 @@ namespace CompilerTester
             lexical.WritingToCompilerTester = true;
             lexical.Output = txt_Output;
             txt_Output.Text = String.Empty;
-            lexical.Start();
+            if (!lexical.Start())
+            {
+                MessageBox.Show("Lexer Error Occurred: " + lexical.Error + " Compilation Terminated");
+            }
 
         }
     }
