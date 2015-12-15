@@ -58,6 +58,7 @@ namespace CPU_OS_Simulator.Compiler.Frontend
         public bool Start()
         {
             tokens = GenerateTokens();
+            IdentifyUnknownTokens();
             PrintTokens();
             //TODO Check For Errors
             return true;
@@ -98,6 +99,30 @@ namespace CPU_OS_Simulator.Compiler.Frontend
                 
             }
             return tokens;
+        }
+
+        public void IdentifyUnknownTokens()
+        {
+            currentToken = tokens.First;
+            while (currentToken.Next != null)
+            {
+                previousToken = currentToken.Previous;
+                nextToken = currentToken.Next;
+                if ((EnumTokenType) currentToken.Value.Type == EnumTokenType.UNKNOWNN)
+                {
+                    if ((EnumKeywordType) previousToken?.Value.Type == EnumKeywordType.VAR
+                        || (EnumKeywordType)previousToken?.Value.Type == EnumKeywordType.PROGRAM
+                        || (EnumKeywordType)previousToken?.Value.Type == EnumKeywordType.FUN
+                        || (EnumKeywordType)previousToken?.Value.Type == EnumKeywordType.SUB
+                        || (EnumKeywordType)previousToken?.Value.Type == EnumKeywordType.GOTO
+                        || (EnumKeywordType)previousToken?.Value.Type == EnumKeywordType.CALL)
+                    {
+                        currentToken.Value.Type = EnumTokenType.IDENTIFIER;
+                    }
+                    
+                }
+                currentToken = nextToken;
+            }
         }
 
         public void PrintTokens()
