@@ -4,56 +4,56 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace CPU_OS_SimulatorTests
 {
-    [TestClass()]
+    [TestClass]
     public class MainWindowTests
     {
-        [TestMethod()]
+        [TestMethod]
         public void MainWindowTest()
         {
             MainWindow wind = new MainWindow();
             Assert.IsInstanceOfType(wind, typeof(MainWindow));
         }
 
-        [TestMethod()]
+        [TestMethod]
         public void IsAdministratorTest()
         {
             Assert.Inconclusive();
         }
 
-        [TestMethod()]
+        [TestMethod]
         public void SetAssociationTest()
         {
             Assert.Inconclusive();
         }
 
-        [TestMethod()]
+        [TestMethod]
         public void SayHelloTest()
         {
             Assert.Inconclusive();
         }
 
-        [TestMethod()]
+        [TestMethod]
         public void CreateInstructionTest()
         {
             Instruction ins = new Instruction(3, 4);
             Assert.IsInstanceOfType(ins, typeof(Instruction));
         }
 
-        [TestMethod()]
+        [TestMethod]
         public void CreateInstructionTest1()
         {
             Instruction ins = new Instruction(3, new Operand(10, EnumOperandType.VALUE), 4);
             Assert.IsInstanceOfType(ins, typeof(Instruction));
         }
 
-        [TestMethod()]
+        [TestMethod]
         public void CreateInstructionTest2()
         {
             Instruction ins = new Instruction(3, new Operand(10, EnumOperandType.VALUE), new Operand(10, EnumOperandType.VALUE), 4);
             Assert.IsInstanceOfType(ins, typeof(Instruction));
         }
 
-        [TestMethod()]
+        [TestMethod]
         public void AddInstructionTest()
         {
             SimulatorProgram prog = new SimulatorProgram("Test", 0, 1);
@@ -62,13 +62,13 @@ namespace CPU_OS_SimulatorTests
             Assert.AreEqual(prog.Instructions.Count, 1);
         }
 
-        [TestMethod()]
+        [TestMethod]
         public void SerializeObjectTest()
         {
             Assert.Inconclusive();
         }
 
-        [TestMethod()]
+        [TestMethod]
         public void DeSerializeObjectTest()
         {
             Assert.Inconclusive();

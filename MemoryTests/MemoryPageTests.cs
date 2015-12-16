@@ -3,10 +3,10 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace MemoryTests
 {
-    [TestClass()]
+    [TestClass]
     public class MemoryPageTests
     {
-        [TestMethod()]
+        [TestMethod]
         public void MemoryPageTest()
         {
             MemoryPage page = new MemoryPage(0,0);

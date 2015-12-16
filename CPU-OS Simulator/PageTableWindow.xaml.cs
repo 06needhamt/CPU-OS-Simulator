@@ -1,16 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 using CPU_OS_Simulator.Memory;
 
 namespace CPU_OS_Simulator
@@ -50,17 +40,17 @@ namespace CPU_OS_Simulator
 
         private void chk_Stay_On_Top_Checked(object sender, RoutedEventArgs e)
         {
-            this.Topmost = true;
+            Topmost = true;
         }
 
         private void chk_Stay_On_Top_Unchecked(object sender, RoutedEventArgs e)
         {
-            this.Topmost = false;
+            Topmost = false;
         }
 
         private void btn_Close_Click(object sender, RoutedEventArgs e)
         {
-            this.Close();
+            Close();
         }
 
         private void btn_Swap_Out_Click(object sender, RoutedEventArgs e)
@@ -77,7 +67,7 @@ namespace CPU_OS_Simulator
             }
             else
             {
-                throw new Exception("Unknown memory page operation requested " + ((Button) sender).Content.ToString());
+                throw new Exception("Unknown memory page operation requested " + ((Button) sender).Content);
             }
             UpdateEntries();
         }

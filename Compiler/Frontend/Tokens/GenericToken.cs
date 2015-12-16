@@ -14,7 +14,7 @@ namespace CPU_OS_Simulator.Compiler.Frontend.Tokens
             double outpar = 0.0;
             if (Double.TryParse(value, out outpar))
                 return EnumTokenType.NUMBER;
-            else if (value.StartsWith("%"))
+            if (value.StartsWith("%"))
                 return EnumTokenType.COMMENT;
             if(value.StartsWith("\"") || value.EndsWith("\""))
             {

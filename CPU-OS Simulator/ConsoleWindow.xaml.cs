@@ -1,6 +1,6 @@
-﻿using CPU_OS_Simulator.Console;
-using System;
+﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Drawing;
 using System.Drawing.Printing;
 using System.Linq;
@@ -8,9 +8,9 @@ using System.Reflection;
 using System.Windows;
 using System.Windows.Input;
 using System.Windows.Media;
+using CPU_OS_Simulator.Console;
 using Color = System.Windows.Media.Color;
 using FontStyle = System.Drawing.FontStyle;
-using SolidBrush = System.Drawing.SolidBrush;
 
 namespace CPU_OS_Simulator
 {
@@ -19,11 +19,11 @@ namespace CPU_OS_Simulator
     /// </summary>
     public partial class ConsoleWindow : Window
     {
-        private MainWindow parent = null;
+        private MainWindow parent;
         private Color textColor = Colors.Black;
         private string fontName = String.Empty;
         private int fontSize = 12;
-        private int fontStyles = 0;
+        private int fontStyles;
 
         /// <summary>
         /// The current active instance of the console window
@@ -83,13 +83,13 @@ namespace CPU_OS_Simulator
         /// <param name="text"> the line of input to parse</param>
         private void ParseInput(string text)
         {
-            string[] input = text.Split(new char[] { '\n' });
+            string[] input = text.Split('\n');
             string inputLine = input[input.Length - 1];
             if (inputLine.StartsWith("//"))
             {
                 //txt_Console.Clear();
                 inputLine = inputLine.Substring(2);
-                List<string> splitInputStrings = inputLine.Split(new char[] { ' ' }).ToList();
+                List<string> splitInputStrings = inputLine.Split(' ').ToList();
                 string commandString = splitInputStrings[0];
                 splitInputStrings.RemoveAt(0);
                 ConsoleCommand command = new ConsoleCommand(commandString, splitInputStrings.ToArray());
@@ -132,7 +132,7 @@ namespace CPU_OS_Simulator
             window.Show();
         }
 
-        private void ConsoleWindow1_Closing(object sender, System.ComponentModel.CancelEventArgs e)
+        private void ConsoleWindow1_Closing(object sender, CancelEventArgs e)
         {
             currentInstance = null;
             SetConsoleWindowInstance();
@@ -187,7 +187,7 @@ namespace CPU_OS_Simulator
         {
             currentInstance = null;
             SetConsoleWindowInstance();
-            this.Close();
+            Close();
         }
 
         private void btn_SetFonts_Click(object sender, RoutedEventArgs e)

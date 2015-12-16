@@ -2,10 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
-using System.Runtime.InteropServices;
-using System.Security.Cryptography.X509Certificates;
 using System.Text;
-using System.Threading.Tasks;
 using CPU_OS_Simulator.CPU;
 
 namespace CPU_OS_Simulator.Console
@@ -27,7 +24,7 @@ namespace CPU_OS_Simulator.Console
         public ConsoleCommand(string name)
         {
             this.name = name;
-            this.parameters = new string[] {};
+            parameters = new string[] {};
             BindFunction();
         }
         /// <summary>
@@ -65,27 +62,27 @@ namespace CPU_OS_Simulator.Console
             {
                 case EnumConsoleCommands.HELP:
                 {
-                    this.execute = () => HelpCommand(name, parameters);
+                    execute = () => HelpCommand(name, parameters);
                     break;
                 }
                 case EnumConsoleCommands.PROGRAM:
                 {
-                    this.execute = () => ProgramCommand(name, parameters);
+                    execute = () => ProgramCommand(name, parameters);
                     break;
                 }
                 case EnumConsoleCommands.SIZE:
                 {
-                    this.execute = () => SizeCommand(name, parameters);
+                    execute = () => SizeCommand(name, parameters);
                         break;
                 }
                 case EnumConsoleCommands.CLEAR:
                 {
-                    this.execute = () => ClearCommand(name, parameters);
+                    execute = () => ClearCommand(name, parameters);
                     break;
                 }
                 case EnumConsoleCommands.UNKNOWN:
                 {
-                    this.execute = () => UnknownCommand(name, parameters);
+                    execute = () => UnknownCommand(name, parameters);
                     break;
                 }
                 default:
@@ -139,13 +136,10 @@ namespace CPU_OS_Simulator.Console
                 {
                     return "ERROR : No program is loaded \n";
                 }
-                else
-                {
-                    //TODO will need changing when instructions are not the same size.
-                    return  "Program size = " + Convert.ToString(prog.Instructions.Count*4) + " bytes \n";
-                }
+                //TODO will need changing when instructions are not the same size.
+                return  "Program size = " + Convert.ToString(prog.Instructions.Count*4) + " bytes \n";
             }
-            else if (parameters[0].Equals("pages"))
+            if (parameters[0].Equals("pages"))
             {
                 return "Program size = " + Convert.ToString(prog.Pages) + " pages \n";
             }

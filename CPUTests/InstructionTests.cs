@@ -3,38 +3,38 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace CPUTests
 {
-    [TestClass()]
+    [TestClass]
     public class InstructionTests
     {
-        [TestMethod()]
+        [TestMethod]
         public void InstructionTest()
         {
             Instruction ins = new Instruction();
             Assert.IsInstanceOfType(ins, typeof(Instruction));
         }
 
-        [TestMethod()]
+        [TestMethod]
         public void InstructionTest1()
         {
             Instruction ins = new Instruction(3, 4);
             Assert.IsInstanceOfType(ins, typeof(Instruction));
         }
 
-        [TestMethod()]
+        [TestMethod]
         public void InstructionTest2()
         {
             Instruction ins = new Instruction(3, new Operand(10, EnumOperandType.VALUE), 4);
             Assert.IsInstanceOfType(ins, typeof(Instruction));
         }
 
-        [TestMethod()]
+        [TestMethod]
         public void InstructionTest3()
         {
             Instruction ins = new Instruction(3, new Operand(10, EnumOperandType.VALUE), new Operand(10, EnumOperandType.VALUE), 4);
             Assert.IsInstanceOfType(ins, typeof(Instruction));
         }
 
-        [TestMethod()]
+        [TestMethod]
         public void BindDelegateTest()
         {
             Instruction ins = new Instruction(0, new Operand(10, EnumOperandType.VALUE), new Operand(10, EnumOperandType.VALUE), 4);
@@ -42,7 +42,7 @@ namespace CPUTests
             Assert.IsNotNull(ins.Execute);
         }
 
-        [TestMethod()]
+        [TestMethod]
         public void ToStringTest()
         {
             Instruction ins = new Instruction(0, new Operand(10, EnumOperandType.VALUE), new Operand(10, EnumOperandType.VALUE), 4);

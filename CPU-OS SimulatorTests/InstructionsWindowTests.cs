@@ -3,17 +3,17 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace CPU_OS_SimulatorTests
 {
-    [TestClass()]
+    [TestClass]
     public class InstructionsWindowTests
     {
-        [TestMethod()]
+        [TestMethod]
         public void InstructionsWindowTest()
         {
             InstructionsWindow window = new InstructionsWindow();
             Assert.IsInstanceOfType(window, typeof(InstructionsWindow));
         }
 
-        [TestMethod()]
+        [TestMethod]
         public void InstructionsWindowTest1()
         {
             MainWindow mainwindow = new MainWindow();
@@ -21,7 +21,7 @@ namespace CPU_OS_SimulatorTests
             Assert.IsInstanceOfType(window, typeof(InstructionsWindow));
         }
 
-        [TestMethod()]
+        [TestMethod]
         public void InstructionsWindowTest2()
         {
             MainWindow mainwindow = new MainWindow();

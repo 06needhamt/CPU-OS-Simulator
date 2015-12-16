@@ -7,7 +7,7 @@
     {
         UNKNOWN = -1,
         OPCODE = 1,
-        OPERAND = 5,
+        OPERAND = 5
 
     }
 }

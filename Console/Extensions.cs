@@ -1,5 +1,4 @@
-﻿using System.ComponentModel;
-using System.Reflection;
+﻿using System.Reflection;
 
 namespace CPU_OS_Simulator.Console
 {
@@ -22,8 +21,7 @@ namespace CPU_OS_Simulator.Console
 
             if (attributes != null && attributes.Length > 0)
                 return attributes[0].Value;
-            else
-                return 0;
+            return 0;
         }
 
     }

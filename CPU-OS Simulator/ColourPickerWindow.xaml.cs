@@ -64,8 +64,8 @@ namespace CPU_OS_Simulator
             }
             DynamicGrid.Height = DynamicGrid.RowDefinitions.Count*ROW_SIZE + 5;
             CreateButtons(ref DynamicGrid); // create the buttons
-            this.Height = DynamicGrid.Height + 40;
-            this.Width = DynamicGrid.Width + 30;
+            Height = DynamicGrid.Height + 40;
+            Width = DynamicGrid.Width + 30;
             root_Grid.Width = Width;
             root_Grid.Height = Height;
             root_Grid.Children.Add(DynamicGrid); // add the grid to the main window

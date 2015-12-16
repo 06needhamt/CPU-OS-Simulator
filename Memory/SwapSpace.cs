@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Reflection;
-using System.Windows;
+﻿using System.Collections.Generic;
 
 namespace CPU_OS_Simulator.Memory
 {

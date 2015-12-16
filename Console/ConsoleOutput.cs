@@ -1,9 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Diagnostics;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace CPU_OS_Simulator.Console
 {
@@ -14,8 +10,8 @@ namespace CPU_OS_Simulator.Console
     {
         private string value = String.Empty;
         private string source = String.Empty;
-        private bool isCommandOutput = false;
-        private ConsoleCommand command = null;
+        private bool isCommandOutput;
+        private ConsoleCommand command;
 
         /// <summary>
         /// Constructor for a console output that is a string 
@@ -26,7 +22,7 @@ namespace CPU_OS_Simulator.Console
         {
             this.value = value;
             this.source = source;
-            this.isCommandOutput = false;
+            isCommandOutput = false;
         }
         /// <summary>
         /// Constructor for a console output resulting from a command
@@ -37,7 +33,7 @@ namespace CPU_OS_Simulator.Console
         {
             this.command = command;
             this.source = source;
-            this.isCommandOutput = true;
+            isCommandOutput = true;
         }
         /// <summary>
         /// The string representation of the output

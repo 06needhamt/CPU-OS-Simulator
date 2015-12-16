@@ -1,9 +1,8 @@
 ﻿using System;
-using System.Windows;
-using System.Windows.Controls;
 using System.IO;
 using System.Security;
-using CPU_OS_Simulator.Compiler.Frontend;
+using System.Windows;
+using System.Windows.Controls;
 
 namespace CPU_OS_Simulator.Compiler
 {

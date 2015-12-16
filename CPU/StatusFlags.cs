@@ -38,7 +38,7 @@
         /// </summary>
         public void ToggleFlag()
         {
-            this.isSet = !isSet;
+            isSet = !isSet;
         }
         /// <summary>
         /// Property to store whether the flag is set

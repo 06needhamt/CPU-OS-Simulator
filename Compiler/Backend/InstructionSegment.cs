@@ -69,13 +69,13 @@ namespace CPU_OS_Simulator.Compiler.Backend
             {
                 bytes.Add(0xFF); // write 255 to the memory to indicate this operand is a register
                 value = int.Parse(name.Substring(1, 2));
-                List<byte> temp = BitConverter.GetBytes((int) value).ToList();
+                List<byte> temp = BitConverter.GetBytes(value).ToList();
                 bytes.AddRange(temp);
             }
             else if (type == EnumSegmentType.VALUE && size == 5) // if the segment is a value
             {
                 bytes.Add(0xEE); // write 238 to the memory to indicate this operand is a literal value
-                List<byte> temp = BitConverter.GetBytes((int) value).ToList();
+                List<byte> temp = BitConverter.GetBytes(value).ToList();
                 bytes.AddRange(temp);
             }
             else if (type == EnumSegmentType.VALUE && size == 1) // if the segment is a opcode

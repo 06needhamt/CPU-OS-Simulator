@@ -3,19 +3,19 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace CPUTests
 {
-    [TestClass()]
+    [TestClass]
     public class ExecutionUnitTests
     {
         private SimulatorProgram prog = new SimulatorProgram("Execution UnitTest", 0, 1);
 
-        [TestMethod()]
+        [TestMethod]
         public void ExecutionUnitTest()
         {
             ExecutionUnit unit = new ExecutionUnit(prog, 10);
             Assert.IsInstanceOfType(unit, typeof(ExecutionUnit));
         }
 
-        [TestMethod()]
+        [TestMethod]
         public void ExecutionUnitTest1()
         {
             ExecutionUnit unit = new ExecutionUnit(prog, 10, 10);
@@ -23,7 +23,7 @@ namespace CPUTests
             Assert.AreEqual(unit.CurrentIndex, 10);
         }
 
-        [TestMethod()]
+        [TestMethod]
         public void ExecuteInstructionTest()
         {
             Operand op1 = new Operand(Register.R00, EnumOperandType.VALUE);

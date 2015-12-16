@@ -1,10 +1,10 @@
-﻿using CPU_OS_Simulator.CPU;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
+using CPU_OS_Simulator.CPU;
 
 namespace CPU_OS_Simulator
 {
@@ -75,9 +75,9 @@ namespace CPU_OS_Simulator
             for (int i = 0; i < count; i++)
             {
                 EnumOpcodes value = (EnumOpcodes)i;
-                string fulldescription = Extentions.DescriptionAttr<EnumOpcodes>(value);
+                string fulldescription = value.DescriptionAttr();
                 string opcode = value.ToString();
-                string[] split = fulldescription.Split(new char[] { ':' }); // split the category from the description
+                string[] split = fulldescription.Split(':'); // split the category from the description
                 string category = split[0];
                 string description = split[1];
                 instructionDescriptions.Add(description); // add the description to the list
@@ -160,8 +160,8 @@ namespace CPU_OS_Simulator
         private void lst_OpcodeListDataTransfer_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             EnumOpcodes selected = (EnumOpcodes)Enum.Parse(typeof(EnumOpcodes), lst_OpcodeListDataTransfer.SelectedItem.ToString());
-            txtDescriptionDataTransfer.Text = instructionDescriptions.ElementAt<string>((int)selected);
-            int operands = Extentions.NumberOfOperandsAttr<EnumOpcodes>(selected);
+            txtDescriptionDataTransfer.Text = instructionDescriptions.ElementAt((int)selected);
+            int operands = selected.NumberOfOperandsAttr();
             if (operands == 0)
             {
                 rdb_SourceValueDataTransfer.IsEnabled = false;
@@ -185,8 +185,8 @@ namespace CPU_OS_Simulator
         private void lst_OpcodeListLogical_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             EnumOpcodes selected = (EnumOpcodes)Enum.Parse(typeof(EnumOpcodes), lst_OpcodeListLogical.SelectedItem.ToString());
-            txtDescriptionLogical.Text = instructionDescriptions.ElementAt<string>((int)selected);
-            int operands = Extentions.NumberOfOperandsAttr<EnumOpcodes>(selected);
+            txtDescriptionLogical.Text = instructionDescriptions.ElementAt((int)selected);
+            int operands = selected.NumberOfOperandsAttr();
             if (operands == 0)
             {
                 rdb_SourceValueLogical.IsEnabled = false;
@@ -210,8 +210,8 @@ namespace CPU_OS_Simulator
         private void lst_OpcodeListArithmetic_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             EnumOpcodes selected = (EnumOpcodes)Enum.Parse(typeof(EnumOpcodes), lst_OpcodeListArithmetic.SelectedItem.ToString());
-            txtDescriptionArithmetic.Text = instructionDescriptions.ElementAt<string>((int)selected);
-            int operands = Extentions.NumberOfOperandsAttr<EnumOpcodes>(selected);
+            txtDescriptionArithmetic.Text = instructionDescriptions.ElementAt((int)selected);
+            int operands = selected.NumberOfOperandsAttr();
             if (operands == 0)
             {
                 rdb_SourceValueArithmetic.IsEnabled = false;
@@ -235,8 +235,8 @@ namespace CPU_OS_Simulator
         private void lst_OpcodeListControlTransfer_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             EnumOpcodes selected = (EnumOpcodes)Enum.Parse(typeof(EnumOpcodes), lst_OpcodeListControlTransfer.SelectedItem.ToString());
-            txtDescriptionControlTransfer.Text = instructionDescriptions.ElementAt<string>((int)selected);
-            int operands = Extentions.NumberOfOperandsAttr<EnumOpcodes>(selected);
+            txtDescriptionControlTransfer.Text = instructionDescriptions.ElementAt((int)selected);
+            int operands = selected.NumberOfOperandsAttr();
             if (operands == 0)
             {
                 rdb_SourceValueControlTransfer.IsEnabled = false;
@@ -260,8 +260,8 @@ namespace CPU_OS_Simulator
         private void lst_OpcodeListComparison_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             EnumOpcodes selected = (EnumOpcodes)Enum.Parse(typeof(EnumOpcodes), lst_OpcodeListComparison.SelectedItem.ToString());
-            txtDescriptionComparison.Text = instructionDescriptions.ElementAt<string>((int)selected);
-            int operands = Extentions.NumberOfOperandsAttr<EnumOpcodes>(selected);
+            txtDescriptionComparison.Text = instructionDescriptions.ElementAt((int)selected);
+            int operands = selected.NumberOfOperandsAttr();
             if (operands == 0)
             {
                 rdb_SourceValueComparison.IsEnabled = false;
@@ -285,8 +285,8 @@ namespace CPU_OS_Simulator
         private void lst_OpcodeListIO_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             EnumOpcodes selected = (EnumOpcodes)Enum.Parse(typeof(EnumOpcodes), lst_OpcodeListIO.SelectedItem.ToString());
-            txtDescriptionIO.Text = instructionDescriptions.ElementAt<string>((int)selected);
-            int operands = Extentions.NumberOfOperandsAttr<EnumOpcodes>(selected);
+            txtDescriptionIO.Text = instructionDescriptions.ElementAt((int)selected);
+            int operands = selected.NumberOfOperandsAttr();
             if (operands == 0)
             {
                 rdb_SourceValueIO.IsEnabled = false;
@@ -310,8 +310,8 @@ namespace CPU_OS_Simulator
         private void lst_OpcodeListMiscellaneous_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             EnumOpcodes selected = (EnumOpcodes)Enum.Parse(typeof(EnumOpcodes), lst_OpcodeListMiscellaneous.SelectedItem.ToString());
-            txtDescriptionMiscellaneous.Text = instructionDescriptions.ElementAt<string>((int)selected);
-            int operands = Extentions.NumberOfOperandsAttr<EnumOpcodes>(selected);
+            txtDescriptionMiscellaneous.Text = instructionDescriptions.ElementAt((int)selected);
+            int operands = selected.NumberOfOperandsAttr();
             if (operands == 0)
             {
                 rdb_SourceValueMiscellaneous.IsEnabled = false;
@@ -344,12 +344,8 @@ namespace CPU_OS_Simulator
             System.Console.WriteLine("Instruction Window closing");
             if (instructionMode.Equals(EnumInstructionMode.SHOW))
             {
-                return;
             }
-            else
-            {
-                CreateInstruction();
-            }
+            CreateInstruction();
         }
 
         #region Instruction Creation Functions

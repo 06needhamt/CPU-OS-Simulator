@@ -1,9 +1,7 @@
 ﻿using System;
-using CPU_OS_Simulator.CPU;
-using CPU_OS_Simulator.Memory;
 using System.Collections.Generic;
 using System.Reflection;
-using System.Security.Cryptography;
+using CPU_OS_Simulator.Memory;
 
 namespace CPU_OS_Simulator.CPU
 {
@@ -12,9 +10,9 @@ namespace CPU_OS_Simulator.CPU
     /// </summary>
     public class CompiledProgram
     {
-        private List<byte> bytes = null;
+        private List<byte> bytes;
         private string name = String.Empty;
-        private int size = 0;
+        private int size;
 
         /// <summary>
         /// Constructor for a compiled program

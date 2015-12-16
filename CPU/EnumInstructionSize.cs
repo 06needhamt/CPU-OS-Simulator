@@ -8,6 +8,6 @@
         //TODO add more instruction sizes
         MOV = 4,
 
-        POP = 4,
+        POP = 4
     }
 }

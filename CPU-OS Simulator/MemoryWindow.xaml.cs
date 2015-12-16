@@ -1,7 +1,8 @@
-﻿using CPU_OS_Simulator.Memory;
-using System;
+﻿using System;
+using System.ComponentModel;
 using System.Reflection;
 using System.Windows;
+using CPU_OS_Simulator.Memory;
 
 namespace CPU_OS_Simulator
 {
@@ -164,7 +165,7 @@ namespace CPU_OS_Simulator
             window.Show();
         }
 
-        private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
+        private void Window_Closing(object sender, CancelEventArgs e)
         {
             currentInstance = null;
             SetMemoryWindowInstance();

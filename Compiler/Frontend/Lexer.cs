@@ -2,10 +2,11 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Controls;
 using CPU_OS_Simulator.Compiler.Frontend.Tokens;
+using static CPU_OS_Simulator.Compiler.Frontend.Tokens.EnumKeywordType;
+using static CPU_OS_Simulator.Compiler.Frontend.EnumErrorCodes;
+using static CPU_OS_Simulator.Compiler.Frontend.Tokens.EnumTokenType;
 
 namespace CPU_OS_Simulator.Compiler.Frontend
 {
@@ -28,16 +29,16 @@ namespace CPU_OS_Simulator.Compiler.Frontend
         private LinkedListNode<Token> nextToken;
         private LinkedListNode<Token> previousToken;
 
-        private bool writingToCompilerTester = false;
+        private bool writingToCompilerTester;
         private string error;
-        private TextBox output = null;
+        private TextBox output;
         #endregion GlobalVariables
 
         #region Constructors
         public Lexer(string sourceString)
         {
             this.sourceString = sourceString;
-            this.tokens = new LinkedList<Token>();
+            tokens = new LinkedList<Token>();
         }
 
         public bool WritingToCompilerTester
@@ -78,37 +79,37 @@ namespace CPU_OS_Simulator.Compiler.Frontend
             currentToken = tokens.First;
             nextToken = currentToken.Next;
             previousToken = currentToken.Previous;
-            if ((EnumKeywordType) tokens.First.Value.Type != EnumKeywordType.PROGRAM)
+            if ((EnumKeywordType) tokens.First.Value.Type != PROGRAM)
             {
-                ThrowError(EnumErrorCodes.EXPECTED_A_KEYWORD, "program");
+                ThrowError(EXPECTED_A_KEYWORD, "program");
                 return false;
             }
             while (currentToken.Next != null)
             {
-                if ((EnumKeywordType) currentToken.Value.Type == EnumKeywordType.PROGRAM &&
-                    ((EnumTokenType) nextToken.Value.Type != EnumTokenType.IDENTIFIER))
+                if ((EnumKeywordType) currentToken.Value.Type == PROGRAM &&
+                    ((EnumTokenType) nextToken.Value.Type != IDENTIFIER))
                 {
-                    ThrowError(EnumErrorCodes.EXPECTED_AN_IDENTIFIER, "Program Name");
+                    ThrowError(EXPECTED_AN_IDENTIFIER, "Program Name");
                     return false;
                 }
-                if ((EnumKeywordType) currentToken.Value.Type == EnumKeywordType.SUB &&
-                    (EnumKeywordType) previousToken.Value.Type != EnumKeywordType.END)
+                if ((EnumKeywordType) currentToken.Value.Type == SUB &&
+                    (EnumKeywordType) previousToken.Value.Type != END)
                 {
-                    if ((EnumKeywordType) currentToken.Value.Type == EnumKeywordType.SUB &&
-                    ((EnumTokenType) nextToken.Value.Type != EnumTokenType.IDENTIFIER))
+                    if ((EnumKeywordType) currentToken.Value.Type == SUB &&
+                    ((EnumTokenType) nextToken.Value.Type != IDENTIFIER))
                     {
-                        ThrowError(EnumErrorCodes.EXPECTED_AN_IDENTIFIER, "Subroutine name");
+                        ThrowError(EXPECTED_AN_IDENTIFIER, "Subroutine name");
                         return false;
                     }
 
                 }
-                if ((EnumKeywordType)currentToken.Value.Type == EnumKeywordType.FUN &&
-                    (EnumKeywordType)previousToken.Value.Type != EnumKeywordType.END)
+                if ((EnumKeywordType)currentToken.Value.Type == FUN &&
+                    (EnumKeywordType)previousToken.Value.Type != END)
                 {
-                    if ((EnumKeywordType)currentToken.Value.Type == EnumKeywordType.FUN &&
-                    ((EnumTokenType)nextToken.Value.Type != EnumTokenType.IDENTIFIER))
+                    if ((EnumKeywordType)currentToken.Value.Type == FUN &&
+                    ((EnumTokenType)nextToken.Value.Type != IDENTIFIER))
                     {
-                        ThrowError(EnumErrorCodes.EXPECTED_AN_IDENTIFIER, "Function name");
+                        ThrowError(EXPECTED_AN_IDENTIFIER, "Function name");
                         return false;
                     }
 
@@ -117,9 +118,9 @@ namespace CPU_OS_Simulator.Compiler.Frontend
                 nextToken = currentToken.Next;
                 previousToken = currentToken.Previous;
             }
-            if ((EnumKeywordType)currentToken.Value.Type != EnumKeywordType.END)
+            if ((EnumKeywordType)currentToken.Value.Type != END)
             {
-                ThrowError(EnumErrorCodes.EXPECTED_A_KEYWORD, "end");
+                ThrowError(EXPECTED_A_KEYWORD, "end");
                 return false;
             }
 
@@ -128,13 +129,12 @@ namespace CPU_OS_Simulator.Compiler.Frontend
 
         private void ThrowError(EnumErrorCodes enumErrorCodes, string expectedToken)
         {
-            error = "Error: " + enumErrorCodes.ToString() + " " + expectedToken;
-            return;
+            error = "Error: " + enumErrorCodes + " " + expectedToken;
         }
 
         private LinkedList<Token> GenerateTokens()
         {
-            string[] temp = sourceString.Split(new char[] { '\n', '\r', '\t', ' ' });
+            string[] temp = sourceString.Split('\n', '\r', '\t', ' ');
             temp = temp.Where(x => !String.IsNullOrEmpty(x)).ToArray();
             tokenStrings = new LinkedList<string>(temp);
             foreach (string tokenString in tokenStrings)
@@ -176,18 +176,18 @@ namespace CPU_OS_Simulator.Compiler.Frontend
             {
                 previousToken = currentToken.Previous;
                 nextToken = currentToken.Next;
-                if ((EnumTokenType) currentToken.Value.Type == EnumTokenType.UNKNOWNN)
+                if ((EnumTokenType) currentToken.Value.Type == UNKNOWNN)
                 {
                     if (previousToken != null)
                     {
-                        if ((EnumKeywordType) previousToken?.Value.Type == EnumKeywordType.VAR
-                            || (EnumKeywordType) previousToken?.Value.Type == EnumKeywordType.PROGRAM
-                            || (EnumKeywordType) previousToken?.Value.Type == EnumKeywordType.FUN
-                            || (EnumKeywordType) previousToken?.Value.Type == EnumKeywordType.SUB
-                            || (EnumKeywordType) previousToken?.Value.Type == EnumKeywordType.GOTO
-                            || (EnumKeywordType) previousToken?.Value.Type == EnumKeywordType.CALL)
+                        if ((EnumKeywordType) previousToken?.Value.Type == VAR
+                            || (EnumKeywordType) previousToken?.Value.Type == PROGRAM
+                            || (EnumKeywordType) previousToken?.Value.Type == FUN
+                            || (EnumKeywordType) previousToken?.Value.Type == SUB
+                            || (EnumKeywordType) previousToken?.Value.Type == GOTO
+                            || (EnumKeywordType) previousToken?.Value.Type == CALL)
                         {
-                            currentToken.Value.Type = EnumTokenType.IDENTIFIER;
+                            currentToken.Value.Type = IDENTIFIER;
                         }
                     }
 
@@ -208,7 +208,7 @@ namespace CPU_OS_Simulator.Compiler.Frontend
                 {
                     while (currentToken?.Next != null)
                     {
-                        output.Text += currentToken.Value.ToString() + "\r";
+                        output.Text += currentToken.Value + "\r";
                         previousToken = currentToken;
                         currentToken = nextToken;
                         nextToken = currentToken.Next;

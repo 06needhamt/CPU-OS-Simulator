@@ -3,17 +3,17 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace CPUTests
 {
-    [TestClass()]
+    [TestClass]
     public class ProgramStackTests
     {
-        [TestMethod()]
+        [TestMethod]
         public void ProgramStackTest()
         {
             ProgramStack stack = new ProgramStack();
             Assert.IsInstanceOfType(stack, typeof(ProgramStack));
         }
 
-        [TestMethod()]
+        [TestMethod]
         public void pushItemTest()
         {
             ProgramStack stack = new ProgramStack();
@@ -21,7 +21,7 @@ namespace CPUTests
             Assert.AreEqual(stack.StackItems.Count, 1);
         }
 
-        [TestMethod()]
+        [TestMethod]
         public void popItemTest()
         {
             ProgramStack stack = new ProgramStack();

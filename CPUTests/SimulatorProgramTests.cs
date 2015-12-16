@@ -4,24 +4,24 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace CPUTests
 {
-    [TestClass()]
+    [TestClass]
     public class SimulatorProgramTests
     {
-        [TestMethod()]
+        [TestMethod]
         public void SimulatorProgramTest()
         {
             SimulatorProgram prog = new SimulatorProgram();
             Assert.IsInstanceOfType(prog, typeof(SimulatorProgram));
         }
 
-        [TestMethod()]
+        [TestMethod]
         public void SimulatorProgramTest1()
         {
             SimulatorProgram prog = new SimulatorProgram("Test", 0, 1);
             Assert.IsInstanceOfType(prog, typeof(SimulatorProgram));
         }
 
-        [TestMethod()]
+        [TestMethod]
         public void AddInstructionTest()
         {
             SimulatorProgram prog = new SimulatorProgram("Test", 0, 1);
@@ -30,7 +30,7 @@ namespace CPUTests
             Assert.AreEqual(prog.Instructions.Count, 1);
         }
 
-        [TestMethod()]
+        [TestMethod]
         public void AddInstructionTest1()
         {
             SimulatorProgram prog = new SimulatorProgram("Test", 0, 1);
@@ -41,7 +41,7 @@ namespace CPUTests
             Assert.IsTrue(prog.Instructions.Count == 2 && prog.Instructions.ElementAt(0).Equals(ins2));
         }
 
-        [TestMethod()]
+        [TestMethod]
         public void UpdateAddressesTest()
         {
             Assert.Inconclusive();

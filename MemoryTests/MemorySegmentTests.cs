@@ -4,24 +4,24 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace MemoryTests
 {
-    [TestClass()]
+    [TestClass]
     public class MemorySegmentTests
     {
-        [TestMethod()]
+        [TestMethod]
         public void MemorySegmentTest()
         {
             MemorySegment segment = new MemorySegment();
             Assert.IsInstanceOfType(segment, typeof (MemorySegment));
         }
 
-        [TestMethod()]
+        [TestMethod]
         public void MemorySegmentTest1()
         {
             MemorySegment segment = new MemorySegment(1000);
             Assert.IsTrue(segment.GetType().Equals(typeof (MemorySegment)) && segment.PhysicalAddress == 1000);
         }
 
-        [TestMethod()]
+        [TestMethod]
         public void GetByteTest()
         {
             MemorySegment segment = new MemorySegment();
@@ -31,19 +31,19 @@ namespace MemoryTests
             Assert.AreEqual(segment.GetByte(number), 0x02);
         }
 
-        [TestMethod()]
+        [TestMethod]
         public void ToStringTest()
         {
             Assert.Inconclusive();
         }
 
-        [TestMethod()]
+        [TestMethod]
         public void BuildDataStringTest()
         {
             Assert.Inconclusive();
         }
 
-        [TestMethod()]
+        [TestMethod]
         public void SetByteTest()
         {
             MemorySegment segment = new MemorySegment();

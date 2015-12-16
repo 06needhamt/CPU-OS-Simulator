@@ -95,7 +95,7 @@ namespace CPU_OS_Simulator.CPU
             operand1 = null;
             operand2 = null;
             this.size = size;
-            instructionString = this.ToString();
+            instructionString = ToString();
             BindDelegate();
         }
 
@@ -881,17 +881,14 @@ namespace CPU_OS_Simulator.CPU
                 MessageBox.Show("ERROR SWP Both operands must be a register", "", MessageBoxButton.OK, MessageBoxImage.Information);
                 return int.MinValue;
             }
-            else
-            {
-                int leftvalue = lhs.Register.Value;
-                int rightvalue = rhs.Register.Value;
-                lhs.Register.Value = rightvalue;
-                rhs.Register.Value = leftvalue;
-                Register.FindRegister(rhs.Register.Name).setRegisterValue(lhs.Register.Value, EnumOperandType.VALUE);
-                Register.FindRegister(lhs.Register.Name).setRegisterValue(rhs.Register.Value, EnumOperandType.VALUE);
-                result = lhs.Register.Value;
-                return result;
-            }
+            int leftvalue = lhs.Register.Value;
+            int rightvalue = rhs.Register.Value;
+            lhs.Register.Value = rightvalue;
+            rhs.Register.Value = leftvalue;
+            Register.FindRegister(rhs.Register.Name).setRegisterValue(lhs.Register.Value, EnumOperandType.VALUE);
+            Register.FindRegister(lhs.Register.Name).setRegisterValue(rhs.Register.Value, EnumOperandType.VALUE);
+            result = lhs.Register.Value;
+            return result;
         }
 
         #endregion Data Transfer
@@ -1247,11 +1244,8 @@ namespace CPU_OS_Simulator.CPU
                 Register.FindRegister(lhs.Register.Name).setRegisterValue(result, EnumOperandType.VALUE);
                 return result;
             }
-            else
-            {
-                MessageBox.Show("Operand of INC instruction must be a register", "", MessageBoxButton.OK, MessageBoxImage.Information);
-                return int.MinValue;
-            }
+            MessageBox.Show("Operand of INC instruction must be a register", "", MessageBoxButton.OK, MessageBoxImage.Information);
+            return int.MinValue;
         }
 
         /// <summary>
@@ -1270,11 +1264,8 @@ namespace CPU_OS_Simulator.CPU
                 Register.FindRegister(lhs.Register.Name).setRegisterValue(result, EnumOperandType.VALUE);
                 return result;
             }
-            else
-            {
-                MessageBox.Show("Operand of DEC instruction must be a register", "", MessageBoxButton.OK, MessageBoxImage.Information);
-                return int.MinValue;
-            }
+            MessageBox.Show("Operand of DEC instruction must be a register", "", MessageBoxButton.OK, MessageBoxImage.Information);
+            return int.MinValue;
         }
 
         #endregion Arithmetic

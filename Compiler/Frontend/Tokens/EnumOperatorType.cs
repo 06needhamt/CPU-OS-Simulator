@@ -14,7 +14,7 @@
         NOT = 9,
         AND = 10,
         XOR = 11,
-        NOT_EQUAL = 12,
+        NOT_EQUAL = 12
 
     }
 }

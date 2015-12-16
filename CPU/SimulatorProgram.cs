@@ -1,7 +1,7 @@
-﻿using CPU_OS_Simulator.Memory;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Web.Script.Serialization;
+using CPU_OS_Simulator.Memory;
 
 namespace CPU_OS_Simulator.CPU
 {

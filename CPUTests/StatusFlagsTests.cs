@@ -3,16 +3,16 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace CPUTests
 {
-    [TestClass()]
+    [TestClass]
     public class StatusFlagsTests
     {
-        [TestMethod()]
+        [TestMethod]
         public void ToggleFlagTest()
         {
             StatusFlags N = StatusFlags.N;
             N.IsSet = false;
             N.ToggleFlag();
-            Assert.IsTrue(N.IsSet == true);
+            Assert.IsTrue(N.IsSet);
         }
     }
 }

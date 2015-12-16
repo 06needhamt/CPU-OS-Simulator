@@ -1,9 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Runtime.CompilerServices;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace CPU_OS_Simulator.Console
 {
@@ -13,8 +8,8 @@ namespace CPU_OS_Simulator.Console
     public class ConsoleInput
     {
         private string value = String.Empty;
-        private bool isCommand = false;
-        private ConsoleCommand command = null;
+        private bool isCommand;
+        private ConsoleCommand command;
 
         /// <summary>
         /// Constructor for a console input that is a string
@@ -23,7 +18,7 @@ namespace CPU_OS_Simulator.Console
         public ConsoleInput(string value)
         {
             this.value = value;
-            this.isCommand = false;
+            isCommand = false;
         }
         /// <summary>
         /// Constructor for a console input that is a valid console command 
@@ -32,7 +27,7 @@ namespace CPU_OS_Simulator.Console
         public ConsoleInput(ConsoleCommand command)
         {
             this.command = command;
-            this.isCommand = true;
+            isCommand = true;
         }
         /// <summary>
         /// The string representation of the input

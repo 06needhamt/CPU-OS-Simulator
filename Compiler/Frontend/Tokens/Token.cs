@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Diagnostics;
 
 namespace CPU_OS_Simulator.Compiler.Frontend.Tokens
 {
@@ -71,20 +70,17 @@ namespace CPU_OS_Simulator.Compiler.Frontend.Tokens
         {
             if (isType())
             {
-                return value + " " + (((EnumTypes) type).ToString());
+                return value + " " + (((EnumTypes) type));
             }
-            else if (isKeyword())
+            if (isKeyword())
             {
-                return value + " " + (((EnumKeywordType)type).ToString());
+                return value + " " + (((EnumKeywordType)type));
             }
-            else if (isOperator())
+            if (isOperator())
             {
-                return value + " " + (((EnumOperatorType)type).ToString());
+                return value + " " + (((EnumOperatorType)type));
             }
-            else
-            {
-                return value + " " + (((EnumTokenType)type).ToString());
-            }
+            return value + " " + (((EnumTokenType)type));
         }
     }
 }

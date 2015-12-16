@@ -3,10 +3,10 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace CPUTests
 {
-    [TestClass()]
+    [TestClass]
     public class StackItemTests
     {
-        [TestMethod()]
+        [TestMethod]
         public void StackItemTest()
         {
             StackItem si = new StackItem(10);

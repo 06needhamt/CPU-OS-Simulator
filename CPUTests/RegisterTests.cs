@@ -3,17 +3,17 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace CPUTests
 {
-    [TestClass()]
+    [TestClass]
     public class RegisterTests
     {
-        [TestMethod()]
+        [TestMethod]
         public void RegisterTest()
         {
             Register r = new Register();
             Assert.IsInstanceOfType(r, typeof(Register));
         }
 
-        [TestMethod()]
+        [TestMethod]
         public void setRegisterValueTest()
         {
             Register reg = Register.R00;
@@ -21,7 +21,7 @@ namespace CPUTests
             Assert.AreEqual(reg.Value, 10);
         }
 
-        [TestMethod()]
+        [TestMethod]
         public void FindRegisterTest()
         {
             Register reg = Register.FindRegister("R00");

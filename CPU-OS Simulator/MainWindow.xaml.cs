@@ -1,6 +1,3 @@
-using CPU_OS_Simulator.CPU;
-using CPU_OS_Simulator.Memory;
-using Microsoft.Win32;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -18,6 +15,9 @@ using System.Windows.Controls;
 using System.Windows.Threading;
 using CPU_OS_Simulator.Compiler;
 using CPU_OS_Simulator.Compiler.Backend;
+using CPU_OS_Simulator.CPU;
+using CPU_OS_Simulator.Memory;
+using Microsoft.Win32;
 
 namespace CPU_OS_Simulator
 {
@@ -43,7 +43,7 @@ namespace CPU_OS_Simulator
         public static MainWindow currentInstance;
         Dispatcher dispatcher = Dispatcher.CurrentDispatcher;
         private BackgroundWorker executionWorker;
-        private bool saved = false;
+        private bool saved;
         private PageTableEntry currentPage;
         private PhysicalMemory memory;
         private SwapSpace swapSpace;
@@ -223,9 +223,9 @@ namespace CPU_OS_Simulator
         private void UpdateSpecialRegisters()
         {
             txt_BR.Text = SpecialRegister.FindSpecialRegister("BR").Value.ToString();
-            txt_IR.Text = SpecialRegister.FindSpecialRegister("IR").ValueString.ToString();
+            txt_IR.Text = SpecialRegister.FindSpecialRegister("IR").ValueString;
             txt_MAR.Text = SpecialRegister.FindSpecialRegister("MAR").Value.ToString();
-            txt_MDR.Text = SpecialRegister.FindSpecialRegister("MDR").ValueString.ToString();
+            txt_MDR.Text = SpecialRegister.FindSpecialRegister("MDR").ValueString;
             txt_PC.Text = SpecialRegister.FindSpecialRegister("PC").Value.ToString();
             txt_SP.Text = SpecialRegister.FindSpecialRegister("SP").Value.ToString();
             txt_SR.Text = SpecialRegister.FindSpecialRegister("SR").Value.ToString();
@@ -345,7 +345,7 @@ namespace CPU_OS_Simulator
                 MessageBox.Show("Please Enter a Program Name");
                 return null;
             }
-            else if (txtBaseAddress.Text == "")
+            if (txtBaseAddress.Text == "")
             {
                 MessageBox.Show("Please Enter a Base Address");
                 return null;
@@ -458,7 +458,6 @@ namespace CPU_OS_Simulator
             else
             {
                 e.Cancel = true;
-                return;
             }
         }
 
@@ -675,8 +674,8 @@ namespace CPU_OS_Simulator
             dlg.FileName = "Program";
             dlg.DefaultExt = "*.sas";
             dlg.Filter = "Simulator Programs (.sas)|*.sas"; // Filter files by extension
-            Nullable<bool> result = dlg.ShowDialog();
-            if (result.Value == true)
+            bool? result = dlg.ShowDialog();
+            if (result.Value)
             {
                 if (File.Exists(dlg.FileName))
                 {
@@ -685,7 +684,7 @@ namespace CPU_OS_Simulator
                 SimulatorProgram[] progs = programList.ToArray();
                 foreach (SimulatorProgram t in progs)
                 {
-                    SerializeObject<SimulatorProgram>(t, dlg.FileName); // save all programs in the program list
+                    SerializeObject(t, dlg.FileName); // save all programs in the program list
                 }
             }
             saved = true;
@@ -702,8 +701,8 @@ namespace CPU_OS_Simulator
             ofd.FileName = "Program";
             ofd.DefaultExt = "*.sas";
             ofd.Filter = "Simulator Programs (.sas)|*.sas"; // Filter files by extension
-            Nullable<bool> result = ofd.ShowDialog();
-            if (result.Value == true)
+            bool? result = ofd.ShowDialog();
+            if (result.Value)
             {
                 DeSerializeObject<SimulatorProgram>(ofd.FileName); // load all programs from the file
             }
@@ -758,8 +757,6 @@ namespace CPU_OS_Simulator
                 programList.Add(prog);
                 lst_ProgramList.Items.Add(prog); // add the object to the program list
             }
-
-            return;
         }
 
         /// <summary>
@@ -816,10 +813,10 @@ namespace CPU_OS_Simulator
         private void CreateBackgroundWorker()
         {
             executionWorker = new BackgroundWorker();
-            executionWorker.DoWork += new DoWorkEventHandler(CreateExecutionThread);
+            executionWorker.DoWork += CreateExecutionThread;
             executionWorker.WorkerSupportsCancellation = true;
             executionWorker.WorkerReportsProgress = true;
-            executionWorker.ProgressChanged += new ProgressChangedEventHandler(UpdateInterface);
+            executionWorker.ProgressChanged += UpdateInterface;
         }
         /// <summary>
         /// Asynchronous function called after every instruction is executed to update required values and user interface asynchronously

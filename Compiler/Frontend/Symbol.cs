@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Diagnostics;
 using CPU_OS_Simulator.Compiler.Frontend.Tokens;
 
 namespace CPU_OS_Simulator.Compiler.Frontend
@@ -46,8 +45,8 @@ namespace CPU_OS_Simulator.Compiler.Frontend
             this.name = name;
             this.type = type;
             this.value = value;
-            this.issub = isSub;
-            this.isfun = isFun;
+            issub = isSub;
+            isfun = isFun;
         }
 
         public override Enum DetectType()

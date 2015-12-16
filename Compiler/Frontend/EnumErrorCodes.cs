@@ -7,6 +7,6 @@
         EXPECTED_AN_IDENTIFIER = 2,
         EXPECTED_A_KEYWORD = 3,
         EXPECTED_AN_OPERATOR = 4,
-        EXPECTED_A_TYPENAME = 5,
+        EXPECTED_A_TYPENAME = 5
     }
 }

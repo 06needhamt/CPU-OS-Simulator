@@ -3,17 +3,17 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace CPUTests
 {
-    [TestClass()]
+    [TestClass]
     public class SpecialRegisterTests
     {
-        [TestMethod()]
+        [TestMethod]
         public void SpecialRegisterTest()
         {
             SpecialRegister sp = new SpecialRegister();
             Assert.IsInstanceOfType(sp, typeof(SpecialRegister));
         }
 
-        [TestMethod()]
+        [TestMethod]
         public void FindSpecialRegisterTest()
         {
             SpecialRegister sp;
@@ -21,7 +21,7 @@ namespace CPUTests
             Assert.AreEqual(sp, SpecialRegister.PC);
         }
 
-        [TestMethod()]
+        [TestMethod]
         public void setRegisterValueTest()
         {
             SpecialRegister sp = SpecialRegister.FindSpecialRegister("PC");
@@ -29,7 +29,7 @@ namespace CPUTests
             Assert.AreEqual(sp.Value, 100);
         }
 
-        [TestMethod()]
+        [TestMethod]
         public void setRegisterValueTest1()
         {
             SpecialRegister sp = SpecialRegister.FindSpecialRegister("IR");

@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 
 namespace CPU_OS_Simulator.Memory
 {
@@ -20,7 +16,7 @@ namespace CPU_OS_Simulator.Memory
         /// <param name="number"> the number of the page table</param>
         public PageTable(int number)
         {
-            this.tableNumber = number;
+            tableNumber = number;
             entries = new List<PageTableEntry>();
         }
         /// <summary>
@@ -30,7 +26,7 @@ namespace CPU_OS_Simulator.Memory
         /// <param name="entries"> the entries to place in the table</param>
         public PageTable(int number, List<PageTableEntry> entries)
         {
-            this.tableNumber = number;
+            tableNumber = number;
             this.entries = entries;
         }
         /// <summary>

@@ -22,8 +22,7 @@ namespace CPU_OS_Simulator.CPU
 
             if (attributes != null && attributes.Length > 0)
                 return attributes[0].Description;
-            else
-                return source.ToString();
+            return source.ToString();
         }
 
         /// <summary>
@@ -38,8 +37,7 @@ namespace CPU_OS_Simulator.CPU
             NumberOfOperandsAttribute[] attributes = (NumberOfOperandsAttribute[])fi.GetCustomAttributes(typeof(NumberOfOperandsAttribute), false);
             if (attributes != null && attributes.Length > 0)
                 return attributes[0].Value;
-            else
-                return 2;
+            return 2;
         }
     }
 }

@@ -1,5 +1,4 @@
 ﻿using System;
-using System.CodeDom.Compiler;
 using System.Collections.Generic;
 using CPU_OS_Simulator.Compiler.Backend;
 using CPU_OS_Simulator.Compiler.Frontend;
@@ -14,8 +13,8 @@ namespace CPU_OS_Simulator.Compiler
     public class CompilerMain
     {
         private EnumCompilerMode mode = EnumCompilerMode.UNKNOWN;
-        private SourceFile file = null;
-        private List<Instruction> instructions = null;
+        private SourceFile file;
+        private List<Instruction> instructions;
         private string name = String.Empty;
 
         /// <summary>
@@ -25,7 +24,7 @@ namespace CPU_OS_Simulator.Compiler
         public CompilerMain(SourceFile file)
         {
             this.file = file;
-            this.mode = EnumCompilerMode.SOURCE_CODE;
+            mode = EnumCompilerMode.SOURCE_CODE;
 
         }
         /// <summary>
@@ -36,7 +35,7 @@ namespace CPU_OS_Simulator.Compiler
         public CompilerMain(List<Instruction> instructions, string name )
         {
             this.instructions = instructions;
-            this.mode = EnumCompilerMode.INSTRUCTIONS;
+            mode = EnumCompilerMode.INSTRUCTIONS;
             this.name = name;
         }
 
@@ -64,7 +63,7 @@ namespace CPU_OS_Simulator.Compiler
                 {
                     continue;
                 }
-                else if (ins.Operand2 == null) // if the instruction takes one operand
+                if (ins.Operand2 == null) // if the instruction takes one operand
                 {
                     if (ins.Operand1.IsRegister) // if the first operand is a register
                     {

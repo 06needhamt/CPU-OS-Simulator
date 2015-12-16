@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace CPU_OS_Simulator.CPU
+﻿namespace CPU_OS_Simulator.CPU
 {
     /// <summary>
     /// This class represents a CPU register
