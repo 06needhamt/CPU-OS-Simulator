@@ -44,6 +44,10 @@ namespace CompilerTester
             {
                 MessageBox.Show("Lexer Error Occurred: " + lexical.Error + " Compilation Terminated");
             }
+            else
+            {
+                MessageBox.Show("Lexing Completed Successfully");
+            }
 
         }
     }
