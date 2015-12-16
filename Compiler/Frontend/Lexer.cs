@@ -30,7 +30,7 @@ namespace CPU_OS_Simulator.Compiler.Frontend
 
         private bool writingToCompilerTester = false;
         private string error;
-        private TextBlock output = null;
+        private TextBox output = null;
         #endregion GlobalVariables
 
         #region Constructors
@@ -46,7 +46,7 @@ namespace CPU_OS_Simulator.Compiler.Frontend
             set { writingToCompilerTester = value; }
         }
 
-        public TextBlock Output
+        public TextBox Output
         {
             get { return output; }
             set { output = value; }
@@ -67,8 +67,9 @@ namespace CPU_OS_Simulator.Compiler.Frontend
             tokens = GenerateTokens();
             IdentifyUnknownTokens();
             PrintTokens();
-            CheckForErrors();
+            //CheckForErrors();
             return CheckForErrors();
+            //return true;
 
         }
 
@@ -91,15 +92,26 @@ namespace CPU_OS_Simulator.Compiler.Frontend
                     return false;
                 }
                 if ((EnumKeywordType) currentToken.Value.Type == EnumKeywordType.SUB &&
-                    ((EnumTokenType) nextToken.Value.Type != EnumTokenType.IDENTIFIER))
+                    (EnumKeywordType) previousToken.Value.Type != EnumKeywordType.END)
                 {
-                    ThrowError(EnumErrorCodes.EXPECTED_AN_IDENTIFIER, "Subroutine name");
-                    return false;
+                    if ((EnumKeywordType) currentToken.Value.Type == EnumKeywordType.SUB &&
+                    ((EnumTokenType) nextToken.Value.Type != EnumTokenType.IDENTIFIER))
+                    {
+                        ThrowError(EnumErrorCodes.EXPECTED_AN_IDENTIFIER, "Subroutine name");
+                        return false;
+                    }
+
                 }
                 if ((EnumKeywordType)currentToken.Value.Type == EnumKeywordType.FUN &&
-                    ((EnumTokenType)nextToken.Value.Type != EnumTokenType.IDENTIFIER))
+                    (EnumKeywordType)previousToken.Value.Type != EnumKeywordType.END)
                 {
-                    ThrowError(EnumErrorCodes.EXPECTED_AN_IDENTIFIER, "Function name");
+                    if ((EnumKeywordType)currentToken.Value.Type == EnumKeywordType.FUN &&
+                    ((EnumTokenType)nextToken.Value.Type != EnumTokenType.IDENTIFIER))
+                    {
+                        ThrowError(EnumErrorCodes.EXPECTED_AN_IDENTIFIER, "Function name");
+                        return false;
+                    }
+
                 }
                 currentToken = nextToken;
                 nextToken = currentToken.Next;
@@ -166,16 +178,19 @@ namespace CPU_OS_Simulator.Compiler.Frontend
                 nextToken = currentToken.Next;
                 if ((EnumTokenType) currentToken.Value.Type == EnumTokenType.UNKNOWNN)
                 {
-                    if ((EnumKeywordType) previousToken?.Value.Type == EnumKeywordType.VAR
-                        || (EnumKeywordType)previousToken?.Value.Type == EnumKeywordType.PROGRAM
-                        || (EnumKeywordType)previousToken?.Value.Type == EnumKeywordType.FUN
-                        || (EnumKeywordType)previousToken?.Value.Type == EnumKeywordType.SUB
-                        || (EnumKeywordType)previousToken?.Value.Type == EnumKeywordType.GOTO
-                        || (EnumKeywordType)previousToken?.Value.Type == EnumKeywordType.CALL)
+                    if (previousToken != null)
                     {
-                        currentToken.Value.Type = EnumTokenType.IDENTIFIER;
+                        if ((EnumKeywordType) previousToken?.Value.Type == EnumKeywordType.VAR
+                            || (EnumKeywordType) previousToken?.Value.Type == EnumKeywordType.PROGRAM
+                            || (EnumKeywordType) previousToken?.Value.Type == EnumKeywordType.FUN
+                            || (EnumKeywordType) previousToken?.Value.Type == EnumKeywordType.SUB
+                            || (EnumKeywordType) previousToken?.Value.Type == EnumKeywordType.GOTO
+                            || (EnumKeywordType) previousToken?.Value.Type == EnumKeywordType.CALL)
+                        {
+                            currentToken.Value.Type = EnumTokenType.IDENTIFIER;
+                        }
                     }
-                    
+
                 }
                 currentToken = nextToken;
             }

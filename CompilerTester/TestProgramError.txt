@@ -1,6 +1,7 @@
-p
+program p
 	var i integer
 	i = 0
+	
 	sub a
 	
 	end sub
