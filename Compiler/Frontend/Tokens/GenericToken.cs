@@ -16,7 +16,10 @@ namespace CPU_OS_Simulator.Compiler.Frontend.Tokens
                 return EnumTokenType.NUMBER;
             else if (value.StartsWith("%"))
                 return EnumTokenType.COMMENT;
-
+            if(value.StartsWith("\"") || value.EndsWith("\""))
+            {
+                return EnumTokenType.STRING;
+            } 
             switch (value)
             {
                 case "(":

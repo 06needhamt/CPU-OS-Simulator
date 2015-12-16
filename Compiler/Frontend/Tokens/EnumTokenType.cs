@@ -17,6 +17,7 @@
         COMMA = 11,
         DOT = 12,
         END_OF_FILE = 13,
-        TAB = 14
+        TAB = 14,
+        STRING = 15
     }
 }
