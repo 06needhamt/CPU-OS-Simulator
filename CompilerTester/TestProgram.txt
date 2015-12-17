@@ -1,6 +1,8 @@
 program p
 	var i integer
+	var j string
 	i = 0
+	j = "Hello"
 	
 	sub a
 	

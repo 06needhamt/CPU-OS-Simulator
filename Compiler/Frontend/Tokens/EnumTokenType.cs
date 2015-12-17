@@ -18,6 +18,8 @@
         DOT = 12,
         END_OF_FILE = 13,
         TAB = 14,
-        STRING = 15
+        STRING = 15,
+        NUMERIC_LITERAL = 16,
+        STRING_LITERAL = 17,
     }
 }

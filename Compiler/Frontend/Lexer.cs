@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Windows.Controls;
@@ -30,8 +31,11 @@ namespace CPU_OS_Simulator.Compiler.Frontend
         private LinkedListNode<Token> previousToken;
 
         private bool writingToCompilerTester;
-        private string error;
+        private string error = String.Empty;
+        private List<string> warningList; 
+        private bool successful;
         private TextBox output;
+
         #endregion GlobalVariables
 
         #region Constructors
@@ -40,40 +44,103 @@ namespace CPU_OS_Simulator.Compiler.Frontend
             this.sourceString = sourceString;
             tokens = new LinkedList<Token>();
         }
-
+        #endregion Constructors
+        #region Properties
+        /// <summary>
+        /// Property to hold whether we are writing the compiler tester app or not
+        /// </summary>
         public bool WritingToCompilerTester
         {
             get { return writingToCompilerTester; }
             set { writingToCompilerTester = value; }
         }
-
+        /// <summary>
+        /// Property to hold the text box to display lexer output to
+        /// </summary>
         public TextBox Output
         {
             get { return output; }
             set { output = value; }
         }
-
+        /// <summary>
+        /// Property for the string representation of the error that occurred while lexing
+        /// </summary>
         public string Error
         {
             get { return error; }
             set { error = value; }
         }
+        /// <summary>
+        /// Property for the linked list of tokens produced by the lexer
+        /// </summary>
+        public LinkedList<Token> Tokens
+        {
+            get { return tokens; }
+        }
 
-        #endregion Constructors
+        #endregion Properties
+
 
         #region Methods
-
+        /// <summary>
+        /// This function is called to start the lexer 
+        /// </summary>
+        /// <returns> whether the lexer completed successfully </returns>
         public bool Start()
         {
             tokens = GenerateTokens();
             IdentifyUnknownTokens();
             PrintTokens();
-            //CheckForErrors();
-            return CheckForErrors();
-            //return true;
+            warningList = CheckForWarnings();
+            PrintWarnings();
+            successful = CheckForErrors();
+            if (!String.IsNullOrEmpty(error))
+            {
+                output.Text += error + "\r";
+            }
+            return successful;
 
         }
+        /// <summary>
+        /// This function print out any warnings produced while lexing
+        /// </summary>
+        private void PrintWarnings()
+        {
+            foreach (string warning in warningList)
+            {
+                if (WritingToCompilerTester)
+                {
+                    if (output != null)
+                    {
+                        output.Text += warning + "\r";
+                    }
+                }
+            }
+        }
+        /// <summary>
+        /// This function checks the code for any warnings
+        /// </summary>
+        /// <returns> a list of warnings or an empty list if there were no warnings</returns>
+        private List<string> CheckForWarnings()
+        {
+            List<string> warnings = new List<string>();
+            currentToken = tokens.First;
+            nextToken = currentToken.Next;
+            previousToken = currentToken.Previous;
 
+            while (currentToken.Next != null)
+            {
+                //TODO implement Warning Checker
+                currentToken = nextToken;
+                nextToken = currentToken?.Next;
+                previousToken = currentToken?.Previous;
+            }
+            return warnings;
+        }
+        /// <summary>
+        /// This function checks the code for errors
+        /// </summary>
+        /// <returns> false if errors occurred true if no errors occurred </returns>
         private bool CheckForErrors()
         {
             currentToken = tokens.First;
@@ -86,16 +153,16 @@ namespace CPU_OS_Simulator.Compiler.Frontend
             }
             while (currentToken.Next != null)
             {
-                if ((EnumKeywordType) currentToken.Value.Type == PROGRAM &&
+                if (currentToken.Value.Value.Equals("program") &&
                     ((EnumTokenType) nextToken.Value.Type != IDENTIFIER))
                 {
                     ThrowError(EXPECTED_AN_IDENTIFIER, "Program Name");
                     return false;
                 }
-                if ((EnumKeywordType) currentToken.Value.Type == SUB &&
+                if (currentToken.Value.Value.Equals("sub") &&
                     (EnumKeywordType) previousToken.Value.Type != END)
                 {
-                    if ((EnumKeywordType) currentToken.Value.Type == SUB &&
+                    if (currentToken.Value.Value.Equals("sub") &&
                     ((EnumTokenType) nextToken.Value.Type != IDENTIFIER))
                     {
                         ThrowError(EXPECTED_AN_IDENTIFIER, "Subroutine name");
@@ -103,10 +170,10 @@ namespace CPU_OS_Simulator.Compiler.Frontend
                     }
 
                 }
-                if ((EnumKeywordType)currentToken.Value.Type == FUN &&
+                if (currentToken.Value.Value.Equals("fun") &&
                     (EnumKeywordType)previousToken.Value.Type != END)
                 {
-                    if ((EnumKeywordType)currentToken.Value.Type == FUN &&
+                    if (currentToken.Value.Value.Equals("fun") &&
                     ((EnumTokenType)nextToken.Value.Type != IDENTIFIER))
                     {
                         ThrowError(EXPECTED_AN_IDENTIFIER, "Function name");
@@ -115,8 +182,8 @@ namespace CPU_OS_Simulator.Compiler.Frontend
 
                 }
                 currentToken = nextToken;
-                nextToken = currentToken.Next;
-                previousToken = currentToken.Previous;
+                nextToken = currentToken?.Next;
+                previousToken = currentToken?.Previous;
             }
             if ((EnumKeywordType)currentToken.Value.Type != END)
             {
@@ -126,7 +193,13 @@ namespace CPU_OS_Simulator.Compiler.Frontend
 
             return true;
         }
-
+        /// <summary>
+        /// This function creates an error message to display
+        /// in a message box to the user indicating what type 
+        /// of error occurred
+        /// </summary>
+        /// <param name="enumErrorCodes"> the error code that identifies the error</param>
+        /// <param name="expectedToken"> the expected token</param>
         private void ThrowError(EnumErrorCodes enumErrorCodes, string expectedToken)
         {
             error = "Error: " + enumErrorCodes + " " + expectedToken;
@@ -137,34 +210,54 @@ namespace CPU_OS_Simulator.Compiler.Frontend
             string[] temp = sourceString.Split('\n', '\r', '\t', ' ');
             temp = temp.Where(x => !String.IsNullOrEmpty(x)).ToArray();
             tokenStrings = new LinkedList<string>(temp);
-            foreach (string tokenString in tokenStrings)
+            currentTokenString = tokenStrings.First;
+            nextTokenString = currentTokenString.Next;
+            previousTokenString = currentTokenString.Previous;
+            while (currentTokenString != null)
             {
-                Token token = new GenericToken(tokenString);
+                Token token = new GenericToken(currentTokenString.Value);
                 if (token.isOperator())
                 {
-                    Operator op = new Operator(tokenString);
+                    Operator op = new Operator(currentTokenString.Value);
                     op.Type = op.DetectType();
                     tokens.AddLast(new LinkedListNode<Token>(op));
                 }
                 else if (token.isKeyword())
                 {
-                    Keyword keyword = new Keyword(tokenString);
+                    Keyword keyword = new Keyword(currentTokenString.Value);
                     keyword.Type = keyword.DetectType();
                     tokens.AddLast(new LinkedListNode<Token>(keyword));
                 }
                 else if (token.isType())
                 {
-                    Typename typename = new Typename(tokenString);
+                    Typename typename = new Typename(currentTokenString.Value);
                     typename.Type = typename.DetectType();
                     tokens.AddLast(new LinkedListNode<Token>(typename));
                 }
                 else
                 {
                     token.Type = token.DetectType();
-                    tokens.AddLast(new LinkedListNode<Token>(token));
+                    if ((EnumTokenType) token.Type == STRING)
+                    {
+                        StringLiteral literal = new StringLiteral(currentTokenString.Value);
+                        literal.Type = STRING_LITERAL;
+                        tokens.AddLast(new LinkedListNode<Token>(literal));
+                    }
+                    else if ((EnumTokenType) token.Type == NUMBER)
+                    {
+                        NumericLiteral literal = new NumericLiteral(currentTokenString.Value);
+                        literal.Type = NUMERIC_LITERAL;
+                        tokens.AddLast(new LinkedListNode<Token>(literal));
+                    }
+                    else
+                    {
+                        tokens.AddLast(new LinkedListNode<Token>(token));
+                    }
                 }
+                currentTokenString = nextTokenString;
+                nextTokenString = currentTokenString?.Next;
+                previousTokenString = currentTokenString?.Previous;
 
-                
             }
             return tokens;
         }

@@ -5,11 +5,11 @@ namespace CPU_OS_Simulator.Compiler.Frontend
 {
     public class Symbol : Token
     {
-        private string name = String.Empty;
-        private readonly EnumTypes symbolType = EnumTypes.UNKNOWN;
-        private dynamic value;
-        private bool issub;
-        private bool isfun;
+        protected string name = String.Empty;
+        protected readonly EnumTypes symbolType = EnumTypes.UNKNOWN;
+        protected dynamic value;
+        protected bool issub;
+        protected bool isfun;
 
         public bool IsSub
         {
@@ -38,7 +38,10 @@ namespace CPU_OS_Simulator.Compiler.Frontend
             get { return symbolType; }
         }
 
-        
+        protected Symbol()
+        {
+            
+        }
 
         public Symbol(string name, EnumTypes type, dynamic value, bool isSub, bool isFun)
         {

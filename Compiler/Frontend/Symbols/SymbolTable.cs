@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using CPU_OS_Simulator.Compiler.Frontend.Tokens;
 
-namespace CPU_OS_Simulator.Compiler.Frontend
+namespace CPU_OS_Simulator.Compiler.Frontend.Symbols
 {
     public class SymbolTable
     {
