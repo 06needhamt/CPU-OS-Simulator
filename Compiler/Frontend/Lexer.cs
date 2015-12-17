@@ -4,6 +4,7 @@ using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Windows.Controls;
+using System.Windows.Navigation;
 using CPU_OS_Simulator.Compiler.Frontend.Tokens;
 using static CPU_OS_Simulator.Compiler.Frontend.Tokens.EnumKeywordType;
 using static CPU_OS_Simulator.Compiler.Frontend.EnumErrorCodes;
@@ -97,10 +98,65 @@ namespace CPU_OS_Simulator.Compiler.Frontend
             if (!String.IsNullOrEmpty(error))
             {
                 output.Text += error + "\r";
+                return false;
             }
-            return successful;
+            DefineVariables();
+            return true;
 
         }
+
+        private List<Tuple<string,EnumTypes,string>> DefineVariables()
+        {
+            List<Tuple<string,EnumTypes,string>> variables = new List<Tuple<string, EnumTypes, string>>();
+            currentToken = tokens.First;
+            nextToken = currentToken.Next;
+            previousToken = currentToken.Previous;
+            while (currentToken.Next != null)
+            {
+                if (currentToken.Value.Value.Equals("var"))
+                {
+                    string name = GetVariableName(currentToken);
+                    EnumTypes type = GetVariableType(currentToken);
+                    dynamic value = GetVariableValue(currentToken);
+
+                    Tuple<string,EnumTypes,string> variable = new Tuple<string, EnumTypes, string>(name,type,value);
+                    output.Text += variable.Item1 + " ";
+                    output.Text += variable.Item2.ToString() + " ";
+                    output.Text += variable.Item3 + " ";
+                    output.Text += "\n";
+                    variables.Add(variable);
+                }
+                currentToken = nextToken;
+                nextToken = currentToken.Next;
+                previousToken = currentToken.Previous;
+
+            }
+            return variables;
+        }
+
+        //HACK Possibly Some of the worst code i have ever written
+        private string GetVariableValue(LinkedListNode<Token> token)
+        {
+            if (!token.Next.Next.Value.Isoperator)
+            {
+                return "uninitialised";
+            }
+            else
+            {
+                return token.Next.Next.Next.Value.Value;
+            }
+        }
+
+        private EnumTypes GetVariableType(LinkedListNode<Token> token)
+        {
+            return (EnumTypes) token.Next.Next.Next.Next.Value.Type;
+        }
+
+        private string GetVariableName(LinkedListNode<Token> token)
+        {
+            return token.Next.Value.Value;
+        }
+
         /// <summary>
         /// This function print out any warnings produced while lexing
         /// </summary>
