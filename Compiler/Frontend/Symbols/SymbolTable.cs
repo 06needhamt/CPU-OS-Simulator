@@ -20,7 +20,7 @@ namespace CPU_OS_Simulator.Compiler.Frontend.Symbols
 
         public LinkedListNode<Symbol> FindSymbol(string name)
         {
-            while (currentSymbol?.Next != null)
+            while (currentSymbol.Next != null)
             {
                 if (currentSymbol.Value.SymbolName.Equals(name))
                 {
@@ -35,7 +35,7 @@ namespace CPU_OS_Simulator.Compiler.Frontend.Symbols
 
         public LinkedListNode<Symbol> FindSymbol(EnumTypes type)
         {
-            while (currentSymbol?.Next != null)
+            while (currentSymbol.Next != null)
             {
                 if (currentSymbol.Value.SymbolType == type)
                 {
@@ -67,8 +67,14 @@ namespace CPU_OS_Simulator.Compiler.Frontend.Symbols
                     output.Text += currentSymbol.Value.ToString();
                 }
                 currentSymbol = nextSymbol;
-                nextSymbol = currentSymbol?.Next;
-                previousSymbol = currentSymbol?.Previous;
+                if (nextSymbol != null)
+                {
+                    nextSymbol = currentSymbol.Next;
+                }
+                if (previousSymbol != null)
+                {
+                    previousSymbol = currentSymbol.Previous;
+                }
             }
         }
     } 

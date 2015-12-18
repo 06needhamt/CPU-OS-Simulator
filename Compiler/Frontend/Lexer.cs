@@ -6,10 +6,6 @@ using System.Linq;
 using System.Windows.Controls;
 using System.Windows.Navigation;
 using CPU_OS_Simulator.Compiler.Frontend.Tokens;
-using static CPU_OS_Simulator.Compiler.Frontend.Tokens.EnumKeywordType;
-using static CPU_OS_Simulator.Compiler.Frontend.EnumErrorCodes;
-using static CPU_OS_Simulator.Compiler.Frontend.Tokens.EnumTokenType;
-using static CPU_OS_Simulator.Compiler.Frontend.Tokens.EnumTypes;
 
 namespace CPU_OS_Simulator.Compiler.Frontend
 {
@@ -137,8 +133,8 @@ namespace CPU_OS_Simulator.Compiler.Frontend
             previousToken = currentToken.Previous;
             while (currentToken != null)
             {
-                if (((EnumKeywordType)currentToken.Value.Type == FUN
-                     && (previousToken?.Value.Type != null && (EnumKeywordType)previousToken?.Value.Type != END)))
+                if (((EnumKeywordType)currentToken.Value.Type == EnumKeywordType.FUN
+                     && (previousToken != null && (EnumKeywordType)previousToken.Value.Type != EnumKeywordType.END)))
                 {
                     string name = nextToken.Value.Value;
                     EnumTypes type = (EnumTypes)currentToken.Next.Next.Next.Value.Type;
@@ -146,8 +142,11 @@ namespace CPU_OS_Simulator.Compiler.Frontend
                     functions.Add(fun);
                 }
                 currentToken = nextToken;
-                nextToken = currentToken?.Next;
-                previousToken = currentToken?.Previous;
+                if (nextToken != null)
+                {
+                    nextToken = currentToken.Next; 
+                    previousToken = currentToken.Previous;
+                }
             }
         }
 
@@ -187,17 +186,20 @@ namespace CPU_OS_Simulator.Compiler.Frontend
             previousToken = currentToken.Previous;
             while (currentToken != null)
             {
-                if (((EnumKeywordType) currentToken.Value.Type == SUB
-                     && (previousToken?.Value.Type != null && (EnumKeywordType) previousToken?.Value.Type != END)))
+                if (((EnumKeywordType) currentToken.Value.Type == EnumKeywordType.SUB
+                     && (previousToken != null && (EnumKeywordType) previousToken.Value.Type != EnumKeywordType.END)))
                 {
                     string name = nextToken.Value.Value;
                    
-                    Tuple<string,EnumTypes,string> sub = new Tuple<string, EnumTypes, string>(name,VOID,"subroutine");
+                    Tuple<string,EnumTypes,string> sub = new Tuple<string, EnumTypes, string>(name,EnumTypes.VOID,"subroutine");
                     subroutines.Add(sub);
                 }
                 currentToken = nextToken;
-                nextToken = currentToken?.Next;
-                previousToken = currentToken?.Previous;
+                if (nextToken != null)
+                {
+                    nextToken = currentToken.Next;
+                    previousToken = currentToken.Previous;
+                }
             }
         }
 
@@ -259,8 +261,8 @@ namespace CPU_OS_Simulator.Compiler.Frontend
             {
                 //TODO implement Warning Checker
                 currentToken = nextToken;
-                nextToken = currentToken?.Next;
-                previousToken = currentToken?.Previous;
+                nextToken = currentToken.Next;
+                previousToken = currentToken.Previous;
             }
             return warnings;
         }
@@ -273,48 +275,48 @@ namespace CPU_OS_Simulator.Compiler.Frontend
             currentToken = tokens.First;
             nextToken = currentToken.Next;
             previousToken = currentToken.Previous;
-            if ((EnumKeywordType) tokens.First.Value.Type != PROGRAM)
+            if ((EnumKeywordType) tokens.First.Value.Type != EnumKeywordType.PROGRAM)
             {
-                ThrowError(EXPECTED_A_KEYWORD, "program");
+                ThrowError(EnumErrorCodes.EXPECTED_A_KEYWORD, "program");
                 return false;
             }
             while (currentToken.Next != null)
             {
                 if (currentToken.Value.Value.Equals("program") &&
-                    ((EnumTokenType) nextToken.Value.Type != IDENTIFIER))
+                    ((EnumTokenType) nextToken.Value.Type != EnumTokenType.IDENTIFIER))
                 {
-                    ThrowError(EXPECTED_AN_IDENTIFIER, "Program Name");
+                    ThrowError(EnumErrorCodes.EXPECTED_AN_IDENTIFIER, "Program Name");
                     return false;
                 }
                 if (currentToken.Value.Value.Equals("sub") &&
-                    (EnumKeywordType) previousToken.Value.Type != END)
+                    (EnumKeywordType) previousToken.Value.Type != EnumKeywordType.END)
                 {
                     if (currentToken.Value.Value.Equals("sub") &&
-                    ((EnumTokenType) nextToken.Value.Type != IDENTIFIER))
+                    ((EnumTokenType) nextToken.Value.Type != EnumTokenType.IDENTIFIER))
                     {
-                        ThrowError(EXPECTED_AN_IDENTIFIER, "Subroutine name");
+                        ThrowError(EnumErrorCodes.EXPECTED_AN_IDENTIFIER, "Subroutine name");
                         return false;
                     }
 
                 }
                 if (currentToken.Value.Value.Equals("fun") &&
-                    (EnumKeywordType)previousToken.Value.Type != END)
+                    (EnumKeywordType)previousToken.Value.Type != EnumKeywordType.END)
                 {
                     if (currentToken.Value.Value.Equals("fun") &&
-                    ((EnumTokenType)nextToken.Value.Type != IDENTIFIER))
+                    ((EnumTokenType)nextToken.Value.Type != EnumTokenType.IDENTIFIER))
                     {
-                        ThrowError(EXPECTED_AN_IDENTIFIER, "Function name");
+                        ThrowError(EnumErrorCodes.EXPECTED_AN_IDENTIFIER, "Function name");
                         return false;
                     }
 
                 }
                 currentToken = nextToken;
-                nextToken = currentToken?.Next;
-                previousToken = currentToken?.Previous;
+                nextToken = currentToken.Next;
+                previousToken = currentToken.Previous;
             }
-            if ((EnumKeywordType)currentToken.Value.Type != END)
+            if ((EnumKeywordType)currentToken.Value.Type != EnumKeywordType.END)
             {
-                ThrowError(EXPECTED_A_KEYWORD, "end");
+                ThrowError(EnumErrorCodes.EXPECTED_A_KEYWORD, "end");
                 return false;
             }
 
@@ -367,13 +369,13 @@ namespace CPU_OS_Simulator.Compiler.Frontend
                     if ((EnumTokenType) token.Type == EnumTokenType.STRING)
                     {
                         StringLiteral literal = new StringLiteral(currentTokenString.Value);
-                        literal.Type = STRING_LITERAL;
+                        literal.Type = EnumTokenType.STRING_LITERAL;
                         tokens.AddLast(new LinkedListNode<Token>(literal));
                     }
-                    else if ((EnumTokenType) token.Type == NUMBER)
+                    else if ((EnumTokenType) token.Type == EnumTokenType.NUMBER)
                     {
                         NumericLiteral literal = new NumericLiteral(currentTokenString.Value);
-                        literal.Type = NUMERIC_LITERAL;
+                        literal.Type = EnumTokenType.NUMERIC_LITERAL;
                         tokens.AddLast(new LinkedListNode<Token>(literal));
                     }
                     else
@@ -382,8 +384,14 @@ namespace CPU_OS_Simulator.Compiler.Frontend
                     }
                 }
                 currentTokenString = nextTokenString;
-                nextTokenString = currentTokenString?.Next;
-                previousTokenString = currentTokenString?.Previous;
+                if (nextTokenString != null)
+                {
+                    nextTokenString = currentTokenString.Next;
+                }
+                if (previousTokenString != null)
+                {
+                    previousTokenString = currentTokenString.Previous;
+                }
 
             }
             return tokens;
@@ -396,18 +404,18 @@ namespace CPU_OS_Simulator.Compiler.Frontend
             {
                 previousToken = currentToken.Previous;
                 nextToken = currentToken.Next;
-                if ((EnumTokenType) currentToken.Value.Type == UNKNOWNN)
+                if ((EnumTokenType) currentToken.Value.Type == EnumTokenType.UNKNOWNN)
                 {
                     if (previousToken != null)
                     {
-                        if ((EnumKeywordType) previousToken?.Value.Type == VAR
-                            || (EnumKeywordType) previousToken?.Value.Type == PROGRAM
-                            || (EnumKeywordType) previousToken?.Value.Type == FUN
-                            || (EnumKeywordType) previousToken?.Value.Type == SUB
-                            || (EnumKeywordType) previousToken?.Value.Type == GOTO
-                            || (EnumKeywordType) previousToken?.Value.Type == CALL)
+                        if ((EnumKeywordType) previousToken.Value.Type == EnumKeywordType.VAR
+                            || (EnumKeywordType) previousToken.Value.Type == EnumKeywordType.PROGRAM
+                            || (EnumKeywordType) previousToken.Value.Type == EnumKeywordType.FUN
+                            || (EnumKeywordType) previousToken.Value.Type == EnumKeywordType.SUB
+                            || (EnumKeywordType) previousToken.Value.Type == EnumKeywordType.GOTO
+                            || (EnumKeywordType) previousToken.Value.Type == EnumKeywordType.CALL)
                         {
-                            currentToken.Value.Type = IDENTIFIER;
+                            currentToken.Value.Type = EnumTokenType.IDENTIFIER;
                         }
                     }
 
@@ -426,7 +434,7 @@ namespace CPU_OS_Simulator.Compiler.Frontend
             {
                 if (output != null)
                 {
-                    while (currentToken?.Next != null)
+                    while (currentToken.Next != null)
                     {
                         output.Text += currentToken.Value + "\r";
                         previousToken = currentToken;

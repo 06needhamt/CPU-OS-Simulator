@@ -886,7 +886,7 @@ namespace CPU_OS_Simulator
         /// <returns>A task to indicate to the main thread that the function has finished executing</returns>
         private async Task<int> CallFromMainThread(Func<Task<int>> FunctionPointer)
         {
-            var invoke = dispatcher?.Invoke(FunctionPointer);
+            var invoke = dispatcher.Invoke(FunctionPointer);
             if (invoke != null) await invoke;
             return 0;
         }
