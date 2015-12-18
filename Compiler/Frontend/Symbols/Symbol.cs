@@ -8,8 +8,8 @@ namespace CPU_OS_Simulator.Compiler.Frontend
         protected string name = String.Empty;
         protected readonly EnumTypes symbolType = EnumTypes.UNKNOWN;
         protected new string value;
-        protected bool issub;
-        protected bool isfun;
+        protected bool issub = false;
+        protected bool isfun = false;
 
         public bool IsSub
         {

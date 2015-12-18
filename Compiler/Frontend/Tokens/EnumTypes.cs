@@ -8,6 +8,7 @@
         BYTE = 2, 
         OBJECT = 3,
         STRING = 4,
-        ARRAY = 5 
+        ARRAY = 5,
+        VOID = 6,
     }
 }

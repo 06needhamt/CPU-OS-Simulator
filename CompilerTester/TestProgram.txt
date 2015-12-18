@@ -8,11 +8,15 @@ program p
 	
 	end sub
 	
-	fun b 
+	fun b as integer
 	
 	end fun
 	
-	sub d
+	fun c as string
+	
+	end fun
+	
+	sub d 
 	
 	end sub
 end

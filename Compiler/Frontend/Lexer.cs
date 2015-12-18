@@ -9,6 +9,7 @@ using CPU_OS_Simulator.Compiler.Frontend.Tokens;
 using static CPU_OS_Simulator.Compiler.Frontend.Tokens.EnumKeywordType;
 using static CPU_OS_Simulator.Compiler.Frontend.EnumErrorCodes;
 using static CPU_OS_Simulator.Compiler.Frontend.Tokens.EnumTokenType;
+using static CPU_OS_Simulator.Compiler.Frontend.Tokens.EnumTypes;
 
 namespace CPU_OS_Simulator.Compiler.Frontend
 {
@@ -37,6 +38,8 @@ namespace CPU_OS_Simulator.Compiler.Frontend
         private bool successful;
         private TextBox output;
         private List<Tuple<string, EnumTypes, string>> variables;
+        private List<Tuple<string, EnumTypes, string>> subroutines;
+        private List<Tuple<string, EnumTypes, string>> functions; 
 
         #endregion GlobalVariables
 
@@ -86,6 +89,18 @@ namespace CPU_OS_Simulator.Compiler.Frontend
             set { variables = value; }
         }
 
+        public List<Tuple<string, EnumTypes, string>> Subroutines
+        {
+            get { return subroutines; }
+            set { subroutines = value; }
+        }
+
+        public List<Tuple<string, EnumTypes, string>> Functions
+        {
+            get { return functions; }
+            set { functions = value; }
+        }
+
         #endregion Properties
 
 
@@ -108,8 +123,32 @@ namespace CPU_OS_Simulator.Compiler.Frontend
                 return false;
             }
             DefineVariables();
+            DefineSubroutines();
+            DefineFunctions();
             return true;
 
+        }
+
+        private void DefineFunctions()
+        {
+            functions = new List<Tuple<string, EnumTypes, string>>();
+            currentToken = tokens.First;
+            nextToken = currentToken.Next;
+            previousToken = currentToken.Previous;
+            while (currentToken != null)
+            {
+                if (((EnumKeywordType)currentToken.Value.Type == FUN
+                     && (previousToken?.Value.Type != null && (EnumKeywordType)previousToken?.Value.Type != END)))
+                {
+                    string name = nextToken.Value.Value;
+                    EnumTypes type = (EnumTypes)currentToken.Next.Next.Next.Value.Type;
+                    Tuple<string, EnumTypes, string> fun = new Tuple<string, EnumTypes, string>(name, type, "function");
+                    functions.Add(fun);
+                }
+                currentToken = nextToken;
+                nextToken = currentToken?.Next;
+                previousToken = currentToken?.Previous;
+            }
         }
 
         public void DefineVariables()
@@ -137,6 +176,28 @@ namespace CPU_OS_Simulator.Compiler.Frontend
                 nextToken = currentToken.Next;
                 previousToken = currentToken.Previous;
 
+            }
+        }
+
+        public void DefineSubroutines()
+        {
+            subroutines = new List<Tuple<string, EnumTypes, string>>();
+            currentToken = tokens.First;
+            nextToken = currentToken.Next;
+            previousToken = currentToken.Previous;
+            while (currentToken != null)
+            {
+                if (((EnumKeywordType) currentToken.Value.Type == SUB
+                     && (previousToken?.Value.Type != null && (EnumKeywordType) previousToken?.Value.Type != END)))
+                {
+                    string name = nextToken.Value.Value;
+                   
+                    Tuple<string,EnumTypes,string> sub = new Tuple<string, EnumTypes, string>(name,VOID,"subroutine");
+                    subroutines.Add(sub);
+                }
+                currentToken = nextToken;
+                nextToken = currentToken?.Next;
+                previousToken = currentToken?.Previous;
             }
         }
 
@@ -303,7 +364,7 @@ namespace CPU_OS_Simulator.Compiler.Frontend
                 else
                 {
                     token.Type = token.DetectType();
-                    if ((EnumTokenType) token.Type == STRING)
+                    if ((EnumTokenType) token.Type == EnumTokenType.STRING)
                     {
                         StringLiteral literal = new StringLiteral(currentTokenString.Value);
                         literal.Type = STRING_LITERAL;

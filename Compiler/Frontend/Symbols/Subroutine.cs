@@ -7,9 +7,9 @@ using CPU_OS_Simulator.Compiler.Frontend.Tokens;
 
 namespace CPU_OS_Simulator.Compiler.Frontend.Symbols
 {
-    class Subroutine : Symbol
+    public class Subroutine : Symbol
     {
-        public Subroutine(string name, EnumTypes type, dynamic value)
+        public Subroutine(string name, EnumTypes type, string value)
         {
             this.name = name;
             this.type = type;
