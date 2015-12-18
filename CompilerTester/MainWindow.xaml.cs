@@ -47,17 +47,17 @@ namespace CPU_OS_Simulator.CompilerTester
 
             foreach (Tuple<string, EnumTypes, string> var in vars)
             {
-                Symbol s = new Symbol(var.Item1,var.Item2,var.Item3,false,false);
+                Symbol s = new Symbol(var.Item1,var.Item2,var.Item3,Scope.GLOBAL_SCOPE,false,false);
                 symbolTable.AddSymbol(new LinkedListNode<Symbol>(s));
             }
             foreach (Tuple<string, EnumTypes, string> sub in subs)
             {
-                Subroutine subroutine = new Subroutine(sub.Item1,sub.Item2,sub.Item3);
+                Subroutine subroutine = new Subroutine(sub.Item1,sub.Item2,sub.Item3,Scope.GLOBAL_SCOPE);
                 symbolTable.AddSymbol((new LinkedListNode<Symbol>(subroutine)));
             }
             foreach (Tuple<string, EnumTypes, string> fun in funs)
             {
-                Function func = new Function(fun.Item1,fun.Item2,fun.Item3);
+                Function func = new Function(fun.Item1,fun.Item2,fun.Item3,Scope.GLOBAL_SCOPE);
                 symbolTable.AddSymbol(new LinkedListNode<Symbol>(func));
             }
             symbolTable.PrintSymbols();

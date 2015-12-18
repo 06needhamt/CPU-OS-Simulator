@@ -56,6 +56,7 @@
     <Compile Include="Extentions.cs" />
     <Compile Include="Frontend\EnumErrorCodes.cs" />
     <Compile Include="Frontend\Symbols\Function.cs" />
+    <Compile Include="Frontend\Symbols\Scope.cs" />
     <Compile Include="Frontend\Symbols\Subroutine.cs" />
     <Compile Include="Frontend\SyntaxTree\ArrayNode.cs" />
     <Compile Include="Frontend\SyntaxTree\AST.cs" />

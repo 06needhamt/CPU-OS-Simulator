@@ -10,6 +10,7 @@ namespace CPU_OS_Simulator.Compiler.Frontend.Symbols
         protected new string value;
         protected bool issub = false;
         protected bool isfun = false;
+        protected Scope symbolScope;
 
         public bool IsSub
         {
@@ -43,11 +44,12 @@ namespace CPU_OS_Simulator.Compiler.Frontend.Symbols
             
         }
 
-        public Symbol(string name, EnumTypes type, string value, bool isSub, bool isFun)
+        public Symbol(string name, EnumTypes type, string value, Scope scope, bool isSub, bool isFun)
         {
             this.name = name;
             this.type = type;
             this.value = value;
+            symbolScope = scope;
             issub = isSub;
             isfun = isFun;
         }
@@ -65,7 +67,7 @@ namespace CPU_OS_Simulator.Compiler.Frontend.Symbols
         /// </returns>
         public override string ToString()
         {
-            return name + " " + type.ToString() + " " + value + " " + isfun + " " + issub + "\r";
+            return name + " " + type.ToString() + " " + value + " " + isfun + " " + issub + " " + symbolScope.Name + "\r";
         }
     }
 }
