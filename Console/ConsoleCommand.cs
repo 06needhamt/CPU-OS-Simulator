@@ -120,7 +120,7 @@ namespace CPU_OS_Simulator.Console
         /// <returns> the result of the command</returns>
         private string SizeCommand(string name, string[] parameters)
         {
-            if (parameters.Length != 1 && (!parameters[0].Equals("pages") || !parameters[0].Equals("bytes")))
+            if (parameters.Length != 1 && ( parameters.Length == 0 || !parameters[0].Equals("pages") || !parameters[0].Equals("bytes")) )
             {
                 return "Invalid Command syntax use like this: \n"
                        + "//size <bytes|pages> \n";

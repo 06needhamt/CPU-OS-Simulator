@@ -53,6 +53,7 @@
     <Compile Include="IAttribute.cs" />
     <Compile Include="NumberOfParametersAttribute.cs" />
     <Compile Include="PrintableDocument.cs">
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
