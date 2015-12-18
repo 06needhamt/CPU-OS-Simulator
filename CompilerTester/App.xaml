@@ -1,7 +1,6 @@
-﻿<Application x:Class="CompilerTester.App"
+﻿<Application x:Class="CPU_OS_Simulator.CompilerTester.App"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:local="clr-namespace:CompilerTester"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
          

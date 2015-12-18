@@ -1,9 +1,8 @@
-﻿<Window x:Name="CompilerTesterWindow" x:Class="CompilerTester.MainWindow"
+﻿<Window x:Name="CompilerTesterWindow" x:Class="CPU_OS_Simulator.CompilerTester.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:CompilerTester"
         mc:Ignorable="d"
         Title="CPU-OS Simulator Compiler Tester" Height="400" Width="525" Icon="CPU-OS Simulator 7-5-50_1.ico" ResizeMode="NoResize" Loaded="CompilerTesterWindow_Loaded">
     <Grid>

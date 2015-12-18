@@ -8,7 +8,7 @@ using CPU_OS_Simulator.Compiler.Frontend;
 using CPU_OS_Simulator.Compiler.Frontend.Symbols;
 using CPU_OS_Simulator.Compiler.Frontend.Tokens;
 
-namespace CompilerTester
+namespace CPU_OS_Simulator.CompilerTester
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
