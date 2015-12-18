@@ -24,6 +24,7 @@
     <DocumentationFile>bin\Debug\CPU-OS Simulator.Compiler.XML</DocumentationFile>
     <NoWarn>
     </NoWarn>
+    <LangVersion>5</LangVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>

@@ -44,6 +44,7 @@
     <UseVSHostingProcess>true</UseVSHostingProcess>
     <NoWarn>CS1998</NoWarn>
     <DocumentationFile>bin\Debug\CPU-OS Simulator.XML</DocumentationFile>
+    <LangVersion>5</LangVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
