@@ -36,6 +36,7 @@ namespace CPU_OS_Simulator.Compiler.Frontend
         private List<string> warningList; 
         private bool successful;
         private TextBox output;
+        private List<Tuple<string, EnumTypes, string>> variables;
 
         #endregion GlobalVariables
 
@@ -79,6 +80,12 @@ namespace CPU_OS_Simulator.Compiler.Frontend
             get { return tokens; }
         }
 
+        public List<Tuple<string, EnumTypes, string>> Variables
+        {
+            get { return variables; }
+            set { variables = value; }
+        }
+
         #endregion Properties
 
 
@@ -105,9 +112,9 @@ namespace CPU_OS_Simulator.Compiler.Frontend
 
         }
 
-        private List<Tuple<string,EnumTypes,string>> DefineVariables()
+        public void DefineVariables()
         {
-            List<Tuple<string,EnumTypes,string>> variables = new List<Tuple<string, EnumTypes, string>>();
+            variables = new List<Tuple<string, EnumTypes, string>>();
             currentToken = tokens.First;
             nextToken = currentToken.Next;
             previousToken = currentToken.Previous;
@@ -120,10 +127,10 @@ namespace CPU_OS_Simulator.Compiler.Frontend
                     dynamic value = GetVariableValue(currentToken);
 
                     Tuple<string,EnumTypes,string> variable = new Tuple<string, EnumTypes, string>(name,type,value);
-                    output.Text += variable.Item1 + " ";
-                    output.Text += variable.Item2.ToString() + " ";
-                    output.Text += variable.Item3 + " ";
-                    output.Text += "\n";
+                    //output.Text += variable.Item1 + " ";
+                    //output.Text += variable.Item2.ToString() + " ";
+                    //output.Text += variable.Item3 + " ";
+                    //output.Text += "\n";
                     variables.Add(variable);
                 }
                 currentToken = nextToken;
@@ -131,7 +138,6 @@ namespace CPU_OS_Simulator.Compiler.Frontend
                 previousToken = currentToken.Previous;
 
             }
-            return variables;
         }
 
         //HACK Possibly Some of the worst code i have ever written
@@ -149,6 +155,10 @@ namespace CPU_OS_Simulator.Compiler.Frontend
 
         private EnumTypes GetVariableType(LinkedListNode<Token> token)
         {
+            if (GetVariableValue(token).Equals("uninitialised"))
+            {
+                return (EnumTypes) token.Next.Next.Value.Type;
+            }
             return (EnumTypes) token.Next.Next.Next.Next.Value.Type;
         }
 

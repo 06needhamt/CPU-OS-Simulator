@@ -1,7 +1,10 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Windows;
 using CPU_OS_Simulator.Compiler;
 using CPU_OS_Simulator.Compiler.Frontend;
+using CPU_OS_Simulator.Compiler.Frontend.Symbols;
+using CPU_OS_Simulator.Compiler.Frontend.Tokens;
 
 namespace CompilerTester
 {
@@ -10,6 +13,7 @@ namespace CompilerTester
     /// </summary>
     public partial class MainWindow : Window
     {
+        private SymbolTable symbolTable;
         public MainWindow()
         {
             InitializeComponent();
@@ -31,11 +35,17 @@ namespace CompilerTester
             if (!lexical.Start())
             {
                 MessageBox.Show("Lexer Error Occurred: " + lexical.Error + " Compilation Terminated");
+                return;
             }
-            else
+            MessageBox.Show("Lexing Completed Successfully");
+            symbolTable = new SymbolTable(lexical.Output);
+            List<Tuple<string, EnumTypes, string>> vars = lexical.Variables;
+            foreach (Tuple<string, EnumTypes, string> var in vars)
             {
-                MessageBox.Show("Lexing Completed Successfully");
+                Symbol s = new Symbol(var.Item1,var.Item2,var.Item3,false,false);
+                symbolTable.AddSymbol(new LinkedListNode<Symbol>(s));
             }
+            symbolTable.PrintSymbols();
 
         }
     }

@@ -7,7 +7,7 @@ namespace CPU_OS_Simulator.Compiler.Frontend
     {
         protected string name = String.Empty;
         protected readonly EnumTypes symbolType = EnumTypes.UNKNOWN;
-        protected dynamic value;
+        protected new string value;
         protected bool issub;
         protected bool isfun;
 
@@ -21,7 +21,7 @@ namespace CPU_OS_Simulator.Compiler.Frontend
              get { return isfun; }
         }
 
-        public dynamic SymbolValue
+        public string SymbolValue
         {
             get { return value; }
             set { this.value = value; }
@@ -43,7 +43,7 @@ namespace CPU_OS_Simulator.Compiler.Frontend
             
         }
 
-        public Symbol(string name, EnumTypes type, dynamic value, bool isSub, bool isFun)
+        public Symbol(string name, EnumTypes type, string value, bool isSub, bool isFun)
         {
             this.name = name;
             this.type = type;
@@ -55,6 +55,17 @@ namespace CPU_OS_Simulator.Compiler.Frontend
         public override Enum DetectType()
         {
             return EnumTokenType.IDENTIFIER;
+        }
+
+        /// <summary>
+        /// Returns a string that represents the current object.
+        /// </summary>
+        /// <returns>
+        /// A string that represents the current object.
+        /// </returns>
+        public override string ToString()
+        {
+            return name + " " + type.ToString() + " " + value + " " + isfun + " " + issub + "\r";
         }
     }
 }
