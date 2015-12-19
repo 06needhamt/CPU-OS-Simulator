@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using System.Windows.Controls;
 using CPU_OS_Simulator.Compiler.Frontend.Tokens;
 
@@ -76,6 +77,20 @@ namespace CPU_OS_Simulator.Compiler.Frontend.Symbols
                     previousSymbol = currentSymbol.Previous;
                 }
             }
+        }
+        public bool isIdentifierDeclaredInScope(Symbol identifier, Scope scope)
+        {
+            do
+            {
+                if (symbols.Where(x => x.SymbolName.Equals(identifier.SymbolName)
+                                       && x.SymbolScope.Name.Equals(scope.Name)).ToList().Count == 1)
+                {
+                    return true;
+                }
+                scope = scope.ParentScope;
+
+            } while (scope.ParentScope != null);
+            return false;
         }
     } 
 }

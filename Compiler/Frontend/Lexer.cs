@@ -4,6 +4,7 @@ using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Windows.Controls;
+using System.Windows.Documents;
 using System.Windows.Navigation;
 using CPU_OS_Simulator.Compiler.Frontend.Tokens;
 
@@ -109,6 +110,7 @@ namespace CPU_OS_Simulator.Compiler.Frontend
         {
             tokens = GenerateTokens();
             IdentifyUnknownTokens();
+            RemoveWhitespace();
             PrintTokens();
             warningList = CheckForWarnings();
             PrintWarnings();
@@ -123,6 +125,35 @@ namespace CPU_OS_Simulator.Compiler.Frontend
             DefineFunctions();
             return true;
 
+        }
+
+        private void RemoveWhitespace()
+        {
+            for (int t = 0; t < 3; t++)
+            {
+                List<Token> tempTokens = new List<Token>(tokens);
+                for (int i = 0; i < tempTokens.Count; i++)
+                {
+                    Token current;
+                    Token previous;
+                    if (i == 0)
+                    {
+                        current = tempTokens[0];
+                        previous = null;
+                    }
+                    else
+                    {
+                        current = tempTokens[i];
+                        previous = tempTokens[i - 1];
+                    }
+                    if ((EnumTokenType) current.Type == EnumTokenType.NEW_LINE
+                        && (previous != null && (EnumTokenType) previous.Type == EnumTokenType.NEW_LINE))
+                    {
+                        tempTokens.RemoveAt(i);
+                    }
+                }
+                tokens = new LinkedList<Token>(tempTokens);
+            }
         }
 
         private void DefineFunctions()
@@ -336,7 +367,14 @@ namespace CPU_OS_Simulator.Compiler.Frontend
 
         private LinkedList<Token> GenerateTokens()
         {
-            string[] temp = sourceString.Split('\n', '\r', '\t', ' ');
+            string[] lines = sourceString.SplitAndKeep(new[] {'\r', '\n'}).ToArray();
+            string[] temp;
+            List<string> list = new List<string>();
+            foreach (string line in lines)
+            {
+                list.AddRange(line.Split('\t', ' '));
+            }
+            temp = list.ToArray();
             temp = temp.Where(x => !String.IsNullOrEmpty(x)).ToArray();
             tokenStrings = new LinkedList<string>(temp);
             currentTokenString = tokenStrings.First;
@@ -436,7 +474,10 @@ namespace CPU_OS_Simulator.Compiler.Frontend
                 {
                     while (currentToken.Next != null)
                     {
-                        output.Text += currentToken.Value + "\r";
+                        if ((EnumTokenType) currentToken.Value.Type != EnumTokenType.NEW_LINE)
+                        {
+                            output.Text += currentToken.Value + "\r";
+                        }
                         previousToken = currentToken;
                         currentToken = nextToken;
                         nextToken = currentToken.Next;

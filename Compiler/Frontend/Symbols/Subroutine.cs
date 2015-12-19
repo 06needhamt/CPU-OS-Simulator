@@ -16,7 +16,7 @@ namespace CPU_OS_Simulator.Compiler.Frontend.Symbols
             this.value = value;
             this.issub = true;
             this.isfun = false;
-            symbolScope = scope;
+            SymbolScope = scope;
         }
     }
 }

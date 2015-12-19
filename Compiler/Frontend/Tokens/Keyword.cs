@@ -83,7 +83,7 @@ namespace CPU_OS_Simulator.Compiler.Frontend.Tokens
                 case "goto":
                     return EnumKeywordType.GOTO;
                 case "as":
-                    return EnumKeywordType.END;
+                    return EnumKeywordType.AS;
                 default:
                     return EnumKeywordType.UNKNOWN;
             }

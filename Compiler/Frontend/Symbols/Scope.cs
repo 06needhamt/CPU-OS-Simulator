@@ -25,5 +25,6 @@ namespace CPU_OS_Simulator.Compiler.Frontend.Symbols
             get { return name; }
             set { name = value; }
         }
+
     }
 }

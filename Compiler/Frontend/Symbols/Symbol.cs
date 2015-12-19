@@ -39,6 +39,12 @@ namespace CPU_OS_Simulator.Compiler.Frontend.Symbols
             get { return symbolType; }
         }
 
+        public Scope SymbolScope
+        {
+            get { return symbolScope; }
+            set { symbolScope = value; }
+        }
+
         protected Symbol()
         {
             
