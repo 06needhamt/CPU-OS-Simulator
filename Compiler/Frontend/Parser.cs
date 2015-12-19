@@ -16,7 +16,7 @@ namespace CPU_OS_Simulator.Compiler.Frontend
             {
                 return node.Data = baseNode.Data;
             });
-
+            //TODO STUCK HERE.
         }
     }
 }

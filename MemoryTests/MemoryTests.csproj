@@ -52,7 +52,6 @@
   </Choose>
   <ItemGroup>
     <Compile Include="MemoryPageTests.cs" />
-    <Compile Include="MemorySegmentTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
