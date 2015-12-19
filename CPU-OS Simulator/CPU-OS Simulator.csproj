@@ -145,6 +145,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="OperatingSystemMainWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="PageTableWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -153,6 +157,9 @@
   <ItemGroup>
     <Compile Include="MemoryWindow.xaml.cs">
       <DependentUpon>MemoryWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="OperatingSystemMainWindow.xaml.cs">
+      <DependentUpon>OperatingSystemMainWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="PageTableWindow.xaml.cs">
       <DependentUpon>PageTableWindow.xaml</DependentUpon>
@@ -214,6 +221,10 @@
     <ProjectReference Include="..\Memory\Memory.csproj">
       <Project>{2fba6a60-9499-4c9e-8b43-abb459a9c0b6}</Project>
       <Name>Memory</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Operating System\Operating System.csproj">
+      <Project>{33ba51f9-d0a8-4e7d-81b9-d948c002ae85}</Project>
+      <Name>Operating System</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
