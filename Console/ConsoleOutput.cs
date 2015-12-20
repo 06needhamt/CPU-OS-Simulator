@@ -40,32 +40,32 @@ namespace CPU_OS_Simulator.Console
         /// </summary>
         public string Value
         {
-            [DebuggerStepThrough] get { return value; }
-            [DebuggerStepThrough] set { this.value = value; }
+             get { return value; }
+             set { this.value = value; }
         }
         /// <summary>
         /// The source of the output
         /// </summary>
         public string Source
         {
-            [DebuggerStepThrough] get { return source; }
-            [DebuggerStepThrough] set { source = value; }
+             get { return source; }
+             set { source = value; }
         }
         /// <summary>
         /// whether this output was created by a command
         /// </summary>
         public bool IsCommandOutput
         {
-            [DebuggerStepThrough] get { return isCommandOutput; }
-            [DebuggerStepThrough] set { isCommandOutput = value; }
+             get { return isCommandOutput; }
+             set { isCommandOutput = value; }
         }
         /// <summary>
         /// The command that created this output
         /// </summary>
         public ConsoleCommand Command
         {
-            [DebuggerStepThrough] get { return command; }
-            [DebuggerStepThrough] set { command = value; }
+             get { return command; }
+             set { command = value; }
         }
 
 
