@@ -102,7 +102,7 @@
         /// </summary>
         /// <param name="value"> the value to store in the register</param>
         /// <param name="type">the type of data memory or value</param>
-        public void setRegisterValue(int value, EnumOperandType type)
+        public virtual void setRegisterValue(int value, EnumOperandType type)
         {
             this.value = value;
             this.type = type;
