@@ -4,7 +4,7 @@ var class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_special_register =
     [ "SpecialRegister", "class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_special_register.html#a0328b3388027aa409a68191685753f4a", null ],
     [ "FindSpecialRegister", "class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_special_register.html#aa8c2e88c7311076eb6fd42ecb5d64e38", null ],
     [ "GetMainWindowInstance", "class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_special_register.html#a0ed54c8fcd7674bcb87fef3eda712af2", null ],
-    [ "setRegisterValue", "class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_special_register.html#ab76c9ab94069230fdf14821495ac9e9c", null ],
+    [ "setRegisterValue", "class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_special_register.html#a5c5fc9c6ff3dac3537a5f6ca2cfdd114", null ],
     [ "setRegisterValue", "class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_special_register.html#a6c2605883e6349c10e92f5453c2ad9ea", null ],
     [ "BR", "class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_special_register.html#a08c44f677cc5e830000382725ce8ab9f", null ],
     [ "IR", "class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_special_register.html#a96fde61578e06f00ab7b19a4b05b9885", null ],

@@ -1,23 +1,13 @@
 var searchData=
 [
-  ['pagetable',['PageTable',['../class_c_p_u___o_s___simulator_1_1_memory_1_1_page_table.html#a82e8026d70d5bd7cd7376d8af809952a',1,'CPU_OS_Simulator.Memory.PageTable.PageTable(int number)'],['../class_c_p_u___o_s___simulator_1_1_memory_1_1_page_table.html#a29c9c3d340af4ab70e642399027301e5',1,'CPU_OS_Simulator.Memory.PageTable.PageTable(int number, List&lt; PageTableEntry &gt; entries)']]],
-  ['pagetableentry',['PageTableEntry',['../class_c_p_u___o_s___simulator_1_1_memory_1_1_page_table_entry.html#a5c70feafd00522bc15c8b5461ae22622',1,'CPU_OS_Simulator::Memory::PageTableEntry']]],
-  ['pagetablewindow',['PageTableWindow',['../class_c_p_u___o_s___simulator_1_1_page_table_window.html#a9ddde0b8d78abd882007a4d919e5a082',1,'CPU_OS_Simulator.PageTableWindow.PageTableWindow()'],['../class_c_p_u___o_s___simulator_1_1_page_table_window.html#a7d71ad4194ceafa3573e5f65e8dbe90a',1,'CPU_OS_Simulator.PageTableWindow.PageTableWindow(MemoryWindow parent)']]],
-  ['pagetablewindow1_5floaded',['PageTableWindow1_Loaded',['../class_c_p_u___o_s___simulator_1_1_page_table_window.html#a32fcbb5d7acdefedbf7b81194f046f40',1,'CPU_OS_Simulator::PageTableWindow']]],
-  ['parsecommand',['ParseCommand',['../class_c_p_u___o_s___simulator_1_1_console_1_1_console_command.html#a0b953140f2c048bf7a80646e27c11435',1,'CPU_OS_Simulator::Console::ConsoleCommand']]],
-  ['parseinput',['ParseInput',['../class_c_p_u___o_s___simulator_1_1_console_window.html#a0a66aa7f0e333cc919589a7ce4d584c0',1,'CPU_OS_Simulator::ConsoleWindow']]],
-  ['physicalmemory',['PhysicalMemory',['../class_c_p_u___o_s___simulator_1_1_memory_1_1_physical_memory.html#ab870660d7d17f3e34b71c75ee89d9935',1,'CPU_OS_Simulator::Memory::PhysicalMemory']]],
-  ['pop',['POP',['../class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_instruction.html#a16a47493684bb30a289d337188fb77b6',1,'CPU_OS_Simulator::CPU::Instruction']]],
-  ['popitem',['popItem',['../class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_program_stack.html#a32a272fedcd1d8ac5673b3ef90689519',1,'CPU_OS_Simulator::CPU::ProgramStack']]],
-  ['popitemtest',['popItemTest',['../class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_tests_1_1_program_stack_tests.html#ab98851c55e2cb5ce81feaae1e717b3d4',1,'CPU_OS_Simulator::CPU::Tests::ProgramStackTests']]],
-  ['populatedata',['PopulateData',['../class_c_p_u___o_s___simulator_1_1_memory_1_1_memory_page.html#a4006da1460cb3bf17076dfbade9d0038',1,'CPU_OS_Simulator::Memory::MemoryPage']]],
-  ['populatedataview',['PopulateDataView',['../class_c_p_u___o_s___simulator_1_1_memory_window.html#a8811287064d6315e3a8c01531148ed81',1,'CPU_OS_Simulator::MemoryWindow']]],
-  ['populateinstructions',['PopulateInstructions',['../class_c_p_u___o_s___simulator_1_1_instructions_window.html#a52685f2ecc3d1cf7216716401d2621e0',1,'CPU_OS_Simulator::InstructionsWindow']]],
-  ['populateregisters',['PopulateRegisters',['../class_c_p_u___o_s___simulator_1_1_main_window.html#a06b2ba04e8c006037cae7b0e40b9c5a0',1,'CPU_OS_Simulator::MainWindow']]],
-  ['programcommand',['ProgramCommand',['../class_c_p_u___o_s___simulator_1_1_console_1_1_console_command.html#a15069fc340cb27e5560c1dac008d1284',1,'CPU_OS_Simulator::Console::ConsoleCommand']]],
-  ['programstack',['ProgramStack',['../class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_program_stack.html#a2a30dfbb7df3408de94c883c44aff090',1,'CPU_OS_Simulator::CPU::ProgramStack']]],
-  ['programstacktest',['ProgramStackTest',['../class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_tests_1_1_program_stack_tests.html#ae3a306f6e91d99a537f07fc4a4177c84',1,'CPU_OS_Simulator::CPU::Tests::ProgramStackTests']]],
-  ['push',['PUSH',['../class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_instruction.html#a4a6711b8309af629c9460cdadc340444',1,'CPU_OS_Simulator::CPU::Instruction']]],
-  ['pushitem',['pushItem',['../class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_program_stack.html#ae52c8a15274b2e86e02572ba13cad60c',1,'CPU_OS_Simulator::CPU::ProgramStack']]],
-  ['pushitemtest',['pushItemTest',['../class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_tests_1_1_program_stack_tests.html#aa0f5fc338f3b32423b71181218721c40',1,'CPU_OS_Simulator::CPU::Tests::ProgramStackTests']]]
+  ['onbeginprint',['OnBeginPrint',['../class_c_p_u___o_s___simulator_1_1_console_1_1_printable_document.html#a63d8f6a5ee9648e418dbc93859d2c746',1,'CPU_OS_Simulator::Console::PrintableDocument']]],
+  ['onendprint',['OnEndPrint',['../class_c_p_u___o_s___simulator_1_1_console_1_1_printable_document.html#a3e2f3a86ac5c236c3c36a04910fb6ab1',1,'CPU_OS_Simulator::Console::PrintableDocument']]],
+  ['operand',['Operand',['../class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_operand.html#a8f6d642c2e5741c17748379c34a3052c',1,'CPU_OS_Simulator.CPU.Operand.Operand()'],['../class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_operand.html#aaa8877bd8c0018697f49c9f764fbe750',1,'CPU_OS_Simulator.CPU.Operand.Operand(int value, EnumOperandType type)'],['../class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_operand.html#ab1da49c3f7978edcfa8c9b95e5804f08',1,'CPU_OS_Simulator.CPU.Operand.Operand(Register reg, EnumOperandType type)']]],
+  ['operandtest',['OperandTest',['../class_c_p_u_tests_1_1_operand_tests.html#ad391b25fc84ca5d30b59677a0b81f959',1,'CPUTests::OperandTests']]],
+  ['operandtest1',['OperandTest1',['../class_c_p_u_tests_1_1_operand_tests.html#ac0cb55c0546f046fbb2bec28a53bdf04',1,'CPUTests::OperandTests']]],
+  ['operandtest2',['OperandTest2',['../class_c_p_u_tests_1_1_operand_tests.html#a78db06ef5e02ea45373db59627d23cb6',1,'CPUTests::OperandTests']]],
+  ['operatingsystemmainwindow',['OperatingSystemMainWindow',['../class_c_p_u___o_s___simulator_1_1_operating_system_main_window.html#a6ebb63e5bf2709cb0281434c651845dc',1,'CPU_OS_Simulator.OperatingSystemMainWindow.OperatingSystemMainWindow()'],['../class_c_p_u___o_s___simulator_1_1_operating_system_main_window.html#a2e4a26004957e2b1f1c4376f0a6656ab',1,'CPU_OS_Simulator.OperatingSystemMainWindow.OperatingSystemMainWindow(MainWindow parent)']]],
+  ['operator',['Operator',['../class_c_p_u___o_s___simulator_1_1_compiler_1_1_frontend_1_1_tokens_1_1_operator.html#a9f1b37d1fd2bf09a3eba578b23adaa81',1,'CPU_OS_Simulator::Compiler::Frontend::Tokens::Operator']]],
+  ['or',['OR',['../class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_instruction.html#a32adcd85bab5adfeeb4effa90275dee5',1,'CPU_OS_Simulator::CPU::Instruction']]],
+  ['oscore',['OSCore',['../class_c_p_u___o_s___simulator_1_1_operating___system_1_1_o_s_core.html#a3845ed83851b87e64d6918a2a495e45e',1,'CPU_OS_Simulator.Operating_System.OSCore.OSCore()'],['../class_c_p_u___o_s___simulator_1_1_operating___system_1_1_o_s_core.html#a65c809ada2e4d0d5f6269e6a9009db0d',1,'CPU_OS_Simulator.Operating_System.OSCore.OSCore(OSFlags flags)']]]
 ];

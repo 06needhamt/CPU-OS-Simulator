@@ -1,0 +1,135 @@
+\hypertarget{struct_c_p_u___o_s___simulator_1_1_operating___system_1_1_scheduler_flags}{}\section{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Operating\+\_\+\+System.\+Scheduler\+Flags Struct Reference}
+\label{struct_c_p_u___o_s___simulator_1_1_operating___system_1_1_scheduler_flags}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Operating\+\_\+\+System.\+Scheduler\+Flags@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Operating\+\_\+\+System.\+Scheduler\+Flags}}
+
+
+This struct represents the flags passed to the scheduler  
+
+
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Queue$<$ \hyperlink{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_simulator_process}{Simulator\+Process} $>$ \hyperlink{struct_c_p_u___o_s___simulator_1_1_operating___system_1_1_scheduler_flags_a6345abea6614091648d1529683ec02f4}{ready\+Queue}
+\item 
+Queue$<$ \hyperlink{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_simulator_process}{Simulator\+Process} $>$ \hyperlink{struct_c_p_u___o_s___simulator_1_1_operating___system_1_1_scheduler_flags_acd01af6379302599c522a0331a6276fc}{waiting\+Queue}
+\item 
+\hyperlink{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_simulator_process}{Simulator\+Process} \hyperlink{struct_c_p_u___o_s___simulator_1_1_operating___system_1_1_scheduler_flags_ae9f786664af89c40055e27c97683ff08}{running\+Process}
+\item 
+\hyperlink{namespace_c_p_u___o_s___simulator_1_1_operating___system_ad0cdaacf9652394d23fa29109640fe08}{Enum\+Scheduling\+Policies} \hyperlink{struct_c_p_u___o_s___simulator_1_1_operating___system_1_1_scheduler_flags_a2461410563876df6082b78db986c6bf1}{scheduling\+Policies}
+\item 
+int \hyperlink{struct_c_p_u___o_s___simulator_1_1_operating___system_1_1_scheduler_flags_a46329b99c2c63dfb9779cfce45ecbd9c}{R\+R\+\_\+\+Time\+Slice}
+\item 
+\hyperlink{namespace_c_p_u___o_s___simulator_1_1_operating___system_a0553d0bc2513aec52caa769acf994d5c}{Enum\+Time\+Unit} \hyperlink{struct_c_p_u___o_s___simulator_1_1_operating___system_1_1_scheduler_flags_af668afafedff1a596fff642d2fcd38b7}{Time\+Slice\+Unit}
+\item 
+bool \hyperlink{struct_c_p_u___o_s___simulator_1_1_operating___system_1_1_scheduler_flags_a3ccbd91b280afcd060460a7668d75d0f}{default\+Scheduler}
+\item 
+\hyperlink{namespace_c_p_u___o_s___simulator_1_1_operating___system_a3a9286a473bd079e9c65908c0378fa00}{Enum\+Priority\+Policy} \hyperlink{struct_c_p_u___o_s___simulator_1_1_operating___system_1_1_scheduler_flags_a293340444e5a9fdb921a9f1dbcef3428}{R\+R\+\_\+\+Priority\+\_\+\+Policy}
+\item 
+\hyperlink{namespace_c_p_u___o_s___simulator_1_1_operating___system_a4c7effb8b6725df52018a3a14cede96e}{Enum\+Round\+Robin\+Type} \hyperlink{struct_c_p_u___o_s___simulator_1_1_operating___system_1_1_scheduler_flags_a1a51e099cadde91c3344ceaf55bbaf7b}{R\+R\+\_\+\+Type}
+\item 
+bool \hyperlink{struct_c_p_u___o_s___simulator_1_1_operating___system_1_1_scheduler_flags_a7b42d8ef49035b7d450032a1e4060fb6}{using\+Single\+C\+P\+U}
+\item 
+bool \hyperlink{struct_c_p_u___o_s___simulator_1_1_operating___system_1_1_scheduler_flags_ad2d1f81a34e9cce1553bfdf8e8a719ea}{allow\+C\+P\+U\+Affinity}
+\item 
+bool \hyperlink{struct_c_p_u___o_s___simulator_1_1_operating___system_1_1_scheduler_flags_a1a46dce1e8818f1dae579c00eed21ad1}{running\+With\+No\+Processes}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This struct represents the flags passed to the scheduler 
+
+
+
+Definition at line 8 of file Scheduler\+Flags.\+cs.
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{struct_c_p_u___o_s___simulator_1_1_operating___system_1_1_scheduler_flags_ad2d1f81a34e9cce1553bfdf8e8a719ea}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Scheduler\+Flags@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Scheduler\+Flags}!allow\+C\+P\+U\+Affinity@{allow\+C\+P\+U\+Affinity}}
+\index{allow\+C\+P\+U\+Affinity@{allow\+C\+P\+U\+Affinity}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Scheduler\+Flags@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Scheduler\+Flags}}
+\subsubsection[{allow\+C\+P\+U\+Affinity}]{\setlength{\rightskip}{0pt plus 5cm}bool C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Operating\+\_\+\+System.\+Scheduler\+Flags.\+allow\+C\+P\+U\+Affinity}\label{struct_c_p_u___o_s___simulator_1_1_operating___system_1_1_scheduler_flags_ad2d1f81a34e9cce1553bfdf8e8a719ea}
+
+
+Definition at line 20 of file Scheduler\+Flags.\+cs.
+
+\hypertarget{struct_c_p_u___o_s___simulator_1_1_operating___system_1_1_scheduler_flags_a3ccbd91b280afcd060460a7668d75d0f}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Scheduler\+Flags@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Scheduler\+Flags}!default\+Scheduler@{default\+Scheduler}}
+\index{default\+Scheduler@{default\+Scheduler}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Scheduler\+Flags@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Scheduler\+Flags}}
+\subsubsection[{default\+Scheduler}]{\setlength{\rightskip}{0pt plus 5cm}bool C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Operating\+\_\+\+System.\+Scheduler\+Flags.\+default\+Scheduler}\label{struct_c_p_u___o_s___simulator_1_1_operating___system_1_1_scheduler_flags_a3ccbd91b280afcd060460a7668d75d0f}
+
+
+Definition at line 16 of file Scheduler\+Flags.\+cs.
+
+\hypertarget{struct_c_p_u___o_s___simulator_1_1_operating___system_1_1_scheduler_flags_a6345abea6614091648d1529683ec02f4}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Scheduler\+Flags@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Scheduler\+Flags}!ready\+Queue@{ready\+Queue}}
+\index{ready\+Queue@{ready\+Queue}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Scheduler\+Flags@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Scheduler\+Flags}}
+\subsubsection[{ready\+Queue}]{\setlength{\rightskip}{0pt plus 5cm}Queue$<${\bf Simulator\+Process}$>$ C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Operating\+\_\+\+System.\+Scheduler\+Flags.\+ready\+Queue}\label{struct_c_p_u___o_s___simulator_1_1_operating___system_1_1_scheduler_flags_a6345abea6614091648d1529683ec02f4}
+
+
+Definition at line 10 of file Scheduler\+Flags.\+cs.
+
+\hypertarget{struct_c_p_u___o_s___simulator_1_1_operating___system_1_1_scheduler_flags_a293340444e5a9fdb921a9f1dbcef3428}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Scheduler\+Flags@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Scheduler\+Flags}!R\+R\+\_\+\+Priority\+\_\+\+Policy@{R\+R\+\_\+\+Priority\+\_\+\+Policy}}
+\index{R\+R\+\_\+\+Priority\+\_\+\+Policy@{R\+R\+\_\+\+Priority\+\_\+\+Policy}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Scheduler\+Flags@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Scheduler\+Flags}}
+\subsubsection[{R\+R\+\_\+\+Priority\+\_\+\+Policy}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Enum\+Priority\+Policy} C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Operating\+\_\+\+System.\+Scheduler\+Flags.\+R\+R\+\_\+\+Priority\+\_\+\+Policy}\label{struct_c_p_u___o_s___simulator_1_1_operating___system_1_1_scheduler_flags_a293340444e5a9fdb921a9f1dbcef3428}
+
+
+Definition at line 17 of file Scheduler\+Flags.\+cs.
+
+\hypertarget{struct_c_p_u___o_s___simulator_1_1_operating___system_1_1_scheduler_flags_a46329b99c2c63dfb9779cfce45ecbd9c}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Scheduler\+Flags@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Scheduler\+Flags}!R\+R\+\_\+\+Time\+Slice@{R\+R\+\_\+\+Time\+Slice}}
+\index{R\+R\+\_\+\+Time\+Slice@{R\+R\+\_\+\+Time\+Slice}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Scheduler\+Flags@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Scheduler\+Flags}}
+\subsubsection[{R\+R\+\_\+\+Time\+Slice}]{\setlength{\rightskip}{0pt plus 5cm}int C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Operating\+\_\+\+System.\+Scheduler\+Flags.\+R\+R\+\_\+\+Time\+Slice}\label{struct_c_p_u___o_s___simulator_1_1_operating___system_1_1_scheduler_flags_a46329b99c2c63dfb9779cfce45ecbd9c}
+
+
+Definition at line 14 of file Scheduler\+Flags.\+cs.
+
+\hypertarget{struct_c_p_u___o_s___simulator_1_1_operating___system_1_1_scheduler_flags_a1a51e099cadde91c3344ceaf55bbaf7b}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Scheduler\+Flags@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Scheduler\+Flags}!R\+R\+\_\+\+Type@{R\+R\+\_\+\+Type}}
+\index{R\+R\+\_\+\+Type@{R\+R\+\_\+\+Type}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Scheduler\+Flags@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Scheduler\+Flags}}
+\subsubsection[{R\+R\+\_\+\+Type}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Enum\+Round\+Robin\+Type} C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Operating\+\_\+\+System.\+Scheduler\+Flags.\+R\+R\+\_\+\+Type}\label{struct_c_p_u___o_s___simulator_1_1_operating___system_1_1_scheduler_flags_a1a51e099cadde91c3344ceaf55bbaf7b}
+
+
+Definition at line 18 of file Scheduler\+Flags.\+cs.
+
+\hypertarget{struct_c_p_u___o_s___simulator_1_1_operating___system_1_1_scheduler_flags_ae9f786664af89c40055e27c97683ff08}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Scheduler\+Flags@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Scheduler\+Flags}!running\+Process@{running\+Process}}
+\index{running\+Process@{running\+Process}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Scheduler\+Flags@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Scheduler\+Flags}}
+\subsubsection[{running\+Process}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Simulator\+Process} C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Operating\+\_\+\+System.\+Scheduler\+Flags.\+running\+Process}\label{struct_c_p_u___o_s___simulator_1_1_operating___system_1_1_scheduler_flags_ae9f786664af89c40055e27c97683ff08}
+
+
+Definition at line 12 of file Scheduler\+Flags.\+cs.
+
+\hypertarget{struct_c_p_u___o_s___simulator_1_1_operating___system_1_1_scheduler_flags_a1a46dce1e8818f1dae579c00eed21ad1}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Scheduler\+Flags@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Scheduler\+Flags}!running\+With\+No\+Processes@{running\+With\+No\+Processes}}
+\index{running\+With\+No\+Processes@{running\+With\+No\+Processes}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Scheduler\+Flags@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Scheduler\+Flags}}
+\subsubsection[{running\+With\+No\+Processes}]{\setlength{\rightskip}{0pt plus 5cm}bool C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Operating\+\_\+\+System.\+Scheduler\+Flags.\+running\+With\+No\+Processes}\label{struct_c_p_u___o_s___simulator_1_1_operating___system_1_1_scheduler_flags_a1a46dce1e8818f1dae579c00eed21ad1}
+
+
+Definition at line 21 of file Scheduler\+Flags.\+cs.
+
+\hypertarget{struct_c_p_u___o_s___simulator_1_1_operating___system_1_1_scheduler_flags_a2461410563876df6082b78db986c6bf1}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Scheduler\+Flags@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Scheduler\+Flags}!scheduling\+Policies@{scheduling\+Policies}}
+\index{scheduling\+Policies@{scheduling\+Policies}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Scheduler\+Flags@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Scheduler\+Flags}}
+\subsubsection[{scheduling\+Policies}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Enum\+Scheduling\+Policies} C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Operating\+\_\+\+System.\+Scheduler\+Flags.\+scheduling\+Policies}\label{struct_c_p_u___o_s___simulator_1_1_operating___system_1_1_scheduler_flags_a2461410563876df6082b78db986c6bf1}
+
+
+Definition at line 13 of file Scheduler\+Flags.\+cs.
+
+\hypertarget{struct_c_p_u___o_s___simulator_1_1_operating___system_1_1_scheduler_flags_af668afafedff1a596fff642d2fcd38b7}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Scheduler\+Flags@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Scheduler\+Flags}!Time\+Slice\+Unit@{Time\+Slice\+Unit}}
+\index{Time\+Slice\+Unit@{Time\+Slice\+Unit}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Scheduler\+Flags@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Scheduler\+Flags}}
+\subsubsection[{Time\+Slice\+Unit}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Enum\+Time\+Unit} C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Operating\+\_\+\+System.\+Scheduler\+Flags.\+Time\+Slice\+Unit}\label{struct_c_p_u___o_s___simulator_1_1_operating___system_1_1_scheduler_flags_af668afafedff1a596fff642d2fcd38b7}
+
+
+Definition at line 15 of file Scheduler\+Flags.\+cs.
+
+\hypertarget{struct_c_p_u___o_s___simulator_1_1_operating___system_1_1_scheduler_flags_a7b42d8ef49035b7d450032a1e4060fb6}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Scheduler\+Flags@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Scheduler\+Flags}!using\+Single\+C\+P\+U@{using\+Single\+C\+P\+U}}
+\index{using\+Single\+C\+P\+U@{using\+Single\+C\+P\+U}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Scheduler\+Flags@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Scheduler\+Flags}}
+\subsubsection[{using\+Single\+C\+P\+U}]{\setlength{\rightskip}{0pt plus 5cm}bool C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Operating\+\_\+\+System.\+Scheduler\+Flags.\+using\+Single\+C\+P\+U}\label{struct_c_p_u___o_s___simulator_1_1_operating___system_1_1_scheduler_flags_a7b42d8ef49035b7d450032a1e4060fb6}
+
+
+Definition at line 19 of file Scheduler\+Flags.\+cs.
+
+\hypertarget{struct_c_p_u___o_s___simulator_1_1_operating___system_1_1_scheduler_flags_acd01af6379302599c522a0331a6276fc}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Scheduler\+Flags@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Scheduler\+Flags}!waiting\+Queue@{waiting\+Queue}}
+\index{waiting\+Queue@{waiting\+Queue}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Scheduler\+Flags@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Scheduler\+Flags}}
+\subsubsection[{waiting\+Queue}]{\setlength{\rightskip}{0pt plus 5cm}Queue$<${\bf Simulator\+Process}$>$ C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Operating\+\_\+\+System.\+Scheduler\+Flags.\+waiting\+Queue}\label{struct_c_p_u___o_s___simulator_1_1_operating___system_1_1_scheduler_flags_acd01af6379302599c522a0331a6276fc}
+
+
+Definition at line 11 of file Scheduler\+Flags.\+cs.
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Operating System/\hyperlink{_scheduler_flags_8cs}{Scheduler\+Flags.\+cs}\end{DoxyCompactItemize}

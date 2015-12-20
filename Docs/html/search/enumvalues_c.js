@@ -1,16 +1,10 @@
 var searchData=
 [
-  ['shl',['SHL',['../namespace_c_p_u___o_s___simulator_1_1_c_p_u.html#ac29c87bff87ad404c953b2581024043eabb0b9165d75b1fd27d0a869b036baa3c',1,'CPU_OS_Simulator::CPU']]],
-  ['show',['SHOW',['../namespace_c_p_u___o_s___simulator.html#adc17a5a5e004084f05dc8e4d3f70e31fac34fbad9a5e2a1d0c8f7cf8d226808b9',1,'CPU_OS_Simulator']]],
-  ['shr',['SHR',['../namespace_c_p_u___o_s___simulator_1_1_c_p_u.html#ac29c87bff87ad404c953b2581024043ea10ab606ab9efe239a011d327d9301edd',1,'CPU_OS_Simulator::CPU']]],
-  ['size',['SIZE',['../namespace_c_p_u___o_s___simulator_1_1_console.html#a5d9f2366d41d3eb074f056be426272d7a62e5cef85d46f1a5a2144d9fd463b79e',1,'CPU_OS_Simulator::Console']]],
-  ['source_5fcode',['SOURCE_CODE',['../namespace_c_p_u___o_s___simulator_1_1_compiler.html#ada8d93b571fa15a0f2eac8c9647a89feac31dd0847839ccae1447bac2f474a003',1,'CPU_OS_Simulator::Compiler']]],
-  ['stb',['STB',['../namespace_c_p_u___o_s___simulator_1_1_c_p_u.html#ac29c87bff87ad404c953b2581024043eaecd472e37d2e3d8542fd5e9ff63e3450',1,'CPU_OS_Simulator::CPU']]],
-  ['stbi',['STBI',['../namespace_c_p_u___o_s___simulator_1_1_c_p_u.html#ac29c87bff87ad404c953b2581024043ea26fd3ec72d54c38bca35ee4b53933ebf',1,'CPU_OS_Simulator::CPU']]],
-  ['stw',['STW',['../namespace_c_p_u___o_s___simulator_1_1_c_p_u.html#ac29c87bff87ad404c953b2581024043eac88e338a7ffbd66e4c473d249baeb2fb',1,'CPU_OS_Simulator::CPU']]],
-  ['stwi',['STWI',['../namespace_c_p_u___o_s___simulator_1_1_c_p_u.html#ac29c87bff87ad404c953b2581024043eab6753631f66bd7c76f62acbf9c594b12',1,'CPU_OS_Simulator::CPU']]],
-  ['sub',['SUB',['../namespace_c_p_u___o_s___simulator_1_1_c_p_u.html#ac29c87bff87ad404c953b2581024043ea241dd841abade20fcb27b8a9f494e1eb',1,'CPU_OS_Simulator::CPU']]],
-  ['subu',['SUBU',['../namespace_c_p_u___o_s___simulator_1_1_c_p_u.html#ac29c87bff87ad404c953b2581024043ea4ded5761413a41aadfb61dca88326749',1,'CPU_OS_Simulator::CPU']]],
-  ['swi',['SWI',['../namespace_c_p_u___o_s___simulator_1_1_c_p_u.html#ac29c87bff87ad404c953b2581024043ea9088dd63dc503fab6949a52da00f0190',1,'CPU_OS_Simulator::CPU']]],
-  ['swp',['SWP',['../namespace_c_p_u___o_s___simulator_1_1_c_p_u.html#ac29c87bff87ad404c953b2581024043eabf25a2c5bd5a104d12787b840b79f43d',1,'CPU_OS_Simulator::CPU']]]
+  ['minus',['MINUS',['../namespace_c_p_u___o_s___simulator_1_1_compiler_1_1_frontend_1_1_tokens.html#ac7cabb2de0258fea24dd75768143da51affc0d9b54a1fe677c4c9e6b050e67c81',1,'CPU_OS_Simulator::Compiler::Frontend::Tokens']]],
+  ['modulo',['MODULO',['../namespace_c_p_u___o_s___simulator_1_1_compiler_1_1_frontend_1_1_tokens.html#ac7cabb2de0258fea24dd75768143da51a928ab45d616dde447dbbbd0270db87ad',1,'CPU_OS_Simulator::Compiler::Frontend::Tokens']]],
+  ['mov',['MOV',['../namespace_c_p_u___o_s___simulator_1_1_c_p_u.html#af322082b9b46482202165fb547c052a7a17b32100aef1fc19670be7fd58bc85df',1,'CPU_OS_Simulator.CPU.MOV()'],['../namespace_c_p_u___o_s___simulator_1_1_c_p_u.html#ac29c87bff87ad404c953b2581024043ea17b32100aef1fc19670be7fd58bc85df',1,'CPU_OS_Simulator.CPU.MOV()']]],
+  ['msf',['MSF',['../namespace_c_p_u___o_s___simulator_1_1_c_p_u.html#ac29c87bff87ad404c953b2581024043ea4ad5a86f50b778a2050c51335e97d234',1,'CPU_OS_Simulator::CPU']]],
+  ['mul',['MUL',['../namespace_c_p_u___o_s___simulator_1_1_c_p_u.html#ac29c87bff87ad404c953b2581024043ea2cdf52a55876063ec93b7d18bc741f6c',1,'CPU_OS_Simulator::CPU']]],
+  ['multiply',['MULTIPLY',['../namespace_c_p_u___o_s___simulator_1_1_compiler_1_1_frontend_1_1_tokens.html#ac7cabb2de0258fea24dd75768143da51a080aaf8d817ada96fca7096b7b55bd30',1,'CPU_OS_Simulator::Compiler::Frontend::Tokens']]],
+  ['mvs',['MVS',['../namespace_c_p_u___o_s___simulator_1_1_c_p_u.html#ac29c87bff87ad404c953b2581024043ea69ad7d37a807081169292099cdec3d83',1,'CPU_OS_Simulator::CPU']]]
 ];

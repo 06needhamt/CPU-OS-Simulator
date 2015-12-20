@@ -1,0 +1,210 @@
+\hypertarget{namespace_c_p_u___o_s___simulator_1_1_operating___system}{}\section{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Operating\+\_\+\+System Namespace Reference}
+\label{namespace_c_p_u___o_s___simulator_1_1_operating___system}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Operating\+\_\+\+System@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Operating\+\_\+\+System}}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_o_s_core}{O\+S\+Core}
+\begin{DoxyCompactList}\small\item\em This class represents the core of the operating system \end{DoxyCompactList}\item 
+struct \hyperlink{struct_c_p_u___o_s___simulator_1_1_operating___system_1_1_o_s_flags}{O\+S\+Flags}
+\begin{DoxyCompactList}\small\item\em This struct represents the flags passed to the operating system \end{DoxyCompactList}\item 
+struct \hyperlink{struct_c_p_u___o_s___simulator_1_1_operating___system_1_1_process_flags}{Process\+Flags}
+\begin{DoxyCompactList}\small\item\em this struct represents the flags passed to a process \end{DoxyCompactList}\item 
+class \hyperlink{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_scheduler}{Scheduler}
+\begin{DoxyCompactList}\small\item\em This class represents the process scheduler / manager for the virtual operating system \end{DoxyCompactList}\item 
+struct \hyperlink{struct_c_p_u___o_s___simulator_1_1_operating___system_1_1_scheduler_flags}{Scheduler\+Flags}
+\begin{DoxyCompactList}\small\item\em This struct represents the flags passed to the scheduler \end{DoxyCompactList}\item 
+class \hyperlink{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_simulator_process}{Simulator\+Process}
+\begin{DoxyCompactList}\small\item\em This class represents a process that can be run on the virtual operating system \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{namespace_c_p_u___o_s___simulator_1_1_operating___system_a03a98a403abc737c106a8f92db5bffc1}{Enum\+O\+S\+State} \{ \\*
+\hyperlink{namespace_c_p_u___o_s___simulator_1_1_operating___system_a03a98a403abc737c106a8f92db5bffc1a696b031073e74bf2cb98e5ef201d4aa3}{Enum\+O\+S\+State.\+U\+N\+K\+N\+O\+W\+N} = -\/1, 
+\hyperlink{namespace_c_p_u___o_s___simulator_1_1_operating___system_a03a98a403abc737c106a8f92db5bffc1a0cb707127aebaa0023eb38363993843a}{Enum\+O\+S\+State.\+S\+U\+S\+P\+E\+N\+D\+E\+D} = 0, 
+\hyperlink{namespace_c_p_u___o_s___simulator_1_1_operating___system_a03a98a403abc737c106a8f92db5bffc1a43491564ebcfd38568918efbd6e840fd}{Enum\+O\+S\+State.\+R\+U\+N\+N\+I\+N\+G} = 1, 
+\hyperlink{namespace_c_p_u___o_s___simulator_1_1_operating___system_a03a98a403abc737c106a8f92db5bffc1a09d4d696b4e935115b9313e3c412509a}{Enum\+O\+S\+State.\+S\+T\+O\+P\+P\+E\+D} = 2, 
+\\*
+\hyperlink{namespace_c_p_u___o_s___simulator_1_1_operating___system_a03a98a403abc737c106a8f92db5bffc1a0550134156d1220fe47b905f3da1080f}{Enum\+O\+S\+State.\+D\+E\+A\+D\+L\+O\+C\+K\+E\+D} = 3
+ \}\begin{DoxyCompactList}\small\item\em This enum represents the possible states that the operating system can be in \end{DoxyCompactList}
+\item 
+enum \hyperlink{namespace_c_p_u___o_s___simulator_1_1_operating___system_a3a9286a473bd079e9c65908c0378fa00}{Enum\+Priority\+Policy} \{ \hyperlink{namespace_c_p_u___o_s___simulator_1_1_operating___system_a3a9286a473bd079e9c65908c0378fa00a696b031073e74bf2cb98e5ef201d4aa3}{Enum\+Priority\+Policy.\+U\+N\+K\+N\+O\+W\+N} = -\/1, 
+\hyperlink{namespace_c_p_u___o_s___simulator_1_1_operating___system_a3a9286a473bd079e9c65908c0378fa00a9f68f1d26dd059f9a73e5f66a83bef80}{Enum\+Priority\+Policy.\+N\+O\+\_\+\+P\+R\+I\+O\+R\+I\+T\+Y} = 0, 
+\hyperlink{namespace_c_p_u___o_s___simulator_1_1_operating___system_a3a9286a473bd079e9c65908c0378fa00a991a81df1486f1b97a90776f3026ff96}{Enum\+Priority\+Policy.\+N\+O\+N\+\_\+\+P\+R\+E\+\_\+\+E\+M\+P\+T\+I\+V\+E} = 1, 
+\hyperlink{namespace_c_p_u___o_s___simulator_1_1_operating___system_a3a9286a473bd079e9c65908c0378fa00a952140b26aa6080871aab2eb7a96feb0}{Enum\+Priority\+Policy.\+P\+R\+E\+\_\+\+E\+M\+P\+T\+I\+V\+E} = 2
+ \}\begin{DoxyCompactList}\small\item\em This enum represents the priority policies that can be used \end{DoxyCompactList}
+\item 
+enum \hyperlink{namespace_c_p_u___o_s___simulator_1_1_operating___system_a836ee2204e78fcb3a7dd6c3c942b1a24}{Enum\+Process\+State} \{ \hyperlink{namespace_c_p_u___o_s___simulator_1_1_operating___system_a836ee2204e78fcb3a7dd6c3c942b1a24a696b031073e74bf2cb98e5ef201d4aa3}{Enum\+Process\+State.\+U\+N\+K\+N\+O\+W\+N} = -\/1, 
+\hyperlink{namespace_c_p_u___o_s___simulator_1_1_operating___system_a836ee2204e78fcb3a7dd6c3c942b1a24a43491564ebcfd38568918efbd6e840fd}{Enum\+Process\+State.\+R\+U\+N\+N\+I\+N\+G} = 0, 
+\hyperlink{namespace_c_p_u___o_s___simulator_1_1_operating___system_a836ee2204e78fcb3a7dd6c3c942b1a24a2baa69eafc7204f3bd8648eba580c489}{Enum\+Process\+State.\+R\+E\+A\+D\+Y} = 1, 
+\hyperlink{namespace_c_p_u___o_s___simulator_1_1_operating___system_a836ee2204e78fcb3a7dd6c3c942b1a24a1869d56535e8b1449a6da54ff5e11f50}{Enum\+Process\+State.\+W\+A\+I\+T\+I\+N\+G} = 2
+ \}\begin{DoxyCompactList}\small\item\em This enum represents the possible states that a process can be in \end{DoxyCompactList}
+\item 
+enum \hyperlink{namespace_c_p_u___o_s___simulator_1_1_operating___system_a4c7effb8b6725df52018a3a14cede96e}{Enum\+Round\+Robin\+Type} \{ \hyperlink{namespace_c_p_u___o_s___simulator_1_1_operating___system_a4c7effb8b6725df52018a3a14cede96ea696b031073e74bf2cb98e5ef201d4aa3}{Enum\+Round\+Robin\+Type.\+U\+N\+K\+N\+O\+W\+N} = -\/1, 
+\hyperlink{namespace_c_p_u___o_s___simulator_1_1_operating___system_a4c7effb8b6725df52018a3a14cede96eafe6f99ef1ec99efbdc19a9786cf1facc}{Enum\+Round\+Robin\+Type.\+S\+T\+A\+T\+I\+C} = 0, 
+\hyperlink{namespace_c_p_u___o_s___simulator_1_1_operating___system_a4c7effb8b6725df52018a3a14cede96ea0fcc90da4811c877ba9f9c12f7d60bc9}{Enum\+Round\+Robin\+Type.\+D\+Y\+N\+A\+M\+I\+C} = 1
+ \}\begin{DoxyCompactList}\small\item\em this enum represents the type of round robin being used i.\+e Static or dynamic \end{DoxyCompactList}
+\item 
+enum \hyperlink{namespace_c_p_u___o_s___simulator_1_1_operating___system_ad0cdaacf9652394d23fa29109640fe08}{Enum\+Scheduling\+Policies} \{ \\*
+\hyperlink{namespace_c_p_u___o_s___simulator_1_1_operating___system_ad0cdaacf9652394d23fa29109640fe08a696b031073e74bf2cb98e5ef201d4aa3}{Enum\+Scheduling\+Policies.\+U\+N\+K\+N\+O\+W\+N} = -\/1, 
+\hyperlink{namespace_c_p_u___o_s___simulator_1_1_operating___system_ad0cdaacf9652394d23fa29109640fe08ae39fb551e5657a3c31eff06f11508d59}{Enum\+Scheduling\+Policies.\+F\+I\+R\+S\+T\+\_\+\+C\+O\+M\+E\+\_\+\+F\+I\+R\+S\+T\+\_\+\+S\+E\+R\+V\+E\+D} = 0, 
+\hyperlink{namespace_c_p_u___o_s___simulator_1_1_operating___system_ad0cdaacf9652394d23fa29109640fe08aa5ffbf66adc3cfaa95173a6278f573dc}{Enum\+Scheduling\+Policies.\+S\+H\+O\+R\+T\+E\+S\+T\+\_\+\+J\+O\+B\+\_\+\+F\+I\+R\+S\+T} = 1, 
+\hyperlink{namespace_c_p_u___o_s___simulator_1_1_operating___system_ad0cdaacf9652394d23fa29109640fe08a1ebd8dbf8c34e255f5cbf28f35860b71}{Enum\+Scheduling\+Policies.\+R\+O\+U\+N\+D\+\_\+\+R\+O\+B\+I\+N} = 2, 
+\\*
+\hyperlink{namespace_c_p_u___o_s___simulator_1_1_operating___system_ad0cdaacf9652394d23fa29109640fe08aa4d25b80a5834b7f9ff2a2153f3b5985}{Enum\+Scheduling\+Policies.\+L\+O\+T\+T\+E\+R\+Y\+\_\+\+S\+C\+H\+E\+D\+U\+L\+I\+N\+G} = 3, 
+\hyperlink{namespace_c_p_u___o_s___simulator_1_1_operating___system_ad0cdaacf9652394d23fa29109640fe08abce82cf69e3b635b2e6aaacec9cb17dd}{Enum\+Scheduling\+Policies.\+F\+A\+I\+R\+\_\+\+S\+H\+A\+R\+E\+\_\+\+S\+C\+E\+D\+U\+L\+I\+N\+G} = 4
+ \}\begin{DoxyCompactList}\small\item\em This process represents the scheduling policies that can be used by the process scheduler \end{DoxyCompactList}
+\item 
+enum \hyperlink{namespace_c_p_u___o_s___simulator_1_1_operating___system_a0553d0bc2513aec52caa769acf994d5c}{Enum\+Time\+Unit} \{ \hyperlink{namespace_c_p_u___o_s___simulator_1_1_operating___system_a0553d0bc2513aec52caa769acf994d5ca696b031073e74bf2cb98e5ef201d4aa3}{Enum\+Time\+Unit.\+U\+N\+K\+N\+O\+W\+N} = -\/1, 
+\hyperlink{namespace_c_p_u___o_s___simulator_1_1_operating___system_a0553d0bc2513aec52caa769acf994d5caecf45696420c3fbb68822dafc3378261}{Enum\+Time\+Unit.\+T\+I\+C\+K\+S} = 0, 
+\hyperlink{namespace_c_p_u___o_s___simulator_1_1_operating___system_a0553d0bc2513aec52caa769acf994d5caa9126caa6ef3db9cf3c35ac627ad22b5}{Enum\+Time\+Unit.\+S\+E\+C\+O\+N\+D\+S} = 1
+ \}\begin{DoxyCompactList}\small\item\em this class represents the time unit currently being used i.\+e Ticks or Seconds \end{DoxyCompactList}
+\end{DoxyCompactItemize}
+
+
+\subsection{Enumeration Type Documentation}
+\hypertarget{namespace_c_p_u___o_s___simulator_1_1_operating___system_a03a98a403abc737c106a8f92db5bffc1}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System}!Enum\+O\+S\+State@{Enum\+O\+S\+State}}
+\index{Enum\+O\+S\+State@{Enum\+O\+S\+State}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System}}
+\subsubsection[{Enum\+O\+S\+State}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Operating\+\_\+\+System.\+Enum\+O\+S\+State}\hspace{0.3cm}{\ttfamily [strong]}}\label{namespace_c_p_u___o_s___simulator_1_1_operating___system_a03a98a403abc737c106a8f92db5bffc1}
+
+
+This enum represents the possible states that the operating system can be in 
+
+\begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{U\+N\+K\+N\+O\+W\+N@{U\+N\+K\+N\+O\+W\+N}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System}}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System}!U\+N\+K\+N\+O\+W\+N@{U\+N\+K\+N\+O\+W\+N}}\item[{\em 
+\hypertarget{namespace_c_p_u___o_s___simulator_1_1_operating___system_a03a98a403abc737c106a8f92db5bffc1a696b031073e74bf2cb98e5ef201d4aa3}{}U\+N\+K\+N\+O\+W\+N\label{namespace_c_p_u___o_s___simulator_1_1_operating___system_a03a98a403abc737c106a8f92db5bffc1a696b031073e74bf2cb98e5ef201d4aa3}
+}]\index{S\+U\+S\+P\+E\+N\+D\+E\+D@{S\+U\+S\+P\+E\+N\+D\+E\+D}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System}}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System}!S\+U\+S\+P\+E\+N\+D\+E\+D@{S\+U\+S\+P\+E\+N\+D\+E\+D}}\item[{\em 
+\hypertarget{namespace_c_p_u___o_s___simulator_1_1_operating___system_a03a98a403abc737c106a8f92db5bffc1a0cb707127aebaa0023eb38363993843a}{}S\+U\+S\+P\+E\+N\+D\+E\+D\label{namespace_c_p_u___o_s___simulator_1_1_operating___system_a03a98a403abc737c106a8f92db5bffc1a0cb707127aebaa0023eb38363993843a}
+}]\index{R\+U\+N\+N\+I\+N\+G@{R\+U\+N\+N\+I\+N\+G}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System}}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System}!R\+U\+N\+N\+I\+N\+G@{R\+U\+N\+N\+I\+N\+G}}\item[{\em 
+\hypertarget{namespace_c_p_u___o_s___simulator_1_1_operating___system_a03a98a403abc737c106a8f92db5bffc1a43491564ebcfd38568918efbd6e840fd}{}R\+U\+N\+N\+I\+N\+G\label{namespace_c_p_u___o_s___simulator_1_1_operating___system_a03a98a403abc737c106a8f92db5bffc1a43491564ebcfd38568918efbd6e840fd}
+}]\index{S\+T\+O\+P\+P\+E\+D@{S\+T\+O\+P\+P\+E\+D}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System}}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System}!S\+T\+O\+P\+P\+E\+D@{S\+T\+O\+P\+P\+E\+D}}\item[{\em 
+\hypertarget{namespace_c_p_u___o_s___simulator_1_1_operating___system_a03a98a403abc737c106a8f92db5bffc1a09d4d696b4e935115b9313e3c412509a}{}S\+T\+O\+P\+P\+E\+D\label{namespace_c_p_u___o_s___simulator_1_1_operating___system_a03a98a403abc737c106a8f92db5bffc1a09d4d696b4e935115b9313e3c412509a}
+}]\index{D\+E\+A\+D\+L\+O\+C\+K\+E\+D@{D\+E\+A\+D\+L\+O\+C\+K\+E\+D}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System}}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System}!D\+E\+A\+D\+L\+O\+C\+K\+E\+D@{D\+E\+A\+D\+L\+O\+C\+K\+E\+D}}\item[{\em 
+\hypertarget{namespace_c_p_u___o_s___simulator_1_1_operating___system_a03a98a403abc737c106a8f92db5bffc1a0550134156d1220fe47b905f3da1080f}{}D\+E\+A\+D\+L\+O\+C\+K\+E\+D\label{namespace_c_p_u___o_s___simulator_1_1_operating___system_a03a98a403abc737c106a8f92db5bffc1a0550134156d1220fe47b905f3da1080f}
+}]\end{description}
+\end{Desc}
+
+
+Definition at line 6 of file Enum\+O\+S\+State.\+cs.
+
+\hypertarget{namespace_c_p_u___o_s___simulator_1_1_operating___system_a3a9286a473bd079e9c65908c0378fa00}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System}!Enum\+Priority\+Policy@{Enum\+Priority\+Policy}}
+\index{Enum\+Priority\+Policy@{Enum\+Priority\+Policy}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System}}
+\subsubsection[{Enum\+Priority\+Policy}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Operating\+\_\+\+System.\+Enum\+Priority\+Policy}\hspace{0.3cm}{\ttfamily [strong]}}\label{namespace_c_p_u___o_s___simulator_1_1_operating___system_a3a9286a473bd079e9c65908c0378fa00}
+
+
+This enum represents the priority policies that can be used 
+
+\begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{U\+N\+K\+N\+O\+W\+N@{U\+N\+K\+N\+O\+W\+N}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System}}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System}!U\+N\+K\+N\+O\+W\+N@{U\+N\+K\+N\+O\+W\+N}}\item[{\em 
+\hypertarget{namespace_c_p_u___o_s___simulator_1_1_operating___system_a3a9286a473bd079e9c65908c0378fa00a696b031073e74bf2cb98e5ef201d4aa3}{}U\+N\+K\+N\+O\+W\+N\label{namespace_c_p_u___o_s___simulator_1_1_operating___system_a3a9286a473bd079e9c65908c0378fa00a696b031073e74bf2cb98e5ef201d4aa3}
+}]\index{N\+O\+\_\+\+P\+R\+I\+O\+R\+I\+T\+Y@{N\+O\+\_\+\+P\+R\+I\+O\+R\+I\+T\+Y}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System}}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System}!N\+O\+\_\+\+P\+R\+I\+O\+R\+I\+T\+Y@{N\+O\+\_\+\+P\+R\+I\+O\+R\+I\+T\+Y}}\item[{\em 
+\hypertarget{namespace_c_p_u___o_s___simulator_1_1_operating___system_a3a9286a473bd079e9c65908c0378fa00a9f68f1d26dd059f9a73e5f66a83bef80}{}N\+O\+\_\+\+P\+R\+I\+O\+R\+I\+T\+Y\label{namespace_c_p_u___o_s___simulator_1_1_operating___system_a3a9286a473bd079e9c65908c0378fa00a9f68f1d26dd059f9a73e5f66a83bef80}
+}]\index{N\+O\+N\+\_\+\+P\+R\+E\+\_\+\+E\+M\+P\+T\+I\+V\+E@{N\+O\+N\+\_\+\+P\+R\+E\+\_\+\+E\+M\+P\+T\+I\+V\+E}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System}}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System}!N\+O\+N\+\_\+\+P\+R\+E\+\_\+\+E\+M\+P\+T\+I\+V\+E@{N\+O\+N\+\_\+\+P\+R\+E\+\_\+\+E\+M\+P\+T\+I\+V\+E}}\item[{\em 
+\hypertarget{namespace_c_p_u___o_s___simulator_1_1_operating___system_a3a9286a473bd079e9c65908c0378fa00a991a81df1486f1b97a90776f3026ff96}{}N\+O\+N\+\_\+\+P\+R\+E\+\_\+\+E\+M\+P\+T\+I\+V\+E\label{namespace_c_p_u___o_s___simulator_1_1_operating___system_a3a9286a473bd079e9c65908c0378fa00a991a81df1486f1b97a90776f3026ff96}
+}]\index{P\+R\+E\+\_\+\+E\+M\+P\+T\+I\+V\+E@{P\+R\+E\+\_\+\+E\+M\+P\+T\+I\+V\+E}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System}}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System}!P\+R\+E\+\_\+\+E\+M\+P\+T\+I\+V\+E@{P\+R\+E\+\_\+\+E\+M\+P\+T\+I\+V\+E}}\item[{\em 
+\hypertarget{namespace_c_p_u___o_s___simulator_1_1_operating___system_a3a9286a473bd079e9c65908c0378fa00a952140b26aa6080871aab2eb7a96feb0}{}P\+R\+E\+\_\+\+E\+M\+P\+T\+I\+V\+E\label{namespace_c_p_u___o_s___simulator_1_1_operating___system_a3a9286a473bd079e9c65908c0378fa00a952140b26aa6080871aab2eb7a96feb0}
+}]\end{description}
+\end{Desc}
+
+
+Definition at line 6 of file Enum\+Priority\+Policy.\+cs.
+
+\hypertarget{namespace_c_p_u___o_s___simulator_1_1_operating___system_a836ee2204e78fcb3a7dd6c3c942b1a24}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System}!Enum\+Process\+State@{Enum\+Process\+State}}
+\index{Enum\+Process\+State@{Enum\+Process\+State}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System}}
+\subsubsection[{Enum\+Process\+State}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Operating\+\_\+\+System.\+Enum\+Process\+State}\hspace{0.3cm}{\ttfamily [strong]}}\label{namespace_c_p_u___o_s___simulator_1_1_operating___system_a836ee2204e78fcb3a7dd6c3c942b1a24}
+
+
+This enum represents the possible states that a process can be in 
+
+\begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{U\+N\+K\+N\+O\+W\+N@{U\+N\+K\+N\+O\+W\+N}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System}}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System}!U\+N\+K\+N\+O\+W\+N@{U\+N\+K\+N\+O\+W\+N}}\item[{\em 
+\hypertarget{namespace_c_p_u___o_s___simulator_1_1_operating___system_a836ee2204e78fcb3a7dd6c3c942b1a24a696b031073e74bf2cb98e5ef201d4aa3}{}U\+N\+K\+N\+O\+W\+N\label{namespace_c_p_u___o_s___simulator_1_1_operating___system_a836ee2204e78fcb3a7dd6c3c942b1a24a696b031073e74bf2cb98e5ef201d4aa3}
+}]\index{R\+U\+N\+N\+I\+N\+G@{R\+U\+N\+N\+I\+N\+G}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System}}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System}!R\+U\+N\+N\+I\+N\+G@{R\+U\+N\+N\+I\+N\+G}}\item[{\em 
+\hypertarget{namespace_c_p_u___o_s___simulator_1_1_operating___system_a836ee2204e78fcb3a7dd6c3c942b1a24a43491564ebcfd38568918efbd6e840fd}{}R\+U\+N\+N\+I\+N\+G\label{namespace_c_p_u___o_s___simulator_1_1_operating___system_a836ee2204e78fcb3a7dd6c3c942b1a24a43491564ebcfd38568918efbd6e840fd}
+}]\index{R\+E\+A\+D\+Y@{R\+E\+A\+D\+Y}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System}}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System}!R\+E\+A\+D\+Y@{R\+E\+A\+D\+Y}}\item[{\em 
+\hypertarget{namespace_c_p_u___o_s___simulator_1_1_operating___system_a836ee2204e78fcb3a7dd6c3c942b1a24a2baa69eafc7204f3bd8648eba580c489}{}R\+E\+A\+D\+Y\label{namespace_c_p_u___o_s___simulator_1_1_operating___system_a836ee2204e78fcb3a7dd6c3c942b1a24a2baa69eafc7204f3bd8648eba580c489}
+}]\index{W\+A\+I\+T\+I\+N\+G@{W\+A\+I\+T\+I\+N\+G}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System}}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System}!W\+A\+I\+T\+I\+N\+G@{W\+A\+I\+T\+I\+N\+G}}\item[{\em 
+\hypertarget{namespace_c_p_u___o_s___simulator_1_1_operating___system_a836ee2204e78fcb3a7dd6c3c942b1a24a1869d56535e8b1449a6da54ff5e11f50}{}W\+A\+I\+T\+I\+N\+G\label{namespace_c_p_u___o_s___simulator_1_1_operating___system_a836ee2204e78fcb3a7dd6c3c942b1a24a1869d56535e8b1449a6da54ff5e11f50}
+}]\end{description}
+\end{Desc}
+
+
+Definition at line 6 of file Enum\+Process\+State.\+cs.
+
+\hypertarget{namespace_c_p_u___o_s___simulator_1_1_operating___system_a4c7effb8b6725df52018a3a14cede96e}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System}!Enum\+Round\+Robin\+Type@{Enum\+Round\+Robin\+Type}}
+\index{Enum\+Round\+Robin\+Type@{Enum\+Round\+Robin\+Type}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System}}
+\subsubsection[{Enum\+Round\+Robin\+Type}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Operating\+\_\+\+System.\+Enum\+Round\+Robin\+Type}\hspace{0.3cm}{\ttfamily [strong]}}\label{namespace_c_p_u___o_s___simulator_1_1_operating___system_a4c7effb8b6725df52018a3a14cede96e}
+
+
+this enum represents the type of round robin being used i.\+e Static or dynamic 
+
+\begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{U\+N\+K\+N\+O\+W\+N@{U\+N\+K\+N\+O\+W\+N}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System}}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System}!U\+N\+K\+N\+O\+W\+N@{U\+N\+K\+N\+O\+W\+N}}\item[{\em 
+\hypertarget{namespace_c_p_u___o_s___simulator_1_1_operating___system_a4c7effb8b6725df52018a3a14cede96ea696b031073e74bf2cb98e5ef201d4aa3}{}U\+N\+K\+N\+O\+W\+N\label{namespace_c_p_u___o_s___simulator_1_1_operating___system_a4c7effb8b6725df52018a3a14cede96ea696b031073e74bf2cb98e5ef201d4aa3}
+}]\index{S\+T\+A\+T\+I\+C@{S\+T\+A\+T\+I\+C}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System}}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System}!S\+T\+A\+T\+I\+C@{S\+T\+A\+T\+I\+C}}\item[{\em 
+\hypertarget{namespace_c_p_u___o_s___simulator_1_1_operating___system_a4c7effb8b6725df52018a3a14cede96eafe6f99ef1ec99efbdc19a9786cf1facc}{}S\+T\+A\+T\+I\+C\label{namespace_c_p_u___o_s___simulator_1_1_operating___system_a4c7effb8b6725df52018a3a14cede96eafe6f99ef1ec99efbdc19a9786cf1facc}
+}]\index{D\+Y\+N\+A\+M\+I\+C@{D\+Y\+N\+A\+M\+I\+C}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System}}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System}!D\+Y\+N\+A\+M\+I\+C@{D\+Y\+N\+A\+M\+I\+C}}\item[{\em 
+\hypertarget{namespace_c_p_u___o_s___simulator_1_1_operating___system_a4c7effb8b6725df52018a3a14cede96ea0fcc90da4811c877ba9f9c12f7d60bc9}{}D\+Y\+N\+A\+M\+I\+C\label{namespace_c_p_u___o_s___simulator_1_1_operating___system_a4c7effb8b6725df52018a3a14cede96ea0fcc90da4811c877ba9f9c12f7d60bc9}
+}]\end{description}
+\end{Desc}
+
+
+Definition at line 7 of file Enum\+Round\+Robin\+Type.\+cs.
+
+\hypertarget{namespace_c_p_u___o_s___simulator_1_1_operating___system_ad0cdaacf9652394d23fa29109640fe08}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System}!Enum\+Scheduling\+Policies@{Enum\+Scheduling\+Policies}}
+\index{Enum\+Scheduling\+Policies@{Enum\+Scheduling\+Policies}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System}}
+\subsubsection[{Enum\+Scheduling\+Policies}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Operating\+\_\+\+System.\+Enum\+Scheduling\+Policies}\hspace{0.3cm}{\ttfamily [strong]}}\label{namespace_c_p_u___o_s___simulator_1_1_operating___system_ad0cdaacf9652394d23fa29109640fe08}
+
+
+This process represents the scheduling policies that can be used by the process scheduler 
+
+\begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{U\+N\+K\+N\+O\+W\+N@{U\+N\+K\+N\+O\+W\+N}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System}}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System}!U\+N\+K\+N\+O\+W\+N@{U\+N\+K\+N\+O\+W\+N}}\item[{\em 
+\hypertarget{namespace_c_p_u___o_s___simulator_1_1_operating___system_ad0cdaacf9652394d23fa29109640fe08a696b031073e74bf2cb98e5ef201d4aa3}{}U\+N\+K\+N\+O\+W\+N\label{namespace_c_p_u___o_s___simulator_1_1_operating___system_ad0cdaacf9652394d23fa29109640fe08a696b031073e74bf2cb98e5ef201d4aa3}
+}]\index{F\+I\+R\+S\+T\+\_\+\+C\+O\+M\+E\+\_\+\+F\+I\+R\+S\+T\+\_\+\+S\+E\+R\+V\+E\+D@{F\+I\+R\+S\+T\+\_\+\+C\+O\+M\+E\+\_\+\+F\+I\+R\+S\+T\+\_\+\+S\+E\+R\+V\+E\+D}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System}}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System}!F\+I\+R\+S\+T\+\_\+\+C\+O\+M\+E\+\_\+\+F\+I\+R\+S\+T\+\_\+\+S\+E\+R\+V\+E\+D@{F\+I\+R\+S\+T\+\_\+\+C\+O\+M\+E\+\_\+\+F\+I\+R\+S\+T\+\_\+\+S\+E\+R\+V\+E\+D}}\item[{\em 
+\hypertarget{namespace_c_p_u___o_s___simulator_1_1_operating___system_ad0cdaacf9652394d23fa29109640fe08ae39fb551e5657a3c31eff06f11508d59}{}F\+I\+R\+S\+T\+\_\+\+C\+O\+M\+E\+\_\+\+F\+I\+R\+S\+T\+\_\+\+S\+E\+R\+V\+E\+D\label{namespace_c_p_u___o_s___simulator_1_1_operating___system_ad0cdaacf9652394d23fa29109640fe08ae39fb551e5657a3c31eff06f11508d59}
+}]\index{S\+H\+O\+R\+T\+E\+S\+T\+\_\+\+J\+O\+B\+\_\+\+F\+I\+R\+S\+T@{S\+H\+O\+R\+T\+E\+S\+T\+\_\+\+J\+O\+B\+\_\+\+F\+I\+R\+S\+T}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System}}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System}!S\+H\+O\+R\+T\+E\+S\+T\+\_\+\+J\+O\+B\+\_\+\+F\+I\+R\+S\+T@{S\+H\+O\+R\+T\+E\+S\+T\+\_\+\+J\+O\+B\+\_\+\+F\+I\+R\+S\+T}}\item[{\em 
+\hypertarget{namespace_c_p_u___o_s___simulator_1_1_operating___system_ad0cdaacf9652394d23fa29109640fe08aa5ffbf66adc3cfaa95173a6278f573dc}{}S\+H\+O\+R\+T\+E\+S\+T\+\_\+\+J\+O\+B\+\_\+\+F\+I\+R\+S\+T\label{namespace_c_p_u___o_s___simulator_1_1_operating___system_ad0cdaacf9652394d23fa29109640fe08aa5ffbf66adc3cfaa95173a6278f573dc}
+}]\index{R\+O\+U\+N\+D\+\_\+\+R\+O\+B\+I\+N@{R\+O\+U\+N\+D\+\_\+\+R\+O\+B\+I\+N}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System}}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System}!R\+O\+U\+N\+D\+\_\+\+R\+O\+B\+I\+N@{R\+O\+U\+N\+D\+\_\+\+R\+O\+B\+I\+N}}\item[{\em 
+\hypertarget{namespace_c_p_u___o_s___simulator_1_1_operating___system_ad0cdaacf9652394d23fa29109640fe08a1ebd8dbf8c34e255f5cbf28f35860b71}{}R\+O\+U\+N\+D\+\_\+\+R\+O\+B\+I\+N\label{namespace_c_p_u___o_s___simulator_1_1_operating___system_ad0cdaacf9652394d23fa29109640fe08a1ebd8dbf8c34e255f5cbf28f35860b71}
+}]\index{L\+O\+T\+T\+E\+R\+Y\+\_\+\+S\+C\+H\+E\+D\+U\+L\+I\+N\+G@{L\+O\+T\+T\+E\+R\+Y\+\_\+\+S\+C\+H\+E\+D\+U\+L\+I\+N\+G}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System}}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System}!L\+O\+T\+T\+E\+R\+Y\+\_\+\+S\+C\+H\+E\+D\+U\+L\+I\+N\+G@{L\+O\+T\+T\+E\+R\+Y\+\_\+\+S\+C\+H\+E\+D\+U\+L\+I\+N\+G}}\item[{\em 
+\hypertarget{namespace_c_p_u___o_s___simulator_1_1_operating___system_ad0cdaacf9652394d23fa29109640fe08aa4d25b80a5834b7f9ff2a2153f3b5985}{}L\+O\+T\+T\+E\+R\+Y\+\_\+\+S\+C\+H\+E\+D\+U\+L\+I\+N\+G\label{namespace_c_p_u___o_s___simulator_1_1_operating___system_ad0cdaacf9652394d23fa29109640fe08aa4d25b80a5834b7f9ff2a2153f3b5985}
+}]\index{F\+A\+I\+R\+\_\+\+S\+H\+A\+R\+E\+\_\+\+S\+C\+E\+D\+U\+L\+I\+N\+G@{F\+A\+I\+R\+\_\+\+S\+H\+A\+R\+E\+\_\+\+S\+C\+E\+D\+U\+L\+I\+N\+G}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System}}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System}!F\+A\+I\+R\+\_\+\+S\+H\+A\+R\+E\+\_\+\+S\+C\+E\+D\+U\+L\+I\+N\+G@{F\+A\+I\+R\+\_\+\+S\+H\+A\+R\+E\+\_\+\+S\+C\+E\+D\+U\+L\+I\+N\+G}}\item[{\em 
+\hypertarget{namespace_c_p_u___o_s___simulator_1_1_operating___system_ad0cdaacf9652394d23fa29109640fe08abce82cf69e3b635b2e6aaacec9cb17dd}{}F\+A\+I\+R\+\_\+\+S\+H\+A\+R\+E\+\_\+\+S\+C\+E\+D\+U\+L\+I\+N\+G\label{namespace_c_p_u___o_s___simulator_1_1_operating___system_ad0cdaacf9652394d23fa29109640fe08abce82cf69e3b635b2e6aaacec9cb17dd}
+}]\end{description}
+\end{Desc}
+
+
+Definition at line 6 of file Enum\+Scheduling\+Policies.\+cs.
+
+\hypertarget{namespace_c_p_u___o_s___simulator_1_1_operating___system_a0553d0bc2513aec52caa769acf994d5c}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System}!Enum\+Time\+Unit@{Enum\+Time\+Unit}}
+\index{Enum\+Time\+Unit@{Enum\+Time\+Unit}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System}}
+\subsubsection[{Enum\+Time\+Unit}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Operating\+\_\+\+System.\+Enum\+Time\+Unit}\hspace{0.3cm}{\ttfamily [strong]}}\label{namespace_c_p_u___o_s___simulator_1_1_operating___system_a0553d0bc2513aec52caa769acf994d5c}
+
+
+this class represents the time unit currently being used i.\+e Ticks or Seconds 
+
+\begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{U\+N\+K\+N\+O\+W\+N@{U\+N\+K\+N\+O\+W\+N}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System}}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System}!U\+N\+K\+N\+O\+W\+N@{U\+N\+K\+N\+O\+W\+N}}\item[{\em 
+\hypertarget{namespace_c_p_u___o_s___simulator_1_1_operating___system_a0553d0bc2513aec52caa769acf994d5ca696b031073e74bf2cb98e5ef201d4aa3}{}U\+N\+K\+N\+O\+W\+N\label{namespace_c_p_u___o_s___simulator_1_1_operating___system_a0553d0bc2513aec52caa769acf994d5ca696b031073e74bf2cb98e5ef201d4aa3}
+}]\index{T\+I\+C\+K\+S@{T\+I\+C\+K\+S}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System}}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System}!T\+I\+C\+K\+S@{T\+I\+C\+K\+S}}\item[{\em 
+\hypertarget{namespace_c_p_u___o_s___simulator_1_1_operating___system_a0553d0bc2513aec52caa769acf994d5caecf45696420c3fbb68822dafc3378261}{}T\+I\+C\+K\+S\label{namespace_c_p_u___o_s___simulator_1_1_operating___system_a0553d0bc2513aec52caa769acf994d5caecf45696420c3fbb68822dafc3378261}
+}]\index{S\+E\+C\+O\+N\+D\+S@{S\+E\+C\+O\+N\+D\+S}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System}}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System}!S\+E\+C\+O\+N\+D\+S@{S\+E\+C\+O\+N\+D\+S}}\item[{\em 
+\hypertarget{namespace_c_p_u___o_s___simulator_1_1_operating___system_a0553d0bc2513aec52caa769acf994d5caa9126caa6ef3db9cf3c35ac627ad22b5}{}S\+E\+C\+O\+N\+D\+S\label{namespace_c_p_u___o_s___simulator_1_1_operating___system_a0553d0bc2513aec52caa769acf994d5caa9126caa6ef3db9cf3c35ac627ad22b5}
+}]\end{description}
+\end{Desc}
+
+
+Definition at line 7 of file Enum\+Time\+Unit.\+cs.
+

@@ -9,5 +9,5 @@ var searchData=
   ['memory',['memory',['../class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_simulator_program.html#a402e53ae5daf1b6be0d5b7b705091c9c',1,'CPU_OS_Simulator.CPU.SimulatorProgram.memory()'],['../class_c_p_u___o_s___simulator_1_1_main_window.html#a39a29cd60cb4ccbad0415a4e6d6414fa',1,'CPU_OS_Simulator.MainWindow.memory()']]],
   ['memorywindowinstance',['MemoryWindowInstance',['../class_c_p_u___o_s___simulator_1_1_window_bridge_1_1_window_instances.html#a401fd485bde830472a1a960a25ec1464',1,'CPU_OS_Simulator::WindowBridge::WindowInstances']]],
   ['miscellaneoustab',['MiscellaneousTab',['../class_c_p_u___o_s___simulator_1_1_instructions_window.html#ab7e1bbdc8bb2830d39fb9a4339aa27f2',1,'CPU_OS_Simulator::InstructionsWindow']]],
-  ['mode',['mode',['../class_c_p_u___o_s___simulator_1_1_compiler_1_1_compiler_frontend.html#aa02bf709b3e3b19e45f89c8c2864afb4',1,'CPU_OS_Simulator::Compiler::CompilerFrontend']]]
+  ['mode',['mode',['../class_c_p_u___o_s___simulator_1_1_compiler_1_1_compiler_main.html#a064e52c2639d79cdec216d4ee7d384e9',1,'CPU_OS_Simulator::Compiler::CompilerMain']]]
 ];

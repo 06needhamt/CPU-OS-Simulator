@@ -71,6 +71,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow2" class="tabs2">
     <ul class="tablist">
       <li><a href="files.html"><span>File&#160;List</span></a></li>
+      <li><a href="globals.html"><span>File&#160;Members</span></a></li>
     </ul>
   </div>
 </div><!-- top -->
@@ -107,26 +108,29 @@ $(document).ready(function(){initNavTree('_stack_item_tests_8cs_source.html','')
 <div class="title">StackItemTests.cs</div>  </div>
 </div><!--header-->
 <div class="contents">
-<a href="_stack_item_tests_8cs.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="keyword">using</span> Microsoft.VisualStudio.TestTools.UnitTesting;</div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;</div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespace_c_p_u___o_s___simulator.html">CPU_OS_Simulator</a>.CPU.Tests</div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;{</div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;    [TestClass()]</div>
-<div class="line"><a name="l00006"></a><span class="lineno"><a class="line" href="class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_tests_1_1_stack_item_tests.html">    6</a></span>&#160;    <span class="keyword">public</span> <span class="keyword">class </span><a class="code" href="class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_tests_1_1_stack_item_tests.html">StackItemTests</a></div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;    {</div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;        [TestMethod()]</div>
-<div class="line"><a name="l00009"></a><span class="lineno"><a class="line" href="class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_tests_1_1_stack_item_tests.html#a728d7001508a7776ee2fa16c984e7e64">    9</a></span>&#160;        <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code" href="class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_tests_1_1_stack_item_tests.html#a728d7001508a7776ee2fa16c984e7e64">StackItemTest</a>()</div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;        {</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;            <a class="code" href="class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_stack_item.html">StackItem</a> si = <span class="keyword">new</span> <a class="code" href="class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_stack_item.html">StackItem</a>(10);</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;            Assert.IsTrue(si.GetType().Equals(typeof(<a class="code" href="class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_stack_item.html">StackItem</a>)) &amp;&amp; si.<a class="code" href="class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_stack_item.html#ac8e518e9111640d56d59efbff2fa3161">Value</a> == 10);</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;        }</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    }</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;}</div>
-<div class="ttc" id="class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_tests_1_1_stack_item_tests_html"><div class="ttname"><a href="class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_tests_1_1_stack_item_tests.html">CPU_OS_Simulator.CPU.Tests.StackItemTests</a></div><div class="ttdef"><b>Definition:</b> <a href="_stack_item_tests_8cs_source.html#l00006">StackItemTests.cs:6</a></div></div>
+<a href="_stack_item_tests_8cs.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="keyword">using</span> <a class="code" href="namespace_c_p_u___o_s___simulator.html">CPU_OS_Simulator</a>.<a class="code" href="namespace_c_p_u___o_s___simulator_1_1_c_p_u.html">CPU</a>;</div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="keyword">using</span> Microsoft.VisualStudio.TestTools.UnitTesting;</div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;</div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespace_c_p_u_tests.html">CPUTests</a></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;{</div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;    [TestClass]</div>
+<div class="line"><a name="l00007"></a><span class="lineno"><a class="line" href="class_c_p_u_tests_1_1_stack_item_tests.html">    7</a></span>&#160;    <span class="keyword">public</span> <span class="keyword">class </span><a class="code" href="class_c_p_u_tests_1_1_stack_item_tests.html">StackItemTests</a></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;    {</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;        [TestMethod]</div>
+<div class="line"><a name="l00010"></a><span class="lineno"><a class="line" href="class_c_p_u_tests_1_1_stack_item_tests.html#a9a40b741802b262da41bd0860e61a5a1">   10</a></span>&#160;        <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code" href="class_c_p_u_tests_1_1_stack_item_tests.html#a9a40b741802b262da41bd0860e61a5a1">StackItemTest</a>()</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;        {</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;            <a class="code" href="class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_stack_item.html">StackItem</a> si = <span class="keyword">new</span> <a class="code" href="class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_stack_item.html">StackItem</a>(10);</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;            Assert.IsTrue(si.GetType().Equals(typeof(<a class="code" href="class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_stack_item.html">StackItem</a>)) &amp;&amp; si.<a class="code" href="class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_stack_item.html#ac8e518e9111640d56d59efbff2fa3161">Value</a> == 10);</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;        }</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    }</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;}</div>
 <div class="ttc" id="class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_stack_item_html"><div class="ttname"><a href="class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_stack_item.html">CPU_OS_Simulator.CPU.StackItem</a></div><div class="ttdoc">This class represents an item that is stored on the stack </div><div class="ttdef"><b>Definition:</b> <a href="_stack_item_8cs_source.html#l00006">StackItem.cs:6</a></div></div>
 <div class="ttc" id="namespace_c_p_u___o_s___simulator_html"><div class="ttname"><a href="namespace_c_p_u___o_s___simulator.html">CPU_OS_Simulator</a></div></div>
 <div class="ttc" id="class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_stack_item_html_ac8e518e9111640d56d59efbff2fa3161"><div class="ttname"><a href="class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_stack_item.html#ac8e518e9111640d56d59efbff2fa3161">CPU_OS_Simulator.CPU.StackItem.Value</a></div><div class="ttdeci">int Value</div><div class="ttdoc">Property to store the value within this stack item </div><div class="ttdef"><b>Definition:</b> <a href="_stack_item_8cs_source.html#l00042">StackItem.cs:42</a></div></div>
-<div class="ttc" id="class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_tests_1_1_stack_item_tests_html_a728d7001508a7776ee2fa16c984e7e64"><div class="ttname"><a href="class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_tests_1_1_stack_item_tests.html#a728d7001508a7776ee2fa16c984e7e64">CPU_OS_Simulator.CPU.Tests.StackItemTests.StackItemTest</a></div><div class="ttdeci">void StackItemTest()</div><div class="ttdef"><b>Definition:</b> <a href="_stack_item_tests_8cs_source.html#l00009">StackItemTests.cs:9</a></div></div>
+<div class="ttc" id="class_c_p_u_tests_1_1_stack_item_tests_html_a9a40b741802b262da41bd0860e61a5a1"><div class="ttname"><a href="class_c_p_u_tests_1_1_stack_item_tests.html#a9a40b741802b262da41bd0860e61a5a1">CPUTests.StackItemTests.StackItemTest</a></div><div class="ttdeci">void StackItemTest()</div><div class="ttdef"><b>Definition:</b> <a href="_stack_item_tests_8cs_source.html#l00010">StackItemTests.cs:10</a></div></div>
+<div class="ttc" id="namespace_c_p_u_tests_html"><div class="ttname"><a href="namespace_c_p_u_tests.html">CPUTests</a></div><div class="ttdef"><b>Definition:</b> <a href="_execution_unit_tests_8cs_source.html#l00004">ExecutionUnitTests.cs:4</a></div></div>
+<div class="ttc" id="class_c_p_u_tests_1_1_stack_item_tests_html"><div class="ttname"><a href="class_c_p_u_tests_1_1_stack_item_tests.html">CPUTests.StackItemTests</a></div><div class="ttdef"><b>Definition:</b> <a href="_stack_item_tests_8cs_source.html#l00007">StackItemTests.cs:7</a></div></div>
+<div class="ttc" id="namespace_c_p_u___o_s___simulator_1_1_c_p_u_html"><div class="ttname"><a href="namespace_c_p_u___o_s___simulator_1_1_c_p_u.html">CPU_OS_Simulator.CPU</a></div><div class="ttdef"><b>Definition:</b> <a href="_compiled_program_8cs_source.html#l00006">CompiledProgram.cs:6</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

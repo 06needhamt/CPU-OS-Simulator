@@ -1,0 +1,271 @@
+\hypertarget{class_c_p_u___o_s___simulator_1_1_compiler_1_1_frontend_1_1_syntax_tree_1_1_a_s_t}{}\section{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Compiler.\+Frontend.\+Syntax\+Tree.\+A\+S\+T Class Reference}
+\label{class_c_p_u___o_s___simulator_1_1_compiler_1_1_frontend_1_1_syntax_tree_1_1_a_s_t}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Compiler.\+Frontend.\+Syntax\+Tree.\+A\+S\+T@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Compiler.\+Frontend.\+Syntax\+Tree.\+A\+S\+T}}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{class_c_p_u___o_s___simulator_1_1_compiler_1_1_frontend_1_1_syntax_tree_1_1_a_s_t_1_1_binary_tree_enumerator}{Binary\+Tree\+Enumerator}
+\begin{DoxyCompactList}\small\item\em The \hyperlink{class_c_p_u___o_s___simulator_1_1_compiler_1_1_frontend_1_1_syntax_tree_1_1_a_s_t_1_1_binary_tree_enumerator}{Binary\+Tree\+Enumerator} implements the I\+Enumerator allowing foreach enumeration of the tree \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_c_p_u___o_s___simulator_1_1_compiler_1_1_frontend_1_1_syntax_tree_1_1_a_s_t_aadbd3af47353b1564454f2352b188875}{A\+S\+T} (Comparison$<$ \hyperlink{class_c_p_u___o_s___simulator_1_1_compiler_1_1_frontend_1_1_syntax_tree_1_1_base_node}{Base\+Node} $>$ the\+Compare\+Function)
+\begin{DoxyCompactList}\small\item\em The \hyperlink{class_c_p_u___o_s___simulator_1_1_compiler_1_1_frontend_1_1_syntax_tree_1_1_a_s_t}{A\+S\+T} constructor requires that we pass a comparison function. We need one as generics can only be compared as equals, but not for order. The solution is to allow the caller to pass a suitable comparison function. We use the C\# Comparison delegate for this (found in System.\+Collections) \end{DoxyCompactList}\item 
+void \hyperlink{class_c_p_u___o_s___simulator_1_1_compiler_1_1_frontend_1_1_syntax_tree_1_1_a_s_t_a73bb6e82554120e16b12f975ccfc44a5}{preorder\+Traversal} ()
+\item 
+void \hyperlink{class_c_p_u___o_s___simulator_1_1_compiler_1_1_frontend_1_1_syntax_tree_1_1_a_s_t_afc826af945c5461d38b0ca398ab3f14b}{inorder\+Traversal} ()
+\item 
+void \hyperlink{class_c_p_u___o_s___simulator_1_1_compiler_1_1_frontend_1_1_syntax_tree_1_1_a_s_t_a72dc35aaccad4aeee3373b8d2dbb23d1}{postorder\+Traversal} ()
+\item 
+void \hyperlink{class_c_p_u___o_s___simulator_1_1_compiler_1_1_frontend_1_1_syntax_tree_1_1_a_s_t_adc6fcfed38dfdeddcbe419523cdc0314}{Add} (\hyperlink{class_c_p_u___o_s___simulator_1_1_compiler_1_1_frontend_1_1_syntax_tree_1_1_base_node}{Base\+Node} Value)
+\begin{DoxyCompactList}\small\item\em The add function uses non-\/recursive tree traversal to find the next available insertion point \end{DoxyCompactList}\item 
+bool \hyperlink{class_c_p_u___o_s___simulator_1_1_compiler_1_1_frontend_1_1_syntax_tree_1_1_a_s_t_aa37a7925b23003f227b9311c6201a427}{Find} (\hyperlink{class_c_p_u___o_s___simulator_1_1_compiler_1_1_frontend_1_1_syntax_tree_1_1_base_node}{Base\+Node} Value)
+\begin{DoxyCompactList}\small\item\em This routine walks through the tree to see if the value given can be found. \end{DoxyCompactList}\item 
+I\+Enumerator$<$ \hyperlink{class_c_p_u___o_s___simulator_1_1_compiler_1_1_frontend_1_1_syntax_tree_1_1_base_node}{Base\+Node} $>$ \hyperlink{class_c_p_u___o_s___simulator_1_1_compiler_1_1_frontend_1_1_syntax_tree_1_1_a_s_t_aceaad03d78fc54155a4c18a13ac89e92}{Get\+Enumerator} ()
+\begin{DoxyCompactList}\small\item\em Returns a list iterator of the elements in the tree implementing the I\+E\+Numerator interface. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static int \hyperlink{class_c_p_u___o_s___simulator_1_1_compiler_1_1_frontend_1_1_syntax_tree_1_1_a_s_t_ae5a39e32b179110397b6e556d0a2b3d7}{Compare\+Function\+\_\+\+Int} (int left, int right)
+\begin{DoxyCompactList}\small\item\em For integer comparisons we provide a demonstration function. \end{DoxyCompactList}\item 
+static int \hyperlink{class_c_p_u___o_s___simulator_1_1_compiler_1_1_frontend_1_1_syntax_tree_1_1_a_s_t_ad66f655202794d09ce58ef9fcc690a34}{Compare\+Function\+\_\+\+String} (string left, string right)
+\begin{DoxyCompactList}\small\item\em For string comparisons we provide a demonstration function \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_c_p_u___o_s___simulator_1_1_compiler_1_1_frontend_1_1_syntax_tree_1_1_base_node}{Base\+Node} \hyperlink{class_c_p_u___o_s___simulator_1_1_compiler_1_1_frontend_1_1_syntax_tree_1_1_a_s_t_ad6c751aec63a7123d0e472639a32ed5a}{Find\+Most\+Left} (\hyperlink{class_c_p_u___o_s___simulator_1_1_compiler_1_1_frontend_1_1_syntax_tree_1_1_base_node}{Base\+Node} start)
+\begin{DoxyCompactList}\small\item\em Given a starting node, this routine will locate the left most node in the sub-\/tree If no further nodes are found, it returns the starting node \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_c_p_u___o_s___simulator_1_1_compiler_1_1_frontend_1_1_syntax_tree_1_1_base_node}{Base\+Node} \hyperlink{class_c_p_u___o_s___simulator_1_1_compiler_1_1_frontend_1_1_syntax_tree_1_1_a_s_t_adad46444c7a366abd0fb32f51df95a95}{Root}
+\begin{DoxyCompactList}\small\item\em The tree is build up out of \hyperlink{class_c_p_u___o_s___simulator_1_1_compiler_1_1_frontend_1_1_syntax_tree_1_1_base_node}{Base\+Node} instances \end{DoxyCompactList}\item 
+Comparison$<$ \hyperlink{class_c_p_u___o_s___simulator_1_1_compiler_1_1_frontend_1_1_syntax_tree_1_1_base_node}{Base\+Node} $>$ \hyperlink{class_c_p_u___o_s___simulator_1_1_compiler_1_1_frontend_1_1_syntax_tree_1_1_a_s_t_ab70cc1242f97a9e07dd6aec88ec0b2f5}{Compare\+Function}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 6 of file A\+S\+T.\+cs.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_c_p_u___o_s___simulator_1_1_compiler_1_1_frontend_1_1_syntax_tree_1_1_a_s_t_aadbd3af47353b1564454f2352b188875}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Frontend\+::\+Syntax\+Tree\+::\+A\+S\+T@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Frontend\+::\+Syntax\+Tree\+::\+A\+S\+T}!A\+S\+T@{A\+S\+T}}
+\index{A\+S\+T@{A\+S\+T}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Frontend\+::\+Syntax\+Tree\+::\+A\+S\+T@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Frontend\+::\+Syntax\+Tree\+::\+A\+S\+T}}
+\subsubsection[{A\+S\+T(\+Comparison$<$ Base\+Node $>$ the\+Compare\+Function)}]{\setlength{\rightskip}{0pt plus 5cm}C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Compiler.\+Frontend.\+Syntax\+Tree.\+A\+S\+T.\+A\+S\+T (
+\begin{DoxyParamCaption}
+\item[{Comparison$<$ {\bf Base\+Node} $>$}]{the\+Compare\+Function}
+\end{DoxyParamCaption}
+)}\label{class_c_p_u___o_s___simulator_1_1_compiler_1_1_frontend_1_1_syntax_tree_1_1_a_s_t_aadbd3af47353b1564454f2352b188875}
+
+
+The \hyperlink{class_c_p_u___o_s___simulator_1_1_compiler_1_1_frontend_1_1_syntax_tree_1_1_a_s_t}{A\+S\+T} constructor requires that we pass a comparison function. We need one as generics can only be compared as equals, but not for order. The solution is to allow the caller to pass a suitable comparison function. We use the C\# Comparison delegate for this (found in System.\+Collections) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em the\+Compare\+Function} & Pass a delegate function of the type Comparison to the function\\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 23 of file A\+S\+T.\+cs.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_c_p_u___o_s___simulator_1_1_compiler_1_1_frontend_1_1_syntax_tree_1_1_a_s_t_adc6fcfed38dfdeddcbe419523cdc0314}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Frontend\+::\+Syntax\+Tree\+::\+A\+S\+T@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Frontend\+::\+Syntax\+Tree\+::\+A\+S\+T}!Add@{Add}}
+\index{Add@{Add}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Frontend\+::\+Syntax\+Tree\+::\+A\+S\+T@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Frontend\+::\+Syntax\+Tree\+::\+A\+S\+T}}
+\subsubsection[{Add(\+Base\+Node Value)}]{\setlength{\rightskip}{0pt plus 5cm}void C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Compiler.\+Frontend.\+Syntax\+Tree.\+A\+S\+T.\+Add (
+\begin{DoxyParamCaption}
+\item[{{\bf Base\+Node}}]{Value}
+\end{DoxyParamCaption}
+)}\label{class_c_p_u___o_s___simulator_1_1_compiler_1_1_frontend_1_1_syntax_tree_1_1_a_s_t_adc6fcfed38dfdeddcbe419523cdc0314}
+
+
+The add function uses non-\/recursive tree traversal to find the next available insertion point 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Value} & The value to insert into tree.\\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 152 of file A\+S\+T.\+cs.
+
+\hypertarget{class_c_p_u___o_s___simulator_1_1_compiler_1_1_frontend_1_1_syntax_tree_1_1_a_s_t_ae5a39e32b179110397b6e556d0a2b3d7}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Frontend\+::\+Syntax\+Tree\+::\+A\+S\+T@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Frontend\+::\+Syntax\+Tree\+::\+A\+S\+T}!Compare\+Function\+\_\+\+Int@{Compare\+Function\+\_\+\+Int}}
+\index{Compare\+Function\+\_\+\+Int@{Compare\+Function\+\_\+\+Int}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Frontend\+::\+Syntax\+Tree\+::\+A\+S\+T@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Frontend\+::\+Syntax\+Tree\+::\+A\+S\+T}}
+\subsubsection[{Compare\+Function\+\_\+\+Int(int left, int right)}]{\setlength{\rightskip}{0pt plus 5cm}static int C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Compiler.\+Frontend.\+Syntax\+Tree.\+A\+S\+T.\+Compare\+Function\+\_\+\+Int (
+\begin{DoxyParamCaption}
+\item[{int}]{left, }
+\item[{int}]{right}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{class_c_p_u___o_s___simulator_1_1_compiler_1_1_frontend_1_1_syntax_tree_1_1_a_s_t_ae5a39e32b179110397b6e556d0a2b3d7}
+
+
+For integer comparisons we provide a demonstration function. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em left} & \\
+\hline
+{\em right} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+$<$0 for left smaller than right, $>$0 if they are equal, +1 if right is larger than left
+\end{DoxyReturn}
+
+
+Definition at line 36 of file A\+S\+T.\+cs.
+
+\hypertarget{class_c_p_u___o_s___simulator_1_1_compiler_1_1_frontend_1_1_syntax_tree_1_1_a_s_t_ad66f655202794d09ce58ef9fcc690a34}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Frontend\+::\+Syntax\+Tree\+::\+A\+S\+T@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Frontend\+::\+Syntax\+Tree\+::\+A\+S\+T}!Compare\+Function\+\_\+\+String@{Compare\+Function\+\_\+\+String}}
+\index{Compare\+Function\+\_\+\+String@{Compare\+Function\+\_\+\+String}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Frontend\+::\+Syntax\+Tree\+::\+A\+S\+T@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Frontend\+::\+Syntax\+Tree\+::\+A\+S\+T}}
+\subsubsection[{Compare\+Function\+\_\+\+String(string left, string right)}]{\setlength{\rightskip}{0pt plus 5cm}static int C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Compiler.\+Frontend.\+Syntax\+Tree.\+A\+S\+T.\+Compare\+Function\+\_\+\+String (
+\begin{DoxyParamCaption}
+\item[{string}]{left, }
+\item[{string}]{right}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{class_c_p_u___o_s___simulator_1_1_compiler_1_1_frontend_1_1_syntax_tree_1_1_a_s_t_ad66f655202794d09ce58ef9fcc690a34}
+
+
+For string comparisons we provide a demonstration function 
+
+
+\begin{DoxyParams}{Parameters}
+{\em left} & \\
+\hline
+{\em right} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+-\/1 for left smaller than right, 0 if they are equal, +1 if right is larger than left
+\end{DoxyReturn}
+
+
+Definition at line 142 of file A\+S\+T.\+cs.
+
+\hypertarget{class_c_p_u___o_s___simulator_1_1_compiler_1_1_frontend_1_1_syntax_tree_1_1_a_s_t_aa37a7925b23003f227b9311c6201a427}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Frontend\+::\+Syntax\+Tree\+::\+A\+S\+T@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Frontend\+::\+Syntax\+Tree\+::\+A\+S\+T}!Find@{Find}}
+\index{Find@{Find}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Frontend\+::\+Syntax\+Tree\+::\+A\+S\+T@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Frontend\+::\+Syntax\+Tree\+::\+A\+S\+T}}
+\subsubsection[{Find(\+Base\+Node Value)}]{\setlength{\rightskip}{0pt plus 5cm}bool C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Compiler.\+Frontend.\+Syntax\+Tree.\+A\+S\+T.\+Find (
+\begin{DoxyParamCaption}
+\item[{{\bf Base\+Node}}]{Value}
+\end{DoxyParamCaption}
+)}\label{class_c_p_u___o_s___simulator_1_1_compiler_1_1_frontend_1_1_syntax_tree_1_1_a_s_t_aa37a7925b23003f227b9311c6201a427}
+
+
+This routine walks through the tree to see if the value given can be found. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Value} & The value to look for in the tree\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if found, False if not found
+\end{DoxyReturn}
+
+
+Definition at line 210 of file A\+S\+T.\+cs.
+
+\hypertarget{class_c_p_u___o_s___simulator_1_1_compiler_1_1_frontend_1_1_syntax_tree_1_1_a_s_t_ad6c751aec63a7123d0e472639a32ed5a}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Frontend\+::\+Syntax\+Tree\+::\+A\+S\+T@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Frontend\+::\+Syntax\+Tree\+::\+A\+S\+T}!Find\+Most\+Left@{Find\+Most\+Left}}
+\index{Find\+Most\+Left@{Find\+Most\+Left}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Frontend\+::\+Syntax\+Tree\+::\+A\+S\+T@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Frontend\+::\+Syntax\+Tree\+::\+A\+S\+T}}
+\subsubsection[{Find\+Most\+Left(\+Base\+Node start)}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Base\+Node} C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Compiler.\+Frontend.\+Syntax\+Tree.\+A\+S\+T.\+Find\+Most\+Left (
+\begin{DoxyParamCaption}
+\item[{{\bf Base\+Node}}]{start}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{class_c_p_u___o_s___simulator_1_1_compiler_1_1_frontend_1_1_syntax_tree_1_1_a_s_t_ad6c751aec63a7123d0e472639a32ed5a}
+
+
+Given a starting node, this routine will locate the left most node in the sub-\/tree If no further nodes are found, it returns the starting node 
+
+
+\begin{DoxyParams}{Parameters}
+{\em start} & The sub-\/tree starting point\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Definition at line 238 of file A\+S\+T.\+cs.
+
+\hypertarget{class_c_p_u___o_s___simulator_1_1_compiler_1_1_frontend_1_1_syntax_tree_1_1_a_s_t_aceaad03d78fc54155a4c18a13ac89e92}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Frontend\+::\+Syntax\+Tree\+::\+A\+S\+T@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Frontend\+::\+Syntax\+Tree\+::\+A\+S\+T}!Get\+Enumerator@{Get\+Enumerator}}
+\index{Get\+Enumerator@{Get\+Enumerator}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Frontend\+::\+Syntax\+Tree\+::\+A\+S\+T@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Frontend\+::\+Syntax\+Tree\+::\+A\+S\+T}}
+\subsubsection[{Get\+Enumerator()}]{\setlength{\rightskip}{0pt plus 5cm}I\+Enumerator$<${\bf Base\+Node}$>$ C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Compiler.\+Frontend.\+Syntax\+Tree.\+A\+S\+T.\+Get\+Enumerator (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{class_c_p_u___o_s___simulator_1_1_compiler_1_1_frontend_1_1_syntax_tree_1_1_a_s_t_aceaad03d78fc54155a4c18a13ac89e92}
+
+
+Returns a list iterator of the elements in the tree implementing the I\+E\+Numerator interface. 
+
+\begin{DoxyReturn}{Returns}
+I\+E\+Numerator
+\end{DoxyReturn}
+
+
+Definition at line 258 of file A\+S\+T.\+cs.
+
+\hypertarget{class_c_p_u___o_s___simulator_1_1_compiler_1_1_frontend_1_1_syntax_tree_1_1_a_s_t_afc826af945c5461d38b0ca398ab3f14b}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Frontend\+::\+Syntax\+Tree\+::\+A\+S\+T@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Frontend\+::\+Syntax\+Tree\+::\+A\+S\+T}!inorder\+Traversal@{inorder\+Traversal}}
+\index{inorder\+Traversal@{inorder\+Traversal}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Frontend\+::\+Syntax\+Tree\+::\+A\+S\+T@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Frontend\+::\+Syntax\+Tree\+::\+A\+S\+T}}
+\subsubsection[{inorder\+Traversal()}]{\setlength{\rightskip}{0pt plus 5cm}void C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Compiler.\+Frontend.\+Syntax\+Tree.\+A\+S\+T.\+inorder\+Traversal (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{class_c_p_u___o_s___simulator_1_1_compiler_1_1_frontend_1_1_syntax_tree_1_1_a_s_t_afc826af945c5461d38b0ca398ab3f14b}
+
+
+Definition at line 82 of file A\+S\+T.\+cs.
+
+\hypertarget{class_c_p_u___o_s___simulator_1_1_compiler_1_1_frontend_1_1_syntax_tree_1_1_a_s_t_a72dc35aaccad4aeee3373b8d2dbb23d1}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Frontend\+::\+Syntax\+Tree\+::\+A\+S\+T@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Frontend\+::\+Syntax\+Tree\+::\+A\+S\+T}!postorder\+Traversal@{postorder\+Traversal}}
+\index{postorder\+Traversal@{postorder\+Traversal}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Frontend\+::\+Syntax\+Tree\+::\+A\+S\+T@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Frontend\+::\+Syntax\+Tree\+::\+A\+S\+T}}
+\subsubsection[{postorder\+Traversal()}]{\setlength{\rightskip}{0pt plus 5cm}void C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Compiler.\+Frontend.\+Syntax\+Tree.\+A\+S\+T.\+postorder\+Traversal (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{class_c_p_u___o_s___simulator_1_1_compiler_1_1_frontend_1_1_syntax_tree_1_1_a_s_t_a72dc35aaccad4aeee3373b8d2dbb23d1}
+
+
+Definition at line 124 of file A\+S\+T.\+cs.
+
+\hypertarget{class_c_p_u___o_s___simulator_1_1_compiler_1_1_frontend_1_1_syntax_tree_1_1_a_s_t_a73bb6e82554120e16b12f975ccfc44a5}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Frontend\+::\+Syntax\+Tree\+::\+A\+S\+T@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Frontend\+::\+Syntax\+Tree\+::\+A\+S\+T}!preorder\+Traversal@{preorder\+Traversal}}
+\index{preorder\+Traversal@{preorder\+Traversal}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Frontend\+::\+Syntax\+Tree\+::\+A\+S\+T@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Frontend\+::\+Syntax\+Tree\+::\+A\+S\+T}}
+\subsubsection[{preorder\+Traversal()}]{\setlength{\rightskip}{0pt plus 5cm}void C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Compiler.\+Frontend.\+Syntax\+Tree.\+A\+S\+T.\+preorder\+Traversal (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{class_c_p_u___o_s___simulator_1_1_compiler_1_1_frontend_1_1_syntax_tree_1_1_a_s_t_a73bb6e82554120e16b12f975ccfc44a5}
+
+
+Definition at line 41 of file A\+S\+T.\+cs.
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{class_c_p_u___o_s___simulator_1_1_compiler_1_1_frontend_1_1_syntax_tree_1_1_a_s_t_ab70cc1242f97a9e07dd6aec88ec0b2f5}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Frontend\+::\+Syntax\+Tree\+::\+A\+S\+T@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Frontend\+::\+Syntax\+Tree\+::\+A\+S\+T}!Compare\+Function@{Compare\+Function}}
+\index{Compare\+Function@{Compare\+Function}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Frontend\+::\+Syntax\+Tree\+::\+A\+S\+T@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Frontend\+::\+Syntax\+Tree\+::\+A\+S\+T}}
+\subsubsection[{Compare\+Function}]{\setlength{\rightskip}{0pt plus 5cm}Comparison$<${\bf Base\+Node}$>$ C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Compiler.\+Frontend.\+Syntax\+Tree.\+A\+S\+T.\+Compare\+Function\hspace{0.3cm}{\ttfamily [private]}}\label{class_c_p_u___o_s___simulator_1_1_compiler_1_1_frontend_1_1_syntax_tree_1_1_a_s_t_ab70cc1242f97a9e07dd6aec88ec0b2f5}
+
+
+Definition at line 13 of file A\+S\+T.\+cs.
+
+\hypertarget{class_c_p_u___o_s___simulator_1_1_compiler_1_1_frontend_1_1_syntax_tree_1_1_a_s_t_adad46444c7a366abd0fb32f51df95a95}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Frontend\+::\+Syntax\+Tree\+::\+A\+S\+T@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Frontend\+::\+Syntax\+Tree\+::\+A\+S\+T}!Root@{Root}}
+\index{Root@{Root}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Frontend\+::\+Syntax\+Tree\+::\+A\+S\+T@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Frontend\+::\+Syntax\+Tree\+::\+A\+S\+T}}
+\subsubsection[{Root}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Base\+Node} C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Compiler.\+Frontend.\+Syntax\+Tree.\+A\+S\+T.\+Root\hspace{0.3cm}{\ttfamily [private]}}\label{class_c_p_u___o_s___simulator_1_1_compiler_1_1_frontend_1_1_syntax_tree_1_1_a_s_t_adad46444c7a366abd0fb32f51df95a95}
+
+
+The tree is build up out of \hyperlink{class_c_p_u___o_s___simulator_1_1_compiler_1_1_frontend_1_1_syntax_tree_1_1_base_node}{Base\+Node} instances 
+
+
+
+Definition at line 11 of file A\+S\+T.\+cs.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Compiler/\+Frontend/\+Syntax\+Tree/\hyperlink{_a_s_t_8cs}{A\+S\+T.\+cs}\end{DoxyCompactItemize}

@@ -1,0 +1,174 @@
+\hypertarget{class_c_p_u___o_s___simulator_1_1_compiler_1_1_frontend_1_1_syntax_tree_1_1_base_node}{}\section{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Compiler.\+Frontend.\+Syntax\+Tree.\+Base\+Node Class Reference}
+\label{class_c_p_u___o_s___simulator_1_1_compiler_1_1_frontend_1_1_syntax_tree_1_1_base_node}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Compiler.\+Frontend.\+Syntax\+Tree.\+Base\+Node@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Compiler.\+Frontend.\+Syntax\+Tree.\+Base\+Node}}
+Inheritance diagram for C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Compiler.\+Frontend.\+Syntax\+Tree.\+Base\+Node\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=0.668258cm]{class_c_p_u___o_s___simulator_1_1_compiler_1_1_frontend_1_1_syntax_tree_1_1_base_node}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+abstract void \hyperlink{class_c_p_u___o_s___simulator_1_1_compiler_1_1_frontend_1_1_syntax_tree_1_1_base_node_a092377df64002c5e9c023a259e5e11d0}{Visit} ()
+\begin{DoxyCompactList}\small\item\em This function is called when the node is being visited by the parser \end{DoxyCompactList}\item 
+abstract void \hyperlink{class_c_p_u___o_s___simulator_1_1_compiler_1_1_frontend_1_1_syntax_tree_1_1_base_node_a6cfcf8a0795180bdb1c7f0735d39441b}{Evaluate} ()
+\begin{DoxyCompactList}\small\item\em This Function is called when the node is being evaluated by the parser \end{DoxyCompactList}\item 
+virtual int \hyperlink{class_c_p_u___o_s___simulator_1_1_compiler_1_1_frontend_1_1_syntax_tree_1_1_base_node_a56a5aff4b4b7da820c6b88854d2c0fc0}{Compare\+To} (object obj)
+\begin{DoxyCompactList}\small\item\em Compares the current instance with another object of the same type and returns an integer that indicates whether the current instance precedes, follows, or occurs in the same position in the sort order as the other object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+dynamic \hyperlink{class_c_p_u___o_s___simulator_1_1_compiler_1_1_frontend_1_1_syntax_tree_1_1_base_node_a3b706dde03ce7d04b16bacca02e433e3}{data}
+\item 
+\hyperlink{class_c_p_u___o_s___simulator_1_1_compiler_1_1_frontend_1_1_syntax_tree_1_1_base_node}{Base\+Node} \hyperlink{class_c_p_u___o_s___simulator_1_1_compiler_1_1_frontend_1_1_syntax_tree_1_1_base_node_a9f28fedc02d08b69870fa4b8ff0f478a}{right}
+\item 
+\hyperlink{class_c_p_u___o_s___simulator_1_1_compiler_1_1_frontend_1_1_syntax_tree_1_1_base_node}{Base\+Node} \hyperlink{class_c_p_u___o_s___simulator_1_1_compiler_1_1_frontend_1_1_syntax_tree_1_1_base_node_ad650fcb461aeed53a2d5638cf014b5de}{left}
+\item 
+\hyperlink{class_c_p_u___o_s___simulator_1_1_compiler_1_1_frontend_1_1_syntax_tree_1_1_base_node}{Base\+Node} \hyperlink{class_c_p_u___o_s___simulator_1_1_compiler_1_1_frontend_1_1_syntax_tree_1_1_base_node_a737abdeb18cd28630355a932832d8e40}{parent}
+\end{DoxyCompactItemize}
+\subsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+abstract \hyperlink{class_c_p_u___o_s___simulator_1_1_compiler_1_1_frontend_1_1_syntax_tree_1_1_base_node}{Base\+Node} \hyperlink{class_c_p_u___o_s___simulator_1_1_compiler_1_1_frontend_1_1_syntax_tree_1_1_base_node_a488735e2d5ee9a31a1ee3bdb6742c06d}{Right}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\item 
+abstract \hyperlink{class_c_p_u___o_s___simulator_1_1_compiler_1_1_frontend_1_1_syntax_tree_1_1_base_node}{Base\+Node} \hyperlink{class_c_p_u___o_s___simulator_1_1_compiler_1_1_frontend_1_1_syntax_tree_1_1_base_node_aff39b054b8bcc205583285c1dccfcbf3}{Left}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\item 
+dynamic \hyperlink{class_c_p_u___o_s___simulator_1_1_compiler_1_1_frontend_1_1_syntax_tree_1_1_base_node_ad7f198ee35d784abb122d510ec17c59a}{Data}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\item 
+abstract \hyperlink{class_c_p_u___o_s___simulator_1_1_compiler_1_1_frontend_1_1_syntax_tree_1_1_base_node}{Base\+Node} \hyperlink{class_c_p_u___o_s___simulator_1_1_compiler_1_1_frontend_1_1_syntax_tree_1_1_base_node_a218b40fedda0f7d47f1985f8396a0c48}{Parent}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 7 of file Base\+Node.\+cs.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_c_p_u___o_s___simulator_1_1_compiler_1_1_frontend_1_1_syntax_tree_1_1_base_node_a56a5aff4b4b7da820c6b88854d2c0fc0}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Frontend\+::\+Syntax\+Tree\+::\+Base\+Node@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Frontend\+::\+Syntax\+Tree\+::\+Base\+Node}!Compare\+To@{Compare\+To}}
+\index{Compare\+To@{Compare\+To}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Frontend\+::\+Syntax\+Tree\+::\+Base\+Node@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Frontend\+::\+Syntax\+Tree\+::\+Base\+Node}}
+\subsubsection[{Compare\+To(object obj)}]{\setlength{\rightskip}{0pt plus 5cm}virtual int C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Compiler.\+Frontend.\+Syntax\+Tree.\+Base\+Node.\+Compare\+To (
+\begin{DoxyParamCaption}
+\item[{object}]{obj}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{class_c_p_u___o_s___simulator_1_1_compiler_1_1_frontend_1_1_syntax_tree_1_1_base_node_a56a5aff4b4b7da820c6b88854d2c0fc0}
+
+
+Compares the current instance with another object of the same type and returns an integer that indicates whether the current instance precedes, follows, or occurs in the same position in the sort order as the other object. 
+
+\begin{DoxyReturn}{Returns}
+A value that indicates the relative order of the objects being compared. The return value has these meanings\+: Value Meaning Less than zero This instance precedes {\itshape obj}  in the sort order. Zero This instance occurs in the same position in the sort order as {\itshape obj} . Greater than zero This instance follows {\itshape obj}  in the sort order. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em obj} & An object to compare with this instance. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em T\+:\+System.\+Argument\+Exception} & {\itshape obj}  is not the same type as this instance. \\
+\hline
+\end{DoxyExceptions}
+
+
+Definition at line 42 of file Base\+Node.\+cs.
+
+\hypertarget{class_c_p_u___o_s___simulator_1_1_compiler_1_1_frontend_1_1_syntax_tree_1_1_base_node_a6cfcf8a0795180bdb1c7f0735d39441b}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Frontend\+::\+Syntax\+Tree\+::\+Base\+Node@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Frontend\+::\+Syntax\+Tree\+::\+Base\+Node}!Evaluate@{Evaluate}}
+\index{Evaluate@{Evaluate}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Frontend\+::\+Syntax\+Tree\+::\+Base\+Node@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Frontend\+::\+Syntax\+Tree\+::\+Base\+Node}}
+\subsubsection[{Evaluate()}]{\setlength{\rightskip}{0pt plus 5cm}abstract void C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Compiler.\+Frontend.\+Syntax\+Tree.\+Base\+Node.\+Evaluate (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\label{class_c_p_u___o_s___simulator_1_1_compiler_1_1_frontend_1_1_syntax_tree_1_1_base_node_a6cfcf8a0795180bdb1c7f0735d39441b}
+
+
+This Function is called when the node is being evaluated by the parser 
+
+
+
+Implemented in \hyperlink{class_c_p_u___o_s___simulator_1_1_compiler_1_1_frontend_1_1_syntax_tree_1_1_integer_array_node_a28619c1f8b99cea0b827ba5a71a00e35}{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Compiler.\+Frontend.\+Syntax\+Tree.\+Integer\+Array\+Node}, \hyperlink{class_c_p_u___o_s___simulator_1_1_compiler_1_1_frontend_1_1_syntax_tree_1_1_boolean_array_node_a6de955407e0bce191f3f09a5cf6f4d50}{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Compiler.\+Frontend.\+Syntax\+Tree.\+Boolean\+Array\+Node}, \hyperlink{class_c_p_u___o_s___simulator_1_1_compiler_1_1_frontend_1_1_syntax_tree_1_1_boolean_node_a4a804a07050c45ca80feaaac3a050784}{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Compiler.\+Frontend.\+Syntax\+Tree.\+Boolean\+Node}, \hyperlink{class_c_p_u___o_s___simulator_1_1_compiler_1_1_frontend_1_1_syntax_tree_1_1_byte_node_a0e9461945f15cb28abac866a81c8c5d3}{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Compiler.\+Frontend.\+Syntax\+Tree.\+Byte\+Node}, \hyperlink{class_c_p_u___o_s___simulator_1_1_compiler_1_1_frontend_1_1_syntax_tree_1_1_integer_node_a3005d7165ec473ac488e792728a50d99}{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Compiler.\+Frontend.\+Syntax\+Tree.\+Integer\+Node}, \hyperlink{class_c_p_u___o_s___simulator_1_1_compiler_1_1_frontend_1_1_syntax_tree_1_1_object_array_node_ad0c63367dd74b502a0e510b95e324405}{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Compiler.\+Frontend.\+Syntax\+Tree.\+Object\+Array\+Node}, \hyperlink{class_c_p_u___o_s___simulator_1_1_compiler_1_1_frontend_1_1_syntax_tree_1_1_object_node_a52be0559ec5f7c7171d5b17ce9cbb385}{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Compiler.\+Frontend.\+Syntax\+Tree.\+Object\+Node}, \hyperlink{class_c_p_u___o_s___simulator_1_1_compiler_1_1_frontend_1_1_syntax_tree_1_1_string_node_aa13c55d835188df6289e7cc1844199d3}{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Compiler.\+Frontend.\+Syntax\+Tree.\+String\+Node}, \hyperlink{class_c_p_u___o_s___simulator_1_1_compiler_1_1_frontend_1_1_syntax_tree_1_1_byte_array_node_ad34fd3396bf5e6e179d941d2076f28d9}{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Compiler.\+Frontend.\+Syntax\+Tree.\+Byte\+Array\+Node}, \hyperlink{class_c_p_u___o_s___simulator_1_1_compiler_1_1_frontend_1_1_syntax_tree_1_1_string_array_node_a559630365acec250f2eed840010535f8}{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Compiler.\+Frontend.\+Syntax\+Tree.\+String\+Array\+Node}, and \hyperlink{class_c_p_u___o_s___simulator_1_1_compiler_1_1_frontend_1_1_syntax_tree_1_1_array_node_afdb5d2808dbd83c28c85f35b6430edc4}{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Compiler.\+Frontend.\+Syntax\+Tree.\+Array\+Node}.
+
+\hypertarget{class_c_p_u___o_s___simulator_1_1_compiler_1_1_frontend_1_1_syntax_tree_1_1_base_node_a092377df64002c5e9c023a259e5e11d0}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Frontend\+::\+Syntax\+Tree\+::\+Base\+Node@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Frontend\+::\+Syntax\+Tree\+::\+Base\+Node}!Visit@{Visit}}
+\index{Visit@{Visit}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Frontend\+::\+Syntax\+Tree\+::\+Base\+Node@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Frontend\+::\+Syntax\+Tree\+::\+Base\+Node}}
+\subsubsection[{Visit()}]{\setlength{\rightskip}{0pt plus 5cm}abstract void C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Compiler.\+Frontend.\+Syntax\+Tree.\+Base\+Node.\+Visit (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\label{class_c_p_u___o_s___simulator_1_1_compiler_1_1_frontend_1_1_syntax_tree_1_1_base_node_a092377df64002c5e9c023a259e5e11d0}
+
+
+This function is called when the node is being visited by the parser 
+
+
+
+Implemented in \hyperlink{class_c_p_u___o_s___simulator_1_1_compiler_1_1_frontend_1_1_syntax_tree_1_1_integer_array_node_a7abbf1320b21da1362fc8d391907d33f}{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Compiler.\+Frontend.\+Syntax\+Tree.\+Integer\+Array\+Node}, \hyperlink{class_c_p_u___o_s___simulator_1_1_compiler_1_1_frontend_1_1_syntax_tree_1_1_boolean_array_node_a192727033dc9533113312210f04a958a}{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Compiler.\+Frontend.\+Syntax\+Tree.\+Boolean\+Array\+Node}, \hyperlink{class_c_p_u___o_s___simulator_1_1_compiler_1_1_frontend_1_1_syntax_tree_1_1_boolean_node_a5cf13a08d798c5c1a225654e3f888866}{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Compiler.\+Frontend.\+Syntax\+Tree.\+Boolean\+Node}, \hyperlink{class_c_p_u___o_s___simulator_1_1_compiler_1_1_frontend_1_1_syntax_tree_1_1_byte_node_af411e73f7153f6c67e09273198e9f1bb}{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Compiler.\+Frontend.\+Syntax\+Tree.\+Byte\+Node}, \hyperlink{class_c_p_u___o_s___simulator_1_1_compiler_1_1_frontend_1_1_syntax_tree_1_1_integer_node_a5f788c73bf459d372850107098fda8c1}{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Compiler.\+Frontend.\+Syntax\+Tree.\+Integer\+Node}, \hyperlink{class_c_p_u___o_s___simulator_1_1_compiler_1_1_frontend_1_1_syntax_tree_1_1_object_array_node_a1d792b3929152ecfa25dac2e8c6444cc}{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Compiler.\+Frontend.\+Syntax\+Tree.\+Object\+Array\+Node}, \hyperlink{class_c_p_u___o_s___simulator_1_1_compiler_1_1_frontend_1_1_syntax_tree_1_1_object_node_a2c77bb89c3638cfb39c6fd1a40b63d71}{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Compiler.\+Frontend.\+Syntax\+Tree.\+Object\+Node}, \hyperlink{class_c_p_u___o_s___simulator_1_1_compiler_1_1_frontend_1_1_syntax_tree_1_1_string_node_a08063171005bc1ee91e327b35cbfb7a1}{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Compiler.\+Frontend.\+Syntax\+Tree.\+String\+Node}, \hyperlink{class_c_p_u___o_s___simulator_1_1_compiler_1_1_frontend_1_1_syntax_tree_1_1_byte_array_node_a1ed9d8d35aeb8537758718aa1bae1ae0}{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Compiler.\+Frontend.\+Syntax\+Tree.\+Byte\+Array\+Node}, \hyperlink{class_c_p_u___o_s___simulator_1_1_compiler_1_1_frontend_1_1_syntax_tree_1_1_string_array_node_ae8ce8f85a313e577506546a26c954e34}{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Compiler.\+Frontend.\+Syntax\+Tree.\+String\+Array\+Node}, and \hyperlink{class_c_p_u___o_s___simulator_1_1_compiler_1_1_frontend_1_1_syntax_tree_1_1_array_node_aed695b6f32d5c176204fc15854db32db}{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Compiler.\+Frontend.\+Syntax\+Tree.\+Array\+Node}.
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{class_c_p_u___o_s___simulator_1_1_compiler_1_1_frontend_1_1_syntax_tree_1_1_base_node_a3b706dde03ce7d04b16bacca02e433e3}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Frontend\+::\+Syntax\+Tree\+::\+Base\+Node@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Frontend\+::\+Syntax\+Tree\+::\+Base\+Node}!data@{data}}
+\index{data@{data}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Frontend\+::\+Syntax\+Tree\+::\+Base\+Node@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Frontend\+::\+Syntax\+Tree\+::\+Base\+Node}}
+\subsubsection[{data}]{\setlength{\rightskip}{0pt plus 5cm}dynamic C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Compiler.\+Frontend.\+Syntax\+Tree.\+Base\+Node.\+data\hspace{0.3cm}{\ttfamily [protected]}}\label{class_c_p_u___o_s___simulator_1_1_compiler_1_1_frontend_1_1_syntax_tree_1_1_base_node_a3b706dde03ce7d04b16bacca02e433e3}
+
+
+Definition at line 21 of file Base\+Node.\+cs.
+
+\hypertarget{class_c_p_u___o_s___simulator_1_1_compiler_1_1_frontend_1_1_syntax_tree_1_1_base_node_ad650fcb461aeed53a2d5638cf014b5de}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Frontend\+::\+Syntax\+Tree\+::\+Base\+Node@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Frontend\+::\+Syntax\+Tree\+::\+Base\+Node}!left@{left}}
+\index{left@{left}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Frontend\+::\+Syntax\+Tree\+::\+Base\+Node@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Frontend\+::\+Syntax\+Tree\+::\+Base\+Node}}
+\subsubsection[{left}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Base\+Node} C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Compiler.\+Frontend.\+Syntax\+Tree.\+Base\+Node.\+left\hspace{0.3cm}{\ttfamily [protected]}}\label{class_c_p_u___o_s___simulator_1_1_compiler_1_1_frontend_1_1_syntax_tree_1_1_base_node_ad650fcb461aeed53a2d5638cf014b5de}
+
+
+Definition at line 23 of file Base\+Node.\+cs.
+
+\hypertarget{class_c_p_u___o_s___simulator_1_1_compiler_1_1_frontend_1_1_syntax_tree_1_1_base_node_a737abdeb18cd28630355a932832d8e40}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Frontend\+::\+Syntax\+Tree\+::\+Base\+Node@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Frontend\+::\+Syntax\+Tree\+::\+Base\+Node}!parent@{parent}}
+\index{parent@{parent}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Frontend\+::\+Syntax\+Tree\+::\+Base\+Node@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Frontend\+::\+Syntax\+Tree\+::\+Base\+Node}}
+\subsubsection[{parent}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Base\+Node} C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Compiler.\+Frontend.\+Syntax\+Tree.\+Base\+Node.\+parent\hspace{0.3cm}{\ttfamily [protected]}}\label{class_c_p_u___o_s___simulator_1_1_compiler_1_1_frontend_1_1_syntax_tree_1_1_base_node_a737abdeb18cd28630355a932832d8e40}
+
+
+Definition at line 24 of file Base\+Node.\+cs.
+
+\hypertarget{class_c_p_u___o_s___simulator_1_1_compiler_1_1_frontend_1_1_syntax_tree_1_1_base_node_a9f28fedc02d08b69870fa4b8ff0f478a}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Frontend\+::\+Syntax\+Tree\+::\+Base\+Node@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Frontend\+::\+Syntax\+Tree\+::\+Base\+Node}!right@{right}}
+\index{right@{right}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Frontend\+::\+Syntax\+Tree\+::\+Base\+Node@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Frontend\+::\+Syntax\+Tree\+::\+Base\+Node}}
+\subsubsection[{right}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Base\+Node} C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Compiler.\+Frontend.\+Syntax\+Tree.\+Base\+Node.\+right\hspace{0.3cm}{\ttfamily [protected]}}\label{class_c_p_u___o_s___simulator_1_1_compiler_1_1_frontend_1_1_syntax_tree_1_1_base_node_a9f28fedc02d08b69870fa4b8ff0f478a}
+
+
+Definition at line 22 of file Base\+Node.\+cs.
+
+
+
+\subsection{Property Documentation}
+\hypertarget{class_c_p_u___o_s___simulator_1_1_compiler_1_1_frontend_1_1_syntax_tree_1_1_base_node_ad7f198ee35d784abb122d510ec17c59a}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Frontend\+::\+Syntax\+Tree\+::\+Base\+Node@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Frontend\+::\+Syntax\+Tree\+::\+Base\+Node}!Data@{Data}}
+\index{Data@{Data}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Frontend\+::\+Syntax\+Tree\+::\+Base\+Node@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Frontend\+::\+Syntax\+Tree\+::\+Base\+Node}}
+\subsubsection[{Data}]{\setlength{\rightskip}{0pt plus 5cm}dynamic C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Compiler.\+Frontend.\+Syntax\+Tree.\+Base\+Node.\+Data\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}\label{class_c_p_u___o_s___simulator_1_1_compiler_1_1_frontend_1_1_syntax_tree_1_1_base_node_ad7f198ee35d784abb122d510ec17c59a}
+
+
+Definition at line 14 of file Base\+Node.\+cs.
+
+\hypertarget{class_c_p_u___o_s___simulator_1_1_compiler_1_1_frontend_1_1_syntax_tree_1_1_base_node_aff39b054b8bcc205583285c1dccfcbf3}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Frontend\+::\+Syntax\+Tree\+::\+Base\+Node@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Frontend\+::\+Syntax\+Tree\+::\+Base\+Node}!Left@{Left}}
+\index{Left@{Left}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Frontend\+::\+Syntax\+Tree\+::\+Base\+Node@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Frontend\+::\+Syntax\+Tree\+::\+Base\+Node}}
+\subsubsection[{Left}]{\setlength{\rightskip}{0pt plus 5cm}abstract {\bf Base\+Node} C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Compiler.\+Frontend.\+Syntax\+Tree.\+Base\+Node.\+Left\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}\label{class_c_p_u___o_s___simulator_1_1_compiler_1_1_frontend_1_1_syntax_tree_1_1_base_node_aff39b054b8bcc205583285c1dccfcbf3}
+
+
+Definition at line 11 of file Base\+Node.\+cs.
+
+\hypertarget{class_c_p_u___o_s___simulator_1_1_compiler_1_1_frontend_1_1_syntax_tree_1_1_base_node_a218b40fedda0f7d47f1985f8396a0c48}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Frontend\+::\+Syntax\+Tree\+::\+Base\+Node@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Frontend\+::\+Syntax\+Tree\+::\+Base\+Node}!Parent@{Parent}}
+\index{Parent@{Parent}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Frontend\+::\+Syntax\+Tree\+::\+Base\+Node@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Frontend\+::\+Syntax\+Tree\+::\+Base\+Node}}
+\subsubsection[{Parent}]{\setlength{\rightskip}{0pt plus 5cm}abstract {\bf Base\+Node} C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Compiler.\+Frontend.\+Syntax\+Tree.\+Base\+Node.\+Parent\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}\label{class_c_p_u___o_s___simulator_1_1_compiler_1_1_frontend_1_1_syntax_tree_1_1_base_node_a218b40fedda0f7d47f1985f8396a0c48}
+
+
+Definition at line 19 of file Base\+Node.\+cs.
+
+\hypertarget{class_c_p_u___o_s___simulator_1_1_compiler_1_1_frontend_1_1_syntax_tree_1_1_base_node_a488735e2d5ee9a31a1ee3bdb6742c06d}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Frontend\+::\+Syntax\+Tree\+::\+Base\+Node@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Frontend\+::\+Syntax\+Tree\+::\+Base\+Node}!Right@{Right}}
+\index{Right@{Right}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Frontend\+::\+Syntax\+Tree\+::\+Base\+Node@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Frontend\+::\+Syntax\+Tree\+::\+Base\+Node}}
+\subsubsection[{Right}]{\setlength{\rightskip}{0pt plus 5cm}abstract {\bf Base\+Node} C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Compiler.\+Frontend.\+Syntax\+Tree.\+Base\+Node.\+Right\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}\label{class_c_p_u___o_s___simulator_1_1_compiler_1_1_frontend_1_1_syntax_tree_1_1_base_node_a488735e2d5ee9a31a1ee3bdb6742c06d}
+
+
+Definition at line 9 of file Base\+Node.\+cs.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Compiler/\+Frontend/\+Syntax\+Tree/\hyperlink{_base_node_8cs}{Base\+Node.\+cs}\end{DoxyCompactItemize}

@@ -3,7 +3,7 @@ var class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_register =
     [ "Register", "class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_register.html#a1ee1fb682bf9349209b31a50aff2de45", null ],
     [ "Register", "class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_register.html#a17e76aef3bd00389ac1473b4edda8855", null ],
     [ "FindRegister", "class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_register.html#a2048bfb660e7792cbaae83370a3b2606", null ],
-    [ "setRegisterValue", "class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_register.html#a29b6a87aa7d0bb7fc118b021fc559482", null ],
+    [ "setRegisterValue", "class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_register.html#ad522f6440f47b38c73d266f2b23098e9", null ],
     [ "name", "class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_register.html#a1d9405f19dc212f0ff3d3307469451db", null ],
     [ "R00", "class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_register.html#a14dd660fd5c709aa90298e0716d8b88a", null ],
     [ "R01", "class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_register.html#a8e2da18c4d80597ebe22c0cdd23d5211", null ],

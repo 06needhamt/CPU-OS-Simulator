@@ -1,0 +1,386 @@
+\hypertarget{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_simulator_process}{}\section{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Operating\+\_\+\+System.\+Simulator\+Process Class Reference}
+\label{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_simulator_process}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Operating\+\_\+\+System.\+Simulator\+Process@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Operating\+\_\+\+System.\+Simulator\+Process}}
+
+
+This class represents a process that can be run on the virtual operating system  
+
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_simulator_process_a6d9429aba3440d2bde6e8733eeee232f}{Simulator\+Process} ()
+\begin{DoxyCompactList}\small\item\em Default Constructor for a process used when deserialising processes N\+O\+T\+E\+: D\+O N\+O\+T U\+S\+E I\+N C\+O\+D\+E \end{DoxyCompactList}\item 
+\hyperlink{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_simulator_process_a30b212f64f058e2f2c06936f8f63a492}{Simulator\+Process} (\hyperlink{struct_c_p_u___o_s___simulator_1_1_operating___system_1_1_process_flags}{Process\+Flags} flags)
+\begin{DoxyCompactList}\small\item\em Constructor for a process \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_simulator_program}{Simulator\+Program} \hyperlink{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_simulator_process_a594fe15fec1c942ccfbcfa9c345624ee}{Program}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Property for the program that this process represents \end{DoxyCompactList}\item 
+\hyperlink{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_simulator_process}{Simulator\+Process} \hyperlink{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_simulator_process_a4af765ee1a2e9390c9de86fd842a8458}{Parent\+Process}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Property for this process\textquotesingle{}s parent \end{DoxyCompactList}\item 
+List$<$ \hyperlink{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_simulator_process}{Simulator\+Process} $>$ \hyperlink{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_simulator_process_a2bcf12b1ea3ce8c369f53eccf1368277}{Child\+Processes}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Property for a list of this process\textquotesingle{}s child processes \end{DoxyCompactList}\item 
+string \hyperlink{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_simulator_process_adbe9e17fd9415e4417646309fefbf44b}{Program\+Name}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Property for the name of the program that makes up this process \end{DoxyCompactList}\item 
+string \hyperlink{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_simulator_process_a8dfd5005352af61610e945094c5369b8}{Process\+Name}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Property for the name of this process \end{DoxyCompactList}\item 
+string \hyperlink{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_simulator_process_a3bd1a31943fcbd2ebb2402bd0fff705f}{Process\+State\+String}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Property for the string representation of this process\textquotesingle{}s state \end{DoxyCompactList}\item 
+int \hyperlink{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_simulator_process_a5f5199c59eeb6696cdff475a3d752b8a}{Process\+Priority}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Property for the priority of this process \end{DoxyCompactList}\item 
+int \hyperlink{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_simulator_process_a2a82c535caf78396aef37d4ba7815408}{Process\+Memory}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Property for the amount of memory pages this program has \end{DoxyCompactList}\item 
+int \hyperlink{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_simulator_process_a83b9c6a1cace7e28127ced9225213100}{Process\+Id}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Property for the unique I\+D of this process \end{DoxyCompactList}\item 
+int \hyperlink{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_simulator_process_a48fc58b8fc6669cfb7f68ce4394c22d2}{Parent\+Process\+Id}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Property for the unique I\+D of the parent process \end{DoxyCompactList}\item 
+int \hyperlink{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_simulator_process_afa82367303a9ea2effba290493847605}{Process\+Lifetime}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Property For the lifetime of this process \end{DoxyCompactList}\item 
+int \hyperlink{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_simulator_process_a5a340d3421e4251b758752de009b7758}{Burst\+Time}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Property for the burst time of this process \end{DoxyCompactList}\item 
+bool \hyperlink{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_simulator_process_a7886e0890797887fcdd65b6eac62cfc0}{Process\+Swapped}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Property for whether this process is swapped out \end{DoxyCompactList}\item 
+\hyperlink{namespace_c_p_u___o_s___simulator_1_1_operating___system_a836ee2204e78fcb3a7dd6c3c942b1a24}{Enum\+Process\+State} \hyperlink{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_simulator_process_a388763de47e217fd742858413c5b169f}{Process\+State}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Property for the state of this process \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_simulator_program}{Simulator\+Program} \hyperlink{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_simulator_process_aed4dc26a67cf9f15930f22941484219a}{program}
+\item 
+\hyperlink{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_simulator_process}{Simulator\+Process} \hyperlink{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_simulator_process_afd143112dcfa59dbc1cab80f65cf685f}{parent\+Process}
+\item 
+List$<$ \hyperlink{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_simulator_process}{Simulator\+Process} $>$ \hyperlink{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_simulator_process_a72edfc38a41a74a935147ea8039ea49c}{child\+Processes}
+\item 
+string \hyperlink{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_simulator_process_aacd55b65bf86395ae3c1a446d580030e}{program\+Name}
+\item 
+string \hyperlink{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_simulator_process_a6d29b67977f07ebb1b6336b96960752b}{process\+Name}
+\item 
+string \hyperlink{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_simulator_process_a83b81537da37b145be64ae507734a67b}{process\+State\+String}
+\item 
+int \hyperlink{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_simulator_process_a122acf698432625719c9ddd0152aab0d}{process\+Priority}
+\item 
+int \hyperlink{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_simulator_process_af574b021e490c03ed55332ee0ed4c067}{process\+Memory}
+\item 
+int \hyperlink{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_simulator_process_a1dc38ec3dc556cacd6de21a0ecd5e440}{process\+I\+D}
+\item 
+int \hyperlink{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_simulator_process_af7c5460498b8fc188df0d4c12b62c15b}{parent\+Process\+I\+D}
+\item 
+int \hyperlink{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_simulator_process_aa70f97b2b63f49ded3d505d104a1f3d9}{process\+Lifetime}
+\item 
+int \hyperlink{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_simulator_process_aaa8160807178efd2cb70364dc48a8c70}{burst\+Time}
+\item 
+bool \hyperlink{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_simulator_process_a18f7668d8580b17e1d55bfa124a923cd}{process\+Swapped}
+\item 
+\hyperlink{namespace_c_p_u___o_s___simulator_1_1_operating___system_a836ee2204e78fcb3a7dd6c3c942b1a24}{Enum\+Process\+State} \hyperlink{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_simulator_process_accb86eff4dc42481372e3d57afbcdad0}{process\+State} = \hyperlink{namespace_c_p_u___o_s___simulator_1_1_operating___system_a03a98a403abc737c106a8f92db5bffc1a696b031073e74bf2cb98e5ef201d4aa3}{Enum\+Process\+State.\+U\+N\+K\+N\+O\+W\+N}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This class represents a process that can be run on the virtual operating system 
+
+
+
+Definition at line 13 of file Simulator\+Process.\+cs.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_simulator_process_a6d9429aba3440d2bde6e8733eeee232f}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Simulator\+Process@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Simulator\+Process}!Simulator\+Process@{Simulator\+Process}}
+\index{Simulator\+Process@{Simulator\+Process}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Simulator\+Process@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Simulator\+Process}}
+\subsubsection[{Simulator\+Process()}]{\setlength{\rightskip}{0pt plus 5cm}C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Operating\+\_\+\+System.\+Simulator\+Process.\+Simulator\+Process (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_simulator_process_a6d9429aba3440d2bde6e8733eeee232f}
+
+
+Default Constructor for a process used when deserialising processes N\+O\+T\+E\+: D\+O N\+O\+T U\+S\+E I\+N C\+O\+D\+E 
+
+
+
+Definition at line 34 of file Simulator\+Process.\+cs.
+
+\hypertarget{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_simulator_process_a30b212f64f058e2f2c06936f8f63a492}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Simulator\+Process@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Simulator\+Process}!Simulator\+Process@{Simulator\+Process}}
+\index{Simulator\+Process@{Simulator\+Process}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Simulator\+Process@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Simulator\+Process}}
+\subsubsection[{Simulator\+Process(\+Process\+Flags flags)}]{\setlength{\rightskip}{0pt plus 5cm}C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Operating\+\_\+\+System.\+Simulator\+Process.\+Simulator\+Process (
+\begin{DoxyParamCaption}
+\item[{{\bf Process\+Flags}}]{flags}
+\end{DoxyParamCaption}
+)}\label{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_simulator_process_a30b212f64f058e2f2c06936f8f63a492}
+
+
+Constructor for a process 
+
+
+\begin{DoxyParams}{Parameters}
+{\em flags} & the flags to create this process with\\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 42 of file Simulator\+Process.\+cs.
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_simulator_process_aaa8160807178efd2cb70364dc48a8c70}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Simulator\+Process@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Simulator\+Process}!burst\+Time@{burst\+Time}}
+\index{burst\+Time@{burst\+Time}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Simulator\+Process@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Simulator\+Process}}
+\subsubsection[{burst\+Time}]{\setlength{\rightskip}{0pt plus 5cm}int C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Operating\+\_\+\+System.\+Simulator\+Process.\+burst\+Time\hspace{0.3cm}{\ttfamily [private]}}\label{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_simulator_process_aaa8160807178efd2cb70364dc48a8c70}
+
+
+Definition at line 26 of file Simulator\+Process.\+cs.
+
+\hypertarget{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_simulator_process_a72edfc38a41a74a935147ea8039ea49c}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Simulator\+Process@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Simulator\+Process}!child\+Processes@{child\+Processes}}
+\index{child\+Processes@{child\+Processes}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Simulator\+Process@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Simulator\+Process}}
+\subsubsection[{child\+Processes}]{\setlength{\rightskip}{0pt plus 5cm}List$<${\bf Simulator\+Process}$>$ C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Operating\+\_\+\+System.\+Simulator\+Process.\+child\+Processes\hspace{0.3cm}{\ttfamily [private]}}\label{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_simulator_process_a72edfc38a41a74a935147ea8039ea49c}
+
+
+Definition at line 17 of file Simulator\+Process.\+cs.
+
+\hypertarget{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_simulator_process_afd143112dcfa59dbc1cab80f65cf685f}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Simulator\+Process@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Simulator\+Process}!parent\+Process@{parent\+Process}}
+\index{parent\+Process@{parent\+Process}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Simulator\+Process@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Simulator\+Process}}
+\subsubsection[{parent\+Process}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Simulator\+Process} C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Operating\+\_\+\+System.\+Simulator\+Process.\+parent\+Process\hspace{0.3cm}{\ttfamily [private]}}\label{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_simulator_process_afd143112dcfa59dbc1cab80f65cf685f}
+
+
+Definition at line 16 of file Simulator\+Process.\+cs.
+
+\hypertarget{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_simulator_process_af7c5460498b8fc188df0d4c12b62c15b}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Simulator\+Process@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Simulator\+Process}!parent\+Process\+I\+D@{parent\+Process\+I\+D}}
+\index{parent\+Process\+I\+D@{parent\+Process\+I\+D}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Simulator\+Process@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Simulator\+Process}}
+\subsubsection[{parent\+Process\+I\+D}]{\setlength{\rightskip}{0pt plus 5cm}int C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Operating\+\_\+\+System.\+Simulator\+Process.\+parent\+Process\+I\+D\hspace{0.3cm}{\ttfamily [private]}}\label{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_simulator_process_af7c5460498b8fc188df0d4c12b62c15b}
+
+
+Definition at line 24 of file Simulator\+Process.\+cs.
+
+\hypertarget{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_simulator_process_a1dc38ec3dc556cacd6de21a0ecd5e440}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Simulator\+Process@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Simulator\+Process}!process\+I\+D@{process\+I\+D}}
+\index{process\+I\+D@{process\+I\+D}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Simulator\+Process@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Simulator\+Process}}
+\subsubsection[{process\+I\+D}]{\setlength{\rightskip}{0pt plus 5cm}int C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Operating\+\_\+\+System.\+Simulator\+Process.\+process\+I\+D\hspace{0.3cm}{\ttfamily [private]}}\label{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_simulator_process_a1dc38ec3dc556cacd6de21a0ecd5e440}
+
+
+Definition at line 23 of file Simulator\+Process.\+cs.
+
+\hypertarget{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_simulator_process_aa70f97b2b63f49ded3d505d104a1f3d9}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Simulator\+Process@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Simulator\+Process}!process\+Lifetime@{process\+Lifetime}}
+\index{process\+Lifetime@{process\+Lifetime}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Simulator\+Process@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Simulator\+Process}}
+\subsubsection[{process\+Lifetime}]{\setlength{\rightskip}{0pt plus 5cm}int C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Operating\+\_\+\+System.\+Simulator\+Process.\+process\+Lifetime\hspace{0.3cm}{\ttfamily [private]}}\label{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_simulator_process_aa70f97b2b63f49ded3d505d104a1f3d9}
+
+
+Definition at line 25 of file Simulator\+Process.\+cs.
+
+\hypertarget{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_simulator_process_af574b021e490c03ed55332ee0ed4c067}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Simulator\+Process@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Simulator\+Process}!process\+Memory@{process\+Memory}}
+\index{process\+Memory@{process\+Memory}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Simulator\+Process@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Simulator\+Process}}
+\subsubsection[{process\+Memory}]{\setlength{\rightskip}{0pt plus 5cm}int C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Operating\+\_\+\+System.\+Simulator\+Process.\+process\+Memory\hspace{0.3cm}{\ttfamily [private]}}\label{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_simulator_process_af574b021e490c03ed55332ee0ed4c067}
+
+
+Definition at line 22 of file Simulator\+Process.\+cs.
+
+\hypertarget{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_simulator_process_a6d29b67977f07ebb1b6336b96960752b}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Simulator\+Process@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Simulator\+Process}!process\+Name@{process\+Name}}
+\index{process\+Name@{process\+Name}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Simulator\+Process@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Simulator\+Process}}
+\subsubsection[{process\+Name}]{\setlength{\rightskip}{0pt plus 5cm}string C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Operating\+\_\+\+System.\+Simulator\+Process.\+process\+Name\hspace{0.3cm}{\ttfamily [private]}}\label{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_simulator_process_a6d29b67977f07ebb1b6336b96960752b}
+
+
+Definition at line 19 of file Simulator\+Process.\+cs.
+
+\hypertarget{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_simulator_process_a122acf698432625719c9ddd0152aab0d}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Simulator\+Process@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Simulator\+Process}!process\+Priority@{process\+Priority}}
+\index{process\+Priority@{process\+Priority}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Simulator\+Process@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Simulator\+Process}}
+\subsubsection[{process\+Priority}]{\setlength{\rightskip}{0pt plus 5cm}int C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Operating\+\_\+\+System.\+Simulator\+Process.\+process\+Priority\hspace{0.3cm}{\ttfamily [private]}}\label{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_simulator_process_a122acf698432625719c9ddd0152aab0d}
+
+
+Definition at line 21 of file Simulator\+Process.\+cs.
+
+\hypertarget{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_simulator_process_accb86eff4dc42481372e3d57afbcdad0}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Simulator\+Process@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Simulator\+Process}!process\+State@{process\+State}}
+\index{process\+State@{process\+State}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Simulator\+Process@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Simulator\+Process}}
+\subsubsection[{process\+State}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Enum\+Process\+State} C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Operating\+\_\+\+System.\+Simulator\+Process.\+process\+State = {\bf Enum\+Process\+State.\+U\+N\+K\+N\+O\+W\+N}\hspace{0.3cm}{\ttfamily [private]}}\label{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_simulator_process_accb86eff4dc42481372e3d57afbcdad0}
+
+
+Definition at line 28 of file Simulator\+Process.\+cs.
+
+\hypertarget{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_simulator_process_a83b81537da37b145be64ae507734a67b}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Simulator\+Process@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Simulator\+Process}!process\+State\+String@{process\+State\+String}}
+\index{process\+State\+String@{process\+State\+String}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Simulator\+Process@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Simulator\+Process}}
+\subsubsection[{process\+State\+String}]{\setlength{\rightskip}{0pt plus 5cm}string C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Operating\+\_\+\+System.\+Simulator\+Process.\+process\+State\+String\hspace{0.3cm}{\ttfamily [private]}}\label{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_simulator_process_a83b81537da37b145be64ae507734a67b}
+
+
+Definition at line 20 of file Simulator\+Process.\+cs.
+
+\hypertarget{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_simulator_process_a18f7668d8580b17e1d55bfa124a923cd}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Simulator\+Process@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Simulator\+Process}!process\+Swapped@{process\+Swapped}}
+\index{process\+Swapped@{process\+Swapped}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Simulator\+Process@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Simulator\+Process}}
+\subsubsection[{process\+Swapped}]{\setlength{\rightskip}{0pt plus 5cm}bool C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Operating\+\_\+\+System.\+Simulator\+Process.\+process\+Swapped\hspace{0.3cm}{\ttfamily [private]}}\label{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_simulator_process_a18f7668d8580b17e1d55bfa124a923cd}
+
+
+Definition at line 27 of file Simulator\+Process.\+cs.
+
+\hypertarget{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_simulator_process_aed4dc26a67cf9f15930f22941484219a}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Simulator\+Process@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Simulator\+Process}!program@{program}}
+\index{program@{program}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Simulator\+Process@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Simulator\+Process}}
+\subsubsection[{program}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Simulator\+Program} C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Operating\+\_\+\+System.\+Simulator\+Process.\+program\hspace{0.3cm}{\ttfamily [private]}}\label{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_simulator_process_aed4dc26a67cf9f15930f22941484219a}
+
+
+Definition at line 15 of file Simulator\+Process.\+cs.
+
+\hypertarget{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_simulator_process_aacd55b65bf86395ae3c1a446d580030e}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Simulator\+Process@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Simulator\+Process}!program\+Name@{program\+Name}}
+\index{program\+Name@{program\+Name}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Simulator\+Process@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Simulator\+Process}}
+\subsubsection[{program\+Name}]{\setlength{\rightskip}{0pt plus 5cm}string C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Operating\+\_\+\+System.\+Simulator\+Process.\+program\+Name\hspace{0.3cm}{\ttfamily [private]}}\label{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_simulator_process_aacd55b65bf86395ae3c1a446d580030e}
+
+
+Definition at line 18 of file Simulator\+Process.\+cs.
+
+
+
+\subsection{Property Documentation}
+\hypertarget{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_simulator_process_a5a340d3421e4251b758752de009b7758}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Simulator\+Process@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Simulator\+Process}!Burst\+Time@{Burst\+Time}}
+\index{Burst\+Time@{Burst\+Time}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Simulator\+Process@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Simulator\+Process}}
+\subsubsection[{Burst\+Time}]{\setlength{\rightskip}{0pt plus 5cm}int C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Operating\+\_\+\+System.\+Simulator\+Process.\+Burst\+Time\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}\label{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_simulator_process_a5a340d3421e4251b758752de009b7758}
+
+
+Property for the burst time of this process 
+
+
+
+Definition at line 151 of file Simulator\+Process.\+cs.
+
+\hypertarget{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_simulator_process_a2bcf12b1ea3ce8c369f53eccf1368277}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Simulator\+Process@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Simulator\+Process}!Child\+Processes@{Child\+Processes}}
+\index{Child\+Processes@{Child\+Processes}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Simulator\+Process@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Simulator\+Process}}
+\subsubsection[{Child\+Processes}]{\setlength{\rightskip}{0pt plus 5cm}List$<${\bf Simulator\+Process}$>$ C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Operating\+\_\+\+System.\+Simulator\+Process.\+Child\+Processes\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}\label{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_simulator_process_a2bcf12b1ea3ce8c369f53eccf1368277}
+
+
+Property for a list of this process\textquotesingle{}s child processes 
+
+
+
+Definition at line 79 of file Simulator\+Process.\+cs.
+
+\hypertarget{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_simulator_process_a4af765ee1a2e9390c9de86fd842a8458}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Simulator\+Process@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Simulator\+Process}!Parent\+Process@{Parent\+Process}}
+\index{Parent\+Process@{Parent\+Process}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Simulator\+Process@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Simulator\+Process}}
+\subsubsection[{Parent\+Process}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Simulator\+Process} C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Operating\+\_\+\+System.\+Simulator\+Process.\+Parent\+Process\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}\label{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_simulator_process_a4af765ee1a2e9390c9de86fd842a8458}
+
+
+Property for this process\textquotesingle{}s parent 
+
+
+
+Definition at line 71 of file Simulator\+Process.\+cs.
+
+\hypertarget{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_simulator_process_a48fc58b8fc6669cfb7f68ce4394c22d2}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Simulator\+Process@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Simulator\+Process}!Parent\+Process\+Id@{Parent\+Process\+Id}}
+\index{Parent\+Process\+Id@{Parent\+Process\+Id}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Simulator\+Process@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Simulator\+Process}}
+\subsubsection[{Parent\+Process\+Id}]{\setlength{\rightskip}{0pt plus 5cm}int C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Operating\+\_\+\+System.\+Simulator\+Process.\+Parent\+Process\+Id\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}\label{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_simulator_process_a48fc58b8fc6669cfb7f68ce4394c22d2}
+
+
+Property for the unique I\+D of the parent process 
+
+
+
+Definition at line 135 of file Simulator\+Process.\+cs.
+
+\hypertarget{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_simulator_process_a83b9c6a1cace7e28127ced9225213100}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Simulator\+Process@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Simulator\+Process}!Process\+Id@{Process\+Id}}
+\index{Process\+Id@{Process\+Id}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Simulator\+Process@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Simulator\+Process}}
+\subsubsection[{Process\+Id}]{\setlength{\rightskip}{0pt plus 5cm}int C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Operating\+\_\+\+System.\+Simulator\+Process.\+Process\+Id\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}\label{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_simulator_process_a83b9c6a1cace7e28127ced9225213100}
+
+
+Property for the unique I\+D of this process 
+
+
+
+Definition at line 127 of file Simulator\+Process.\+cs.
+
+\hypertarget{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_simulator_process_afa82367303a9ea2effba290493847605}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Simulator\+Process@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Simulator\+Process}!Process\+Lifetime@{Process\+Lifetime}}
+\index{Process\+Lifetime@{Process\+Lifetime}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Simulator\+Process@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Simulator\+Process}}
+\subsubsection[{Process\+Lifetime}]{\setlength{\rightskip}{0pt plus 5cm}int C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Operating\+\_\+\+System.\+Simulator\+Process.\+Process\+Lifetime\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}\label{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_simulator_process_afa82367303a9ea2effba290493847605}
+
+
+Property For the lifetime of this process 
+
+
+
+Definition at line 143 of file Simulator\+Process.\+cs.
+
+\hypertarget{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_simulator_process_a2a82c535caf78396aef37d4ba7815408}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Simulator\+Process@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Simulator\+Process}!Process\+Memory@{Process\+Memory}}
+\index{Process\+Memory@{Process\+Memory}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Simulator\+Process@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Simulator\+Process}}
+\subsubsection[{Process\+Memory}]{\setlength{\rightskip}{0pt plus 5cm}int C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Operating\+\_\+\+System.\+Simulator\+Process.\+Process\+Memory\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}\label{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_simulator_process_a2a82c535caf78396aef37d4ba7815408}
+
+
+Property for the amount of memory pages this program has 
+
+
+
+Definition at line 119 of file Simulator\+Process.\+cs.
+
+\hypertarget{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_simulator_process_a8dfd5005352af61610e945094c5369b8}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Simulator\+Process@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Simulator\+Process}!Process\+Name@{Process\+Name}}
+\index{Process\+Name@{Process\+Name}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Simulator\+Process@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Simulator\+Process}}
+\subsubsection[{Process\+Name}]{\setlength{\rightskip}{0pt plus 5cm}string C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Operating\+\_\+\+System.\+Simulator\+Process.\+Process\+Name\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}\label{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_simulator_process_a8dfd5005352af61610e945094c5369b8}
+
+
+Property for the name of this process 
+
+
+
+Definition at line 95 of file Simulator\+Process.\+cs.
+
+\hypertarget{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_simulator_process_a5f5199c59eeb6696cdff475a3d752b8a}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Simulator\+Process@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Simulator\+Process}!Process\+Priority@{Process\+Priority}}
+\index{Process\+Priority@{Process\+Priority}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Simulator\+Process@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Simulator\+Process}}
+\subsubsection[{Process\+Priority}]{\setlength{\rightskip}{0pt plus 5cm}int C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Operating\+\_\+\+System.\+Simulator\+Process.\+Process\+Priority\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}\label{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_simulator_process_a5f5199c59eeb6696cdff475a3d752b8a}
+
+
+Property for the priority of this process 
+
+
+
+Definition at line 111 of file Simulator\+Process.\+cs.
+
+\hypertarget{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_simulator_process_a388763de47e217fd742858413c5b169f}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Simulator\+Process@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Simulator\+Process}!Process\+State@{Process\+State}}
+\index{Process\+State@{Process\+State}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Simulator\+Process@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Simulator\+Process}}
+\subsubsection[{Process\+State}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Enum\+Process\+State} C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Operating\+\_\+\+System.\+Simulator\+Process.\+Process\+State\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}\label{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_simulator_process_a388763de47e217fd742858413c5b169f}
+
+
+Property for the state of this process 
+
+
+
+Definition at line 167 of file Simulator\+Process.\+cs.
+
+\hypertarget{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_simulator_process_a3bd1a31943fcbd2ebb2402bd0fff705f}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Simulator\+Process@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Simulator\+Process}!Process\+State\+String@{Process\+State\+String}}
+\index{Process\+State\+String@{Process\+State\+String}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Simulator\+Process@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Simulator\+Process}}
+\subsubsection[{Process\+State\+String}]{\setlength{\rightskip}{0pt plus 5cm}string C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Operating\+\_\+\+System.\+Simulator\+Process.\+Process\+State\+String\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}\label{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_simulator_process_a3bd1a31943fcbd2ebb2402bd0fff705f}
+
+
+Property for the string representation of this process\textquotesingle{}s state 
+
+
+
+Definition at line 103 of file Simulator\+Process.\+cs.
+
+\hypertarget{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_simulator_process_a7886e0890797887fcdd65b6eac62cfc0}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Simulator\+Process@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Simulator\+Process}!Process\+Swapped@{Process\+Swapped}}
+\index{Process\+Swapped@{Process\+Swapped}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Simulator\+Process@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Simulator\+Process}}
+\subsubsection[{Process\+Swapped}]{\setlength{\rightskip}{0pt plus 5cm}bool C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Operating\+\_\+\+System.\+Simulator\+Process.\+Process\+Swapped\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}\label{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_simulator_process_a7886e0890797887fcdd65b6eac62cfc0}
+
+
+Property for whether this process is swapped out 
+
+
+
+Definition at line 159 of file Simulator\+Process.\+cs.
+
+\hypertarget{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_simulator_process_a594fe15fec1c942ccfbcfa9c345624ee}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Simulator\+Process@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Simulator\+Process}!Program@{Program}}
+\index{Program@{Program}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Simulator\+Process@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Simulator\+Process}}
+\subsubsection[{Program}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Simulator\+Program} C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Operating\+\_\+\+System.\+Simulator\+Process.\+Program\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}\label{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_simulator_process_a594fe15fec1c942ccfbcfa9c345624ee}
+
+
+Property for the program that this process represents 
+
+
+
+Definition at line 63 of file Simulator\+Process.\+cs.
+
+\hypertarget{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_simulator_process_adbe9e17fd9415e4417646309fefbf44b}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Simulator\+Process@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Simulator\+Process}!Program\+Name@{Program\+Name}}
+\index{Program\+Name@{Program\+Name}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Simulator\+Process@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Simulator\+Process}}
+\subsubsection[{Program\+Name}]{\setlength{\rightskip}{0pt plus 5cm}string C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Operating\+\_\+\+System.\+Simulator\+Process.\+Program\+Name\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}\label{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_simulator_process_adbe9e17fd9415e4417646309fefbf44b}
+
+
+Property for the name of the program that makes up this process 
+
+
+
+Definition at line 87 of file Simulator\+Process.\+cs.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Operating System/\hyperlink{_simulator_process_8cs}{Simulator\+Process.\+cs}\end{DoxyCompactItemize}

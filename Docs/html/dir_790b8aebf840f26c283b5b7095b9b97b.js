@@ -1,9 +1,9 @@
 var dir_790b8aebf840f26c283b5b7095b9b97b =
 [
-    [ "App.g.cs", "_debug_2_app_8g_8cs.html", [
+    [ "App.g.cs", "_c_p_u-_o_s_01_simulator_2obj_2_debug_2_app_8g_8cs.html", [
       [ "App", "class_c_p_u___o_s___simulator_1_1_app.html", "class_c_p_u___o_s___simulator_1_1_app" ]
     ] ],
-    [ "App.g.i.cs", "_debug_2_app_8g_8i_8cs.html", [
+    [ "App.g.i.cs", "_c_p_u-_o_s_01_simulator_2obj_2_debug_2_app_8g_8i_8cs.html", [
       [ "App", "class_c_p_u___o_s___simulator_1_1_app.html", "class_c_p_u___o_s___simulator_1_1_app" ]
     ] ],
     [ "ColourPickerWindow.g.cs", "_colour_picker_window_8g_8cs.html", [
@@ -18,16 +18,22 @@ var dir_790b8aebf840f26c283b5b7095b9b97b =
     [ "ConsoleWindow.g.i.cs", "_console_window_8g_8i_8cs.html", [
       [ "ConsoleWindow", "class_c_p_u___o_s___simulator_1_1_console_window.html", "class_c_p_u___o_s___simulator_1_1_console_window" ]
     ] ],
+    [ "FontPickerWindow.g.cs", "_font_picker_window_8g_8cs.html", [
+      [ "FontPickerWindow", "class_c_p_u___o_s___simulator_1_1_font_picker_window.html", "class_c_p_u___o_s___simulator_1_1_font_picker_window" ]
+    ] ],
+    [ "FontPickerWindow.g.i.cs", "_font_picker_window_8g_8i_8cs.html", [
+      [ "FontPickerWindow", "class_c_p_u___o_s___simulator_1_1_font_picker_window.html", "class_c_p_u___o_s___simulator_1_1_font_picker_window" ]
+    ] ],
     [ "InstructionsWindow.g.cs", "_debug_2_instructions_window_8g_8cs.html", [
       [ "InstructionsWindow", "class_c_p_u___o_s___simulator_1_1_instructions_window.html", "class_c_p_u___o_s___simulator_1_1_instructions_window" ]
     ] ],
     [ "InstructionsWindow.g.i.cs", "_debug_2_instructions_window_8g_8i_8cs.html", [
       [ "InstructionsWindow", "class_c_p_u___o_s___simulator_1_1_instructions_window.html", "class_c_p_u___o_s___simulator_1_1_instructions_window" ]
     ] ],
-    [ "MainWindow.g.cs", "_debug_2_main_window_8g_8cs.html", [
+    [ "MainWindow.g.cs", "_c_p_u-_o_s_01_simulator_2obj_2_debug_2_main_window_8g_8cs.html", [
       [ "MainWindow", "class_c_p_u___o_s___simulator_1_1_main_window.html", "class_c_p_u___o_s___simulator_1_1_main_window" ]
     ] ],
-    [ "MainWindow.g.i.cs", "_debug_2_main_window_8g_8i_8cs.html", [
+    [ "MainWindow.g.i.cs", "_c_p_u-_o_s_01_simulator_2obj_2_debug_2_main_window_8g_8i_8cs.html", [
       [ "MainWindow", "class_c_p_u___o_s___simulator_1_1_main_window.html", "class_c_p_u___o_s___simulator_1_1_main_window" ]
     ] ],
     [ "MemoryWindow.g.cs", "_debug_2_memory_window_8g_8cs.html", [
@@ -35,6 +41,12 @@ var dir_790b8aebf840f26c283b5b7095b9b97b =
     ] ],
     [ "MemoryWindow.g.i.cs", "_debug_2_memory_window_8g_8i_8cs.html", [
       [ "MemoryWindow", "class_c_p_u___o_s___simulator_1_1_memory_window.html", "class_c_p_u___o_s___simulator_1_1_memory_window" ]
+    ] ],
+    [ "OperatingSystemMainWindow.g.cs", "_operating_system_main_window_8g_8cs.html", [
+      [ "OperatingSystemMainWindow", "class_c_p_u___o_s___simulator_1_1_operating_system_main_window.html", "class_c_p_u___o_s___simulator_1_1_operating_system_main_window" ]
+    ] ],
+    [ "OperatingSystemMainWindow.g.i.cs", "_operating_system_main_window_8g_8i_8cs.html", [
+      [ "OperatingSystemMainWindow", "class_c_p_u___o_s___simulator_1_1_operating_system_main_window.html", "class_c_p_u___o_s___simulator_1_1_operating_system_main_window" ]
     ] ],
     [ "PageTableWindow.g.cs", "_page_table_window_8g_8cs.html", [
       [ "PageTableWindow", "class_c_p_u___o_s___simulator_1_1_page_table_window.html", "class_c_p_u___o_s___simulator_1_1_page_table_window" ]

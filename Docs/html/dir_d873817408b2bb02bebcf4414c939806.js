@@ -20,5 +20,8 @@ var dir_d873817408b2bb02bebcf4414c939806 =
     ] ],
     [ "NumberOfParametersAttribute.cs", "_number_of_parameters_attribute_8cs.html", [
       [ "NumberOfParametersAttribute", "class_c_p_u___o_s___simulator_1_1_console_1_1_number_of_parameters_attribute.html", "class_c_p_u___o_s___simulator_1_1_console_1_1_number_of_parameters_attribute" ]
+    ] ],
+    [ "PrintableDocument.cs", "_printable_document_8cs.html", [
+      [ "PrintableDocument", "class_c_p_u___o_s___simulator_1_1_console_1_1_printable_document.html", "class_c_p_u___o_s___simulator_1_1_console_1_1_printable_document" ]
     ] ]
 ];

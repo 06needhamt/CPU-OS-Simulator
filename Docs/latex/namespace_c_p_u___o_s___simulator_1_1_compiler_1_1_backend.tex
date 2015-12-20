@@ -1,0 +1,63 @@
+\hypertarget{namespace_c_p_u___o_s___simulator_1_1_compiler_1_1_backend}{}\section{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Compiler.\+Backend Namespace Reference}
+\label{namespace_c_p_u___o_s___simulator_1_1_compiler_1_1_backend}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Compiler.\+Backend@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Compiler.\+Backend}}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{class_c_p_u___o_s___simulator_1_1_compiler_1_1_backend_1_1_instruction_segment}{Instruction\+Segment}
+\begin{DoxyCompactList}\small\item\em this class represents a segment of an instruction i.\+e the opcode or an operand \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{namespace_c_p_u___o_s___simulator_1_1_compiler_1_1_backend_a366a7efa6fcfb05aa404e76da1cf3c5e}{Enum\+Instruction\+Segment\+Sizes} \{ \hyperlink{namespace_c_p_u___o_s___simulator_1_1_compiler_1_1_backend_a366a7efa6fcfb05aa404e76da1cf3c5ea696b031073e74bf2cb98e5ef201d4aa3}{Enum\+Instruction\+Segment\+Sizes.\+U\+N\+K\+N\+O\+W\+N} = -\/1, 
+\hyperlink{namespace_c_p_u___o_s___simulator_1_1_compiler_1_1_backend_a366a7efa6fcfb05aa404e76da1cf3c5ea11bdee9fdefbd8d33a25257557bddbef}{Enum\+Instruction\+Segment\+Sizes.\+O\+P\+C\+O\+D\+E} = 1, 
+\hyperlink{namespace_c_p_u___o_s___simulator_1_1_compiler_1_1_backend_a366a7efa6fcfb05aa404e76da1cf3c5ea11f3de9b2b548c31805cf34d512ee177}{Enum\+Instruction\+Segment\+Sizes.\+O\+P\+E\+R\+A\+N\+D} = 5
+ \}\begin{DoxyCompactList}\small\item\em This enum represents the sizes of all the instruction segments \end{DoxyCompactList}
+\item 
+enum \hyperlink{namespace_c_p_u___o_s___simulator_1_1_compiler_1_1_backend_a39bd0e4034345155514db8f136c9c639}{Enum\+Segment\+Type} \{ \hyperlink{namespace_c_p_u___o_s___simulator_1_1_compiler_1_1_backend_a39bd0e4034345155514db8f136c9c639a696b031073e74bf2cb98e5ef201d4aa3}{Enum\+Segment\+Type.\+U\+N\+K\+N\+O\+W\+N} = -\/1, 
+\hyperlink{namespace_c_p_u___o_s___simulator_1_1_compiler_1_1_backend_a39bd0e4034345155514db8f136c9c639ad17455cfcb88a53f1603fb817e09c2d6}{Enum\+Segment\+Type.\+R\+E\+G\+I\+S\+T\+E\+R} = 0, 
+\hyperlink{namespace_c_p_u___o_s___simulator_1_1_compiler_1_1_backend_a39bd0e4034345155514db8f136c9c639aecc2e9c313faddb07e7da223c1dc5c3f}{Enum\+Segment\+Type.\+V\+A\+L\+U\+E} = 1
+ \}
+\end{DoxyCompactItemize}
+
+
+\subsection{Enumeration Type Documentation}
+\hypertarget{namespace_c_p_u___o_s___simulator_1_1_compiler_1_1_backend_a366a7efa6fcfb05aa404e76da1cf3c5e}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Backend@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Backend}!Enum\+Instruction\+Segment\+Sizes@{Enum\+Instruction\+Segment\+Sizes}}
+\index{Enum\+Instruction\+Segment\+Sizes@{Enum\+Instruction\+Segment\+Sizes}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Backend@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Backend}}
+\subsubsection[{Enum\+Instruction\+Segment\+Sizes}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Compiler.\+Backend.\+Enum\+Instruction\+Segment\+Sizes}\hspace{0.3cm}{\ttfamily [strong]}}\label{namespace_c_p_u___o_s___simulator_1_1_compiler_1_1_backend_a366a7efa6fcfb05aa404e76da1cf3c5e}
+
+
+This enum represents the sizes of all the instruction segments 
+
+\begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{U\+N\+K\+N\+O\+W\+N@{U\+N\+K\+N\+O\+W\+N}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Backend@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Backend}}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Backend@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Backend}!U\+N\+K\+N\+O\+W\+N@{U\+N\+K\+N\+O\+W\+N}}\item[{\em 
+\hypertarget{namespace_c_p_u___o_s___simulator_1_1_compiler_1_1_backend_a366a7efa6fcfb05aa404e76da1cf3c5ea696b031073e74bf2cb98e5ef201d4aa3}{}U\+N\+K\+N\+O\+W\+N\label{namespace_c_p_u___o_s___simulator_1_1_compiler_1_1_backend_a366a7efa6fcfb05aa404e76da1cf3c5ea696b031073e74bf2cb98e5ef201d4aa3}
+}]\index{O\+P\+C\+O\+D\+E@{O\+P\+C\+O\+D\+E}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Backend@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Backend}}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Backend@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Backend}!O\+P\+C\+O\+D\+E@{O\+P\+C\+O\+D\+E}}\item[{\em 
+\hypertarget{namespace_c_p_u___o_s___simulator_1_1_compiler_1_1_backend_a366a7efa6fcfb05aa404e76da1cf3c5ea11bdee9fdefbd8d33a25257557bddbef}{}O\+P\+C\+O\+D\+E\label{namespace_c_p_u___o_s___simulator_1_1_compiler_1_1_backend_a366a7efa6fcfb05aa404e76da1cf3c5ea11bdee9fdefbd8d33a25257557bddbef}
+}]\index{O\+P\+E\+R\+A\+N\+D@{O\+P\+E\+R\+A\+N\+D}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Backend@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Backend}}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Backend@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Backend}!O\+P\+E\+R\+A\+N\+D@{O\+P\+E\+R\+A\+N\+D}}\item[{\em 
+\hypertarget{namespace_c_p_u___o_s___simulator_1_1_compiler_1_1_backend_a366a7efa6fcfb05aa404e76da1cf3c5ea11f3de9b2b548c31805cf34d512ee177}{}O\+P\+E\+R\+A\+N\+D\label{namespace_c_p_u___o_s___simulator_1_1_compiler_1_1_backend_a366a7efa6fcfb05aa404e76da1cf3c5ea11f3de9b2b548c31805cf34d512ee177}
+}]\end{description}
+\end{Desc}
+
+
+Definition at line 6 of file Enum\+Instruction\+Segment\+Sizes.\+cs.
+
+\hypertarget{namespace_c_p_u___o_s___simulator_1_1_compiler_1_1_backend_a39bd0e4034345155514db8f136c9c639}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Backend@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Backend}!Enum\+Segment\+Type@{Enum\+Segment\+Type}}
+\index{Enum\+Segment\+Type@{Enum\+Segment\+Type}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Backend@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Backend}}
+\subsubsection[{Enum\+Segment\+Type}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Compiler.\+Backend.\+Enum\+Segment\+Type}\hspace{0.3cm}{\ttfamily [strong]}}\label{namespace_c_p_u___o_s___simulator_1_1_compiler_1_1_backend_a39bd0e4034345155514db8f136c9c639}
+\begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{U\+N\+K\+N\+O\+W\+N@{U\+N\+K\+N\+O\+W\+N}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Backend@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Backend}}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Backend@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Backend}!U\+N\+K\+N\+O\+W\+N@{U\+N\+K\+N\+O\+W\+N}}\item[{\em 
+\hypertarget{namespace_c_p_u___o_s___simulator_1_1_compiler_1_1_backend_a39bd0e4034345155514db8f136c9c639a696b031073e74bf2cb98e5ef201d4aa3}{}U\+N\+K\+N\+O\+W\+N\label{namespace_c_p_u___o_s___simulator_1_1_compiler_1_1_backend_a39bd0e4034345155514db8f136c9c639a696b031073e74bf2cb98e5ef201d4aa3}
+}]\index{R\+E\+G\+I\+S\+T\+E\+R@{R\+E\+G\+I\+S\+T\+E\+R}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Backend@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Backend}}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Backend@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Backend}!R\+E\+G\+I\+S\+T\+E\+R@{R\+E\+G\+I\+S\+T\+E\+R}}\item[{\em 
+\hypertarget{namespace_c_p_u___o_s___simulator_1_1_compiler_1_1_backend_a39bd0e4034345155514db8f136c9c639ad17455cfcb88a53f1603fb817e09c2d6}{}R\+E\+G\+I\+S\+T\+E\+R\label{namespace_c_p_u___o_s___simulator_1_1_compiler_1_1_backend_a39bd0e4034345155514db8f136c9c639ad17455cfcb88a53f1603fb817e09c2d6}
+}]\index{V\+A\+L\+U\+E@{V\+A\+L\+U\+E}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Backend@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Backend}}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Backend@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Backend}!V\+A\+L\+U\+E@{V\+A\+L\+U\+E}}\item[{\em 
+\hypertarget{namespace_c_p_u___o_s___simulator_1_1_compiler_1_1_backend_a39bd0e4034345155514db8f136c9c639aecc2e9c313faddb07e7da223c1dc5c3f}{}V\+A\+L\+U\+E\label{namespace_c_p_u___o_s___simulator_1_1_compiler_1_1_backend_a39bd0e4034345155514db8f136c9c639aecc2e9c313faddb07e7da223c1dc5c3f}
+}]\end{description}
+\end{Desc}
+
+
+Definition at line 3 of file Enum\+Segment\+Type.\+cs.
+

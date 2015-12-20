@@ -71,6 +71,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow2" class="tabs2">
     <ul class="tablist">
       <li><a href="files.html"><span>File&#160;List</span></a></li>
+      <li><a href="globals.html"><span>File&#160;Members</span></a></li>
     </ul>
   </div>
 </div><!-- top -->
@@ -107,30 +108,28 @@ $(document).ready(function(){initNavTree('_extensions_8cs_source.html','');});
 <div class="title">Extensions.cs</div>  </div>
 </div><!--header-->
 <div class="contents">
-<a href="_extensions_8cs.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="keyword">using</span> <a class="code" href="namespace_system.html">System</a>.ComponentModel;</div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="keyword">using</span> <a class="code" href="namespace_system.html">System</a>.Reflection;</div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;</div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespace_c_p_u___o_s___simulator.html">CPU_OS_Simulator</a>.Console</div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;{</div>
-<div class="line"><a name="l00009"></a><span class="lineno"><a class="line" href="class_c_p_u___o_s___simulator_1_1_console_1_1_extentions.html">    9</a></span>&#160;    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">class </span><a class="code" href="class_c_p_u___o_s___simulator_1_1_console_1_1_extentions.html">Extentions</a></div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;    {</div>
-<div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="class_c_p_u___o_s___simulator_1_1_console_1_1_extentions.html#a3496e569943109589d523e9854148b6c">   17</a></span>&#160;        <span class="keyword">public</span> <span class="keyword">static</span> <span class="keywordtype">int</span> NumberOfParametersAttr&lt;T&gt;(<span class="keyword">this</span> T source)</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;        {</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;            FieldInfo fi = source.GetType().GetField(source.ToString());</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;            <a class="code" href="class_c_p_u___o_s___simulator_1_1_console_1_1_number_of_parameters_attribute.html">NumberOfParametersAttribute</a>[] attributes = (<a class="code" href="class_c_p_u___o_s___simulator_1_1_console_1_1_number_of_parameters_attribute.html">NumberOfParametersAttribute</a>[])fi.GetCustomAttributes(typeof(<a class="code" href="class_c_p_u___o_s___simulator_1_1_console_1_1_number_of_parameters_attribute.html">NumberOfParametersAttribute</a>), <span class="keyword">false</span>);</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;            <span class="keywordflow">if</span> (attributes != null &amp;&amp; attributes.Length &gt; 0)</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;                <span class="keywordflow">return</span> attributes[0].<a class="code" href="class_c_p_u___o_s___simulator_1_1_console_1_1_number_of_parameters_attribute.html#a7e083af44b45e3e68868d0d5d1991000">Value</a>;</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;            <span class="keywordflow">else</span></div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;                <span class="keywordflow">return</span> 0;</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        }</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    }</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;}</div>
+<a href="_extensions_8cs.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="keyword">using</span> <a class="code" href="namespace_system.html">System</a>.Reflection;</div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;</div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespace_c_p_u___o_s___simulator.html">CPU_OS_Simulator</a>.Console</div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;{</div>
+<div class="line"><a name="l00008"></a><span class="lineno"><a class="line" href="class_c_p_u___o_s___simulator_1_1_console_1_1_extentions.html">    8</a></span>&#160;    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">class </span><a class="code" href="class_c_p_u___o_s___simulator_1_1_console_1_1_extentions.html">Extentions</a></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;    {</div>
+<div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="class_c_p_u___o_s___simulator_1_1_console_1_1_extentions.html#a3496e569943109589d523e9854148b6c">   16</a></span>&#160;        <span class="keyword">public</span> <span class="keyword">static</span> <span class="keywordtype">int</span> NumberOfParametersAttr&lt;T&gt;(<span class="keyword">this</span> T source)</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;        {</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;            FieldInfo fi = source.GetType().GetField(source.ToString());</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;            <a class="code" href="class_c_p_u___o_s___simulator_1_1_console_1_1_number_of_parameters_attribute.html">NumberOfParametersAttribute</a>[] attributes = (<a class="code" href="class_c_p_u___o_s___simulator_1_1_console_1_1_number_of_parameters_attribute.html">NumberOfParametersAttribute</a>[])fi.GetCustomAttributes(typeof(<a class="code" href="class_c_p_u___o_s___simulator_1_1_console_1_1_number_of_parameters_attribute.html">NumberOfParametersAttribute</a>), <span class="keyword">false</span>);</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;            <span class="keywordflow">if</span> (attributes != null &amp;&amp; attributes.Length &gt; 0)</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;                <span class="keywordflow">return</span> attributes[0].<a class="code" href="class_c_p_u___o_s___simulator_1_1_console_1_1_number_of_parameters_attribute.html#a7e083af44b45e3e68868d0d5d1991000">Value</a>;</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;            <span class="keywordflow">return</span> 0;</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        }</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    }</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;}</div>
 <div class="ttc" id="namespace_c_p_u___o_s___simulator_html"><div class="ttname"><a href="namespace_c_p_u___o_s___simulator.html">CPU_OS_Simulator</a></div></div>
 <div class="ttc" id="namespace_system_html"><div class="ttname"><a href="namespace_system.html">System</a></div></div>
-<div class="ttc" id="class_c_p_u___o_s___simulator_1_1_console_1_1_extentions_html"><div class="ttname"><a href="class_c_p_u___o_s___simulator_1_1_console_1_1_extentions.html">CPU_OS_Simulator.Console.Extentions</a></div><div class="ttdoc">This class contains extension methods for getting attributes from enum items </div><div class="ttdef"><b>Definition:</b> <a href="_extensions_8cs_source.html#l00009">Extensions.cs:9</a></div></div>
+<div class="ttc" id="class_c_p_u___o_s___simulator_1_1_console_1_1_extentions_html"><div class="ttname"><a href="class_c_p_u___o_s___simulator_1_1_console_1_1_extentions.html">CPU_OS_Simulator.Console.Extentions</a></div><div class="ttdoc">This class contains extension methods for getting attributes from enum items </div><div class="ttdef"><b>Definition:</b> <a href="_extensions_8cs_source.html#l00008">Extensions.cs:8</a></div></div>
 <div class="ttc" id="class_c_p_u___o_s___simulator_1_1_console_1_1_number_of_parameters_attribute_html"><div class="ttname"><a href="class_c_p_u___o_s___simulator_1_1_console_1_1_number_of_parameters_attribute.html">CPU_OS_Simulator.Console.NumberOfParametersAttribute</a></div><div class="ttdoc">This class represents an attribute placed on console commands to indicate how many parameters they ta...</div><div class="ttdef"><b>Definition:</b> <a href="_number_of_parameters_attribute_8cs_source.html#l00008">NumberOfParametersAttribute.cs:8</a></div></div>
 <div class="ttc" id="class_c_p_u___o_s___simulator_1_1_console_1_1_number_of_parameters_attribute_html_a7e083af44b45e3e68868d0d5d1991000"><div class="ttname"><a href="class_c_p_u___o_s___simulator_1_1_console_1_1_number_of_parameters_attribute.html#a7e083af44b45e3e68868d0d5d1991000">CPU_OS_Simulator.Console.NumberOfParametersAttribute.Value</a></div><div class="ttdeci">int Value</div><div class="ttdoc">Property to store the value of the attribute </div><div class="ttdef"><b>Definition:</b> <a href="_number_of_parameters_attribute_8cs_source.html#l00023">NumberOfParametersAttribute.cs:23</a></div></div>
 </div><!-- fragment --></div><!-- contents -->

@@ -1,0 +1,177 @@
+\hypertarget{class_c_p_u___o_s___simulator_1_1_compiler_1_1_compiler_main}{}\section{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Compiler.\+Compiler\+Main Class Reference}
+\label{class_c_p_u___o_s___simulator_1_1_compiler_1_1_compiler_main}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Compiler.\+Compiler\+Main@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Compiler.\+Compiler\+Main}}
+
+
+This class represents the front end of the compiler which is responsible for compiling programs  
+
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_c_p_u___o_s___simulator_1_1_compiler_1_1_compiler_main_a50d01f6e7db4b9facb3fdc84e8566fd7}{Compiler\+Main} (\hyperlink{class_c_p_u___o_s___simulator_1_1_compiler_1_1_source_file}{Source\+File} \hyperlink{class_c_p_u___o_s___simulator_1_1_compiler_1_1_compiler_main_ac6a47299c228ea71c732f35572fa666f}{file})
+\begin{DoxyCompactList}\small\item\em Constructor for \hyperlink{namespace_c_p_u___o_s___simulator_1_1_compiler}{Compiler} front end when compiling source files \end{DoxyCompactList}\item 
+\hyperlink{class_c_p_u___o_s___simulator_1_1_compiler_1_1_compiler_main_a7beede81b8461570391e1b0f8bc5f1ed}{Compiler\+Main} (List$<$ \hyperlink{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_instruction}{Instruction} $>$ \hyperlink{class_c_p_u___o_s___simulator_1_1_compiler_1_1_compiler_main_a0b0b37341f48e60f2ee769ea4ba760d2}{instructions}, string \hyperlink{class_c_p_u___o_s___simulator_1_1_compiler_1_1_compiler_main_a39370e54e39a32c7eb9dce2f9b49cefe}{name})
+\begin{DoxyCompactList}\small\item\em Constructor for compiler front end when compiling instructions \end{DoxyCompactList}\item 
+List$<$ List$<$ \hyperlink{class_c_p_u___o_s___simulator_1_1_compiler_1_1_backend_1_1_instruction_segment}{Instruction\+Segment} $>$ $>$ \hyperlink{class_c_p_u___o_s___simulator_1_1_compiler_1_1_compiler_main_af15e3239f4bc005fffd4e20e694a6593}{Compile\+From\+Source\+File} ()
+\item 
+List$<$ List$<$ \hyperlink{class_c_p_u___o_s___simulator_1_1_compiler_1_1_backend_1_1_instruction_segment}{Instruction\+Segment} $>$ $>$ \hyperlink{class_c_p_u___o_s___simulator_1_1_compiler_1_1_compiler_main_a9f4ff6dfc17da56e428d7a5d52eeda18}{Compile\+From\+Instructions} ()
+\begin{DoxyCompactList}\small\item\em This function compiles a program from instructions \end{DoxyCompactList}\item 
+List$<$ byte $>$ \hyperlink{class_c_p_u___o_s___simulator_1_1_compiler_1_1_compiler_main_aaaa9dbfb3784bd3f4f2f7c5c457a8d0e}{Compile\+To\+Bytes} (List$<$ List$<$ \hyperlink{class_c_p_u___o_s___simulator_1_1_compiler_1_1_backend_1_1_instruction_segment}{Instruction\+Segment} $>$$>$ segment\+Lists)
+\begin{DoxyCompactList}\small\item\em This function compiles a list of lists of instruction segments to their byte values \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{namespace_c_p_u___o_s___simulator_1_1_compiler_ada8d93b571fa15a0f2eac8c9647a89fe}{Enum\+Compiler\+Mode} \hyperlink{class_c_p_u___o_s___simulator_1_1_compiler_1_1_compiler_main_a064e52c2639d79cdec216d4ee7d384e9}{mode} = \hyperlink{namespace_c_p_u___o_s___simulator_1_1_compiler_ada8d93b571fa15a0f2eac8c9647a89fea696b031073e74bf2cb98e5ef201d4aa3}{Enum\+Compiler\+Mode.\+U\+N\+K\+N\+O\+W\+N}
+\item 
+\hyperlink{class_c_p_u___o_s___simulator_1_1_compiler_1_1_source_file}{Source\+File} \hyperlink{class_c_p_u___o_s___simulator_1_1_compiler_1_1_compiler_main_ac6a47299c228ea71c732f35572fa666f}{file}
+\item 
+List$<$ \hyperlink{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_instruction}{Instruction} $>$ \hyperlink{class_c_p_u___o_s___simulator_1_1_compiler_1_1_compiler_main_a0b0b37341f48e60f2ee769ea4ba760d2}{instructions}
+\item 
+string \hyperlink{class_c_p_u___o_s___simulator_1_1_compiler_1_1_compiler_main_a39370e54e39a32c7eb9dce2f9b49cefe}{name} = String.\+Empty
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This class represents the front end of the compiler which is responsible for compiling programs 
+
+
+
+Definition at line 13 of file Compiler\+Main.\+cs.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_c_p_u___o_s___simulator_1_1_compiler_1_1_compiler_main_a50d01f6e7db4b9facb3fdc84e8566fd7}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Compiler\+Main@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Compiler\+Main}!Compiler\+Main@{Compiler\+Main}}
+\index{Compiler\+Main@{Compiler\+Main}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Compiler\+Main@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Compiler\+Main}}
+\subsubsection[{Compiler\+Main(\+Source\+File file)}]{\setlength{\rightskip}{0pt plus 5cm}C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Compiler.\+Compiler\+Main.\+Compiler\+Main (
+\begin{DoxyParamCaption}
+\item[{{\bf Source\+File}}]{file}
+\end{DoxyParamCaption}
+)}\label{class_c_p_u___o_s___simulator_1_1_compiler_1_1_compiler_main_a50d01f6e7db4b9facb3fdc84e8566fd7}
+
+
+Constructor for \hyperlink{namespace_c_p_u___o_s___simulator_1_1_compiler}{Compiler} front end when compiling source files 
+
+
+\begin{DoxyParams}{Parameters}
+{\em file} & the source file to compile\\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 24 of file Compiler\+Main.\+cs.
+
+\hypertarget{class_c_p_u___o_s___simulator_1_1_compiler_1_1_compiler_main_a7beede81b8461570391e1b0f8bc5f1ed}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Compiler\+Main@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Compiler\+Main}!Compiler\+Main@{Compiler\+Main}}
+\index{Compiler\+Main@{Compiler\+Main}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Compiler\+Main@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Compiler\+Main}}
+\subsubsection[{Compiler\+Main(\+List$<$ Instruction $>$ instructions, string name)}]{\setlength{\rightskip}{0pt plus 5cm}C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Compiler.\+Compiler\+Main.\+Compiler\+Main (
+\begin{DoxyParamCaption}
+\item[{List$<$ {\bf Instruction} $>$}]{instructions, }
+\item[{string}]{name}
+\end{DoxyParamCaption}
+)}\label{class_c_p_u___o_s___simulator_1_1_compiler_1_1_compiler_main_a7beede81b8461570391e1b0f8bc5f1ed}
+
+
+Constructor for compiler front end when compiling instructions 
+
+
+\begin{DoxyParams}{Parameters}
+{\em instructions} & the instructions to compile\\
+\hline
+{\em name} & the name of the program to compile\\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 35 of file Compiler\+Main.\+cs.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_c_p_u___o_s___simulator_1_1_compiler_1_1_compiler_main_a9f4ff6dfc17da56e428d7a5d52eeda18}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Compiler\+Main@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Compiler\+Main}!Compile\+From\+Instructions@{Compile\+From\+Instructions}}
+\index{Compile\+From\+Instructions@{Compile\+From\+Instructions}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Compiler\+Main@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Compiler\+Main}}
+\subsubsection[{Compile\+From\+Instructions()}]{\setlength{\rightskip}{0pt plus 5cm}List$<$List$<${\bf Instruction\+Segment}$>$ $>$ C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Compiler.\+Compiler\+Main.\+Compile\+From\+Instructions (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{class_c_p_u___o_s___simulator_1_1_compiler_1_1_compiler_main_a9f4ff6dfc17da56e428d7a5d52eeda18}
+
+
+This function compiles a program from instructions 
+
+\begin{DoxyReturn}{Returns}
+a list of lists of instruction segments that represent the original instructions
+\end{DoxyReturn}
+
+
+Definition at line 55 of file Compiler\+Main.\+cs.
+
+\hypertarget{class_c_p_u___o_s___simulator_1_1_compiler_1_1_compiler_main_af15e3239f4bc005fffd4e20e694a6593}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Compiler\+Main@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Compiler\+Main}!Compile\+From\+Source\+File@{Compile\+From\+Source\+File}}
+\index{Compile\+From\+Source\+File@{Compile\+From\+Source\+File}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Compiler\+Main@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Compiler\+Main}}
+\subsubsection[{Compile\+From\+Source\+File()}]{\setlength{\rightskip}{0pt plus 5cm}List$<$List$<${\bf Instruction\+Segment}$>$ $>$ C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Compiler.\+Compiler\+Main.\+Compile\+From\+Source\+File (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{class_c_p_u___o_s___simulator_1_1_compiler_1_1_compiler_main_af15e3239f4bc005fffd4e20e694a6593}
+
+
+Definition at line 43 of file Compiler\+Main.\+cs.
+
+\hypertarget{class_c_p_u___o_s___simulator_1_1_compiler_1_1_compiler_main_aaaa9dbfb3784bd3f4f2f7c5c457a8d0e}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Compiler\+Main@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Compiler\+Main}!Compile\+To\+Bytes@{Compile\+To\+Bytes}}
+\index{Compile\+To\+Bytes@{Compile\+To\+Bytes}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Compiler\+Main@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Compiler\+Main}}
+\subsubsection[{Compile\+To\+Bytes(\+List$<$ List$<$ Instruction\+Segment $>$$>$ segment\+Lists)}]{\setlength{\rightskip}{0pt plus 5cm}List$<$byte$>$ C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Compiler.\+Compiler\+Main.\+Compile\+To\+Bytes (
+\begin{DoxyParamCaption}
+\item[{List$<$ List$<$ {\bf Instruction\+Segment} $>$$>$}]{segment\+Lists}
+\end{DoxyParamCaption}
+)}\label{class_c_p_u___o_s___simulator_1_1_compiler_1_1_compiler_main_aaaa9dbfb3784bd3f4f2f7c5c457a8d0e}
+
+
+This function compiles a list of lists of instruction segments to their byte values 
+
+
+\begin{DoxyParams}{Parameters}
+{\em segment\+Lists} & a list of lists of instruction segments to be compiled\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a list of bytes that represent the instruction segments
+\end{DoxyReturn}
+
+
+Definition at line 111 of file Compiler\+Main.\+cs.
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{class_c_p_u___o_s___simulator_1_1_compiler_1_1_compiler_main_ac6a47299c228ea71c732f35572fa666f}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Compiler\+Main@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Compiler\+Main}!file@{file}}
+\index{file@{file}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Compiler\+Main@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Compiler\+Main}}
+\subsubsection[{file}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Source\+File} C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Compiler.\+Compiler\+Main.\+file\hspace{0.3cm}{\ttfamily [private]}}\label{class_c_p_u___o_s___simulator_1_1_compiler_1_1_compiler_main_ac6a47299c228ea71c732f35572fa666f}
+
+
+Definition at line 16 of file Compiler\+Main.\+cs.
+
+\hypertarget{class_c_p_u___o_s___simulator_1_1_compiler_1_1_compiler_main_a0b0b37341f48e60f2ee769ea4ba760d2}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Compiler\+Main@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Compiler\+Main}!instructions@{instructions}}
+\index{instructions@{instructions}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Compiler\+Main@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Compiler\+Main}}
+\subsubsection[{instructions}]{\setlength{\rightskip}{0pt plus 5cm}List$<${\bf Instruction}$>$ C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Compiler.\+Compiler\+Main.\+instructions\hspace{0.3cm}{\ttfamily [private]}}\label{class_c_p_u___o_s___simulator_1_1_compiler_1_1_compiler_main_a0b0b37341f48e60f2ee769ea4ba760d2}
+
+
+Definition at line 17 of file Compiler\+Main.\+cs.
+
+\hypertarget{class_c_p_u___o_s___simulator_1_1_compiler_1_1_compiler_main_a064e52c2639d79cdec216d4ee7d384e9}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Compiler\+Main@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Compiler\+Main}!mode@{mode}}
+\index{mode@{mode}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Compiler\+Main@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Compiler\+Main}}
+\subsubsection[{mode}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Enum\+Compiler\+Mode} C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Compiler.\+Compiler\+Main.\+mode = {\bf Enum\+Compiler\+Mode.\+U\+N\+K\+N\+O\+W\+N}\hspace{0.3cm}{\ttfamily [private]}}\label{class_c_p_u___o_s___simulator_1_1_compiler_1_1_compiler_main_a064e52c2639d79cdec216d4ee7d384e9}
+
+
+Definition at line 15 of file Compiler\+Main.\+cs.
+
+\hypertarget{class_c_p_u___o_s___simulator_1_1_compiler_1_1_compiler_main_a39370e54e39a32c7eb9dce2f9b49cefe}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Compiler\+Main@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Compiler\+Main}!name@{name}}
+\index{name@{name}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Compiler\+Main@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Compiler\+Main}}
+\subsubsection[{name}]{\setlength{\rightskip}{0pt plus 5cm}string C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Compiler.\+Compiler\+Main.\+name = String.\+Empty\hspace{0.3cm}{\ttfamily [private]}}\label{class_c_p_u___o_s___simulator_1_1_compiler_1_1_compiler_main_a39370e54e39a32c7eb9dce2f9b49cefe}
+
+
+Definition at line 18 of file Compiler\+Main.\+cs.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Compiler/\hyperlink{_compiler_main_8cs}{Compiler\+Main.\+cs}\end{DoxyCompactItemize}

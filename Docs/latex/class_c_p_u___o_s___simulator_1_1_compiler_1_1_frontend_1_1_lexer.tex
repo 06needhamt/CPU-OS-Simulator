@@ -1,0 +1,535 @@
+\hypertarget{class_c_p_u___o_s___simulator_1_1_compiler_1_1_frontend_1_1_lexer}{}\section{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Compiler.\+Frontend.\+Lexer Class Reference}
+\label{class_c_p_u___o_s___simulator_1_1_compiler_1_1_frontend_1_1_lexer}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Compiler.\+Frontend.\+Lexer@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Compiler.\+Frontend.\+Lexer}}
+
+
+This class represents the lexer for the simulator programming language the lexer converts the source code into tokens for parsing to an Abstract Syntax Tree  
+
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_c_p_u___o_s___simulator_1_1_compiler_1_1_frontend_1_1_lexer_ad1b8ba022e0f486f963bf7f2104ef03d}{Lexer} (string \hyperlink{class_c_p_u___o_s___simulator_1_1_compiler_1_1_frontend_1_1_lexer_a735068e1008912edac69416bac78cef1}{source\+String})
+\item 
+bool \hyperlink{class_c_p_u___o_s___simulator_1_1_compiler_1_1_frontend_1_1_lexer_aa1d03860beb60dbb0c69ebbe70203def}{Start} ()
+\begin{DoxyCompactList}\small\item\em This function is called to start the lexer \end{DoxyCompactList}\item 
+void \hyperlink{class_c_p_u___o_s___simulator_1_1_compiler_1_1_frontend_1_1_lexer_a03760dde9cbc1aa09267e98d0788e544}{Define\+Variables} ()
+\item 
+void \hyperlink{class_c_p_u___o_s___simulator_1_1_compiler_1_1_frontend_1_1_lexer_ab611ae0862d84b5446643fd75577324e}{Define\+Subroutines} ()
+\item 
+void \hyperlink{class_c_p_u___o_s___simulator_1_1_compiler_1_1_frontend_1_1_lexer_a9fa262282fe000e66c4f97b899c39cdc}{Identify\+Unknown\+Tokens} ()
+\item 
+void \hyperlink{class_c_p_u___o_s___simulator_1_1_compiler_1_1_frontend_1_1_lexer_a6c12b898a982f63169687cca009d18e5}{Print\+Tokens} ()
+\end{DoxyCompactItemize}
+\subsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+bool \hyperlink{class_c_p_u___o_s___simulator_1_1_compiler_1_1_frontend_1_1_lexer_ab036c4c1dbff32b7a8a54d58f4c4195c}{Writing\+To\+Compiler\+Tester}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Property to hold whether we are writing the compiler tester app or not \end{DoxyCompactList}\item 
+Text\+Box \hyperlink{class_c_p_u___o_s___simulator_1_1_compiler_1_1_frontend_1_1_lexer_adac6a4e1c23134a8c848bb35de4f39ff}{Output}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Property to hold the text box to display lexer output to \end{DoxyCompactList}\item 
+string \hyperlink{class_c_p_u___o_s___simulator_1_1_compiler_1_1_frontend_1_1_lexer_a0e9d13cd92a7b359a8857e940f0af767}{Error}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Property for the string representation of the error that occurred while lexing \end{DoxyCompactList}\item 
+Linked\+List$<$ \hyperlink{class_c_p_u___o_s___simulator_1_1_compiler_1_1_frontend_1_1_tokens_1_1_token}{Token} $>$ \hyperlink{class_c_p_u___o_s___simulator_1_1_compiler_1_1_frontend_1_1_lexer_a08611849f2bad0c53f5707d15dbdc840}{Tokens}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Property for the linked list of tokens produced by the lexer \end{DoxyCompactList}\item 
+List$<$ Tuple$<$ string, \hyperlink{namespace_c_p_u___o_s___simulator_1_1_compiler_1_1_frontend_1_1_tokens_a7c0cc43763cc9d01c7d5af34d70b96ea}{Enum\+Types}, string $>$ $>$ \hyperlink{class_c_p_u___o_s___simulator_1_1_compiler_1_1_frontend_1_1_lexer_abb832df2e4dc0a135eca9e20aeafc25f}{Variables}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\item 
+List$<$ Tuple$<$ string, \hyperlink{namespace_c_p_u___o_s___simulator_1_1_compiler_1_1_frontend_1_1_tokens_a7c0cc43763cc9d01c7d5af34d70b96ea}{Enum\+Types}, string $>$ $>$ \hyperlink{class_c_p_u___o_s___simulator_1_1_compiler_1_1_frontend_1_1_lexer_aba6b80bb384466d01497af6a343f2eb4}{Subroutines}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\item 
+List$<$ Tuple$<$ string, \hyperlink{namespace_c_p_u___o_s___simulator_1_1_compiler_1_1_frontend_1_1_tokens_a7c0cc43763cc9d01c7d5af34d70b96ea}{Enum\+Types}, string $>$ $>$ \hyperlink{class_c_p_u___o_s___simulator_1_1_compiler_1_1_frontend_1_1_lexer_ac414167d172802ee774d998b1c20b2dd}{Functions}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{class_c_p_u___o_s___simulator_1_1_compiler_1_1_frontend_1_1_lexer_aa2cc4a7f138f9c6b8bda051eb08cd0e6}{Remove\+Whitespace} ()
+\item 
+void \hyperlink{class_c_p_u___o_s___simulator_1_1_compiler_1_1_frontend_1_1_lexer_a20ba99982182d2482f56f46d4d661a7d}{Define\+Functions} ()
+\item 
+string \hyperlink{class_c_p_u___o_s___simulator_1_1_compiler_1_1_frontend_1_1_lexer_a40799e3f75747b0e6e7bc7e3dc5a3856}{Get\+Variable\+Value} (Linked\+List\+Node$<$ \hyperlink{class_c_p_u___o_s___simulator_1_1_compiler_1_1_frontend_1_1_tokens_1_1_token}{Token} $>$ token)
+\item 
+\hyperlink{namespace_c_p_u___o_s___simulator_1_1_compiler_1_1_frontend_1_1_tokens_a7c0cc43763cc9d01c7d5af34d70b96ea}{Enum\+Types} \hyperlink{class_c_p_u___o_s___simulator_1_1_compiler_1_1_frontend_1_1_lexer_a51100f91cf5093df274114f32d210a91}{Get\+Variable\+Type} (Linked\+List\+Node$<$ \hyperlink{class_c_p_u___o_s___simulator_1_1_compiler_1_1_frontend_1_1_tokens_1_1_token}{Token} $>$ token)
+\item 
+string \hyperlink{class_c_p_u___o_s___simulator_1_1_compiler_1_1_frontend_1_1_lexer_a9654723fcd32311aefbfcfbc0888e4bc}{Get\+Variable\+Name} (Linked\+List\+Node$<$ \hyperlink{class_c_p_u___o_s___simulator_1_1_compiler_1_1_frontend_1_1_tokens_1_1_token}{Token} $>$ token)
+\item 
+void \hyperlink{class_c_p_u___o_s___simulator_1_1_compiler_1_1_frontend_1_1_lexer_a024d4fa0d9659b9ac9f7446baa7e99ba}{Print\+Warnings} ()
+\begin{DoxyCompactList}\small\item\em This function print out any warnings produced while lexing \end{DoxyCompactList}\item 
+List$<$ string $>$ \hyperlink{class_c_p_u___o_s___simulator_1_1_compiler_1_1_frontend_1_1_lexer_a3cb07219d31cbf42ce171abf1af266be}{Check\+For\+Warnings} ()
+\begin{DoxyCompactList}\small\item\em This function checks the code for any warnings \end{DoxyCompactList}\item 
+bool \hyperlink{class_c_p_u___o_s___simulator_1_1_compiler_1_1_frontend_1_1_lexer_a55107682df54c395363fa466bbd47be9}{Check\+For\+Errors} ()
+\begin{DoxyCompactList}\small\item\em This function checks the code for errors \end{DoxyCompactList}\item 
+void \hyperlink{class_c_p_u___o_s___simulator_1_1_compiler_1_1_frontend_1_1_lexer_a64e6ce60e37e5cf153dbbc8757fea55c}{Throw\+Error} (\hyperlink{namespace_c_p_u___o_s___simulator_1_1_compiler_1_1_frontend_a268b68f35fd94ce3549dd33a7e77d7e8}{Enum\+Error\+Codes} enum\+Error\+Codes, string expected\+Token)
+\begin{DoxyCompactList}\small\item\em This function creates an error message to display in a message box to the user indicating what type of error occurred \end{DoxyCompactList}\item 
+Linked\+List$<$ \hyperlink{class_c_p_u___o_s___simulator_1_1_compiler_1_1_frontend_1_1_tokens_1_1_token}{Token} $>$ \hyperlink{class_c_p_u___o_s___simulator_1_1_compiler_1_1_frontend_1_1_lexer_a9af12a452db042cfa2552078ca991160}{Generate\+Tokens} ()
+\item 
+void \hyperlink{class_c_p_u___o_s___simulator_1_1_compiler_1_1_frontend_1_1_lexer_aabdf7836b845bde22402027bdb1e949f}{Create\+Tokens\+File} (string filename)
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+readonly string \hyperlink{class_c_p_u___o_s___simulator_1_1_compiler_1_1_frontend_1_1_lexer_a735068e1008912edac69416bac78cef1}{source\+String}
+\item 
+Linked\+List$<$ string $>$ \hyperlink{class_c_p_u___o_s___simulator_1_1_compiler_1_1_frontend_1_1_lexer_ab99dc45a5bf56bba028a55213c81924f}{token\+Strings}
+\item 
+Linked\+List\+Node$<$ string $>$ \hyperlink{class_c_p_u___o_s___simulator_1_1_compiler_1_1_frontend_1_1_lexer_a38fd448afcdd31a212407189d8fcda8f}{current\+Token\+String}
+\item 
+Linked\+List\+Node$<$ string $>$ \hyperlink{class_c_p_u___o_s___simulator_1_1_compiler_1_1_frontend_1_1_lexer_a6795b61d4a157858e6471adb636a16f0}{next\+Token\+String}
+\item 
+Linked\+List\+Node$<$ string $>$ \hyperlink{class_c_p_u___o_s___simulator_1_1_compiler_1_1_frontend_1_1_lexer_a4cc9eaf6480960311bba7a18ccd99087}{previous\+Token\+String}
+\item 
+Linked\+List$<$ \hyperlink{class_c_p_u___o_s___simulator_1_1_compiler_1_1_frontend_1_1_tokens_1_1_token}{Token} $>$ \hyperlink{class_c_p_u___o_s___simulator_1_1_compiler_1_1_frontend_1_1_lexer_abf6ec407cb3e44e9da83d68a1b13ed4c}{tokens}
+\item 
+Linked\+List\+Node$<$ \hyperlink{class_c_p_u___o_s___simulator_1_1_compiler_1_1_frontend_1_1_tokens_1_1_token}{Token} $>$ \hyperlink{class_c_p_u___o_s___simulator_1_1_compiler_1_1_frontend_1_1_lexer_a030e4639542601955e162bd9010d4ed6}{current\+Token}
+\item 
+Linked\+List\+Node$<$ \hyperlink{class_c_p_u___o_s___simulator_1_1_compiler_1_1_frontend_1_1_tokens_1_1_token}{Token} $>$ \hyperlink{class_c_p_u___o_s___simulator_1_1_compiler_1_1_frontend_1_1_lexer_a9bdd0bc4e775f8708a1efebd0e84bc7c}{next\+Token}
+\item 
+Linked\+List\+Node$<$ \hyperlink{class_c_p_u___o_s___simulator_1_1_compiler_1_1_frontend_1_1_tokens_1_1_token}{Token} $>$ \hyperlink{class_c_p_u___o_s___simulator_1_1_compiler_1_1_frontend_1_1_lexer_ad64622c6372adff6559435fbfce44a2a}{previous\+Token}
+\item 
+bool \hyperlink{class_c_p_u___o_s___simulator_1_1_compiler_1_1_frontend_1_1_lexer_a8a75fa6d30d6d3b2ab713a729d85b081}{writing\+To\+Compiler\+Tester}
+\item 
+string \hyperlink{class_c_p_u___o_s___simulator_1_1_compiler_1_1_frontend_1_1_lexer_a787862ffec1828f426fac010f543e31c}{error} = String.\+Empty
+\item 
+List$<$ string $>$ \hyperlink{class_c_p_u___o_s___simulator_1_1_compiler_1_1_frontend_1_1_lexer_ac240cede3460c43d89c4387c04f00377}{warning\+List}
+\item 
+bool \hyperlink{class_c_p_u___o_s___simulator_1_1_compiler_1_1_frontend_1_1_lexer_ad2b45c1eaf05bca9d992ed22a0331bae}{successful}
+\item 
+Text\+Box \hyperlink{class_c_p_u___o_s___simulator_1_1_compiler_1_1_frontend_1_1_lexer_ab2c4e18875ad66f9f4b1debf32e21d97}{output}
+\item 
+List$<$ Tuple$<$ string, \hyperlink{namespace_c_p_u___o_s___simulator_1_1_compiler_1_1_frontend_1_1_tokens_a7c0cc43763cc9d01c7d5af34d70b96ea}{Enum\+Types}, string $>$ $>$ \hyperlink{class_c_p_u___o_s___simulator_1_1_compiler_1_1_frontend_1_1_lexer_af7e42e63231b352e446b5be89623c74a}{variables}
+\item 
+List$<$ Tuple$<$ string, \hyperlink{namespace_c_p_u___o_s___simulator_1_1_compiler_1_1_frontend_1_1_tokens_a7c0cc43763cc9d01c7d5af34d70b96ea}{Enum\+Types}, string $>$ $>$ \hyperlink{class_c_p_u___o_s___simulator_1_1_compiler_1_1_frontend_1_1_lexer_a45c844ee9a1f5dedb94dcb4f19883d5a}{subroutines}
+\item 
+List$<$ Tuple$<$ string, \hyperlink{namespace_c_p_u___o_s___simulator_1_1_compiler_1_1_frontend_1_1_tokens_a7c0cc43763cc9d01c7d5af34d70b96ea}{Enum\+Types}, string $>$ $>$ \hyperlink{class_c_p_u___o_s___simulator_1_1_compiler_1_1_frontend_1_1_lexer_ab56c14f20b221345bcb9ef4bdd7d5c87}{functions}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This class represents the lexer for the simulator programming language the lexer converts the source code into tokens for parsing to an Abstract Syntax Tree 
+
+
+
+Definition at line 17 of file Lexer.\+cs.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_c_p_u___o_s___simulator_1_1_compiler_1_1_frontend_1_1_lexer_ad1b8ba022e0f486f963bf7f2104ef03d}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Frontend\+::\+Lexer@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Frontend\+::\+Lexer}!Lexer@{Lexer}}
+\index{Lexer@{Lexer}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Frontend\+::\+Lexer@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Frontend\+::\+Lexer}}
+\subsubsection[{Lexer(string source\+String)}]{\setlength{\rightskip}{0pt plus 5cm}C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Compiler.\+Frontend.\+Lexer.\+Lexer (
+\begin{DoxyParamCaption}
+\item[{string}]{source\+String}
+\end{DoxyParamCaption}
+)}\label{class_c_p_u___o_s___simulator_1_1_compiler_1_1_frontend_1_1_lexer_ad1b8ba022e0f486f963bf7f2104ef03d}
+
+
+Definition at line 44 of file Lexer.\+cs.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_c_p_u___o_s___simulator_1_1_compiler_1_1_frontend_1_1_lexer_a55107682df54c395363fa466bbd47be9}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Frontend\+::\+Lexer@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Frontend\+::\+Lexer}!Check\+For\+Errors@{Check\+For\+Errors}}
+\index{Check\+For\+Errors@{Check\+For\+Errors}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Frontend\+::\+Lexer@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Frontend\+::\+Lexer}}
+\subsubsection[{Check\+For\+Errors()}]{\setlength{\rightskip}{0pt plus 5cm}bool C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Compiler.\+Frontend.\+Lexer.\+Check\+For\+Errors (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{class_c_p_u___o_s___simulator_1_1_compiler_1_1_frontend_1_1_lexer_a55107682df54c395363fa466bbd47be9}
+
+
+This function checks the code for errors 
+
+\begin{DoxyReturn}{Returns}
+false if errors occurred true if no errors occurred 
+\end{DoxyReturn}
+
+
+Definition at line 304 of file Lexer.\+cs.
+
+\hypertarget{class_c_p_u___o_s___simulator_1_1_compiler_1_1_frontend_1_1_lexer_a3cb07219d31cbf42ce171abf1af266be}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Frontend\+::\+Lexer@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Frontend\+::\+Lexer}!Check\+For\+Warnings@{Check\+For\+Warnings}}
+\index{Check\+For\+Warnings@{Check\+For\+Warnings}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Frontend\+::\+Lexer@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Frontend\+::\+Lexer}}
+\subsubsection[{Check\+For\+Warnings()}]{\setlength{\rightskip}{0pt plus 5cm}List$<$string$>$ C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Compiler.\+Frontend.\+Lexer.\+Check\+For\+Warnings (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{class_c_p_u___o_s___simulator_1_1_compiler_1_1_frontend_1_1_lexer_a3cb07219d31cbf42ce171abf1af266be}
+
+
+This function checks the code for any warnings 
+
+\begin{DoxyReturn}{Returns}
+a list of warnings or an empty list if there were no warnings
+\end{DoxyReturn}
+
+
+Definition at line 284 of file Lexer.\+cs.
+
+\hypertarget{class_c_p_u___o_s___simulator_1_1_compiler_1_1_frontend_1_1_lexer_aabdf7836b845bde22402027bdb1e949f}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Frontend\+::\+Lexer@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Frontend\+::\+Lexer}!Create\+Tokens\+File@{Create\+Tokens\+File}}
+\index{Create\+Tokens\+File@{Create\+Tokens\+File}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Frontend\+::\+Lexer@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Frontend\+::\+Lexer}}
+\subsubsection[{Create\+Tokens\+File(string filename)}]{\setlength{\rightskip}{0pt plus 5cm}void C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Compiler.\+Frontend.\+Lexer.\+Create\+Tokens\+File (
+\begin{DoxyParamCaption}
+\item[{string}]{filename}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{class_c_p_u___o_s___simulator_1_1_compiler_1_1_frontend_1_1_lexer_aabdf7836b845bde22402027bdb1e949f}
+
+
+Definition at line 505 of file Lexer.\+cs.
+
+\hypertarget{class_c_p_u___o_s___simulator_1_1_compiler_1_1_frontend_1_1_lexer_a20ba99982182d2482f56f46d4d661a7d}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Frontend\+::\+Lexer@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Frontend\+::\+Lexer}!Define\+Functions@{Define\+Functions}}
+\index{Define\+Functions@{Define\+Functions}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Frontend\+::\+Lexer@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Frontend\+::\+Lexer}}
+\subsubsection[{Define\+Functions()}]{\setlength{\rightskip}{0pt plus 5cm}void C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Compiler.\+Frontend.\+Lexer.\+Define\+Functions (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{class_c_p_u___o_s___simulator_1_1_compiler_1_1_frontend_1_1_lexer_a20ba99982182d2482f56f46d4d661a7d}
+
+
+Definition at line 159 of file Lexer.\+cs.
+
+\hypertarget{class_c_p_u___o_s___simulator_1_1_compiler_1_1_frontend_1_1_lexer_ab611ae0862d84b5446643fd75577324e}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Frontend\+::\+Lexer@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Frontend\+::\+Lexer}!Define\+Subroutines@{Define\+Subroutines}}
+\index{Define\+Subroutines@{Define\+Subroutines}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Frontend\+::\+Lexer@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Frontend\+::\+Lexer}}
+\subsubsection[{Define\+Subroutines()}]{\setlength{\rightskip}{0pt plus 5cm}void C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Compiler.\+Frontend.\+Lexer.\+Define\+Subroutines (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{class_c_p_u___o_s___simulator_1_1_compiler_1_1_frontend_1_1_lexer_ab611ae0862d84b5446643fd75577324e}
+
+
+Definition at line 212 of file Lexer.\+cs.
+
+\hypertarget{class_c_p_u___o_s___simulator_1_1_compiler_1_1_frontend_1_1_lexer_a03760dde9cbc1aa09267e98d0788e544}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Frontend\+::\+Lexer@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Frontend\+::\+Lexer}!Define\+Variables@{Define\+Variables}}
+\index{Define\+Variables@{Define\+Variables}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Frontend\+::\+Lexer@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Frontend\+::\+Lexer}}
+\subsubsection[{Define\+Variables()}]{\setlength{\rightskip}{0pt plus 5cm}void C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Compiler.\+Frontend.\+Lexer.\+Define\+Variables (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{class_c_p_u___o_s___simulator_1_1_compiler_1_1_frontend_1_1_lexer_a03760dde9cbc1aa09267e98d0788e544}
+
+
+Definition at line 184 of file Lexer.\+cs.
+
+\hypertarget{class_c_p_u___o_s___simulator_1_1_compiler_1_1_frontend_1_1_lexer_a9af12a452db042cfa2552078ca991160}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Frontend\+::\+Lexer@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Frontend\+::\+Lexer}!Generate\+Tokens@{Generate\+Tokens}}
+\index{Generate\+Tokens@{Generate\+Tokens}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Frontend\+::\+Lexer@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Frontend\+::\+Lexer}}
+\subsubsection[{Generate\+Tokens()}]{\setlength{\rightskip}{0pt plus 5cm}Linked\+List$<${\bf Token}$>$ C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Compiler.\+Frontend.\+Lexer.\+Generate\+Tokens (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{class_c_p_u___o_s___simulator_1_1_compiler_1_1_frontend_1_1_lexer_a9af12a452db042cfa2552078ca991160}
+
+
+Definition at line 368 of file Lexer.\+cs.
+
+\hypertarget{class_c_p_u___o_s___simulator_1_1_compiler_1_1_frontend_1_1_lexer_a9654723fcd32311aefbfcfbc0888e4bc}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Frontend\+::\+Lexer@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Frontend\+::\+Lexer}!Get\+Variable\+Name@{Get\+Variable\+Name}}
+\index{Get\+Variable\+Name@{Get\+Variable\+Name}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Frontend\+::\+Lexer@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Frontend\+::\+Lexer}}
+\subsubsection[{Get\+Variable\+Name(\+Linked\+List\+Node$<$ Token $>$ token)}]{\setlength{\rightskip}{0pt plus 5cm}string C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Compiler.\+Frontend.\+Lexer.\+Get\+Variable\+Name (
+\begin{DoxyParamCaption}
+\item[{Linked\+List\+Node$<$ {\bf Token} $>$}]{token}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{class_c_p_u___o_s___simulator_1_1_compiler_1_1_frontend_1_1_lexer_a9654723fcd32311aefbfcfbc0888e4bc}
+
+
+Definition at line 259 of file Lexer.\+cs.
+
+\hypertarget{class_c_p_u___o_s___simulator_1_1_compiler_1_1_frontend_1_1_lexer_a51100f91cf5093df274114f32d210a91}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Frontend\+::\+Lexer@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Frontend\+::\+Lexer}!Get\+Variable\+Type@{Get\+Variable\+Type}}
+\index{Get\+Variable\+Type@{Get\+Variable\+Type}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Frontend\+::\+Lexer@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Frontend\+::\+Lexer}}
+\subsubsection[{Get\+Variable\+Type(\+Linked\+List\+Node$<$ Token $>$ token)}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Enum\+Types} C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Compiler.\+Frontend.\+Lexer.\+Get\+Variable\+Type (
+\begin{DoxyParamCaption}
+\item[{Linked\+List\+Node$<$ {\bf Token} $>$}]{token}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{class_c_p_u___o_s___simulator_1_1_compiler_1_1_frontend_1_1_lexer_a51100f91cf5093df274114f32d210a91}
+
+
+Definition at line 250 of file Lexer.\+cs.
+
+\hypertarget{class_c_p_u___o_s___simulator_1_1_compiler_1_1_frontend_1_1_lexer_a40799e3f75747b0e6e7bc7e3dc5a3856}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Frontend\+::\+Lexer@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Frontend\+::\+Lexer}!Get\+Variable\+Value@{Get\+Variable\+Value}}
+\index{Get\+Variable\+Value@{Get\+Variable\+Value}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Frontend\+::\+Lexer@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Frontend\+::\+Lexer}}
+\subsubsection[{Get\+Variable\+Value(\+Linked\+List\+Node$<$ Token $>$ token)}]{\setlength{\rightskip}{0pt plus 5cm}string C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Compiler.\+Frontend.\+Lexer.\+Get\+Variable\+Value (
+\begin{DoxyParamCaption}
+\item[{Linked\+List\+Node$<$ {\bf Token} $>$}]{token}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{class_c_p_u___o_s___simulator_1_1_compiler_1_1_frontend_1_1_lexer_a40799e3f75747b0e6e7bc7e3dc5a3856}
+
+
+Definition at line 238 of file Lexer.\+cs.
+
+\hypertarget{class_c_p_u___o_s___simulator_1_1_compiler_1_1_frontend_1_1_lexer_a9fa262282fe000e66c4f97b899c39cdc}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Frontend\+::\+Lexer@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Frontend\+::\+Lexer}!Identify\+Unknown\+Tokens@{Identify\+Unknown\+Tokens}}
+\index{Identify\+Unknown\+Tokens@{Identify\+Unknown\+Tokens}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Frontend\+::\+Lexer@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Frontend\+::\+Lexer}}
+\subsubsection[{Identify\+Unknown\+Tokens()}]{\setlength{\rightskip}{0pt plus 5cm}void C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Compiler.\+Frontend.\+Lexer.\+Identify\+Unknown\+Tokens (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{class_c_p_u___o_s___simulator_1_1_compiler_1_1_frontend_1_1_lexer_a9fa262282fe000e66c4f97b899c39cdc}
+
+
+Definition at line 438 of file Lexer.\+cs.
+
+\hypertarget{class_c_p_u___o_s___simulator_1_1_compiler_1_1_frontend_1_1_lexer_a6c12b898a982f63169687cca009d18e5}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Frontend\+::\+Lexer@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Frontend\+::\+Lexer}!Print\+Tokens@{Print\+Tokens}}
+\index{Print\+Tokens@{Print\+Tokens}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Frontend\+::\+Lexer@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Frontend\+::\+Lexer}}
+\subsubsection[{Print\+Tokens()}]{\setlength{\rightskip}{0pt plus 5cm}void C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Compiler.\+Frontend.\+Lexer.\+Print\+Tokens (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{class_c_p_u___o_s___simulator_1_1_compiler_1_1_frontend_1_1_lexer_a6c12b898a982f63169687cca009d18e5}
+
+
+Definition at line 465 of file Lexer.\+cs.
+
+\hypertarget{class_c_p_u___o_s___simulator_1_1_compiler_1_1_frontend_1_1_lexer_a024d4fa0d9659b9ac9f7446baa7e99ba}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Frontend\+::\+Lexer@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Frontend\+::\+Lexer}!Print\+Warnings@{Print\+Warnings}}
+\index{Print\+Warnings@{Print\+Warnings}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Frontend\+::\+Lexer@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Frontend\+::\+Lexer}}
+\subsubsection[{Print\+Warnings()}]{\setlength{\rightskip}{0pt plus 5cm}void C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Compiler.\+Frontend.\+Lexer.\+Print\+Warnings (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{class_c_p_u___o_s___simulator_1_1_compiler_1_1_frontend_1_1_lexer_a024d4fa0d9659b9ac9f7446baa7e99ba}
+
+
+This function print out any warnings produced while lexing 
+
+
+
+Definition at line 267 of file Lexer.\+cs.
+
+\hypertarget{class_c_p_u___o_s___simulator_1_1_compiler_1_1_frontend_1_1_lexer_aa2cc4a7f138f9c6b8bda051eb08cd0e6}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Frontend\+::\+Lexer@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Frontend\+::\+Lexer}!Remove\+Whitespace@{Remove\+Whitespace}}
+\index{Remove\+Whitespace@{Remove\+Whitespace}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Frontend\+::\+Lexer@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Frontend\+::\+Lexer}}
+\subsubsection[{Remove\+Whitespace()}]{\setlength{\rightskip}{0pt plus 5cm}void C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Compiler.\+Frontend.\+Lexer.\+Remove\+Whitespace (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{class_c_p_u___o_s___simulator_1_1_compiler_1_1_frontend_1_1_lexer_aa2cc4a7f138f9c6b8bda051eb08cd0e6}
+
+
+Definition at line 130 of file Lexer.\+cs.
+
+\hypertarget{class_c_p_u___o_s___simulator_1_1_compiler_1_1_frontend_1_1_lexer_aa1d03860beb60dbb0c69ebbe70203def}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Frontend\+::\+Lexer@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Frontend\+::\+Lexer}!Start@{Start}}
+\index{Start@{Start}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Frontend\+::\+Lexer@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Frontend\+::\+Lexer}}
+\subsubsection[{Start()}]{\setlength{\rightskip}{0pt plus 5cm}bool C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Compiler.\+Frontend.\+Lexer.\+Start (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{class_c_p_u___o_s___simulator_1_1_compiler_1_1_frontend_1_1_lexer_aa1d03860beb60dbb0c69ebbe70203def}
+
+
+This function is called to start the lexer 
+
+\begin{DoxyReturn}{Returns}
+whether the lexer completed successfully 
+\end{DoxyReturn}
+
+
+Definition at line 109 of file Lexer.\+cs.
+
+\hypertarget{class_c_p_u___o_s___simulator_1_1_compiler_1_1_frontend_1_1_lexer_a64e6ce60e37e5cf153dbbc8757fea55c}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Frontend\+::\+Lexer@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Frontend\+::\+Lexer}!Throw\+Error@{Throw\+Error}}
+\index{Throw\+Error@{Throw\+Error}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Frontend\+::\+Lexer@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Frontend\+::\+Lexer}}
+\subsubsection[{Throw\+Error(\+Enum\+Error\+Codes enum\+Error\+Codes, string expected\+Token)}]{\setlength{\rightskip}{0pt plus 5cm}void C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Compiler.\+Frontend.\+Lexer.\+Throw\+Error (
+\begin{DoxyParamCaption}
+\item[{{\bf Enum\+Error\+Codes}}]{enum\+Error\+Codes, }
+\item[{string}]{expected\+Token}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{class_c_p_u___o_s___simulator_1_1_compiler_1_1_frontend_1_1_lexer_a64e6ce60e37e5cf153dbbc8757fea55c}
+
+
+This function creates an error message to display in a message box to the user indicating what type of error occurred 
+
+
+\begin{DoxyParams}{Parameters}
+{\em enum\+Error\+Codes} & the error code that identifies the error\\
+\hline
+{\em expected\+Token} & the expected token\\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 363 of file Lexer.\+cs.
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{class_c_p_u___o_s___simulator_1_1_compiler_1_1_frontend_1_1_lexer_a030e4639542601955e162bd9010d4ed6}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Frontend\+::\+Lexer@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Frontend\+::\+Lexer}!current\+Token@{current\+Token}}
+\index{current\+Token@{current\+Token}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Frontend\+::\+Lexer@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Frontend\+::\+Lexer}}
+\subsubsection[{current\+Token}]{\setlength{\rightskip}{0pt plus 5cm}Linked\+List\+Node$<${\bf Token}$>$ C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Compiler.\+Frontend.\+Lexer.\+current\+Token\hspace{0.3cm}{\ttfamily [private]}}\label{class_c_p_u___o_s___simulator_1_1_compiler_1_1_frontend_1_1_lexer_a030e4639542601955e162bd9010d4ed6}
+
+
+Definition at line 28 of file Lexer.\+cs.
+
+\hypertarget{class_c_p_u___o_s___simulator_1_1_compiler_1_1_frontend_1_1_lexer_a38fd448afcdd31a212407189d8fcda8f}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Frontend\+::\+Lexer@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Frontend\+::\+Lexer}!current\+Token\+String@{current\+Token\+String}}
+\index{current\+Token\+String@{current\+Token\+String}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Frontend\+::\+Lexer@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Frontend\+::\+Lexer}}
+\subsubsection[{current\+Token\+String}]{\setlength{\rightskip}{0pt plus 5cm}Linked\+List\+Node$<$string$>$ C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Compiler.\+Frontend.\+Lexer.\+current\+Token\+String\hspace{0.3cm}{\ttfamily [private]}}\label{class_c_p_u___o_s___simulator_1_1_compiler_1_1_frontend_1_1_lexer_a38fd448afcdd31a212407189d8fcda8f}
+
+
+Definition at line 23 of file Lexer.\+cs.
+
+\hypertarget{class_c_p_u___o_s___simulator_1_1_compiler_1_1_frontend_1_1_lexer_a787862ffec1828f426fac010f543e31c}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Frontend\+::\+Lexer@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Frontend\+::\+Lexer}!error@{error}}
+\index{error@{error}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Frontend\+::\+Lexer@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Frontend\+::\+Lexer}}
+\subsubsection[{error}]{\setlength{\rightskip}{0pt plus 5cm}string C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Compiler.\+Frontend.\+Lexer.\+error = String.\+Empty\hspace{0.3cm}{\ttfamily [private]}}\label{class_c_p_u___o_s___simulator_1_1_compiler_1_1_frontend_1_1_lexer_a787862ffec1828f426fac010f543e31c}
+
+
+Definition at line 33 of file Lexer.\+cs.
+
+\hypertarget{class_c_p_u___o_s___simulator_1_1_compiler_1_1_frontend_1_1_lexer_ab56c14f20b221345bcb9ef4bdd7d5c87}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Frontend\+::\+Lexer@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Frontend\+::\+Lexer}!functions@{functions}}
+\index{functions@{functions}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Frontend\+::\+Lexer@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Frontend\+::\+Lexer}}
+\subsubsection[{functions}]{\setlength{\rightskip}{0pt plus 5cm}List$<$Tuple$<$string, {\bf Enum\+Types}, string$>$ $>$ C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Compiler.\+Frontend.\+Lexer.\+functions\hspace{0.3cm}{\ttfamily [private]}}\label{class_c_p_u___o_s___simulator_1_1_compiler_1_1_frontend_1_1_lexer_ab56c14f20b221345bcb9ef4bdd7d5c87}
+
+
+Definition at line 39 of file Lexer.\+cs.
+
+\hypertarget{class_c_p_u___o_s___simulator_1_1_compiler_1_1_frontend_1_1_lexer_a9bdd0bc4e775f8708a1efebd0e84bc7c}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Frontend\+::\+Lexer@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Frontend\+::\+Lexer}!next\+Token@{next\+Token}}
+\index{next\+Token@{next\+Token}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Frontend\+::\+Lexer@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Frontend\+::\+Lexer}}
+\subsubsection[{next\+Token}]{\setlength{\rightskip}{0pt plus 5cm}Linked\+List\+Node$<${\bf Token}$>$ C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Compiler.\+Frontend.\+Lexer.\+next\+Token\hspace{0.3cm}{\ttfamily [private]}}\label{class_c_p_u___o_s___simulator_1_1_compiler_1_1_frontend_1_1_lexer_a9bdd0bc4e775f8708a1efebd0e84bc7c}
+
+
+Definition at line 29 of file Lexer.\+cs.
+
+\hypertarget{class_c_p_u___o_s___simulator_1_1_compiler_1_1_frontend_1_1_lexer_a6795b61d4a157858e6471adb636a16f0}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Frontend\+::\+Lexer@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Frontend\+::\+Lexer}!next\+Token\+String@{next\+Token\+String}}
+\index{next\+Token\+String@{next\+Token\+String}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Frontend\+::\+Lexer@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Frontend\+::\+Lexer}}
+\subsubsection[{next\+Token\+String}]{\setlength{\rightskip}{0pt plus 5cm}Linked\+List\+Node$<$string$>$ C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Compiler.\+Frontend.\+Lexer.\+next\+Token\+String\hspace{0.3cm}{\ttfamily [private]}}\label{class_c_p_u___o_s___simulator_1_1_compiler_1_1_frontend_1_1_lexer_a6795b61d4a157858e6471adb636a16f0}
+
+
+Definition at line 24 of file Lexer.\+cs.
+
+\hypertarget{class_c_p_u___o_s___simulator_1_1_compiler_1_1_frontend_1_1_lexer_ab2c4e18875ad66f9f4b1debf32e21d97}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Frontend\+::\+Lexer@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Frontend\+::\+Lexer}!output@{output}}
+\index{output@{output}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Frontend\+::\+Lexer@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Frontend\+::\+Lexer}}
+\subsubsection[{output}]{\setlength{\rightskip}{0pt plus 5cm}Text\+Box C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Compiler.\+Frontend.\+Lexer.\+output\hspace{0.3cm}{\ttfamily [private]}}\label{class_c_p_u___o_s___simulator_1_1_compiler_1_1_frontend_1_1_lexer_ab2c4e18875ad66f9f4b1debf32e21d97}
+
+
+Definition at line 36 of file Lexer.\+cs.
+
+\hypertarget{class_c_p_u___o_s___simulator_1_1_compiler_1_1_frontend_1_1_lexer_ad64622c6372adff6559435fbfce44a2a}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Frontend\+::\+Lexer@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Frontend\+::\+Lexer}!previous\+Token@{previous\+Token}}
+\index{previous\+Token@{previous\+Token}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Frontend\+::\+Lexer@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Frontend\+::\+Lexer}}
+\subsubsection[{previous\+Token}]{\setlength{\rightskip}{0pt plus 5cm}Linked\+List\+Node$<${\bf Token}$>$ C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Compiler.\+Frontend.\+Lexer.\+previous\+Token\hspace{0.3cm}{\ttfamily [private]}}\label{class_c_p_u___o_s___simulator_1_1_compiler_1_1_frontend_1_1_lexer_ad64622c6372adff6559435fbfce44a2a}
+
+
+Definition at line 30 of file Lexer.\+cs.
+
+\hypertarget{class_c_p_u___o_s___simulator_1_1_compiler_1_1_frontend_1_1_lexer_a4cc9eaf6480960311bba7a18ccd99087}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Frontend\+::\+Lexer@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Frontend\+::\+Lexer}!previous\+Token\+String@{previous\+Token\+String}}
+\index{previous\+Token\+String@{previous\+Token\+String}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Frontend\+::\+Lexer@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Frontend\+::\+Lexer}}
+\subsubsection[{previous\+Token\+String}]{\setlength{\rightskip}{0pt plus 5cm}Linked\+List\+Node$<$string$>$ C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Compiler.\+Frontend.\+Lexer.\+previous\+Token\+String\hspace{0.3cm}{\ttfamily [private]}}\label{class_c_p_u___o_s___simulator_1_1_compiler_1_1_frontend_1_1_lexer_a4cc9eaf6480960311bba7a18ccd99087}
+
+
+Definition at line 25 of file Lexer.\+cs.
+
+\hypertarget{class_c_p_u___o_s___simulator_1_1_compiler_1_1_frontend_1_1_lexer_a735068e1008912edac69416bac78cef1}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Frontend\+::\+Lexer@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Frontend\+::\+Lexer}!source\+String@{source\+String}}
+\index{source\+String@{source\+String}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Frontend\+::\+Lexer@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Frontend\+::\+Lexer}}
+\subsubsection[{source\+String}]{\setlength{\rightskip}{0pt plus 5cm}readonly string C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Compiler.\+Frontend.\+Lexer.\+source\+String\hspace{0.3cm}{\ttfamily [private]}}\label{class_c_p_u___o_s___simulator_1_1_compiler_1_1_frontend_1_1_lexer_a735068e1008912edac69416bac78cef1}
+
+
+Definition at line 20 of file Lexer.\+cs.
+
+\hypertarget{class_c_p_u___o_s___simulator_1_1_compiler_1_1_frontend_1_1_lexer_a45c844ee9a1f5dedb94dcb4f19883d5a}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Frontend\+::\+Lexer@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Frontend\+::\+Lexer}!subroutines@{subroutines}}
+\index{subroutines@{subroutines}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Frontend\+::\+Lexer@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Frontend\+::\+Lexer}}
+\subsubsection[{subroutines}]{\setlength{\rightskip}{0pt plus 5cm}List$<$Tuple$<$string, {\bf Enum\+Types}, string$>$ $>$ C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Compiler.\+Frontend.\+Lexer.\+subroutines\hspace{0.3cm}{\ttfamily [private]}}\label{class_c_p_u___o_s___simulator_1_1_compiler_1_1_frontend_1_1_lexer_a45c844ee9a1f5dedb94dcb4f19883d5a}
+
+
+Definition at line 38 of file Lexer.\+cs.
+
+\hypertarget{class_c_p_u___o_s___simulator_1_1_compiler_1_1_frontend_1_1_lexer_ad2b45c1eaf05bca9d992ed22a0331bae}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Frontend\+::\+Lexer@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Frontend\+::\+Lexer}!successful@{successful}}
+\index{successful@{successful}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Frontend\+::\+Lexer@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Frontend\+::\+Lexer}}
+\subsubsection[{successful}]{\setlength{\rightskip}{0pt plus 5cm}bool C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Compiler.\+Frontend.\+Lexer.\+successful\hspace{0.3cm}{\ttfamily [private]}}\label{class_c_p_u___o_s___simulator_1_1_compiler_1_1_frontend_1_1_lexer_ad2b45c1eaf05bca9d992ed22a0331bae}
+
+
+Definition at line 35 of file Lexer.\+cs.
+
+\hypertarget{class_c_p_u___o_s___simulator_1_1_compiler_1_1_frontend_1_1_lexer_abf6ec407cb3e44e9da83d68a1b13ed4c}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Frontend\+::\+Lexer@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Frontend\+::\+Lexer}!tokens@{tokens}}
+\index{tokens@{tokens}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Frontend\+::\+Lexer@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Frontend\+::\+Lexer}}
+\subsubsection[{tokens}]{\setlength{\rightskip}{0pt plus 5cm}Linked\+List$<${\bf Token}$>$ C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Compiler.\+Frontend.\+Lexer.\+tokens\hspace{0.3cm}{\ttfamily [private]}}\label{class_c_p_u___o_s___simulator_1_1_compiler_1_1_frontend_1_1_lexer_abf6ec407cb3e44e9da83d68a1b13ed4c}
+
+
+Definition at line 27 of file Lexer.\+cs.
+
+\hypertarget{class_c_p_u___o_s___simulator_1_1_compiler_1_1_frontend_1_1_lexer_ab99dc45a5bf56bba028a55213c81924f}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Frontend\+::\+Lexer@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Frontend\+::\+Lexer}!token\+Strings@{token\+Strings}}
+\index{token\+Strings@{token\+Strings}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Frontend\+::\+Lexer@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Frontend\+::\+Lexer}}
+\subsubsection[{token\+Strings}]{\setlength{\rightskip}{0pt plus 5cm}Linked\+List$<$string$>$ C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Compiler.\+Frontend.\+Lexer.\+token\+Strings\hspace{0.3cm}{\ttfamily [private]}}\label{class_c_p_u___o_s___simulator_1_1_compiler_1_1_frontend_1_1_lexer_ab99dc45a5bf56bba028a55213c81924f}
+
+
+Definition at line 22 of file Lexer.\+cs.
+
+\hypertarget{class_c_p_u___o_s___simulator_1_1_compiler_1_1_frontend_1_1_lexer_af7e42e63231b352e446b5be89623c74a}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Frontend\+::\+Lexer@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Frontend\+::\+Lexer}!variables@{variables}}
+\index{variables@{variables}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Frontend\+::\+Lexer@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Frontend\+::\+Lexer}}
+\subsubsection[{variables}]{\setlength{\rightskip}{0pt plus 5cm}List$<$Tuple$<$string, {\bf Enum\+Types}, string$>$ $>$ C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Compiler.\+Frontend.\+Lexer.\+variables\hspace{0.3cm}{\ttfamily [private]}}\label{class_c_p_u___o_s___simulator_1_1_compiler_1_1_frontend_1_1_lexer_af7e42e63231b352e446b5be89623c74a}
+
+
+Definition at line 37 of file Lexer.\+cs.
+
+\hypertarget{class_c_p_u___o_s___simulator_1_1_compiler_1_1_frontend_1_1_lexer_ac240cede3460c43d89c4387c04f00377}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Frontend\+::\+Lexer@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Frontend\+::\+Lexer}!warning\+List@{warning\+List}}
+\index{warning\+List@{warning\+List}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Frontend\+::\+Lexer@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Frontend\+::\+Lexer}}
+\subsubsection[{warning\+List}]{\setlength{\rightskip}{0pt plus 5cm}List$<$string$>$ C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Compiler.\+Frontend.\+Lexer.\+warning\+List\hspace{0.3cm}{\ttfamily [private]}}\label{class_c_p_u___o_s___simulator_1_1_compiler_1_1_frontend_1_1_lexer_ac240cede3460c43d89c4387c04f00377}
+
+
+Definition at line 34 of file Lexer.\+cs.
+
+\hypertarget{class_c_p_u___o_s___simulator_1_1_compiler_1_1_frontend_1_1_lexer_a8a75fa6d30d6d3b2ab713a729d85b081}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Frontend\+::\+Lexer@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Frontend\+::\+Lexer}!writing\+To\+Compiler\+Tester@{writing\+To\+Compiler\+Tester}}
+\index{writing\+To\+Compiler\+Tester@{writing\+To\+Compiler\+Tester}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Frontend\+::\+Lexer@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Frontend\+::\+Lexer}}
+\subsubsection[{writing\+To\+Compiler\+Tester}]{\setlength{\rightskip}{0pt plus 5cm}bool C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Compiler.\+Frontend.\+Lexer.\+writing\+To\+Compiler\+Tester\hspace{0.3cm}{\ttfamily [private]}}\label{class_c_p_u___o_s___simulator_1_1_compiler_1_1_frontend_1_1_lexer_a8a75fa6d30d6d3b2ab713a729d85b081}
+
+
+Definition at line 32 of file Lexer.\+cs.
+
+
+
+\subsection{Property Documentation}
+\hypertarget{class_c_p_u___o_s___simulator_1_1_compiler_1_1_frontend_1_1_lexer_a0e9d13cd92a7b359a8857e940f0af767}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Frontend\+::\+Lexer@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Frontend\+::\+Lexer}!Error@{Error}}
+\index{Error@{Error}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Frontend\+::\+Lexer@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Frontend\+::\+Lexer}}
+\subsubsection[{Error}]{\setlength{\rightskip}{0pt plus 5cm}string C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Compiler.\+Frontend.\+Lexer.\+Error\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}\label{class_c_p_u___o_s___simulator_1_1_compiler_1_1_frontend_1_1_lexer_a0e9d13cd92a7b359a8857e940f0af767}
+
+
+Property for the string representation of the error that occurred while lexing 
+
+
+
+Definition at line 71 of file Lexer.\+cs.
+
+\hypertarget{class_c_p_u___o_s___simulator_1_1_compiler_1_1_frontend_1_1_lexer_ac414167d172802ee774d998b1c20b2dd}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Frontend\+::\+Lexer@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Frontend\+::\+Lexer}!Functions@{Functions}}
+\index{Functions@{Functions}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Frontend\+::\+Lexer@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Frontend\+::\+Lexer}}
+\subsubsection[{Functions}]{\setlength{\rightskip}{0pt plus 5cm}List$<$Tuple$<$string, {\bf Enum\+Types}, string$>$ $>$ C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Compiler.\+Frontend.\+Lexer.\+Functions\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}\label{class_c_p_u___o_s___simulator_1_1_compiler_1_1_frontend_1_1_lexer_ac414167d172802ee774d998b1c20b2dd}
+
+
+Definition at line 96 of file Lexer.\+cs.
+
+\hypertarget{class_c_p_u___o_s___simulator_1_1_compiler_1_1_frontend_1_1_lexer_adac6a4e1c23134a8c848bb35de4f39ff}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Frontend\+::\+Lexer@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Frontend\+::\+Lexer}!Output@{Output}}
+\index{Output@{Output}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Frontend\+::\+Lexer@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Frontend\+::\+Lexer}}
+\subsubsection[{Output}]{\setlength{\rightskip}{0pt plus 5cm}Text\+Box C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Compiler.\+Frontend.\+Lexer.\+Output\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}\label{class_c_p_u___o_s___simulator_1_1_compiler_1_1_frontend_1_1_lexer_adac6a4e1c23134a8c848bb35de4f39ff}
+
+
+Property to hold the text box to display lexer output to 
+
+
+
+Definition at line 63 of file Lexer.\+cs.
+
+\hypertarget{class_c_p_u___o_s___simulator_1_1_compiler_1_1_frontend_1_1_lexer_aba6b80bb384466d01497af6a343f2eb4}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Frontend\+::\+Lexer@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Frontend\+::\+Lexer}!Subroutines@{Subroutines}}
+\index{Subroutines@{Subroutines}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Frontend\+::\+Lexer@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Frontend\+::\+Lexer}}
+\subsubsection[{Subroutines}]{\setlength{\rightskip}{0pt plus 5cm}List$<$Tuple$<$string, {\bf Enum\+Types}, string$>$ $>$ C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Compiler.\+Frontend.\+Lexer.\+Subroutines\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}\label{class_c_p_u___o_s___simulator_1_1_compiler_1_1_frontend_1_1_lexer_aba6b80bb384466d01497af6a343f2eb4}
+
+
+Definition at line 90 of file Lexer.\+cs.
+
+\hypertarget{class_c_p_u___o_s___simulator_1_1_compiler_1_1_frontend_1_1_lexer_a08611849f2bad0c53f5707d15dbdc840}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Frontend\+::\+Lexer@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Frontend\+::\+Lexer}!Tokens@{Tokens}}
+\index{Tokens@{Tokens}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Frontend\+::\+Lexer@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Frontend\+::\+Lexer}}
+\subsubsection[{Tokens}]{\setlength{\rightskip}{0pt plus 5cm}Linked\+List$<${\bf Token}$>$ C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Compiler.\+Frontend.\+Lexer.\+Tokens\hspace{0.3cm}{\ttfamily [get]}}\label{class_c_p_u___o_s___simulator_1_1_compiler_1_1_frontend_1_1_lexer_a08611849f2bad0c53f5707d15dbdc840}
+
+
+Property for the linked list of tokens produced by the lexer 
+
+
+
+Definition at line 79 of file Lexer.\+cs.
+
+\hypertarget{class_c_p_u___o_s___simulator_1_1_compiler_1_1_frontend_1_1_lexer_abb832df2e4dc0a135eca9e20aeafc25f}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Frontend\+::\+Lexer@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Frontend\+::\+Lexer}!Variables@{Variables}}
+\index{Variables@{Variables}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Frontend\+::\+Lexer@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Frontend\+::\+Lexer}}
+\subsubsection[{Variables}]{\setlength{\rightskip}{0pt plus 5cm}List$<$Tuple$<$string, {\bf Enum\+Types}, string$>$ $>$ C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Compiler.\+Frontend.\+Lexer.\+Variables\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}\label{class_c_p_u___o_s___simulator_1_1_compiler_1_1_frontend_1_1_lexer_abb832df2e4dc0a135eca9e20aeafc25f}
+
+
+Definition at line 84 of file Lexer.\+cs.
+
+\hypertarget{class_c_p_u___o_s___simulator_1_1_compiler_1_1_frontend_1_1_lexer_ab036c4c1dbff32b7a8a54d58f4c4195c}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Frontend\+::\+Lexer@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Frontend\+::\+Lexer}!Writing\+To\+Compiler\+Tester@{Writing\+To\+Compiler\+Tester}}
+\index{Writing\+To\+Compiler\+Tester@{Writing\+To\+Compiler\+Tester}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Frontend\+::\+Lexer@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Frontend\+::\+Lexer}}
+\subsubsection[{Writing\+To\+Compiler\+Tester}]{\setlength{\rightskip}{0pt plus 5cm}bool C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Compiler.\+Frontend.\+Lexer.\+Writing\+To\+Compiler\+Tester\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}\label{class_c_p_u___o_s___simulator_1_1_compiler_1_1_frontend_1_1_lexer_ab036c4c1dbff32b7a8a54d58f4c4195c}
+
+
+Property to hold whether we are writing the compiler tester app or not 
+
+
+
+Definition at line 55 of file Lexer.\+cs.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Compiler/\+Frontend/\hyperlink{_lexer_8cs}{Lexer.\+cs}\end{DoxyCompactItemize}

@@ -1,0 +1,153 @@
+\hypertarget{class_c_p_u___o_s___simulator_1_1_compiler_1_1_frontend_1_1_symbols_1_1_symbol_table}{}\section{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Compiler.\+Frontend.\+Symbols.\+Symbol\+Table Class Reference}
+\label{class_c_p_u___o_s___simulator_1_1_compiler_1_1_frontend_1_1_symbols_1_1_symbol_table}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Compiler.\+Frontend.\+Symbols.\+Symbol\+Table@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Compiler.\+Frontend.\+Symbols.\+Symbol\+Table}}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_c_p_u___o_s___simulator_1_1_compiler_1_1_frontend_1_1_symbols_1_1_symbol_table_a3198555072680916b69483d09f8a23ca}{Symbol\+Table} (Text\+Box \hyperlink{class_c_p_u___o_s___simulator_1_1_compiler_1_1_frontend_1_1_symbols_1_1_symbol_table_a296a865c0445d3282c0b211853df56db}{output})
+\item 
+Linked\+List\+Node$<$ \hyperlink{class_c_p_u___o_s___simulator_1_1_compiler_1_1_frontend_1_1_symbols_1_1_symbol}{Symbol} $>$ \hyperlink{class_c_p_u___o_s___simulator_1_1_compiler_1_1_frontend_1_1_symbols_1_1_symbol_table_adf107a69c02c4997630d70bee032559f}{Find\+Symbol} (string name)
+\item 
+Linked\+List\+Node$<$ \hyperlink{class_c_p_u___o_s___simulator_1_1_compiler_1_1_frontend_1_1_symbols_1_1_symbol}{Symbol} $>$ \hyperlink{class_c_p_u___o_s___simulator_1_1_compiler_1_1_frontend_1_1_symbols_1_1_symbol_table_aa073e0a3a954f8c80a908253154db9ac}{Find\+Symbol} (\hyperlink{namespace_c_p_u___o_s___simulator_1_1_compiler_1_1_frontend_1_1_tokens_a7c0cc43763cc9d01c7d5af34d70b96ea}{Enum\+Types} type)
+\item 
+Linked\+List\+Node$<$ \hyperlink{class_c_p_u___o_s___simulator_1_1_compiler_1_1_frontend_1_1_symbols_1_1_symbol}{Symbol} $>$ \hyperlink{class_c_p_u___o_s___simulator_1_1_compiler_1_1_frontend_1_1_symbols_1_1_symbol_table_a3e7532efc1e1af447b411f991d96a68b}{Add\+Symbol} (Linked\+List\+Node$<$ \hyperlink{class_c_p_u___o_s___simulator_1_1_compiler_1_1_frontend_1_1_symbols_1_1_symbol}{Symbol} $>$ symbol)
+\item 
+void \hyperlink{class_c_p_u___o_s___simulator_1_1_compiler_1_1_frontend_1_1_symbols_1_1_symbol_table_a96a4764b3c4e15413c7cca27b0e7d500}{Print\+Symbols} ()
+\item 
+bool \hyperlink{class_c_p_u___o_s___simulator_1_1_compiler_1_1_frontend_1_1_symbols_1_1_symbol_table_a58dfc6b7e3d6306436a4aa53aebfa085}{is\+Identifier\+Declared\+In\+Scope} (\hyperlink{class_c_p_u___o_s___simulator_1_1_compiler_1_1_frontend_1_1_symbols_1_1_symbol}{Symbol} identifier, \hyperlink{class_c_p_u___o_s___simulator_1_1_compiler_1_1_frontend_1_1_symbols_1_1_scope}{Scope} scope)
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Linked\+List$<$ \hyperlink{class_c_p_u___o_s___simulator_1_1_compiler_1_1_frontend_1_1_symbols_1_1_symbol}{Symbol} $>$ \hyperlink{class_c_p_u___o_s___simulator_1_1_compiler_1_1_frontend_1_1_symbols_1_1_symbol_table_a3a69b239234ec68d9225217c4a4b1eb7}{symbols}
+\item 
+Linked\+List\+Node$<$ \hyperlink{class_c_p_u___o_s___simulator_1_1_compiler_1_1_frontend_1_1_symbols_1_1_symbol}{Symbol} $>$ \hyperlink{class_c_p_u___o_s___simulator_1_1_compiler_1_1_frontend_1_1_symbols_1_1_symbol_table_a2fc3932216a6a0a499d47bc29a2b03c3}{current\+Symbol}
+\item 
+Linked\+List\+Node$<$ \hyperlink{class_c_p_u___o_s___simulator_1_1_compiler_1_1_frontend_1_1_symbols_1_1_symbol}{Symbol} $>$ \hyperlink{class_c_p_u___o_s___simulator_1_1_compiler_1_1_frontend_1_1_symbols_1_1_symbol_table_aae0b08c3eb5d6ada83e944352bc77ebb}{next\+Symbol}
+\item 
+Linked\+List\+Node$<$ \hyperlink{class_c_p_u___o_s___simulator_1_1_compiler_1_1_frontend_1_1_symbols_1_1_symbol}{Symbol} $>$ \hyperlink{class_c_p_u___o_s___simulator_1_1_compiler_1_1_frontend_1_1_symbols_1_1_symbol_table_a40b980c535cb45d6946762cb21112fb2}{previous\+Symbol}
+\item 
+Text\+Box \hyperlink{class_c_p_u___o_s___simulator_1_1_compiler_1_1_frontend_1_1_symbols_1_1_symbol_table_a296a865c0445d3282c0b211853df56db}{output}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 8 of file Symbol\+Table.\+cs.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_c_p_u___o_s___simulator_1_1_compiler_1_1_frontend_1_1_symbols_1_1_symbol_table_a3198555072680916b69483d09f8a23ca}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Frontend\+::\+Symbols\+::\+Symbol\+Table@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Frontend\+::\+Symbols\+::\+Symbol\+Table}!Symbol\+Table@{Symbol\+Table}}
+\index{Symbol\+Table@{Symbol\+Table}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Frontend\+::\+Symbols\+::\+Symbol\+Table@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Frontend\+::\+Symbols\+::\+Symbol\+Table}}
+\subsubsection[{Symbol\+Table(\+Text\+Box output)}]{\setlength{\rightskip}{0pt plus 5cm}C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Compiler.\+Frontend.\+Symbols.\+Symbol\+Table.\+Symbol\+Table (
+\begin{DoxyParamCaption}
+\item[{Text\+Box}]{output}
+\end{DoxyParamCaption}
+)}\label{class_c_p_u___o_s___simulator_1_1_compiler_1_1_frontend_1_1_symbols_1_1_symbol_table_a3198555072680916b69483d09f8a23ca}
+
+
+Definition at line 16 of file Symbol\+Table.\+cs.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_c_p_u___o_s___simulator_1_1_compiler_1_1_frontend_1_1_symbols_1_1_symbol_table_a3e7532efc1e1af447b411f991d96a68b}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Frontend\+::\+Symbols\+::\+Symbol\+Table@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Frontend\+::\+Symbols\+::\+Symbol\+Table}!Add\+Symbol@{Add\+Symbol}}
+\index{Add\+Symbol@{Add\+Symbol}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Frontend\+::\+Symbols\+::\+Symbol\+Table@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Frontend\+::\+Symbols\+::\+Symbol\+Table}}
+\subsubsection[{Add\+Symbol(\+Linked\+List\+Node$<$ Symbol $>$ symbol)}]{\setlength{\rightskip}{0pt plus 5cm}Linked\+List\+Node$<${\bf Symbol}$>$ C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Compiler.\+Frontend.\+Symbols.\+Symbol\+Table.\+Add\+Symbol (
+\begin{DoxyParamCaption}
+\item[{Linked\+List\+Node$<$ {\bf Symbol} $>$}]{symbol}
+\end{DoxyParamCaption}
+)}\label{class_c_p_u___o_s___simulator_1_1_compiler_1_1_frontend_1_1_symbols_1_1_symbol_table_a3e7532efc1e1af447b411f991d96a68b}
+
+
+Definition at line 52 of file Symbol\+Table.\+cs.
+
+\hypertarget{class_c_p_u___o_s___simulator_1_1_compiler_1_1_frontend_1_1_symbols_1_1_symbol_table_adf107a69c02c4997630d70bee032559f}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Frontend\+::\+Symbols\+::\+Symbol\+Table@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Frontend\+::\+Symbols\+::\+Symbol\+Table}!Find\+Symbol@{Find\+Symbol}}
+\index{Find\+Symbol@{Find\+Symbol}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Frontend\+::\+Symbols\+::\+Symbol\+Table@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Frontend\+::\+Symbols\+::\+Symbol\+Table}}
+\subsubsection[{Find\+Symbol(string name)}]{\setlength{\rightskip}{0pt plus 5cm}Linked\+List\+Node$<${\bf Symbol}$>$ C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Compiler.\+Frontend.\+Symbols.\+Symbol\+Table.\+Find\+Symbol (
+\begin{DoxyParamCaption}
+\item[{string}]{name}
+\end{DoxyParamCaption}
+)}\label{class_c_p_u___o_s___simulator_1_1_compiler_1_1_frontend_1_1_symbols_1_1_symbol_table_adf107a69c02c4997630d70bee032559f}
+
+
+Definition at line 22 of file Symbol\+Table.\+cs.
+
+\hypertarget{class_c_p_u___o_s___simulator_1_1_compiler_1_1_frontend_1_1_symbols_1_1_symbol_table_aa073e0a3a954f8c80a908253154db9ac}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Frontend\+::\+Symbols\+::\+Symbol\+Table@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Frontend\+::\+Symbols\+::\+Symbol\+Table}!Find\+Symbol@{Find\+Symbol}}
+\index{Find\+Symbol@{Find\+Symbol}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Frontend\+::\+Symbols\+::\+Symbol\+Table@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Frontend\+::\+Symbols\+::\+Symbol\+Table}}
+\subsubsection[{Find\+Symbol(\+Enum\+Types type)}]{\setlength{\rightskip}{0pt plus 5cm}Linked\+List\+Node$<${\bf Symbol}$>$ C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Compiler.\+Frontend.\+Symbols.\+Symbol\+Table.\+Find\+Symbol (
+\begin{DoxyParamCaption}
+\item[{{\bf Enum\+Types}}]{type}
+\end{DoxyParamCaption}
+)}\label{class_c_p_u___o_s___simulator_1_1_compiler_1_1_frontend_1_1_symbols_1_1_symbol_table_aa073e0a3a954f8c80a908253154db9ac}
+
+
+Definition at line 37 of file Symbol\+Table.\+cs.
+
+\hypertarget{class_c_p_u___o_s___simulator_1_1_compiler_1_1_frontend_1_1_symbols_1_1_symbol_table_a58dfc6b7e3d6306436a4aa53aebfa085}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Frontend\+::\+Symbols\+::\+Symbol\+Table@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Frontend\+::\+Symbols\+::\+Symbol\+Table}!is\+Identifier\+Declared\+In\+Scope@{is\+Identifier\+Declared\+In\+Scope}}
+\index{is\+Identifier\+Declared\+In\+Scope@{is\+Identifier\+Declared\+In\+Scope}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Frontend\+::\+Symbols\+::\+Symbol\+Table@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Frontend\+::\+Symbols\+::\+Symbol\+Table}}
+\subsubsection[{is\+Identifier\+Declared\+In\+Scope(\+Symbol identifier, Scope scope)}]{\setlength{\rightskip}{0pt plus 5cm}bool C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Compiler.\+Frontend.\+Symbols.\+Symbol\+Table.\+is\+Identifier\+Declared\+In\+Scope (
+\begin{DoxyParamCaption}
+\item[{{\bf Symbol}}]{identifier, }
+\item[{{\bf Scope}}]{scope}
+\end{DoxyParamCaption}
+)}\label{class_c_p_u___o_s___simulator_1_1_compiler_1_1_frontend_1_1_symbols_1_1_symbol_table_a58dfc6b7e3d6306436a4aa53aebfa085}
+
+
+Definition at line 81 of file Symbol\+Table.\+cs.
+
+\hypertarget{class_c_p_u___o_s___simulator_1_1_compiler_1_1_frontend_1_1_symbols_1_1_symbol_table_a96a4764b3c4e15413c7cca27b0e7d500}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Frontend\+::\+Symbols\+::\+Symbol\+Table@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Frontend\+::\+Symbols\+::\+Symbol\+Table}!Print\+Symbols@{Print\+Symbols}}
+\index{Print\+Symbols@{Print\+Symbols}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Frontend\+::\+Symbols\+::\+Symbol\+Table@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Frontend\+::\+Symbols\+::\+Symbol\+Table}}
+\subsubsection[{Print\+Symbols()}]{\setlength{\rightskip}{0pt plus 5cm}void C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Compiler.\+Frontend.\+Symbols.\+Symbol\+Table.\+Print\+Symbols (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{class_c_p_u___o_s___simulator_1_1_compiler_1_1_frontend_1_1_symbols_1_1_symbol_table_a96a4764b3c4e15413c7cca27b0e7d500}
+
+
+Definition at line 58 of file Symbol\+Table.\+cs.
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{class_c_p_u___o_s___simulator_1_1_compiler_1_1_frontend_1_1_symbols_1_1_symbol_table_a2fc3932216a6a0a499d47bc29a2b03c3}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Frontend\+::\+Symbols\+::\+Symbol\+Table@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Frontend\+::\+Symbols\+::\+Symbol\+Table}!current\+Symbol@{current\+Symbol}}
+\index{current\+Symbol@{current\+Symbol}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Frontend\+::\+Symbols\+::\+Symbol\+Table@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Frontend\+::\+Symbols\+::\+Symbol\+Table}}
+\subsubsection[{current\+Symbol}]{\setlength{\rightskip}{0pt plus 5cm}Linked\+List\+Node$<${\bf Symbol}$>$ C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Compiler.\+Frontend.\+Symbols.\+Symbol\+Table.\+current\+Symbol\hspace{0.3cm}{\ttfamily [private]}}\label{class_c_p_u___o_s___simulator_1_1_compiler_1_1_frontend_1_1_symbols_1_1_symbol_table_a2fc3932216a6a0a499d47bc29a2b03c3}
+
+
+Definition at line 11 of file Symbol\+Table.\+cs.
+
+\hypertarget{class_c_p_u___o_s___simulator_1_1_compiler_1_1_frontend_1_1_symbols_1_1_symbol_table_aae0b08c3eb5d6ada83e944352bc77ebb}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Frontend\+::\+Symbols\+::\+Symbol\+Table@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Frontend\+::\+Symbols\+::\+Symbol\+Table}!next\+Symbol@{next\+Symbol}}
+\index{next\+Symbol@{next\+Symbol}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Frontend\+::\+Symbols\+::\+Symbol\+Table@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Frontend\+::\+Symbols\+::\+Symbol\+Table}}
+\subsubsection[{next\+Symbol}]{\setlength{\rightskip}{0pt plus 5cm}Linked\+List\+Node$<${\bf Symbol}$>$ C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Compiler.\+Frontend.\+Symbols.\+Symbol\+Table.\+next\+Symbol\hspace{0.3cm}{\ttfamily [private]}}\label{class_c_p_u___o_s___simulator_1_1_compiler_1_1_frontend_1_1_symbols_1_1_symbol_table_aae0b08c3eb5d6ada83e944352bc77ebb}
+
+
+Definition at line 12 of file Symbol\+Table.\+cs.
+
+\hypertarget{class_c_p_u___o_s___simulator_1_1_compiler_1_1_frontend_1_1_symbols_1_1_symbol_table_a296a865c0445d3282c0b211853df56db}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Frontend\+::\+Symbols\+::\+Symbol\+Table@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Frontend\+::\+Symbols\+::\+Symbol\+Table}!output@{output}}
+\index{output@{output}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Frontend\+::\+Symbols\+::\+Symbol\+Table@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Frontend\+::\+Symbols\+::\+Symbol\+Table}}
+\subsubsection[{output}]{\setlength{\rightskip}{0pt plus 5cm}Text\+Box C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Compiler.\+Frontend.\+Symbols.\+Symbol\+Table.\+output\hspace{0.3cm}{\ttfamily [private]}}\label{class_c_p_u___o_s___simulator_1_1_compiler_1_1_frontend_1_1_symbols_1_1_symbol_table_a296a865c0445d3282c0b211853df56db}
+
+
+Definition at line 14 of file Symbol\+Table.\+cs.
+
+\hypertarget{class_c_p_u___o_s___simulator_1_1_compiler_1_1_frontend_1_1_symbols_1_1_symbol_table_a40b980c535cb45d6946762cb21112fb2}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Frontend\+::\+Symbols\+::\+Symbol\+Table@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Frontend\+::\+Symbols\+::\+Symbol\+Table}!previous\+Symbol@{previous\+Symbol}}
+\index{previous\+Symbol@{previous\+Symbol}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Frontend\+::\+Symbols\+::\+Symbol\+Table@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Frontend\+::\+Symbols\+::\+Symbol\+Table}}
+\subsubsection[{previous\+Symbol}]{\setlength{\rightskip}{0pt plus 5cm}Linked\+List\+Node$<${\bf Symbol}$>$ C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Compiler.\+Frontend.\+Symbols.\+Symbol\+Table.\+previous\+Symbol\hspace{0.3cm}{\ttfamily [private]}}\label{class_c_p_u___o_s___simulator_1_1_compiler_1_1_frontend_1_1_symbols_1_1_symbol_table_a40b980c535cb45d6946762cb21112fb2}
+
+
+Definition at line 13 of file Symbol\+Table.\+cs.
+
+\hypertarget{class_c_p_u___o_s___simulator_1_1_compiler_1_1_frontend_1_1_symbols_1_1_symbol_table_a3a69b239234ec68d9225217c4a4b1eb7}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Frontend\+::\+Symbols\+::\+Symbol\+Table@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Frontend\+::\+Symbols\+::\+Symbol\+Table}!symbols@{symbols}}
+\index{symbols@{symbols}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Frontend\+::\+Symbols\+::\+Symbol\+Table@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Compiler\+::\+Frontend\+::\+Symbols\+::\+Symbol\+Table}}
+\subsubsection[{symbols}]{\setlength{\rightskip}{0pt plus 5cm}Linked\+List$<${\bf Symbol}$>$ C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Compiler.\+Frontend.\+Symbols.\+Symbol\+Table.\+symbols\hspace{0.3cm}{\ttfamily [private]}}\label{class_c_p_u___o_s___simulator_1_1_compiler_1_1_frontend_1_1_symbols_1_1_symbol_table_a3a69b239234ec68d9225217c4a4b1eb7}
+
+
+Definition at line 10 of file Symbol\+Table.\+cs.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Compiler/\+Frontend/\+Symbols/\hyperlink{_symbol_table_8cs}{Symbol\+Table.\+cs}\end{DoxyCompactItemize}

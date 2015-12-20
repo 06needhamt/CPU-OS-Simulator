@@ -16,7 +16,7 @@ var class_c_p_u___o_s___simulator_1_1_memory_window =
     [ "PopulateDataView", "class_c_p_u___o_s___simulator_1_1_memory_window.html#a8811287064d6315e3a8c01531148ed81", null ],
     [ "SetMemoryWindowInstance", "class_c_p_u___o_s___simulator_1_1_memory_window.html#a5100fa341de6de08d11967198cd82208", null ],
     [ "UpdateData", "class_c_p_u___o_s___simulator_1_1_memory_window.html#ab0cb156466262b3d90f19acd422dc65b", null ],
-    [ "Window_Closing", "class_c_p_u___o_s___simulator_1_1_memory_window.html#a6123a0a8b93cb6636ed3c039391948a5", null ],
+    [ "Window_Closing", "class_c_p_u___o_s___simulator_1_1_memory_window.html#a0727fbff3ea42722692b224a621ecc4a", null ],
     [ "_contentLoaded", "class_c_p_u___o_s___simulator_1_1_memory_window.html#af20b67929b49d4289e1d81d141cbd950", null ],
     [ "btn_ResetAll", "class_c_p_u___o_s___simulator_1_1_memory_window.html#aeeefcad9b4510fd7fd5899f3a2db4786", null ],
     [ "btn_ShowPageTable", "class_c_p_u___o_s___simulator_1_1_memory_window.html#a62372edf818561f1584160d41c2f67f7", null ],

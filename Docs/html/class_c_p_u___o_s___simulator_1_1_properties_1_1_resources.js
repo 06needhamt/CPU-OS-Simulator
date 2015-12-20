@@ -1,8 +1,8 @@
 var class_c_p_u___o_s___simulator_1_1_properties_1_1_resources =
 [
     [ "Resources", "class_c_p_u___o_s___simulator_1_1_properties_1_1_resources.html#ae830a892b90306383137816b2194f777", null ],
-    [ "resourceCulture", "class_c_p_u___o_s___simulator_1_1_properties_1_1_resources.html#a08c56eb92abfbde7a18635199c6f28cf", null ],
-    [ "resourceMan", "class_c_p_u___o_s___simulator_1_1_properties_1_1_resources.html#abc80953d3d68ed223e07e8efabc17b79", null ],
-    [ "Culture", "class_c_p_u___o_s___simulator_1_1_properties_1_1_resources.html#afb07c44f770e3a53a2df87db2ebd9af3", null ],
-    [ "ResourceManager", "class_c_p_u___o_s___simulator_1_1_properties_1_1_resources.html#a59a57fa23c17b7afe97c18c6cb3c30cc", null ]
+    [ "resourceCulture", "class_c_p_u___o_s___simulator_1_1_properties_1_1_resources.html#aec37dbc04f58f227b9900750d2cdddaa", null ],
+    [ "resourceMan", "class_c_p_u___o_s___simulator_1_1_properties_1_1_resources.html#a8362e360ca163bc3fa1a27bf18ff1eb2", null ],
+    [ "Culture", "class_c_p_u___o_s___simulator_1_1_properties_1_1_resources.html#aa592510b1ffdc479eca72adae099ab05", null ],
+    [ "ResourceManager", "class_c_p_u___o_s___simulator_1_1_properties_1_1_resources.html#ab94d8d323ea515d9785b46e3824d8767", null ]
 ];
