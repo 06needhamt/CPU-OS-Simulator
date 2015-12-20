@@ -43,7 +43,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="EnumProcessState.cs" />
-    <Compile Include="Process.cs" />
+    <Compile Include="OSCore.cs" />
+    <Compile Include="OSFlags.cs" />
+    <Compile Include="SimulatorProcess.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

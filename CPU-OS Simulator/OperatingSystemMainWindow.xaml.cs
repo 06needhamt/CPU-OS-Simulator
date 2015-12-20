@@ -19,9 +19,21 @@ namespace CPU_OS_Simulator
     /// </summary>
     public partial class OperatingSystemMainWindow : Window
     {
+        private MainWindow parent;
         public OperatingSystemMainWindow()
         {
             InitializeComponent();
+        }
+
+        public OperatingSystemMainWindow(MainWindow parent)
+        {
+            this.parent = parent;
+            InitializeComponent();
+        }
+
+        private void btn_Close_Click(object sender, RoutedEventArgs e)
+        {
+            Close();
         }
     }
 }

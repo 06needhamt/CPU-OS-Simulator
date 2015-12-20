@@ -103,6 +103,157 @@
         <CheckBox x:Name="chk_Suspend_On_State_Ready" Content="Suspend On State Change" HorizontalAlignment="Left" Margin="481,457,0,0" VerticalAlignment="Top"/>
         <Button x:Name="btn_Show_Memory_Ready" Content="SHOW MEMORY" HorizontalAlignment="Left" Margin="647,445,0,0" VerticalAlignment="Top" Width="95" Height="50"/>
         <Button x:Name="btn_Show_PCB_Ready" Content="SHOW PCB" HorizontalAlignment="Left" Margin="747,445,0,0" VerticalAlignment="Top" Width="81" Height="50"/>
+        <TabControl x:Name="Scheduler_Tabs" HorizontalAlignment="Left" Height="229" Margin="828,10,0,0" VerticalAlignment="Top" Width="436">
+            <TabItem x:Name="Policies_Tab" Header="TabItem">
+                <Grid x:Name="grid_Policies" Background="White">
+                    <RadioButton x:Name="rdb_FirstCome_FirstServed" Content="First Come First Served (FCFS)" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" GroupName="Scheduling Policies"/>
+                    <RadioButton x:Name="rdb_Shortest_Job_First" Content="Shortest Job First (SJF)" HorizontalAlignment="Left" Margin="10,31,0,0" VerticalAlignment="Top" GroupName="Scheduling Policies"/>
+                    <RadioButton x:Name="rdb_Lottery" Content="Lottery Scheduling" HorizontalAlignment="Left" Margin="212,10,0,0" VerticalAlignment="Top" GroupName="Scheduling Policies" IsEnabled="False"/>
+                    <RadioButton x:Name="rdb_FairShare" Content="Fair Share Scheduling" HorizontalAlignment="Left" Margin="212,30,0,0" VerticalAlignment="Top" GroupName="Scheduling Policies" IsEnabled="False"/>
+                    <RadioButton x:Name="rdb_Round_Robin" Content="Round Robin (RR)" HorizontalAlignment="Left" Margin="10,57,0,0" VerticalAlignment="Top" GroupName="Scheduling Policies"/>
+                    <CheckBox x:Name="chk_UseDefault" Content="Use Default" HorizontalAlignment="Left" Margin="212,57,0,0" VerticalAlignment="Top"/>
+                    <GroupBox x:Name="grp_Round_Robin_Config" Header="Round Robin Configuration" HorizontalAlignment="Left" Margin="0,89,0,0" VerticalAlignment="Top" Height="112" Width="430">
+                        <Grid x:Name="grid_RR_Config" HorizontalAlignment="Left" Height="100" Margin="0,0,-2,-10" VerticalAlignment="Top" Width="420">
+                            <GroupBox x:Name="grp_Time_Slice" Header="RR Time Slice" HorizontalAlignment="Left" VerticalAlignment="Top" Height="90" Width="142">
+                                <Grid HorizontalAlignment="Left" Height="69" Margin="0,0,-2,-1" VerticalAlignment="Top" Width="132">
+                                    <ComboBox x:Name="cmb_Ticks" HorizontalAlignment="Left" Margin="20,8,0,0" VerticalAlignment="Top" Width="56" SelectedIndex="0">
+                                        <System:Double>1</System:Double>
+                                        <System:Double>2</System:Double>
+                                        <System:Double>5</System:Double>
+                                        <System:Double>10</System:Double>
+                                        <System:Double>20</System:Double>
+                                        <System:Double>0</System:Double>
+                                    </ComboBox>
+                                    <Label x:Name="label2" Content="Ticks" HorizontalAlignment="Left" Margin="84,4,0,0" VerticalAlignment="Top"/>
+                                    <ComboBox x:Name="cmb_Seconds" HorizontalAlignment="Left" Margin="20,32,0,0" VerticalAlignment="Top" Width="56" SelectedIndex="0">
+                                        <System:Double>0.2</System:Double>
+                                        <System:Double>0.5</System:Double>
+                                        <System:Double>1</System:Double>
+                                        <System:Double>2</System:Double>
+                                        <System:Double>3</System:Double>
+                                        <System:Double>5</System:Double>
+                                        <System:Double>10</System:Double>
+                                    </ComboBox>
+                                    <Label x:Name="label2_Copy" Content="Secs" HorizontalAlignment="Left" Margin="84,29,0,0" VerticalAlignment="Top"/>
+                                </Grid>
+                            </GroupBox>
+                            <GroupBox x:Name="grp_Priority" Header="Priority" HorizontalAlignment="Left" VerticalAlignment="Top" Height="90" Width="142" Margin="144,1,0,0">
+                                <Grid x:Name="grid_Priority" HorizontalAlignment="Left" Height="69" Margin="0,0,-2,-1" VerticalAlignment="Top" Width="132">
+                                    <RadioButton x:Name="rdb_No_Priority" Content="No Priority" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" GroupName="Priorities"/>
+                                    <RadioButton x:Name="rdb_Preemptive" Content="Pre-Emptive" HorizontalAlignment="Left" Margin="10,27,0,0" VerticalAlignment="Top" GroupName="Priorities"/>
+                                    <RadioButton x:Name="rdb_Non_Preemptive" Content="Non Pre-Emptive" HorizontalAlignment="Left" Margin="10,44,0,0" VerticalAlignment="Top" GroupName="Priorities"/>
+                                </Grid>
+                            </GroupBox>
+                            <GroupBox x:Name="grp_Dynamic" Header="RR Time Slice" HorizontalAlignment="Left" VerticalAlignment="Top" Height="90" Width="142" Margin="280,4,-2,0">
+                                <Grid HorizontalAlignment="Left" Height="69" Margin="0,0,-2,-1" VerticalAlignment="Top" Width="132">
+                                    <RadioButton x:Name="rdb_Static" Content="Static" HorizontalAlignment="Left" Margin="13,10,0,0" VerticalAlignment="Top" GroupName="Type"/>
+                                    <RadioButton x:Name="rdb_Dynamic" Content="Dynamic" HorizontalAlignment="Left" Margin="13,35,0,0" VerticalAlignment="Top" GroupName="Type"/>
+                                </Grid>
+                            </GroupBox>
+                        </Grid>
+                    </GroupBox>
+                </Grid>
+            </TabItem>
+        </TabControl>
+        <RadioButton x:Name="rdb_Time_Ticks" Content="" HorizontalAlignment="Left" Margin="844,167,0,0" VerticalAlignment="Top" GroupName="Time Slice"/>
+        <RadioButton x:Name="rdb_Time_Seconds" Content="" HorizontalAlignment="Left" Margin="844,191,0,0" VerticalAlignment="Top" GroupName="Time Slice"/>
+        <TabControl x:Name="ControlTabs" HorizontalAlignment="Left" Height="173" Margin="833,256,0,0" VerticalAlignment="Top" Width="431">
+            <TabItem x:Name="ControlTab" Header="OS Control">
+                <Grid Background="White">
+                    <Button x:Name="btn_Step" Content="STEP" HorizontalAlignment="Left" Margin="11,10,0,0" VerticalAlignment="Top" Width="75" Height="40"/>
+                    <Button x:Name="btn_Start" Content="START" HorizontalAlignment="Left" Margin="11,55,0,0" VerticalAlignment="Top" Width="75" Height="36"/>
+                    <Button x:Name="btn_Suspend" Content="SUSPEND" HorizontalAlignment="Left" Margin="11,98,0,0" VerticalAlignment="Top" Width="75" Height="44"/>
+                    <Slider x:Name="sld_ClockSpeed" HorizontalAlignment="Left" Margin="159,0,0,0" VerticalAlignment="Top" Height="142" Width="71" Orientation="Vertical" Maximum="1000" Minimum="25" SmallChange="10" TickFrequency="100" LargeChange="100" TickPlacement="BottomRight" IsDirectionReversed="True" Value="1000" />
+                    <Label x:Name="label3" Content="FAST" HorizontalAlignment="Left" Margin="213,10,0,0" VerticalAlignment="Top"/>
+                    <Label x:Name="label3_Copy" Content="SLOW" HorizontalAlignment="Left" Margin="213,112,0,0" VerticalAlignment="Top"/>
+                    <CheckBox x:Name="chk_Single_CPU" Content="Use Single CPU" HorizontalAlignment="Left" Margin="306,31,0,0" VerticalAlignment="Top"/>
+                    <CheckBox x:Name="chk_CPU_Affinity" Content="Allow CPU Affinity" HorizontalAlignment="Left" Margin="306,54,0,0" VerticalAlignment="Top"/>
+                    <CheckBox x:Name="chk_No_Processes" Content="Run with no processes" HorizontalAlignment="Left" Margin="279,72,0,0" VerticalAlignment="Top" Width="143" Height="33"/>
+                </Grid>
+            </TabItem>
+        </TabControl>
+        <GroupBox x:Name="grp_ProgramList" Header="PROGRAM LIST" HorizontalAlignment="Left" Margin="833,443,0,0" VerticalAlignment="Top" Height="271" Width="431">
+            <Grid x:Name="grid_ProgramList" HorizontalAlignment="Left" Height="249" VerticalAlignment="Top" Width="421" Margin="0,0,-2,0">
+                <ListView x:Name="lst_Programs" HorizontalAlignment="Left" Height="239" VerticalAlignment="Top" Width="155" Background="#FFFFFCC1">
+                    <ListView.View>
+                        <GridView>
+                            <GridViewColumn Header="Program Name" Width="150" DisplayMemberBinding="{Binding Name}" />
+                        </GridView>
+                    </ListView.View>
+                </ListView>
+                <TabControl x:Name="ProcessTabs" HorizontalAlignment="Left" Height="239" Margin="160,0,0,0" VerticalAlignment="Top" Width="261">
+                    <TabItem x:Name="Process_Tab" Header="Process">
+                        <Grid Background="White">
+                            <Label x:Name="label4"  HorizontalAlignment="Left" Margin="10,21,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.447,-0.269" Width="50" Height="42">
+                                <Label.Content>
+                                    <AccessText TextWrapping="Wrap" Text="Process Name" Height="33" Width="45"/>
+                                </Label.Content>
+                            </Label>
+                            <TextBox x:Name="txtProcessName" HorizontalAlignment="Left" Height="23" Margin="65,24,0,0" TextWrapping="Wrap" Text="P1" VerticalAlignment="Top" Width="49" RenderTransformOrigin="0.327,0.043"/>
+                            <Label x:Name="label5" Content="Priority" HorizontalAlignment="Left" Margin="10,60,0,0" VerticalAlignment="Top"/>
+                            <ComboBox x:Name="cmb_Priority" HorizontalAlignment="Left" Margin="65,60,0,0" VerticalAlignment="Top" Width="49" SelectedIndex="2">
+                                <System:Int32>1</System:Int32>
+                                <System:Int32>2</System:Int32>
+                                <System:Int32>3</System:Int32>
+                                <System:Int32>4</System:Int32>
+                                <System:Int32>5</System:Int32>
+                            </ComboBox>
+                            <Label x:Name="label6" Content="Pages" HorizontalAlignment="Left" Margin="10,86,0,0" VerticalAlignment="Top"/>
+                            <ComboBox x:Name="cmb_Pages" HorizontalAlignment="Left" Margin="65,86,0,0" VerticalAlignment="Top" Width="49" SelectedIndex="0">
+                                <System:Int32>1</System:Int32>
+                                <System:Int32>2</System:Int32>
+                                <System:Int32>3</System:Int32>
+                                <System:Int32>4</System:Int32>
+                                <System:Int32>5</System:Int32>
+                                <System:Int32>6</System:Int32>
+                                <System:Int32>7</System:Int32>
+                                <System:Int32>8</System:Int32>
+                                <System:Int32>9</System:Int32>
+                                <System:Int32>10</System:Int32>
+                            </ComboBox>
+                            <CheckBox x:Name="chk_Display_Profile" Content="Display Profile" HorizontalAlignment="Left" Margin="19,117,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.423,0.933"/>
+                            <CheckBox x:Name="chk_Children_Die"  HorizontalAlignment="Left" Margin="19,133,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.423,0.933" Width="95">
+                                <CheckBox.Content>
+                                    <AccessText TextWrapping="Wrap" Text="Parent Dies Children Die" Height="33" Width="71"/>
+                                </CheckBox.Content>
+                            </CheckBox>
+                            <Button x:Name="btn_CreateNewProcess" Content="Create New Process" HorizontalAlignment="Left" Margin="10,170,0,0" VerticalAlignment="Top" Width="113" Height="31"/>
+                            <CheckBox x:Name="chk_Default_Scheduler" Content="Default Scheduler" HorizontalAlignment="Left" Margin="139,28,0,0" VerticalAlignment="Top"/>
+                            <Label x:Name="label7"  HorizontalAlignment="Left" Margin="126,51,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.447,-0.269" Width="50" Height="42">
+                                <Label.Content>
+                                    <AccessText TextWrapping="Wrap" Text="Process Lifetime" Height="33" Width="50"/>
+                                </Label.Content>
+                            </Label>
+                            <TextBox x:Name="txt_ProcessLifetime" HorizontalAlignment="Left" Height="23" Margin="181,60,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="64"/>
+                            <RadioButton x:Name="rdb_LifetimeTicks" Content="Ticks" HorizontalAlignment="Left" Margin="139,105,0,0" VerticalAlignment="Top" Width="50" GroupName="Lifetime Unit" IsChecked="True"/>
+                            <RadioButton x:Name="rdb_LifetimeSecs" Content="Secs" HorizontalAlignment="Left" Margin="191,105,0,0" VerticalAlignment="Top" Width="50" GroupName="Lifetime Unit"/>
+                            <CheckBox x:Name="chk_DelayedProcess" Content="Delayed Process" HorizontalAlignment="Left" Margin="139,133,0,0" VerticalAlignment="Top" Width="106"/>
+                            <Label x:Name="label8"  HorizontalAlignment="Left" Margin="130,149,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.447,-0.269" Width="50" Height="42">
+                                <Label.Content>
+                                    <AccessText TextWrapping="Wrap" Text="Arrival Delay" Height="33" Width="45"/>
+                                </Label.Content>
+                            </Label>
+                            <RadioButton x:Name="rdb_DelayTicks" Content="Ticks" HorizontalAlignment="Left" Margin="139,190,0,0" VerticalAlignment="Top" Width="50" GroupName="Delay Unit" IsChecked="True"/>
+                            <RadioButton x:Name="rdb_DelaySecs" Content="Secs" HorizontalAlignment="Left" Margin="191,190,0,0" VerticalAlignment="Top" Width="50" GroupName="Delay Unit"/>
+                            <ComboBox x:Name="cmb_Priority_Copy" HorizontalAlignment="Left" Margin="184,160,0,0" VerticalAlignment="Top" Width="49" SelectedIndex="0">
+                                <System:Int32>1</System:Int32>
+                                <System:Int32>2</System:Int32>
+                                <System:Int32>3</System:Int32>
+                                <System:Int32>4</System:Int32>
+                                <System:Int32>5</System:Int32>
+                                <System:Int32>6</System:Int32>
+                                <System:Int32>7</System:Int32>
+                                <System:Int32>8</System:Int32>
+                                <System:Int32>9</System:Int32>
+                                <System:Int32>10</System:Int32>
+                                <System:Int32>0</System:Int32>
+                            </ComboBox>
+                        </Grid>
+                    </TabItem>
+                </TabControl>
+            </Grid>
+        </GroupBox>
+        <Button x:Name="btn_Close" Content="CLOSE" HorizontalAlignment="Left" Margin="1194,703,0,0" VerticalAlignment="Top" Width="60" Height="26" Click="btn_Close_Click"/>
 
     </Grid>
 </Window>

@@ -990,5 +990,11 @@ namespace CPU_OS_Simulator
             cw.Show();
             cw.txt_Console.Focus();
         }
+
+        private void btn_OS_Click(object sender, RoutedEventArgs e)
+        {
+            OperatingSystemMainWindow window = new OperatingSystemMainWindow(this);
+            window.Show();
+        }
     }
 }

@@ -51,7 +51,7 @@
                 </Grid>
             </GroupBox>
         </Grid>
-        <Button x:Name="btn_ResetAll" Content="RESET ALL" HorizontalAlignment="Left" Margin="375,423,0,0" VerticalAlignment="Top" Width="80" Height="42" Click="btn_Reset_All_Click"/>
-        <Button x:Name="btn_ShowPageTable" Content="SHOW PAGE TABLE" HorizontalAlignment="Left" Margin="15,423,0,0" VerticalAlignment="Top" Width="118" Height="42" Click="btn_ShowPageTable_Click"/>
+        <Button x:Name="btn_ResetAll" Content="RESET ALL" HorizontalAlignment="Left" Margin="375,418,0,0" VerticalAlignment="Top" Width="80" Height="42" Click="btn_Reset_All_Click"/>
+        <Button x:Name="btn_ShowPageTable" Content="SHOW PAGE TABLE" HorizontalAlignment="Left" Margin="15,418,0,0" VerticalAlignment="Top" Width="118" Height="42" Click="btn_ShowPageTable_Click"/>
     </Grid>
 </Window>
