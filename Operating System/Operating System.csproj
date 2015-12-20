@@ -42,9 +42,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="EnumOSState.cs" />
+    <Compile Include="EnumPriorityPolicy.cs" />
     <Compile Include="EnumProcessState.cs" />
+    <Compile Include="EnumRoundRobinType.cs" />
+    <Compile Include="EnumSchedulingPolicies.cs" />
+    <Compile Include="EnumTimeUnit.cs" />
     <Compile Include="OSCore.cs" />
     <Compile Include="OSFlags.cs" />
+    <Compile Include="ProcessFlags.cs" />
+    <Compile Include="Scheduler.cs" />
+    <Compile Include="SchedulerFlags.cs" />
     <Compile Include="SimulatorProcess.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

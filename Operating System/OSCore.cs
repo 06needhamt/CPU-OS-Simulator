@@ -1,0 +1,178 @@
+﻿using System;
+
+namespace CPU_OS_Simulator.Operating_System
+{
+    /// <summary>
+    /// This class represents the core of the operating system
+    /// </summary>
+    [Serializable]
+    public class OSCore
+    {
+        private EnumSchedulingPolicies schedulingPolicy = EnumSchedulingPolicies.UNKNOWN;
+        private double RR_Time_Slice;
+        private EnumTimeUnit RR_Time_Slice_Unit = EnumTimeUnit.UNKNOWN;
+        private EnumPriorityPolicy priorityPolicy = EnumPriorityPolicy.UNKNOWN;
+        private EnumRoundRobinType roundRobinType = EnumRoundRobinType.UNKNOWN;
+        private bool useDefaultScheduler;
+        private bool useSingleCPU;
+        private bool allowCPUAffinity;
+        private bool runWithNoProcesses;
+        private int CPUClockSpeed;
+        private bool suspendOnStateChange_Ready;
+        private bool suspendOnPreEmption;
+        private bool suspendOnStateChange_Running;
+        private bool suspendOnStateChange_Waiting;
+        private EnumOSState osState = EnumOSState.UNKNOWN;
+
+        /// <summary>
+        /// Default Constructor for the OS Core
+        /// </summary>
+        public OSCore()
+        {
+            
+        }
+        /// <summary>
+        /// Constructor for OS Core that takes flags which control OS behaviour
+        /// </summary>
+        /// <param name="flags"> the flags to be passed to this operating system</param>
+        public OSCore(OSFlags flags)
+        {
+            schedulingPolicy = flags.schedulingPolicy;
+            RR_Time_Slice = flags.RR_Time_Slice;
+            RR_Time_Slice_Unit = flags.RR_Time_Slice_Unit;
+            priorityPolicy = flags.priorityPolicy;
+            roundRobinType = flags.roundRobinType;
+            useDefaultScheduler = flags.useDefaultScheduler;
+            useSingleCPU = flags.useSingleCPU;
+            allowCPUAffinity = flags.allowCPUAffinity;
+            runWithNoProcesses = flags.runWithNoprocesses;
+            CPUClockSpeed = flags.CPUClockSpeed;
+            suspendOnStateChange_Ready = flags.suspendOnStateChange_Ready;
+            suspendOnPreEmption = flags.suspendOnPreEmption;
+            suspendOnStateChange_Running = flags.suspendOnStateChange_Running;
+            suspendOnStateChange_Waiting = flags.suspendOnStateChange_Waiting;
+            osState = flags.osState;
+        }
+        /// <summary>
+        /// Property for the length of the round robin time slice being used by this scheduler
+        /// </summary>
+        public double Rr_Time_Slice
+        {
+            get { return RR_Time_Slice; }
+            set { RR_Time_Slice = value; }
+        }
+        /// <summary>
+        /// Property for the unit of time used for time slices
+        /// i.e ticks or seconds
+        /// </summary>
+        public EnumTimeUnit Rr_Time_Slice_Unit
+        {
+            get { return RR_Time_Slice_Unit; }
+            set { RR_Time_Slice_Unit = value; }
+        }
+        /// <summary>
+        /// Property for the Round Robin priority policy being used by this scheduler
+        /// </summary>
+        public EnumPriorityPolicy PriorityPolicy
+        {
+            get { return priorityPolicy; }
+            set { priorityPolicy = value; }
+        }
+        /// <summary>
+        /// Property for the type of round robin being used by the scheduler
+        /// </summary>
+        public EnumRoundRobinType RoundRobinType
+        {
+            get { return roundRobinType; }
+            set { roundRobinType = value; }
+        }
+        /// <summary>
+        /// Property for whether we are using the default scheduler
+        /// </summary>
+        public bool UseDefaultScheduler
+        {
+            get { return useDefaultScheduler; }
+            set { useDefaultScheduler = value; }
+        }
+        /// <summary>
+        /// Property for the clock speed of the CPU
+        /// </summary>
+        public int CpuClockSpeed
+        {
+            get { return CPUClockSpeed; }
+            set { CPUClockSpeed = value; }
+        }
+        /// <summary>
+        /// Property for whether the process should suspend when it enters the ready state
+        /// </summary>
+        public bool SuspendOnStateChange_Ready
+        {
+            get { return suspendOnStateChange_Ready; }
+            set { suspendOnStateChange_Ready = value; }
+        }
+        /// <summary>
+        /// Property for whether the process should suspend when it is pre-empted by another process
+        /// </summary>
+        public bool SuspendOnPreEmption
+        {
+            get { return suspendOnPreEmption; }
+            set { suspendOnPreEmption = value; }
+        }
+        /// <summary>
+        /// Property for whether the process should suspend when it enters the running state
+        /// </summary>
+        public bool SuspendOnStateChange_Running
+        {
+            get { return suspendOnStateChange_Running; }
+            set { suspendOnStateChange_Running = value; }
+        }
+        /// <summary>
+        /// Property for whether the process should suspend when it enters the waiting state
+        /// </summary>
+        public bool SuspendOnStateChange_Waiting
+        {
+            get { return suspendOnStateChange_Waiting; }
+            set { suspendOnStateChange_Waiting = value; }
+        }
+        /// <summary>
+        /// Property for the current state of the OS
+        /// </summary>
+        public EnumOSState OsState
+        {
+            get { return osState; }
+            set { osState = value; }
+        }
+        /// <summary>
+        /// Property for the scheduling policy currently being used by this scheduler 
+        /// </summary>
+        public EnumSchedulingPolicies SchedulingPolicy
+        {
+            get { return schedulingPolicy; }
+            set { schedulingPolicy = value; }
+        }
+        /// <summary>
+        /// Property for whether the scheduler is running on a single CPU
+        /// </summary>
+        public bool UsingSingleCpu
+        {
+            get { return useSingleCPU; }
+            set { useSingleCPU = value; }
+        }
+        /// <summary>
+        /// Property for whether CPU affinity is allowed on this scheduler
+        /// </summary>
+        public bool AllowCpuAffinity
+        {
+            get { return allowCPUAffinity; }
+            set { allowCPUAffinity = value; }
+        }
+        /// <summary>
+        /// Property for whether the scheduler is running with no processes
+        /// </summary>
+        public bool RunningWithNoProcesses
+        {
+            get { return runWithNoProcesses; }
+            set { runWithNoProcesses = value; }
+        }
+    }
+}

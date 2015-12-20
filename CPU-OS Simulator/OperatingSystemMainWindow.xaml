@@ -104,7 +104,7 @@
         <Button x:Name="btn_Show_Memory_Ready" Content="SHOW MEMORY" HorizontalAlignment="Left" Margin="647,445,0,0" VerticalAlignment="Top" Width="95" Height="50"/>
         <Button x:Name="btn_Show_PCB_Ready" Content="SHOW PCB" HorizontalAlignment="Left" Margin="747,445,0,0" VerticalAlignment="Top" Width="81" Height="50"/>
         <TabControl x:Name="Scheduler_Tabs" HorizontalAlignment="Left" Height="229" Margin="828,10,0,0" VerticalAlignment="Top" Width="436">
-            <TabItem x:Name="Policies_Tab" Header="TabItem">
+            <TabItem x:Name="Policies_Tab" Header="Scheduling Policies">
                 <Grid x:Name="grid_Policies" Background="White">
                     <RadioButton x:Name="rdb_FirstCome_FirstServed" Content="First Come First Served (FCFS)" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" GroupName="Scheduling Policies"/>
                     <RadioButton x:Name="rdb_Shortest_Job_First" Content="Shortest Job First (SJF)" HorizontalAlignment="Left" Margin="10,31,0,0" VerticalAlignment="Top" GroupName="Scheduling Policies"/>
@@ -254,6 +254,7 @@
             </Grid>
         </GroupBox>
         <Button x:Name="btn_Close" Content="CLOSE" HorizontalAlignment="Left" Margin="1194,703,0,0" VerticalAlignment="Top" Width="60" Height="26" Click="btn_Close_Click"/>
+        <Button x:Name="btn_SaveState" Content="SAVE STATE" HorizontalAlignment="Left" Margin="1105,703,0,0" VerticalAlignment="Top" Width="74" Height="26"/>
 
     </Grid>
 </Window>

@@ -17,5 +17,10 @@
         /// This variable represents the active console window instance
         /// </summary>
         public static ConsoleWindow ConsoleWindowInstance = ConsoleWindow.currentInstance;
+        /// <summary>
+        /// This variable represents the active operating system main window instance
+        /// </summary>
+        public static OperatingSystemMainWindow OperatingSystemMainWindowInstance =
+            OperatingSystemMainWindow.currentInstance;
     }
 }
