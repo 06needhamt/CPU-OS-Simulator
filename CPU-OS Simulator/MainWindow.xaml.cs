@@ -250,7 +250,7 @@ namespace CPU_OS_Simulator
         }
 
 #else
-            DebugFunction();
+            //DebugFunction();
         }
         private void DebugFunction()
         {

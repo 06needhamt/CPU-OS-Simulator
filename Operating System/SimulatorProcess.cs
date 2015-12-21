@@ -10,7 +10,7 @@ namespace CPU_OS_Simulator.Operating_System
     /// This class represents a process that can be run on the virtual operating system
     /// </summary>
     [Serializable]
-    public class SimulatorProcess
+    public class SimulatorProcess : IComparable<int>
     {
         private SimulatorProgram program;
         private SimulatorProcess parentProcess;
@@ -167,6 +167,30 @@ namespace CPU_OS_Simulator.Operating_System
         {
              get { return processState; }
              set { processState = value; }
+        }
+
+        /// <summary>
+        /// Compares the current object with another object of the same type.
+        /// </summary>
+        /// <returns>
+        /// A value that indicates the relative order of the objects being compared. The return value has the following meanings: Value Meaning Less than zero This object is less than the <paramref name="other"/> parameter.Zero This object is equal to <paramref name="other"/>. Greater than zero This object is greater than <paramref name="other"/>. 
+        /// </returns>
+        /// <param name="other">An object to compare with this object.</param>
+        public int CompareTo(int other)
+        {
+            if (processPriority > other)
+            {
+                return -1;
+            }
+            else if (processPriority == other)
+            {
+                return 0;
+            }
+            else if (processPriority < other)
+            {
+                return 1;
+            }
+            return 0;
         }
     }
 }

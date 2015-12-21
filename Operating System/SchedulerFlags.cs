@@ -11,7 +11,7 @@ namespace CPU_OS_Simulator.Operating_System
         public Queue<SimulatorProcess> waitingQueue;
         public SimulatorProcess runningProcess;
         public EnumSchedulingPolicies schedulingPolicies;
-        public int RR_TimeSlice;
+        public double RR_TimeSlice;
         public EnumTimeUnit TimeSliceUnit;
         public bool defaultScheduler;
         public EnumPriorityPolicy RR_Priority_Policy;

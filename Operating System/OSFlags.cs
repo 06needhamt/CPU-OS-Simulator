@@ -20,6 +20,9 @@ namespace CPU_OS_Simulator.Operating_System
         public bool suspendOnPreEmption;
         public bool suspendOnStateChange_Running;
         public bool suspendOnStateChange_Waiting;
+        public bool forceKill;
+        public bool faultKill;
         public EnumOSState osState;
+        public Scheduler scheduler;
     }
 }

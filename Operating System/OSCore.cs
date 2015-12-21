@@ -1,4 +1,7 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Reflection;
+using System.Windows;
 
 namespace CPU_OS_Simulator.Operating_System
 {
@@ -23,6 +26,10 @@ namespace CPU_OS_Simulator.Operating_System
         private bool suspendOnStateChange_Running;
         private bool suspendOnStateChange_Waiting;
         private EnumOSState osState = EnumOSState.UNKNOWN;
+        private EnumErrorCodes errorCode = EnumErrorCodes.UNKNOWN;
+        private Scheduler scheduler;
+        private Queue<SimulatorProcess> readyQueue;
+        private Queue<SimulatorProcess> waitingQueue;  
 
         /// <summary>
         /// Default Constructor for the OS Core
@@ -52,7 +59,86 @@ namespace CPU_OS_Simulator.Operating_System
             suspendOnStateChange_Running = flags.suspendOnStateChange_Running;
             suspendOnStateChange_Waiting = flags.suspendOnStateChange_Waiting;
             osState = flags.osState;
+            readyQueue = new Queue<SimulatorProcess>();
+            waitingQueue = new Queue<SimulatorProcess>();
         }
+
+        public bool Start()
+        {
+            errorCode = EnumErrorCodes.NO_ERROR;
+            if (scheduler == null)
+            {
+                SchedulerFlags? flags = CreateSchedulerFlags();
+                if (flags == null)
+                {
+                    MessageBox.Show("Could not start scheduler invalid flags");
+                    return false;
+                }
+                scheduler = new Scheduler(flags.Value);
+            }
+            return true;
+        }
+
+        public SimulatorProcess CreateProcess(ProcessFlags flags)
+        {
+            SimulatorProcess proc = new SimulatorProcess(flags);
+            return proc;
+        }
+        private SchedulerFlags? CreateSchedulerFlags()
+        {
+            SchedulerFlags temp = new SchedulerFlags();
+            temp.schedulingPolicies = schedulingPolicy;
+            if (temp.schedulingPolicies == EnumSchedulingPolicies.ROUND_ROBIN)
+            {
+                temp.RR_Priority_Policy = priorityPolicy;
+                temp.RR_TimeSlice = RR_Time_Slice;
+                temp.RR_Type = roundRobinType;
+                temp.TimeSliceUnit = RR_Time_Slice_Unit;
+            }
+            temp.allowCPUAffinity = allowCPUAffinity;
+            temp.defaultScheduler = useDefaultScheduler;
+            temp.runningWithNoProcesses = runWithNoProcesses;
+            if (!temp.runningWithNoProcesses)
+            {
+                temp.readyQueue = readyQueue;
+                temp.waitingQueue = waitingQueue;
+                temp.runningProcess = readyQueue.Dequeue();
+            }
+            else
+            {
+                readyQueue = new Queue<SimulatorProcess>();
+                waitingQueue = new Queue<SimulatorProcess>();
+                temp.runningProcess = null;
+            }
+            return temp;
+        }
+
+        /// <summary>
+        /// This function gets the main window instance from the window bridge
+        /// </summary>
+        /// <returns> the active instance of main window </returns>
+        private dynamic GetMainWindowInstance()
+        {
+            Assembly windowBridge = Assembly.LoadFrom("CPU_OS_Simulator.WindowBridge.dll"); // Load the window bridge module
+            System.Console.WriteLine(windowBridge.GetExportedTypes()[0]);
+            Type WindowType = windowBridge.GetType(windowBridge.GetExportedTypes()[0].ToString()); // get the name of the type that contains the window instances
+            dynamic window = WindowType.GetField("MainWindowInstance").GetValue(null); // get the value of the static MainWindowInstance field
+            return window;
+        }
+
+        /// <summary>
+        /// This function gets the main window instance from the window bridge
+        /// </summary>
+        /// <returns> the active instance of main window </returns>
+        private dynamic GetOSWindowInstance()
+        {
+            Assembly windowBridge = Assembly.LoadFrom("CPU_OS_Simulator.WindowBridge.dll"); // Load the window bridge module
+            System.Console.WriteLine(windowBridge.GetExportedTypes()[0]);
+            Type WindowType = windowBridge.GetType(windowBridge.GetExportedTypes()[0].ToString()); // get the name of the type that contains the window instances
+            dynamic window = WindowType.GetField("OperatingSystemMainWindowInstance").GetValue(null); // get the value of the static MainWindowInstance field
+            return window;
+        }
+
         /// <summary>
         /// Property for the length of the round robin time slice being used by this scheduler
         /// </summary>
@@ -173,6 +259,20 @@ namespace CPU_OS_Simulator.Operating_System
         {
             get { return runWithNoProcesses; }
             set { runWithNoProcesses = value; }
+        }
+        /// <summary>
+        /// Property for an error code that describes any error that occurred
+        /// </summary>
+        public EnumErrorCodes ErrorCode
+        {
+            get { return errorCode; }
+            set { errorCode = value; }
+        }
+
+        public Scheduler Scheduler
+        {
+            get { return scheduler; }
+            set { scheduler = value; }
         }
     }
 }

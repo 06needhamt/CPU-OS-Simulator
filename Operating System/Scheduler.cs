@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Windows;
 
 namespace CPU_OS_Simulator.Operating_System
 {
@@ -13,7 +14,7 @@ namespace CPU_OS_Simulator.Operating_System
         private Queue<SimulatorProcess> waitingQueue;
         private SimulatorProcess runningProcess;
         private EnumSchedulingPolicies schedulingPolicy = EnumSchedulingPolicies.UNKNOWN;
-        private int RR_TimeSlice;
+        private double RR_TimeSlice;
         private EnumTimeUnit timeSliceUnit = EnumTimeUnit.UNKNOWN;
         private bool defaultScheduler;
         private EnumPriorityPolicy RR_Priority_Policy = EnumPriorityPolicy.UNKNOWN;
@@ -49,6 +50,34 @@ namespace CPU_OS_Simulator.Operating_System
             allowCPUAffinity = flags.allowCPUAffinity;
             runningWithNoProcesses = flags.runningWithNoProcesses;
         }
+
+        public bool Start()
+        {
+            if (readyQueue.Count == 0 && !runningWithNoProcesses)
+            {
+                MessageBox.Show("OS Execution complete");
+                return true;
+            }
+            bool finished = RunScheduler();
+            return finished;
+        }
+
+        private bool RunScheduler()
+        {
+            while (readyQueue.Count > 0 && runningProcess == null)
+            {
+                switch (schedulingPolicy)
+                {
+                    case EnumSchedulingPolicies.FIRST_COME_FIRST_SERVED:
+                        runningProcess = readyQueue.Dequeue();
+                        
+
+                        break;
+                }
+            }
+            return true;
+        }
+
         /// <summary>
         /// Property for the queue of processes that are ready to be executed
         /// </summary>
@@ -84,7 +113,7 @@ namespace CPU_OS_Simulator.Operating_System
         /// <summary>
         /// Property for the length of the round robin time slice being used by this scheduler
         /// </summary>
-        public int Rr_TimeSlice
+        public double Rr_TimeSlice
         {
             get { return RR_TimeSlice; }
             set { RR_TimeSlice = value; }

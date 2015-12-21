@@ -32,16 +32,21 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Windows" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="EnumErrorCodes.cs" />
     <Compile Include="EnumOSState.cs" />
     <Compile Include="EnumPriorityPolicy.cs" />
     <Compile Include="EnumProcessState.cs" />
@@ -50,6 +55,7 @@
     <Compile Include="EnumTimeUnit.cs" />
     <Compile Include="OSCore.cs" />
     <Compile Include="OSFlags.cs" />
+    <Compile Include="ProcessExecutionUnit.cs" />
     <Compile Include="ProcessFlags.cs" />
     <Compile Include="Scheduler.cs" />
     <Compile Include="SchedulerFlags.cs" />
