@@ -15,13 +15,13 @@
                         <GridView>
                             <GridViewColumn Header="Pid" DisplayMemberBinding="{Binding ProcessID}" Width="50" />
                             <GridViewColumn Header="Program Name" DisplayMemberBinding="{Binding ProgramName}" Width="150" />
-                            <GridViewColumn Header="State" DisplayMemberBinding="{Binding ProcessState}" Width="50" />
-                            <GridViewColumn Header="Memory" DisplayMemberBinding="{Binding Pages}" Width="75" />
+                            <GridViewColumn Header="State" DisplayMemberBinding="{Binding ProcessState}" Width="75" />
+                            <GridViewColumn Header="Memory" DisplayMemberBinding="{Binding ProcessMemory}" Width="75" />
                             <GridViewColumn Header="Priority" DisplayMemberBinding="{Binding ProcessPriority}" Width="50" />
                             <GridViewColumn Header="Burst" DisplayMemberBinding="{Binding BurstTime}" Width="100" />
-                            <GridViewColumn Header="Swap" DisplayMemberBinding="{Binding HasSwappedPages}" Width="50" />
+                            <GridViewColumn Header="Swap" DisplayMemberBinding="{Binding ProcessSwapped}" Width="50" />
                             <GridViewColumn Header="Process Name" DisplayMemberBinding="{Binding ProcessName}" Width="150" />
-                            <GridViewColumn Header="CPU" DisplayMemberBinding="{Binding CPUId}" Width="50" />
+                            <GridViewColumn Header="CPU" DisplayMemberBinding="{Binding CPUID}" Width="50" />
                             <GridViewColumn Header="PPID" DisplayMemberBinding="{Binding ParentProcessID}" Width="50" />
                         </GridView>
                     </ListView.View>
@@ -59,13 +59,13 @@
                         <GridView>
                             <GridViewColumn Header="Pid" DisplayMemberBinding="{Binding ProcessID}" Width="50" />
                             <GridViewColumn Header="Program Name" DisplayMemberBinding="{Binding ProgramName}" Width="150" />
-                            <GridViewColumn Header="State" DisplayMemberBinding="{Binding ProcessState}" Width="50" />
-                            <GridViewColumn Header="Memory" DisplayMemberBinding="{Binding Pages}" Width="75" />
+                            <GridViewColumn Header="State" DisplayMemberBinding="{Binding ProcessState}" Width="75" />
+                            <GridViewColumn Header="Memory" DisplayMemberBinding="{Binding ProcessMemory}" Width="75" />
                             <GridViewColumn Header="Priority" DisplayMemberBinding="{Binding ProcessPriority}" Width="50" />
                             <GridViewColumn Header="Burst" DisplayMemberBinding="{Binding BurstTime}" Width="100" />
-                            <GridViewColumn Header="Swap" DisplayMemberBinding="{Binding HasSwappedPages}" Width="50" />
+                            <GridViewColumn Header="Swap" DisplayMemberBinding="{Binding ProcessesSwapped}" Width="50" />
                             <GridViewColumn Header="Process Name" DisplayMemberBinding="{Binding ProcessName}" Width="150" />
-                            <GridViewColumn Header="CPU" DisplayMemberBinding="{Binding CPUId}" Width="50" />
+                            <GridViewColumn Header="CPU" DisplayMemberBinding="{Binding CPUID}" Width="50" />
                             <GridViewColumn Header="PPID" DisplayMemberBinding="{Binding ParentProcessID}" Width="50" />
                         </GridView>
                     </ListView.View>
@@ -85,13 +85,13 @@
                         <GridView>
                             <GridViewColumn Header="Pid" DisplayMemberBinding="{Binding ProcessID}" Width="50" />
                             <GridViewColumn Header="Program Name" DisplayMemberBinding="{Binding ProgramName}" Width="150" />
-                            <GridViewColumn Header="State" DisplayMemberBinding="{Binding ProcessState}" Width="50" />
-                            <GridViewColumn Header="Memory" DisplayMemberBinding="{Binding Pages}" Width="75" />
+                            <GridViewColumn Header="State" DisplayMemberBinding="{Binding ProcessState}" Width="75" />
+                            <GridViewColumn Header="Memory" DisplayMemberBinding="{Binding ProcessMemory}" Width="75" />
                             <GridViewColumn Header="Priority" DisplayMemberBinding="{Binding ProcessPriority}" Width="50" />
                             <GridViewColumn Header="Burst" DisplayMemberBinding="{Binding BurstTime}" Width="100" />
-                            <GridViewColumn Header="Swap" DisplayMemberBinding="{Binding HasSwappedPages}" Width="50" />
+                            <GridViewColumn Header="Swap" DisplayMemberBinding="{Binding ProcessMemory}" Width="50" />
                             <GridViewColumn Header="Process Name" DisplayMemberBinding="{Binding ProcessName}" Width="150" />
-                            <GridViewColumn Header="CPU" DisplayMemberBinding="{Binding CPUId}" Width="50" />
+                            <GridViewColumn Header="CPU" DisplayMemberBinding="{Binding CPUID}" Width="50" />
                             <GridViewColumn Header="PPID" DisplayMemberBinding="{Binding ParentProcessID}" Width="50" />
                         </GridView>
                     </ListView.View>
@@ -139,14 +139,14 @@
                             </GroupBox>
                             <GroupBox x:Name="grp_Priority" Header="Priority" HorizontalAlignment="Left" VerticalAlignment="Top" Height="90" Width="142" Margin="144,1,0,0">
                                 <Grid x:Name="grid_Priority" HorizontalAlignment="Left" Height="69" Margin="0,0,-2,-1" VerticalAlignment="Top" Width="132">
-                                    <RadioButton x:Name="rdb_No_Priority" Content="No Priority" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" GroupName="Priorities"/>
+                                    <RadioButton x:Name="rdb_No_Priority" Content="No Priority" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" GroupName="Priorities" IsChecked="True"/>
                                     <RadioButton x:Name="rdb_Preemptive" Content="Pre-Emptive" HorizontalAlignment="Left" Margin="10,27,0,0" VerticalAlignment="Top" GroupName="Priorities"/>
                                     <RadioButton x:Name="rdb_Non_Preemptive" Content="Non Pre-Emptive" HorizontalAlignment="Left" Margin="10,44,0,0" VerticalAlignment="Top" GroupName="Priorities"/>
                                 </Grid>
                             </GroupBox>
                             <GroupBox x:Name="grp_Dynamic" Header="RR Time Slice" HorizontalAlignment="Left" VerticalAlignment="Top" Height="90" Width="142" Margin="280,4,-2,0">
                                 <Grid HorizontalAlignment="Left" Height="69" Margin="0,0,-2,-1" VerticalAlignment="Top" Width="132">
-                                    <RadioButton x:Name="rdb_Static" Content="Static" HorizontalAlignment="Left" Margin="13,10,0,0" VerticalAlignment="Top" GroupName="Type"/>
+                                    <RadioButton x:Name="rdb_Static" Content="Static" HorizontalAlignment="Left" Margin="13,10,0,0" VerticalAlignment="Top" GroupName="Type" IsChecked="True"/>
                                     <RadioButton x:Name="rdb_Dynamic" Content="Dynamic" HorizontalAlignment="Left" Margin="13,35,0,0" VerticalAlignment="Top" GroupName="Type"/>
                                 </Grid>
                             </GroupBox>
@@ -155,7 +155,7 @@
                 </Grid>
             </TabItem>
         </TabControl>
-        <RadioButton x:Name="rdb_RR_Ticks" Content="" HorizontalAlignment="Left" Margin="844,167,0,0" VerticalAlignment="Top" GroupName="Time Slice"/>
+        <RadioButton x:Name="rdb_RR_Ticks" Content="" HorizontalAlignment="Left" Margin="844,167,0,0" VerticalAlignment="Top" GroupName="Time Slice" IsChecked="True"/>
         <RadioButton x:Name="rdb_RR_Seconds" Content="" HorizontalAlignment="Left" Margin="844,191,0,0" VerticalAlignment="Top" GroupName="Time Slice"/>
         <TabControl x:Name="ControlTabs" HorizontalAlignment="Left" Height="173" Margin="833,256,0,0" VerticalAlignment="Top" Width="431">
             <TabItem x:Name="ControlTab" Header="OS Control">

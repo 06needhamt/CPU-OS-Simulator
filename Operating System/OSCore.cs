@@ -25,6 +25,8 @@ namespace CPU_OS_Simulator.Operating_System
         private bool suspendOnPreEmption;
         private bool suspendOnStateChange_Running;
         private bool suspendOnStateChange_Waiting;
+        private bool forceKill;
+        private bool faultKill;
         private EnumOSState osState = EnumOSState.UNKNOWN;
         private EnumErrorCodes errorCode = EnumErrorCodes.UNKNOWN;
         private Scheduler scheduler;
@@ -58,11 +60,18 @@ namespace CPU_OS_Simulator.Operating_System
             suspendOnPreEmption = flags.suspendOnPreEmption;
             suspendOnStateChange_Running = flags.suspendOnStateChange_Running;
             suspendOnStateChange_Waiting = flags.suspendOnStateChange_Waiting;
+            forceKill = flags.forceKill;
+            faultKill = flags.faultKill;
             osState = flags.osState;
+            scheduler = flags.scheduler;
             readyQueue = new Queue<SimulatorProcess>();
             waitingQueue = new Queue<SimulatorProcess>();
-        }
 
+        }
+        /// <summary>
+        /// This function is called to start the operating system
+        /// </summary>
+        /// <returns> whether any errors occurred during execution</returns>
         public bool Start()
         {
             errorCode = EnumErrorCodes.NO_ERROR;
@@ -78,17 +87,25 @@ namespace CPU_OS_Simulator.Operating_System
             }
             return true;
         }
-
+        /// <summary>
+        /// This function creates a simulator process
+        /// </summary>
+        /// <param name="flags"> the flags to use to create the simulator process</param>
+        /// <returns> the created simulator process</returns>
         public SimulatorProcess CreateProcess(ProcessFlags flags)
         {
             SimulatorProcess proc = new SimulatorProcess(flags);
             return proc;
         }
+        /// <summary>
+        /// this method creates flags for the operating system scheduler based on selected UI options
+        /// </summary>
+        /// <returns> a struct containing the selected options or null if an error occurred</returns>
         private SchedulerFlags? CreateSchedulerFlags()
         {
             SchedulerFlags temp = new SchedulerFlags();
             temp.schedulingPolicies = schedulingPolicy;
-            if (temp.schedulingPolicies == EnumSchedulingPolicies.ROUND_ROBIN)
+            if (temp.schedulingPolicies == EnumSchedulingPolicies.ROUND_ROBIN) // if the user selected round robin scheduling
             {
                 temp.RR_Priority_Policy = priorityPolicy;
                 temp.RR_TimeSlice = RR_Time_Slice;
@@ -98,13 +115,18 @@ namespace CPU_OS_Simulator.Operating_System
             temp.allowCPUAffinity = allowCPUAffinity;
             temp.defaultScheduler = useDefaultScheduler;
             temp.runningWithNoProcesses = runWithNoProcesses;
-            if (!temp.runningWithNoProcesses)
+            if (!temp.runningWithNoProcesses) // if the user selected to run the scheduler no processes
             {
                 temp.readyQueue = readyQueue;
                 temp.waitingQueue = waitingQueue;
-                temp.runningProcess = readyQueue.Dequeue();
+                SimulatorProcess proc = readyQueue.Dequeue();
+                if (proc != null)
+                {
+                    proc.ProcessState = EnumProcessState.RUNNING;
+                }
+                temp.runningProcess = proc; // populate the queues and set the first processes state to running
             }
-            else
+            else  // otherwise create a blank queue and set the running process to null
             {
                 readyQueue = new Queue<SimulatorProcess>();
                 waitingQueue = new Queue<SimulatorProcess>();
@@ -268,7 +290,9 @@ namespace CPU_OS_Simulator.Operating_System
             get { return errorCode; }
             set { errorCode = value; }
         }
-
+        /// <summary>
+        /// Property for the current scheduler
+        /// </summary>
         public Scheduler Scheduler
         {
             get { return scheduler; }

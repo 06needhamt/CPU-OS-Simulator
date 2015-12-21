@@ -13,19 +13,26 @@ namespace CPU_OS_Simulator.Operating_System
     public class SimulatorProcess : IComparable<int>
     {
         private SimulatorProgram program;
-        private SimulatorProcess parentProcess;
-        private List<SimulatorProcess> childProcesses;
         private string programName;
         private string processName;
-        private string processStateString;
         private int processPriority;
         private int processMemory;
+        private int processLifetime;
+        private EnumTimeUnit processLifetimeTimeUnit;
         private int processID;
         private int parentProcessID;
-        private int processLifetime;
+        private int CPUid;
         private int burstTime;
+        private bool displayProfile;
+        private bool parentDiesChildrenDie;
+        private bool defaultScheduler;
+        private bool delayedProcess;
+        private int delayedProcessTime;
+        private EnumTimeUnit delayTimeUnit;
+        private SimulatorProcess parentProcess;
+        private List<SimulatorProcess> childProcesses;
         private bool processSwapped;
-        private EnumProcessState processState = EnumProcessState.UNKNOWN;
+        private EnumProcessState processState;
 
         /// <summary>
         /// Default Constructor for a process used when deserialising processes
@@ -42,11 +49,19 @@ namespace CPU_OS_Simulator.Operating_System
         public SimulatorProcess(ProcessFlags flags)
         {
             this.program = flags.program;
-            this.ProcessName = flags.processName;
+            this.programName = flags.programName;
+            this.processName = flags.processName;
             this.processPriority = flags.processPriority;
             this.processMemory = flags.processMemory;
             this.processLifetime = flags.processLifetime;
+            this.processID = flags.processID;
+            this.CPUID = flags.CPUid;
             this.burstTime = flags.burstTime;
+            this.displayProfile = flags.displayProfile;
+            this.parentDiesChildrenDie = flags.parentDiesChildrenDie;
+            this.delayedProcess = flags.delayedProcess;
+            this.delayedProcessTime = flags.delayedProcessTime;
+            this.delayTimeUnit = flags.delayTimeUnit;
             this.parentProcess = flags.parentProcess;
             if (parentProcess != null)
             {
@@ -54,6 +69,7 @@ namespace CPU_OS_Simulator.Operating_System
             }
             this.childProcesses = flags.childProcesses;
             this.processSwapped = flags.processSwapped;
+            this.ProcessState = flags.processState;
         }
 
         /// <summary>
@@ -96,15 +112,7 @@ namespace CPU_OS_Simulator.Operating_System
              get { return processName; }
              set { processName = value; }
         }
-        /// <summary>
-        /// Property for the string representation of this process's state
-        /// </summary>
-        public string ProcessStateString
-        {
-             get { return processStateString; }
-             set { processStateString = value; }
-        }
-        /// <summary>
+       /// <summary>
         /// Property for the priority of this process
         /// </summary>
         public int ProcessPriority
@@ -123,7 +131,7 @@ namespace CPU_OS_Simulator.Operating_System
         /// <summary>
         /// Property for the unique ID of this process
         /// </summary>
-        public int ProcessId
+        public int ProcessID
         {
              get { return processID; }
              set { processID = value; }
@@ -131,7 +139,7 @@ namespace CPU_OS_Simulator.Operating_System
         /// <summary>
         /// Property for the unique ID of the parent process
         /// </summary>
-        public int ParentProcessId
+        public int ParentProcessID
         {
              get { return parentProcessID; }
              set { parentProcessID = value; }
@@ -167,6 +175,12 @@ namespace CPU_OS_Simulator.Operating_System
         {
              get { return processState; }
              set { processState = value; }
+        }
+
+        public int CPUID
+        {
+            get { return CPUid; }
+            set { CPUid = value; }
         }
 
         /// <summary>

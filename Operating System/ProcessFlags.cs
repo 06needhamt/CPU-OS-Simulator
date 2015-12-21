@@ -9,11 +9,14 @@ namespace CPU_OS_Simulator.Operating_System
     public struct ProcessFlags
     {
         public SimulatorProgram program;
+        public string programName;
         public string processName;
         public int processPriority;
         public int processMemory;
         public int processLifetime;
         public EnumTimeUnit processLifetimeTimeUnit;
+        public int processID;
+        public int CPUid;
         public int burstTime;
         public bool displayProfile;
         public bool parentDiesChildrenDie;
@@ -22,6 +25,7 @@ namespace CPU_OS_Simulator.Operating_System
         public int delayedProcessTime;
         public EnumTimeUnit delayTimeUnit;
         public SimulatorProcess parentProcess;
+        public int parentProcessID;
         public List<SimulatorProcess> childProcesses;
         public bool processSwapped;
         public EnumProcessState processState;
