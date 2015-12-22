@@ -59,7 +59,9 @@
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PostBuildEvent>xcopy /Y /S "$(SolutionDir)\$(ProjectName)\bin\Debug\CPU_OS_Simulator.WindowBridge.dll" "$(SolutionDir)CPU-OS Simulator\bin\Debug"
-xcopy /Y /S "$(SolutionDir)\$(ProjectName)\bin\Debug\CPU_OS_Simulator.WindowBridge.pdb" "$(SolutionDir)CPU-OS Simulator\bin\Debug"</PostBuildEvent>
+xcopy /Y /S "$(SolutionDir)\$(ProjectName)\bin\Debug\CPU_OS_Simulator.WindowBridge.pdb" "$(SolutionDir)CPU-OS Simulator\bin\Debug"
+xcopy /Y /S "$(SolutionDir)\$(ProjectName)\bin\Release\CPU_OS_Simulator.WindowBridge.dll" "$(SolutionDir)CPU-OS Simulator\bin\Release"
+xcopy /Y /S "$(SolutionDir)\$(ProjectName)\bin\Release\CPU_OS_Simulator.WindowBridge.pdb" "$(SolutionDir)CPU-OS Simulator\bin\Release"</PostBuildEvent>
   </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

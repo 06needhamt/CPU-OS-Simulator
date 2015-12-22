@@ -873,7 +873,16 @@ namespace CPU_OS_Simulator
             while (!activeUnit.Done && !activeUnit.Stop && !executionWorker.CancellationPending)
             {
                 activeUnit.ExecuteInstruction();
-                await CallFromMainThread(UpdateInterface);
+                try
+                {
+                    await CallFromMainThread(UpdateInterface);
+                }
+                catch (TaskCanceledException ex)
+                {
+                    System.Console.WriteLine(ex.StackTrace);
+                    Environment.Exit(0);
+                }
+                
             }
             s.Stop();
             MessageBox.Show("Program Completed in: " + await CalculateTime(s.ElapsedMilliseconds) + " Seconds", "", MessageBoxButton.OK, MessageBoxImage.Information);
