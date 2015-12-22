@@ -464,6 +464,9 @@ namespace CPU_OS_Simulator
             temp.childProcesses = new List<SimulatorProcess>();
             temp.processSwapped = false;
             temp.processState = EnumProcessState.READY;
+            temp.resourceStarved = false;
+            temp.allocatedResources = new List<SystemResource>();
+            temp.requestedResources = new List<SystemResource>();
             return temp;
             #region OLD
             //temp.burstTime = 0;

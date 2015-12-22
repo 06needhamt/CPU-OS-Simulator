@@ -29,5 +29,8 @@ namespace CPU_OS_Simulator.Operating_System
         public List<SimulatorProcess> childProcesses;
         public bool processSwapped;
         public EnumProcessState processState;
+        public bool resourceStarved;
+        public List<SystemResource> allocatedResources;
+        public List<SystemResource> requestedResources;
     }
 }

@@ -4,6 +4,8 @@ namespace CPU_OS_Simulator.Operating_System
 {
     public class ProcessExecutionUnit : ExecutionUnit
     {
+        private ProcessControlBlock processControlBlock;
+
         /// <summary>
         /// Constructor for execution unit that starts executing from the beginning of the program
         /// </summary>

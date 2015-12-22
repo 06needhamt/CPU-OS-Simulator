@@ -56,12 +56,15 @@
     <Compile Include="EnumTimeUnit.cs" />
     <Compile Include="OSCore.cs" />
     <Compile Include="OSFlags.cs" />
+    <Compile Include="PCBFlags.cs" />
+    <Compile Include="ProcessControlBlock.cs" />
     <Compile Include="ProcessExecutionUnit.cs" />
     <Compile Include="ProcessFlags.cs" />
     <Compile Include="Scheduler.cs" />
     <Compile Include="SchedulerFlags.cs" />
     <Compile Include="SimulatorProcess.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SystemResource.cs" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="CPU-OS Simulator 7-5-50_1.ico" />

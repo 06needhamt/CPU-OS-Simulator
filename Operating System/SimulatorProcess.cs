@@ -33,6 +33,9 @@ namespace CPU_OS_Simulator.Operating_System
         private List<SimulatorProcess> childProcesses;
         private bool processSwapped;
         private EnumProcessState processState;
+        private bool resourceStarved;
+        private List<SystemResource> allocatedResources;
+        private List<SystemResource> requestedResources;
 
         /// <summary>
         /// Default Constructor for a process used when deserialising processes
@@ -70,6 +73,9 @@ namespace CPU_OS_Simulator.Operating_System
             this.childProcesses = flags.childProcesses;
             this.processSwapped = flags.processSwapped;
             this.ProcessState = flags.processState;
+            this.resourceStarved = flags.resourceStarved;
+            this.allocatedResources = flags.allocatedResources;
+            this.requestedResources = flags.requestedResources;
         }
 
         /// <summary>
@@ -183,6 +189,31 @@ namespace CPU_OS_Simulator.Operating_System
             set { CPUid = value; }
         }
 
+        public bool ResourceStarved
+        {
+            get
+            {   
+                return isResourceStarved();
+            }
+            set
+            {
+                resourceStarved = value;
+                //resourceStarved = isResourceStarved();
+            }
+        }
+
+        public List<SystemResource> AllocatedResources
+        {
+            get { return allocatedResources; }
+            set { allocatedResources = value; }
+        }
+
+        public List<SystemResource> RequestedResources
+        {
+            get { return requestedResources; }
+            set { requestedResources = value; }
+        }
+
         /// <summary>
         /// Compares the current object with another object of the same type.
         /// </summary>
@@ -205,6 +236,16 @@ namespace CPU_OS_Simulator.Operating_System
                 return 1;
             }
             return 0;
+        }
+
+        public bool isResourceStarved()
+        {
+            if (resourceStarved)
+            {
+                processState = EnumProcessState.WAITING;
+                return true;
+            }
+            return false;
         }
     }
 }
