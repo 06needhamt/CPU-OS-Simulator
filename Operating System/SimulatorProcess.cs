@@ -1,7 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Diagnostics;
-using System.Runtime.InteropServices;
 using CPU_OS_Simulator.CPU;
 
 namespace CPU_OS_Simulator.Operating_System

@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using CPU_OS_Simulator.Compiler.Frontend.SyntaxTree;
 using CPU_OS_Simulator.Compiler.Frontend.Tokens;
 

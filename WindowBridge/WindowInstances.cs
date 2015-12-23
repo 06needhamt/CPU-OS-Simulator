@@ -22,5 +22,10 @@
         /// </summary>
         public static OperatingSystemMainWindow OperatingSystemMainWindowInstance =
             OperatingSystemMainWindow.currentInstance;
+        /// <summary>
+        /// This class represents the active process control block window instance
+        /// </summary>
+        public static ProcessControlBlockWindow ProcessControlBlockWindowInstance = 
+            ProcessControlBlockWindow.currentInstance;
     }
 }

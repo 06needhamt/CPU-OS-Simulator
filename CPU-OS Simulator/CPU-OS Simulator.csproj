@@ -153,6 +153,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="ProcessControlBlockWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="MemoryWindow.xaml.cs">
@@ -163,6 +167,9 @@
     </Compile>
     <Compile Include="PageTableWindow.xaml.cs">
       <DependentUpon>PageTableWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ProcessControlBlockWindow.xaml.cs">
+      <DependentUpon>ProcessControlBlockWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>

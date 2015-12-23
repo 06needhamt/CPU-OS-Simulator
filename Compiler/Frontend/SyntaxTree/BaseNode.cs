@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Diagnostics;
-using CPU_OS_Simulator.Compiler.Frontend.Tokens;
 
 namespace CPU_OS_Simulator.Compiler.Frontend.SyntaxTree
 {
