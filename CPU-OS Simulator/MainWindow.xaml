@@ -190,7 +190,7 @@
                         <Button x:Name="btn_ResetProgram"  HorizontalAlignment="Left" Margin="163,75,0,0" VerticalAlignment="Top" Width="75" Height="40" Click="btn_ResetProgram_Click">
                             <TextBlock Text="RESET PROGRAM" TextWrapping="Wrap" HorizontalAlignment="Center" VerticalAlignment="Center" />
                         </Button>
-                        <Button x:Name="btn_ShowPCB" Content="SHOW PCB" HorizontalAlignment="Left" Margin="162,120,0,0" VerticalAlignment="Top" Width="75" Height="40" />
+                        <Button x:Name="btn_ShowPCB" Content="SHOW PCB" HorizontalAlignment="Left" Margin="162,120,0,0" VerticalAlignment="Top" Width="75" Height="40" Click="btn_ShowPCB_Click" />
                     </Grid>
                 </TabItem>
             </TabControl>

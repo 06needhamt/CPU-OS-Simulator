@@ -1005,5 +1005,11 @@ namespace CPU_OS_Simulator
             OperatingSystemMainWindow window = new OperatingSystemMainWindow(this);
             window.Show();
         }
+
+        private void btn_ShowPCB_Click(object sender, RoutedEventArgs e)
+        {
+            ProcessControlBlockWindow window = new ProcessControlBlockWindow(this,null);
+            window.Show();
+        }
     }
 }

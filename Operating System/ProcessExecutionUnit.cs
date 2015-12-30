@@ -5,6 +5,8 @@ namespace CPU_OS_Simulator.Operating_System
     public class ProcessExecutionUnit : ExecutionUnit
     {
         private ProcessControlBlock processControlBlock;
+        private SimulatorProgram program;
+        private SimulatorProcess process;
 
         /// <summary>
         /// Constructor for execution unit that starts executing from the beginning of the program
@@ -13,6 +15,8 @@ namespace CPU_OS_Simulator.Operating_System
         /// <param name="clockSpeed"> the clock speed of the CPU </param>
         public ProcessExecutionUnit(SimulatorProcess program, int clockSpeed) : base(program.Program, clockSpeed)
         {
+            this.process = program;
+            this.program = process.Program;
         }
 
         /// <summary>
@@ -23,6 +27,11 @@ namespace CPU_OS_Simulator.Operating_System
         /// <param name="clockSpeed"> the clock speed of the CPU </param>
         public ProcessExecutionUnit(SimulatorProcess program, int clockSpeed, int currentIndex) : base(program.Program, clockSpeed, currentIndex)
         {
+        }
+
+        public void Terminate()
+        { 
+
         }
     }
 }

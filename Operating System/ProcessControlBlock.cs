@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace CPU_OS_Simulator.Operating_System
 {
@@ -13,7 +11,7 @@ namespace CPU_OS_Simulator.Operating_System
         private int OSID;
         private int processID;
         private string processName;
-        private EnumProcessState processState;
+        private EnumProcessState processState = EnumProcessState.UNKNOWN;
 
         private string programName;
         private int baseAddress;
@@ -26,15 +24,82 @@ namespace CPU_OS_Simulator.Operating_System
         private bool resourceStarved;
         private List<SystemResource> allocatedResources;
         private List<SystemResource> requestedResources;
-
+        /// <summary>
+        /// Default Constructor for process control block used when deserialising a process control block
+        /// NOTE: DO NOT USE IN CODE:
+        /// </summary>
         public ProcessControlBlock()
         {
             
         }
-
+        /// <summary>
+        /// Constructor for process control block with construction flags
+        /// </summary>
+        /// <param name="flags"> flags to use to construct this PCB</param>
         public ProcessControlBlock(PCBFlags flags)
         {
-            
+            this.CPUID = flags.CPUID;
+            this.OSID = flags.OSID;
+            this.processID = flags.processID;
+            this.ProcessName = flags.processName;
+            this.processState = flags.processState;
+            this.programName = flags.programName;
+            this.baseAddress = flags.baseAddress;
+            this.startAddress = flags.startAddress;
+            this.processPriority = flags.processPriority;
+            this.avgBurstTime = flags.avgBurstTime;
+            this.avgWaitingTime = flags.avgWaitingTime;
+            this.resourceStarved = flags.resourceStarved;
+            if (flags.allocatedResources == null)
+            {
+                this.allocatedResources = new List<SystemResource>();
+            }
+            else
+            {
+                this.allocatedResources = flags.allocatedResources;
+            }
+            if (flags.requestedResources == null)
+            {
+                this.allocatedResources = new List<SystemResource>();
+            }
+            else
+            {
+                this.allocatedResources = flags.allocatedResources;
+            }
+        }
+
+        /// <summary>
+        /// Returns a string that represents the current object.
+        /// </summary>
+        /// <returns>
+        /// A string that represents the current object.
+        /// </returns>
+        public override string ToString()
+        {
+            string allocatedResourcesString = String.Empty;
+            string requestedResourcesString = String.Empty;
+
+            allocatedResourcesString = allocatedResources.Aggregate(allocatedResourcesString, (current, res) => current + (res.ResourceName + ", "));
+            requestedResourcesString = requestedResources.Aggregate(requestedResourcesString, (current, res) => current + (res.ResourceName + ", "));
+
+            string PCBString = "CPU ID \t\t\t\t\t : " + CPUID + "\n"
+                               + "OS ID \t\t\t\t\t : " + OSID + "\n"
+                               + "Process ID \t\t\t\t\t : " + processID + "\n"
+                               + "Process Name \t\t\t\t\t : " + processName + "\n"
+                               + "Process State \t\t\t\t\t : " + processState.ToString() + "\n\n"
+                               + "Program Name \t\t\t\t\t : " + programName + "\n"
+                               + "Base Address \t\t\t\t\t : " + baseAddress + "\n"
+                               + "Start Address \t\t\t\t\t : " + startAddress + "\n"
+                               + "Priority \t\t\t\t\t : " + processPriority + "\n"
+                               + "Memory Size \t\t\t\t\t : " + proceessMemory + " pages " + "\n\n"
+                               + "Avg. Burst Time \t\t\t\t\t : " + avgBurstTime + " ticks " + "\n"
+                               + "Avg Waiting Time \t\t\t\t\t : " + avgWaitingTime + " ticks " + "\n\n"
+                               + "Resource Starved  \t\t\t\t\t : " + resourceStarved + "\n"
+                               + "Resources Allocated \t\t\t\t\t : " + allocatedResourcesString + "\n"
+                               + "Resources Requested \t\t\t\t\t : " + requestedResourcesString + "\n"
+                               + "\n";
+            return PCBString;
+
         }
 
         public int Cpuid
