@@ -85,6 +85,11 @@ namespace CPU_OS_Simulator.Operating_System
                 }
                 scheduler = new Scheduler(flags.Value);
             }
+            if (!scheduler.Start())
+            {
+                MessageBox.Show("An error occurred while running the scheduler");
+                return false;
+            }
             return true;
         }
         /// <summary>
@@ -132,6 +137,7 @@ namespace CPU_OS_Simulator.Operating_System
                 waitingQueue = new Queue<SimulatorProcess>();
                 temp.runningProcess = null;
             }
+            temp.cpuClockSpeed = CPUClockSpeed;
             return temp;
         }
 

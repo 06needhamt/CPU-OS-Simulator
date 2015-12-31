@@ -22,6 +22,7 @@ namespace CPU_OS_Simulator.Operating_System
         private bool usingSingleCPU;
         private bool allowCPUAffinity;
         private bool runningWithNoProcesses;
+        private int cpuClockSpeed;
 
         /// <summary>
         /// Default Constructor for scheduler used when deserialising the scheduler
@@ -49,6 +50,7 @@ namespace CPU_OS_Simulator.Operating_System
             usingSingleCPU = flags.usingSingleCPU;
             allowCPUAffinity = flags.allowCPUAffinity;
             runningWithNoProcesses = flags.runningWithNoProcesses;
+            cpuClockSpeed = flags.cpuClockSpeed;
         }
 
         public bool Start()
@@ -70,12 +72,53 @@ namespace CPU_OS_Simulator.Operating_System
                 {
                     case EnumSchedulingPolicies.FIRST_COME_FIRST_SERVED:
                         runningProcess = readyQueue.Dequeue();
-                        
-
+                        ProcessExecutionUnit unit = new ProcessExecutionUnit(runningProcess,cpuClockSpeed);
+                        while (!unit.Stop || !unit.Done || unit.Process.Terminated)
+                        {
+                            unit.ExecuteInstruction();
+                        }
+                        if (unit.Stop)
+                        {
+                            runningProcess.ProcessState = EnumProcessState.WAITING;
+                            waitingQueue.Enqueue(runningProcess);
+                            PCBFlags? flags = CreatePCBFlags(ref runningProcess);
+                            if (flags != null)
+                            {
+                                runningProcess.ControlBlock = new ProcessControlBlock(flags.Value);
+                            }
+                            else
+                            {
+                                MessageBox.Show("There was an error while creating process control block flags");
+                                return false;
+                            }
+                        }
                         break;
                 }
             }
             return true;
+        }
+
+        private PCBFlags? CreatePCBFlags(ref SimulatorProcess currentProcess)
+        {
+            //SimulatorProcess currentProcess = waitingQueue.Peek();
+            PCBFlags flags = new PCBFlags();
+            flags.CPUID = currentProcess.CPUID;
+            flags.OSID = currentProcess.OSID;
+            flags.allocatedResources = currentProcess.AllocatedResources;
+            flags.avgBurstTime = 0;
+            flags.avgWaitingTime = 0; //TODO calculate correct values
+            flags.baseAddress = currentProcess.Program.BaseAddress;
+            flags.proceessMemory = currentProcess.ProcessMemory;
+            flags.processID = currentProcess.ProcessID;
+            flags.processName = currentProcess.ProcessName;
+            flags.processPriority = currentProcess.ProcessPriority;
+            flags.CPUID = 0; //TODO Change this once multiple CPU's are implemented
+            flags.processState = currentProcess.ProcessState;
+            flags.programName = currentProcess.ProgramName;
+            flags.requestedResources = currentProcess.RequestedResources;
+            flags.resourceStarved = currentProcess.ResourceStarved;
+            flags.startAddress = currentProcess.Program.BaseAddress; // TODO Implement program start address
+            return flags;
         }
 
         /// <summary>

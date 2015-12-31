@@ -32,5 +32,8 @@ namespace CPU_OS_Simulator.Operating_System
         public bool resourceStarved;
         public List<SystemResource> allocatedResources;
         public List<SystemResource> requestedResources;
+        public bool terminated;
+        public ProcessControlBlock processControlBlock;
+        public int OSid;
     }
 }

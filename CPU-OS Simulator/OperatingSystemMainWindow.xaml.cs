@@ -92,6 +92,7 @@ namespace CPU_OS_Simulator
 
         private void btn_Start_Click(object sender, RoutedEventArgs e)
         {
+            int t = 0;
             if (osCore == null)
             {
                 CreateOsCore();
@@ -302,6 +303,7 @@ namespace CPU_OS_Simulator
             temp.allowCPUAffinity = flags.allowCPUAffinity;
             temp.defaultScheduler = flags.useDefaultScheduler;
             temp.runningWithNoProcesses = flags.runWithNoprocesses;
+            temp.cpuClockSpeed = (int) sld_ClockSpeed.Value;
             return temp;
         }
 
@@ -358,6 +360,7 @@ namespace CPU_OS_Simulator
             lst_RunningProcesses.ItemsSource = runningProcesses;
             lst_ReadyProcesses.ItemsSource = osCore.Scheduler.ReadyQueue;
             lst_WaitingProcesses.ItemsSource = osCore.Scheduler.WaitingQueue;
+            txtProcessName.Text = "P" + Convert.ToString(processes.Count + 1);
         }
 
         /// <summary>
@@ -368,6 +371,11 @@ namespace CPU_OS_Simulator
         {
             ProcessFlags temp = new ProcessFlags();
             temp.program = (SimulatorProgram) lst_Programs.SelectedItem;
+            if (temp.program == null)
+            {
+                MessageBox.Show("Please select a program before trying to create a process");
+                return null;
+            }
             temp.programName = temp.program.Name;
             temp.processName = txtProcessName.Text;
             //ComboBoxItem priority = (ComboBoxItem)cmb_Priority.SelectedItem;
@@ -457,6 +465,10 @@ namespace CPU_OS_Simulator
             temp.resourceStarved = false;
             temp.allocatedResources = new List<SystemResource>();
             temp.requestedResources = new List<SystemResource>();
+            temp.terminated = false;
+            PCBFlags? flags = CreatePCBFlags();
+            temp.processControlBlock = new ProcessControlBlock(flags.Value);
+            temp.OSid = 0;
             return temp;
             #region OLD
             //temp.burstTime = 0;
@@ -544,6 +556,12 @@ namespace CPU_OS_Simulator
             //}
             //return temp; // return the created flags
 #endregion
+        }
+
+        private PCBFlags? CreatePCBFlags()
+        {
+            PCBFlags flags = new PCBFlags();
+            return flags;
         }
     }
 }

@@ -20,6 +20,7 @@ namespace CPU_OS_Simulator.Operating_System
         private int processID;
         private int parentProcessID;
         private int CPUid;
+        private int OSid;
         private int burstTime;
         private bool displayProfile;
         private bool parentDiesChildrenDie;
@@ -34,6 +35,8 @@ namespace CPU_OS_Simulator.Operating_System
         private bool resourceStarved;
         private List<SystemResource> allocatedResources;
         private List<SystemResource> requestedResources;
+        private bool terminated;
+        private ProcessControlBlock processControlBlock;
 
         /// <summary>
         /// Default Constructor for a process used when deserialising processes
@@ -74,6 +77,8 @@ namespace CPU_OS_Simulator.Operating_System
             this.resourceStarved = flags.resourceStarved;
             this.allocatedResources = flags.allocatedResources;
             this.requestedResources = flags.requestedResources;
+            this.processControlBlock = flags.processControlBlock;
+            this.OSid = flags.OSid;
         }
 
         /// <summary>
@@ -212,6 +217,24 @@ namespace CPU_OS_Simulator.Operating_System
             set { requestedResources = value; }
         }
 
+        public bool Terminated
+        {
+            get { return terminated; }
+            set { terminated = value; }
+        }
+
+        public ProcessControlBlock ControlBlock
+        {
+            get { return processControlBlock; }
+            set { processControlBlock = value; }
+        }
+
+        public int OSID
+        {
+            get { return OSid; }
+            set { OSid = value; }
+        }
+
         /// <summary>
         /// Compares the current object with another object of the same type.
         /// </summary>
@@ -244,6 +267,11 @@ namespace CPU_OS_Simulator.Operating_System
                 return true;
             }
             return false;
+        }
+
+        public void Terminate()
+        {
+            terminated = true;
         }
     }
 }
