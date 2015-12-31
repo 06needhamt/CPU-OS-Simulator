@@ -250,11 +250,11 @@ namespace CPU_OS_Simulator
         }
 
 #else
+            Title += " DEBUG BUILD ";
             //DebugFunction();
         }
         private void DebugFunction()
-        {
-            Title += " DEBUG BUILD ";
+        { 
             //DebugCompilingProgram();
             MemoryPage m = new MemoryPage(0, 0);
             //m.Data[0] = new MemorySegment(0);
@@ -541,11 +541,11 @@ namespace CPU_OS_Simulator
                     }
                     else if (index == 0)
                     {
-                        prog.AddInstruction(ref ins, 0);
+                        prog.AddInstruction(ref ins, 1);
                     }
                     else
                     {
-                        prog.AddInstruction(ref ins, index); // add the instruction
+                        prog.AddInstruction(ref ins, index + 1); // add the instruction
                     }
                     //prog.AddInstruction(ref ins,index);
                 }
@@ -834,7 +834,7 @@ namespace CPU_OS_Simulator
             UpdateRegisters();
             UpdateStack();
             UpdateSpecialRegisters();
-            
+            UpdateStatusFlags();
         }
 
         private void CreateExecutionThread(object sender, DoWorkEventArgs e)
@@ -858,8 +858,16 @@ namespace CPU_OS_Simulator
             UpdateRegisters();
             UpdateStack();
             UpdateSpecialRegisters();
+            UpdateStatusFlags();
             //executionWorker.ReportProgress(0,null);
             return 0;
+        }
+
+        private void UpdateStatusFlags()
+        {
+            chk_N.IsChecked = StatusFlags.N.IsSet;
+            chk_OV.IsChecked = StatusFlags.OV.IsSet;
+            chk_Z.IsChecked = StatusFlags.Z.IsSet;
         }
 
         /// <summary>

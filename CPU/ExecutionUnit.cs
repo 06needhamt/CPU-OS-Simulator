@@ -100,22 +100,37 @@ namespace CPU_OS_Simulator.CPU
             logicalAddress = currentIndex * 4;
             Console.WriteLine(logicalAddress);
             currentInstruction = program.Instructions.Where(x => x.LogicalAddress == logicalAddress).FirstOrDefault();
-            if (currentInstruction.Opcode == (int)EnumOpcodes.JMP)
+            if (currentInstruction != null)
             {
-                //program.Instructions.ElementAt(currentIndex).Execute();
-                currentInstruction.Execute();
+                if (currentInstruction.Opcode == (int) EnumOpcodes.JMP
+                    || currentInstruction.Opcode == (int) EnumOpcodes.JEQ
+                    || currentInstruction.Opcode == (int) EnumOpcodes.JNE
+                    || currentInstruction.Opcode == (int) EnumOpcodes.JGT
+                    || currentInstruction.Opcode == (int) EnumOpcodes.JGE
+                    || currentInstruction.Opcode == (int) EnumOpcodes.JLT
+                    || currentInstruction.Opcode == (int) EnumOpcodes.JLE
+                    || currentInstruction.Opcode == (int) EnumOpcodes.JNZ
+                    || currentInstruction.Opcode == (int) EnumOpcodes.JZR) // if we are executing a jump instruction do not increment the program counter
+                {
+                    //program.Instructions.ElementAt(currentIndex).Execute();
+                    currentInstruction.Execute();
+                }
+                else // otherwise increment the program counter
+                {
+                    //program.Instructions.ElementAt(currentIndex).Execute();
+                    currentInstruction.Execute();
+                    currentIndex++;
+                }
+                if (currentIndex == program.Instructions.Count)
+                {
+                    Done = true;
+                }
+                Thread.Sleep(clockSpeed);
             }
             else
             {
-                //program.Instructions.ElementAt(currentIndex).Execute();
-                currentInstruction.Execute();
-                currentIndex++;
+                return;
             }
-            if (currentIndex == program.Instructions.Count)
-            {
-                Done = true;
-            }
-            Thread.Sleep(clockSpeed);
         }
 
         #endregion Methods

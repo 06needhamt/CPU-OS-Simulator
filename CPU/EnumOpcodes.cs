@@ -230,11 +230,11 @@ namespace CPU_OS_Simulator.CPU
         #region I/O
 
         [Description("I/O: IN Gets input into register or memory")]
-        [NumberOfOperands(1)]
+        [NumberOfOperands(2)]
         IN = 50,
 
         [Description("I/O: OUT Puts output from register or memory")]
-        [NumberOfOperands(1)]
+        [NumberOfOperands(2)]
         OUT = 51,
 
         #endregion I/O

@@ -450,8 +450,119 @@ namespace CPU_OS_Simulator.CPU
                         execute = () => JMP(operand1, operand2); // save the function in memory to call later
                         break;
                     }
+                case 30:
+                    {
+                        execute = () => JEQ(operand1, operand2); // save the function in memory to call later
+                        break;
+                    }
+                case 31:
+                    {
+                        execute = () => JNE(operand1, operand2); // save the function in memory to call later
+                        break;
+                    }
+                case 32:
+                    {
+                        execute = () => JGT(operand1, operand2); // save the function in memory to call later
+                        break;
+                    }
+                case 33:
+                    {
+                        execute = () => JGE(operand1, operand2); // save the function in memory to call later
+                        break;
+                    }
+                case 34:
+                    {
+                        execute = () => JLT(operand1, operand2); // save the function in memory to call later
+                        break;
+                    }
+                case 35:
+                    {
+                        execute = () => JLE(operand1, operand2); // save the function in memory to call later
+                        break;
+                    }
+                case 36:
+                    {
+                        execute = () => JNZ(operand1, operand2); // save the function in memory to call later
+                        break;
+                    }
+                case 37:
+                    {
+                        execute = () => JZR(operand1, operand2); // save the function in memory to call later
+                        break;
+                    }
+                case 38:
+                    {
+                        execute = () => CALL(operand1, operand2); // save the function in memory to call later
+                        break;
+                    }
+                case 39:
+                    {
+                        execute = () => LOOP(operand1, operand2); // save the function in memory to call later
+                        break;
+                    }
+                case 40:
+                    {
+                        execute = () => JSEL(operand1, operand2); // save the function in memory to call later
+                        break;
+                    }
+                case 41:
+                    {
+                        execute = () => TABE(operand1, operand2); // save the function in memory to call later
+                        break;
+                    }
+                case 42:
+                    {
+                        execute = () => TABI(operand1, operand2); // save the function in memory to call later
+                        break;
+                    }
+                case 43:
+                    {
+                        execute = () => MSF(operand1, operand2); // save the function in memory to call later
+                        break;
+                    }
+                case 44:
+                    {
+                        execute = () => RET(operand1, operand2); // save the function in memory to call later
+                        break;
+                    }
+                case 45:
+                    {
+                        execute = () => IRET(operand1, operand2); // save the function in memory to call later
+                        break;
+                    }
+                case 46:
+                    {
+                        execute = () => SWI(operand1, operand2); // save the function in memory to call later
+                        break;
+                    }
+                case 47:
+                    {
+                        execute = () => HLT(operand1, operand2); // save the function in memory to call later
+                        break;
+                    }
                 case 48:
                     {
+                        execute = () => CMP(operand1, operand2); // save the function in memory to call later
+                        break;
+                    }
+                case 49:
+                    {
+                        execute = () => CPS(operand1, operand2); // save the function in memory to call later
+                        break;
+                    }
+                case 50:
+                    {
+                        execute = () => IN(operand1, operand2); // save the function in memory to call later
+                        break;
+                    }
+                case 51:
+                    {
+                        execute = () => OUT(operand1, operand2); // save the function in memory to call later
+                        break;
+                    }
+                case 52:
+                    {
+                        execute = () => NOP(operand1, operand2); // save the function in memory to call later
                         break;
                     }
                 default:
@@ -1271,9 +1382,18 @@ namespace CPU_OS_Simulator.CPU
         #endregion Arithmetic
 
         #region Control Transfer
-
+        /// <summary>
+        /// This function is called whenever a JMP instruction is executed
+        /// </summary>
+        /// <param name="lhs"> The left hand operand of the instruction </param>
+        /// <param name="rhs"> The right hand operand of the instruction </param>
+        /// <returns> the result of the instruction or int.MINVALUE if no result is returned </returns>
         private int JMP(Operand lhs, Operand rhs)
         {
+            if (lhs.IsRegister)
+            {
+                lhs.Value = Register.FindRegister(lhs.Register.Name).Value;
+            }
             dynamic window = GetMainWindowInstance();
             ExecutionUnit unit = window.ActiveUnit;
             SimulatorProgram prog = GetCurrentProgram();
@@ -1285,27 +1405,50 @@ namespace CPU_OS_Simulator.CPU
             //window.lst_InstructionsList.SelectedIndex = 0;
             return result;
         }
-
+        /// <summary>
+        /// This function is called whenever a JEQ instruction is executed
+        /// </summary>
+        /// <param name="lhs"> The left hand operand of the instruction </param>
+        /// <param name="rhs"> The right hand operand of the instruction </param>
+        /// <returns> the result of the instruction or int.MINVALUE if no result is returned </returns>
         private int JEQ(Operand lhs, Operand rhs)
         {
+            if (lhs.IsRegister)
+            {
+                lhs.Value = Register.FindRegister(lhs.Register.Name).Value;
+            }
             if (StatusFlags.Z.IsSet)
             {
                 dynamic window = GetMainWindowInstance();
                 ExecutionUnit unit = window.ActiveUnit;
                 SimulatorProgram prog = GetCurrentProgram();
                 unit.LogicalAddress = lhs.Value;
-                unit.CurrentIndex = (lhs.Value / 4);
+                unit.CurrentIndex = (lhs.Value/4);
                 result = lhs.Value;
                 unit.Done = false;
                 unit.Stop = false;
                 //window.lst_InstructionsList.SelectedIndex = 0;
                 return result;
             }
+            else
+            {
+                ExecutionUnit unit = GetExecutionUnit();
+                unit.CurrentIndex++;
+            }
             return 0;
         }
-
+        /// <summary>
+        /// This function is called whenever a JNE instruction is executed
+        /// </summary>
+        /// <param name="lhs"> The left hand operand of the instruction </param>
+        /// <param name="rhs"> The right hand operand of the instruction </param>
+        /// <returns> the result of the instruction or int.MINVALUE if no result is returned </returns>
         private int JNE(Operand lhs, Operand rhs)
         {
+            if (lhs.IsRegister)
+            {
+                lhs.Value = Register.FindRegister(lhs.Register.Name).Value;
+            }
             if (!StatusFlags.Z.IsSet)
             {
                 dynamic window = GetMainWindowInstance();
@@ -1319,11 +1462,25 @@ namespace CPU_OS_Simulator.CPU
                 //window.lst_InstructionsList.SelectedIndex = 0;
                 return result;
             }
+            else
+            {
+                ExecutionUnit unit = GetExecutionUnit();
+                unit.CurrentIndex++;
+            }
             return 0;
         }
-
+        /// <summary>
+        /// This function is called whenever a JGT instruction is executed
+        /// </summary>
+        /// <param name="lhs"> The left hand operand of the instruction </param>
+        /// <param name="rhs"> The right hand operand of the instruction </param>
+        /// <returns> the result of the instruction or int.MINVALUE if no result is returned </returns>
         private int JGT(Operand lhs, Operand rhs)
         {
+            if (lhs.IsRegister)
+            {
+                lhs.Value = Register.FindRegister(lhs.Register.Name).Value;
+            }
             if (!StatusFlags.Z.IsSet && StatusFlags.N.IsSet)
             {
                 dynamic window = GetMainWindowInstance();
@@ -1337,11 +1494,25 @@ namespace CPU_OS_Simulator.CPU
                 //window.lst_InstructionsList.SelectedIndex = 0;
                 return result;
             }
+            else
+            {
+                ExecutionUnit unit = GetExecutionUnit();
+                unit.CurrentIndex++;
+            }
             return 0;
         }
-
+        /// <summary>
+        /// This function is called whenever a JGE instruction is executed
+        /// </summary>
+        /// <param name="lhs"> The left hand operand of the instruction </param>
+        /// <param name="rhs"> The right hand operand of the instruction </param>
+        /// <returns> the result of the instruction or int.MINVALUE if no result is returned </returns>
         private int JGE(Operand lhs, Operand rhs)
         {
+            if (lhs.IsRegister)
+            {
+                lhs.Value = Register.FindRegister(lhs.Register.Name).Value;
+            }
             if (StatusFlags.Z.IsSet || StatusFlags.N.IsSet)
             {
                 dynamic window = GetMainWindowInstance();
@@ -1355,12 +1526,26 @@ namespace CPU_OS_Simulator.CPU
                 //window.lst_InstructionsList.SelectedIndex = 0;
                 return result;
             }
+            else
+            {
+                ExecutionUnit unit = GetExecutionUnit();
+                unit.CurrentIndex++;
+            }
             return 0;
         }
-
+        /// <summary>
+        /// This function is called whenever a JLT instruction is executed
+        /// </summary>
+        /// <param name="lhs"> The left hand operand of the instruction </param>
+        /// <param name="rhs"> The right hand operand of the instruction </param>
+        /// <returns> the result of the instruction or int.MINVALUE if no result is returned </returns>
         private int JLT(Operand lhs, Operand rhs)
         {
-            if (!StatusFlags.Z.IsSet && !StatusFlags.N.IsSet)
+            if (lhs.IsRegister)
+            {
+                lhs.Value = Register.FindRegister(lhs.Register.Name).Value;
+            }
+            if (!StatusFlags.Z.IsSet && StatusFlags.N.IsSet)
             {
                 dynamic window = GetMainWindowInstance();
                 ExecutionUnit unit = window.ActiveUnit;
@@ -1373,11 +1558,25 @@ namespace CPU_OS_Simulator.CPU
                 //window.lst_InstructionsList.SelectedIndex = 0;
                 return result;
             }
+            else
+            {
+                unit = GetExecutionUnit();
+                unit.CurrentIndex++;
+            }
             return 0;
         }
-
+        /// <summary>
+        /// This function is called whenever a JLE instruction is executed
+        /// </summary>
+        /// <param name="lhs"> The left hand operand of the instruction </param>
+        /// <param name="rhs"> The right hand operand of the instruction </param>
+        /// <returns> the result of the instruction or int.MINVALUE if no result is returned </returns>
         private int JLE(Operand lhs, Operand rhs)
         {
+            if (lhs.IsRegister)
+            {
+                lhs.Value = Register.FindRegister(lhs.Register.Name).Value;
+            }
             if (StatusFlags.Z.IsSet || !StatusFlags.N.IsSet)
             {
                 dynamic window = GetMainWindowInstance();
@@ -1391,11 +1590,25 @@ namespace CPU_OS_Simulator.CPU
                 //window.lst_InstructionsList.SelectedIndex = 0;
                 return result;
             }
+            else
+            {
+                ExecutionUnit unit = GetExecutionUnit();
+                unit.CurrentIndex++;
+            }
             return 0;
         }
-
+        /// <summary>
+        /// This function is called whenever a JNZ instruction is executed
+        /// </summary>
+        /// <param name="lhs"> The left hand operand of the instruction </param>
+        /// <param name="rhs"> The right hand operand of the instruction </param>
+        /// <returns> the result of the instruction or int.MINVALUE if no result is returned </returns>
         private int JNZ(Operand lhs, Operand rhs)
         {
+            if (lhs.IsRegister)
+            {
+                lhs.Value = Register.FindRegister(lhs.Register.Name).Value;
+            }
             if (!StatusFlags.Z.IsSet)
             {
                 dynamic window = GetMainWindowInstance();
@@ -1409,11 +1622,25 @@ namespace CPU_OS_Simulator.CPU
                 //window.lst_InstructionsList.SelectedIndex = 0;
                 return result;
             }
+            else
+            {
+                ExecutionUnit unit = GetExecutionUnit();
+                unit.CurrentIndex++;
+            }
             return 0;
         }
-
+        /// <summary>
+        /// This function is called whenever a JZR instruction is executed
+        /// </summary>
+        /// <param name="lhs"> The left hand operand of the instruction </param>
+        /// <param name="rhs"> The right hand operand of the instruction </param>
+        /// <returns> the result of the instruction or int.MINVALUE if no result is returned </returns>
         private int JZR(Operand lhs, Operand rhs)
         {
+            if (lhs.IsRegister)
+            {
+                lhs.Value = Register.FindRegister(lhs.Register.Name).Value;
+            }
             if (StatusFlags.Z.IsSet)
             {
                 dynamic window = GetMainWindowInstance();
@@ -1427,31 +1654,223 @@ namespace CPU_OS_Simulator.CPU
                 //window.lst_InstructionsList.SelectedIndex = 0;
                 return result;
             }
+            else
+            {
+                ExecutionUnit unit = GetExecutionUnit();
+                unit.CurrentIndex++;
+            }
             return 0;
+        }
+        /// <summary>
+        /// This function is called whenever a STWI instruction is executed
+        /// </summary>
+        /// <param name="lhs"> The left hand operand of the instruction </param>
+        /// <param name="rhs"> The right hand operand of the instruction </param>
+        /// <returns> the result of the instruction or int.MINVALUE if no result is returned </returns>
+        private int CALL(Operand lhs, Operand rhs)
+        {
+            MessageBox.Show("CALL Instruction is not currently implemented", "", MessageBoxButton.OK, MessageBoxImage.Information);
+            return 0;
+        }
+
+        /// <summary>
+        /// This function is called whenever a LOOP instruction is executed
+        /// </summary>
+        /// <param name="lhs"> The left hand operand of the instruction </param>
+        /// <param name="rhs"> The right hand operand of the instruction </param>
+        /// <returns> the result of the instruction or int.MINVALUE if no result is returned </returns>
+        private int LOOP(Operand lhs, Operand rhs)
+        {
+            MessageBox.Show("LOOP Instruction is not currently implemented", "", MessageBoxButton.OK, MessageBoxImage.Information);
+            return 0;
+        }
+
+        /// <summary>
+        /// This function is called whenever a JSEL instruction is executed
+        /// </summary>
+        /// <param name="lhs"> The left hand operand of the instruction </param>
+        /// <param name="rhs"> The right hand operand of the instruction </param>
+        /// <returns> the result of the instruction or int.MINVALUE if no result is returned </returns>
+        private int JSEL(Operand lhs, Operand rhs)
+        {
+            MessageBox.Show("JSEL Instruction is not currently used", "", MessageBoxButton.OK, MessageBoxImage.Information);
+            return 0;
+        }
+        /// <summary>
+        /// This function is called whenever a TABE instruction is executed
+        /// </summary>
+        /// <param name="lhs"> The left hand operand of the instruction </param>
+        /// <param name="rhs"> The right hand operand of the instruction </param>
+        /// <returns> the result of the instruction or int.MINVALUE if no result is returned </returns>
+        private int TABE(Operand lhs, Operand rhs)
+        {
+            MessageBox.Show("CALL Instruction is not currently used", "", MessageBoxButton.OK, MessageBoxImage.Information);
+            return 0;
+        }
+
+        /// <summary>
+        /// This function is called whenever a TABI instruction is executed
+        /// </summary>
+        /// <param name="lhs"> The left hand operand of the instruction </param>
+        /// <param name="rhs"> The right hand operand of the instruction </param>
+        /// <returns> the result of the instruction or int.MINVALUE if no result is returned </returns>
+        private int TABI(Operand lhs, Operand rhs)
+        {
+            MessageBox.Show("TABI Instruction is not currently used", "", MessageBoxButton.OK, MessageBoxImage.Information);
+            return 0;
+        }
+        /// <summary>
+        /// This function is called whenever a MSF instruction is executed
+        /// </summary>
+        /// <param name="lhs"> The left hand operand of the instruction </param>
+        /// <param name="rhs"> The right hand operand of the instruction </param>
+        /// <returns> the result of the instruction or int.MINVALUE if no result is returned </returns>
+        private int MSF(Operand lhs, Operand rhs)
+        {
+            MessageBox.Show("MSF Instruction is not currently implemented", "", MessageBoxButton.OK, MessageBoxImage.Information);
+            return 0;
+        }
+        /// <summary>
+        /// This function is called whenever a RET instruction is executed
+        /// </summary>
+        /// <param name="lhs"> The left hand operand of the instruction </param>
+        /// <param name="rhs"> The right hand operand of the instruction </param>
+        /// <returns> the result of the instruction or int.MINVALUE if no result is returned </returns>
+        private int RET(Operand lhs, Operand rhs)
+        {
+            MessageBox.Show("RET Instruction is not currently implemented", "", MessageBoxButton.OK, MessageBoxImage.Information);
+            return 0;
+        }
+        /// <summary>
+        /// This function is called whenever a IRET instruction is executed
+        /// </summary>
+        /// <param name="lhs"> The left hand operand of the instruction </param>
+        /// <param name="rhs"> The right hand operand of the instruction </param>
+        /// <returns> the result of the instruction or int.MINVALUE if no result is returned </returns>
+        private int IRET(Operand lhs, Operand rhs)
+        {
+            MessageBox.Show("IRET Instruction is not currently implemented", "", MessageBoxButton.OK, MessageBoxImage.Information);
+            return 0;
+        }
+        /// <summary>
+        /// This function is called whenever a SWI instruction is executed
+        /// </summary>
+        /// <param name="lhs"> The left hand operand of the instruction </param>
+        /// <param name="rhs"> The right hand operand of the instruction </param>
+        /// <returns> the result of the instruction or int.MINVALUE if no result is returned </returns>
+        private int SWI(Operand lhs, Operand rhs)
+        {
+            MessageBox.Show("CALL Instruction is not currently implemented", "", MessageBoxButton.OK, MessageBoxImage.Information);
+            return 0;
+        }
+        /// <summary>
+        /// This function is called whenever a HLT instruction is executed
+        /// </summary>
+        /// <param name="lhs"> The left hand operand of the instruction </param>
+        /// <param name="rhs"> The right hand operand of the instruction </param>
+        /// <returns> the result of the instruction or int.MINVALUE if no result is returned </returns>
+        private int HLT(Operand lhs, Operand rhs)
+        {
+            if (unit == null)
+            {
+                unit = GetExecutionUnit();
+                if (unit == null)
+                {
+                    MessageBox.Show("There was an error while fetching the execution unit program terminating");
+                    return int.MinValue;
+                }
+            }
+            unit.Done = true;
+            result = 0;
+            return result;
         }
 
         #endregion Control Transfer
 
         #region Comparison
-
+        /// <summary>
+        /// This function is called whenever a CMP instruction is executed
+        /// </summary>
+        /// <param name="lhs"> The left hand operand of the instruction </param>
+        /// <param name="rhs"> The right hand operand of the instruction </param>
+        /// <returns> the result of the instruction or int.MINVALUE if no result is returned </returns>
         private int CMP(Operand lhs, Operand rhs)
         {
             StatusFlags.OV.IsSet = false;
             StatusFlags.N.IsSet = false;
             StatusFlags.Z.IsSet = false;
-
-            if ((lhs.Value - rhs.Value) == 0)
+            if (lhs.IsRegister)
+            {
+                lhs.Value = Register.FindRegister(lhs.Register.Name).Value;
+            }
+            if (rhs.IsRegister)
+            {
+                rhs.Value = Register.FindRegister(rhs.Register.Name).Value;
+            }
+            if ((rhs.Value - lhs.Value) == 0)
             {
                 StatusFlags.Z.IsSet = true;
             }
-            else if ((lhs.Value - rhs.Value) < 0)
+            else if ((rhs.Value - lhs.Value) < 0)
             {
                 StatusFlags.N.IsSet = true;
             }
             return 0;
         }
+        /// <summary>
+        /// This function is called whenever a CPS instruction is executed
+        /// </summary>
+        /// <param name="lhs"> The left hand operand of the instruction </param>
+        /// <param name="rhs"> The right hand operand of the instruction </param>
+        /// <returns> the result of the instruction or int.MINVALUE if no result is returned </returns>
+        private int CPS(Operand lhs, Operand rhs)
+        {
+            MessageBox.Show("CPS Instruction is not currently implemented", "", MessageBoxButton.OK, MessageBoxImage.Information);
+            return 0;
+        }
 
         #endregion Comparison
+
+        #region I/O
+        /// <summary>
+        /// This function is called whenever a IN instruction is executed
+        /// </summary>
+        /// <param name="lhs"> The left hand operand of the instruction </param>
+        /// <param name="rhs"> The right hand operand of the instruction </param>
+        /// <returns> the result of the instruction or int.MINVALUE if no result is returned </returns>
+        private int IN(Operand lhs, Operand rhs)
+        {
+            MessageBox.Show("IN Instruction is not currently implemented", "", MessageBoxButton.OK, MessageBoxImage.Information);
+            return 0;
+        }
+
+        /// <summary>
+        /// This function is called whenever a OUT instruction is executed
+        /// </summary>
+        /// <param name="lhs"> The left hand operand of the instruction </param>
+        /// <param name="rhs"> The right hand operand of the instruction </param>
+        /// <returns> the result of the instruction or int.MINVALUE if no result is returned </returns>
+        private int OUT(Operand lhs, Operand rhs)
+        {
+            MessageBox.Show("OUT Instruction is not currently implemented", "", MessageBoxButton.OK, MessageBoxImage.Information);
+            return 0;
+        }
+        #endregion I/O
+
+        #region Miscellaneous
+        /// <summary>
+        /// This function is called whenever a NOP instruction is executed
+        /// </summary>
+        /// <param name="lhs"> The left hand operand of the instruction </param>
+        /// <param name="rhs"> The right hand operand of the instruction </param>
+        /// <returns> the result of the instruction or int.MINVALUE if no result is returned </returns>
+        private int NOP(Operand lhs, Operand rhs)
+        {
+            Thread.Sleep(unit.ClockSpeed);
+            //MessageBox.Show("NOP Instruction is not currently implemented", "", MessageBoxButton.OK, MessageBoxImage.Information);
+            return 0;
+        }
+        #endregion Miscellaneous
 
         #endregion Instruction Execution Functions
 
@@ -1481,6 +1900,13 @@ namespace CPU_OS_Simulator.CPU
             List<SimulatorProgram> programs = window.ProgramList; // get a copy of the program list
             SimulatorProgram prog = programs.Where(x => x.Name.Equals(programName)).FirstOrDefault(); // find the current program in the list
             return prog; // return the current program
+        }
+
+        private ExecutionUnit GetExecutionUnit()
+        {
+            dynamic window = GetMainWindowInstance();
+            ExecutionUnit currentUnit = window.ActiveUnit;
+            return currentUnit;
         }
 
         /// <summary>
