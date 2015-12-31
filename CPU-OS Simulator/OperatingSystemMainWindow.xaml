@@ -163,7 +163,7 @@
                     <Button x:Name="btn_Step" Content="STEP" HorizontalAlignment="Left" Margin="11,10,0,0" VerticalAlignment="Top" Width="75" Height="40"/>
                     <Button x:Name="btn_Start" Content="START" HorizontalAlignment="Left" Margin="11,55,0,0" VerticalAlignment="Top" Width="75" Height="36" Click="btn_Start_Click"/>
                     <Button x:Name="btn_Suspend" Content="SUSPEND" HorizontalAlignment="Left" Margin="11,98,0,0" VerticalAlignment="Top" Width="75" Height="44"/>
-                    <Slider x:Name="sld_ClockSpeed" HorizontalAlignment="Left" Margin="159,0,0,0" VerticalAlignment="Top" Height="142" Width="71" Orientation="Vertical" Maximum="1000" Minimum="25" SmallChange="10" TickFrequency="100" LargeChange="100" TickPlacement="BottomRight" IsDirectionReversed="True" Value="1000" />
+                    <Slider x:Name="sld_ClockSpeed" x:FieldModifier="public" HorizontalAlignment="Left" Margin="159,0,0,0" VerticalAlignment="Top" Height="142" Width="71" Orientation="Vertical" Maximum="1000" Minimum="25" SmallChange="10" TickFrequency="100" LargeChange="100" TickPlacement="BottomRight" IsDirectionReversed="True" Value="1000" />
                     <Label x:Name="label3" Content="FAST" HorizontalAlignment="Left" Margin="213,10,0,0" VerticalAlignment="Top"/>
                     <Label x:Name="label3_Copy" Content="SLOW" HorizontalAlignment="Left" Margin="213,112,0,0" VerticalAlignment="Top"/>
                     <CheckBox x:Name="chk_Single_CPU" Content="Use Single CPU" HorizontalAlignment="Left" Margin="306,31,0,0" VerticalAlignment="Top"/>

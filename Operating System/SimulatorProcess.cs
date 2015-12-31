@@ -82,8 +82,7 @@ namespace CPU_OS_Simulator.Operating_System
             this.processControlBlock = flags.processControlBlock;
             this.OSid = flags.OSid;
             this.clockSpeed = flags.clockSpeed;
-            System.Console.WriteLine("Clock Speed = " + flags.clockSpeed);
-            this.unit = new ProcessExecutionUnit(this,clockSpeed); //TODO FIX allow clock speed of the system to be changed after the process is created
+            this.unit = new ProcessExecutionUnit(this,clockSpeed);
         }
 
         /// <summary>

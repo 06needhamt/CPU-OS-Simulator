@@ -85,6 +85,7 @@ namespace CPU_OS_Simulator.Operating_System
                 }
                 scheduler = new Scheduler(flags.Value);
             }
+            SetClockSpeed();
             if (!scheduler.Start())
             {
                 MessageBox.Show("An error occurred while running the scheduler");
@@ -92,6 +93,16 @@ namespace CPU_OS_Simulator.Operating_System
             }
             return true;
         }
+
+        private void SetClockSpeed()
+        {
+            dynamic window = GetOSWindowInstance();
+            foreach (SimulatorProcess process in window.Processes)
+            {
+                process.Unit.ClockSpeed = (int) window.sld_ClockSpeed.Value;
+            }
+        }
+
         /// <summary>
         /// This function creates a simulator process
         /// </summary>
