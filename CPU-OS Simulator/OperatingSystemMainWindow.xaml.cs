@@ -54,6 +54,11 @@ namespace CPU_OS_Simulator
             set { processes = value; }
         }
 
+        public OSCore OsCore
+        {
+            get { return osCore; }
+            set { osCore = value; }
+        }
         /// <summary>
         /// This method is called when the close button is clicked
         /// </summary>
@@ -459,6 +464,7 @@ namespace CPU_OS_Simulator
             {
                 temp.parentProcessID = temp.parentProcess.ProcessID;
             }
+            
             temp.childProcesses = new List<SimulatorProcess>();
             temp.processSwapped = false;
             temp.processState = EnumProcessState.READY;
@@ -469,6 +475,8 @@ namespace CPU_OS_Simulator
             PCBFlags? flags = CreatePCBFlags();
             temp.processControlBlock = new ProcessControlBlock(flags.Value);
             temp.OSid = 0;
+            temp.unit = null;
+            temp.clockSpeed = (int) sld_ClockSpeed.Value;
             return temp;
             #region OLD
             //temp.burstTime = 0;

@@ -1,6 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
+using System.Linq;
+using System.Reflection;
+using System.Threading;
+using System.Threading.Tasks;
 using System.Windows;
+using System.Windows.Threading;
+using CPU_OS_Simulator.CPU;
 
 namespace CPU_OS_Simulator.Operating_System
 {
@@ -23,6 +30,8 @@ namespace CPU_OS_Simulator.Operating_System
         private bool allowCPUAffinity;
         private bool runningWithNoProcesses;
         private int cpuClockSpeed;
+        private BackgroundWorker executionWorker;
+        private Dispatcher dispatcher = Dispatcher.CurrentDispatcher;
 
         /// <summary>
         /// Default Constructor for scheduler used when deserialising the scheduler
@@ -51,8 +60,35 @@ namespace CPU_OS_Simulator.Operating_System
             allowCPUAffinity = flags.allowCPUAffinity;
             runningWithNoProcesses = flags.runningWithNoProcesses;
             cpuClockSpeed = flags.cpuClockSpeed;
+            CreateBackgroundWorker();
         }
 
+        private void CreateBackgroundWorker()
+        {
+            executionWorker = new BackgroundWorker();
+            executionWorker.DoWork += CreateExecutionThread;
+            executionWorker.WorkerSupportsCancellation = true;
+            executionWorker.WorkerReportsProgress = true;
+            executionWorker.ProgressChanged += UpdateInterface;
+        }
+
+        private void CreateExecutionThread(object sender, DoWorkEventArgs e)
+        {
+            var executionThread = new Thread(RunScheduler);
+            executionThread.Start();
+        }
+
+        /// <summary>
+        /// Bridge function used to call functions on the main thread from within the background thread
+        /// </summary>
+        /// <param name="FunctionPointer"> The function to call </param>
+        /// <returns>A task to indicate to the main thread that the function has finished executing</returns>
+        private async Task<int> CallFromMainThread(Func<Task<int>> FunctionPointer)
+        {
+            var invoke = dispatcher.Invoke(FunctionPointer);
+            if (invoke != null) await invoke;
+            return 0;
+        }
         public bool Start()
         {
             if (readyQueue.Count == 0 && !runningWithNoProcesses)
@@ -60,11 +96,52 @@ namespace CPU_OS_Simulator.Operating_System
                 MessageBox.Show("OS Execution complete");
                 return true;
             }
-            bool finished = RunScheduler();
-            return finished;
+            executionWorker.RunWorkerAsync();
+            return true;
         }
-
-        private bool RunScheduler()
+        /// <summary>
+        /// Asynchronous function called after every instruction is executed to update required values and user interface asynchronously
+        /// </summary>
+        /// <param name="sender"> the object that triggered this event</param>
+        /// <param name="e">The parameters passed to this event ></param>
+        private async void UpdateInterface(object sender, ProgressChangedEventArgs e)
+        {
+            dynamic OSWindow = GetOSWindow();
+            OSWindow.lst_ReadyProcesses.ItemsSource = null;
+            OSWindow.lst_RunningProcesses.ItemsSource = null;
+            OSWindow.lst_WaitingProcesses.ItemsSource = null;
+            OSWindow.lst_ReadyProcesses.Items.Clear();
+            OSWindow.lst_RunningProcesses.Items.Clear();
+            OSWindow.lst_WaitingProcesses.Items.Clear();
+            List<SimulatorProcess> runningProcesses = new List<SimulatorProcess>();
+            runningProcesses.Add(OSWindow.osCore.Scheduler.RunningProcess);
+            OSWindow.lst_RunningProcesses.ItemsSource = runningProcesses;
+            OSWindow.lst_ReadyProcesses.ItemsSource = OSWindow.OsCore.Scheduler.ReadyQueue;
+            OSWindow.lst_WaitingProcesses.ItemsSource = OSWindow.OsCore.Scheduler.WaitingQueue;
+            OSWindow.txtProcessName.Text = "P" + Convert.ToString(OSWindow.Processes.Count + 1);
+        }
+        /// <summary>
+        /// Asynchronous function called after every instruction is executed to update required values and user interface asynchronously
+        /// </summary>
+        /// <returns> A task to indicate to the main thread that the function has finished executing</returns>
+        private async Task<int> UpdateInterface()
+        {
+            dynamic OSWindow = GetOSWindow();
+            OSWindow.lst_ReadyProcesses.ItemsSource = null;
+            OSWindow.lst_RunningProcesses.ItemsSource = null;
+            OSWindow.lst_WaitingProcesses.ItemsSource = null;
+            OSWindow.lst_ReadyProcesses.Items.Clear();
+            OSWindow.lst_RunningProcesses.Items.Clear();
+            OSWindow.lst_WaitingProcesses.Items.Clear();
+            List<SimulatorProcess> runningProcesses = new List<SimulatorProcess>();
+            runningProcesses.Add(OSWindow.OsCore.Scheduler.RunningProcess);
+            OSWindow.lst_RunningProcesses.ItemsSource = runningProcesses;
+            OSWindow.lst_ReadyProcesses.ItemsSource = OSWindow.OsCore.Scheduler.ReadyQueue;
+            OSWindow.lst_WaitingProcesses.ItemsSource = OSWindow.OsCore.Scheduler.WaitingQueue;
+            OSWindow.txtProcessName.Text = "P" + Convert.ToString(OSWindow.Processes.Count + 1);
+            return 0;
+        }
+        private async void RunScheduler()
         {
             while (readyQueue.Count > 0 && runningProcess == null)
             {
@@ -72,12 +149,13 @@ namespace CPU_OS_Simulator.Operating_System
                 {
                     case EnumSchedulingPolicies.FIRST_COME_FIRST_SERVED:
                         runningProcess = readyQueue.Dequeue();
-                        ProcessExecutionUnit unit = new ProcessExecutionUnit(runningProcess,cpuClockSpeed);
-                        while (!unit.Stop || !unit.Done || unit.Process.Terminated)
+                        //ProcessExecutionUnit unit = runningProcess.Unit;
+                        while (!runningProcess.Unit.Stop && !runningProcess.Unit.Done && !runningProcess.Unit.Process.Terminated)
                         {
-                            unit.ExecuteInstruction();
+                            runningProcess.Unit.ExecuteInstruction();
+                            await CallFromMainThread(UpdateInterface);
                         }
-                        if (unit.Stop)
+                        if (runningProcess.Unit.Stop)
                         {
                             runningProcess.ProcessState = EnumProcessState.WAITING;
                             waitingQueue.Enqueue(runningProcess);
@@ -89,13 +167,18 @@ namespace CPU_OS_Simulator.Operating_System
                             else
                             {
                                 MessageBox.Show("There was an error while creating process control block flags");
-                                return false;
+                                return;
                             }
+                        }
+                        else
+                        {
+                            runningProcess = null;
                         }
                         break;
                 }
             }
-            return true;
+            MessageBox.Show("OS Execution Complete");
+            return;
         }
 
         private PCBFlags? CreatePCBFlags(ref SimulatorProcess currentProcess)
@@ -119,6 +202,15 @@ namespace CPU_OS_Simulator.Operating_System
             flags.resourceStarved = currentProcess.ResourceStarved;
             flags.startAddress = currentProcess.Program.BaseAddress; // TODO Implement program start address
             return flags;
+        }
+
+        private dynamic GetOSWindow()
+        {
+            Assembly windowBridge = Assembly.LoadFrom("CPU_OS_Simulator.WindowBridge.dll"); // Load the window bridge module
+            System.Console.WriteLine(windowBridge.GetExportedTypes()[0]);
+            Type WindowType = windowBridge.GetType(windowBridge.GetExportedTypes()[0].ToString()); // get the name of the type that contains the window instances
+            dynamic window = WindowType.GetField("OperatingSystemMainWindowInstance").GetValue(null); // get the value of the static OperatingSystemMainWindowInstance field
+            return window;
         }
 
         /// <summary>

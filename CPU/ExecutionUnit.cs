@@ -129,7 +129,7 @@ namespace CPU_OS_Simulator.CPU
             }
             else
             {
-                return;
+                Done = true;
             }
         }
 

@@ -10,7 +10,7 @@
     <Grid x:Name="Root_Grid">
         <GroupBox x:Name="grp_RunningProcesses" Header="RUNNING PROCESSES" HorizontalAlignment="Left" VerticalAlignment="Top" Height="150" Width="828">
             <Grid x:Name="grid_RunningProcesses" HorizontalAlignment="Left" Height="140" VerticalAlignment="Top" Width="828" Margin="0,0,-2,-12">
-                <ListView x:Name="lst_RunningProcesses" HorizontalAlignment="Left" Height="140" VerticalAlignment="Top" Width="828" Background="#FFFFFBAC" Margin="0,0,-17,0">
+                <ListView x:Name="lst_RunningProcesses" x:FieldModifier="public" HorizontalAlignment="Left" Height="140" VerticalAlignment="Top" Width="828" Background="#FFFFFBAC" Margin="0,0,-17,0">
                     <ListView.View>
                         <GridView>
                             <GridViewColumn Header="Pid" DisplayMemberBinding="{Binding ProcessID}" Width="50" />
@@ -54,7 +54,7 @@
         <Button x:Name="btn_Show_PCB_Running" Content="SHOW PCB" HorizontalAlignment="Left" Margin="747,172,0,0" VerticalAlignment="Top" Width="81" Height="50"/>
         <GroupBox x:Name="grp_WaitingProcesses" Header="WAITING PROCESSES" HorizontalAlignment="Left" VerticalAlignment="Top" Height="150" Width="828" Margin="0,504,0,0">
             <Grid x:Name="grid_WaitingProcesses" HorizontalAlignment="Left" Height="140" VerticalAlignment="Top" Width="828" Margin="0,0,-2,-12">
-                <ListView x:Name="lst_WaitingProcesses" HorizontalAlignment="Left" Height="140" VerticalAlignment="Top" Width="828" Background="#FFACFFD2" Margin="0,0,-17,0">
+                <ListView x:Name="lst_WaitingProcesses" x:FieldModifier ="public" HorizontalAlignment="Left" Height="140" VerticalAlignment="Top" Width="828" Background="#FFACFFD2" Margin="0,0,-17,0">
                     <ListView.View>
                         <GridView>
                             <GridViewColumn Header="Pid" DisplayMemberBinding="{Binding ProcessID}" Width="50" />
@@ -80,7 +80,7 @@
         <Button x:Name="btn_Show_PCB_Waiting" Content="SHOW PCB" HorizontalAlignment="Left" Margin="747,676,0,0" VerticalAlignment="Top" Width="81" Height="50"/>
         <GroupBox x:Name="grp_ReadyProcesses" Header="READY PROCESSES" HorizontalAlignment="Left" VerticalAlignment="Top" Height="190" Width="828" Margin="0,239,0,0">
             <Grid x:Name="grid_ReadyProcesses" HorizontalAlignment="Left" Height="186" VerticalAlignment="Top" Width="828" Margin="0,0,-2,-12">
-                <ListView x:Name="lst_ReadyProcesses" HorizontalAlignment="Left" Height="186" VerticalAlignment="Top" Width="828" Background="#FF8BF4FF" Margin="0,0,0,-46">
+                <ListView x:Name="lst_ReadyProcesses" x:FieldModifier ="public" HorizontalAlignment="Left" Height="186" VerticalAlignment="Top" Width="828" Background="#FF8BF4FF" Margin="0,0,0,-46">
                     <ListView.View>
                         <GridView>
                             <GridViewColumn Header="Pid" DisplayMemberBinding="{Binding ProcessID}" Width="50" />
@@ -189,7 +189,7 @@
                                     <AccessText TextWrapping="Wrap" Text="Process Name" Height="33" Width="45"/>
                                 </Label.Content>
                             </Label>
-                            <TextBox x:Name="txtProcessName" HorizontalAlignment="Left" Height="23" Margin="65,24,0,0" TextWrapping="Wrap" Text="P1" VerticalAlignment="Top" Width="49" RenderTransformOrigin="0.327,0.043"/>
+                            <TextBox x:Name="txtProcessName" x:FieldModifier ="public" HorizontalAlignment="Left" Height="23" Margin="65,24,0,0" TextWrapping="Wrap" Text="P1" VerticalAlignment="Top" Width="49" RenderTransformOrigin="0.327,0.043"/>
                             <Label x:Name="label5" Content="Priority" HorizontalAlignment="Left" Margin="10,60,0,0" VerticalAlignment="Top"/>
                             <ComboBox x:Name="cmb_Priority" HorizontalAlignment="Left" Margin="65,60,0,0" VerticalAlignment="Top" Width="49" SelectedIndex="2">
                                 <System:Int32>1</System:Int32>
