@@ -1395,14 +1395,25 @@ namespace CPU_OS_Simulator.CPU
                 lhs.Value = Register.FindRegister(lhs.Register.Name).Value;
             }
             dynamic window = GetMainWindowInstance();
-            ExecutionUnit unit = window.ActiveUnit;
+            unit = window.ActiveUnit;
             SimulatorProgram prog = GetCurrentProgram();
-            unit.LogicalAddress = lhs.Value;
-            unit.CurrentIndex = (lhs.Value / 4);
-            result = lhs.Value;
-            unit.Done = false;
-            unit.Stop = false;
-            //window.lst_InstructionsList.SelectedIndex = 0;
+            if (unit == null)
+            {
+                dynamic procunit = GetCurrentProcessExecutionUnit();
+                procunit.LogicalAddress = lhs.Value;
+                procunit.CurrentIndex = (lhs.Value / 4);
+                result = lhs.Value;
+                procunit.Done = false;
+                procunit.Stop = false;
+            }
+            else
+            {
+                unit.LogicalAddress = lhs.Value;
+                unit.CurrentIndex = (lhs.Value / 4);
+                result = lhs.Value;
+                unit.Done = false;
+                unit.Stop = false;
+            }
             return result;
         }
         /// <summary>
@@ -1420,7 +1431,7 @@ namespace CPU_OS_Simulator.CPU
             if (StatusFlags.Z.IsSet)
             {
                 dynamic window = GetMainWindowInstance();
-                ExecutionUnit unit = window.ActiveUnit;
+                unit = window.ActiveUnit;
                 SimulatorProgram prog = GetCurrentProgram();
                 unit.LogicalAddress = lhs.Value;
                 unit.CurrentIndex = (lhs.Value/4);
@@ -1432,7 +1443,7 @@ namespace CPU_OS_Simulator.CPU
             }
             else
             {
-                ExecutionUnit unit = GetExecutionUnit();
+                unit = GetExecutionUnit();
                 unit.CurrentIndex++;
             }
             return 0;
@@ -1452,7 +1463,7 @@ namespace CPU_OS_Simulator.CPU
             if (!StatusFlags.Z.IsSet)
             {
                 dynamic window = GetMainWindowInstance();
-                ExecutionUnit unit = window.ActiveUnit;
+                unit = window.ActiveUnit;
                 SimulatorProgram prog = GetCurrentProgram();
                 unit.LogicalAddress = lhs.Value;
                 unit.CurrentIndex = (lhs.Value / 4);
@@ -1464,7 +1475,7 @@ namespace CPU_OS_Simulator.CPU
             }
             else
             {
-                ExecutionUnit unit = GetExecutionUnit();
+                unit = GetExecutionUnit();
                 unit.CurrentIndex++;
             }
             return 0;
@@ -1484,7 +1495,7 @@ namespace CPU_OS_Simulator.CPU
             if (!StatusFlags.Z.IsSet && StatusFlags.N.IsSet)
             {
                 dynamic window = GetMainWindowInstance();
-                ExecutionUnit unit = window.ActiveUnit;
+                unit = window.ActiveUnit;
                 SimulatorProgram prog = GetCurrentProgram();
                 unit.LogicalAddress = lhs.Value;
                 unit.CurrentIndex = (lhs.Value / 4);
@@ -1496,7 +1507,7 @@ namespace CPU_OS_Simulator.CPU
             }
             else
             {
-                ExecutionUnit unit = GetExecutionUnit();
+                unit = GetExecutionUnit();
                 unit.CurrentIndex++;
             }
             return 0;
@@ -1516,7 +1527,7 @@ namespace CPU_OS_Simulator.CPU
             if (StatusFlags.Z.IsSet || StatusFlags.N.IsSet)
             {
                 dynamic window = GetMainWindowInstance();
-                ExecutionUnit unit = window.ActiveUnit;
+                unit = window.ActiveUnit;
                 SimulatorProgram prog = GetCurrentProgram();
                 unit.LogicalAddress = lhs.Value;
                 unit.CurrentIndex = (lhs.Value / 4);
@@ -1528,7 +1539,7 @@ namespace CPU_OS_Simulator.CPU
             }
             else
             {
-                ExecutionUnit unit = GetExecutionUnit();
+                unit = GetExecutionUnit();
                 unit.CurrentIndex++;
             }
             return 0;
@@ -1548,20 +1559,41 @@ namespace CPU_OS_Simulator.CPU
             if (!StatusFlags.Z.IsSet && StatusFlags.N.IsSet)
             {
                 dynamic window = GetMainWindowInstance();
-                ExecutionUnit unit = window.ActiveUnit;
+                unit = window.ActiveUnit;
                 SimulatorProgram prog = GetCurrentProgram();
-                unit.LogicalAddress = lhs.Value;
-                unit.CurrentIndex = (lhs.Value / 4);
-                result = lhs.Value;
-                unit.Done = false;
-                unit.Stop = false;
+                if (unit == null)
+                {
+                    dynamic procunit = GetCurrentProcessExecutionUnit();
+                    procunit.LogicalAddress = lhs.Value;
+                    procunit.CurrentIndex = (lhs.Value/4);
+                    result = lhs.Value;
+                    procunit.Done = false;
+                    procunit.Stop = false;
+                }
+                else
+                {
+                    unit.LogicalAddress = lhs.Value;
+                    unit.CurrentIndex = (lhs.Value / 4);
+                    result = lhs.Value;
+                    unit.Done = false;
+                    unit.Stop = false;
+                }
+                
                 //window.lst_InstructionsList.SelectedIndex = 0;
                 return result;
             }
             else
             {
-                unit = GetExecutionUnit();
-                unit.CurrentIndex++;
+                if (unit == null)
+                {
+                    dynamic procunit = GetCurrentProcessExecutionUnit();
+                    procunit.CurrentIndex++;
+                }
+                else
+                {
+                    unit = GetExecutionUnit();
+                    unit.CurrentIndex++;
+                }
             }
             return 0;
         }
@@ -1580,7 +1612,7 @@ namespace CPU_OS_Simulator.CPU
             if (StatusFlags.Z.IsSet || !StatusFlags.N.IsSet)
             {
                 dynamic window = GetMainWindowInstance();
-                ExecutionUnit unit = window.ActiveUnit;
+                unit = window.ActiveUnit;
                 SimulatorProgram prog = GetCurrentProgram();
                 unit.LogicalAddress = lhs.Value;
                 unit.CurrentIndex = (lhs.Value / 4);
@@ -1612,7 +1644,7 @@ namespace CPU_OS_Simulator.CPU
             if (!StatusFlags.Z.IsSet)
             {
                 dynamic window = GetMainWindowInstance();
-                ExecutionUnit unit = window.ActiveUnit;
+                unit = window.ActiveUnit;
                 SimulatorProgram prog = GetCurrentProgram();
                 unit.LogicalAddress = lhs.Value;
                 unit.CurrentIndex = (lhs.Value / 4);
@@ -1624,7 +1656,7 @@ namespace CPU_OS_Simulator.CPU
             }
             else
             {
-                ExecutionUnit unit = GetExecutionUnit();
+                unit = GetExecutionUnit();
                 unit.CurrentIndex++;
             }
             return 0;
@@ -1644,7 +1676,7 @@ namespace CPU_OS_Simulator.CPU
             if (StatusFlags.Z.IsSet)
             {
                 dynamic window = GetMainWindowInstance();
-                ExecutionUnit unit = window.ActiveUnit;
+                unit = window.ActiveUnit;
                 SimulatorProgram prog = GetCurrentProgram();
                 unit.LogicalAddress = lhs.Value;
                 unit.CurrentIndex = (lhs.Value / 4);
@@ -1656,7 +1688,7 @@ namespace CPU_OS_Simulator.CPU
             }
             else
             {
-                ExecutionUnit unit = GetExecutionUnit();
+                unit = GetExecutionUnit();
                 unit.CurrentIndex++;
             }
             return 0;
@@ -1776,8 +1808,18 @@ namespace CPU_OS_Simulator.CPU
                 unit = GetExecutionUnit();
                 if (unit == null)
                 {
-                    MessageBox.Show("There was an error while fetching the execution unit program terminating");
-                    return int.MinValue;
+                    dynamic procunit = GetCurrentProcessExecutionUnit();
+                    if (procunit == null)
+                    {
+                        MessageBox.Show("There was an error while fetching the execution unit program terminating");
+                        return int.MinValue;
+                    }
+                    else
+                    {
+                        procunit.Done = true;
+                        result = 0; 
+                        return result;
+                    }
                 }
             }
             unit.Done = true;
@@ -1906,6 +1948,29 @@ namespace CPU_OS_Simulator.CPU
         {
             dynamic window = GetMainWindowInstance();
             ExecutionUnit currentUnit = window.ActiveUnit;
+            return currentUnit;
+        }
+
+        /// <summary>
+        /// This function gets the operating system main window instance from the window bridge
+        /// </summary>
+        /// <returns> the active instance of operating system main window </returns>
+        private dynamic GetOSMainWindowInstance()
+        {
+            Assembly windowBridge = Assembly.LoadFrom("CPU_OS_Simulator.WindowBridge.dll"); // Load the window bridge module
+            Console.WriteLine(windowBridge.GetExportedTypes()[0]);
+            Type WindowType = windowBridge.GetType(windowBridge.GetExportedTypes()[0].ToString()); // get the name of the type that contains the window instances
+            dynamic window = WindowType.GetField("OperatingSystemMainWindowInstance").GetValue(null); // get the value of the static OperatingSystemMainWindowInstance field
+            return window;
+        }
+
+        private dynamic GetCurrentProcessExecutionUnit()
+        {
+            dynamic osWindow = GetOSMainWindowInstance();
+            dynamic osCore = osWindow.OsCore;
+            dynamic scheduler = osCore.Scheduler;
+            dynamic currentProcess = scheduler.RunningProcess;
+            dynamic currentUnit = currentProcess.Unit;
             return currentUnit;
         }
 

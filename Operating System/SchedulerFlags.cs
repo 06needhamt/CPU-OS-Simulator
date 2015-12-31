@@ -19,5 +19,6 @@ namespace CPU_OS_Simulator.Operating_System
         public bool usingSingleCPU;
         public bool allowCPUAffinity;
         public bool runningWithNoProcesses;
+        public int cpuClockSpeed;
     }
 }

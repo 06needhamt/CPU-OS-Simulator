@@ -5,7 +5,7 @@ namespace CPU_OS_Simulator.Operating_System
     public class ProcessExecutionUnit : ExecutionUnit
     {
         private ProcessControlBlock processControlBlock;
-        private SimulatorProgram program;
+        private new SimulatorProgram program;
         private SimulatorProcess process;
 
         /// <summary>
@@ -17,6 +17,7 @@ namespace CPU_OS_Simulator.Operating_System
         {
             this.process = program;
             this.program = process.Program;
+            this.ClockSpeed = clockSpeed;
         }
 
         /// <summary>
@@ -27,11 +28,36 @@ namespace CPU_OS_Simulator.Operating_System
         /// <param name="clockSpeed"> the clock speed of the CPU </param>
         public ProcessExecutionUnit(SimulatorProcess program, int clockSpeed, int currentIndex) : base(program.Program, clockSpeed, currentIndex)
         {
+            this.process = program;
+            this.program = process.Program;
+            this.ClockSpeed = clockSpeed;
+            this.CurrentIndex = currentIndex;
         }
 
-        public void Terminate()
-        { 
+        public ProcessControlBlock ProcessControlBlock
+        {
+            get { return processControlBlock; }
+            set { processControlBlock = value; }
+        }
 
+        public new  SimulatorProgram Program
+        {
+            get { return program; }
+            set { program = value; }
+        }
+
+        public SimulatorProcess Process
+        {
+            get { return process; }
+            set { process = value; }
+        }
+
+        
+        public void Terminate()
+        {
+            process.Terminate();
+            Stop = true;
+            Done = true;
         }
     }
 }

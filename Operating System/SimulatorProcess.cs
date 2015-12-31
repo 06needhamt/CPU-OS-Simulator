@@ -20,6 +20,7 @@ namespace CPU_OS_Simulator.Operating_System
         private int processID;
         private int parentProcessID;
         private int CPUid;
+        private int OSid;
         private int burstTime;
         private bool displayProfile;
         private bool parentDiesChildrenDie;
@@ -34,6 +35,10 @@ namespace CPU_OS_Simulator.Operating_System
         private bool resourceStarved;
         private List<SystemResource> allocatedResources;
         private List<SystemResource> requestedResources;
+        private bool terminated;
+        private ProcessControlBlock processControlBlock;
+        private int clockSpeed;
+        private ProcessExecutionUnit unit;
 
         /// <summary>
         /// Default Constructor for a process used when deserialising processes
@@ -74,6 +79,11 @@ namespace CPU_OS_Simulator.Operating_System
             this.resourceStarved = flags.resourceStarved;
             this.allocatedResources = flags.allocatedResources;
             this.requestedResources = flags.requestedResources;
+            this.processControlBlock = flags.processControlBlock;
+            this.OSid = flags.OSid;
+            this.clockSpeed = flags.clockSpeed;
+            System.Console.WriteLine("Clock Speed = " + flags.clockSpeed);
+            this.unit = new ProcessExecutionUnit(this,clockSpeed); //TODO FIX allow clock speed of the system to be changed after the process is created
         }
 
         /// <summary>
@@ -212,6 +222,36 @@ namespace CPU_OS_Simulator.Operating_System
             set { requestedResources = value; }
         }
 
+        public bool Terminated
+        {
+            get { return terminated; }
+            set { terminated = value; }
+        }
+
+        public ProcessControlBlock ControlBlock
+        {
+            get { return processControlBlock; }
+            set { processControlBlock = value; }
+        }
+
+        public int OSID
+        {
+            get { return OSid; }
+            set { OSid = value; }
+        }
+
+        public int ClockSpeed
+        {
+            get { return clockSpeed; }
+            set { clockSpeed = value; }
+        }
+
+        public ProcessExecutionUnit Unit
+        {
+            get { return unit; }
+            set { unit = value; }
+        }
+
         /// <summary>
         /// Compares the current object with another object of the same type.
         /// </summary>
@@ -244,6 +284,11 @@ namespace CPU_OS_Simulator.Operating_System
                 return true;
             }
             return false;
+        }
+
+        public void Terminate()
+        {
+            terminated = true;
         }
     }
 }
