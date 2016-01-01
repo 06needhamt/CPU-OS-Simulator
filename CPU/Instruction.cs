@@ -766,7 +766,40 @@ namespace CPU_OS_Simulator.CPU
         /// <returns> the result of the instruction or int.MINVALUE if no result is returned </returns>
         private int STB(Operand lhs, Operand rhs)
         {
-            MessageBox.Show("STB Instruction is not currently implemented", "", MessageBoxButton.OK, MessageBoxImage.Information);
+            int address = 0;
+            int value = 0;
+            int pagenumber = 0;
+            int pageoffset = 0;
+            byte b = 0xFF;
+            address = lhs.IsRegister ? Register.FindRegister(lhs.Register.Name).Value : lhs.Value;
+            if (rhs.IsRegister)
+            {
+                SimulatorProgram program = GetCurrentProgram();
+                value = Register.FindRegister(rhs.Register.Name).Value;
+                b = (byte) (value & 0xFF);
+                pagenumber = address/MemoryPage.PAGE_SIZE;
+                pageoffset = address%MemoryPage.PAGE_SIZE;
+            }
+            else
+            {
+                SimulatorProgram program = GetCurrentProgram();
+                pagenumber = address/MemoryPage.PAGE_SIZE;
+                pageoffset = address%MemoryPage.PAGE_SIZE;
+                value = rhs.Value;
+                b = (byte) (value & 0xFF);
+            }
+            dynamic wind = GetMainWindowInstance();
+            PhysicalMemory memory = wind.Memory;
+            int frameNumber = FindRequiredPage(pagenumber);
+            if (memory.RequestMemoryPage(frameNumber) != null)
+            {
+                memory.Pages[frameNumber].Data[pageoffset / 8].SetByte(pageoffset % 8,b);
+            }
+            else
+            {
+                return int.MinValue;
+            }
+            //MessageBox.Show("STB Instruction is not currently implemented", "", MessageBoxButton.OK, MessageBoxImage.Information);
             #region OLD
             //int address;
             //byte value;

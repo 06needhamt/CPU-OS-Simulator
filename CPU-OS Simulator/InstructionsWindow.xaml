@@ -81,10 +81,38 @@
                                 </Grid>
                             </GroupBox>
                         </Grid>
-                        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="70" Margin="317,34,0,0" VerticalAlignment="Top" Width="230" />
-                        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="69" Margin="317,109,0,0" VerticalAlignment="Top" Width="230" />
-                        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="68" Margin="317,194,0,0" VerticalAlignment="Top" Width="230" />
-                        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="62" Margin="317,268,0,0" VerticalAlignment="Top" Width="230" />
+                        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="70" Margin="317,34,0,0" VerticalAlignment="Top" Width="230" >
+                            <Grid>
+                                <RadioButton x:Name="rdb_DataTransfer_Source_Literal_Value" Content="Literal Value" HorizontalAlignment="Left" Margin="17,0,0,0" VerticalAlignment="Top" GroupName="MemoryModeSource" IsChecked="True"/>
+                                <RadioButton x:Name="rdb_DataTransfer_Source_Direct_Mem" Content="Direct Mem" HorizontalAlignment="Left" Margin="17,23,0,0" VerticalAlignment="Top" GroupName="MemoryModeSource"/>
+                                <RadioButton x:Name="rdb_DataTransfer_Source_InDirect_Mem" Content="Indirect Mem" HorizontalAlignment="Left" Margin="17,43,0,0" VerticalAlignment="Top" GroupName="MemoryModeSource"/>
+                                <RadioButton x:Name="rdb_DataTransfer_Source_Rel_Direct_Mem" Content="Rel Direct Mem" HorizontalAlignment="Left" Margin="111,23,0,0" VerticalAlignment="Top" GroupName="MemoryModeSource"/>
+                            </Grid>
+                        </Border>
+                        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="69" Margin="317,109,0,0" VerticalAlignment="Top" Width="230" >
+                            <Grid>
+                                <RadioButton x:Name="rdb_DataTransfer_Source_Reg_Direct" Content="Reg Direct" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" GroupName="Register Mode Source" IsChecked="True"/>
+                                <RadioButton x:Name="rdb_DataTransfer_Source_Reg_Indirect" Content="Reg Indirect" HorizontalAlignment="Left" Margin="10,32,0,0" VerticalAlignment="Top" GroupName="Register Mode Source"/>
+                                <RadioButton x:Name="rdb_DataTransfer_Source_Reg_Rel_Direct" Content="Reg Rel Direct" HorizontalAlignment="Left" Margin="97,10,0,0" VerticalAlignment="Top" GroupName="Register Mode Source" IsChecked="True"/>
+                                <RadioButton x:Name="rdb_DataTransfer_Source_Reg_Rel_Indirect" Content="Reg Rel Indirect" HorizontalAlignment="Left" Margin="97,32,0,0" VerticalAlignment="Top" GroupName="Register Mode Source"/>
+                            </Grid>
+                        </Border>
+                        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="68" Margin="317,194,0,0" VerticalAlignment="Top" Width="230" >
+                            <Grid Margin="0,0,0,-2">
+                                <RadioButton x:Name="rdb_DataTransfer_Destination_Literal_Value" Content="Literal Value" HorizontalAlignment="Left" Margin="17,0,0,0" VerticalAlignment="Top" GroupName="MemoryModeDestination" IsChecked="True"/>
+                                <RadioButton x:Name="rdb_DataTransfer_Destination_Direct_Mem" Content="Direct Mem" HorizontalAlignment="Left" Margin="17,23,0,0" VerticalAlignment="Top" GroupName="MemoryModeDestination"/>
+                                <RadioButton x:Name="rdb_DataTransfer_Destination_InDirect_Mem" Content="Indirect Mem" HorizontalAlignment="Left" Margin="17,43,0,0" VerticalAlignment="Top" GroupName="MemoryModeDestination"/>
+                                <RadioButton x:Name="rdb_DataTransfer_Destination_Rel_Direct_Mem" Content="Rel Direct Mem" HorizontalAlignment="Left" Margin="111,23,0,0" VerticalAlignment="Top" GroupName="MemoryModeDestination"/>
+                            </Grid>
+                        </Border>
+                        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="62" Margin="317,268,0,0" VerticalAlignment="Top" Width="230" >
+                            <Grid Margin="0,0,0,-7">
+                                <RadioButton x:Name="rdb_DataTransfer_Destination_Reg_Direct" Content="Reg Direct" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" GroupName="Register Mode Destination" IsChecked="True"/>
+                                <RadioButton x:Name="rdb_DataTransfer_Destination_Reg_Indirect" Content="Reg Indirect" HorizontalAlignment="Left" Margin="10,32,0,0" VerticalAlignment="Top" GroupName="Register Mode Destination"/>
+                                <RadioButton x:Name="rdb_DataTransfer_Destination_Reg_Rel_Direct" Content="Reg Rel Direct" HorizontalAlignment="Left" Margin="97,10,0,0" VerticalAlignment="Top" GroupName="Register Mode Destination" IsChecked="True"/>
+                                <RadioButton x:Name="rdb_DataTransfer_Destination_Reg_Rel_Indirect" Content="Reg Rel Indirect" HorizontalAlignment="Left" Margin="97,32,0,0" VerticalAlignment="Top" GroupName="Register Mode Destination"/>
+                            </Grid>
+                        </Border>
                         <TextBox x:Name="txtDescriptionDataTransfer" HorizontalAlignment="Center" Height="23" Margin="10,356,12,8" TextWrapping="Wrap" VerticalAlignment="Center" Width="550" Focusable="False" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Background="#FFFFFCC3" />
                     </Grid>
                 </TabItem>
@@ -164,11 +192,39 @@
                                     </Grid>
                                 </GroupBox>
                             </Grid>
-                            <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="70" Margin="268,34,0,0" VerticalAlignment="Top" Width="230" Grid.Column="1" />
-                            <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="69" Margin="268,109,0,0" VerticalAlignment="Top" Width="230" Grid.Column="1" />
-                            <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="68" Margin="268,194,0,0" VerticalAlignment="Top" Width="230" Grid.Column="1" />
-                            <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="62" Margin="268,268,0,0" VerticalAlignment="Top" Width="230" Grid.Column="1" />
                             <TextBox x:Name="txtDescriptionLogical" HorizontalAlignment="Center" Height="23" Margin="10,356,12,8" TextWrapping="Wrap" VerticalAlignment="Center" Width="550" Focusable="False" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Background="#FFFFFCC3" Grid.ColumnSpan="2" />
+                            <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="70" Margin="268,34,0,0" VerticalAlignment="Top" Width="230" Grid.Column="1" >
+                                <Grid>
+                                    <RadioButton x:Name="rdb_Logical_Source_Literal_Value" Content="Literal Value" HorizontalAlignment="Left" Margin="17,0,0,0" VerticalAlignment="Top" GroupName="MemoryModeSource" IsChecked="True"/>
+                                    <RadioButton x:Name="rdb_Logical_Source_Direct_Mem" Content="Direct Mem" HorizontalAlignment="Left" Margin="17,23,0,0" VerticalAlignment="Top" GroupName="MemoryModeSource"/>
+                                    <RadioButton x:Name="rdb_Logical_Source_InDirect_Mem" Content="Indirect Mem" HorizontalAlignment="Left" Margin="17,43,0,0" VerticalAlignment="Top" GroupName="MemoryModeSource"/>
+                                    <RadioButton x:Name="rdb_Logical_Source_Rel_Direct_Mem" Content="Rel Direct Mem" HorizontalAlignment="Left" Margin="111,23,0,0" VerticalAlignment="Top" GroupName="MemoryModeSource"/>
+                                </Grid>
+                            </Border>
+                            <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="69" Margin="268,109,0,0" VerticalAlignment="Top" Width="230" Grid.Column="1" >
+                                <Grid>
+                                    <RadioButton x:Name="rdb_Logical_Source_Reg_Direct" Content="Reg Direct" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" GroupName="Register Mode Source" IsChecked="True"/>
+                                    <RadioButton x:Name="rdb_Logical_Source_Reg_Indirect" Content="Reg Indirect" HorizontalAlignment="Left" Margin="10,32,0,0" VerticalAlignment="Top" GroupName="Register Mode Source"/>
+                                    <RadioButton x:Name="rdb_Logical_Source_Reg_Rel_Direct" Content="Reg Rel Direct" HorizontalAlignment="Left" Margin="97,10,0,0" VerticalAlignment="Top" GroupName="Register Mode Source"/>
+                                    <RadioButton x:Name="rdb_Logical_Source_Reg_Rel_Indirect" Content="Reg Rel Indirect" HorizontalAlignment="Left" Margin="97,32,0,0" VerticalAlignment="Top" GroupName="Register Mode Source"/>
+                                </Grid>
+                            </Border>
+                            <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="68" Margin="268,194,0,0" VerticalAlignment="Top" Width="230" Grid.Column="1" >
+                                <Grid Margin="0,0,0,-2">
+                                    <RadioButton x:Name="rdb_Logical_Destination_Literal_Value" Content="Literal Value" HorizontalAlignment="Left" Margin="17,0,0,0" VerticalAlignment="Top" GroupName="MemoryModeDestination" IsChecked="True"/>
+                                    <RadioButton x:Name="rdb_Logical_Destination_Direct_Mem" Content="Direct Mem" HorizontalAlignment="Left" Margin="17,23,0,0" VerticalAlignment="Top" GroupName="MemoryModeDestination"/>
+                                    <RadioButton x:Name="rdb_Logical_Destination_InDirect_Mem" Content="Indirect Mem" HorizontalAlignment="Left" Margin="17,43,0,0" VerticalAlignment="Top" GroupName="MemoryModeDestination"/>
+                                    <RadioButton x:Name="rdb_Logical_Destination_Rel_Direct_Mem" Content="Rel Direct Mem" HorizontalAlignment="Left" Margin="111,23,0,0" VerticalAlignment="Top" GroupName="MemoryModeDestination"/>
+                                </Grid>
+                            </Border>
+                            <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="62" Margin="268,268,0,0" VerticalAlignment="Top" Width="230" Grid.Column="1" >
+                                <Grid Margin="0,0,0,-7">
+                                    <RadioButton x:Name="rdb_Logical_Destination_Reg_Direct" Content="Reg Direct" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" GroupName="Register Mode Destination" IsChecked="True"/>
+                                    <RadioButton x:Name="rdb_Logical_Destination_Reg_Indirect" Content="Reg Indirect" HorizontalAlignment="Left" Margin="10,32,0,0" VerticalAlignment="Top" GroupName="Register Mode Destination"/>
+                                    <RadioButton x:Name="rdb_Logical_Destination_Reg_Rel_Direct" Content="Reg Rel Direct" HorizontalAlignment="Left" Margin="97,10,0,0" VerticalAlignment="Top" GroupName="Register Mode Destination" IsChecked="True"/>
+                                    <RadioButton x:Name="rdb_Logical_Destination_Reg_Rel_Indirect" Content="Reg Rel Indirect" HorizontalAlignment="Left" Margin="97,32,0,0" VerticalAlignment="Top" GroupName="Register Mode Destination"/>
+                                </Grid>
+                            </Border>
                         </Grid>
                     </Grid>
                 </TabItem>
@@ -243,11 +299,39 @@
                                 </Grid>
                             </GroupBox>
                         </Grid>
-                        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="70" Margin="317,34,0,0" VerticalAlignment="Top" Width="230" />
-                        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="69" Margin="317,109,0,0" VerticalAlignment="Top" Width="230" />
-                        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="68" Margin="317,194,0,0" VerticalAlignment="Top" Width="230" />
-                        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="62" Margin="317,268,0,0" VerticalAlignment="Top" Width="230" />
                         <TextBox x:Name="txtDescriptionArithmetic" HorizontalAlignment="Center" Height="23" Margin="10,356,12,8" TextWrapping="Wrap" VerticalAlignment="Center" Width="550" Focusable="False" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Background="#FFFFFCC3" />
+                        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="70" Margin="317,34,0,0" VerticalAlignment="Top" Width="230" >
+                            <Grid>
+                                <RadioButton x:Name="rdb_Arithmetic_Source_Literal_Value" Content="Literal Value" HorizontalAlignment="Left" Margin="17,0,0,0" VerticalAlignment="Top" GroupName="MemoryModeSource" IsChecked="True"/>
+                                <RadioButton x:Name="rdb_Arithmetic_Source_Direct_Mem" Content="Direct Mem" HorizontalAlignment="Left" Margin="17,23,0,0" VerticalAlignment="Top" GroupName="MemoryModeSource"/>
+                                <RadioButton x:Name="rdb_Arithmetic_Source_InDirect_Mem" Content="Indirect Mem" HorizontalAlignment="Left" Margin="17,43,0,0" VerticalAlignment="Top" GroupName="MemoryModeSource"/>
+                                <RadioButton x:Name="rdb_Arithmetic_Source_Rel_Direct_Mem" Content="Rel Direct Mem" HorizontalAlignment="Left" Margin="111,23,0,0" VerticalAlignment="Top" GroupName="MemoryModeSource"/>
+                            </Grid>
+                        </Border>
+                        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="69" Margin="317,109,0,0" VerticalAlignment="Top" Width="230" >
+                            <Grid>
+                                <RadioButton x:Name="rdb_Arithmetic_Source_Reg_Direct" Content="Reg Direct" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" GroupName="Register Mode Source" IsChecked="True"/>
+                                <RadioButton x:Name="rdb_Arithmetic_Source_Reg_Indirect" Content="Reg Indirect" HorizontalAlignment="Left" Margin="10,32,0,0" VerticalAlignment="Top" GroupName="Register Mode Source"/>
+                                <RadioButton x:Name="rdb_Arithmetic_Source_Reg_Rel_Direct" Content="Reg Rel Direct" HorizontalAlignment="Left" Margin="97,10,0,0" VerticalAlignment="Top" GroupName="Register Mode Source" IsChecked="True"/>
+                                <RadioButton x:Name="rdb_Arithmetic_Source_Reg_Rel_Indirect" Content="Reg Rel Indirect" HorizontalAlignment="Left" Margin="97,32,0,0" VerticalAlignment="Top" GroupName="Register Mode Source"/>
+                            </Grid>
+                        </Border>
+                        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="68" Margin="317,194,0,0" VerticalAlignment="Top" Width="230" >
+                            <Grid Margin="0,0,0,-2">
+                                <RadioButton x:Name="rdb_Arithmetic_Destination_Literal_Value" Content="Literal Value" HorizontalAlignment="Left" Margin="17,0,0,0" VerticalAlignment="Top" GroupName="MemoryModeDestination" IsChecked="True"/>
+                                <RadioButton x:Name="rdb_Arithmetic_Destination_Direct_Mem" Content="Direct Mem" HorizontalAlignment="Left" Margin="17,23,0,0" VerticalAlignment="Top" GroupName="MemoryModeDestination"/>
+                                <RadioButton x:Name="rdb_Arithmetic_Destination_InDirect_Mem" Content="Indirect Mem" HorizontalAlignment="Left" Margin="17,43,0,0" VerticalAlignment="Top" GroupName="MemoryModeDestination"/>
+                                <RadioButton x:Name="rdb_Arithmetic_Destination_Rel_Direct_Mem" Content="Rel Direct Mem" HorizontalAlignment="Left" Margin="111,23,0,0" VerticalAlignment="Top" GroupName="MemoryModeDestination"/>
+                            </Grid>
+                        </Border>
+                        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="62" Margin="317,268,0,0" VerticalAlignment="Top" Width="230" >
+                            <Grid Margin="0,0,0,-7">
+                                <RadioButton x:Name="rdb_Arithmetic_Destination_Reg_Direct" Content="Reg Direct" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" GroupName="Register Mode Destination" IsChecked="True"/>
+                                <RadioButton x:Name="rdb_Arithmetic_Destination_Reg_Indirect" Content="Reg Indirect" HorizontalAlignment="Left" Margin="10,32,0,0" VerticalAlignment="Top" GroupName="Register Mode Destination"/>
+                                <RadioButton x:Name="rdb_Arithmetic_Destination_Reg_Rel_Direct" Content="Reg Rel Direct" HorizontalAlignment="Left" Margin="97,10,0,0" VerticalAlignment="Top" GroupName="Register Mode Destination" IsChecked="True"/>
+                                <RadioButton x:Name="rdb_Arithmetic_Destination_Reg_Rel_Indirect" Content="Reg Rel Indirect" HorizontalAlignment="Left" Margin="97,32,0,0" VerticalAlignment="Top" GroupName="Register Mode Destination"/>
+                            </Grid>
+                        </Border>
                     </Grid>
                 </TabItem>
                 <TabItem x:Name="ControlTranferTab" Header="Control Transfer" HorizontalAlignment="Left" Height="20" VerticalAlignment="Top" Width="102" Margin="-2,-2,-46,0">
@@ -321,20 +405,52 @@
                                 </Grid>
                             </GroupBox>
                         </Grid>
-                        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="70" Margin="317,34,0,0" VerticalAlignment="Top" Width="230" />
-                        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="69" Margin="317,109,0,0" VerticalAlignment="Top" Width="230" />
-                        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="68" Margin="317,194,0,0" VerticalAlignment="Top" Width="230" />
-                        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="62" Margin="317,268,0,0" VerticalAlignment="Top" Width="230" />
                         <TextBox x:Name="txtDescriptionControlTransfer" HorizontalAlignment="Center" Height="23" Margin="10,356,12,8" TextWrapping="Wrap" VerticalAlignment="Center" Width="550" Focusable="False" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Background="#FFFFFCC3" />
+                        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="70" Margin="317,34,0,0" VerticalAlignment="Top" Width="230" >
+                            <Grid>
+                                <RadioButton x:Name="rdb_ControlTransfer_Source_Literal_Value" Content="Literal Value" HorizontalAlignment="Left" Margin="17,0,0,0" VerticalAlignment="Top" GroupName="MemoryModeSource" IsChecked="True"/>
+                                <RadioButton x:Name="rdb_ControlTransfer_Source_Direct_Mem" Content="Direct Mem" HorizontalAlignment="Left" Margin="17,23,0,0" VerticalAlignment="Top" GroupName="MemoryModeSource"/>
+                                <RadioButton x:Name="rdb_ControlTransfer_Source_InDirect_Mem" Content="Indirect Mem" HorizontalAlignment="Left" Margin="17,43,0,0" VerticalAlignment="Top" GroupName="MemoryModeSource"/>
+                                <RadioButton x:Name="rdb_ControlTransfer_Source_Rel_Direct_Mem" Content="Rel Direct Mem" HorizontalAlignment="Left" Margin="111,23,0,0" VerticalAlignment="Top" GroupName="MemoryModeSource"/>
+                            </Grid>
+                        </Border>
+                        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="69" Margin="317,109,0,0" VerticalAlignment="Top" Width="230" >
+                            <Grid>
+                                <RadioButton x:Name="rdb_ControlTransfer_Source_Reg_Direct" Content="Reg Direct" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" GroupName="Register Mode Source" IsChecked="True"/>
+                                <RadioButton x:Name="rdb_ControlTransfer_Source_Reg_Indirect" Content="Reg Indirect" HorizontalAlignment="Left" Margin="10,32,0,0" VerticalAlignment="Top" GroupName="Register Mode Source"/>
+                                <RadioButton x:Name="rdb_ControlTransfer_Source_Reg_Rel_Direct" Content="Reg Rel Direct" HorizontalAlignment="Left" Margin="97,10,0,0" VerticalAlignment="Top" GroupName="Register Mode Source" IsChecked="True"/>
+                                <RadioButton x:Name="rdb_ControlTransfer_Source_Reg_Rel_Indirect" Content="Reg Rel Indirect" HorizontalAlignment="Left" Margin="97,32,0,0" VerticalAlignment="Top" GroupName="Register Mode Source"/>
+                            </Grid>
+                        </Border>
+                        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="68" Margin="317,194,0,0" VerticalAlignment="Top" Width="230" >
+                            <Grid Margin="0,0,0,-2">
+                                <RadioButton x:Name="rdb_ControlTransfer_Destination_Literal_Value" Content="Literal Value" HorizontalAlignment="Left" Margin="17,0,0,0" VerticalAlignment="Top" GroupName="MemoryModeDestination" IsChecked="True"/>
+                                <RadioButton x:Name="rdb_ControlTransfer_Destination_Direct_Mem" Content="Direct Mem" HorizontalAlignment="Left" Margin="17,23,0,0" VerticalAlignment="Top" GroupName="MemoryModeDestination"/>
+                                <RadioButton x:Name="rdb_ControlTransfer_Destination_InDirect_Mem" Content="Indirect Mem" HorizontalAlignment="Left" Margin="17,43,0,0" VerticalAlignment="Top" GroupName="MemoryModeDestination"/>
+                                <RadioButton x:Name="rdb_ControlTransfer_Destination_Rel_Direct_Mem" Content="Rel Direct Mem" HorizontalAlignment="Left" Margin="111,23,0,0" VerticalAlignment="Top" GroupName="MemoryModeDestination"/>
+                            </Grid>
+                        </Border>
+                        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="62" Margin="317,268,0,0" VerticalAlignment="Top" Width="230" >
+                            <Grid Margin="0,0,0,-7">
+                                <RadioButton x:Name="rdb_ControlTransfer_Destination_Reg_Direct" Content="Reg Direct" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" GroupName="Register Mode Destination" IsChecked="True"/>
+                                <RadioButton x:Name="rdb_ControlTransfer_Destination_Reg_Indirect" Content="Reg Indirect" HorizontalAlignment="Left" Margin="10,32,0,0" VerticalAlignment="Top" GroupName="Register Mode Destination"/>
+                                <RadioButton x:Name="rdb_ControlTransfer_Destination_Reg_Rel_Direct" Content="Reg Rel Direct" HorizontalAlignment="Left" Margin="97,10,0,0" VerticalAlignment="Top" GroupName="Register Mode Destination" IsChecked="True"/>
+                                <RadioButton x:Name="rdb_ControlTransfer_Destination_Reg_Rel_Indirect" Content="Reg Rel Indirect" HorizontalAlignment="Left" Margin="97,32,0,0" VerticalAlignment="Top" GroupName="Register Mode Destination"/>
+                            </Grid>
+                        </Border>
                     </Grid>
                 </TabItem>
                 <TabItem x:Name="ComparisonTab" Header="Comparison" HorizontalAlignment="Left" Height="20" VerticalAlignment="Top" Width="82" Margin="-2,-2,-26,0">
                     <Grid x:Name="TabGrid_Copy3" Background="#FFE5E5E5" Margin="0,0,0,31">
-                        <Label x:Name="label4" Content="Opcode" HorizontalAlignment="Left" Margin="48,22,0,0" VerticalAlignment="Top" FontWeight="Bold" />
-                        <Grid x:Name="InstructionListGrid4" HorizontalAlignment="Left" Height="277" Margin="25,53,0,0" VerticalAlignment="Top" Width="100">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="63*"/>
+                            <ColumnDefinition Width="509*"/>
+                        </Grid.ColumnDefinitions>
+                        <Label x:Name="label4" Content="Opcode" HorizontalAlignment="Left" Margin="48,22,0,0" VerticalAlignment="Top" FontWeight="Bold" Grid.ColumnSpan="2" />
+                        <Grid x:Name="InstructionListGrid4" HorizontalAlignment="Left" Height="277" Margin="25,53,0,0" VerticalAlignment="Top" Width="100" Grid.ColumnSpan="2">
                             <ListBox x:Name="lst_OpcodeListComparison" HorizontalAlignment="Left" Height="277" VerticalAlignment="Top" Width="100" Background="#FFFFFCC3" SelectedIndex="0" SelectionChanged="lst_OpcodeListComparison_SelectionChanged" />
                         </Grid>
-                        <Grid x:Name="SourceOperandGrid4" HorizontalAlignment="Left" Height="151" Margin="145,53,0,0" VerticalAlignment="Top" Width="150">
+                        <Grid x:Name="SourceOperandGrid4" HorizontalAlignment="Left" Height="151" Margin="82.333,53,0,0" VerticalAlignment="Top" Width="150" Grid.Column="1">
                             <GroupBox x:Name="grp_SourceOperand4" Header="Source Operand" HorizontalAlignment="Left" VerticalAlignment="Top" Height="151" Width="150" Margin="0,-29,0,0">
                                 <Grid HorizontalAlignment="Left" Height="141" VerticalAlignment="Top" Width="140" Margin="0,0,-2,-12">
                                     <RadioButton x:Name="rdb_SourceValueComparison" Content="Value" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" GroupName="SourceOperand" Checked="rdb_SourceValueComparison_Checked" />
@@ -367,7 +483,7 @@
                                 </Grid>
                             </GroupBox>
                         </Grid>
-                        <Grid x:Name="SourceOperandGrid_Copy4" HorizontalAlignment="Left" Height="151" Margin="145,209,0,0" VerticalAlignment="Top" Width="150">
+                        <Grid x:Name="SourceOperandGrid_Copy4" HorizontalAlignment="Left" Height="151" Margin="82.333,209,0,0" VerticalAlignment="Top" Width="150" Grid.Column="1">
                             <GroupBox x:Name="grp_DestinationOperand4" Header="Destination Operand" HorizontalAlignment="Left" VerticalAlignment="Top" Height="151" Width="150" Margin="0,-29,0,0">
                                 <Grid HorizontalAlignment="Left" Height="141" VerticalAlignment="Top" Width="140" Margin="0,0,-2,-12">
                                     <RadioButton x:Name="rdb_DestinationValueComparison" Content="Value" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" GroupName="DestinationOperand" Checked="rdb_DestinationValueComparison_Checked" />
@@ -399,11 +515,39 @@
                                 </Grid>
                             </GroupBox>
                         </Grid>
-                        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="70" Margin="317,34,0,0" VerticalAlignment="Top" Width="230" />
-                        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="69" Margin="317,109,0,0" VerticalAlignment="Top" Width="230" />
-                        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="68" Margin="317,194,0,0" VerticalAlignment="Top" Width="230" />
-                        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="62" Margin="317,268,0,0" VerticalAlignment="Top" Width="230" />
-                        <TextBox x:Name="txtDescriptionComparison" HorizontalAlignment="Center" Height="23" Margin="10,356,12,8" TextWrapping="Wrap" VerticalAlignment="Center" Width="550" Focusable="False" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Background="#FFFFFCC3" />
+                        <TextBox x:Name="txtDescriptionComparison" HorizontalAlignment="Center" Height="23" Margin="10,356,12,8" TextWrapping="Wrap" VerticalAlignment="Center" Width="550" Focusable="False" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Background="#FFFFFCC3" Grid.ColumnSpan="2" />
+                        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="70" Margin="254,34,0,0" VerticalAlignment="Top" Width="230" Grid.Column="1" >
+                            <Grid>
+                                <RadioButton x:Name="rdb_Comparison_Source_Literal_Value" Content="Literal Value" HorizontalAlignment="Left" Margin="17,0,0,0" VerticalAlignment="Top" GroupName="MemoryModeSource" IsChecked="True"/>
+                                <RadioButton x:Name="rdb_Comparison_Source_Direct_Mem" Content="Direct Mem" HorizontalAlignment="Left" Margin="17,23,0,0" VerticalAlignment="Top" GroupName="MemoryModeSource"/>
+                                <RadioButton x:Name="rdb_Comparison_Source_InDirect_Mem" Content="Indirect Mem" HorizontalAlignment="Left" Margin="17,43,0,0" VerticalAlignment="Top" GroupName="MemoryModeSource"/>
+                                <RadioButton x:Name="rdb_Comparison_Source_Rel_Direct_Mem" Content="Rel Direct Mem" HorizontalAlignment="Left" Margin="111,23,0,0" VerticalAlignment="Top" GroupName="MemoryModeSource"/>
+                            </Grid>
+                        </Border>
+                        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="69" Margin="254,109,0,0" VerticalAlignment="Top" Width="230" Grid.Column="1" >
+                            <Grid>
+                                <RadioButton x:Name="rdb_Comparison_Source_Reg_Direct" Content="Reg Direct" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" GroupName="Register Mode Source" IsChecked="True"/>
+                                <RadioButton x:Name="rdb_Comparison_Source_Reg_Indirect" Content="Reg Indirect" HorizontalAlignment="Left" Margin="10,32,0,0" VerticalAlignment="Top" GroupName="Register Mode Source" IsChecked="True"/>
+                                <RadioButton x:Name="rdb_Comparison_Source_Reg_Rel_Direct" Content="Reg Rel Direct" HorizontalAlignment="Left" Margin="97,10,0,0" VerticalAlignment="Top" GroupName="Register Mode Source" IsChecked="True"/>
+                                <RadioButton x:Name="rdb_Comparison_Source_Reg_Rel_Indirect" Content="Reg Rel Indirect" HorizontalAlignment="Left" Margin="97,32,0,0" VerticalAlignment="Top" GroupName="Register Mode Source"/>
+                            </Grid>
+                        </Border>
+                        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="68" Margin="254,194,0,0" VerticalAlignment="Top" Width="230" Grid.Column="1" >
+                            <Grid Margin="0,0,0,-2">
+                                <RadioButton x:Name="rdb_Comparison_Destination_Literal_Value" Content="Literal Value" HorizontalAlignment="Left" Margin="17,0,0,0" VerticalAlignment="Top" GroupName="MemoryModeDestination" IsChecked="True"/>
+                                <RadioButton x:Name="rdb_Comparison_Destination_Direct_Mem" Content="Direct Mem" HorizontalAlignment="Left" Margin="17,23,0,0" VerticalAlignment="Top" GroupName="MemoryModeDestination"/>
+                                <RadioButton x:Name="rdb_Comparison_Destination_InDirect_Mem" Content="Indirect Mem" HorizontalAlignment="Left" Margin="17,43,0,0" VerticalAlignment="Top" GroupName="MemoryModeDestination"/>
+                                <RadioButton x:Name="rdb_Comparison_Destination_Rel_Direct_Mem" Content="Rel Direct Mem" HorizontalAlignment="Left" Margin="111,23,0,0" VerticalAlignment="Top" GroupName="MemoryModeDestination"/>
+                            </Grid>
+                        </Border>
+                        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="62" Margin="254,268,0,0" VerticalAlignment="Top" Width="230" Grid.Column="1" >
+                            <Grid Margin="0,0,0,-7">
+                                <RadioButton x:Name="rdb_Comparison_Destination_Reg_Direct" Content="Reg Direct" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" GroupName="Register Mode Destination" IsChecked="True"/>
+                                <RadioButton x:Name="rdb_Comparison_Destination_Reg_Indirect" Content="Reg Indirect" HorizontalAlignment="Left" Margin="10,32,0,0" VerticalAlignment="Top" GroupName="Register Mode Destination"/>
+                                <RadioButton x:Name="rdb_Comparison_Destination_Reg_Rel_Direct" Content="Reg Rel Direct" HorizontalAlignment="Left" Margin="97,10,0,0" VerticalAlignment="Top" GroupName="Register Mode Destination" IsChecked="True"/>
+                                <RadioButton x:Name="rdb_Comparison_Destination_Reg_Rel_Indirect" Content="Reg Rel Indirect" HorizontalAlignment="Left" Margin="97,32,0,0" VerticalAlignment="Top" GroupName="Register Mode Destination"/>
+                            </Grid>
+                        </Border>
                     </Grid>
                 </TabItem>
                 <TabItem x:Name="IOTab" Header="I/O" HorizontalAlignment="Left" Height="20" VerticalAlignment="Top" Width="54">
@@ -477,11 +621,39 @@
                                 </Grid>
                             </GroupBox>
                         </Grid>
-                        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="70" Margin="317,34,0,0" VerticalAlignment="Top" Width="230" />
-                        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="69" Margin="317,109,0,0" VerticalAlignment="Top" Width="230" />
-                        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="68" Margin="317,194,0,0" VerticalAlignment="Top" Width="230" />
-                        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="62" Margin="317,268,0,0" VerticalAlignment="Top" Width="230" />
                         <TextBox x:Name="txtDescriptionIO" HorizontalAlignment="Center" Height="23" Margin="10,356,12,8" TextWrapping="Wrap" VerticalAlignment="Center" Width="550" Focusable="False" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Background="#FFFFFCC3" />
+                        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="70" Margin="317,34,0,0" VerticalAlignment="Top" Width="230" >
+                            <Grid>
+                                <RadioButton x:Name="rdb_IO_Source_Literal_Value" Content="Literal Value" HorizontalAlignment="Left" Margin="17,0,0,0" VerticalAlignment="Top" GroupName="MemoryModeSource" IsChecked="True"/>
+                                <RadioButton x:Name="rdb_IO_Source_Direct_Mem" Content="Direct Mem" HorizontalAlignment="Left" Margin="17,23,0,0" VerticalAlignment="Top" GroupName="MemoryModeSource"/>
+                                <RadioButton x:Name="rdb_IO_Source_InDirect_Mem" Content="Indirect Mem" HorizontalAlignment="Left" Margin="17,43,0,0" VerticalAlignment="Top" GroupName="MemoryModeSource"/>
+                                <RadioButton x:Name="rdb_IO_Source_Rel_Direct_Mem" Content="Rel Direct Mem" HorizontalAlignment="Left" Margin="111,23,0,0" VerticalAlignment="Top" GroupName="MemoryModeSource"/>
+                            </Grid>
+                        </Border>
+                        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="69" Margin="317,109,0,0" VerticalAlignment="Top" Width="230" >
+                            <Grid>
+                                <RadioButton x:Name="rdb_IO_Source_Reg_Direct" Content="Reg Direct" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" GroupName="Register Mode Source" IsChecked="True"/>
+                                <RadioButton x:Name="rdb_IO_Source_Reg_Indirect" Content="Reg Indirect" HorizontalAlignment="Left" Margin="10,32,0,0" VerticalAlignment="Top" GroupName="Register Mode Source"/>
+                                <RadioButton x:Name="rdb_IO_Source_Reg_Rel_Direct" Content="Reg Rel Direct" HorizontalAlignment="Left" Margin="97,10,0,0" VerticalAlignment="Top" GroupName="Register Mode Source" IsChecked="True"/>
+                                <RadioButton x:Name="rdb_IO_Source_Reg_Rel_Indirect" Content="Reg Rel Indirect" HorizontalAlignment="Left" Margin="97,32,0,0" VerticalAlignment="Top" GroupName="Register Mode Source"/>
+                            </Grid>
+                        </Border>
+                        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="68" Margin="317,194,0,0" VerticalAlignment="Top" Width="230" >
+                            <Grid Margin="0,0,0,-2">
+                                <RadioButton x:Name="rdb_IO_Destination_Literal_Value" Content="Literal Value" HorizontalAlignment="Left" Margin="17,0,0,0" VerticalAlignment="Top" GroupName="MemoryModeDestination" IsChecked="True"/>
+                                <RadioButton x:Name="rdb_IO_Destination_Direct_Mem" Content="Direct Mem" HorizontalAlignment="Left" Margin="17,23,0,0" VerticalAlignment="Top" GroupName="MemoryModeDestination"/>
+                                <RadioButton x:Name="rdb_IO_Destination_InDirect_Mem" Content="Indirect Mem" HorizontalAlignment="Left" Margin="17,43,0,0" VerticalAlignment="Top" GroupName="MemoryModeDestination"/>
+                                <RadioButton x:Name="rdb_IO_Destination_Rel_Direct_Mem" Content="Rel Direct Mem" HorizontalAlignment="Left" Margin="111,23,0,0" VerticalAlignment="Top" GroupName="MemoryModeDestination"/>
+                            </Grid>
+                        </Border>
+                        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="62" Margin="317,268,0,0" VerticalAlignment="Top" Width="230" >
+                            <Grid Margin="0,0,0,-7">
+                                <RadioButton x:Name="rdb_IO_Destination_Reg_Direct" Content="Reg Direct" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" GroupName="Register Mode Destination" IsChecked="True"/>
+                                <RadioButton x:Name="rdb_IO_Destination_Reg_Indirect" Content="Reg Indirect" HorizontalAlignment="Left" Margin="10,32,0,0" VerticalAlignment="Top" GroupName="Register Mode Destination"/>
+                                <RadioButton x:Name="rdb_IO_Destination_Reg_Rel_Direct" Content="Reg Rel Direct" HorizontalAlignment="Left" Margin="97,10,0,0" VerticalAlignment="Top" GroupName="Register Mode Destination" IsChecked="True"/>
+                                <RadioButton x:Name="rdb_IO_Destination_Reg_Rel_Indirect" Content="Reg Rel Indirect" HorizontalAlignment="Left" Margin="97,32,0,0" VerticalAlignment="Top" GroupName="Register Mode Destination"/>
+                            </Grid>
+                        </Border>
                     </Grid>
                 </TabItem>
                 <TabItem x:Name="MiscellaneousTab" Header="Miscellaneous" HorizontalAlignment="Left" Height="20" VerticalAlignment="Top" Width="98" Margin="-2,-2,-42,0">
@@ -555,11 +727,39 @@
                                 </Grid>
                             </GroupBox>
                         </Grid>
-                        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="70" Margin="317,34,0,0" VerticalAlignment="Top" Width="230" />
-                        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="69" Margin="317,109,0,0" VerticalAlignment="Top" Width="230" />
-                        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="68" Margin="317,194,0,0" VerticalAlignment="Top" Width="230" />
-                        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="62" Margin="317,268,0,0" VerticalAlignment="Top" Width="230" />
                         <TextBox x:Name="txtDescriptionMiscellaneous" HorizontalAlignment="Center" Height="23" Margin="10,356,12,8" TextWrapping="Wrap" VerticalAlignment="Center" Width="550" Focusable="False" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Background="#FFFFFCC3" />
+                        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="70" Margin="317,34,0,0" VerticalAlignment="Top" Width="230" >
+                            <Grid>
+                                <RadioButton x:Name="rdb_Micellaneous_Source_Literal_Value" Content="Literal Value" HorizontalAlignment="Left" Margin="17,0,0,0" VerticalAlignment="Top" GroupName="MemoryModeSource" IsChecked="True"/>
+                                <RadioButton x:Name="rdb_Micellaneous_Source_Direct_Mem" Content="Direct Mem" HorizontalAlignment="Left" Margin="17,23,0,0" VerticalAlignment="Top" GroupName="MemoryModeSource"/>
+                                <RadioButton x:Name="rdb_Micellaneous_Source_InDirect_Mem" Content="Indirect Mem" HorizontalAlignment="Left" Margin="17,43,0,0" VerticalAlignment="Top" GroupName="MemoryModeSource"/>
+                                <RadioButton x:Name="rdb_Micellaneous_Source_Rel_Direct_Mem" Content="Rel Direct Mem" HorizontalAlignment="Left" Margin="111,23,0,0" VerticalAlignment="Top" GroupName="MemoryModeSource"/>
+                            </Grid>
+                        </Border>
+                        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="69" Margin="317,109,0,0" VerticalAlignment="Top" Width="230" >
+                            <Grid>
+                                <RadioButton x:Name="rdb_Micellaneous_Source_Reg_Direct" Content="Reg Direct" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" GroupName="Register Mode Source" IsChecked="True"/>
+                                <RadioButton x:Name="rdb_Micellaneous_Source_Reg_Indirect" Content="Reg Indirect" HorizontalAlignment="Left" Margin="10,32,0,0" VerticalAlignment="Top" GroupName="Register Mode Source"/>
+                                <RadioButton x:Name="rdb_Micellaneous_Source_Reg_Rel_Direct" Content="Reg Rel Direct" HorizontalAlignment="Left" Margin="97,10,0,0" VerticalAlignment="Top" GroupName="Register Mode Source" IsChecked="True"/>
+                                <RadioButton x:Name="rdb_Micellaneous_Source_Reg_Rel_Indirect" Content="Reg Rel Indirect" HorizontalAlignment="Left" Margin="97,32,0,0" VerticalAlignment="Top" GroupName="Register Mode Source"/>
+                            </Grid>
+                        </Border>
+                        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="68" Margin="317,194,0,0" VerticalAlignment="Top" Width="230" >
+                            <Grid Margin="0,0,0,-2">
+                                <RadioButton x:Name="rdb_Micellaneous_Destination_Literal_Value" Content="Literal Value" HorizontalAlignment="Left" Margin="17,0,0,0" VerticalAlignment="Top" GroupName="MemoryModeDestination" IsChecked="True"/>
+                                <RadioButton x:Name="rdb_Micellaneous_Destination_Direct_Mem" Content="Direct Mem" HorizontalAlignment="Left" Margin="17,23,0,0" VerticalAlignment="Top" GroupName="MemoryModeDestination"/>
+                                <RadioButton x:Name="rdb_Micellaneous_Destination_InDirect_Mem" Content="Indirect Mem" HorizontalAlignment="Left" Margin="17,43,0,0" VerticalAlignment="Top" GroupName="MemoryModeDestination"/>
+                                <RadioButton x:Name="rdb_Micellaneous_Destination_Rel_Direct_Mem" Content="Rel Direct Mem" HorizontalAlignment="Left" Margin="111,23,0,0" VerticalAlignment="Top" GroupName="MemoryModeDestination"/>
+                            </Grid>
+                        </Border>
+                        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="62" Margin="317,268,0,0" VerticalAlignment="Top" Width="230" >
+                            <Grid Margin="0,0,0,-7">
+                                <RadioButton x:Name="rdb_Micellaneous_Destination_Reg_Direct" Content="Reg Direct" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" GroupName="Register Mode Destination" IsChecked="True"/>
+                                <RadioButton x:Name="rdb_Micellaneous_Destination_Reg_Indirect" Content="Reg Indirect" HorizontalAlignment="Left" Margin="10,32,0,0" VerticalAlignment="Top" GroupName="Register Mode Destination"/>
+                                <RadioButton x:Name="rdb_Micellaneous_Destination_Reg_Rel_Direct" Content="Reg Rel Direct" HorizontalAlignment="Left" Margin="97,10,0,0" VerticalAlignment="Top" GroupName="Register Mode Destination" IsChecked="True"/>
+                                <RadioButton x:Name="rdb_Micellaneous_Destination_Reg_Rel_Indirect" Content="Reg Rel Indirect" HorizontalAlignment="Left" Margin="97,32,0,0" VerticalAlignment="Top" GroupName="Register Mode Destination"/>
+                            </Grid>
+                        </Border>
                     </Grid>
                 </TabItem>
             </TabControl>
