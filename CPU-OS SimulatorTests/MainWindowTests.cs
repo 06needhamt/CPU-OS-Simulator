@@ -42,14 +42,14 @@ namespace CPU_OS_SimulatorTests
         [TestMethod]
         public void CreateInstructionTest1()
         {
-            Instruction ins = new Instruction(3, new Operand(10, EnumOperandType.VALUE), 4);
+            Instruction ins = new Instruction(3, new Operand(10, EnumOperandType.VALUE),false, 4);
             Assert.IsInstanceOfType(ins, typeof(Instruction));
         }
 
         [TestMethod]
         public void CreateInstructionTest2()
         {
-            Instruction ins = new Instruction(3, new Operand(10, EnumOperandType.VALUE), new Operand(10, EnumOperandType.VALUE), 4);
+            Instruction ins = new Instruction(3, new Operand(10, EnumOperandType.VALUE), false, new Operand(10, EnumOperandType.VALUE), false, 4);
             Assert.IsInstanceOfType(ins, typeof(Instruction));
         }
 

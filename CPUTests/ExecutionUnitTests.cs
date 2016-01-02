@@ -28,7 +28,7 @@ namespace CPUTests
         {
             Operand op1 = new Operand(Register.R00, EnumOperandType.VALUE);
             Operand op2 = new Operand(10, EnumOperandType.VALUE);
-            Instruction ins = new Instruction((int)EnumOpcodes.ADD, op1, op2, 4);
+            Instruction ins = new Instruction((int)EnumOpcodes.ADD, op1, false, op2, false, 4);
             int result = ins.Execute();
             Assert.AreEqual(result, 10);
         }

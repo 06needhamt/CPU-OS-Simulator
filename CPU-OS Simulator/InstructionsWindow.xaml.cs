@@ -356,10 +356,8 @@ namespace CPU_OS_Simulator
             EnumOpcodes opcode;
             Operand op1;
             Operand op2;
-            bool op1valmem = false;
-            bool op1regmem = false;
-            bool op2valmem = false;
-            bool op2regmem = false;
+            bool op1mem = false;
+            bool op2mem = false;
             int index = owner.lst_InstructionsList.SelectedIndex;
 
             SimulatorProgram prog = (SimulatorProgram)owner.lst_ProgramList.SelectedItem;
@@ -370,10 +368,10 @@ namespace CPU_OS_Simulator
                 if (rdb_DataTransfer_Source_Direct_Mem.IsChecked.Value ||
                     rdb_DataTransfer_Source_InDirect_Mem.IsChecked.Value)
                 {
-                    op1valmem = true;
+                    op1mem = true;
                 }
 
-                if (op1valmem)
+                if (op1mem)
                 {
                     op1 = new Operand(Convert.ToInt32(txtSourceValueDataTransfer.Text), EnumOperandType.ADDRESS);
                 }
@@ -389,9 +387,9 @@ namespace CPU_OS_Simulator
                 if (rdb_DataTransfer_Source_Reg_Direct.IsChecked.Value ||
                     rdb_DataTransfer_Source_Reg_Indirect.IsChecked.Value)
                 {
-                    op1regmem = true;
+                    op1mem = true;
                 }
-                if (op1regmem)
+                if (op1mem)
                 {
                     op1 = new Operand(reg, EnumOperandType.ADDRESS);
                 }
@@ -409,9 +407,9 @@ namespace CPU_OS_Simulator
                 if (rdb_DataTransfer_Destination_Direct_Mem.IsChecked.Value ||
                     rdb_DataTransfer_Destination_InDirect_Mem.IsChecked.Value)
                 {
-                    op2valmem = true;
+                    op2mem = true;
                 }
-                if (op2valmem)
+                if (op2mem)
                 {
                     op2 = new Operand(Convert.ToInt32(txtDestinationValueDataTransfer.Text), EnumOperandType.ADDRESS);
                 }
@@ -428,9 +426,9 @@ namespace CPU_OS_Simulator
                 if (rdb_DataTransfer_Destination_Reg_Direct.IsChecked.Value ||
                     rdb_DataTransfer_Destination_Reg_Indirect.IsChecked.Value)
                 {
-                    op2regmem = true;
+                    op2mem = true;
                 }
-                if (op2regmem)
+                if (op2mem)
                 {
                     op2 = new Operand(reg, EnumOperandType.ADDRESS);
                 }
@@ -443,7 +441,7 @@ namespace CPU_OS_Simulator
             {
                 op2 = null;
             }
-            Instruction i = owner.CreateInstruction(opcode, op1, op2, 4);
+            Instruction i = owner.CreateInstruction(opcode, op1, op1mem, op2, op2mem, 4);
             owner.AddInstruction(i, index);
             return 0;
         }
@@ -454,10 +452,8 @@ namespace CPU_OS_Simulator
             EnumOpcodes opcode;
             Operand op1;
             Operand op2;
-            bool op1valmem = false;
-            bool op1regmem = false;
-            bool op2valmem = false;
-            bool op2regmem = false;
+            bool op1mem = false;
+            bool op2mem = false;
             int index = owner.lst_InstructionsList.SelectedIndex;
 
             SimulatorProgram prog = (SimulatorProgram)owner.lst_ProgramList.SelectedItem;
@@ -468,10 +464,10 @@ namespace CPU_OS_Simulator
                 if (rdb_Logical_Source_Direct_Mem.IsChecked.Value ||
                     rdb_Logical_Source_InDirect_Mem.IsChecked.Value)
                 {
-                    op1valmem = true;
+                    op1mem = true;
                 }
 
-                if (op1valmem)
+                if (op1mem)
                 {
                     op1 = new Operand(Convert.ToInt32(txtSourceValueLogical.Text), EnumOperandType.ADDRESS);
                 }
@@ -487,9 +483,9 @@ namespace CPU_OS_Simulator
                 if (rdb_Logical_Source_Reg_Direct.IsChecked.Value ||
                     rdb_Logical_Source_Reg_Indirect.IsChecked.Value)
                 {
-                    op1regmem = true;
+                    op1mem = true;
                 }
-                if (op1regmem)
+                if (op1mem)
                 {
                     op1 = new Operand(reg, EnumOperandType.ADDRESS);
                 }
@@ -507,9 +503,9 @@ namespace CPU_OS_Simulator
                 if (rdb_Logical_Destination_Direct_Mem.IsChecked.Value ||
                     rdb_Logical_Destination_InDirect_Mem.IsChecked.Value)
                 {
-                    op2valmem = true;
+                    op2mem = true;
                 }
-                if (op2valmem)
+                if (op2mem)
                 {
                     op2 = new Operand(Convert.ToInt32(txtDestinationValueLogical.Text), EnumOperandType.ADDRESS);
                 }
@@ -526,9 +522,9 @@ namespace CPU_OS_Simulator
                 if (rdb_Logical_Destination_Reg_Direct.IsChecked.Value ||
                     rdb_Logical_Destination_Reg_Indirect.IsChecked.Value)
                 {
-                    op2regmem = true;
+                    op2mem = true;
                 }
-                if (op2regmem)
+                if (op2mem)
                 {
                     op2 = new Operand(reg, EnumOperandType.ADDRESS);
                 }
@@ -541,7 +537,7 @@ namespace CPU_OS_Simulator
             {
                 op2 = null;
             }
-            Instruction i = owner.CreateInstruction(opcode, op1, op2, 4);
+            Instruction i = owner.CreateInstruction(opcode, op1, op1mem, op2, op2mem, 4);
             owner.AddInstruction(i, index);
             return 0;
         }
@@ -552,10 +548,8 @@ namespace CPU_OS_Simulator
             EnumOpcodes opcode;
             Operand op1;
             Operand op2;
-            bool op1valmem = false;
-            bool op1regmem = false;
-            bool op2valmem = false;
-            bool op2regmem = false;
+            bool op1mem = false;
+            bool op2mem = false;
             int index = owner.lst_InstructionsList.SelectedIndex;
 
             SimulatorProgram prog = (SimulatorProgram)owner.lst_ProgramList.SelectedItem;
@@ -566,10 +560,10 @@ namespace CPU_OS_Simulator
                 if (rdb_Arithmetic_Source_Direct_Mem.IsChecked.Value ||
                     rdb_Arithmetic_Source_InDirect_Mem.IsChecked.Value)
                 {
-                    op1valmem = true;
+                    op1mem = true;
                 }
 
-                if (op1valmem)
+                if (op1mem)
                 {
                     op1 = new Operand(Convert.ToInt32(txtSourceValueArithmetic.Text), EnumOperandType.ADDRESS);
                 }
@@ -585,9 +579,9 @@ namespace CPU_OS_Simulator
                 if (rdb_Arithmetic_Source_Reg_Direct.IsChecked.Value ||
                     rdb_Arithmetic_Source_Reg_Indirect.IsChecked.Value)
                 {
-                    op1regmem = true;
+                    op1mem = true;
                 }
-                if (op1regmem)
+                if (op1mem)
                 {
                     op1 = new Operand(reg, EnumOperandType.ADDRESS);
                 }
@@ -605,9 +599,9 @@ namespace CPU_OS_Simulator
                 if (rdb_Arithmetic_Destination_Direct_Mem.IsChecked.Value ||
                     rdb_Arithmetic_Destination_InDirect_Mem.IsChecked.Value)
                 {
-                    op2valmem = true;
+                    op2mem = true;
                 }
-                if (op2valmem)
+                if (op2mem)
                 {
                     op2 = new Operand(Convert.ToInt32(txtDestinationValueArithmetic.Text), EnumOperandType.ADDRESS);
                 }
@@ -624,9 +618,9 @@ namespace CPU_OS_Simulator
                 if (rdb_Arithmetic_Destination_Reg_Direct.IsChecked.Value ||
                     rdb_Arithmetic_Destination_Reg_Indirect.IsChecked.Value)
                 {
-                    op2regmem = true;
+                    op2mem = true;
                 }
-                if (op2regmem)
+                if (op2mem)
                 {
                     op2 = new Operand(reg, EnumOperandType.ADDRESS);
                 }
@@ -639,7 +633,7 @@ namespace CPU_OS_Simulator
             {
                 op2 = null;
             }
-            Instruction i = owner.CreateInstruction(opcode, op1, op2, 4);
+            Instruction i = owner.CreateInstruction(opcode, op1, op1mem, op2, op2mem, 4);
             owner.AddInstruction(i, index);
             return 0;
         }
@@ -650,10 +644,8 @@ namespace CPU_OS_Simulator
             EnumOpcodes opcode;
             Operand op1;
             Operand op2;
-            bool op1valmem = false;
-            bool op1regmem = false;
-            bool op2valmem = false;
-            bool op2regmem = false;
+            bool op1mem = false;
+            bool op2mem = false;
             int index = owner.lst_InstructionsList.SelectedIndex;
 
             SimulatorProgram prog = (SimulatorProgram)owner.lst_ProgramList.SelectedItem;
@@ -664,10 +656,10 @@ namespace CPU_OS_Simulator
                 if (rdb_ControlTransfer_Source_Direct_Mem.IsChecked.Value ||
                     rdb_ControlTransfer_Source_InDirect_Mem.IsChecked.Value)
                 {
-                    op1valmem = true;
+                    op1mem = true;
                 }
 
-                if (op1valmem)
+                if (op1mem)
                 {
                     op1 = new Operand(Convert.ToInt32(txtSourceValueControlTransfer.Text), EnumOperandType.ADDRESS);
                 }
@@ -683,9 +675,9 @@ namespace CPU_OS_Simulator
                 if (rdb_ControlTransfer_Source_Reg_Direct.IsChecked.Value ||
                     rdb_ControlTransfer_Source_Reg_Indirect.IsChecked.Value)
                 {
-                    op1regmem = true;
+                    op1mem = true;
                 }
-                if (op1regmem)
+                if (op1mem)
                 {
                     op1 = new Operand(reg, EnumOperandType.ADDRESS);
                 }
@@ -703,9 +695,9 @@ namespace CPU_OS_Simulator
                 if (rdb_ControlTransfer_Destination_Direct_Mem.IsChecked.Value ||
                     rdb_ControlTransfer_Destination_InDirect_Mem.IsChecked.Value)
                 {
-                    op2valmem = true;
+                    op2mem = true;
                 }
-                if (op2valmem)
+                if (op2mem)
                 {
                     op2 = new Operand(Convert.ToInt32(txtDestinationValueControlTransfer.Text), EnumOperandType.ADDRESS);
                 }
@@ -722,9 +714,9 @@ namespace CPU_OS_Simulator
                 if (rdb_ControlTransfer_Destination_Reg_Direct.IsChecked.Value ||
                     rdb_ControlTransfer_Destination_Reg_Indirect.IsChecked.Value)
                 {
-                    op2regmem = true;
+                    op2mem = true;
                 }
-                if (op2regmem)
+                if (op2mem)
                 {
                     op2 = new Operand(reg, EnumOperandType.ADDRESS);
                 }
@@ -737,7 +729,7 @@ namespace CPU_OS_Simulator
             {
                 op2 = null;
             }
-            Instruction i = owner.CreateInstruction(opcode, op1, op2, 4);
+            Instruction i = owner.CreateInstruction(opcode, op1, op1mem, op2, op2mem, 4);
             owner.AddInstruction(i, index);
             return 0;
         }
@@ -748,11 +740,9 @@ namespace CPU_OS_Simulator
             EnumOpcodes opcode;
             Operand op1;
             Operand op2;
-            bool op1valmem = false;
-            bool op1regmem = false;
-            bool op2valmem = false;
-            bool op2regmem = false;
-            int index = owner.lst_InstructionsList.SelectedIndex;
+            bool op1mem = false;
+            bool op2mem = false;
+           int index = owner.lst_InstructionsList.SelectedIndex;
 
             SimulatorProgram prog = (SimulatorProgram)owner.lst_ProgramList.SelectedItem;
             opcode = (EnumOpcodes)Enum.Parse(typeof(EnumOpcodes), lst_OpcodeListComparison.SelectedItem.ToString());
@@ -762,10 +752,10 @@ namespace CPU_OS_Simulator
                 if (rdb_Comparison_Source_Direct_Mem.IsChecked.Value ||
                     rdb_Comparison_Source_InDirect_Mem.IsChecked.Value)
                 {
-                    op1valmem = true;
+                    op1mem = true;
                 }
 
-                if (op1valmem)
+                if (op1mem)
                 {
                     op1 = new Operand(Convert.ToInt32(txtSourceValueComparison.Text), EnumOperandType.ADDRESS);
                 }
@@ -781,9 +771,9 @@ namespace CPU_OS_Simulator
                 if (rdb_Comparison_Source_Reg_Direct.IsChecked.Value ||
                     rdb_Comparison_Source_Reg_Indirect.IsChecked.Value)
                 {
-                    op1regmem = true;
+                    op1mem = true;
                 }
-                if (op1regmem)
+                if (op1mem)
                 {
                     op1 = new Operand(reg, EnumOperandType.ADDRESS);
                 }
@@ -801,9 +791,9 @@ namespace CPU_OS_Simulator
                 if (rdb_Comparison_Destination_Direct_Mem.IsChecked.Value ||
                     rdb_Comparison_Destination_InDirect_Mem.IsChecked.Value)
                 {
-                    op2valmem = true;
+                    op2mem = true;
                 }
-                if (op2valmem)
+                if (op2mem)
                 {
                     op2 = new Operand(Convert.ToInt32(txtDestinationValueComparison.Text), EnumOperandType.ADDRESS);
                 }
@@ -820,9 +810,9 @@ namespace CPU_OS_Simulator
                 if (rdb_Comparison_Destination_Reg_Direct.IsChecked.Value ||
                     rdb_Comparison_Destination_Reg_Indirect.IsChecked.Value)
                 {
-                    op2regmem = true;
+                    op2mem = true;
                 }
-                if (op2regmem)
+                if (op2mem)
                 {
                     op2 = new Operand(reg, EnumOperandType.ADDRESS);
                 }
@@ -835,7 +825,7 @@ namespace CPU_OS_Simulator
             {
                 op2 = null;
             }
-            Instruction i = owner.CreateInstruction(opcode, op1, op2, 4);
+            Instruction i = owner.CreateInstruction(opcode, op1, op1mem, op2, op2mem, 4);
             owner.AddInstruction(i, index);
             return 0;
         }
@@ -846,10 +836,8 @@ namespace CPU_OS_Simulator
             EnumOpcodes opcode;
             Operand op1;
             Operand op2;
-            bool op1valmem = false;
-            bool op1regmem = false;
-            bool op2valmem = false;
-            bool op2regmem = false;
+            bool op1mem = false;
+            bool op2mem = false;
             int index = owner.lst_InstructionsList.SelectedIndex;
 
             SimulatorProgram prog = (SimulatorProgram)owner.lst_ProgramList.SelectedItem;
@@ -860,10 +848,10 @@ namespace CPU_OS_Simulator
                 if (rdb_IO_Source_Direct_Mem.IsChecked.Value ||
                     rdb_IO_Source_InDirect_Mem.IsChecked.Value)
                 {
-                    op1valmem = true;
+                    op1mem = true;
                 }
 
-                if (op1valmem)
+                if (op1mem)
                 {
                     op1 = new Operand(Convert.ToInt32(txtSourceValueIO.Text), EnumOperandType.ADDRESS);
                 }
@@ -879,9 +867,9 @@ namespace CPU_OS_Simulator
                 if (rdb_IO_Source_Reg_Direct.IsChecked.Value ||
                     rdb_IO_Source_Reg_Indirect.IsChecked.Value)
                 {
-                    op1regmem = true;
+                    op1mem = true;
                 }
-                if (op1regmem)
+                if (op1mem)
                 {
                     op1 = new Operand(reg, EnumOperandType.ADDRESS);
                 }
@@ -899,9 +887,9 @@ namespace CPU_OS_Simulator
                 if (rdb_IO_Destination_Direct_Mem.IsChecked.Value ||
                     rdb_IO_Destination_InDirect_Mem.IsChecked.Value)
                 {
-                    op2valmem = true;
+                    op2mem = true;
                 }
-                if (op2valmem)
+                if (op2mem)
                 {
                     op2 = new Operand(Convert.ToInt32(txtDestinationValueIO.Text), EnumOperandType.ADDRESS);
                 }
@@ -918,9 +906,9 @@ namespace CPU_OS_Simulator
                 if (rdb_IO_Destination_Reg_Direct.IsChecked.Value ||
                     rdb_IO_Destination_Reg_Indirect.IsChecked.Value)
                 {
-                    op2regmem = true;
+                    op2mem = true;
                 }
-                if (op2regmem)
+                if (op2mem)
                 {
                     op2 = new Operand(reg, EnumOperandType.ADDRESS);
                 }
@@ -933,7 +921,7 @@ namespace CPU_OS_Simulator
             {
                 op2 = null;
             }
-            Instruction i = owner.CreateInstruction(opcode, op1, op2, 4);
+            Instruction i = owner.CreateInstruction(opcode, op1, op1mem, op2, op2mem, 4);
             owner.AddInstruction(i, index);
             return 0;
         }
@@ -944,10 +932,8 @@ namespace CPU_OS_Simulator
             EnumOpcodes opcode;
             Operand op1;
             Operand op2;
-            bool op1valmem = false;
-            bool op1regmem = false;
-            bool op2valmem = false;
-            bool op2regmem = false;
+            bool op1mem = false;
+            bool op2mem = false;
             int index = owner.lst_InstructionsList.SelectedIndex;
 
             SimulatorProgram prog = (SimulatorProgram)owner.lst_ProgramList.SelectedItem;
@@ -958,10 +944,10 @@ namespace CPU_OS_Simulator
                 if (rdb_Miscellaneous_Source_Direct_Mem.IsChecked.Value ||
                     rdb_Miscellaneous_Source_InDirect_Mem.IsChecked.Value)
                 {
-                    op1valmem = true;
+                    op1mem = true;
                 }
 
-                if (op1valmem)
+                if (op1mem)
                 {
                     op1 = new Operand(Convert.ToInt32(txtSourceValueMiscellaneous.Text), EnumOperandType.ADDRESS);
                 }
@@ -977,9 +963,9 @@ namespace CPU_OS_Simulator
                 if (rdb_Miscellaneous_Source_Reg_Direct.IsChecked.Value ||
                     rdb_Miscellaneous_Source_Reg_Indirect.IsChecked.Value)
                 {
-                    op1regmem = true;
+                    op1mem = true;
                 }
-                if (op1regmem)
+                if (op1mem)
                 {
                     op1 = new Operand(reg, EnumOperandType.ADDRESS);
                 }
@@ -997,9 +983,9 @@ namespace CPU_OS_Simulator
                 if (rdb_Miscellaneous_Destination_Direct_Mem.IsChecked.Value ||
                     rdb_Miscellaneous_Destination_InDirect_Mem.IsChecked.Value)
                 {
-                    op2valmem = true;
+                    op2mem = true;
                 }
-                if (op2valmem)
+                if (op2mem)
                 {
                     op2 = new Operand(Convert.ToInt32(txtDestinationValueMiscellaneous.Text), EnumOperandType.ADDRESS);
                 }
@@ -1016,9 +1002,9 @@ namespace CPU_OS_Simulator
                 if (rdb_Miscellaneous_Destination_Reg_Direct.IsChecked.Value ||
                     rdb_Miscellaneous_Destination_Reg_Indirect.IsChecked.Value)
                 {
-                    op2regmem = true;
+                    op2mem = true;
                 }
-                if (op2regmem)
+                if (op2mem)
                 {
                     op2 = new Operand(reg, EnumOperandType.ADDRESS);
                 }
@@ -1031,7 +1017,7 @@ namespace CPU_OS_Simulator
             {
                 op2 = null;
             }
-            Instruction i = owner.CreateInstruction(opcode, op1, op2, 4);
+            Instruction i = owner.CreateInstruction(opcode, op1, op1mem, op2, op2mem, 4);
             owner.AddInstruction(i, index);
             return 0;
         }
@@ -1282,7 +1268,7 @@ namespace CPU_OS_Simulator
 
         private void cmb_DestinationRegisterLogical_GotFocus(object sender, RoutedEventArgs e)
         {
-            rdb_DestinationValueLogical.IsChecked = true;
+            rdb_DestinationRegisterLogical.IsChecked = true;
         }
 
         private void txtSourceValueArithmetic_GotFocus(object sender, RoutedEventArgs e)
