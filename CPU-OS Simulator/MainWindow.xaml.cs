@@ -269,7 +269,7 @@ namespace CPU_OS_Simulator
         private void DebugCompilingProgram()
         {
             SimulatorProgram program = CreateNewProgram("Debug", 0, 1);
-            program.Instructions.Add(new Instruction((int) EnumOpcodes.MOV,new Operand(Register.R01, EnumOperandType.VALUE),new Operand(13,EnumOperandType.VALUE),4));
+            program.Instructions.Add(new Instruction((int) EnumOpcodes.MOV,new Operand(Register.R01, EnumOperandType.VALUE),false, new Operand(13,EnumOperandType.VALUE),false,4));
             if (program == null) return;
             lst_ProgramList.Items.Add(program);
             programList.Add(program);
@@ -332,6 +332,7 @@ namespace CPU_OS_Simulator
             lst_ProgramList.Items.Add(prog);
             programList.Add(prog);
             currentProgram = prog.Name;
+            lst_ProgramList.SelectedItem = lst_ProgramList.Items.GetItemAt(lst_ProgramList.Items.Count - 1);
         }
 
         /// <summary>
@@ -354,6 +355,7 @@ namespace CPU_OS_Simulator
             int baseAddress = Convert.ToInt32(txtBaseAddress.Text);
             int pages = Convert.ToInt32(cmb_Pages.Text);
             SimulatorProgram program = new SimulatorProgram(programName, baseAddress, pages);
+            AllocateMemory(program);
             System.Console.WriteLine("Program " + program.Name + " Created");
             return program;
         }
@@ -365,8 +367,18 @@ namespace CPU_OS_Simulator
         private SimulatorProgram CreateNewProgram(string programName, int baseAddress, int pages)
         {
             SimulatorProgram program = new SimulatorProgram(programName, baseAddress, pages);
+            AllocateMemory(program);
             System.Console.WriteLine("Program " + program.Name + " Created");
             return program;
+        }
+
+        private void AllocateMemory(SimulatorProgram prog)
+        {
+            for (int i = 0; i < prog.Pages; i++)
+            {
+                MemoryPage memoryPage = new MemoryPage(i, (i * MemoryPage.PAGE_SIZE));
+                memory.AddPage(memoryPage, memory.Pages.Count);
+            }
         }
         /// <summary>
         /// Called when the show button is clicked
@@ -469,9 +481,9 @@ namespace CPU_OS_Simulator
         /// <param name="op2"> the second operand</param>
         /// <param name="Size"> the size of the instruction</param>
         /// <returns></returns>
-        public Instruction CreateInstruction(EnumOpcodes opcode, Operand op1, Operand op2, int Size)
+        public Instruction CreateInstruction(EnumOpcodes opcode, Operand op1, bool op1mem, Operand op2, bool op2mem, int Size)
         {
-            return new Instruction((int)opcode, op1, op2, Size);
+            return new Instruction((int)opcode, op1, op1mem, op2, op2mem, Size);
         }
 
         /// <summary>
@@ -480,9 +492,9 @@ namespace CPU_OS_Simulator
         /// <param name="opcode"> the instruction opcode</param>
         /// <param name="op1"> the first operand</param>
         /// <param name="Size"> the size of the instruction</param>
-        public Instruction CreateInstruction(EnumOpcodes opcode, Operand op1, int Size)
+        public Instruction CreateInstruction(EnumOpcodes opcode, Operand op1, bool op1mem, int Size)
         {
-            return new Instruction((int)opcode, op1, Size);
+            return new Instruction((int)opcode, op1, op1mem, Size);
         }
 
         /// <summary>
@@ -651,6 +663,7 @@ namespace CPU_OS_Simulator
             {
                 throw new Exception("An error occurred while loading the program");
             }
+            lst_ProgramList.SelectedItem = lst_ProgramList.Items[0];
             System.Console.WriteLine("Program Loaded Successfully");
         }
 
@@ -992,13 +1005,31 @@ namespace CPU_OS_Simulator
 
         private void btn_ShowMemory_Click(object sender, RoutedEventArgs e)
         {
+            SimulatorProgram program = programList.Where(x => x.Name.Equals(currentProgram)).FirstOrDefault();
+            int index = programList.IndexOf(program);
+            int framenumber = 0;
+            for (int i = 0; i < index; i++)
+            {
+                framenumber += programList[i].Pages;
+            }
+            MemoryPage page = memory.RequestMemoryPage(framenumber);
+            if (page != null)
+            {
+                MemoryWindow m = new MemoryWindow(this, page);
+                m.Show();
+            }
+            else
+            {
+                MessageBox.Show("There was an error while loading a memory page");
+            }
+
             //SimulatorProgram program = programList.Where(x => x.Name.Equals(currentProgram)).FirstOrDefault();
             //if (program == null) return;
-            //MemoryWindow m = new MemoryWindow(this,program.Memory.FirstOrDefault());
+            //MemoryWindow m = new MemoryWindow(this, program.Memory.FirstOrDefault());
             //m.Show();
 
-            MessageBox.Show("This Button is not implemented yet", "Not implemented", MessageBoxButton.OK,
-                MessageBoxImage.Information);
+            //MessageBox.Show("This Button is not implemented yet", "Not implemented", MessageBoxButton.OK,
+            //    MessageBoxImage.Information);
         }
 
         private void btn_Console_Click(object sender, RoutedEventArgs e)

@@ -5,6 +5,7 @@
     /// </summary>
     public enum EnumOperandType
     {
+        UNKNOWN = -1,
         VALUE = 0,
         ADDRESS = 1
     }

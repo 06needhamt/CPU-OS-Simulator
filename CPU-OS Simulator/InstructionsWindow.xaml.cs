@@ -356,6 +356,8 @@ namespace CPU_OS_Simulator
             EnumOpcodes opcode;
             Operand op1;
             Operand op2;
+            bool op1mem = false;
+            bool op2mem = false;
             int index = owner.lst_InstructionsList.SelectedIndex;
 
             SimulatorProgram prog = (SimulatorProgram)owner.lst_ProgramList.SelectedItem;
@@ -363,13 +365,38 @@ namespace CPU_OS_Simulator
 
             if (rdb_SourceValueDataTransfer.IsChecked.Value)
             {
-                op1 = new Operand(Convert.ToInt32(txtSourceValueDataTransfer.Text), EnumOperandType.VALUE);
+                if (rdb_DataTransfer_Source_Direct_Mem.IsChecked.Value ||
+                    rdb_DataTransfer_Source_InDirect_Mem.IsChecked.Value)
+                {
+                    op1mem = true;
+                }
+
+                if (op1mem)
+                {
+                    op1 = new Operand(Convert.ToInt32(txtSourceValueDataTransfer.Text), EnumOperandType.ADDRESS);
+                }
+                else
+                {
+                    op1 = new Operand(Convert.ToInt32(txtSourceValueDataTransfer.Text), EnumOperandType.VALUE);
+                }
             }
             else if (rdb_SourceRegisterDataTransfer.IsChecked.Value)
             {
                 string selectedRegister = (string)cmb_SourceRegisterDataTransfer.SelectedItem;
                 Register reg = Register.FindRegister(selectedRegister);
-                op1 = new Operand(reg, reg.Type);
+                if (rdb_DataTransfer_Source_Reg_Direct.IsChecked.Value ||
+                    rdb_DataTransfer_Source_Reg_Indirect.IsChecked.Value)
+                {
+                    op1mem = true;
+                }
+                if (op1mem)
+                {
+                    op1 = new Operand(reg, EnumOperandType.ADDRESS);
+                }
+                else
+                {
+                    op1 = new Operand(reg, EnumOperandType.VALUE);
+                }
             }
             else
             {
@@ -377,19 +404,44 @@ namespace CPU_OS_Simulator
             }
             if (rdb_DestinationValueDataTransfer.IsChecked.Value)
             {
-                op2 = new Operand(Convert.ToInt32(txtDestinationValueDataTransfer.Text), EnumOperandType.VALUE);
+                if (rdb_DataTransfer_Destination_Direct_Mem.IsChecked.Value ||
+                    rdb_DataTransfer_Destination_InDirect_Mem.IsChecked.Value)
+                {
+                    op2mem = true;
+                }
+                if (op2mem)
+                {
+                    op2 = new Operand(Convert.ToInt32(txtDestinationValueDataTransfer.Text), EnumOperandType.ADDRESS);
+                }
+                else
+                {
+                    op2 = new Operand(Convert.ToInt32(txtDestinationValueDataTransfer.Text), EnumOperandType.VALUE);
+                }
+                
             }
             else if (rdb_DestinationRegisterDataTransfer.IsChecked.Value)
             {
                 string selectedRegister = (string)cmb_DestinationRegisterDataTransfer.SelectedItem;
                 Register reg = Register.FindRegister(selectedRegister);
-                op2 = new Operand(reg, reg.Type);
+                if (rdb_DataTransfer_Destination_Reg_Direct.IsChecked.Value ||
+                    rdb_DataTransfer_Destination_Reg_Indirect.IsChecked.Value)
+                {
+                    op2mem = true;
+                }
+                if (op2mem)
+                {
+                    op2 = new Operand(reg, EnumOperandType.ADDRESS);
+                }
+                else
+                {
+                    op2 = new Operand(reg, EnumOperandType.VALUE);
+                }
             }
             else
             {
                 op2 = null;
             }
-            Instruction i = owner.CreateInstruction(opcode, op1, op2, 4);
+            Instruction i = owner.CreateInstruction(opcode, op1, op1mem, op2, op2mem, 4);
             owner.AddInstruction(i, index);
             return 0;
         }
@@ -400,18 +452,47 @@ namespace CPU_OS_Simulator
             EnumOpcodes opcode;
             Operand op1;
             Operand op2;
+            bool op1mem = false;
+            bool op2mem = false;
             int index = owner.lst_InstructionsList.SelectedIndex;
 
+            SimulatorProgram prog = (SimulatorProgram)owner.lst_ProgramList.SelectedItem;
             opcode = (EnumOpcodes)Enum.Parse(typeof(EnumOpcodes), lst_OpcodeListLogical.SelectedItem.ToString());
+
             if (rdb_SourceValueLogical.IsChecked.Value)
             {
-                op1 = new Operand(Convert.ToInt32(txtSourceValueLogical.Text), EnumOperandType.VALUE);
+                if (rdb_Logical_Source_Direct_Mem.IsChecked.Value ||
+                    rdb_Logical_Source_InDirect_Mem.IsChecked.Value)
+                {
+                    op1mem = true;
+                }
+
+                if (op1mem)
+                {
+                    op1 = new Operand(Convert.ToInt32(txtSourceValueLogical.Text), EnumOperandType.ADDRESS);
+                }
+                else
+                {
+                    op1 = new Operand(Convert.ToInt32(txtSourceValueLogical.Text), EnumOperandType.VALUE);
+                }
             }
             else if (rdb_SourceRegisterLogical.IsChecked.Value)
             {
                 string selectedRegister = (string)cmb_SourceRegisterLogical.SelectedItem;
                 Register reg = Register.FindRegister(selectedRegister);
-                op1 = new Operand(reg, reg.Type);
+                if (rdb_Logical_Source_Reg_Direct.IsChecked.Value ||
+                    rdb_Logical_Source_Reg_Indirect.IsChecked.Value)
+                {
+                    op1mem = true;
+                }
+                if (op1mem)
+                {
+                    op1 = new Operand(reg, EnumOperandType.ADDRESS);
+                }
+                else
+                {
+                    op1 = new Operand(reg, EnumOperandType.VALUE);
+                }
             }
             else
             {
@@ -419,19 +500,44 @@ namespace CPU_OS_Simulator
             }
             if (rdb_DestinationValueLogical.IsChecked.Value)
             {
-                op2 = new Operand(Convert.ToInt32(txtDestinationValueLogical.Text), EnumOperandType.VALUE);
+                if (rdb_Logical_Destination_Direct_Mem.IsChecked.Value ||
+                    rdb_Logical_Destination_InDirect_Mem.IsChecked.Value)
+                {
+                    op2mem = true;
+                }
+                if (op2mem)
+                {
+                    op2 = new Operand(Convert.ToInt32(txtDestinationValueLogical.Text), EnumOperandType.ADDRESS);
+                }
+                else
+                {
+                    op2 = new Operand(Convert.ToInt32(txtDestinationValueLogical.Text), EnumOperandType.VALUE);
+                }
+
             }
             else if (rdb_DestinationRegisterLogical.IsChecked.Value)
             {
                 string selectedRegister = (string)cmb_DestinationRegisterLogical.SelectedItem;
                 Register reg = Register.FindRegister(selectedRegister);
-                op2 = new Operand(reg, reg.Type);
+                if (rdb_Logical_Destination_Reg_Direct.IsChecked.Value ||
+                    rdb_Logical_Destination_Reg_Indirect.IsChecked.Value)
+                {
+                    op2mem = true;
+                }
+                if (op2mem)
+                {
+                    op2 = new Operand(reg, EnumOperandType.ADDRESS);
+                }
+                else
+                {
+                    op2 = new Operand(reg, EnumOperandType.VALUE);
+                }
             }
             else
             {
                 op2 = null;
             }
-            Instruction i = owner.CreateInstruction(opcode, op1, op2, 4);
+            Instruction i = owner.CreateInstruction(opcode, op1, op1mem, op2, op2mem, 4);
             owner.AddInstruction(i, index);
             return 0;
         }
@@ -442,18 +548,47 @@ namespace CPU_OS_Simulator
             EnumOpcodes opcode;
             Operand op1;
             Operand op2;
+            bool op1mem = false;
+            bool op2mem = false;
             int index = owner.lst_InstructionsList.SelectedIndex;
 
+            SimulatorProgram prog = (SimulatorProgram)owner.lst_ProgramList.SelectedItem;
             opcode = (EnumOpcodes)Enum.Parse(typeof(EnumOpcodes), lst_OpcodeListArithmetic.SelectedItem.ToString());
+
             if (rdb_SourceValueArithmetic.IsChecked.Value)
             {
-                op1 = new Operand(Convert.ToInt32(txtSourceValueArithmetic.Text), EnumOperandType.VALUE);
+                if (rdb_Arithmetic_Source_Direct_Mem.IsChecked.Value ||
+                    rdb_Arithmetic_Source_InDirect_Mem.IsChecked.Value)
+                {
+                    op1mem = true;
+                }
+
+                if (op1mem)
+                {
+                    op1 = new Operand(Convert.ToInt32(txtSourceValueArithmetic.Text), EnumOperandType.ADDRESS);
+                }
+                else
+                {
+                    op1 = new Operand(Convert.ToInt32(txtSourceValueArithmetic.Text), EnumOperandType.VALUE);
+                }
             }
             else if (rdb_SourceRegisterArithmetic.IsChecked.Value)
             {
                 string selectedRegister = (string)cmb_SourceRegisterArithmetic.SelectedItem;
                 Register reg = Register.FindRegister(selectedRegister);
-                op1 = new Operand(reg, reg.Type);
+                if (rdb_Arithmetic_Source_Reg_Direct.IsChecked.Value ||
+                    rdb_Arithmetic_Source_Reg_Indirect.IsChecked.Value)
+                {
+                    op1mem = true;
+                }
+                if (op1mem)
+                {
+                    op1 = new Operand(reg, EnumOperandType.ADDRESS);
+                }
+                else
+                {
+                    op1 = new Operand(reg, EnumOperandType.VALUE);
+                }
             }
             else
             {
@@ -461,19 +596,44 @@ namespace CPU_OS_Simulator
             }
             if (rdb_DestinationValueArithmetic.IsChecked.Value)
             {
-                op2 = new Operand(Convert.ToInt32(txtDestinationValueArithmetic.Text), EnumOperandType.VALUE);
+                if (rdb_Arithmetic_Destination_Direct_Mem.IsChecked.Value ||
+                    rdb_Arithmetic_Destination_InDirect_Mem.IsChecked.Value)
+                {
+                    op2mem = true;
+                }
+                if (op2mem)
+                {
+                    op2 = new Operand(Convert.ToInt32(txtDestinationValueArithmetic.Text), EnumOperandType.ADDRESS);
+                }
+                else
+                {
+                    op2 = new Operand(Convert.ToInt32(txtDestinationValueArithmetic.Text), EnumOperandType.VALUE);
+                }
+
             }
             else if (rdb_DestinationRegisterArithmetic.IsChecked.Value)
             {
                 string selectedRegister = (string)cmb_DestinationRegisterArithmetic.SelectedItem;
                 Register reg = Register.FindRegister(selectedRegister);
-                op2 = new Operand(reg, reg.Type);
+                if (rdb_Arithmetic_Destination_Reg_Direct.IsChecked.Value ||
+                    rdb_Arithmetic_Destination_Reg_Indirect.IsChecked.Value)
+                {
+                    op2mem = true;
+                }
+                if (op2mem)
+                {
+                    op2 = new Operand(reg, EnumOperandType.ADDRESS);
+                }
+                else
+                {
+                    op2 = new Operand(reg, EnumOperandType.VALUE);
+                }
             }
             else
             {
                 op2 = null;
             }
-            Instruction i = owner.CreateInstruction(opcode, op1, op2, 4);
+            Instruction i = owner.CreateInstruction(opcode, op1, op1mem, op2, op2mem, 4);
             owner.AddInstruction(i, index);
             return 0;
         }
@@ -484,39 +644,92 @@ namespace CPU_OS_Simulator
             EnumOpcodes opcode;
             Operand op1;
             Operand op2;
+            bool op1mem = false;
+            bool op2mem = false;
             int index = owner.lst_InstructionsList.SelectedIndex;
 
+            SimulatorProgram prog = (SimulatorProgram)owner.lst_ProgramList.SelectedItem;
             opcode = (EnumOpcodes)Enum.Parse(typeof(EnumOpcodes), lst_OpcodeListControlTransfer.SelectedItem.ToString());
+
             if (rdb_SourceValueControlTransfer.IsChecked.Value)
             {
-                op1 = new Operand(Convert.ToInt32(txtSourceValueControlTransfer.Text), EnumOperandType.VALUE);
+                if (rdb_ControlTransfer_Source_Direct_Mem.IsChecked.Value ||
+                    rdb_ControlTransfer_Source_InDirect_Mem.IsChecked.Value)
+                {
+                    op1mem = true;
+                }
+
+                if (op1mem)
+                {
+                    op1 = new Operand(Convert.ToInt32(txtSourceValueControlTransfer.Text), EnumOperandType.ADDRESS);
+                }
+                else
+                {
+                    op1 = new Operand(Convert.ToInt32(txtSourceValueControlTransfer.Text), EnumOperandType.VALUE);
+                }
             }
             else if (rdb_SourceRegisterControlTransfer.IsChecked.Value)
             {
                 string selectedRegister = (string)cmb_SourceRegisterControlTransfer.SelectedItem;
                 Register reg = Register.FindRegister(selectedRegister);
-                op1 = new Operand(reg, reg.Type);
+                if (rdb_ControlTransfer_Source_Reg_Direct.IsChecked.Value ||
+                    rdb_ControlTransfer_Source_Reg_Indirect.IsChecked.Value)
+                {
+                    op1mem = true;
+                }
+                if (op1mem)
+                {
+                    op1 = new Operand(reg, EnumOperandType.ADDRESS);
+                }
+                else
+                {
+                    op1 = new Operand(reg, EnumOperandType.VALUE);
+                }
             }
             else
             {
                 op1 = null;
             }
-
             if (rdb_DestinationValueControlTransfer.IsChecked.Value)
             {
-                op2 = new Operand(Convert.ToInt32(txtDestinationValueControlTransfer.Text), EnumOperandType.VALUE);
+                if (rdb_ControlTransfer_Destination_Direct_Mem.IsChecked.Value ||
+                    rdb_ControlTransfer_Destination_InDirect_Mem.IsChecked.Value)
+                {
+                    op2mem = true;
+                }
+                if (op2mem)
+                {
+                    op2 = new Operand(Convert.ToInt32(txtDestinationValueControlTransfer.Text), EnumOperandType.ADDRESS);
+                }
+                else
+                {
+                    op2 = new Operand(Convert.ToInt32(txtDestinationValueControlTransfer.Text), EnumOperandType.VALUE);
+                }
+
             }
             else if (rdb_DestinationRegisterControlTransfer.IsChecked.Value)
             {
                 string selectedRegister = (string)cmb_DestinationRegisterControlTransfer.SelectedItem;
                 Register reg = Register.FindRegister(selectedRegister);
-                op2 = new Operand(reg, reg.Type);
+                if (rdb_ControlTransfer_Destination_Reg_Direct.IsChecked.Value ||
+                    rdb_ControlTransfer_Destination_Reg_Indirect.IsChecked.Value)
+                {
+                    op2mem = true;
+                }
+                if (op2mem)
+                {
+                    op2 = new Operand(reg, EnumOperandType.ADDRESS);
+                }
+                else
+                {
+                    op2 = new Operand(reg, EnumOperandType.VALUE);
+                }
             }
             else
             {
                 op2 = null;
             }
-            Instruction i = owner.CreateInstruction(opcode, op1, op2, 4);
+            Instruction i = owner.CreateInstruction(opcode, op1, op1mem, op2, op2mem, 4);
             owner.AddInstruction(i, index);
             return 0;
         }
@@ -527,39 +740,92 @@ namespace CPU_OS_Simulator
             EnumOpcodes opcode;
             Operand op1;
             Operand op2;
-            int index = owner.lst_InstructionsList.SelectedIndex;
+            bool op1mem = false;
+            bool op2mem = false;
+           int index = owner.lst_InstructionsList.SelectedIndex;
 
+            SimulatorProgram prog = (SimulatorProgram)owner.lst_ProgramList.SelectedItem;
             opcode = (EnumOpcodes)Enum.Parse(typeof(EnumOpcodes), lst_OpcodeListComparison.SelectedItem.ToString());
+
             if (rdb_SourceValueComparison.IsChecked.Value)
             {
-                op1 = new Operand(Convert.ToInt32(txtSourceValueComparison.Text), EnumOperandType.VALUE);
+                if (rdb_Comparison_Source_Direct_Mem.IsChecked.Value ||
+                    rdb_Comparison_Source_InDirect_Mem.IsChecked.Value)
+                {
+                    op1mem = true;
+                }
+
+                if (op1mem)
+                {
+                    op1 = new Operand(Convert.ToInt32(txtSourceValueComparison.Text), EnumOperandType.ADDRESS);
+                }
+                else
+                {
+                    op1 = new Operand(Convert.ToInt32(txtSourceValueComparison.Text), EnumOperandType.VALUE);
+                }
             }
             else if (rdb_SourceRegisterComparison.IsChecked.Value)
             {
                 string selectedRegister = (string)cmb_SourceRegisterComparison.SelectedItem;
                 Register reg = Register.FindRegister(selectedRegister);
-                op1 = new Operand(reg, reg.Type);
+                if (rdb_Comparison_Source_Reg_Direct.IsChecked.Value ||
+                    rdb_Comparison_Source_Reg_Indirect.IsChecked.Value)
+                {
+                    op1mem = true;
+                }
+                if (op1mem)
+                {
+                    op1 = new Operand(reg, EnumOperandType.ADDRESS);
+                }
+                else
+                {
+                    op1 = new Operand(reg, EnumOperandType.VALUE);
+                }
             }
             else
             {
                 op1 = null;
             }
-
             if (rdb_DestinationValueComparison.IsChecked.Value)
             {
-                op2 = new Operand(Convert.ToInt32(txtDestinationValueComparison.Text), EnumOperandType.VALUE);
+                if (rdb_Comparison_Destination_Direct_Mem.IsChecked.Value ||
+                    rdb_Comparison_Destination_InDirect_Mem.IsChecked.Value)
+                {
+                    op2mem = true;
+                }
+                if (op2mem)
+                {
+                    op2 = new Operand(Convert.ToInt32(txtDestinationValueComparison.Text), EnumOperandType.ADDRESS);
+                }
+                else
+                {
+                    op2 = new Operand(Convert.ToInt32(txtDestinationValueComparison.Text), EnumOperandType.VALUE);
+                }
+
             }
             else if (rdb_DestinationRegisterComparison.IsChecked.Value)
             {
                 string selectedRegister = (string)cmb_DestinationRegisterComparison.SelectedItem;
                 Register reg = Register.FindRegister(selectedRegister);
-                op2 = new Operand(reg, reg.Type);
+                if (rdb_Comparison_Destination_Reg_Direct.IsChecked.Value ||
+                    rdb_Comparison_Destination_Reg_Indirect.IsChecked.Value)
+                {
+                    op2mem = true;
+                }
+                if (op2mem)
+                {
+                    op2 = new Operand(reg, EnumOperandType.ADDRESS);
+                }
+                else
+                {
+                    op2 = new Operand(reg, EnumOperandType.VALUE);
+                }
             }
             else
             {
                 op2 = null;
             }
-            Instruction i = owner.CreateInstruction(opcode, op1, op2, 4);
+            Instruction i = owner.CreateInstruction(opcode, op1, op1mem, op2, op2mem, 4);
             owner.AddInstruction(i, index);
             return 0;
         }
@@ -570,39 +836,92 @@ namespace CPU_OS_Simulator
             EnumOpcodes opcode;
             Operand op1;
             Operand op2;
+            bool op1mem = false;
+            bool op2mem = false;
             int index = owner.lst_InstructionsList.SelectedIndex;
 
+            SimulatorProgram prog = (SimulatorProgram)owner.lst_ProgramList.SelectedItem;
             opcode = (EnumOpcodes)Enum.Parse(typeof(EnumOpcodes), lst_OpcodeListIO.SelectedItem.ToString());
+
             if (rdb_SourceValueIO.IsChecked.Value)
             {
-                op1 = new Operand(Convert.ToInt32(txtSourceValueIO.Text), EnumOperandType.VALUE);
+                if (rdb_IO_Source_Direct_Mem.IsChecked.Value ||
+                    rdb_IO_Source_InDirect_Mem.IsChecked.Value)
+                {
+                    op1mem = true;
+                }
+
+                if (op1mem)
+                {
+                    op1 = new Operand(Convert.ToInt32(txtSourceValueIO.Text), EnumOperandType.ADDRESS);
+                }
+                else
+                {
+                    op1 = new Operand(Convert.ToInt32(txtSourceValueIO.Text), EnumOperandType.VALUE);
+                }
             }
             else if (rdb_SourceRegisterIO.IsChecked.Value)
             {
                 string selectedRegister = (string)cmb_SourceRegisterIO.SelectedItem;
                 Register reg = Register.FindRegister(selectedRegister);
-                op1 = new Operand(reg, reg.Type);
+                if (rdb_IO_Source_Reg_Direct.IsChecked.Value ||
+                    rdb_IO_Source_Reg_Indirect.IsChecked.Value)
+                {
+                    op1mem = true;
+                }
+                if (op1mem)
+                {
+                    op1 = new Operand(reg, EnumOperandType.ADDRESS);
+                }
+                else
+                {
+                    op1 = new Operand(reg, EnumOperandType.VALUE);
+                }
             }
             else
             {
                 op1 = null;
             }
-
             if (rdb_DestinationValueIO.IsChecked.Value)
             {
-                op2 = new Operand(Convert.ToInt32(txtDestinationValueIO.Text), EnumOperandType.VALUE);
+                if (rdb_IO_Destination_Direct_Mem.IsChecked.Value ||
+                    rdb_IO_Destination_InDirect_Mem.IsChecked.Value)
+                {
+                    op2mem = true;
+                }
+                if (op2mem)
+                {
+                    op2 = new Operand(Convert.ToInt32(txtDestinationValueIO.Text), EnumOperandType.ADDRESS);
+                }
+                else
+                {
+                    op2 = new Operand(Convert.ToInt32(txtDestinationValueIO.Text), EnumOperandType.VALUE);
+                }
+
             }
             else if (rdb_DestinationRegisterIO.IsChecked.Value)
             {
                 string selectedRegister = (string)cmb_DestinationRegisterIO.SelectedItem;
                 Register reg = Register.FindRegister(selectedRegister);
-                op2 = new Operand(reg, reg.Type);
+                if (rdb_IO_Destination_Reg_Direct.IsChecked.Value ||
+                    rdb_IO_Destination_Reg_Indirect.IsChecked.Value)
+                {
+                    op2mem = true;
+                }
+                if (op2mem)
+                {
+                    op2 = new Operand(reg, EnumOperandType.ADDRESS);
+                }
+                else
+                {
+                    op2 = new Operand(reg, EnumOperandType.VALUE);
+                }
             }
             else
             {
                 op2 = null;
             }
-            Instruction i = owner.CreateInstruction(opcode, op1, op2, 4);
+            Instruction i = owner.CreateInstruction(opcode, op1, op1mem, op2, op2mem, 4);
             owner.AddInstruction(i, index);
             return 0;
         }
@@ -613,39 +932,92 @@ namespace CPU_OS_Simulator
             EnumOpcodes opcode;
             Operand op1;
             Operand op2;
+            bool op1mem = false;
+            bool op2mem = false;
             int index = owner.lst_InstructionsList.SelectedIndex;
 
+            SimulatorProgram prog = (SimulatorProgram)owner.lst_ProgramList.SelectedItem;
             opcode = (EnumOpcodes)Enum.Parse(typeof(EnumOpcodes), lst_OpcodeListMiscellaneous.SelectedItem.ToString());
+
             if (rdb_SourceValueMiscellaneous.IsChecked.Value)
             {
-                op1 = new Operand(Convert.ToInt32(txtSourceValueMiscellaneous.Text), EnumOperandType.VALUE);
+                if (rdb_Miscellaneous_Source_Direct_Mem.IsChecked.Value ||
+                    rdb_Miscellaneous_Source_InDirect_Mem.IsChecked.Value)
+                {
+                    op1mem = true;
+                }
+
+                if (op1mem)
+                {
+                    op1 = new Operand(Convert.ToInt32(txtSourceValueMiscellaneous.Text), EnumOperandType.ADDRESS);
+                }
+                else
+                {
+                    op1 = new Operand(Convert.ToInt32(txtSourceValueMiscellaneous.Text), EnumOperandType.VALUE);
+                }
             }
             else if (rdb_SourceRegisterMiscellaneous.IsChecked.Value)
             {
                 string selectedRegister = (string)cmb_SourceRegisterMiscellaneous.SelectedItem;
                 Register reg = Register.FindRegister(selectedRegister);
-                op1 = new Operand(reg, reg.Type);
+                if (rdb_Miscellaneous_Source_Reg_Direct.IsChecked.Value ||
+                    rdb_Miscellaneous_Source_Reg_Indirect.IsChecked.Value)
+                {
+                    op1mem = true;
+                }
+                if (op1mem)
+                {
+                    op1 = new Operand(reg, EnumOperandType.ADDRESS);
+                }
+                else
+                {
+                    op1 = new Operand(reg, EnumOperandType.VALUE);
+                }
             }
             else
             {
                 op1 = null;
             }
-
             if (rdb_DestinationValueMiscellaneous.IsChecked.Value)
             {
-                op2 = new Operand(Convert.ToInt32(txtDestinationValueMiscellaneous.Text), EnumOperandType.VALUE);
+                if (rdb_Miscellaneous_Destination_Direct_Mem.IsChecked.Value ||
+                    rdb_Miscellaneous_Destination_InDirect_Mem.IsChecked.Value)
+                {
+                    op2mem = true;
+                }
+                if (op2mem)
+                {
+                    op2 = new Operand(Convert.ToInt32(txtDestinationValueMiscellaneous.Text), EnumOperandType.ADDRESS);
+                }
+                else
+                {
+                    op2 = new Operand(Convert.ToInt32(txtDestinationValueMiscellaneous.Text), EnumOperandType.VALUE);
+                }
+
             }
             else if (rdb_DestinationRegisterMiscellaneous.IsChecked.Value)
             {
                 string selectedRegister = (string)cmb_DestinationRegisterMiscellaneous.SelectedItem;
                 Register reg = Register.FindRegister(selectedRegister);
-                op2 = new Operand(reg, reg.Type);
+                if (rdb_Miscellaneous_Destination_Reg_Direct.IsChecked.Value ||
+                    rdb_Miscellaneous_Destination_Reg_Indirect.IsChecked.Value)
+                {
+                    op2mem = true;
+                }
+                if (op2mem)
+                {
+                    op2 = new Operand(reg, EnumOperandType.ADDRESS);
+                }
+                else
+                {
+                    op2 = new Operand(reg, EnumOperandType.VALUE);
+                }
             }
             else
             {
                 op2 = null;
             }
-            Instruction i = owner.CreateInstruction(opcode, op1, op2, 4);
+            Instruction i = owner.CreateInstruction(opcode, op1, op1mem, op2, op2mem, 4);
             owner.AddInstruction(i, index);
             return 0;
         }
@@ -896,7 +1268,7 @@ namespace CPU_OS_Simulator
 
         private void cmb_DestinationRegisterLogical_GotFocus(object sender, RoutedEventArgs e)
         {
-            rdb_DestinationValueLogical.IsChecked = true;
+            rdb_DestinationRegisterLogical.IsChecked = true;
         }
 
         private void txtSourceValueArithmetic_GotFocus(object sender, RoutedEventArgs e)

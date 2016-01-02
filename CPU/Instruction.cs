@@ -68,6 +68,19 @@ namespace CPU_OS_Simulator.CPU
         /// </summary>
         private string instructionString;
 
+        /// <summary>
+        /// Whether the first operand of the instruction is a memory address
+        /// </summary>
+        private bool op1mem = false;
+
+        /// <summary>
+        /// Whether the second operand of the instruction is a memory address
+        /// </summary>
+        private bool op2mem = false;
+       
+        /// <summary>
+        /// The execution unit that will be executing this instruction 
+        /// </summary>
         [ScriptIgnore]
         [NonSerialized]
         private ExecutionUnit unit;
@@ -93,7 +106,9 @@ namespace CPU_OS_Simulator.CPU
         {
             this.opcode = opcode;
             operand1 = null;
+            op1mem = false;
             operand2 = null;
+            op2mem = false;
             this.size = size;
             instructionString = ToString();
             BindDelegate();
@@ -104,12 +119,15 @@ namespace CPU_OS_Simulator.CPU
         /// </summary>
         /// <param name="opcode"> the opcode for the instruction</param>
         /// <param name="op1"> the first operand of the instruction</param>
+        /// <param name="op1mem"> whether the first operand is a memory address</param>
         /// <param name="size"> the size of the instruction </param>
-        public Instruction(int opcode, Operand op1, int size)
+        public Instruction(int opcode, Operand op1, bool op1mem, int size)
         {
             this.opcode = opcode;
             operand1 = op1;
+            this.op1mem = op1mem;
             operand2 = null;
+            this.op2mem = false;
             this.size = size;
             instructionString = ToString();
             BindDelegate();
@@ -120,13 +138,17 @@ namespace CPU_OS_Simulator.CPU
         /// </summary>
         /// <param name="opcode"> the opcode for the instruction</param>
         /// <param name="op1"> the first operand of the instruction</param>
+        /// <param name="op1mem"> whether the first operand is a memory address</param>
         /// <param name="op2"> the second operand of the instruction</param>
+        /// <param name="op2mem"> whether the second operand is a memory address</param>
         /// <param name="size"> the size of the instruction </param>
-        public Instruction(int opcode, Operand op1, Operand op2, int size)
+        public Instruction(int opcode, Operand op1, bool op1mem, Operand op2, bool op2mem, int size)
         {
             this.opcode = opcode;
             operand1 = op1;
+            this.op1mem = op1mem;
             operand2 = op2;
+            this.op2mem = op2mem;
             this.size = size;
             instructionString = ToString();
             BindDelegate();
@@ -286,6 +308,32 @@ namespace CPU_OS_Simulator.CPU
             {
                 physicalAddress = value;
             }
+        }
+
+        /// <summary>
+        /// Whether the first operand of this instruction is a memory address
+        /// </summary>
+        public bool Op1Mem
+        {
+            get { return op1mem; }
+            set { op1mem = value; }
+        }
+        /// <summary>
+        /// Whether the second operand of this instruction is a memory address
+        /// </summary>
+        public bool Op2Mem
+        {
+            get { return op2mem; }
+            set { op2mem = value; }
+        }
+        /// <summary>
+        /// The execution unit that will be executing this instruction
+        /// </summary>
+        [ScriptIgnore]
+        public ExecutionUnit Unit
+        {
+            get { return unit; }
+            set { unit = value; }
         }
 
         #endregion Properties
@@ -599,19 +647,29 @@ namespace CPU_OS_Simulator.CPU
             string parsedOpcode = Enum.GetName(typeof(EnumOpcodes), opcode);
             string op1 = "";
             string op2 = "";
+            string finalString = "";
+
             if (operand1 != null)
             {
+                if (op1mem)
+                {
+                    op1 += "@";
+                } 
                 if (operand1.IsRegister)
                 {
-                    op1 = Operand1.Register.Name;
+                    op1 += Operand1.Register.Name;
                 }
                 else
                 {
-                    op1 = Operand1.Value.ToString();
+                    op1 += Operand1.Value.ToString();
                 }
             }
             if (operand2 != null)
             {
+                if (op2mem)
+                {
+                    op2 += "@";
+                }
                 if (Operand2.IsRegister)
                 {
                     op2 = Operand2.Register.Name;
@@ -621,14 +679,52 @@ namespace CPU_OS_Simulator.CPU
                     op2 = Operand2.Value.ToString();
                 }
             }
-            return parsedOpcode.ToUpper() + " " + op1.ToUpper() + "," + op2.ToUpper();
+            finalString += parsedOpcode.ToUpper() + " ";
+            if (!op1.Equals(""))
+            {
+                finalString += op1.ToUpper();
+            }
+            if (!op2.Equals(""))
+            {
+                finalString += ",";
+                finalString += op2.ToUpper();
+            }
+            return finalString;
         }
 
+        private void StoreByte(int pageNumber, int pageOffset, byte value)
+        {
+            dynamic wind = GetMainWindowInstance();
+            PhysicalMemory memory = wind.Memory;
+            int frameNumber = FindRequiredPage(pageNumber);
+            if (memory.RequestMemoryPage(frameNumber) != null)
+            {
+                memory.Pages[frameNumber].Data[pageOffset / 8].SetByte(pageOffset % 8, value);
+            }
+            else
+            {
+                MessageBox.Show("Could not find memory page located in frame " + frameNumber);
+            }
+        }
+
+        private byte? LoadByte(int pageNumber, int pageOffset)
+        {
+            dynamic wind = GetMainWindowInstance();
+            PhysicalMemory memory = wind.Memory;
+            int frameNumber = FindRequiredPage(pageNumber);
+            if (memory.RequestMemoryPage(frameNumber) != null)
+            {
+                return memory.Pages[frameNumber].Data[pageOffset/8].GetByte(pageOffset%8);
+            }
+            else
+            {
+                MessageBox.Show("Could not find memory page located in frame " + frameNumber);
+                return null;
+            }
+        }
         #endregion Methods
 
         #region Instruction Execution Functions
-
-        //TODO Allow for memory operands
 
         #region Data Transfer
 
@@ -640,13 +736,88 @@ namespace CPU_OS_Simulator.CPU
         /// <returns> the result of the instruction or int.MINVALUE if no result is returned </returns>
         private int MOV(Operand lhs, Operand rhs)
         {
-            result = rhs.Value;
-            if (lhs.IsRegister)
+            byte[] sourceBytes = new byte[sizeof(int)];
+            if (rhs.Type == EnumOperandType.ADDRESS) //if the source operand is a memory address 
             {
-                lhs.Register.Value = result;
-                Register.FindRegister(lhs.Register.Name).setRegisterValue(result, EnumOperandType.VALUE);
+                for (int i = 0; i < sourceBytes.Length; i++) // load it from memory
+                {
+                    int address = 0;
+                    if (rhs.IsRegister)
+                    {
+                        address = Register.FindRegister(rhs.Register.Name).Value + i;
+                    }
+                    else
+                    {
+                        address = rhs.Value + i;
+                    }
+                    int pageNumber = address / MemoryPage.PAGE_SIZE;
+                    int pageOffset = address % MemoryPage.PAGE_SIZE;
+                    byte? loadedByte = LoadByte(pageNumber, pageOffset);
+                    if (loadedByte != null)
+                        sourceBytes[i] = loadedByte.Value;
+                }
+                Array.Reverse(sourceBytes);
+                if (BitConverter.IsLittleEndian)
+                {
+                    Array.Reverse(sourceBytes);
+                }
+            }
+            else // otherwise load it from a register
+            {
+                if (rhs.IsRegister) 
+                {
+                    sourceBytes = BitConverter.GetBytes(Register.FindRegister(rhs.Register.Name).Value);
+                }
+                else
+                {
+                    sourceBytes = BitConverter.GetBytes(rhs.Value);
+                }
+                Array.Reverse(sourceBytes);
+                if (BitConverter.IsLittleEndian)
+                {
+                    Array.Reverse(sourceBytes);
+                }
+            }
+            if (lhs.Type == EnumOperandType.ADDRESS)
+            {
+                for (int i = 0; i < sourceBytes.Length; i++)
+                {
+                    int address = 0;
+                    if (lhs.IsRegister)
+                    {
+                        address = Register.FindRegister(lhs.Register.Name).Value + i;
+                    }
+                    else
+                    {
+                        address = lhs.Value + i;
+                    }
+                    int pageNumber = address / MemoryPage.PAGE_SIZE;
+                    int pageOffset = address % MemoryPage.PAGE_SIZE;
+                    byte byteToStore = sourceBytes[i];
+                    StoreByte(pageNumber, pageOffset, byteToStore);
+                }
+            }
+            else
+            {
+                if (lhs.IsRegister)
+                {
+                    Register.FindRegister(lhs.Register.Name)
+                        .setRegisterValue(BitConverter.ToInt32(sourceBytes, 0), EnumOperandType.VALUE);
+                }
+                else
+                {
+                    MessageBox.Show("Destination of MOV instruction Must be a register or address");
+                }
             }
             return result;
+            //result = rhs.Value;
+            //if (lhs.IsRegister)
+            //{
+            //    lhs.Register.Value = result;
+            //    Register.FindRegister(lhs.Register.Name).setRegisterValue(result, EnumOperandType.VALUE);
+            //}
+            //return result;
+
         }
 
         /// <summary>
@@ -851,6 +1022,13 @@ namespace CPU_OS_Simulator.CPU
                 value = Register.FindRegister(rhs.Register.Name).Value;
                 low = (byte)(value & 0xFF);
                 high = (byte)((value >> 8) & 0xFF);
+                if (BitConverter.IsLittleEndian)
+                {
+                    byte templow = low;
+                    byte temphigh = high;
+                    high = templow;
+                    low = temphigh;
+                }
                 pagenumber = address/MemoryPage.PAGE_SIZE;
                 pageOffset = address%MemoryPage.PAGE_SIZE;
 
@@ -863,8 +1041,13 @@ namespace CPU_OS_Simulator.CPU
                 value = rhs.Value;
                 low = (byte)(value & 0xFF);
                 high = (byte)((value >> 8) & 0xFF);
-
-
+                if (BitConverter.IsLittleEndian)
+                {
+                    byte templow = low;
+                    byte temphigh = high;
+                    high = templow;
+                    low = temphigh;
+                }
             }
             dynamic wind = GetMainWindowInstance();
             PhysicalMemory memory = wind.Memory;
@@ -1047,27 +1230,129 @@ namespace CPU_OS_Simulator.CPU
         /// <returns> the result of the instruction or int.MINVALUE if no result is returned </returns>
         private int AND(Operand lhs, Operand rhs)
         {
-            if (lhs.IsRegister)
+            byte[] sourceBytes = new byte[sizeof(int)];
+            byte[] destBytes = new byte[sizeof(int)];
+            if (rhs.Type == EnumOperandType.ADDRESS) //if the source operand is a memory address 
             {
-                lhs.Register.Value = Register.FindRegister(lhs.Register.Name).Value;
-                result = lhs.Register.Value;
+                for (int i = 0; i < sourceBytes.Length; i++) // load it from memory
+                {
+                    int address = 0;
+                    if (rhs.IsRegister)
+                    {
+                        address = Register.FindRegister(rhs.Register.Name).Value + i;
+                    }
+                    else
+                    {
+                        address = rhs.Value + i;
+                    }
+                    int pageNumber = address / MemoryPage.PAGE_SIZE;
+                    int pageOffset = address % MemoryPage.PAGE_SIZE;
+                    byte? loadedByte = LoadByte(pageNumber, pageOffset);
+                    if (loadedByte != null)
+                        sourceBytes[i] = loadedByte.Value;
+                }
+                Array.Reverse(sourceBytes);
+                if (BitConverter.IsLittleEndian)
+                {
+                    Array.Reverse(sourceBytes);
+                }
+            }
+            else // otherwise load it from a register
+            {
+                if (rhs.IsRegister)
+                {
+                    sourceBytes = BitConverter.GetBytes(Register.FindRegister(rhs.Register.Name).Value);
+                }
+                else
+                {
+                    sourceBytes = BitConverter.GetBytes(rhs.Value);
+                }
+                Array.Reverse(sourceBytes);
+                if (BitConverter.IsLittleEndian)
+                {
+                    Array.Reverse(sourceBytes);
+                }
+            }
+            if (lhs.Type == EnumOperandType.ADDRESS)
+            {
+                int pageNumber = 0;
+                int pageOffset = 0;
+                for (int i = 0; i < destBytes.Length; i++)
+                {
+
+                    int address = 0;
+                    if (lhs.IsRegister)
+                    {
+                        address = Register.FindRegister(lhs.Register.Name).Value + i;
+                    }
+                    else
+                    {
+                        address = lhs.Value + i;
+                    }
+                    pageNumber = address / MemoryPage.PAGE_SIZE;
+                    pageOffset = address % MemoryPage.PAGE_SIZE;
+                    byte? loadedByte = LoadByte(pageNumber, pageOffset);
+                    if (loadedByte != null)
+                        destBytes[i] = loadedByte.Value;
+                }
+                Array.Reverse(destBytes);
+                if (BitConverter.IsLittleEndian)
+                {
+                    Array.Reverse(destBytes);
+                }
+                int value = BitConverter.ToInt32(destBytes, 0);
+                int source = BitConverter.ToInt32(sourceBytes, 0);
+                value &= source;
+                pageOffset -= 3;
+                destBytes = BitConverter.GetBytes(value);
+                for (int i = 0; i < destBytes.Length; i++)
+                {
+                    StoreByte(pageNumber, pageOffset + i, destBytes[i]);
+                }
+
             }
             else
             {
-                MessageBox.Show("First operand of AND instruction must be a register", "", MessageBoxButton.OK, MessageBoxImage.Information);
-                return int.MinValue;
+                if (lhs.IsRegister)
+                {
+                    //Register.FindRegister(lhs.Register.Name)
+                    //    .setRegisterValue(BitConverter.ToInt32(sourceBytes, 0), EnumOperandType.VALUE);
+                    destBytes = BitConverter.GetBytes(Register.FindRegister(lhs.Register.Name).Value);
+                    int value = BitConverter.ToInt32(destBytes, 0);
+                    int source = BitConverter.ToInt32(sourceBytes, 0);
+                    value &= source;
+                    Register.FindRegister(lhs.Register.Name).setRegisterValue(value, EnumOperandType.VALUE);
+                }
+                else
+                {
+                    MessageBox.Show("Destination of AND instruction Must be a register or address");
+                }
             }
-            if (rhs.IsRegister)
-            {
-                lhs.Register.Value &= Register.FindRegister(rhs.Register.Name).Value;
-            }
-            else
-            {
-                lhs.Register.Value &= rhs.Value;
-            }
-            result = lhs.Register.Value;
-            Register.FindRegister(lhs.Register.Name).setRegisterValue(result, EnumOperandType.VALUE);
             return result;
+            #region OLD
+            //if (lhs.IsRegister)
+            //{
+            //    lhs.Register.Value = Register.FindRegister(lhs.Register.Name).Value;
+            //    result = lhs.Register.Value;
+            //    //Register.FindRegister(lhs.Register.Name).setRegisterValue(result, EnumOperandType.VALUE);
+            //}
+            //else
+            //{
+            //    MessageBox.Show("First operand of AND instruction must be a register", "", MessageBoxButton.OK, MessageBoxImage.Information);
+            //    return int.MinValue;
+            //}
+            //if (rhs.IsRegister)
+            //{
+            //    lhs.Register.Value &= Register.FindRegister(rhs.Register.Name).Value;
+            //}
+            //else
+            //{
+            //    lhs.Register.Value &= rhs.Value;
+            //}
+            //result = lhs.Register.Value;
+            //Register.FindRegister(lhs.Register.Name).setRegisterValue(result, EnumOperandType.VALUE);
+            //return result;
+            #endregion OLD
         }
 
         /// <summary>
@@ -1078,27 +1363,129 @@ namespace CPU_OS_Simulator.CPU
         /// <returns> the result of the instruction or int.MINVALUE if no result is returned </returns>
         private int OR(Operand lhs, Operand rhs)
         {
-            if (lhs.IsRegister)
+            byte[] sourceBytes = new byte[sizeof(int)];
+            byte[] destBytes = new byte[sizeof(int)];
+            if (rhs.Type == EnumOperandType.ADDRESS) //if the source operand is a memory address 
             {
-                lhs.Register.Value = Register.FindRegister(lhs.Register.Name).Value;
-                result = lhs.Register.Value;
+                for (int i = 0; i < sourceBytes.Length; i++) // load it from memory
+                {
+                    int address = 0;
+                    if (rhs.IsRegister)
+                    {
+                        address = Register.FindRegister(rhs.Register.Name).Value + i;
+                    }
+                    else
+                    {
+                        address = rhs.Value + i;
+                    }
+                    int pageNumber = address / MemoryPage.PAGE_SIZE;
+                    int pageOffset = address % MemoryPage.PAGE_SIZE;
+                    byte? loadedByte = LoadByte(pageNumber, pageOffset);
+                    if (loadedByte != null)
+                        sourceBytes[i] = loadedByte.Value;
+                }
+                Array.Reverse(sourceBytes);
+                if (BitConverter.IsLittleEndian)
+                {
+                    Array.Reverse(sourceBytes);
+                }
+            }
+            else // otherwise load it from a register
+            {
+                if (rhs.IsRegister)
+                {
+                    sourceBytes = BitConverter.GetBytes(Register.FindRegister(rhs.Register.Name).Value);
+                }
+                else
+                {
+                    sourceBytes = BitConverter.GetBytes(rhs.Value);
+                }
+                Array.Reverse(sourceBytes);
+                if (BitConverter.IsLittleEndian)
+                {
+                    Array.Reverse(sourceBytes);
+                }
+            }
+            if (lhs.Type == EnumOperandType.ADDRESS)
+            {
+                int pageNumber = 0;
+                int pageOffset = 0;
+                for (int i = 0; i < destBytes.Length; i++)
+                {
+
+                    int address = 0;
+                    if (lhs.IsRegister)
+                    {
+                        address = Register.FindRegister(lhs.Register.Name).Value + i;
+                    }
+                    else
+                    {
+                        address = lhs.Value + i;
+                    }
+                    pageNumber = address / MemoryPage.PAGE_SIZE;
+                    pageOffset = address % MemoryPage.PAGE_SIZE;
+                    byte? loadedByte = LoadByte(pageNumber, pageOffset);
+                    if (loadedByte != null)
+                        destBytes[i] = loadedByte.Value;
+                }
+                Array.Reverse(destBytes);
+                if (BitConverter.IsLittleEndian)
+                {
+                    Array.Reverse(destBytes);
+                }
+                int value = BitConverter.ToInt32(destBytes, 0);
+                int source = BitConverter.ToInt32(sourceBytes, 0);
+                value |= source;
+                pageOffset -= 3;
+                destBytes = BitConverter.GetBytes(value);
+                for (int i = 0; i < destBytes.Length; i++)
+                {
+                    StoreByte(pageNumber, pageOffset + i, destBytes[i]);
+                }
+
             }
             else
             {
-                MessageBox.Show("First operand of OR instruction must be a register", "", MessageBoxButton.OK, MessageBoxImage.Information);
-                return int.MinValue;
+                if (lhs.IsRegister)
+                {
+                    //Register.FindRegister(lhs.Register.Name)
+                    //    .setRegisterValue(BitConverter.ToInt32(sourceBytes, 0), EnumOperandType.VALUE);
+                    destBytes = BitConverter.GetBytes(Register.FindRegister(lhs.Register.Name).Value);
+                    int value = BitConverter.ToInt32(destBytes, 0);
+                    int source = BitConverter.ToInt32(sourceBytes, 0);
+                    value |= source;
+                    Register.FindRegister(lhs.Register.Name).setRegisterValue(value, EnumOperandType.VALUE);
+                }
+                else
+                {
+                    MessageBox.Show("Destination of OR instruction Must be a register or address");
+                }
             }
-            if (rhs.IsRegister)
-            {
-                lhs.Register.Value |= Register.FindRegister(rhs.Register.Name).Value;
-            }
-            else
-            {
-                lhs.Register.Value |= rhs.Value;
-            }
-            result = lhs.Register.Value;
-            Register.FindRegister(lhs.Register.Name).setRegisterValue(result, EnumOperandType.VALUE);
             return result;
+            #region OLD
+            //if (lhs.IsRegister)
+            //{
+            //    lhs.Register.Value = Register.FindRegister(lhs.Register.Name).Value;
+            //    result = lhs.Register.Value;
+            //    //Register.FindRegister(lhs.Register.Name).setRegisterValue(result, EnumOperandType.VALUE);
+            //}
+            //else
+            //{
+            //    MessageBox.Show("First operand of OR instruction must be a register", "", MessageBoxButton.OK, MessageBoxImage.Information);
+            //    return int.MinValue;
+            //}
+            //if (rhs.IsRegister)
+            //{
+            //    lhs.Register.Value |= Register.FindRegister(rhs.Register.Name).Value;
+            //}
+            //else
+            //{
+            //    lhs.Register.Value |= rhs.Value;
+            //}
+            //result = lhs.Register.Value;
+            //Register.FindRegister(lhs.Register.Name).setRegisterValue(result, EnumOperandType.VALUE);
+            //return result;
+            #endregion OLD
         }
 
         /// <summary>
@@ -1109,27 +1496,128 @@ namespace CPU_OS_Simulator.CPU
         /// <returns> the result of the instruction or int.MINVALUE if no result is returned </returns>
         private int NOT(Operand lhs, Operand rhs)
         {
-            if (lhs.IsRegister)
+            //TODO update not for memory operands
+            byte[] sourceBytes = new byte[sizeof(int)];
+            byte[] destBytes = new byte[sizeof(int)];
+            if (rhs.Type == EnumOperandType.ADDRESS) //if the source operand is a memory address 
             {
-                lhs.Register.Value = Register.FindRegister(lhs.Register.Name).Value;
-                result = lhs.Register.Value;
+                for (int i = 0; i < sourceBytes.Length; i++) // load it from memory
+                {
+                    int address = 0;
+                    if (rhs.IsRegister)
+                    {
+                        address = Register.FindRegister(rhs.Register.Name).Value + i;
+                    }
+                    else
+                    {
+                        address = rhs.Value + i;
+                    }
+                    int pageNumber = address / MemoryPage.PAGE_SIZE;
+                    int pageOffset = address % MemoryPage.PAGE_SIZE;
+                    byte? loadedByte = LoadByte(pageNumber, pageOffset);
+                    if (loadedByte != null)
+                        sourceBytes[i] = loadedByte.Value;
+                }
+                Array.Reverse(sourceBytes);
+                if (BitConverter.IsLittleEndian)
+                {
+                    Array.Reverse(sourceBytes);
+                }
+            }
+            else // otherwise load it from a register
+            {
+                if (rhs.IsRegister)
+                {
+                    sourceBytes = BitConverter.GetBytes(Register.FindRegister(rhs.Register.Name).Value);
+                }
+                else
+                {
+                    sourceBytes = BitConverter.GetBytes(rhs.Value);
+                }
+                Array.Reverse(sourceBytes);
+                if (BitConverter.IsLittleEndian)
+                {
+                    Array.Reverse(sourceBytes);
+                }
+            }
+            if (lhs.Type == EnumOperandType.ADDRESS)
+            {
+                int pageNumber = 0;
+                int pageOffset = 0;
+                for (int i = 0; i < destBytes.Length; i++)
+                {
+
+                    int address = 0;
+                    if (lhs.IsRegister)
+                    {
+                        address = Register.FindRegister(lhs.Register.Name).Value + i;
+                    }
+                    else
+                    {
+                        address = lhs.Value + i;
+                    }
+                    pageNumber = address / MemoryPage.PAGE_SIZE;
+                    pageOffset = address % MemoryPage.PAGE_SIZE;
+                    byte? loadedByte = LoadByte(pageNumber, pageOffset);
+                    if (loadedByte != null)
+                        destBytes[i] = loadedByte.Value;
+                }
+                Array.Reverse(destBytes);
+                if (BitConverter.IsLittleEndian)
+                {
+                    Array.Reverse(destBytes);
+                }
+                int source = BitConverter.ToInt32(sourceBytes, 0);
+                int value = ~source;
+                pageOffset -= 3;
+                destBytes = BitConverter.GetBytes(value);
+                for (int i = 0; i < destBytes.Length; i++)
+                {
+                    StoreByte(pageNumber, pageOffset + i, destBytes[i]);
+                }
+
             }
             else
             {
-                MessageBox.Show("First operand of NOT instruction must be a register", "", MessageBoxButton.OK, MessageBoxImage.Information);
-                return int.MinValue;
+                if (lhs.IsRegister)
+                {
+                    //Register.FindRegister(lhs.Register.Name)
+                    //    .setRegisterValue(BitConverter.ToInt32(sourceBytes, 0), EnumOperandType.VALUE);
+                    destBytes = BitConverter.GetBytes(Register.FindRegister(lhs.Register.Name).Value);
+                    int source = BitConverter.ToInt32(sourceBytes, 0);
+                    int value = ~source;
+                    Register.FindRegister(lhs.Register.Name).setRegisterValue(value, EnumOperandType.VALUE);
+                }
+                else
+                {
+                    MessageBox.Show("Destination of NOT instruction Must be a register or address");
+                }
             }
-            if (rhs.IsRegister)
-            {
-                lhs.Register.Value = ~Register.FindRegister(rhs.Register.Name).Value;
-            }
-            else
-            {
-                lhs.Register.Value = ~rhs.Value;
-            }
-            result = lhs.Register.Value;
-            Register.FindRegister(lhs.Register.Name).setRegisterValue(result, EnumOperandType.VALUE);
             return result;
+
+            #region OLD
+            //if (lhs.IsRegister)
+            //{
+            //    lhs.Register.Value = Register.FindRegister(lhs.Register.Name).Value;
+            //    result = lhs.Register.Value;
+            //}
+            //else
+            //{
+            //    MessageBox.Show("First operand of NOT instruction must be a register", "", MessageBoxButton.OK, MessageBoxImage.Information);
+            //    return int.MinValue;
+            //}
+            //if (rhs.IsRegister)
+            //{
+            //    lhs.Register.Value = ~Register.FindRegister(rhs.Register.Name).Value;
+            //}
+            //else
+            //{
+            //    lhs.Register.Value = ~rhs.Value;
+            //}
+            //result = lhs.Register.Value;
+            //Register.FindRegister(lhs.Register.Name).setRegisterValue(result, EnumOperandType.VALUE);
+            //return result;
+            #endregion OLD
         }
 
         /// <summary>
@@ -1140,58 +1628,265 @@ namespace CPU_OS_Simulator.CPU
         /// <returns> the result of the instruction or int.MINVALUE if no result is returned </returns>
         private int SHL(Operand lhs, Operand rhs)
         {
-            if (lhs.IsRegister)
+            byte[] sourceBytes = new byte[sizeof (int)];
+            byte[] destBytes = new byte[sizeof (int)];
+            if (rhs.Type == EnumOperandType.ADDRESS) //if the source operand is a memory address 
             {
-                lhs.Register.Value = Register.FindRegister(lhs.Register.Name).Value;
-                result = lhs.Register.Value;
+                for (int i = 0; i < sourceBytes.Length; i++) // load it from memory
+                {
+                    int address = 0;
+                    if (rhs.IsRegister)
+                    {
+                        address = Register.FindRegister(rhs.Register.Name).Value + i;
+                    }
+                    else
+                    {
+                        address = rhs.Value + i;
+                    }
+                    int pageNumber = address/MemoryPage.PAGE_SIZE;
+                    int pageOffset = address%MemoryPage.PAGE_SIZE;
+                    byte? loadedByte = LoadByte(pageNumber, pageOffset);
+                    if (loadedByte != null)
+                        sourceBytes[i] = loadedByte.Value;
+                }
+                Array.Reverse(sourceBytes);
+                if (BitConverter.IsLittleEndian)
+                {
+                    Array.Reverse(sourceBytes);
+                }
+            }
+            else // otherwise load it from a register
+            {
+                if (rhs.IsRegister)
+                {
+                    sourceBytes = BitConverter.GetBytes(Register.FindRegister(rhs.Register.Name).Value);
+                }
+                else
+                {
+                    sourceBytes = BitConverter.GetBytes(rhs.Value);
+                }
+                Array.Reverse(sourceBytes);
+                if (BitConverter.IsLittleEndian)
+                {
+                    Array.Reverse(sourceBytes);
+                }
+            }
+            if (lhs.Type == EnumOperandType.ADDRESS)
+            {
+                int pageNumber = 0;
+                int pageOffset = 0;
+                for (int i = 0; i < destBytes.Length; i++)
+                {
+
+                    int address = 0;
+                    if (lhs.IsRegister)
+                    {
+                        address = Register.FindRegister(lhs.Register.Name).Value + i;
+                    }
+                    else
+                    {
+                        address = lhs.Value + i;
+                    }
+                    pageNumber = address/MemoryPage.PAGE_SIZE;
+                    pageOffset = address%MemoryPage.PAGE_SIZE;
+                    byte? loadedByte = LoadByte(pageNumber, pageOffset);
+                    if (loadedByte != null)
+                        destBytes[i] = loadedByte.Value;
+                }
+                Array.Reverse(destBytes);
+                if (BitConverter.IsLittleEndian)
+                {
+                    Array.Reverse(destBytes);
+                }
+                int value = BitConverter.ToInt32(destBytes, 0);
+                int source = BitConverter.ToInt32(sourceBytes, 0);
+                value <<= source;
+                pageOffset -= 3;
+                destBytes = BitConverter.GetBytes(value);
+                for (int i = 0; i < destBytes.Length; i++)
+                {
+                    StoreByte(pageNumber, pageOffset + i, destBytes[i]);
+                }
+
             }
             else
             {
-                MessageBox.Show("First operand of SHL instruction must be a register", "", MessageBoxButton.OK, MessageBoxImage.Information);
-                return int.MinValue;
+                if (lhs.IsRegister)
+                {
+                    //Register.FindRegister(lhs.Register.Name)
+                    //    .setRegisterValue(BitConverter.ToInt32(sourceBytes, 0), EnumOperandType.VALUE);
+                    destBytes = BitConverter.GetBytes(Register.FindRegister(lhs.Register.Name).Value);
+                    int value = BitConverter.ToInt32(destBytes, 0);
+                    int source = BitConverter.ToInt32(sourceBytes, 0);
+                    value <<= source;
+                    Register.FindRegister(lhs.Register.Name).setRegisterValue(value, EnumOperandType.VALUE);
+                }
+                else
+                {
+                    MessageBox.Show("Destination of SHL instruction Must be a register or address");
+                }
             }
-            if (rhs.IsRegister)
-            {
-                lhs.Register.Value <<= Register.FindRegister(rhs.Register.Name).Value;
-            }
-            else
-            {
-                lhs.Register.Value <<= rhs.Value;
-            }
-            result = lhs.Register.Value;
-            Register.FindRegister(lhs.Register.Name).setRegisterValue(result, EnumOperandType.VALUE);
             return result;
+
+            #region OLD
+
+            //if (lhs.IsRegister)
+            //{
+            //    lhs.Register.Value = Register.FindRegister(lhs.Register.Name).Value;
+            //    result = lhs.Register.Value;
+            //    //Register.FindRegister(lhs.Register.Name).setRegisterValue(result, EnumOperandType.VALUE);
+            //}
+            //else
+            //{
+            //    MessageBox.Show("First operand of SHL instruction must be a register", "", MessageBoxButton.OK, MessageBoxImage.Information);
+            //    return int.MinValue;
+            //}
+            //if (rhs.IsRegister)
+            //{
+            //    lhs.Register.Value <<= Register.FindRegister(rhs.Register.Name).Value;
+            //}
+            //else
+            //{
+            //    lhs.Register.Value <<= rhs.Value;
+            //}
+            //result = lhs.Register.Value;
+            //Register.FindRegister(lhs.Register.Name).setRegisterValue(result, EnumOperandType.VALUE);
+            //return result;
+
+            #endregion OLD
         }
 
         /// <summary>
-        /// This function is called whenever a SHR instruction is executed
-        /// </summary>
-        /// <param name="lhs"> The left hand operand of the instruction </param>
-        /// <param name="rhs"> The right hand operand of the instruction </param>
-        /// <returns> the result of the instruction or int.MINVALUE if no result is returned </returns>
+            /// This function is called whenever a SHR instruction is executed
+            /// </summary>
+            /// <param name="lhs"> The left hand operand of the instruction </param>
+            /// <param name="rhs"> The right hand operand of the instruction </param>
+            /// <returns> the result of the instruction or int.MINVALUE if no result is returned </returns>
         private int SHR(Operand lhs, Operand rhs)
         {
-            if (lhs.IsRegister)
+            byte[] sourceBytes = new byte[sizeof(int)];
+            byte[] destBytes = new byte[sizeof(int)];
+            if (rhs.Type == EnumOperandType.ADDRESS) //if the source operand is a memory address 
             {
-                lhs.Register.Value = Register.FindRegister(lhs.Register.Name).Value;
-                result = lhs.Register.Value;
+                for (int i = 0; i < sourceBytes.Length; i++) // load it from memory
+                {
+                    int address = 0;
+                    if (rhs.IsRegister)
+                    {
+                        address = Register.FindRegister(rhs.Register.Name).Value + i;
+                    }
+                    else
+                    {
+                        address = rhs.Value + i;
+                    }
+                    int pageNumber = address / MemoryPage.PAGE_SIZE;
+                    int pageOffset = address % MemoryPage.PAGE_SIZE;
+                    byte? loadedByte = LoadByte(pageNumber, pageOffset);
+                    if (loadedByte != null)
+                        sourceBytes[i] = loadedByte.Value;
+                }
+                Array.Reverse(sourceBytes);
+                if (BitConverter.IsLittleEndian)
+                {
+                    Array.Reverse(sourceBytes);
+                }
+            }
+            else // otherwise load it from a register
+            {
+                if (rhs.IsRegister)
+                {
+                    sourceBytes = BitConverter.GetBytes(Register.FindRegister(rhs.Register.Name).Value);
+                }
+                else
+                {
+                    sourceBytes = BitConverter.GetBytes(rhs.Value);
+                }
+                Array.Reverse(sourceBytes);
+                if (BitConverter.IsLittleEndian)
+                {
+                    Array.Reverse(sourceBytes);
+                }
+            }
+            if (lhs.Type == EnumOperandType.ADDRESS)
+            {
+                int pageNumber = 0;
+                int pageOffset = 0;
+                for (int i = 0; i < destBytes.Length; i++)
+                {
+
+                    int address = 0;
+                    if (lhs.IsRegister)
+                    {
+                        address = Register.FindRegister(lhs.Register.Name).Value + i;
+                    }
+                    else
+                    {
+                        address = lhs.Value + i;
+                    }
+                    pageNumber = address / MemoryPage.PAGE_SIZE;
+                    pageOffset = address % MemoryPage.PAGE_SIZE;
+                    byte? loadedByte = LoadByte(pageNumber, pageOffset);
+                    if (loadedByte != null)
+                        destBytes[i] = loadedByte.Value;
+                }
+                Array.Reverse(destBytes);
+                if (BitConverter.IsLittleEndian)
+                {
+                    Array.Reverse(destBytes);
+                }
+                int value = BitConverter.ToInt32(destBytes, 0);
+                int source = BitConverter.ToInt32(sourceBytes, 0);
+                value >>= source;
+                pageOffset -= 3;
+                destBytes = BitConverter.GetBytes(value);
+                for (int i = 0; i < destBytes.Length; i++)
+                {
+                    StoreByte(pageNumber, pageOffset + i, destBytes[i]);
+                }
+
             }
             else
             {
-                MessageBox.Show("First operand of SHR instruction must be a register", "", MessageBoxButton.OK, MessageBoxImage.Information);
-                return int.MinValue;
+                if (lhs.IsRegister)
+                {
+                    //Register.FindRegister(lhs.Register.Name)
+                    //    .setRegisterValue(BitConverter.ToInt32(sourceBytes, 0), EnumOperandType.VALUE);
+                    destBytes = BitConverter.GetBytes(Register.FindRegister(lhs.Register.Name).Value);
+                    int value = BitConverter.ToInt32(destBytes, 0);
+                    int source = BitConverter.ToInt32(sourceBytes, 0);
+                    value >>= source;
+                    Register.FindRegister(lhs.Register.Name).setRegisterValue(value, EnumOperandType.VALUE);
+                }
+                else
+                {
+                    MessageBox.Show("Destination of SHR instruction Must be a register or address");
+                }
             }
-            if (rhs.IsRegister)
-            {
-                lhs.Register.Value >>= Register.FindRegister(rhs.Register.Name).Value;
-            }
-            else
-            {
-                lhs.Register.Value >>= rhs.Value;
-            }
-            result = lhs.Register.Value;
-            Register.FindRegister(lhs.Register.Name).setRegisterValue(result, EnumOperandType.VALUE);
             return result;
+            #region OLD
+            //if (lhs.IsRegister)
+            //{
+            //    lhs.Register.Value = Register.FindRegister(lhs.Register.Name).Value;
+            //    result = lhs.Register.Value;
+            //    //Register.FindRegister(lhs.Register.Name).setRegisterValue(result, EnumOperandType.VALUE);
+            //}
+            //else
+            //{
+            //    MessageBox.Show("First operand of SHR instruction must be a register", "", MessageBoxButton.OK, MessageBoxImage.Information);
+            //    return int.MinValue;
+            //}
+            //if (rhs.IsRegister)
+            //{
+            //    lhs.Register.Value >>= Register.FindRegister(rhs.Register.Name).Value;
+            //}
+            //else
+            //{
+            //    lhs.Register.Value >>= rhs.Value;
+            //}
+            //result = lhs.Register.Value;
+            //Register.FindRegister(lhs.Register.Name).setRegisterValue(result, EnumOperandType.VALUE);
+            //return result;
+            #endregion OLD
         }
 
         #endregion Logical
@@ -1206,28 +1901,129 @@ namespace CPU_OS_Simulator.CPU
         /// <returns> the result of the instruction or int.MINVALUE if no result is returned </returns>
         private int ADD(Operand lhs, Operand rhs)
         {
-            if (lhs.IsRegister)
+            byte[] sourceBytes = new byte[sizeof(int)];
+            byte[] destBytes = new byte[sizeof(int)];
+            if (rhs.Type == EnumOperandType.ADDRESS) //if the source operand is a memory address 
             {
-                lhs.Register.Value = Register.FindRegister(lhs.Register.Name).Value;
-                result = lhs.Register.Value;
-                //Register.FindRegister(lhs.Register.Name).setRegisterValue(result, EnumOperandType.VALUE);
+                for (int i = 0; i < sourceBytes.Length; i++) // load it from memory
+                {
+                    int address = 0;
+                    if (rhs.IsRegister)
+                    {
+                        address = Register.FindRegister(rhs.Register.Name).Value + i;
+                    }
+                    else
+                    {
+                        address = rhs.Value + i;
+                    }
+                    int pageNumber = address / MemoryPage.PAGE_SIZE;
+                    int pageOffset = address % MemoryPage.PAGE_SIZE;
+                    byte? loadedByte = LoadByte(pageNumber, pageOffset);
+                    if (loadedByte != null)
+                        sourceBytes[i] = loadedByte.Value;
+                }
+                Array.Reverse(sourceBytes);
+                if (BitConverter.IsLittleEndian)
+                {
+                    Array.Reverse(sourceBytes);
+                }
+            }
+            else // otherwise load it from a register
+            {
+                if (rhs.IsRegister)
+                {
+                    sourceBytes = BitConverter.GetBytes(Register.FindRegister(rhs.Register.Name).Value);
+                }
+                else
+                {
+                    sourceBytes = BitConverter.GetBytes(rhs.Value);
+                }
+                Array.Reverse(sourceBytes);
+                if (BitConverter.IsLittleEndian)
+                {
+                    Array.Reverse(sourceBytes);
+                }
+            }
+            if (lhs.Type == EnumOperandType.ADDRESS)
+            {
+                int pageNumber = 0;
+                int pageOffset = 0;
+                for (int i = 0; i < destBytes.Length; i++)
+                {
+
+                    int address = 0;
+                    if (lhs.IsRegister)
+                    {
+                        address = Register.FindRegister(lhs.Register.Name).Value + i;
+                    }
+                    else
+                    {
+                        address = lhs.Value + i;
+                    }
+                    pageNumber = address / MemoryPage.PAGE_SIZE;
+                    pageOffset = address % MemoryPage.PAGE_SIZE;
+                    byte? loadedByte = LoadByte(pageNumber, pageOffset);
+                    if (loadedByte != null)
+                        destBytes[i] = loadedByte.Value;
+                }
+                Array.Reverse(destBytes);
+                if (BitConverter.IsLittleEndian)
+                {
+                    Array.Reverse(destBytes);
+                }
+                int value = BitConverter.ToInt32(destBytes,0);
+                int source = BitConverter.ToInt32(sourceBytes, 0);
+                value += source;
+                pageOffset -= 3;
+                destBytes = BitConverter.GetBytes(value);
+                for (int i = 0; i < destBytes.Length; i++)
+                {
+                    StoreByte(pageNumber,pageOffset + i,destBytes[i]);
+                }
+
             }
             else
             {
-                MessageBox.Show("First operand of ADD instruction must be a register", "", MessageBoxButton.OK, MessageBoxImage.Information);
-                return int.MinValue;
+                if (lhs.IsRegister)
+                {
+                    //Register.FindRegister(lhs.Register.Name)
+                    //    .setRegisterValue(BitConverter.ToInt32(sourceBytes, 0), EnumOperandType.VALUE);
+                    destBytes = BitConverter.GetBytes(Register.FindRegister(lhs.Register.Name).Value);
+                    int value = BitConverter.ToInt32(destBytes, 0);
+                    int source = BitConverter.ToInt32(sourceBytes, 0);
+                    value += source;
+                    Register.FindRegister(lhs.Register.Name).setRegisterValue(value,EnumOperandType.VALUE);
+                }
+                else
+                {
+                    MessageBox.Show("Destination of ADD instruction Must be a register or address");
+                }
             }
-            if (rhs.IsRegister)
-            {
-                lhs.Register.Value += Register.FindRegister(rhs.Register.Name).Value;
-            }
-            else
-            {
-                lhs.Register.Value += rhs.Value;
-            }
-            result = lhs.Register.Value;
-            Register.FindRegister(lhs.Register.Name).setRegisterValue(result, EnumOperandType.VALUE);
             return result;
+            #region OLD
+            //if (lhs.IsRegister)
+            //{
+            //    lhs.Register.Value = Register.FindRegister(lhs.Register.Name).Value;
+            //    result = lhs.Register.Value;
+            //    //Register.FindRegister(lhs.Register.Name).setRegisterValue(result, EnumOperandType.VALUE);
+            //}
+            //else
+            //{
+            //    MessageBox.Show("First operand of ADD instruction must be a register", "", MessageBoxButton.OK, MessageBoxImage.Information);
+            //    return int.MinValue;
+            //}
+            //if (rhs.IsRegister)
+            //{
+            //    lhs.Register.Value += Register.FindRegister(rhs.Register.Name).Value;
+            //}
+            //else
+            //{
+            //    lhs.Register.Value += rhs.Value;
+            //}
+            //result = lhs.Register.Value;
+            //Register.FindRegister(lhs.Register.Name).setRegisterValue(result, EnumOperandType.VALUE);
+            //return result;
+            #endregion OLD
         }
 
         /// <summary>
@@ -1238,28 +2034,129 @@ namespace CPU_OS_Simulator.CPU
         /// <returns> the result of the instruction or int.MINVALUE if no result is returned </returns>
         private int SUB(Operand lhs, Operand rhs)
         {
-            if (lhs.IsRegister)
+            byte[] sourceBytes = new byte[sizeof(int)];
+            byte[] destBytes = new byte[sizeof(int)];
+            if (rhs.Type == EnumOperandType.ADDRESS) //if the source operand is a memory address 
             {
-                lhs.Register.Value = Register.FindRegister(lhs.Register.Name).Value;
-                result = lhs.Register.Value;
-                //Register.FindRegister(lhs.Register.Name).setRegisterValue(result, EnumOperandType.VALUE);
+                for (int i = 0; i < sourceBytes.Length; i++) // load it from memory
+                {
+                    int address = 0;
+                    if (rhs.IsRegister)
+                    {
+                        address = Register.FindRegister(rhs.Register.Name).Value + i;
+                    }
+                    else
+                    {
+                        address = rhs.Value + i;
+                    }
+                    int pageNumber = address / MemoryPage.PAGE_SIZE;
+                    int pageOffset = address % MemoryPage.PAGE_SIZE;
+                    byte? loadedByte = LoadByte(pageNumber, pageOffset);
+                    if (loadedByte != null)
+                        sourceBytes[i] = loadedByte.Value;
+                }
+                Array.Reverse(sourceBytes);
+                if (BitConverter.IsLittleEndian)
+                {
+                    Array.Reverse(sourceBytes);
+                }
+            }
+            else // otherwise load it from a register
+            {
+                if (rhs.IsRegister)
+                {
+                    sourceBytes = BitConverter.GetBytes(Register.FindRegister(rhs.Register.Name).Value);
+                }
+                else
+                {
+                    sourceBytes = BitConverter.GetBytes(rhs.Value);
+                }
+                Array.Reverse(sourceBytes);
+                if (BitConverter.IsLittleEndian)
+                {
+                    Array.Reverse(sourceBytes);
+                }
+            }
+            if (lhs.Type == EnumOperandType.ADDRESS)
+            {
+                int pageNumber = 0;
+                int pageOffset = 0;
+                for (int i = 0; i < destBytes.Length; i++)
+                {
+
+                    int address = 0;
+                    if (lhs.IsRegister)
+                    {
+                        address = Register.FindRegister(lhs.Register.Name).Value + i;
+                    }
+                    else
+                    {
+                        address = lhs.Value + i;
+                    }
+                    pageNumber = address / MemoryPage.PAGE_SIZE;
+                    pageOffset = address % MemoryPage.PAGE_SIZE;
+                    byte? loadedByte = LoadByte(pageNumber, pageOffset);
+                    if (loadedByte != null)
+                        destBytes[i] = loadedByte.Value;
+                }
+                Array.Reverse(destBytes);
+                if (BitConverter.IsLittleEndian)
+                {
+                    Array.Reverse(destBytes);
+                }
+                int value = BitConverter.ToInt32(destBytes, 0);
+                int source = BitConverter.ToInt32(sourceBytes, 0);
+                value -= source;
+                pageOffset -= 3;
+                destBytes = BitConverter.GetBytes(value);
+                for (int i = 0; i < destBytes.Length; i++)
+                {
+                    StoreByte(pageNumber, pageOffset + i, destBytes[i]);
+                }
+
             }
             else
             {
-                MessageBox.Show("First operand of SUB instruction must be a register", "", MessageBoxButton.OK, MessageBoxImage.Information);
-                return int.MinValue;
+                if (lhs.IsRegister)
+                {
+                    //Register.FindRegister(lhs.Register.Name)
+                    //    .setRegisterValue(BitConverter.ToInt32(sourceBytes, 0), EnumOperandType.VALUE);
+                    destBytes = BitConverter.GetBytes(Register.FindRegister(lhs.Register.Name).Value);
+                    int value = BitConverter.ToInt32(destBytes, 0);
+                    int source = BitConverter.ToInt32(sourceBytes, 0);
+                    value -= source;
+                    Register.FindRegister(lhs.Register.Name).setRegisterValue(value, EnumOperandType.VALUE);
+                }
+                else
+                {
+                    MessageBox.Show("Destination of SUB instruction Must be a register or address");
+                }
             }
-            if (rhs.IsRegister)
-            {
-                lhs.Register.Value -= Register.FindRegister(rhs.Register.Name).Value;
-            }
-            else
-            {
-                lhs.Register.Value -= rhs.Value;
-            }
-            result = lhs.Register.Value;
-            Register.FindRegister(lhs.Register.Name).setRegisterValue(result, EnumOperandType.VALUE);
             return result;
+            #region OLD
+            //if (lhs.IsRegister)
+            //{
+            //    lhs.Register.Value = Register.FindRegister(lhs.Register.Name).Value;
+            //    result = lhs.Register.Value;
+            //    //Register.FindRegister(lhs.Register.Name).setRegisterValue(result, EnumOperandType.VALUE);
+            //}
+            //else
+            //{
+            //    MessageBox.Show("First operand of SUB instruction must be a register", "", MessageBoxButton.OK, MessageBoxImage.Information);
+            //    return int.MinValue;
+            //}
+            //if (rhs.IsRegister)
+            //{
+            //    lhs.Register.Value -= Register.FindRegister(rhs.Register.Name).Value;
+            //}
+            //else
+            //{
+            //    lhs.Register.Value -= rhs.Value;
+            //}
+            //result = lhs.Register.Value;
+            //Register.FindRegister(lhs.Register.Name).setRegisterValue(result, EnumOperandType.VALUE);
+            //return result;
+            #endregion OLD
         }
 
         /// <summary>
@@ -1270,28 +2167,129 @@ namespace CPU_OS_Simulator.CPU
         /// <returns> the result of the instruction or int.MINVALUE if no result is returned </returns>
         private int SUBU(Operand lhs, Operand rhs)
         {
-            if (lhs.IsRegister)
+            byte[] sourceBytes = new byte[sizeof(int)];
+            byte[] destBytes = new byte[sizeof(int)];
+            if (rhs.Type == EnumOperandType.ADDRESS) //if the source operand is a memory address 
             {
-                lhs.Register.Value = Math.Abs(Register.FindRegister(lhs.Register.Name).Value);
-                result = lhs.Register.Value;
-                //Register.FindRegister(lhs.Register.Name).setRegisterValue(result, EnumOperandType.VALUE);
+                for (int i = 0; i < sourceBytes.Length; i++) // load it from memory
+                {
+                    int address = 0;
+                    if (rhs.IsRegister)
+                    {
+                        address = Register.FindRegister(rhs.Register.Name).Value + i;
+                    }
+                    else
+                    {
+                        address = rhs.Value + i;
+                    }
+                    int pageNumber = address / MemoryPage.PAGE_SIZE;
+                    int pageOffset = address % MemoryPage.PAGE_SIZE;
+                    byte? loadedByte = LoadByte(pageNumber, pageOffset);
+                    if (loadedByte != null)
+                        sourceBytes[i] = loadedByte.Value;
+                }
+                Array.Reverse(sourceBytes);
+                if (BitConverter.IsLittleEndian)
+                {
+                    Array.Reverse(sourceBytes);
+                }
+            }
+            else // otherwise load it from a register
+            {
+                if (rhs.IsRegister)
+                {
+                    sourceBytes = BitConverter.GetBytes(Register.FindRegister(rhs.Register.Name).Value);
+                }
+                else
+                {
+                    sourceBytes = BitConverter.GetBytes(rhs.Value);
+                }
+                Array.Reverse(sourceBytes);
+                if (BitConverter.IsLittleEndian)
+                {
+                    Array.Reverse(sourceBytes);
+                }
+            }
+            if (lhs.Type == EnumOperandType.ADDRESS)
+            {
+                int pageNumber = 0;
+                int pageOffset = 0;
+                for (int i = 0; i < destBytes.Length; i++)
+                {
+
+                    int address = 0;
+                    if (lhs.IsRegister)
+                    {
+                        address = Register.FindRegister(lhs.Register.Name).Value + i;
+                    }
+                    else
+                    {
+                        address = lhs.Value + i;
+                    }
+                    pageNumber = address / MemoryPage.PAGE_SIZE;
+                    pageOffset = address % MemoryPage.PAGE_SIZE;
+                    byte? loadedByte = LoadByte(pageNumber, pageOffset);
+                    if (loadedByte != null)
+                        destBytes[i] = loadedByte.Value;
+                }
+                Array.Reverse(destBytes);
+                if (BitConverter.IsLittleEndian)
+                {
+                    Array.Reverse(destBytes);
+                }
+                int value = BitConverter.ToInt32(destBytes, 0);
+                int source = BitConverter.ToInt32(sourceBytes, 0);
+                value += source;
+                pageOffset -= 3;
+                destBytes = BitConverter.GetBytes(value);
+                for (int i = 0; i < destBytes.Length; i++)
+                {
+                    StoreByte(pageNumber, pageOffset + i, destBytes[i]);
+                }
+
             }
             else
             {
-                MessageBox.Show("First operand of SUBU instruction must be a register", "", MessageBoxButton.OK, MessageBoxImage.Information);
-                return int.MinValue;
+                if (lhs.IsRegister)
+                {
+                    //Register.FindRegister(lhs.Register.Name)
+                    //    .setRegisterValue(BitConverter.ToInt32(sourceBytes, 0), EnumOperandType.VALUE);
+                    destBytes = BitConverter.GetBytes(Register.FindRegister(lhs.Register.Name).Value);
+                    int value = BitConverter.ToInt32(destBytes, 0);
+                    int source = BitConverter.ToInt32(sourceBytes, 0);
+                    value = Math.Abs(value - source);
+                    Register.FindRegister(lhs.Register.Name).setRegisterValue(value, EnumOperandType.VALUE);
+                }
+                else
+                {
+                    MessageBox.Show("Destination of SUBU instruction Must be a register or address");
+                }
             }
-            if (rhs.IsRegister)
-            {
-                lhs.Register.Value = Math.Abs(lhs.Register.Value - Register.FindRegister(rhs.Register.Name).Value);
-            }
-            else
-            {
-                lhs.Register.Value = Math.Abs(lhs.Register.Value - rhs.Value);
-            }
-            result = lhs.Register.Value;
-            Register.FindRegister(lhs.Register.Name).setRegisterValue(result, EnumOperandType.VALUE);
             return result;
+            #region OLD
+            //if (lhs.IsRegister)
+            //{
+            //    lhs.Register.Value = Register.FindRegister(lhs.Register.Name).Value;
+            //    result = lhs.Register.Value;
+            //    //Register.FindRegister(lhs.Register.Name).setRegisterValue(result, EnumOperandType.VALUE);
+            //}
+            //else
+            //{
+            //    MessageBox.Show("First operand of ADD instruction must be a register", "", MessageBoxButton.OK, MessageBoxImage.Information);
+            //    return int.MinValue;
+            //}
+            //if (rhs.IsRegister)
+            //{
+            //    lhs.Register.Value = Math.Abs(lhs.Register.Value - Register.FindRegister(rhs.Register.Name).Value);
+            //}
+            //else
+            //{
+            //    lhs.Register.Value = Math.Abs(lhs.Register.Value - rhs.Value);
+            //}
+            //result = lhs.Register.Value;
+            //Register.FindRegister(lhs.Register.Name).setRegisterValue(result, EnumOperandType.VALUE);
+            //return result;
+            #endregion OLD
         }
 
         /// <summary>
@@ -1302,28 +2300,129 @@ namespace CPU_OS_Simulator.CPU
         /// <returns> the result of the instruction or int.MINVALUE if no result is returned </returns>
         private int MUL(Operand lhs, Operand rhs)
         {
-            if (lhs.IsRegister)
+            byte[] sourceBytes = new byte[sizeof(int)];
+            byte[] destBytes = new byte[sizeof(int)];
+            if (rhs.Type == EnumOperandType.ADDRESS) //if the source operand is a memory address 
             {
-                lhs.Register.Value = Register.FindRegister(lhs.Register.Name).Value;
-                result = lhs.Register.Value;
-                //Register.FindRegister(lhs.Register.Name).setRegisterValue(result, EnumOperandType.VALUE);
+                for (int i = 0; i < sourceBytes.Length; i++) // load it from memory
+                {
+                    int address = 0;
+                    if (rhs.IsRegister)
+                    {
+                        address = Register.FindRegister(rhs.Register.Name).Value + i;
+                    }
+                    else
+                    {
+                        address = rhs.Value + i;
+                    }
+                    int pageNumber = address / MemoryPage.PAGE_SIZE;
+                    int pageOffset = address % MemoryPage.PAGE_SIZE;
+                    byte? loadedByte = LoadByte(pageNumber, pageOffset);
+                    if (loadedByte != null)
+                        sourceBytes[i] = loadedByte.Value;
+                }
+                Array.Reverse(sourceBytes);
+                if (BitConverter.IsLittleEndian)
+                {
+                    Array.Reverse(sourceBytes);
+                }
+            }
+            else // otherwise load it from a register
+            {
+                if (rhs.IsRegister)
+                {
+                    sourceBytes = BitConverter.GetBytes(Register.FindRegister(rhs.Register.Name).Value);
+                }
+                else
+                {
+                    sourceBytes = BitConverter.GetBytes(rhs.Value);
+                }
+                Array.Reverse(sourceBytes);
+                if (BitConverter.IsLittleEndian)
+                {
+                    Array.Reverse(sourceBytes);
+                }
+            }
+            if (lhs.Type == EnumOperandType.ADDRESS)
+            {
+                int pageNumber = 0;
+                int pageOffset = 0;
+                for (int i = 0; i < destBytes.Length; i++)
+                {
+
+                    int address = 0;
+                    if (lhs.IsRegister)
+                    {
+                        address = Register.FindRegister(lhs.Register.Name).Value + i;
+                    }
+                    else
+                    {
+                        address = lhs.Value + i;
+                    }
+                    pageNumber = address / MemoryPage.PAGE_SIZE;
+                    pageOffset = address % MemoryPage.PAGE_SIZE;
+                    byte? loadedByte = LoadByte(pageNumber, pageOffset);
+                    if (loadedByte != null)
+                        destBytes[i] = loadedByte.Value;
+                }
+                Array.Reverse(destBytes);
+                if (BitConverter.IsLittleEndian)
+                {
+                    Array.Reverse(destBytes);
+                }
+                int value = BitConverter.ToInt32(destBytes, 0);
+                int source = BitConverter.ToInt32(sourceBytes, 0);
+                value *= source;
+                pageOffset -= 3;
+                destBytes = BitConverter.GetBytes(value);
+                for (int i = 0; i < destBytes.Length; i++)
+                {
+                    StoreByte(pageNumber, pageOffset + i, destBytes[i]);
+                }
+
             }
             else
             {
-                MessageBox.Show("First operand of MUL instruction must be a register", "", MessageBoxButton.OK, MessageBoxImage.Information);
-                return int.MinValue;
+                if (lhs.IsRegister)
+                {
+                    //Register.FindRegister(lhs.Register.Name)
+                    //    .setRegisterValue(BitConverter.ToInt32(sourceBytes, 0), EnumOperandType.VALUE);
+                    destBytes = BitConverter.GetBytes(Register.FindRegister(lhs.Register.Name).Value);
+                    int value = BitConverter.ToInt32(destBytes, 0);
+                    int source = BitConverter.ToInt32(sourceBytes, 0);
+                    value *= source;
+                    Register.FindRegister(lhs.Register.Name).setRegisterValue(value, EnumOperandType.VALUE);
+                }
+                else
+                {
+                    MessageBox.Show("Destination of MUL instruction Must be a register or address");
+                }
             }
-            if (rhs.IsRegister)
-            {
-                lhs.Register.Value *= Register.FindRegister(rhs.Register.Name).Value;
-            }
-            else
-            {
-                lhs.Register.Value *= rhs.Value;
-            }
-            result = lhs.Register.Value;
-            Register.FindRegister(lhs.Register.Name).setRegisterValue(result, EnumOperandType.VALUE);
             return result;
+            #region OLD
+            //if (lhs.IsRegister)
+            //{
+            //    lhs.Register.Value = Register.FindRegister(lhs.Register.Name).Value;
+            //    result = lhs.Register.Value;
+            //    //Register.FindRegister(lhs.Register.Name).setRegisterValue(result, EnumOperandType.VALUE);
+            //}
+            //else
+            //{
+            //    MessageBox.Show("First operand of MUL instruction must be a register", "", MessageBoxButton.OK, MessageBoxImage.Information);
+            //    return int.MinValue;
+            //}
+            //if (rhs.IsRegister)
+            //{
+            //    lhs.Register.Value *= Register.FindRegister(rhs.Register.Name).Value;
+            //}
+            //else
+            //{
+            //    lhs.Register.Value *= rhs.Value;
+            //}
+            //result = lhs.Register.Value;
+            //Register.FindRegister(lhs.Register.Name).setRegisterValue(result, EnumOperandType.VALUE);
+            //return result;
+            #endregion OLD
         }
 
         /// <summary>
@@ -1334,62 +2433,240 @@ namespace CPU_OS_Simulator.CPU
         /// <returns> the result of the instruction or int.MINVALUE if no result is returned </returns>
         private int DIV(Operand lhs, Operand rhs)
         {
-            if (lhs.IsRegister)
+            byte[] sourceBytes = new byte[sizeof (int)];
+            byte[] destBytes = new byte[sizeof (int)];
+            if (rhs.Type == EnumOperandType.ADDRESS) //if the source operand is a memory address 
             {
-                lhs.Register.Value = Register.FindRegister(lhs.Register.Name).Value;
-                result = lhs.Register.Value;
-                //Register.FindRegister(lhs.Register.Name).setRegisterValue(result, EnumOperandType.VALUE);
+                for (int i = 0; i < sourceBytes.Length; i++) // load it from memory
+                {
+                    int address = 0;
+                    if (rhs.IsRegister)
+                    {
+                        address = Register.FindRegister(rhs.Register.Name).Value + i;
+                    }
+                    else
+                    {
+                        address = rhs.Value + i;
+                    }
+                    int pageNumber = address/MemoryPage.PAGE_SIZE;
+                    int pageOffset = address%MemoryPage.PAGE_SIZE;
+                    byte? loadedByte = LoadByte(pageNumber, pageOffset);
+                    if (loadedByte != null)
+                        sourceBytes[i] = loadedByte.Value;
+                }
+                Array.Reverse(sourceBytes);
+                if (BitConverter.IsLittleEndian)
+                {
+                    Array.Reverse(sourceBytes);
+                }
+            }
+            else // otherwise load it from a register
+            {
+                if (rhs.IsRegister)
+                {
+                    sourceBytes = BitConverter.GetBytes(Register.FindRegister(rhs.Register.Name).Value);
+                }
+                else
+                {
+                    sourceBytes = BitConverter.GetBytes(rhs.Value);
+                }
+                Array.Reverse(sourceBytes);
+                if (BitConverter.IsLittleEndian)
+                {
+                    Array.Reverse(sourceBytes);
+                }
+            }
+            if (lhs.Type == EnumOperandType.ADDRESS)
+            {
+                int pageNumber = 0;
+                int pageOffset = 0;
+                for (int i = 0; i < destBytes.Length; i++)
+                {
+
+                    int address = 0;
+                    if (lhs.IsRegister)
+                    {
+                        address = Register.FindRegister(lhs.Register.Name).Value + i;
+                    }
+                    else
+                    {
+                        address = lhs.Value + i;
+                    }
+                    pageNumber = address/MemoryPage.PAGE_SIZE;
+                    pageOffset = address%MemoryPage.PAGE_SIZE;
+                    byte? loadedByte = LoadByte(pageNumber, pageOffset);
+                    if (loadedByte != null)
+                        destBytes[i] = loadedByte.Value;
+                }
+                Array.Reverse(destBytes);
+                if (BitConverter.IsLittleEndian)
+                {
+                    Array.Reverse(destBytes);
+                }
+                int value = BitConverter.ToInt32(destBytes, 0);
+                int source = BitConverter.ToInt32(sourceBytes, 0);
+                if (source == 0)
+                {
+                    MessageBox.Show("Cannot Divide by zero (0)");
+                    return int.MinValue;
+                }
+                else
+                {
+                    value /= source;
+                    pageOffset -= 3;
+                    destBytes = BitConverter.GetBytes(value);
+                    for (int i = 0; i < destBytes.Length; i++)
+                    {
+                        StoreByte(pageNumber, pageOffset + i, destBytes[i]);
+                    }
+                }
+
             }
             else
             {
-                MessageBox.Show("First operand of DIV instruction must be a register", "", MessageBoxButton.OK, MessageBoxImage.Information);
-                return int.MinValue;
-            }
-            if (rhs.IsRegister)
-            {
-                if (Register.FindRegister(rhs.Register.Name).Value == 0)
+                if (lhs.IsRegister)
                 {
-                    MessageBox.Show("Cannot Divide by ZERO", "", MessageBoxButton.OK, MessageBoxImage.Information);
-                    lhs.Register.Value = 0;
-                    result = int.MinValue;
-                    return result;
+                    //Register.FindRegister(lhs.Register.Name)
+                    //    .setRegisterValue(BitConverter.ToInt32(sourceBytes, 0), EnumOperandType.VALUE);
+                    destBytes = BitConverter.GetBytes(Register.FindRegister(lhs.Register.Name).Value);
+                    int value = BitConverter.ToInt32(destBytes, 0);
+                    int source = BitConverter.ToInt32(sourceBytes, 0);
+                    if (source == 0)
+                    {
+                        MessageBox.Show("Cannot Divide by zero (0)");
+                        return int.MinValue;
+                    }
+                    else
+                    {
+                        value /= source;
+                        Register.FindRegister(lhs.Register.Name).setRegisterValue(value, EnumOperandType.VALUE);
+                    }
                 }
-                lhs.Register.Value /= Register.FindRegister(rhs.Register.Name).Value;
-            }
-            else
-            {
-                if (rhs.Value == 0)
+                else
                 {
-                    MessageBox.Show("Cannot Divide by ZERO", "", MessageBoxButton.OK, MessageBoxImage.Information);
-                    lhs.Register.Value = 0;
-                    result = int.MinValue;
-                    return result;
+                    MessageBox.Show("Destination of DIV instruction Must be a register or address");
                 }
-                lhs.Register.Value /= rhs.Value;
             }
-            result = lhs.Register.Value;
-            Register.FindRegister(lhs.Register.Name).setRegisterValue(result, EnumOperandType.VALUE);
             return result;
+
+            #region OLD
+
+            //if (lhs.IsRegister)
+            //{
+            //    lhs.Register.Value = Register.FindRegister(lhs.Register.Name).Value;
+            //    result = lhs.Register.Value;
+            //    //Register.FindRegister(lhs.Register.Name).setRegisterValue(result, EnumOperandType.VALUE);
+            //}
+            //else
+            //{
+            //    MessageBox.Show("First operand of DIV instruction must be a register", "", MessageBoxButton.OK, MessageBoxImage.Information);
+            //    return int.MinValue;
+            //}
+            //if (rhs.IsRegister)
+            //{
+            //    if (Register.FindRegister(rhs.Register.Name).Value == 0)
+            //    {
+            //        MessageBox.Show("Cannot Divide by ZERO", "", MessageBoxButton.OK, MessageBoxImage.Information);
+            //        lhs.Register.Value = 0;
+            //        result = int.MinValue;
+            //        return result;
+            //    }
+            //    lhs.Register.Value /= Register.FindRegister(rhs.Register.Name).Value;
+            //}
+            //else
+            //{
+            //    if (rhs.Value == 0)
+            //    {
+            //        MessageBox.Show("Cannot Divide by ZERO", "", MessageBoxButton.OK, MessageBoxImage.Information);
+            //        lhs.Register.Value = 0;
+            //        result = int.MinValue;
+            //        return result;
+            //    }
+            //    lhs.Register.Value /= rhs.Value;
+            //}
+            //result = lhs.Register.Value;
+            //Register.FindRegister(lhs.Register.Name).setRegisterValue(result, EnumOperandType.VALUE);
+            //return result;
+            #endregion OLD
         }
 
         /// <summary>
-        /// This function is called whenever a INC instruction is executed
-        /// </summary>
-        /// <param name="lhs"> The left hand operand of the instruction </param>
-        /// <param name="rhs"> The right hand operand of the instruction </param>
-        /// <returns> the result of the instruction or int.MINVALUE if no result is returned </returns>
+            /// This function is called whenever a INC instruction is executed
+            /// </summary>
+            /// <param name="lhs"> The left hand operand of the instruction </param>
+            /// <param name="rhs"> The right hand operand of the instruction </param>
+            /// <returns> the result of the instruction or int.MINVALUE if no result is returned </returns>
         private int INC(Operand lhs, Operand rhs)
         {
-            if (lhs.IsRegister)
+            byte[] destBytes = new byte[sizeof(int)];
+            if (lhs.Type == EnumOperandType.ADDRESS)
             {
-                lhs.Register.Value = Register.FindRegister(lhs.Register.Name).Value;
-                lhs.Register.Value++;
-                result = lhs.Register.Value;
-                Register.FindRegister(lhs.Register.Name).setRegisterValue(result, EnumOperandType.VALUE);
-                return result;
+                int pageNumber = 0;
+                int pageOffset = 0;
+                for (int i = 0; i < destBytes.Length; i++)
+                {
+
+                    int address = 0;
+                    if (lhs.IsRegister)
+                    {
+                        address = Register.FindRegister(lhs.Register.Name).Value + i;
+                    }
+                    else
+                    {
+                        address = lhs.Value + i;
+                    }
+                    pageNumber = address / MemoryPage.PAGE_SIZE;
+                    pageOffset = address % MemoryPage.PAGE_SIZE;
+                    byte? loadedByte = LoadByte(pageNumber, pageOffset);
+                    if (loadedByte != null)
+                        destBytes[i] = loadedByte.Value;
+                }
+                Array.Reverse(destBytes);
+                if (BitConverter.IsLittleEndian)
+                {
+                    Array.Reverse(destBytes);
+                }
+                int value = BitConverter.ToInt32(destBytes, 0);
+                int source = 1;
+                value += source;
+                pageOffset -= 3;
+                destBytes = BitConverter.GetBytes(value);
+                for (int i = 0; i < destBytes.Length; i++)
+                {
+                    StoreByte(pageNumber, pageOffset + i, destBytes[i]);
+                }
+
             }
-            MessageBox.Show("Operand of INC instruction must be a register", "", MessageBoxButton.OK, MessageBoxImage.Information);
-            return int.MinValue;
+            else
+            {
+                if (lhs.IsRegister)
+                {
+                    //Register.FindRegister(lhs.Register.Name)
+                    //    .setRegisterValue(BitConverter.ToInt32(sourceBytes, 0), EnumOperandType.VALUE);
+                    destBytes = BitConverter.GetBytes(Register.FindRegister(lhs.Register.Name).Value);
+                    int value = BitConverter.ToInt32(destBytes, 0);
+                    int source = 1;
+                    value += source;
+                    Register.FindRegister(lhs.Register.Name).setRegisterValue(value, EnumOperandType.VALUE);
+                }
+                else
+                {
+                    MessageBox.Show("Destination of INC instruction Must be a register or address");
+                }
+            }
+            return result;
+            #region OLD
+            //if (lhs.IsRegister)
+            //{
+            //    lhs.Register.Value = Register.FindRegister(lhs.Register.Name).Value;
+            //    lhs.Register.Value++;
+            //    result = lhs.Register.Value;
+            //    Register.FindRegister(lhs.Register.Name).setRegisterValue(result, EnumOperandType.VALUE);
+            //    return result;
+            //}
+            //MessageBox.Show("Operand of INC instruction must be a register", "", MessageBoxButton.OK, MessageBoxImage.Information);
+            //return int.MinValue;
+            #endregion OLD
         }
 
         /// <summary>
@@ -1400,16 +2677,75 @@ namespace CPU_OS_Simulator.CPU
         /// <returns> the result of the instruction or int.MINVALUE if no result is returned </returns>
         private int DEC(Operand lhs, Operand rhs)
         {
-            if (lhs.IsRegister)
+            byte[] destBytes = new byte[sizeof(int)];
+            if (lhs.Type == EnumOperandType.ADDRESS)
             {
-                lhs.Register.Value = Register.FindRegister(lhs.Register.Name).Value;
-                lhs.Register.Value--;
-                result = lhs.Register.Value;
-                Register.FindRegister(lhs.Register.Name).setRegisterValue(result, EnumOperandType.VALUE);
-                return result;
+                int pageNumber = 0;
+                int pageOffset = 0;
+                for (int i = 0; i < destBytes.Length; i++)
+                {
+
+                    int address = 0;
+                    if (lhs.IsRegister)
+                    {
+                        address = Register.FindRegister(lhs.Register.Name).Value + i;
+                    }
+                    else
+                    {
+                        address = lhs.Value + i;
+                    }
+                    pageNumber = address / MemoryPage.PAGE_SIZE;
+                    pageOffset = address % MemoryPage.PAGE_SIZE;
+                    byte? loadedByte = LoadByte(pageNumber, pageOffset);
+                    if (loadedByte != null)
+                        destBytes[i] = loadedByte.Value;
+                }
+                Array.Reverse(destBytes);
+                if (BitConverter.IsLittleEndian)
+                {
+                    Array.Reverse(destBytes);
+                }
+                int value = BitConverter.ToInt32(destBytes, 0);
+                int source = 1;
+                value -= source;
+                pageOffset -= 3;
+                destBytes = BitConverter.GetBytes(value);
+                for (int i = 0; i < destBytes.Length; i++)
+                {
+                    StoreByte(pageNumber, pageOffset + i, destBytes[i]);
+                }
+
             }
-            MessageBox.Show("Operand of DEC instruction must be a register", "", MessageBoxButton.OK, MessageBoxImage.Information);
-            return int.MinValue;
+            else
+            {
+                if (lhs.IsRegister)
+                {
+                    //Register.FindRegister(lhs.Register.Name)
+                    //    .setRegisterValue(BitConverter.ToInt32(sourceBytes, 0), EnumOperandType.VALUE);
+                    destBytes = BitConverter.GetBytes(Register.FindRegister(lhs.Register.Name).Value);
+                    int value = BitConverter.ToInt32(destBytes, 0);
+                    int source = 1;
+                    value -= source;
+                    Register.FindRegister(lhs.Register.Name).setRegisterValue(value, EnumOperandType.VALUE);
+                }
+                else
+                {
+                    MessageBox.Show("Destination of DEC instruction Must be a register or address");
+                }
+            }
+            return result;
+            #region OLD
+            //if (lhs.IsRegister)
+            //{
+            //    lhs.Register.Value = Register.FindRegister(lhs.Register.Name).Value;
+            //    lhs.Register.Value++;
+            //    result = lhs.Register.Value;
+            //    Register.FindRegister(lhs.Register.Name).setRegisterValue(result, EnumOperandType.VALUE);
+            //    return result;
+            //}
+            //MessageBox.Show("Operand of DEC instruction must be a register", "", MessageBoxButton.OK, MessageBoxImage.Information);
+            //return int.MinValue;
+            #endregion OLD
         }
 
         #endregion Arithmetic
@@ -1871,26 +3207,133 @@ namespace CPU_OS_Simulator.CPU
         /// <returns> the result of the instruction or int.MINVALUE if no result is returned </returns>
         private int CMP(Operand lhs, Operand rhs)
         {
+            byte[] sourceBytes = new byte[sizeof(int)];
+            byte[] destBytes = new byte[sizeof(int)];
+
             StatusFlags.OV.IsSet = false;
             StatusFlags.N.IsSet = false;
             StatusFlags.Z.IsSet = false;
-            if (lhs.IsRegister)
+
+            if (rhs.Type == EnumOperandType.ADDRESS)
             {
-                lhs.Value = Register.FindRegister(lhs.Register.Name).Value;
+                for (int i = 0; i < sourceBytes.Length; i++) // load it from memory
+                {
+                    int address = 0;
+                    if (rhs.IsRegister)
+                    {
+                        address = Register.FindRegister(rhs.Register.Name).Value + i;
+                    }
+                    else
+                    {
+                        address = rhs.Value + i;
+                    }
+                    int pageNumber = address / MemoryPage.PAGE_SIZE;
+                    int pageOffset = address % MemoryPage.PAGE_SIZE;
+                    byte? loadedByte = LoadByte(pageNumber, pageOffset);
+                    if (loadedByte != null)
+                        sourceBytes[i] = loadedByte.Value;
+                }
+                Array.Reverse(sourceBytes);
+                if (BitConverter.IsLittleEndian)
+                {
+                    Array.Reverse(sourceBytes);
+                }
             }
-            if (rhs.IsRegister)
+            else // otherwise load it from a register
             {
-                rhs.Value = Register.FindRegister(rhs.Register.Name).Value;
+                if (rhs.IsRegister)
+                {
+                    sourceBytes = BitConverter.GetBytes(Register.FindRegister(rhs.Register.Name).Value);
+                }
+                else
+                {
+                    sourceBytes = BitConverter.GetBytes(rhs.Value);
+                }
+                Array.Reverse(sourceBytes);
+                if (BitConverter.IsLittleEndian)
+                {
+                    Array.Reverse(sourceBytes);
+                }
             }
-            if ((rhs.Value - lhs.Value) == 0)
+            if (lhs.Type == EnumOperandType.ADDRESS)
+            {
+                for (int i = 0; i < destBytes.Length; i++) // load it from memory
+                {
+                    int address = 0;
+                    if (lhs.IsRegister)
+                    {
+                        address = Register.FindRegister(lhs.Register.Name).Value + i;
+                    }
+                    else
+                    {
+                        address = lhs.Value + i;
+                    }
+                    int pageNumber = address / MemoryPage.PAGE_SIZE;
+                    int pageOffset = address % MemoryPage.PAGE_SIZE;
+                    byte? loadedByte = LoadByte(pageNumber, pageOffset);
+                    if (loadedByte != null)
+                        destBytes[i] = loadedByte.Value;
+                }
+                Array.Reverse(destBytes);
+                if (BitConverter.IsLittleEndian)
+                {
+                    Array.Reverse(destBytes);
+                }
+            }
+            else // otherwise load it from a register
+            {
+                if (lhs.IsRegister)
+                {
+                    destBytes = BitConverter.GetBytes(Register.FindRegister(lhs.Register.Name).Value);
+                }
+                else
+                {
+                    destBytes = BitConverter.GetBytes(lhs.Value);
+                }
+                Array.Reverse(destBytes);
+                if (BitConverter.IsLittleEndian)
+                {
+                    Array.Reverse(destBytes);
+                }
+            }
+
+            int source = BitConverter.ToInt32(sourceBytes, 0);
+            int value = BitConverter.ToInt32(destBytes, 0);
+
+            if (source - value == 0)
             {
                 StatusFlags.Z.IsSet = true;
             }
-            else if ((rhs.Value - lhs.Value) < 0)
+            else if (source - value < 0)
             {
                 StatusFlags.N.IsSet = true;
             }
             return 0;
+            
+            #region OLD
+
+            //StatusFlags.OV.IsSet = false;
+            //StatusFlags.N.IsSet = false;
+            //StatusFlags.Z.IsSet = false;
+            //if (lhs.IsRegister)
+            //{
+            //    lhs.Value = Register.FindRegister(lhs.Register.Name).Value;
+            //}
+            //if (rhs.IsRegister)
+            //{
+            //    rhs.Value = Register.FindRegister(rhs.Register.Name).Value;
+            //}
+            //if ((rhs.Value - lhs.Value) == 0)
+            //{
+            //    StatusFlags.Z.IsSet = true;
+            //}
+            //else if ((rhs.Value - lhs.Value) < 0)
+            //{
+            //    StatusFlags.N.IsSet = true;
+            //}
+            //return 0;
+
+            #endregion OLD
         }
         /// <summary>
         /// This function is called whenever a CPS instruction is executed
