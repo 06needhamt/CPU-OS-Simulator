@@ -3,8 +3,8 @@ var searchData=
   ['scheduler',['Scheduler',['../class_c_p_u___o_s___simulator_1_1_operating___system_1_1_scheduler.html',1,'CPU_OS_Simulator::Operating_System']]],
   ['schedulerflags',['SchedulerFlags',['../struct_c_p_u___o_s___simulator_1_1_operating___system_1_1_scheduler_flags.html',1,'CPU_OS_Simulator::Operating_System']]],
   ['scope',['Scope',['../class_c_p_u___o_s___simulator_1_1_compiler_1_1_frontend_1_1_symbols_1_1_scope.html',1,'CPU_OS_Simulator::Compiler::Frontend::Symbols']]],
-  ['settings',['Settings',['../class_c_p_u___o_s___simulator_1_1_properties_1_1_settings.html',1,'CPU_OS_Simulator::Properties']]],
   ['settings',['Settings',['../class_c_p_u___o_s___simulator_1_1_compiler_tester_1_1_properties_1_1_settings.html',1,'CPU_OS_Simulator::CompilerTester::Properties']]],
+  ['settings',['Settings',['../class_c_p_u___o_s___simulator_1_1_properties_1_1_settings.html',1,'CPU_OS_Simulator::Properties']]],
   ['simulatorprocess',['SimulatorProcess',['../class_c_p_u___o_s___simulator_1_1_operating___system_1_1_simulator_process.html',1,'CPU_OS_Simulator::Operating_System']]],
   ['simulatorprogram',['SimulatorProgram',['../class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_simulator_program.html',1,'CPU_OS_Simulator::CPU']]],
   ['simulatorprogramtests',['SimulatorProgramTests',['../class_c_p_u_tests_1_1_simulator_program_tests.html',1,'CPUTests']]],
@@ -21,5 +21,6 @@ var searchData=
   ['subroutine',['Subroutine',['../class_c_p_u___o_s___simulator_1_1_compiler_1_1_frontend_1_1_symbols_1_1_subroutine.html',1,'CPU_OS_Simulator::Compiler::Frontend::Symbols']]],
   ['swapspace',['SwapSpace',['../class_c_p_u___o_s___simulator_1_1_memory_1_1_swap_space.html',1,'CPU_OS_Simulator::Memory']]],
   ['symbol',['Symbol',['../class_c_p_u___o_s___simulator_1_1_compiler_1_1_frontend_1_1_symbols_1_1_symbol.html',1,'CPU_OS_Simulator::Compiler::Frontend::Symbols']]],
-  ['symboltable',['SymbolTable',['../class_c_p_u___o_s___simulator_1_1_compiler_1_1_frontend_1_1_symbols_1_1_symbol_table.html',1,'CPU_OS_Simulator::Compiler::Frontend::Symbols']]]
+  ['symboltable',['SymbolTable',['../class_c_p_u___o_s___simulator_1_1_compiler_1_1_frontend_1_1_symbols_1_1_symbol_table.html',1,'CPU_OS_Simulator::Compiler::Frontend::Symbols']]],
+  ['systemresource',['SystemResource',['../class_c_p_u___o_s___simulator_1_1_operating___system_1_1_system_resource.html',1,'CPU_OS_Simulator::Operating_System']]]
 ];

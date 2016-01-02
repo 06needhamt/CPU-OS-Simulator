@@ -21,5 +21,6 @@ var searchData=
   ['subroutine_2ecs',['Subroutine.cs',['../_subroutine_8cs.html',1,'']]],
   ['swapspace_2ecs',['SwapSpace.cs',['../_swap_space_8cs.html',1,'']]],
   ['symbol_2ecs',['Symbol.cs',['../_symbol_8cs.html',1,'']]],
-  ['symboltable_2ecs',['SymbolTable.cs',['../_symbol_table_8cs.html',1,'']]]
+  ['symboltable_2ecs',['SymbolTable.cs',['../_symbol_table_8cs.html',1,'']]],
+  ['systemresource_2ecs',['SystemResource.cs',['../_system_resource_8cs.html',1,'']]]
 ];

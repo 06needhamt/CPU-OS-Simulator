@@ -23,6 +23,8 @@ var NAVTREE =
       [ "File List", "files.html", "files" ],
       [ "File Members", "globals.html", [
         [ "All", "globals.html", null ],
+        [ "Functions", "globals_func.html", null ],
+        [ "Variables", "globals_vars.html", null ],
         [ "Typedefs", "globals_type.html", null ]
       ] ]
     ] ]
@@ -32,15 +34,14 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "_a_s_t_8cs.html",
-"_enum_keyword_type_8cs.html#a86b87efebad08200cebe3075b5812b13ab1a326c06d88bf042f73d70f50197905",
-"_memory_tests_2obj_2_debug_2_temporary_generated_file__5937a670-0e60-4077-877b-f7221da3dda1_8cs_source.html",
-"class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_instruction.html#af56668feff9c8dab3c9335969a25e074",
-"class_c_p_u___o_s___simulator_1_1_compiler_1_1_frontend_1_1_symbols_1_1_symbol_table.html#a96a4764b3c4e15413c7cca27b0e7d500",
-"class_c_p_u___o_s___simulator_1_1_console_1_1_console_input.html#a56609a7b8e3d6bda9e166198e3a176c0",
-"class_c_p_u___o_s___simulator_1_1_instructions_window.html#aafdc8c843b7f2d0e4c434edc569923c6",
-"class_c_p_u___o_s___simulator_1_1_memory_1_1_memory_page.html",
-"class_c_p_u___o_s___simulator_1_1_operating_system_main_window.html#a2575de899df7277ae9c310931b8dbaa0",
-"functions_func_b.html"
+"_enum_process_state_8cs.html#a836ee2204e78fcb3a7dd6c3c942b1a24a1869d56535e8b1449a6da54ff5e11f50",
+"_window_bridge_2_properties_2_assembly_info_8cs_source.html",
+"class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_status_flags.html#aa38943c12054a3f613161ecde5580f27",
+"class_c_p_u___o_s___simulator_1_1_compiler_1_1_frontend_1_1_syntax_tree_1_1_string_node.html#a409841a2c8cdb16e19e500187d5c4567",
+"class_c_p_u___o_s___simulator_1_1_main_window.html#a195e7715af146b207e5b973bd10c80c6",
+"class_c_p_u___o_s___simulator_1_1_operating___system_1_1_process_control_block.html#af0629b300d7f2ac582512e881c49f2ea",
+"dir_71ab4721a5238a8f7ea24c2275f54756.html",
+"struct_c_p_u___o_s___simulator_1_1_operating___system_1_1_scheduler_flags.html#a4a2747b82ac75696e646bf03b0b3c8f6"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

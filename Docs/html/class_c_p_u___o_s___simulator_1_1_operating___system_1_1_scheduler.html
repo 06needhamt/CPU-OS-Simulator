@@ -109,6 +109,7 @@ $(document).ready(function(){initNavTree('class_c_p_u___o_s___simulator_1_1_oper
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#properties">Properties</a> &#124;
+<a href="#pri-methods">Private Member Functions</a> &#124;
 <a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="class_c_p_u___o_s___simulator_1_1_operating___system_1_1_scheduler-members.html">List of all members</a>  </div>
   <div class="headertitle">
@@ -127,6 +128,8 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a686c31e6925c34fa366b0dfee0881950"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_p_u___o_s___simulator_1_1_operating___system_1_1_scheduler.html#a686c31e6925c34fa366b0dfee0881950">Scheduler</a> (<a class="el" href="struct_c_p_u___o_s___simulator_1_1_operating___system_1_1_scheduler_flags.html">SchedulerFlags</a> flags)</td></tr>
 <tr class="memdesc:a686c31e6925c34fa366b0dfee0881950"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor for process <a class="el" href="class_c_p_u___o_s___simulator_1_1_operating___system_1_1_scheduler.html" title="This class represents the process scheduler / manager for the virtual operating system ...">Scheduler</a>  <a href="#a686c31e6925c34fa366b0dfee0881950">More...</a><br /></td></tr>
 <tr class="separator:a686c31e6925c34fa366b0dfee0881950"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0c5d3add7cf99eeb8c58c0a009ba6741"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_p_u___o_s___simulator_1_1_operating___system_1_1_scheduler.html#a0c5d3add7cf99eeb8c58c0a009ba6741">Start</a> ()</td></tr>
+<tr class="separator:a0c5d3add7cf99eeb8c58c0a009ba6741"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="properties"></a>
 Properties</h2></td></tr>
@@ -142,9 +145,9 @@ Properties</h2></td></tr>
 <tr class="memitem:afbf291846705747709c32eb79f1106b4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespace_c_p_u___o_s___simulator_1_1_operating___system.html#ad0cdaacf9652394d23fa29109640fe08">EnumSchedulingPolicies</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_p_u___o_s___simulator_1_1_operating___system_1_1_scheduler.html#afbf291846705747709c32eb79f1106b4">SchedulingPolicy</a><code> [get, set]</code></td></tr>
 <tr class="memdesc:afbf291846705747709c32eb79f1106b4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Property for the scheduling policy currently being used by this scheduler  <a href="#afbf291846705747709c32eb79f1106b4">More...</a><br /></td></tr>
 <tr class="separator:afbf291846705747709c32eb79f1106b4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a79d95ec3a9df074fb99adaaa0cfc6cb9"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_p_u___o_s___simulator_1_1_operating___system_1_1_scheduler.html#a79d95ec3a9df074fb99adaaa0cfc6cb9">Rr_TimeSlice</a><code> [get, set]</code></td></tr>
-<tr class="memdesc:a79d95ec3a9df074fb99adaaa0cfc6cb9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Property for the length of the round robin time slice being used by this scheduler  <a href="#a79d95ec3a9df074fb99adaaa0cfc6cb9">More...</a><br /></td></tr>
-<tr class="separator:a79d95ec3a9df074fb99adaaa0cfc6cb9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab21e8ffe8d0f06388cc2310d3dbb3b48"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_p_u___o_s___simulator_1_1_operating___system_1_1_scheduler.html#ab21e8ffe8d0f06388cc2310d3dbb3b48">Rr_TimeSlice</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:ab21e8ffe8d0f06388cc2310d3dbb3b48"><td class="mdescLeft">&#160;</td><td class="mdescRight">Property for the length of the round robin time slice being used by this scheduler  <a href="#ab21e8ffe8d0f06388cc2310d3dbb3b48">More...</a><br /></td></tr>
+<tr class="separator:ab21e8ffe8d0f06388cc2310d3dbb3b48"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aaf31b58cc7c6e632c0ce7ca34612e1ba"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespace_c_p_u___o_s___simulator_1_1_operating___system.html#a0553d0bc2513aec52caa769acf994d5c">EnumTimeUnit</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_p_u___o_s___simulator_1_1_operating___system_1_1_scheduler.html#aaf31b58cc7c6e632c0ce7ca34612e1ba">TimeSliceUnit</a><code> [get, set]</code></td></tr>
 <tr class="memdesc:aaf31b58cc7c6e632c0ce7ca34612e1ba"><td class="mdescLeft">&#160;</td><td class="mdescRight">Property for the unit of time used for time slices i.e ticks or seconds  <a href="#aaf31b58cc7c6e632c0ce7ca34612e1ba">More...</a><br /></td></tr>
 <tr class="separator:aaf31b58cc7c6e632c0ce7ca34612e1ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -167,6 +170,28 @@ Properties</h2></td></tr>
 <tr class="memdesc:a17ad8e2a5da8823a25da6fa4190f532d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Property for whether the scheduler is running with no processes  <a href="#a17ad8e2a5da8823a25da6fa4190f532d">More...</a><br /></td></tr>
 <tr class="separator:a17ad8e2a5da8823a25da6fa4190f532d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
+Private Member Functions</h2></td></tr>
+<tr class="memitem:a5de68bce87efcb0d511d7e5a9bd4fe1f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_p_u___o_s___simulator_1_1_operating___system_1_1_scheduler.html#a5de68bce87efcb0d511d7e5a9bd4fe1f">CreateBackgroundWorker</a> ()</td></tr>
+<tr class="separator:a5de68bce87efcb0d511d7e5a9bd4fe1f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6b7d6ca2dc12aa2290263cc94aab7779"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_p_u___o_s___simulator_1_1_operating___system_1_1_scheduler.html#a6b7d6ca2dc12aa2290263cc94aab7779">CreateExecutionThread</a> (object sender, DoWorkEventArgs e)</td></tr>
+<tr class="separator:a6b7d6ca2dc12aa2290263cc94aab7779"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6b162741d7ccadc56da0e5a1b545efda"><td class="memItemLeft" align="right" valign="top">async Task&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_p_u___o_s___simulator_1_1_operating___system_1_1_scheduler.html#a6b162741d7ccadc56da0e5a1b545efda">CallFromMainThread</a> (Func&lt; Task&lt; int &gt;&gt; FunctionPointer)</td></tr>
+<tr class="memdesc:a6b162741d7ccadc56da0e5a1b545efda"><td class="mdescLeft">&#160;</td><td class="mdescRight">Bridge function used to call functions on the main thread from within the background thread  <a href="#a6b162741d7ccadc56da0e5a1b545efda">More...</a><br /></td></tr>
+<tr class="separator:a6b162741d7ccadc56da0e5a1b545efda"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac34fa53a93283545f0049794306e30a1"><td class="memItemLeft" align="right" valign="top">async void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_p_u___o_s___simulator_1_1_operating___system_1_1_scheduler.html#ac34fa53a93283545f0049794306e30a1">UpdateInterface</a> (object sender, ProgressChangedEventArgs e)</td></tr>
+<tr class="memdesc:ac34fa53a93283545f0049794306e30a1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Asynchronous function called after every instruction is executed to update required values and user interface asynchronously  <a href="#ac34fa53a93283545f0049794306e30a1">More...</a><br /></td></tr>
+<tr class="separator:ac34fa53a93283545f0049794306e30a1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa412769133cc4c67741cba7dd2381061"><td class="memItemLeft" align="right" valign="top">async Task&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_p_u___o_s___simulator_1_1_operating___system_1_1_scheduler.html#aa412769133cc4c67741cba7dd2381061">UpdateInterface</a> ()</td></tr>
+<tr class="memdesc:aa412769133cc4c67741cba7dd2381061"><td class="mdescLeft">&#160;</td><td class="mdescRight">Asynchronous function called after every instruction is executed to update required values and user interface asynchronously  <a href="#aa412769133cc4c67741cba7dd2381061">More...</a><br /></td></tr>
+<tr class="separator:aa412769133cc4c67741cba7dd2381061"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8981966e2ec66bf9684b0a7af88b45d4"><td class="memItemLeft" align="right" valign="top">async void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_p_u___o_s___simulator_1_1_operating___system_1_1_scheduler.html#a8981966e2ec66bf9684b0a7af88b45d4">RunScheduler</a> ()</td></tr>
+<tr class="separator:a8981966e2ec66bf9684b0a7af88b45d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad2cbb7bbe41e0eae42a68c3c691a4283"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_c_p_u___o_s___simulator_1_1_operating___system_1_1_p_c_b_flags.html">PCBFlags</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_p_u___o_s___simulator_1_1_operating___system_1_1_scheduler.html#ad2cbb7bbe41e0eae42a68c3c691a4283">CreatePCBFlags</a> (ref <a class="el" href="class_c_p_u___o_s___simulator_1_1_operating___system_1_1_simulator_process.html">SimulatorProcess</a> currentProcess)</td></tr>
+<tr class="separator:ad2cbb7bbe41e0eae42a68c3c691a4283"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abc2f3e3b3fe3881744a269575675d108"><td class="memItemLeft" align="right" valign="top">dynamic&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_p_u___o_s___simulator_1_1_operating___system_1_1_scheduler.html#abc2f3e3b3fe3881744a269575675d108">GetOSWindow</a> ()</td></tr>
+<tr class="separator:abc2f3e3b3fe3881744a269575675d108"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
 <tr class="memitem:a6583fdeac6a6c0cc5be94ae0f280eaf2"><td class="memItemLeft" align="right" valign="top">Queue&lt; <a class="el" href="class_c_p_u___o_s___simulator_1_1_operating___system_1_1_simulator_process.html">SimulatorProcess</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_p_u___o_s___simulator_1_1_operating___system_1_1_scheduler.html#a6583fdeac6a6c0cc5be94ae0f280eaf2">readyQueue</a></td></tr>
@@ -175,17 +200,17 @@ Private Attributes</h2></td></tr>
 <tr class="separator:abc9ae70e3bbda89777732cafa895bbdf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a550642f62d310086e58eda71acfdd085"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_c_p_u___o_s___simulator_1_1_operating___system_1_1_simulator_process.html">SimulatorProcess</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_p_u___o_s___simulator_1_1_operating___system_1_1_scheduler.html#a550642f62d310086e58eda71acfdd085">runningProcess</a></td></tr>
 <tr class="separator:a550642f62d310086e58eda71acfdd085"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5a0194d8bb0127f6a8c010241d9ccb42"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespace_c_p_u___o_s___simulator_1_1_operating___system.html#ad0cdaacf9652394d23fa29109640fe08">EnumSchedulingPolicies</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_p_u___o_s___simulator_1_1_operating___system_1_1_scheduler.html#a5a0194d8bb0127f6a8c010241d9ccb42">schedulingPolicy</a> = <a class="el" href="namespace_c_p_u___o_s___simulator_1_1_operating___system.html#a03a98a403abc737c106a8f92db5bffc1a696b031073e74bf2cb98e5ef201d4aa3">EnumSchedulingPolicies.UNKNOWN</a></td></tr>
+<tr class="memitem:a5a0194d8bb0127f6a8c010241d9ccb42"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespace_c_p_u___o_s___simulator_1_1_operating___system.html#ad0cdaacf9652394d23fa29109640fe08">EnumSchedulingPolicies</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_p_u___o_s___simulator_1_1_operating___system_1_1_scheduler.html#a5a0194d8bb0127f6a8c010241d9ccb42">schedulingPolicy</a> = <a class="el" href="namespace_c_p_u___o_s___simulator_1_1_operating___system.html#aea0b669d1bbf5690ae34ac2f8bef9470a696b031073e74bf2cb98e5ef201d4aa3">EnumSchedulingPolicies.UNKNOWN</a></td></tr>
 <tr class="separator:a5a0194d8bb0127f6a8c010241d9ccb42"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8c3128b7e7fa487ce667af02f24dcd16"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_p_u___o_s___simulator_1_1_operating___system_1_1_scheduler.html#a8c3128b7e7fa487ce667af02f24dcd16">RR_TimeSlice</a></td></tr>
-<tr class="separator:a8c3128b7e7fa487ce667af02f24dcd16"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0622698ea0dc65d42250dae5787846fd"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespace_c_p_u___o_s___simulator_1_1_operating___system.html#a0553d0bc2513aec52caa769acf994d5c">EnumTimeUnit</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_p_u___o_s___simulator_1_1_operating___system_1_1_scheduler.html#a0622698ea0dc65d42250dae5787846fd">timeSliceUnit</a> = <a class="el" href="namespace_c_p_u___o_s___simulator_1_1_operating___system.html#a03a98a403abc737c106a8f92db5bffc1a696b031073e74bf2cb98e5ef201d4aa3">EnumTimeUnit.UNKNOWN</a></td></tr>
+<tr class="memitem:adb134e5a535b1051503d0ee7d3f733f1"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_p_u___o_s___simulator_1_1_operating___system_1_1_scheduler.html#adb134e5a535b1051503d0ee7d3f733f1">RR_TimeSlice</a></td></tr>
+<tr class="separator:adb134e5a535b1051503d0ee7d3f733f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0622698ea0dc65d42250dae5787846fd"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespace_c_p_u___o_s___simulator_1_1_operating___system.html#a0553d0bc2513aec52caa769acf994d5c">EnumTimeUnit</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_p_u___o_s___simulator_1_1_operating___system_1_1_scheduler.html#a0622698ea0dc65d42250dae5787846fd">timeSliceUnit</a> = <a class="el" href="namespace_c_p_u___o_s___simulator_1_1_operating___system.html#aea0b669d1bbf5690ae34ac2f8bef9470a696b031073e74bf2cb98e5ef201d4aa3">EnumTimeUnit.UNKNOWN</a></td></tr>
 <tr class="separator:a0622698ea0dc65d42250dae5787846fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afe8019eea4f52f2bd30c40c0ae576eac"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_p_u___o_s___simulator_1_1_operating___system_1_1_scheduler.html#afe8019eea4f52f2bd30c40c0ae576eac">defaultScheduler</a></td></tr>
 <tr class="separator:afe8019eea4f52f2bd30c40c0ae576eac"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9eba9301a8f7983c1b8d55c479ce4760"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespace_c_p_u___o_s___simulator_1_1_operating___system.html#a3a9286a473bd079e9c65908c0378fa00">EnumPriorityPolicy</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_p_u___o_s___simulator_1_1_operating___system_1_1_scheduler.html#a9eba9301a8f7983c1b8d55c479ce4760">RR_Priority_Policy</a> = <a class="el" href="namespace_c_p_u___o_s___simulator_1_1_operating___system.html#a03a98a403abc737c106a8f92db5bffc1a696b031073e74bf2cb98e5ef201d4aa3">EnumPriorityPolicy.UNKNOWN</a></td></tr>
+<tr class="memitem:a9eba9301a8f7983c1b8d55c479ce4760"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespace_c_p_u___o_s___simulator_1_1_operating___system.html#a3a9286a473bd079e9c65908c0378fa00">EnumPriorityPolicy</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_p_u___o_s___simulator_1_1_operating___system_1_1_scheduler.html#a9eba9301a8f7983c1b8d55c479ce4760">RR_Priority_Policy</a> = <a class="el" href="namespace_c_p_u___o_s___simulator_1_1_operating___system.html#aea0b669d1bbf5690ae34ac2f8bef9470a696b031073e74bf2cb98e5ef201d4aa3">EnumPriorityPolicy.UNKNOWN</a></td></tr>
 <tr class="separator:a9eba9301a8f7983c1b8d55c479ce4760"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afa5f282549e500f0444d12048bdc31c9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespace_c_p_u___o_s___simulator_1_1_operating___system.html#a4c7effb8b6725df52018a3a14cede96e">EnumRoundRobinType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_p_u___o_s___simulator_1_1_operating___system_1_1_scheduler.html#afa5f282549e500f0444d12048bdc31c9">RR_Type</a> = <a class="el" href="namespace_c_p_u___o_s___simulator_1_1_operating___system.html#a03a98a403abc737c106a8f92db5bffc1a696b031073e74bf2cb98e5ef201d4aa3">EnumRoundRobinType.UNKNOWN</a></td></tr>
+<tr class="memitem:afa5f282549e500f0444d12048bdc31c9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespace_c_p_u___o_s___simulator_1_1_operating___system.html#a4c7effb8b6725df52018a3a14cede96e">EnumRoundRobinType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_p_u___o_s___simulator_1_1_operating___system_1_1_scheduler.html#afa5f282549e500f0444d12048bdc31c9">RR_Type</a> = <a class="el" href="namespace_c_p_u___o_s___simulator_1_1_operating___system.html#aea0b669d1bbf5690ae34ac2f8bef9470a696b031073e74bf2cb98e5ef201d4aa3">EnumRoundRobinType.UNKNOWN</a></td></tr>
 <tr class="separator:afa5f282549e500f0444d12048bdc31c9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acd5c163fd74bd9e7ad4cbeb7f55c0338"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_p_u___o_s___simulator_1_1_operating___system_1_1_scheduler.html#acd5c163fd74bd9e7ad4cbeb7f55c0338">usingSingleCPU</a></td></tr>
 <tr class="separator:acd5c163fd74bd9e7ad4cbeb7f55c0338"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -193,11 +218,17 @@ Private Attributes</h2></td></tr>
 <tr class="separator:a732d4b0d95cad3e280f9b69dd4f9f7c4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af3276e8686d9efa7f8da6e48257922e3"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_p_u___o_s___simulator_1_1_operating___system_1_1_scheduler.html#af3276e8686d9efa7f8da6e48257922e3">runningWithNoProcesses</a></td></tr>
 <tr class="separator:af3276e8686d9efa7f8da6e48257922e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae1829f5340f76cad2150c9e1f9ab3c69"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_p_u___o_s___simulator_1_1_operating___system_1_1_scheduler.html#ae1829f5340f76cad2150c9e1f9ab3c69">cpuClockSpeed</a></td></tr>
+<tr class="separator:ae1829f5340f76cad2150c9e1f9ab3c69"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8b68cea278d24fcc12c6721210fe8dcb"><td class="memItemLeft" align="right" valign="top">BackgroundWorker&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_p_u___o_s___simulator_1_1_operating___system_1_1_scheduler.html#a8b68cea278d24fcc12c6721210fe8dcb">executionWorker</a></td></tr>
+<tr class="separator:a8b68cea278d24fcc12c6721210fe8dcb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab29898ad206dbc3a62234321cefe73ee"><td class="memItemLeft" align="right" valign="top">Dispatcher&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_p_u___o_s___simulator_1_1_operating___system_1_1_scheduler.html#ab29898ad206dbc3a62234321cefe73ee">dispatcher</a> = Dispatcher.CurrentDispatcher</td></tr>
+<tr class="separator:ab29898ad206dbc3a62234321cefe73ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>This class represents the process scheduler / manager for the virtual operating system </p>
 
-<p>Definition at line <a class="el" href="_scheduler_8cs_source.html#l00010">10</a> of file <a class="el" href="_scheduler_8cs_source.html">Scheduler.cs</a>.</p>
+<p>Definition at line <a class="el" href="_scheduler_8cs_source.html#l00018">18</a> of file <a class="el" href="_scheduler_8cs_source.html">Scheduler.cs</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="a5911adf7a88d4bc66f0de915bb925461"></a>
 <div class="memitem">
@@ -214,7 +245,7 @@ Private Attributes</h2></td></tr>
 
 <p>Default Constructor for scheduler used when deserialising the scheduler NOTE: DO NOT USE IN CODE </p>
 
-<p>Definition at line <a class="el" href="_scheduler_8cs_source.html#l00029">29</a> of file <a class="el" href="_scheduler_8cs_source.html">Scheduler.cs</a>.</p>
+<p>Definition at line <a class="el" href="_scheduler_8cs_source.html#l00040">40</a> of file <a class="el" href="_scheduler_8cs_source.html">Scheduler.cs</a>.</p>
 
 </div>
 </div>
@@ -240,7 +271,270 @@ Private Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="_scheduler_8cs_source.html#l00037">37</a> of file <a class="el" href="_scheduler_8cs_source.html">Scheduler.cs</a>.</p>
+<p>Definition at line <a class="el" href="_scheduler_8cs_source.html#l00048">48</a> of file <a class="el" href="_scheduler_8cs_source.html">Scheduler.cs</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a class="anchor" id="a6b162741d7ccadc56da0e5a1b545efda"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">async Task&lt;int&gt; CPU_OS_Simulator.Operating_System.Scheduler.CallFromMainThread </td>
+          <td>(</td>
+          <td class="paramtype">Func&lt; Task&lt; int &gt;&gt;&#160;</td>
+          <td class="paramname"><em>FunctionPointer</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Bridge function used to call functions on the main thread from within the background thread </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">FunctionPointer</td><td>The function to call </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A task to indicate to the main thread that the function has finished executing</dd></dl>
+
+<p>Definition at line <a class="el" href="_scheduler_8cs_source.html#l00086">86</a> of file <a class="el" href="_scheduler_8cs_source.html">Scheduler.cs</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a5de68bce87efcb0d511d7e5a9bd4fe1f"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void CPU_OS_Simulator.Operating_System.Scheduler.CreateBackgroundWorker </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_scheduler_8cs_source.html#l00066">66</a> of file <a class="el" href="_scheduler_8cs_source.html">Scheduler.cs</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a6b7d6ca2dc12aa2290263cc94aab7779"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void CPU_OS_Simulator.Operating_System.Scheduler.CreateExecutionThread </td>
+          <td>(</td>
+          <td class="paramtype">object&#160;</td>
+          <td class="paramname"><em>sender</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">DoWorkEventArgs&#160;</td>
+          <td class="paramname"><em>e</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_scheduler_8cs_source.html#l00075">75</a> of file <a class="el" href="_scheduler_8cs_source.html">Scheduler.cs</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ad2cbb7bbe41e0eae42a68c3c691a4283"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_c_p_u___o_s___simulator_1_1_operating___system_1_1_p_c_b_flags.html">PCBFlags</a> CPU_OS_Simulator.Operating_System.Scheduler.CreatePCBFlags </td>
+          <td>(</td>
+          <td class="paramtype">ref <a class="el" href="class_c_p_u___o_s___simulator_1_1_operating___system_1_1_simulator_process.html">SimulatorProcess</a>&#160;</td>
+          <td class="paramname"><em>currentProcess</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_scheduler_8cs_source.html#l00184">184</a> of file <a class="el" href="_scheduler_8cs_source.html">Scheduler.cs</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="abc2f3e3b3fe3881744a269575675d108"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">dynamic CPU_OS_Simulator.Operating_System.Scheduler.GetOSWindow </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_scheduler_8cs_source.html#l00207">207</a> of file <a class="el" href="_scheduler_8cs_source.html">Scheduler.cs</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a8981966e2ec66bf9684b0a7af88b45d4"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">async void CPU_OS_Simulator.Operating_System.Scheduler.RunScheduler </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_scheduler_8cs_source.html#l00144">144</a> of file <a class="el" href="_scheduler_8cs_source.html">Scheduler.cs</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a0c5d3add7cf99eeb8c58c0a009ba6741"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool CPU_OS_Simulator.Operating_System.Scheduler.Start </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_scheduler_8cs_source.html#l00092">92</a> of file <a class="el" href="_scheduler_8cs_source.html">Scheduler.cs</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ac34fa53a93283545f0049794306e30a1"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">async void CPU_OS_Simulator.Operating_System.Scheduler.UpdateInterface </td>
+          <td>(</td>
+          <td class="paramtype">object&#160;</td>
+          <td class="paramname"><em>sender</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">ProgressChangedEventArgs&#160;</td>
+          <td class="paramname"><em>e</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Asynchronous function called after every instruction is executed to update required values and user interface asynchronously </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">sender</td><td>the object that triggered this event</td></tr>
+    <tr><td class="paramname">e</td><td>The parameters passed to this event &gt;</td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="_scheduler_8cs_source.html#l00107">107</a> of file <a class="el" href="_scheduler_8cs_source.html">Scheduler.cs</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="aa412769133cc4c67741cba7dd2381061"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">async Task&lt;int&gt; CPU_OS_Simulator.Operating_System.Scheduler.UpdateInterface </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Asynchronous function called after every instruction is executed to update required values and user interface asynchronously </p>
+<dl class="section return"><dt>Returns</dt><dd>A task to indicate to the main thread that the function has finished executing</dd></dl>
+
+<p>Definition at line <a class="el" href="_scheduler_8cs_source.html#l00127">127</a> of file <a class="el" href="_scheduler_8cs_source.html">Scheduler.cs</a>.</p>
 
 </div>
 </div>
@@ -263,7 +557,29 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_scheduler_8cs_source.html#l00022">22</a> of file <a class="el" href="_scheduler_8cs_source.html">Scheduler.cs</a>.</p>
+<p>Definition at line <a class="el" href="_scheduler_8cs_source.html#l00030">30</a> of file <a class="el" href="_scheduler_8cs_source.html">Scheduler.cs</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ae1829f5340f76cad2150c9e1f9ab3c69"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int CPU_OS_Simulator.Operating_System.Scheduler.cpuClockSpeed</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_scheduler_8cs_source.html#l00032">32</a> of file <a class="el" href="_scheduler_8cs_source.html">Scheduler.cs</a>.</p>
 
 </div>
 </div>
@@ -285,7 +601,51 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_scheduler_8cs_source.html#l00018">18</a> of file <a class="el" href="_scheduler_8cs_source.html">Scheduler.cs</a>.</p>
+<p>Definition at line <a class="el" href="_scheduler_8cs_source.html#l00026">26</a> of file <a class="el" href="_scheduler_8cs_source.html">Scheduler.cs</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ab29898ad206dbc3a62234321cefe73ee"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Dispatcher CPU_OS_Simulator.Operating_System.Scheduler.dispatcher = Dispatcher.CurrentDispatcher</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_scheduler_8cs_source.html#l00034">34</a> of file <a class="el" href="_scheduler_8cs_source.html">Scheduler.cs</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a8b68cea278d24fcc12c6721210fe8dcb"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">BackgroundWorker CPU_OS_Simulator.Operating_System.Scheduler.executionWorker</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_scheduler_8cs_source.html#l00033">33</a> of file <a class="el" href="_scheduler_8cs_source.html">Scheduler.cs</a>.</p>
 
 </div>
 </div>
@@ -307,7 +667,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_scheduler_8cs_source.html#l00012">12</a> of file <a class="el" href="_scheduler_8cs_source.html">Scheduler.cs</a>.</p>
+<p>Definition at line <a class="el" href="_scheduler_8cs_source.html#l00020">20</a> of file <a class="el" href="_scheduler_8cs_source.html">Scheduler.cs</a>.</p>
 
 </div>
 </div>
@@ -319,7 +679,7 @@ Private Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="namespace_c_p_u___o_s___simulator_1_1_operating___system.html#a3a9286a473bd079e9c65908c0378fa00">EnumPriorityPolicy</a> CPU_OS_Simulator.Operating_System.Scheduler.RR_Priority_Policy = <a class="el" href="namespace_c_p_u___o_s___simulator_1_1_operating___system.html#a03a98a403abc737c106a8f92db5bffc1a696b031073e74bf2cb98e5ef201d4aa3">EnumPriorityPolicy.UNKNOWN</a></td>
+          <td class="memname"><a class="el" href="namespace_c_p_u___o_s___simulator_1_1_operating___system.html#a3a9286a473bd079e9c65908c0378fa00">EnumPriorityPolicy</a> CPU_OS_Simulator.Operating_System.Scheduler.RR_Priority_Policy = <a class="el" href="namespace_c_p_u___o_s___simulator_1_1_operating___system.html#aea0b669d1bbf5690ae34ac2f8bef9470a696b031073e74bf2cb98e5ef201d4aa3">EnumPriorityPolicy.UNKNOWN</a></td>
         </tr>
       </table>
   </td>
@@ -329,11 +689,11 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_scheduler_8cs_source.html#l00019">19</a> of file <a class="el" href="_scheduler_8cs_source.html">Scheduler.cs</a>.</p>
+<p>Definition at line <a class="el" href="_scheduler_8cs_source.html#l00027">27</a> of file <a class="el" href="_scheduler_8cs_source.html">Scheduler.cs</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="a8c3128b7e7fa487ce667af02f24dcd16"></a>
+<a class="anchor" id="adb134e5a535b1051503d0ee7d3f733f1"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -341,7 +701,7 @@ Private Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">int CPU_OS_Simulator.Operating_System.Scheduler.RR_TimeSlice</td>
+          <td class="memname">double CPU_OS_Simulator.Operating_System.Scheduler.RR_TimeSlice</td>
         </tr>
       </table>
   </td>
@@ -351,7 +711,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_scheduler_8cs_source.html#l00016">16</a> of file <a class="el" href="_scheduler_8cs_source.html">Scheduler.cs</a>.</p>
+<p>Definition at line <a class="el" href="_scheduler_8cs_source.html#l00024">24</a> of file <a class="el" href="_scheduler_8cs_source.html">Scheduler.cs</a>.</p>
 
 </div>
 </div>
@@ -363,7 +723,7 @@ Private Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="namespace_c_p_u___o_s___simulator_1_1_operating___system.html#a4c7effb8b6725df52018a3a14cede96e">EnumRoundRobinType</a> CPU_OS_Simulator.Operating_System.Scheduler.RR_Type = <a class="el" href="namespace_c_p_u___o_s___simulator_1_1_operating___system.html#a03a98a403abc737c106a8f92db5bffc1a696b031073e74bf2cb98e5ef201d4aa3">EnumRoundRobinType.UNKNOWN</a></td>
+          <td class="memname"><a class="el" href="namespace_c_p_u___o_s___simulator_1_1_operating___system.html#a4c7effb8b6725df52018a3a14cede96e">EnumRoundRobinType</a> CPU_OS_Simulator.Operating_System.Scheduler.RR_Type = <a class="el" href="namespace_c_p_u___o_s___simulator_1_1_operating___system.html#aea0b669d1bbf5690ae34ac2f8bef9470a696b031073e74bf2cb98e5ef201d4aa3">EnumRoundRobinType.UNKNOWN</a></td>
         </tr>
       </table>
   </td>
@@ -373,7 +733,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_scheduler_8cs_source.html#l00020">20</a> of file <a class="el" href="_scheduler_8cs_source.html">Scheduler.cs</a>.</p>
+<p>Definition at line <a class="el" href="_scheduler_8cs_source.html#l00028">28</a> of file <a class="el" href="_scheduler_8cs_source.html">Scheduler.cs</a>.</p>
 
 </div>
 </div>
@@ -395,7 +755,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_scheduler_8cs_source.html#l00014">14</a> of file <a class="el" href="_scheduler_8cs_source.html">Scheduler.cs</a>.</p>
+<p>Definition at line <a class="el" href="_scheduler_8cs_source.html#l00022">22</a> of file <a class="el" href="_scheduler_8cs_source.html">Scheduler.cs</a>.</p>
 
 </div>
 </div>
@@ -417,7 +777,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_scheduler_8cs_source.html#l00023">23</a> of file <a class="el" href="_scheduler_8cs_source.html">Scheduler.cs</a>.</p>
+<p>Definition at line <a class="el" href="_scheduler_8cs_source.html#l00031">31</a> of file <a class="el" href="_scheduler_8cs_source.html">Scheduler.cs</a>.</p>
 
 </div>
 </div>
@@ -429,7 +789,7 @@ Private Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="namespace_c_p_u___o_s___simulator_1_1_operating___system.html#ad0cdaacf9652394d23fa29109640fe08">EnumSchedulingPolicies</a> CPU_OS_Simulator.Operating_System.Scheduler.schedulingPolicy = <a class="el" href="namespace_c_p_u___o_s___simulator_1_1_operating___system.html#a03a98a403abc737c106a8f92db5bffc1a696b031073e74bf2cb98e5ef201d4aa3">EnumSchedulingPolicies.UNKNOWN</a></td>
+          <td class="memname"><a class="el" href="namespace_c_p_u___o_s___simulator_1_1_operating___system.html#ad0cdaacf9652394d23fa29109640fe08">EnumSchedulingPolicies</a> CPU_OS_Simulator.Operating_System.Scheduler.schedulingPolicy = <a class="el" href="namespace_c_p_u___o_s___simulator_1_1_operating___system.html#aea0b669d1bbf5690ae34ac2f8bef9470a696b031073e74bf2cb98e5ef201d4aa3">EnumSchedulingPolicies.UNKNOWN</a></td>
         </tr>
       </table>
   </td>
@@ -439,7 +799,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_scheduler_8cs_source.html#l00015">15</a> of file <a class="el" href="_scheduler_8cs_source.html">Scheduler.cs</a>.</p>
+<p>Definition at line <a class="el" href="_scheduler_8cs_source.html#l00023">23</a> of file <a class="el" href="_scheduler_8cs_source.html">Scheduler.cs</a>.</p>
 
 </div>
 </div>
@@ -451,7 +811,7 @@ Private Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="namespace_c_p_u___o_s___simulator_1_1_operating___system.html#a0553d0bc2513aec52caa769acf994d5c">EnumTimeUnit</a> CPU_OS_Simulator.Operating_System.Scheduler.timeSliceUnit = <a class="el" href="namespace_c_p_u___o_s___simulator_1_1_operating___system.html#a03a98a403abc737c106a8f92db5bffc1a696b031073e74bf2cb98e5ef201d4aa3">EnumTimeUnit.UNKNOWN</a></td>
+          <td class="memname"><a class="el" href="namespace_c_p_u___o_s___simulator_1_1_operating___system.html#a0553d0bc2513aec52caa769acf994d5c">EnumTimeUnit</a> CPU_OS_Simulator.Operating_System.Scheduler.timeSliceUnit = <a class="el" href="namespace_c_p_u___o_s___simulator_1_1_operating___system.html#aea0b669d1bbf5690ae34ac2f8bef9470a696b031073e74bf2cb98e5ef201d4aa3">EnumTimeUnit.UNKNOWN</a></td>
         </tr>
       </table>
   </td>
@@ -461,7 +821,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_scheduler_8cs_source.html#l00017">17</a> of file <a class="el" href="_scheduler_8cs_source.html">Scheduler.cs</a>.</p>
+<p>Definition at line <a class="el" href="_scheduler_8cs_source.html#l00025">25</a> of file <a class="el" href="_scheduler_8cs_source.html">Scheduler.cs</a>.</p>
 
 </div>
 </div>
@@ -483,7 +843,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_scheduler_8cs_source.html#l00021">21</a> of file <a class="el" href="_scheduler_8cs_source.html">Scheduler.cs</a>.</p>
+<p>Definition at line <a class="el" href="_scheduler_8cs_source.html#l00029">29</a> of file <a class="el" href="_scheduler_8cs_source.html">Scheduler.cs</a>.</p>
 
 </div>
 </div>
@@ -505,7 +865,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_scheduler_8cs_source.html#l00013">13</a> of file <a class="el" href="_scheduler_8cs_source.html">Scheduler.cs</a>.</p>
+<p>Definition at line <a class="el" href="_scheduler_8cs_source.html#l00021">21</a> of file <a class="el" href="_scheduler_8cs_source.html">Scheduler.cs</a>.</p>
 
 </div>
 </div>
@@ -530,7 +890,7 @@ Private Attributes</h2></td></tr>
 
 <p>Property for whether <a class="el" href="namespace_c_p_u___o_s___simulator_1_1_c_p_u.html">CPU</a> affinity is allowed on this scheduler </p>
 
-<p>Definition at line <a class="el" href="_scheduler_8cs_source.html#l00137">137</a> of file <a class="el" href="_scheduler_8cs_source.html">Scheduler.cs</a>.</p>
+<p>Definition at line <a class="el" href="_scheduler_8cs_source.html#l00301">301</a> of file <a class="el" href="_scheduler_8cs_source.html">Scheduler.cs</a>.</p>
 
 </div>
 </div>
@@ -554,7 +914,7 @@ Private Attributes</h2></td></tr>
 
 <p>Property for whether we are using the default scheduler </p>
 
-<p>Definition at line <a class="el" href="_scheduler_8cs_source.html#l00105">105</a> of file <a class="el" href="_scheduler_8cs_source.html">Scheduler.cs</a>.</p>
+<p>Definition at line <a class="el" href="_scheduler_8cs_source.html#l00269">269</a> of file <a class="el" href="_scheduler_8cs_source.html">Scheduler.cs</a>.</p>
 
 </div>
 </div>
@@ -578,7 +938,7 @@ Private Attributes</h2></td></tr>
 
 <p>Property for the queue of processes that are ready to be executed </p>
 
-<p>Definition at line <a class="el" href="_scheduler_8cs_source.html#l00056">56</a> of file <a class="el" href="_scheduler_8cs_source.html">Scheduler.cs</a>.</p>
+<p>Definition at line <a class="el" href="_scheduler_8cs_source.html#l00220">220</a> of file <a class="el" href="_scheduler_8cs_source.html">Scheduler.cs</a>.</p>
 
 </div>
 </div>
@@ -602,11 +962,11 @@ Private Attributes</h2></td></tr>
 
 <p>Property for the Round Robin priority policy being used by this scheduler </p>
 
-<p>Definition at line <a class="el" href="_scheduler_8cs_source.html#l00113">113</a> of file <a class="el" href="_scheduler_8cs_source.html">Scheduler.cs</a>.</p>
+<p>Definition at line <a class="el" href="_scheduler_8cs_source.html#l00277">277</a> of file <a class="el" href="_scheduler_8cs_source.html">Scheduler.cs</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="a79d95ec3a9df074fb99adaaa0cfc6cb9"></a>
+<a class="anchor" id="ab21e8ffe8d0f06388cc2310d3dbb3b48"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -614,7 +974,7 @@ Private Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">int CPU_OS_Simulator.Operating_System.Scheduler.Rr_TimeSlice</td>
+          <td class="memname">double CPU_OS_Simulator.Operating_System.Scheduler.Rr_TimeSlice</td>
         </tr>
       </table>
   </td>
@@ -626,7 +986,7 @@ Private Attributes</h2></td></tr>
 
 <p>Property for the length of the round robin time slice being used by this scheduler </p>
 
-<p>Definition at line <a class="el" href="_scheduler_8cs_source.html#l00088">88</a> of file <a class="el" href="_scheduler_8cs_source.html">Scheduler.cs</a>.</p>
+<p>Definition at line <a class="el" href="_scheduler_8cs_source.html#l00252">252</a> of file <a class="el" href="_scheduler_8cs_source.html">Scheduler.cs</a>.</p>
 
 </div>
 </div>
@@ -650,7 +1010,7 @@ Private Attributes</h2></td></tr>
 
 <p>Property for the type of round robin being used by the scheduler </p>
 
-<p>Definition at line <a class="el" href="_scheduler_8cs_source.html#l00121">121</a> of file <a class="el" href="_scheduler_8cs_source.html">Scheduler.cs</a>.</p>
+<p>Definition at line <a class="el" href="_scheduler_8cs_source.html#l00285">285</a> of file <a class="el" href="_scheduler_8cs_source.html">Scheduler.cs</a>.</p>
 
 </div>
 </div>
@@ -674,7 +1034,7 @@ Private Attributes</h2></td></tr>
 
 <p>Property for the currently running process </p>
 
-<p>Definition at line <a class="el" href="_scheduler_8cs_source.html#l00072">72</a> of file <a class="el" href="_scheduler_8cs_source.html">Scheduler.cs</a>.</p>
+<p>Definition at line <a class="el" href="_scheduler_8cs_source.html#l00236">236</a> of file <a class="el" href="_scheduler_8cs_source.html">Scheduler.cs</a>.</p>
 
 </div>
 </div>
@@ -698,7 +1058,7 @@ Private Attributes</h2></td></tr>
 
 <p>Property for whether the scheduler is running with no processes </p>
 
-<p>Definition at line <a class="el" href="_scheduler_8cs_source.html#l00145">145</a> of file <a class="el" href="_scheduler_8cs_source.html">Scheduler.cs</a>.</p>
+<p>Definition at line <a class="el" href="_scheduler_8cs_source.html#l00309">309</a> of file <a class="el" href="_scheduler_8cs_source.html">Scheduler.cs</a>.</p>
 
 </div>
 </div>
@@ -722,7 +1082,7 @@ Private Attributes</h2></td></tr>
 
 <p>Property for the scheduling policy currently being used by this scheduler </p>
 
-<p>Definition at line <a class="el" href="_scheduler_8cs_source.html#l00080">80</a> of file <a class="el" href="_scheduler_8cs_source.html">Scheduler.cs</a>.</p>
+<p>Definition at line <a class="el" href="_scheduler_8cs_source.html#l00244">244</a> of file <a class="el" href="_scheduler_8cs_source.html">Scheduler.cs</a>.</p>
 
 </div>
 </div>
@@ -746,7 +1106,7 @@ Private Attributes</h2></td></tr>
 
 <p>Property for the unit of time used for time slices i.e ticks or seconds </p>
 
-<p>Definition at line <a class="el" href="_scheduler_8cs_source.html#l00097">97</a> of file <a class="el" href="_scheduler_8cs_source.html">Scheduler.cs</a>.</p>
+<p>Definition at line <a class="el" href="_scheduler_8cs_source.html#l00261">261</a> of file <a class="el" href="_scheduler_8cs_source.html">Scheduler.cs</a>.</p>
 
 </div>
 </div>
@@ -770,7 +1130,7 @@ Private Attributes</h2></td></tr>
 
 <p>Property for whether the scheduler is running on a single <a class="el" href="namespace_c_p_u___o_s___simulator_1_1_c_p_u.html">CPU</a> </p>
 
-<p>Definition at line <a class="el" href="_scheduler_8cs_source.html#l00129">129</a> of file <a class="el" href="_scheduler_8cs_source.html">Scheduler.cs</a>.</p>
+<p>Definition at line <a class="el" href="_scheduler_8cs_source.html#l00293">293</a> of file <a class="el" href="_scheduler_8cs_source.html">Scheduler.cs</a>.</p>
 
 </div>
 </div>
@@ -794,7 +1154,7 @@ Private Attributes</h2></td></tr>
 
 <p>Property for the queue of processes that are waiting to be serviced by the operating system </p>
 
-<p>Definition at line <a class="el" href="_scheduler_8cs_source.html#l00064">64</a> of file <a class="el" href="_scheduler_8cs_source.html">Scheduler.cs</a>.</p>
+<p>Definition at line <a class="el" href="_scheduler_8cs_source.html#l00228">228</a> of file <a class="el" href="_scheduler_8cs_source.html">Scheduler.cs</a>.</p>
 
 </div>
 </div>

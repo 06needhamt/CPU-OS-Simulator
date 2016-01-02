@@ -2,6 +2,7 @@ var searchData=
 [
   ['table',['Table',['../class_c_p_u___o_s___simulator_1_1_memory_1_1_physical_memory.html#aaa669f8a92820bf792dd2ccb553254c9',1,'CPU_OS_Simulator::Memory::PhysicalMemory']]],
   ['tablenumber',['TableNumber',['../class_c_p_u___o_s___simulator_1_1_memory_1_1_page_table.html#a7a30b834bfe4da78dcaa6276b4572c93',1,'CPU_OS_Simulator::Memory::PageTable']]],
+  ['terminated',['Terminated',['../class_c_p_u___o_s___simulator_1_1_operating___system_1_1_simulator_process.html#a46466d1ba03a308d1aede92e004f8926',1,'CPU_OS_Simulator::Operating_System::SimulatorProcess']]],
   ['textcolor',['TextColor',['../class_c_p_u___o_s___simulator_1_1_console_window.html#a9ed1d4cf5229b50e355092d33ea0c3e6',1,'CPU_OS_Simulator::ConsoleWindow']]],
   ['timesliceunit',['TimeSliceUnit',['../class_c_p_u___o_s___simulator_1_1_operating___system_1_1_scheduler.html#aaf31b58cc7c6e632c0ce7ca34612e1ba',1,'CPU_OS_Simulator::Operating_System::Scheduler']]],
   ['tokens',['Tokens',['../class_c_p_u___o_s___simulator_1_1_compiler_1_1_frontend_1_1_lexer.html#a08611849f2bad0c53f5707d15dbdc840',1,'CPU_OS_Simulator::Compiler::Frontend::Lexer']]],

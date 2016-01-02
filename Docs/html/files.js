@@ -10,6 +10,5 @@ var files =
     [ "Memory", "dir_4bbfcbe99b666a19955ad2d97ce526ac.html", "dir_4bbfcbe99b666a19955ad2d97ce526ac" ],
     [ "MemoryTests", "dir_f971e193bafc5e68ea6baa407fcb3423.html", "dir_f971e193bafc5e68ea6baa407fcb3423" ],
     [ "Operating System", "dir_ff6e109baae131d2332bf0a49ed3a3e4.html", "dir_ff6e109baae131d2332bf0a49ed3a3e4" ],
-    [ "ThreadHandles", "dir_5ac40f36406f97e245813531ecdd7555.html", "dir_5ac40f36406f97e245813531ecdd7555" ],
     [ "WindowBridge", "dir_05c4120740551cad7e10f4e3d075d0fe.html", "dir_05c4120740551cad7e10f4e3d075d0fe" ]
 ];

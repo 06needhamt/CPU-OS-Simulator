@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['baseaddress',['BaseAddress',['../class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_simulator_program.html#ad07bee447d47fb07243a4484b5740c21',1,'CPU_OS_Simulator::CPU::SimulatorProgram']]],
+  ['baseaddress',['BaseAddress',['../class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_simulator_program.html#ad07bee447d47fb07243a4484b5740c21',1,'CPU_OS_Simulator.CPU.SimulatorProgram.BaseAddress()'],['../class_c_p_u___o_s___simulator_1_1_operating___system_1_1_process_control_block.html#a20803d3e907266a7b7920e01e5574a99',1,'CPU_OS_Simulator.Operating_System.ProcessControlBlock.BaseAddress()']]],
   ['bursttime',['BurstTime',['../class_c_p_u___o_s___simulator_1_1_operating___system_1_1_simulator_process.html#a5a340d3421e4251b758752de009b7758',1,'CPU_OS_Simulator::Operating_System::SimulatorProcess']]],
   ['byte0',['Byte0',['../class_c_p_u___o_s___simulator_1_1_memory_1_1_memory_segment.html#af1355b8170ad0461d479785ff6e1420d',1,'CPU_OS_Simulator::Memory::MemorySegment']]],
   ['byte1',['Byte1',['../class_c_p_u___o_s___simulator_1_1_memory_1_1_memory_segment.html#aba977f51dac4aeaa069fc14f877c7367',1,'CPU_OS_Simulator::Memory::MemorySegment']]],

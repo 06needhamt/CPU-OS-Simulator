@@ -1,0 +1,218 @@
+\hypertarget{_old_01_process_01_flags_8cs}{}\section{Operating System/\+Old Process Flags.\+cs File Reference}
+\label{_old_01_process_01_flags_8cs}\index{Operating System/\+Old Process Flags.\+cs@{Operating System/\+Old Process Flags.\+cs}}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{_old_01_process_01_flags_8cs_a17ae8512ee4ea40144b0f1371d831efe}{if} (chk\+\_\+\+Use\+\_\+\+Default\+\_\+\+Scheduler\+\_\+\+Process.\+Is\+Checked!=\hyperlink{_old_01_process_01_flags_8cs_afb8e110345c45e74478894341ab6b28e}{null} \&\&chk\+\_\+\+Use\+\_\+\+Default\+\_\+\+Scheduler\+\_\+\+Process.\+Is\+Checked.\+Value)
+\item 
+\hyperlink{_old_01_process_01_flags_8cs_a5e6e88d554120640ff68af6b6b2dd186}{if} (chk\+\_\+\+Delayed\+Process.\+Is\+Checked!=\hyperlink{_old_01_process_01_flags_8cs_afb8e110345c45e74478894341ab6b28e}{null} \&\&chk\+\_\+\+Delayed\+Process.\+Is\+Checked.\+Value)
+\item 
+\hyperlink{_old_01_process_01_flags_8cs_af6026b90f143b2a580e0b4aac2debbc6}{if} (chk\+\_\+\+Display\+\_\+\+Profile.\+Is\+Checked!=\hyperlink{_old_01_process_01_flags_8cs_afb8e110345c45e74478894341ab6b28e}{null} \&\&chk\+\_\+\+Display\+\_\+\+Profile.\+Is\+Checked.\+Value)
+\item 
+\hyperlink{_old_01_process_01_flags_8cs_a63aacffb33d689813fba104cea94ba5b}{if} (chk\+\_\+\+Children\+\_\+\+Die.\+Is\+Checked!=\hyperlink{_old_01_process_01_flags_8cs_afb8e110345c45e74478894341ab6b28e}{null} \&\&chk\+\_\+\+Children\+\_\+\+Die.\+Is\+Checked.\+Value)
+\item 
+\hyperlink{_old_01_process_01_flags_8cs_acd1b6f98f35be2e85990cf355c6c940d}{if} (Int32.\+Parse(txt\+\_\+\+Process\+Lifetime.\+Text)==0)
+\item 
+\hyperlink{_old_01_process_01_flags_8cs_ae58d6520d29cbd734482974012310d17}{if} (rdb\+\_\+\+Lifetime\+Secs.\+Is\+Checked!=\hyperlink{_old_01_process_01_flags_8cs_afb8e110345c45e74478894341ab6b28e}{null} \&\&rdb\+\_\+\+Lifetime\+Secs.\+Is\+Checked.\+Value)
+\item 
+\hyperlink{_old_01_process_01_flags_8cs_a0544c3fe466e421738dae463968b70ba}{else} \hyperlink{_old_01_process_01_flags_8cs_ae2c783b31bd1f73cdb8f56d4198cd1e2}{if} (rdb\+\_\+\+Lifetime\+Ticks.\+Is\+Checked!=\hyperlink{_old_01_process_01_flags_8cs_afb8e110345c45e74478894341ab6b28e}{null} \&\&rdb\+\_\+\+Lifetime\+Ticks.\+Is\+Checked.\+Value)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+temp. \hyperlink{_old_01_process_01_flags_8cs_a2ae0a723ecde3913c0e149e4635cd5ca}{burst\+Time} = 0
+\item 
+temp. \hyperlink{_old_01_process_01_flags_8cs_ab0445f647d25cb8ba41476955545b942}{child\+Processes} = new List$<$Simulator\+Process$>$()
+\item 
+\hyperlink{_old_01_process_01_flags_8cs_a0544c3fe466e421738dae463968b70ba}{else}
+\item 
+temp. \hyperlink{_old_01_process_01_flags_8cs_af36cee55351f23d0c703049941d19616}{parent\+Process} = \hyperlink{_old_01_process_01_flags_8cs_afb8e110345c45e74478894341ab6b28e}{null}
+\item 
+return \hyperlink{_old_01_process_01_flags_8cs_afb8e110345c45e74478894341ab6b28e}{null}
+\item 
+temp. \hyperlink{_old_01_process_01_flags_8cs_a13bbc8049f7ae1717a31866bcecd660c}{process\+Memory} = (int) cmb\+\_\+\+Pages.\+Selected\+Value
+\item 
+temp. \hyperlink{_old_01_process_01_flags_8cs_a058579d30b147ce1d1cf6844349d69ba}{process\+Name} = txt\+Process\+Name.\+Text
+\item 
+temp. \hyperlink{_old_01_process_01_flags_8cs_abb68098084d828f004028cbca8f865fe}{process\+Priority} = (int) cmb\+\_\+\+Priority.\+Selected\+Value
+\item 
+temp. \hyperlink{_old_01_process_01_flags_8cs_ae913aa7e7ca6226c88d2202942cbb4cb}{process\+State} = Enum\+Process\+State.\+R\+E\+A\+D\+Y
+\item 
+temp. \hyperlink{_old_01_process_01_flags_8cs_a75b1713044c4a609cea7b5f88b947f2a}{process\+Swapped} = false
+\item 
+temp. \hyperlink{_old_01_process_01_flags_8cs_a4930e0b29f3b16deb558c6f805157a1a}{process\+I\+D} = processes.\+Count
+\item 
+return \hyperlink{_old_01_process_01_flags_8cs_a2459f803487577fc25282a280595d2ce}{temp}
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\hypertarget{_old_01_process_01_flags_8cs_a17ae8512ee4ea40144b0f1371d831efe}{}\index{Old Process Flags.\+cs@{Old Process Flags.\+cs}!if@{if}}
+\index{if@{if}!Old Process Flags.\+cs@{Old Process Flags.\+cs}}
+\subsubsection[{if(chk\+\_\+\+Use\+\_\+\+Default\+\_\+\+Scheduler\+\_\+\+Process.\+Is\+Checked"!=null \&\&chk\+\_\+\+Use\+\_\+\+Default\+\_\+\+Scheduler\+\_\+\+Process.\+Is\+Checked.\+Value)}]{\setlength{\rightskip}{0pt plus 5cm}if (
+\begin{DoxyParamCaption}
+\item[{chk\+\_\+\+Use\+\_\+\+Default\+\_\+\+Scheduler\+\_\+\+Process.\+Is\+Checked!}]{ = {\ttfamily {\bf null}~\&\&~chk\+\_\+Use\+\_\+Default\+\_\+Scheduler\+\_\+Process.IsChecked.Value}}
+\end{DoxyParamCaption}
+)}\label{_old_01_process_01_flags_8cs_a17ae8512ee4ea40144b0f1371d831efe}
+
+
+Definition at line 3 of file Old Process Flags.\+cs.
+
+\hypertarget{_old_01_process_01_flags_8cs_a5e6e88d554120640ff68af6b6b2dd186}{}\index{Old Process Flags.\+cs@{Old Process Flags.\+cs}!if@{if}}
+\index{if@{if}!Old Process Flags.\+cs@{Old Process Flags.\+cs}}
+\subsubsection[{if(chk\+\_\+\+Delayed\+Process.\+Is\+Checked"!=null \&\&chk\+\_\+\+Delayed\+Process.\+Is\+Checked.\+Value)}]{\setlength{\rightskip}{0pt plus 5cm}if (
+\begin{DoxyParamCaption}
+\item[{chk\+\_\+\+Delayed\+Process.\+Is\+Checked!}]{ = {\ttfamily {\bf null}~\&\&~chk\+\_\+DelayedProcess.IsChecked.Value}}
+\end{DoxyParamCaption}
+)}\label{_old_01_process_01_flags_8cs_a5e6e88d554120640ff68af6b6b2dd186}
+
+
+Definition at line 12 of file Old Process Flags.\+cs.
+
+\hypertarget{_old_01_process_01_flags_8cs_af6026b90f143b2a580e0b4aac2debbc6}{}\index{Old Process Flags.\+cs@{Old Process Flags.\+cs}!if@{if}}
+\index{if@{if}!Old Process Flags.\+cs@{Old Process Flags.\+cs}}
+\subsubsection[{if(chk\+\_\+\+Display\+\_\+\+Profile.\+Is\+Checked"!=null \&\&chk\+\_\+\+Display\+\_\+\+Profile.\+Is\+Checked.\+Value)}]{\setlength{\rightskip}{0pt plus 5cm}if (
+\begin{DoxyParamCaption}
+\item[{chk\+\_\+\+Display\+\_\+\+Profile.\+Is\+Checked!}]{ = {\ttfamily {\bf null}~\&\&~chk\+\_\+Display\+\_\+Profile.IsChecked.Value}}
+\end{DoxyParamCaption}
+)}\label{_old_01_process_01_flags_8cs_af6026b90f143b2a580e0b4aac2debbc6}
+
+
+Definition at line 30 of file Old Process Flags.\+cs.
+
+\hypertarget{_old_01_process_01_flags_8cs_a63aacffb33d689813fba104cea94ba5b}{}\index{Old Process Flags.\+cs@{Old Process Flags.\+cs}!if@{if}}
+\index{if@{if}!Old Process Flags.\+cs@{Old Process Flags.\+cs}}
+\subsubsection[{if(chk\+\_\+\+Children\+\_\+\+Die.\+Is\+Checked"!=null \&\&chk\+\_\+\+Children\+\_\+\+Die.\+Is\+Checked.\+Value)}]{\setlength{\rightskip}{0pt plus 5cm}if (
+\begin{DoxyParamCaption}
+\item[{chk\+\_\+\+Children\+\_\+\+Die.\+Is\+Checked!}]{ = {\ttfamily {\bf null}~\&\&~chk\+\_\+Children\+\_\+Die.IsChecked.Value}}
+\end{DoxyParamCaption}
+)}\label{_old_01_process_01_flags_8cs_a63aacffb33d689813fba104cea94ba5b}
+
+
+Definition at line 38 of file Old Process Flags.\+cs.
+
+\hypertarget{_old_01_process_01_flags_8cs_acd1b6f98f35be2e85990cf355c6c940d}{}\index{Old Process Flags.\+cs@{Old Process Flags.\+cs}!if@{if}}
+\index{if@{if}!Old Process Flags.\+cs@{Old Process Flags.\+cs}}
+\subsubsection[{if(\+Int32.\+Parse(txt\+\_\+\+Process\+Lifetime.\+Text)==0)}]{\setlength{\rightskip}{0pt plus 5cm}if (
+\begin{DoxyParamCaption}
+\item[{Int32.}]{Parsetxt\+\_\+\+Process\+Lifetime.\+Text = {\ttfamily =~0}}
+\end{DoxyParamCaption}
+)}\label{_old_01_process_01_flags_8cs_acd1b6f98f35be2e85990cf355c6c940d}
+
+
+Definition at line 47 of file Old Process Flags.\+cs.
+
+\hypertarget{_old_01_process_01_flags_8cs_ae58d6520d29cbd734482974012310d17}{}\index{Old Process Flags.\+cs@{Old Process Flags.\+cs}!if@{if}}
+\index{if@{if}!Old Process Flags.\+cs@{Old Process Flags.\+cs}}
+\subsubsection[{if(rdb\+\_\+\+Lifetime\+Secs.\+Is\+Checked"!=null \&\&rdb\+\_\+\+Lifetime\+Secs.\+Is\+Checked.\+Value)}]{\setlength{\rightskip}{0pt plus 5cm}if (
+\begin{DoxyParamCaption}
+\item[{rdb\+\_\+\+Lifetime\+Secs.\+Is\+Checked!}]{ = {\ttfamily {\bf null}~\&\&~rdb\+\_\+LifetimeSecs.IsChecked.Value}}
+\end{DoxyParamCaption}
+)}\label{_old_01_process_01_flags_8cs_ae58d6520d29cbd734482974012310d17}
+
+
+Definition at line 55 of file Old Process Flags.\+cs.
+
+\hypertarget{_old_01_process_01_flags_8cs_ae2c783b31bd1f73cdb8f56d4198cd1e2}{}\index{Old Process Flags.\+cs@{Old Process Flags.\+cs}!if@{if}}
+\index{if@{if}!Old Process Flags.\+cs@{Old Process Flags.\+cs}}
+\subsubsection[{if(rdb\+\_\+\+Lifetime\+Ticks.\+Is\+Checked"!=null \&\&rdb\+\_\+\+Lifetime\+Ticks.\+Is\+Checked.\+Value)}]{\setlength{\rightskip}{0pt plus 5cm}{\bf else} if (
+\begin{DoxyParamCaption}
+\item[{rdb\+\_\+\+Lifetime\+Ticks.\+Is\+Checked!}]{ = {\ttfamily {\bf null}~\&\&~rdb\+\_\+LifetimeTicks.IsChecked.Value}}
+\end{DoxyParamCaption}
+)}\label{_old_01_process_01_flags_8cs_ae2c783b31bd1f73cdb8f56d4198cd1e2}
+
+
+Definition at line 59 of file Old Process Flags.\+cs.
+
+
+
+\subsection{Variable Documentation}
+\hypertarget{_old_01_process_01_flags_8cs_a2ae0a723ecde3913c0e149e4635cd5ca}{}\index{Old Process Flags.\+cs@{Old Process Flags.\+cs}!burst\+Time@{burst\+Time}}
+\index{burst\+Time@{burst\+Time}!Old Process Flags.\+cs@{Old Process Flags.\+cs}}
+\subsubsection[{burst\+Time}]{\setlength{\rightskip}{0pt plus 5cm}temp. burst\+Time = 0}\label{_old_01_process_01_flags_8cs_a2ae0a723ecde3913c0e149e4635cd5ca}
+
+
+Definition at line 1 of file Old Process Flags.\+cs.
+
+\hypertarget{_old_01_process_01_flags_8cs_ab0445f647d25cb8ba41476955545b942}{}\index{Old Process Flags.\+cs@{Old Process Flags.\+cs}!child\+Processes@{child\+Processes}}
+\index{child\+Processes@{child\+Processes}!Old Process Flags.\+cs@{Old Process Flags.\+cs}}
+\subsubsection[{child\+Processes}]{\setlength{\rightskip}{0pt plus 5cm}temp. child\+Processes = new List$<$Simulator\+Process$>$()}\label{_old_01_process_01_flags_8cs_ab0445f647d25cb8ba41476955545b942}
+
+
+Definition at line 2 of file Old Process Flags.\+cs.
+
+\hypertarget{_old_01_process_01_flags_8cs_a0544c3fe466e421738dae463968b70ba}{}\index{Old Process Flags.\+cs@{Old Process Flags.\+cs}!else@{else}}
+\index{else@{else}!Old Process Flags.\+cs@{Old Process Flags.\+cs}}
+\subsubsection[{else}]{\setlength{\rightskip}{0pt plus 5cm}else}\label{_old_01_process_01_flags_8cs_a0544c3fe466e421738dae463968b70ba}
+{\bfseries Initial value\+:}
+\begin{DoxyCode}
+\{
+                \hyperlink{_old_01_process_01_flags_8cs_a2459f803487577fc25282a280595d2ce}{temp}.defaultScheduler = \textcolor{keyword}{false}
+\end{DoxyCode}
+
+
+Definition at line 9 of file Old Process Flags.\+cs.
+
+\hypertarget{_old_01_process_01_flags_8cs_afb8e110345c45e74478894341ab6b28e}{}\index{Old Process Flags.\+cs@{Old Process Flags.\+cs}!null@{null}}
+\index{null@{null}!Old Process Flags.\+cs@{Old Process Flags.\+cs}}
+\subsubsection[{null}]{\setlength{\rightskip}{0pt plus 5cm}return null}\label{_old_01_process_01_flags_8cs_afb8e110345c45e74478894341ab6b28e}
+
+
+Definition at line 66 of file Old Process Flags.\+cs.
+
+\hypertarget{_old_01_process_01_flags_8cs_af36cee55351f23d0c703049941d19616}{}\index{Old Process Flags.\+cs@{Old Process Flags.\+cs}!parent\+Process@{parent\+Process}}
+\index{parent\+Process@{parent\+Process}!Old Process Flags.\+cs@{Old Process Flags.\+cs}}
+\subsubsection[{parent\+Process}]{\setlength{\rightskip}{0pt plus 5cm}temp. parent\+Process = {\bf null}}\label{_old_01_process_01_flags_8cs_af36cee55351f23d0c703049941d19616}
+
+
+Definition at line 46 of file Old Process Flags.\+cs.
+
+\hypertarget{_old_01_process_01_flags_8cs_a4930e0b29f3b16deb558c6f805157a1a}{}\index{Old Process Flags.\+cs@{Old Process Flags.\+cs}!process\+I\+D@{process\+I\+D}}
+\index{process\+I\+D@{process\+I\+D}!Old Process Flags.\+cs@{Old Process Flags.\+cs}}
+\subsubsection[{process\+I\+D}]{\setlength{\rightskip}{0pt plus 5cm}temp. process\+I\+D = processes.\+Count}\label{_old_01_process_01_flags_8cs_a4930e0b29f3b16deb558c6f805157a1a}
+
+
+Definition at line 74 of file Old Process Flags.\+cs.
+
+\hypertarget{_old_01_process_01_flags_8cs_a13bbc8049f7ae1717a31866bcecd660c}{}\index{Old Process Flags.\+cs@{Old Process Flags.\+cs}!process\+Memory@{process\+Memory}}
+\index{process\+Memory@{process\+Memory}!Old Process Flags.\+cs@{Old Process Flags.\+cs}}
+\subsubsection[{process\+Memory}]{\setlength{\rightskip}{0pt plus 5cm}temp. process\+Memory = (int) cmb\+\_\+\+Pages.\+Selected\+Value}\label{_old_01_process_01_flags_8cs_a13bbc8049f7ae1717a31866bcecd660c}
+
+
+Definition at line 69 of file Old Process Flags.\+cs.
+
+\hypertarget{_old_01_process_01_flags_8cs_a058579d30b147ce1d1cf6844349d69ba}{}\index{Old Process Flags.\+cs@{Old Process Flags.\+cs}!process\+Name@{process\+Name}}
+\index{process\+Name@{process\+Name}!Old Process Flags.\+cs@{Old Process Flags.\+cs}}
+\subsubsection[{process\+Name}]{\setlength{\rightskip}{0pt plus 5cm}temp. process\+Name = txt\+Process\+Name.\+Text}\label{_old_01_process_01_flags_8cs_a058579d30b147ce1d1cf6844349d69ba}
+
+
+Definition at line 70 of file Old Process Flags.\+cs.
+
+\hypertarget{_old_01_process_01_flags_8cs_abb68098084d828f004028cbca8f865fe}{}\index{Old Process Flags.\+cs@{Old Process Flags.\+cs}!process\+Priority@{process\+Priority}}
+\index{process\+Priority@{process\+Priority}!Old Process Flags.\+cs@{Old Process Flags.\+cs}}
+\subsubsection[{process\+Priority}]{\setlength{\rightskip}{0pt plus 5cm}temp. process\+Priority = (int) cmb\+\_\+\+Priority.\+Selected\+Value}\label{_old_01_process_01_flags_8cs_abb68098084d828f004028cbca8f865fe}
+
+
+Definition at line 71 of file Old Process Flags.\+cs.
+
+\hypertarget{_old_01_process_01_flags_8cs_ae913aa7e7ca6226c88d2202942cbb4cb}{}\index{Old Process Flags.\+cs@{Old Process Flags.\+cs}!process\+State@{process\+State}}
+\index{process\+State@{process\+State}!Old Process Flags.\+cs@{Old Process Flags.\+cs}}
+\subsubsection[{process\+State}]{\setlength{\rightskip}{0pt plus 5cm}temp. process\+State = Enum\+Process\+State.\+R\+E\+A\+D\+Y}\label{_old_01_process_01_flags_8cs_ae913aa7e7ca6226c88d2202942cbb4cb}
+
+
+Definition at line 72 of file Old Process Flags.\+cs.
+
+\hypertarget{_old_01_process_01_flags_8cs_a75b1713044c4a609cea7b5f88b947f2a}{}\index{Old Process Flags.\+cs@{Old Process Flags.\+cs}!process\+Swapped@{process\+Swapped}}
+\index{process\+Swapped@{process\+Swapped}!Old Process Flags.\+cs@{Old Process Flags.\+cs}}
+\subsubsection[{process\+Swapped}]{\setlength{\rightskip}{0pt plus 5cm}temp. process\+Swapped = false}\label{_old_01_process_01_flags_8cs_a75b1713044c4a609cea7b5f88b947f2a}
+
+
+Definition at line 73 of file Old Process Flags.\+cs.
+
+\hypertarget{_old_01_process_01_flags_8cs_a2459f803487577fc25282a280595d2ce}{}\index{Old Process Flags.\+cs@{Old Process Flags.\+cs}!temp@{temp}}
+\index{temp@{temp}!Old Process Flags.\+cs@{Old Process Flags.\+cs}}
+\subsubsection[{temp}]{\setlength{\rightskip}{0pt plus 5cm}return temp}\label{_old_01_process_01_flags_8cs_a2459f803487577fc25282a280595d2ce}
+
+
+Definition at line 84 of file Old Process Flags.\+cs.
+

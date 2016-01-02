@@ -10,6 +10,8 @@ this struct represents the flags passed to a process
 \item 
 \hyperlink{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_simulator_program}{Simulator\+Program} \hyperlink{struct_c_p_u___o_s___simulator_1_1_operating___system_1_1_process_flags_addf9316ebaddcec9f466b0317d15d45c}{program}
 \item 
+string \hyperlink{struct_c_p_u___o_s___simulator_1_1_operating___system_1_1_process_flags_af219a7a8b99d0c94b5847797dabb39f6}{program\+Name}
+\item 
 string \hyperlink{struct_c_p_u___o_s___simulator_1_1_operating___system_1_1_process_flags_a2823e57851d2940c47cd06afd0487360}{process\+Name}
 \item 
 int \hyperlink{struct_c_p_u___o_s___simulator_1_1_operating___system_1_1_process_flags_a0a14c1f617bd3cd4d2b28b5f13cf83d5}{process\+Priority}
@@ -19,6 +21,10 @@ int \hyperlink{struct_c_p_u___o_s___simulator_1_1_operating___system_1_1_process
 int \hyperlink{struct_c_p_u___o_s___simulator_1_1_operating___system_1_1_process_flags_a45de0517d0705f5c9ff1322e969cae20}{process\+Lifetime}
 \item 
 \hyperlink{namespace_c_p_u___o_s___simulator_1_1_operating___system_a0553d0bc2513aec52caa769acf994d5c}{Enum\+Time\+Unit} \hyperlink{struct_c_p_u___o_s___simulator_1_1_operating___system_1_1_process_flags_af7b24dbd3fd07741d54984f6261694f6}{process\+Lifetime\+Time\+Unit}
+\item 
+int \hyperlink{struct_c_p_u___o_s___simulator_1_1_operating___system_1_1_process_flags_a5a0ef784d6cef8d5d42ab43b69972f5b}{process\+I\+D}
+\item 
+int \hyperlink{struct_c_p_u___o_s___simulator_1_1_operating___system_1_1_process_flags_a204157ba5a9571934344bef2378f88bf}{C\+P\+Uid}
 \item 
 int \hyperlink{struct_c_p_u___o_s___simulator_1_1_operating___system_1_1_process_flags_ac0e98ee86de3c22c7a022e3dcd69935f}{burst\+Time}
 \item 
@@ -36,11 +42,29 @@ int \hyperlink{struct_c_p_u___o_s___simulator_1_1_operating___system_1_1_process
 \item 
 \hyperlink{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_simulator_process}{Simulator\+Process} \hyperlink{struct_c_p_u___o_s___simulator_1_1_operating___system_1_1_process_flags_a6b32c9b5ed4914dede86c2a1306c897e}{parent\+Process}
 \item 
+int \hyperlink{struct_c_p_u___o_s___simulator_1_1_operating___system_1_1_process_flags_a115209ffd287aaba9aa6b1bf9ba7a968}{parent\+Process\+I\+D}
+\item 
 List$<$ \hyperlink{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_simulator_process}{Simulator\+Process} $>$ \hyperlink{struct_c_p_u___o_s___simulator_1_1_operating___system_1_1_process_flags_aae4b90a688d3ac4e6d3faea6cb275242}{child\+Processes}
 \item 
 bool \hyperlink{struct_c_p_u___o_s___simulator_1_1_operating___system_1_1_process_flags_aa57e25afb816fa9a0e11c43920640992}{process\+Swapped}
 \item 
 \hyperlink{namespace_c_p_u___o_s___simulator_1_1_operating___system_a836ee2204e78fcb3a7dd6c3c942b1a24}{Enum\+Process\+State} \hyperlink{struct_c_p_u___o_s___simulator_1_1_operating___system_1_1_process_flags_ac5d7a47d263eb80357b0a7900858bd98}{process\+State}
+\item 
+bool \hyperlink{struct_c_p_u___o_s___simulator_1_1_operating___system_1_1_process_flags_abc77938558baa106a799492596c9178b}{resource\+Starved}
+\item 
+List$<$ \hyperlink{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_system_resource}{System\+Resource} $>$ \hyperlink{struct_c_p_u___o_s___simulator_1_1_operating___system_1_1_process_flags_a88a701561b9d77841b6b5db19157a30f}{allocated\+Resources}
+\item 
+List$<$ \hyperlink{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_system_resource}{System\+Resource} $>$ \hyperlink{struct_c_p_u___o_s___simulator_1_1_operating___system_1_1_process_flags_ace2cabaf7ca895740fa86f540424c266}{requested\+Resources}
+\item 
+bool \hyperlink{struct_c_p_u___o_s___simulator_1_1_operating___system_1_1_process_flags_a5986a802a1f22f726209aba6d52f7e9c}{terminated}
+\item 
+\hyperlink{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_process_control_block}{Process\+Control\+Block} \hyperlink{struct_c_p_u___o_s___simulator_1_1_operating___system_1_1_process_flags_adca49f9a3ee1f5e380a7547b0b8b73d6}{process\+Control\+Block}
+\item 
+int \hyperlink{struct_c_p_u___o_s___simulator_1_1_operating___system_1_1_process_flags_a819f86c160d64c6f4cbba56418cb688e}{O\+Sid}
+\item 
+int \hyperlink{struct_c_p_u___o_s___simulator_1_1_operating___system_1_1_process_flags_a28dbea54b61ff7f12d5dc8c3c40f632d}{clock\+Speed}
+\item 
+\hyperlink{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_process_execution_unit}{Process\+Execution\+Unit} \hyperlink{struct_c_p_u___o_s___simulator_1_1_operating___system_1_1_process_flags_a6168635b7297d4ede7af0b1fce2e3db6}{unit}
 \end{DoxyCompactItemize}
 
 
@@ -54,117 +78,166 @@ Definition at line 9 of file Process\+Flags.\+cs.
 
 
 \subsection{Member Data Documentation}
+\hypertarget{struct_c_p_u___o_s___simulator_1_1_operating___system_1_1_process_flags_a88a701561b9d77841b6b5db19157a30f}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Process\+Flags@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Process\+Flags}!allocated\+Resources@{allocated\+Resources}}
+\index{allocated\+Resources@{allocated\+Resources}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Process\+Flags@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Process\+Flags}}
+\subsubsection[{allocated\+Resources}]{\setlength{\rightskip}{0pt plus 5cm}List$<${\bf System\+Resource}$>$ C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Operating\+\_\+\+System.\+Process\+Flags.\+allocated\+Resources}\label{struct_c_p_u___o_s___simulator_1_1_operating___system_1_1_process_flags_a88a701561b9d77841b6b5db19157a30f}
+
+
+Definition at line 33 of file Process\+Flags.\+cs.
+
 \hypertarget{struct_c_p_u___o_s___simulator_1_1_operating___system_1_1_process_flags_ac0e98ee86de3c22c7a022e3dcd69935f}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Process\+Flags@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Process\+Flags}!burst\+Time@{burst\+Time}}
 \index{burst\+Time@{burst\+Time}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Process\+Flags@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Process\+Flags}}
 \subsubsection[{burst\+Time}]{\setlength{\rightskip}{0pt plus 5cm}int C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Operating\+\_\+\+System.\+Process\+Flags.\+burst\+Time}\label{struct_c_p_u___o_s___simulator_1_1_operating___system_1_1_process_flags_ac0e98ee86de3c22c7a022e3dcd69935f}
 
 
-Definition at line 17 of file Process\+Flags.\+cs.
+Definition at line 20 of file Process\+Flags.\+cs.
 
 \hypertarget{struct_c_p_u___o_s___simulator_1_1_operating___system_1_1_process_flags_aae4b90a688d3ac4e6d3faea6cb275242}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Process\+Flags@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Process\+Flags}!child\+Processes@{child\+Processes}}
 \index{child\+Processes@{child\+Processes}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Process\+Flags@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Process\+Flags}}
 \subsubsection[{child\+Processes}]{\setlength{\rightskip}{0pt plus 5cm}List$<${\bf Simulator\+Process}$>$ C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Operating\+\_\+\+System.\+Process\+Flags.\+child\+Processes}\label{struct_c_p_u___o_s___simulator_1_1_operating___system_1_1_process_flags_aae4b90a688d3ac4e6d3faea6cb275242}
 
 
-Definition at line 25 of file Process\+Flags.\+cs.
+Definition at line 29 of file Process\+Flags.\+cs.
+
+\hypertarget{struct_c_p_u___o_s___simulator_1_1_operating___system_1_1_process_flags_a28dbea54b61ff7f12d5dc8c3c40f632d}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Process\+Flags@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Process\+Flags}!clock\+Speed@{clock\+Speed}}
+\index{clock\+Speed@{clock\+Speed}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Process\+Flags@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Process\+Flags}}
+\subsubsection[{clock\+Speed}]{\setlength{\rightskip}{0pt plus 5cm}int C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Operating\+\_\+\+System.\+Process\+Flags.\+clock\+Speed}\label{struct_c_p_u___o_s___simulator_1_1_operating___system_1_1_process_flags_a28dbea54b61ff7f12d5dc8c3c40f632d}
+
+
+Definition at line 38 of file Process\+Flags.\+cs.
+
+\hypertarget{struct_c_p_u___o_s___simulator_1_1_operating___system_1_1_process_flags_a204157ba5a9571934344bef2378f88bf}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Process\+Flags@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Process\+Flags}!C\+P\+Uid@{C\+P\+Uid}}
+\index{C\+P\+Uid@{C\+P\+Uid}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Process\+Flags@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Process\+Flags}}
+\subsubsection[{C\+P\+Uid}]{\setlength{\rightskip}{0pt plus 5cm}int C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Operating\+\_\+\+System.\+Process\+Flags.\+C\+P\+Uid}\label{struct_c_p_u___o_s___simulator_1_1_operating___system_1_1_process_flags_a204157ba5a9571934344bef2378f88bf}
+
+
+Definition at line 19 of file Process\+Flags.\+cs.
 
 \hypertarget{struct_c_p_u___o_s___simulator_1_1_operating___system_1_1_process_flags_a927e8e998250ab57385146cf8dd487b8}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Process\+Flags@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Process\+Flags}!default\+Scheduler@{default\+Scheduler}}
 \index{default\+Scheduler@{default\+Scheduler}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Process\+Flags@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Process\+Flags}}
 \subsubsection[{default\+Scheduler}]{\setlength{\rightskip}{0pt plus 5cm}bool C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Operating\+\_\+\+System.\+Process\+Flags.\+default\+Scheduler}\label{struct_c_p_u___o_s___simulator_1_1_operating___system_1_1_process_flags_a927e8e998250ab57385146cf8dd487b8}
 
 
-Definition at line 20 of file Process\+Flags.\+cs.
+Definition at line 23 of file Process\+Flags.\+cs.
 
 \hypertarget{struct_c_p_u___o_s___simulator_1_1_operating___system_1_1_process_flags_ac6a4a5a7465da7e567a655cae4dd1aa4}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Process\+Flags@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Process\+Flags}!delayed\+Process@{delayed\+Process}}
 \index{delayed\+Process@{delayed\+Process}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Process\+Flags@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Process\+Flags}}
 \subsubsection[{delayed\+Process}]{\setlength{\rightskip}{0pt plus 5cm}bool C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Operating\+\_\+\+System.\+Process\+Flags.\+delayed\+Process}\label{struct_c_p_u___o_s___simulator_1_1_operating___system_1_1_process_flags_ac6a4a5a7465da7e567a655cae4dd1aa4}
 
 
-Definition at line 21 of file Process\+Flags.\+cs.
+Definition at line 24 of file Process\+Flags.\+cs.
 
 \hypertarget{struct_c_p_u___o_s___simulator_1_1_operating___system_1_1_process_flags_a9b9ff1ea252f64035813f0f478d705ae}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Process\+Flags@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Process\+Flags}!delayed\+Process\+Time@{delayed\+Process\+Time}}
 \index{delayed\+Process\+Time@{delayed\+Process\+Time}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Process\+Flags@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Process\+Flags}}
 \subsubsection[{delayed\+Process\+Time}]{\setlength{\rightskip}{0pt plus 5cm}int C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Operating\+\_\+\+System.\+Process\+Flags.\+delayed\+Process\+Time}\label{struct_c_p_u___o_s___simulator_1_1_operating___system_1_1_process_flags_a9b9ff1ea252f64035813f0f478d705ae}
 
 
-Definition at line 22 of file Process\+Flags.\+cs.
+Definition at line 25 of file Process\+Flags.\+cs.
 
 \hypertarget{struct_c_p_u___o_s___simulator_1_1_operating___system_1_1_process_flags_a0e5e535ff000e1b630180443c2295776}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Process\+Flags@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Process\+Flags}!delay\+Time\+Unit@{delay\+Time\+Unit}}
 \index{delay\+Time\+Unit@{delay\+Time\+Unit}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Process\+Flags@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Process\+Flags}}
 \subsubsection[{delay\+Time\+Unit}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Enum\+Time\+Unit} C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Operating\+\_\+\+System.\+Process\+Flags.\+delay\+Time\+Unit}\label{struct_c_p_u___o_s___simulator_1_1_operating___system_1_1_process_flags_a0e5e535ff000e1b630180443c2295776}
 
 
-Definition at line 23 of file Process\+Flags.\+cs.
+Definition at line 26 of file Process\+Flags.\+cs.
 
 \hypertarget{struct_c_p_u___o_s___simulator_1_1_operating___system_1_1_process_flags_a8290519886f3517f690f3acba8330440}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Process\+Flags@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Process\+Flags}!display\+Profile@{display\+Profile}}
 \index{display\+Profile@{display\+Profile}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Process\+Flags@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Process\+Flags}}
 \subsubsection[{display\+Profile}]{\setlength{\rightskip}{0pt plus 5cm}bool C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Operating\+\_\+\+System.\+Process\+Flags.\+display\+Profile}\label{struct_c_p_u___o_s___simulator_1_1_operating___system_1_1_process_flags_a8290519886f3517f690f3acba8330440}
 
 
-Definition at line 18 of file Process\+Flags.\+cs.
+Definition at line 21 of file Process\+Flags.\+cs.
+
+\hypertarget{struct_c_p_u___o_s___simulator_1_1_operating___system_1_1_process_flags_a819f86c160d64c6f4cbba56418cb688e}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Process\+Flags@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Process\+Flags}!O\+Sid@{O\+Sid}}
+\index{O\+Sid@{O\+Sid}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Process\+Flags@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Process\+Flags}}
+\subsubsection[{O\+Sid}]{\setlength{\rightskip}{0pt plus 5cm}int C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Operating\+\_\+\+System.\+Process\+Flags.\+O\+Sid}\label{struct_c_p_u___o_s___simulator_1_1_operating___system_1_1_process_flags_a819f86c160d64c6f4cbba56418cb688e}
+
+
+Definition at line 37 of file Process\+Flags.\+cs.
 
 \hypertarget{struct_c_p_u___o_s___simulator_1_1_operating___system_1_1_process_flags_a8ef3875fcd47a5f1fa37b61a2979b813}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Process\+Flags@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Process\+Flags}!parent\+Dies\+Children\+Die@{parent\+Dies\+Children\+Die}}
 \index{parent\+Dies\+Children\+Die@{parent\+Dies\+Children\+Die}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Process\+Flags@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Process\+Flags}}
 \subsubsection[{parent\+Dies\+Children\+Die}]{\setlength{\rightskip}{0pt plus 5cm}bool C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Operating\+\_\+\+System.\+Process\+Flags.\+parent\+Dies\+Children\+Die}\label{struct_c_p_u___o_s___simulator_1_1_operating___system_1_1_process_flags_a8ef3875fcd47a5f1fa37b61a2979b813}
 
 
-Definition at line 19 of file Process\+Flags.\+cs.
+Definition at line 22 of file Process\+Flags.\+cs.
 
 \hypertarget{struct_c_p_u___o_s___simulator_1_1_operating___system_1_1_process_flags_a6b32c9b5ed4914dede86c2a1306c897e}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Process\+Flags@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Process\+Flags}!parent\+Process@{parent\+Process}}
 \index{parent\+Process@{parent\+Process}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Process\+Flags@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Process\+Flags}}
 \subsubsection[{parent\+Process}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Simulator\+Process} C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Operating\+\_\+\+System.\+Process\+Flags.\+parent\+Process}\label{struct_c_p_u___o_s___simulator_1_1_operating___system_1_1_process_flags_a6b32c9b5ed4914dede86c2a1306c897e}
 
 
-Definition at line 24 of file Process\+Flags.\+cs.
+Definition at line 27 of file Process\+Flags.\+cs.
+
+\hypertarget{struct_c_p_u___o_s___simulator_1_1_operating___system_1_1_process_flags_a115209ffd287aaba9aa6b1bf9ba7a968}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Process\+Flags@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Process\+Flags}!parent\+Process\+I\+D@{parent\+Process\+I\+D}}
+\index{parent\+Process\+I\+D@{parent\+Process\+I\+D}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Process\+Flags@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Process\+Flags}}
+\subsubsection[{parent\+Process\+I\+D}]{\setlength{\rightskip}{0pt plus 5cm}int C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Operating\+\_\+\+System.\+Process\+Flags.\+parent\+Process\+I\+D}\label{struct_c_p_u___o_s___simulator_1_1_operating___system_1_1_process_flags_a115209ffd287aaba9aa6b1bf9ba7a968}
+
+
+Definition at line 28 of file Process\+Flags.\+cs.
+
+\hypertarget{struct_c_p_u___o_s___simulator_1_1_operating___system_1_1_process_flags_adca49f9a3ee1f5e380a7547b0b8b73d6}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Process\+Flags@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Process\+Flags}!process\+Control\+Block@{process\+Control\+Block}}
+\index{process\+Control\+Block@{process\+Control\+Block}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Process\+Flags@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Process\+Flags}}
+\subsubsection[{process\+Control\+Block}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Process\+Control\+Block} C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Operating\+\_\+\+System.\+Process\+Flags.\+process\+Control\+Block}\label{struct_c_p_u___o_s___simulator_1_1_operating___system_1_1_process_flags_adca49f9a3ee1f5e380a7547b0b8b73d6}
+
+
+Definition at line 36 of file Process\+Flags.\+cs.
+
+\hypertarget{struct_c_p_u___o_s___simulator_1_1_operating___system_1_1_process_flags_a5a0ef784d6cef8d5d42ab43b69972f5b}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Process\+Flags@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Process\+Flags}!process\+I\+D@{process\+I\+D}}
+\index{process\+I\+D@{process\+I\+D}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Process\+Flags@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Process\+Flags}}
+\subsubsection[{process\+I\+D}]{\setlength{\rightskip}{0pt plus 5cm}int C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Operating\+\_\+\+System.\+Process\+Flags.\+process\+I\+D}\label{struct_c_p_u___o_s___simulator_1_1_operating___system_1_1_process_flags_a5a0ef784d6cef8d5d42ab43b69972f5b}
+
+
+Definition at line 18 of file Process\+Flags.\+cs.
 
 \hypertarget{struct_c_p_u___o_s___simulator_1_1_operating___system_1_1_process_flags_a45de0517d0705f5c9ff1322e969cae20}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Process\+Flags@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Process\+Flags}!process\+Lifetime@{process\+Lifetime}}
 \index{process\+Lifetime@{process\+Lifetime}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Process\+Flags@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Process\+Flags}}
 \subsubsection[{process\+Lifetime}]{\setlength{\rightskip}{0pt plus 5cm}int C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Operating\+\_\+\+System.\+Process\+Flags.\+process\+Lifetime}\label{struct_c_p_u___o_s___simulator_1_1_operating___system_1_1_process_flags_a45de0517d0705f5c9ff1322e969cae20}
 
 
-Definition at line 15 of file Process\+Flags.\+cs.
+Definition at line 16 of file Process\+Flags.\+cs.
 
 \hypertarget{struct_c_p_u___o_s___simulator_1_1_operating___system_1_1_process_flags_af7b24dbd3fd07741d54984f6261694f6}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Process\+Flags@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Process\+Flags}!process\+Lifetime\+Time\+Unit@{process\+Lifetime\+Time\+Unit}}
 \index{process\+Lifetime\+Time\+Unit@{process\+Lifetime\+Time\+Unit}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Process\+Flags@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Process\+Flags}}
 \subsubsection[{process\+Lifetime\+Time\+Unit}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Enum\+Time\+Unit} C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Operating\+\_\+\+System.\+Process\+Flags.\+process\+Lifetime\+Time\+Unit}\label{struct_c_p_u___o_s___simulator_1_1_operating___system_1_1_process_flags_af7b24dbd3fd07741d54984f6261694f6}
 
 
-Definition at line 16 of file Process\+Flags.\+cs.
+Definition at line 17 of file Process\+Flags.\+cs.
 
 \hypertarget{struct_c_p_u___o_s___simulator_1_1_operating___system_1_1_process_flags_a2ed1133d00c4d6d39f9e5cd70febbacb}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Process\+Flags@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Process\+Flags}!process\+Memory@{process\+Memory}}
 \index{process\+Memory@{process\+Memory}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Process\+Flags@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Process\+Flags}}
 \subsubsection[{process\+Memory}]{\setlength{\rightskip}{0pt plus 5cm}int C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Operating\+\_\+\+System.\+Process\+Flags.\+process\+Memory}\label{struct_c_p_u___o_s___simulator_1_1_operating___system_1_1_process_flags_a2ed1133d00c4d6d39f9e5cd70febbacb}
 
 
-Definition at line 14 of file Process\+Flags.\+cs.
+Definition at line 15 of file Process\+Flags.\+cs.
 
 \hypertarget{struct_c_p_u___o_s___simulator_1_1_operating___system_1_1_process_flags_a2823e57851d2940c47cd06afd0487360}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Process\+Flags@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Process\+Flags}!process\+Name@{process\+Name}}
 \index{process\+Name@{process\+Name}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Process\+Flags@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Process\+Flags}}
 \subsubsection[{process\+Name}]{\setlength{\rightskip}{0pt plus 5cm}string C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Operating\+\_\+\+System.\+Process\+Flags.\+process\+Name}\label{struct_c_p_u___o_s___simulator_1_1_operating___system_1_1_process_flags_a2823e57851d2940c47cd06afd0487360}
 
 
-Definition at line 12 of file Process\+Flags.\+cs.
+Definition at line 13 of file Process\+Flags.\+cs.
 
 \hypertarget{struct_c_p_u___o_s___simulator_1_1_operating___system_1_1_process_flags_a0a14c1f617bd3cd4d2b28b5f13cf83d5}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Process\+Flags@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Process\+Flags}!process\+Priority@{process\+Priority}}
 \index{process\+Priority@{process\+Priority}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Process\+Flags@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Process\+Flags}}
 \subsubsection[{process\+Priority}]{\setlength{\rightskip}{0pt plus 5cm}int C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Operating\+\_\+\+System.\+Process\+Flags.\+process\+Priority}\label{struct_c_p_u___o_s___simulator_1_1_operating___system_1_1_process_flags_a0a14c1f617bd3cd4d2b28b5f13cf83d5}
 
 
-Definition at line 13 of file Process\+Flags.\+cs.
+Definition at line 14 of file Process\+Flags.\+cs.
 
 \hypertarget{struct_c_p_u___o_s___simulator_1_1_operating___system_1_1_process_flags_ac5d7a47d263eb80357b0a7900858bd98}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Process\+Flags@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Process\+Flags}!process\+State@{process\+State}}
 \index{process\+State@{process\+State}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Process\+Flags@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Process\+Flags}}
 \subsubsection[{process\+State}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Enum\+Process\+State} C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Operating\+\_\+\+System.\+Process\+Flags.\+process\+State}\label{struct_c_p_u___o_s___simulator_1_1_operating___system_1_1_process_flags_ac5d7a47d263eb80357b0a7900858bd98}
 
 
-Definition at line 27 of file Process\+Flags.\+cs.
+Definition at line 31 of file Process\+Flags.\+cs.
 
 \hypertarget{struct_c_p_u___o_s___simulator_1_1_operating___system_1_1_process_flags_aa57e25afb816fa9a0e11c43920640992}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Process\+Flags@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Process\+Flags}!process\+Swapped@{process\+Swapped}}
 \index{process\+Swapped@{process\+Swapped}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Process\+Flags@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Process\+Flags}}
 \subsubsection[{process\+Swapped}]{\setlength{\rightskip}{0pt plus 5cm}bool C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Operating\+\_\+\+System.\+Process\+Flags.\+process\+Swapped}\label{struct_c_p_u___o_s___simulator_1_1_operating___system_1_1_process_flags_aa57e25afb816fa9a0e11c43920640992}
 
 
-Definition at line 26 of file Process\+Flags.\+cs.
+Definition at line 30 of file Process\+Flags.\+cs.
 
 \hypertarget{struct_c_p_u___o_s___simulator_1_1_operating___system_1_1_process_flags_addf9316ebaddcec9f466b0317d15d45c}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Process\+Flags@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Process\+Flags}!program@{program}}
 \index{program@{program}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Process\+Flags@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Process\+Flags}}
@@ -172,6 +245,41 @@ Definition at line 26 of file Process\+Flags.\+cs.
 
 
 Definition at line 11 of file Process\+Flags.\+cs.
+
+\hypertarget{struct_c_p_u___o_s___simulator_1_1_operating___system_1_1_process_flags_af219a7a8b99d0c94b5847797dabb39f6}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Process\+Flags@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Process\+Flags}!program\+Name@{program\+Name}}
+\index{program\+Name@{program\+Name}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Process\+Flags@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Process\+Flags}}
+\subsubsection[{program\+Name}]{\setlength{\rightskip}{0pt plus 5cm}string C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Operating\+\_\+\+System.\+Process\+Flags.\+program\+Name}\label{struct_c_p_u___o_s___simulator_1_1_operating___system_1_1_process_flags_af219a7a8b99d0c94b5847797dabb39f6}
+
+
+Definition at line 12 of file Process\+Flags.\+cs.
+
+\hypertarget{struct_c_p_u___o_s___simulator_1_1_operating___system_1_1_process_flags_ace2cabaf7ca895740fa86f540424c266}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Process\+Flags@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Process\+Flags}!requested\+Resources@{requested\+Resources}}
+\index{requested\+Resources@{requested\+Resources}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Process\+Flags@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Process\+Flags}}
+\subsubsection[{requested\+Resources}]{\setlength{\rightskip}{0pt plus 5cm}List$<${\bf System\+Resource}$>$ C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Operating\+\_\+\+System.\+Process\+Flags.\+requested\+Resources}\label{struct_c_p_u___o_s___simulator_1_1_operating___system_1_1_process_flags_ace2cabaf7ca895740fa86f540424c266}
+
+
+Definition at line 34 of file Process\+Flags.\+cs.
+
+\hypertarget{struct_c_p_u___o_s___simulator_1_1_operating___system_1_1_process_flags_abc77938558baa106a799492596c9178b}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Process\+Flags@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Process\+Flags}!resource\+Starved@{resource\+Starved}}
+\index{resource\+Starved@{resource\+Starved}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Process\+Flags@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Process\+Flags}}
+\subsubsection[{resource\+Starved}]{\setlength{\rightskip}{0pt plus 5cm}bool C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Operating\+\_\+\+System.\+Process\+Flags.\+resource\+Starved}\label{struct_c_p_u___o_s___simulator_1_1_operating___system_1_1_process_flags_abc77938558baa106a799492596c9178b}
+
+
+Definition at line 32 of file Process\+Flags.\+cs.
+
+\hypertarget{struct_c_p_u___o_s___simulator_1_1_operating___system_1_1_process_flags_a5986a802a1f22f726209aba6d52f7e9c}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Process\+Flags@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Process\+Flags}!terminated@{terminated}}
+\index{terminated@{terminated}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Process\+Flags@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Process\+Flags}}
+\subsubsection[{terminated}]{\setlength{\rightskip}{0pt plus 5cm}bool C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Operating\+\_\+\+System.\+Process\+Flags.\+terminated}\label{struct_c_p_u___o_s___simulator_1_1_operating___system_1_1_process_flags_a5986a802a1f22f726209aba6d52f7e9c}
+
+
+Definition at line 35 of file Process\+Flags.\+cs.
+
+\hypertarget{struct_c_p_u___o_s___simulator_1_1_operating___system_1_1_process_flags_a6168635b7297d4ede7af0b1fce2e3db6}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Process\+Flags@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Process\+Flags}!unit@{unit}}
+\index{unit@{unit}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Process\+Flags@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Process\+Flags}}
+\subsubsection[{unit}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Process\+Execution\+Unit} C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Operating\+\_\+\+System.\+Process\+Flags.\+unit}\label{struct_c_p_u___o_s___simulator_1_1_operating___system_1_1_process_flags_a6168635b7297d4ede7af0b1fce2e3db6}
+
+
+Definition at line 39 of file Process\+Flags.\+cs.
 
 
 

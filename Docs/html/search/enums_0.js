@@ -2,7 +2,7 @@ var searchData=
 [
   ['enumcompilermode',['EnumCompilerMode',['../namespace_c_p_u___o_s___simulator_1_1_compiler.html#ada8d93b571fa15a0f2eac8c9647a89fe',1,'CPU_OS_Simulator::Compiler']]],
   ['enumconsolecommands',['EnumConsoleCommands',['../namespace_c_p_u___o_s___simulator_1_1_console.html#a5d9f2366d41d3eb074f056be426272d7',1,'CPU_OS_Simulator::Console']]],
-  ['enumerrorcodes',['EnumErrorCodes',['../namespace_c_p_u___o_s___simulator_1_1_compiler_1_1_frontend.html#a268b68f35fd94ce3549dd33a7e77d7e8',1,'CPU_OS_Simulator::Compiler::Frontend']]],
+  ['enumerrorcodes',['EnumErrorCodes',['../namespace_c_p_u___o_s___simulator_1_1_compiler_1_1_frontend.html#a268b68f35fd94ce3549dd33a7e77d7e8',1,'CPU_OS_Simulator.Compiler.Frontend.EnumErrorCodes()'],['../namespace_c_p_u___o_s___simulator_1_1_operating___system.html#aea0b669d1bbf5690ae34ac2f8bef9470',1,'CPU_OS_Simulator.Operating_System.EnumErrorCodes()']]],
   ['enuminstructionmode',['EnumInstructionMode',['../namespace_c_p_u___o_s___simulator.html#adc17a5a5e004084f05dc8e4d3f70e31f',1,'CPU_OS_Simulator']]],
   ['enuminstructionsegmentsizes',['EnumInstructionSegmentSizes',['../namespace_c_p_u___o_s___simulator_1_1_compiler_1_1_backend.html#a366a7efa6fcfb05aa404e76da1cf3c5e',1,'CPU_OS_Simulator::Compiler::Backend']]],
   ['enuminstructionsize',['EnumInstructionSize',['../namespace_c_p_u___o_s___simulator_1_1_c_p_u.html#af322082b9b46482202165fb547c052a7',1,'CPU_OS_Simulator::CPU']]],

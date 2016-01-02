@@ -120,6 +120,12 @@ Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_c_p_u___o_s___simulator_1_1_operating___system_1_1_o_s_flags.html">OSFlags</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">This struct represents the flags passed to the operating system  <a href="struct_c_p_u___o_s___simulator_1_1_operating___system_1_1_o_s_flags.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_c_p_u___o_s___simulator_1_1_operating___system_1_1_p_c_b_flags.html">PCBFlags</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_p_u___o_s___simulator_1_1_operating___system_1_1_process_control_block.html">ProcessControlBlock</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_p_u___o_s___simulator_1_1_operating___system_1_1_process_execution_unit.html">ProcessExecutionUnit</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_c_p_u___o_s___simulator_1_1_operating___system_1_1_process_flags.html">ProcessFlags</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">this struct represents the flags passed to a process  <a href="struct_c_p_u___o_s___simulator_1_1_operating___system_1_1_process_flags.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -132,9 +138,21 @@ Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_p_u___o_s___simulator_1_1_operating___system_1_1_simulator_process.html">SimulatorProcess</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">This class represents a process that can be run on the virtual operating system  <a href="class_c_p_u___o_s___simulator_1_1_operating___system_1_1_simulator_process.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_p_u___o_s___simulator_1_1_operating___system_1_1_system_resource.html">SystemResource</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="enum-members"></a>
 Enumerations</h2></td></tr>
+<tr class="memitem:aea0b669d1bbf5690ae34ac2f8bef9470"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_c_p_u___o_s___simulator_1_1_operating___system.html#aea0b669d1bbf5690ae34ac2f8bef9470">EnumErrorCodes</a> { <br />
+&#160;&#160;<a class="el" href="namespace_c_p_u___o_s___simulator_1_1_operating___system.html#aea0b669d1bbf5690ae34ac2f8bef9470a696b031073e74bf2cb98e5ef201d4aa3">EnumErrorCodes.UNKNOWN</a> = -1, 
+<a class="el" href="namespace_c_p_u___o_s___simulator_1_1_operating___system.html#aea0b669d1bbf5690ae34ac2f8bef9470ad306b6fdee05fe87455110ddf6501e6c">EnumErrorCodes.NO_ERROR</a> = 0, 
+<a class="el" href="namespace_c_p_u___o_s___simulator_1_1_operating___system.html#aea0b669d1bbf5690ae34ac2f8bef9470a1bc8f3c5a89b2c7abbfc54ef21586aea">EnumErrorCodes.NO_PROCESSES</a> =1, 
+<a class="el" href="namespace_c_p_u___o_s___simulator_1_1_operating___system.html#aea0b669d1bbf5690ae34ac2f8bef9470a8f35b656de87c54e18710fc94d73a614">EnumErrorCodes.DEADLOCK</a> = 2, 
+<br />
+&#160;&#160;<a class="el" href="namespace_c_p_u___o_s___simulator_1_1_operating___system.html#aea0b669d1bbf5690ae34ac2f8bef9470ac56ddb8056b120c9d5fee05981f219c6">EnumErrorCodes.OUT_OF_MEMORY</a> = 3
+<br />
+ }<tr class="separator:aea0b669d1bbf5690ae34ac2f8bef9470"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</td></tr>
 <tr class="memitem:a03a98a403abc737c106a8f92db5bffc1"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_c_p_u___o_s___simulator_1_1_operating___system.html#a03a98a403abc737c106a8f92db5bffc1">EnumOSState</a> { <br />
 &#160;&#160;<a class="el" href="namespace_c_p_u___o_s___simulator_1_1_operating___system.html#a03a98a403abc737c106a8f92db5bffc1a696b031073e74bf2cb98e5ef201d4aa3">EnumOSState.UNKNOWN</a> = -1, 
 <a class="el" href="namespace_c_p_u___o_s___simulator_1_1_operating___system.html#a03a98a403abc737c106a8f92db5bffc1a0cb707127aebaa0023eb38363993843a">EnumOSState.SUSPENDED</a> = 0, 
@@ -186,6 +204,40 @@ Enumerations</h2></td></tr>
 </td></tr>
 </table>
 <h2 class="groupheader">Enumeration Type Documentation</h2>
+<a class="anchor" id="aea0b669d1bbf5690ae34ac2f8bef9470"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="namespace_c_p_u___o_s___simulator_1_1_operating___system.html#aea0b669d1bbf5690ae34ac2f8bef9470">CPU_OS_Simulator.Operating_System.EnumErrorCodes</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">strong</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a class="anchor" id="aea0b669d1bbf5690ae34ac2f8bef9470a696b031073e74bf2cb98e5ef201d4aa3"></a>UNKNOWN&#160;</td><td class="fielddoc">
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="aea0b669d1bbf5690ae34ac2f8bef9470ad306b6fdee05fe87455110ddf6501e6c"></a>NO_ERROR&#160;</td><td class="fielddoc">
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="aea0b669d1bbf5690ae34ac2f8bef9470a1bc8f3c5a89b2c7abbfc54ef21586aea"></a>NO_PROCESSES&#160;</td><td class="fielddoc">
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="aea0b669d1bbf5690ae34ac2f8bef9470a8f35b656de87c54e18710fc94d73a614"></a>DEADLOCK&#160;</td><td class="fielddoc">
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="aea0b669d1bbf5690ae34ac2f8bef9470ac56ddb8056b120c9d5fee05981f219c6"></a>OUT_OF_MEMORY&#160;</td><td class="fielddoc">
+</td></tr>
+</table>
+
+<p>Definition at line <a class="el" href="_operating_01_system_2_enum_error_codes_8cs_source.html#l00003">3</a> of file <a class="el" href="_operating_01_system_2_enum_error_codes_8cs_source.html">EnumErrorCodes.cs</a>.</p>
+
+</div>
+</div>
 <a class="anchor" id="a03a98a403abc737c106a8f92db5bffc1"></a>
 <div class="memitem">
 <div class="memproto">

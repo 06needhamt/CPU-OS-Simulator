@@ -2,7 +2,8 @@ var searchData=
 [
   ['enumcompilermode_2ecs',['EnumCompilerMode.cs',['../_enum_compiler_mode_8cs.html',1,'']]],
   ['enumconsolecommands_2ecs',['EnumConsoleCommands.cs',['../_enum_console_commands_8cs.html',1,'']]],
-  ['enumerrorcodes_2ecs',['EnumErrorCodes.cs',['../_enum_error_codes_8cs.html',1,'']]],
+  ['enumerrorcodes_2ecs',['EnumErrorCodes.cs',['../_compiler_2_frontend_2_enum_error_codes_8cs.html',1,'']]],
+  ['enumerrorcodes_2ecs',['EnumErrorCodes.cs',['../_operating_01_system_2_enum_error_codes_8cs.html',1,'']]],
   ['enuminstructionmode_2ecs',['EnumInstructionMode.cs',['../_enum_instruction_mode_8cs.html',1,'']]],
   ['enuminstructionsegmentsizes_2ecs',['EnumInstructionSegmentSizes.cs',['../_enum_instruction_segment_sizes_8cs.html',1,'']]],
   ['enuminstructionsize_2ecs',['EnumInstructionSize.cs',['../_enum_instruction_size_8cs.html',1,'']]],
@@ -23,6 +24,6 @@ var searchData=
   ['executionunit_2ecs',['ExecutionUnit.cs',['../_execution_unit_8cs.html',1,'']]],
   ['executionunittests_2ecs',['ExecutionUnitTests.cs',['../_execution_unit_tests_8cs.html',1,'']]],
   ['extensions_2ecs',['Extensions.cs',['../_extensions_8cs.html',1,'']]],
-  ['extentions_2ecs',['Extentions.cs',['../_c_p_u_2_extentions_8cs.html',1,'']]],
-  ['extentions_2ecs',['Extentions.cs',['../_compiler_2_extentions_8cs.html',1,'']]]
+  ['extentions_2ecs',['Extentions.cs',['../_compiler_2_extentions_8cs.html',1,'']]],
+  ['extentions_2ecs',['Extentions.cs',['../_c_p_u_2_extentions_8cs.html',1,'']]]
 ];

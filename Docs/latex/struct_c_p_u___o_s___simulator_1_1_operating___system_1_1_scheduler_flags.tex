@@ -16,7 +16,7 @@ Queue$<$ \hyperlink{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_sim
 \item 
 \hyperlink{namespace_c_p_u___o_s___simulator_1_1_operating___system_ad0cdaacf9652394d23fa29109640fe08}{Enum\+Scheduling\+Policies} \hyperlink{struct_c_p_u___o_s___simulator_1_1_operating___system_1_1_scheduler_flags_a2461410563876df6082b78db986c6bf1}{scheduling\+Policies}
 \item 
-int \hyperlink{struct_c_p_u___o_s___simulator_1_1_operating___system_1_1_scheduler_flags_a46329b99c2c63dfb9779cfce45ecbd9c}{R\+R\+\_\+\+Time\+Slice}
+double \hyperlink{struct_c_p_u___o_s___simulator_1_1_operating___system_1_1_scheduler_flags_a4a2747b82ac75696e646bf03b0b3c8f6}{R\+R\+\_\+\+Time\+Slice}
 \item 
 \hyperlink{namespace_c_p_u___o_s___simulator_1_1_operating___system_a0553d0bc2513aec52caa769acf994d5c}{Enum\+Time\+Unit} \hyperlink{struct_c_p_u___o_s___simulator_1_1_operating___system_1_1_scheduler_flags_af668afafedff1a596fff642d2fcd38b7}{Time\+Slice\+Unit}
 \item 
@@ -31,6 +31,8 @@ bool \hyperlink{struct_c_p_u___o_s___simulator_1_1_operating___system_1_1_schedu
 bool \hyperlink{struct_c_p_u___o_s___simulator_1_1_operating___system_1_1_scheduler_flags_ad2d1f81a34e9cce1553bfdf8e8a719ea}{allow\+C\+P\+U\+Affinity}
 \item 
 bool \hyperlink{struct_c_p_u___o_s___simulator_1_1_operating___system_1_1_scheduler_flags_a1a46dce1e8818f1dae579c00eed21ad1}{running\+With\+No\+Processes}
+\item 
+int \hyperlink{struct_c_p_u___o_s___simulator_1_1_operating___system_1_1_scheduler_flags_a3ce064f3abe5ac1762f0e7bbfab2eee5}{cpu\+Clock\+Speed}
 \end{DoxyCompactItemize}
 
 
@@ -50,6 +52,13 @@ Definition at line 8 of file Scheduler\+Flags.\+cs.
 
 
 Definition at line 20 of file Scheduler\+Flags.\+cs.
+
+\hypertarget{struct_c_p_u___o_s___simulator_1_1_operating___system_1_1_scheduler_flags_a3ce064f3abe5ac1762f0e7bbfab2eee5}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Scheduler\+Flags@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Scheduler\+Flags}!cpu\+Clock\+Speed@{cpu\+Clock\+Speed}}
+\index{cpu\+Clock\+Speed@{cpu\+Clock\+Speed}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Scheduler\+Flags@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Scheduler\+Flags}}
+\subsubsection[{cpu\+Clock\+Speed}]{\setlength{\rightskip}{0pt plus 5cm}int C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Operating\+\_\+\+System.\+Scheduler\+Flags.\+cpu\+Clock\+Speed}\label{struct_c_p_u___o_s___simulator_1_1_operating___system_1_1_scheduler_flags_a3ce064f3abe5ac1762f0e7bbfab2eee5}
+
+
+Definition at line 22 of file Scheduler\+Flags.\+cs.
 
 \hypertarget{struct_c_p_u___o_s___simulator_1_1_operating___system_1_1_scheduler_flags_a3ccbd91b280afcd060460a7668d75d0f}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Scheduler\+Flags@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Scheduler\+Flags}!default\+Scheduler@{default\+Scheduler}}
 \index{default\+Scheduler@{default\+Scheduler}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Scheduler\+Flags@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Scheduler\+Flags}}
@@ -72,9 +81,9 @@ Definition at line 10 of file Scheduler\+Flags.\+cs.
 
 Definition at line 17 of file Scheduler\+Flags.\+cs.
 
-\hypertarget{struct_c_p_u___o_s___simulator_1_1_operating___system_1_1_scheduler_flags_a46329b99c2c63dfb9779cfce45ecbd9c}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Scheduler\+Flags@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Scheduler\+Flags}!R\+R\+\_\+\+Time\+Slice@{R\+R\+\_\+\+Time\+Slice}}
+\hypertarget{struct_c_p_u___o_s___simulator_1_1_operating___system_1_1_scheduler_flags_a4a2747b82ac75696e646bf03b0b3c8f6}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Scheduler\+Flags@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Scheduler\+Flags}!R\+R\+\_\+\+Time\+Slice@{R\+R\+\_\+\+Time\+Slice}}
 \index{R\+R\+\_\+\+Time\+Slice@{R\+R\+\_\+\+Time\+Slice}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Scheduler\+Flags@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Scheduler\+Flags}}
-\subsubsection[{R\+R\+\_\+\+Time\+Slice}]{\setlength{\rightskip}{0pt plus 5cm}int C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Operating\+\_\+\+System.\+Scheduler\+Flags.\+R\+R\+\_\+\+Time\+Slice}\label{struct_c_p_u___o_s___simulator_1_1_operating___system_1_1_scheduler_flags_a46329b99c2c63dfb9779cfce45ecbd9c}
+\subsubsection[{R\+R\+\_\+\+Time\+Slice}]{\setlength{\rightskip}{0pt plus 5cm}double C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Operating\+\_\+\+System.\+Scheduler\+Flags.\+R\+R\+\_\+\+Time\+Slice}\label{struct_c_p_u___o_s___simulator_1_1_operating___system_1_1_scheduler_flags_a4a2747b82ac75696e646bf03b0b3c8f6}
 
 
 Definition at line 14 of file Scheduler\+Flags.\+cs.
