@@ -64,7 +64,7 @@ namespace CPU_OS_Simulator.CPU
             currentInstruction = program.Instructions.Where(x => x.LogicalAddress == logicalAddress).FirstOrDefault();
             stop = false;
             done = false;
-            SpecialRegister.FindSpecialRegister("BR").setRegisterValue(program.BaseAddress, EnumOperandType.ADDRESS);
+            SpecialRegister.FindSpecialRegister("BR").SetRegisterValue(program.BaseAddress, EnumOperandType.ADDRESS);
         }
 
         /// <summary>
@@ -84,7 +84,7 @@ namespace CPU_OS_Simulator.CPU
             currentInstruction = program.Instructions.Where(x => x.LogicalAddress == logicalAddress).FirstOrDefault();
             stop = false;
             done = false;
-            SpecialRegister.FindSpecialRegister("BR").setRegisterValue(program.BaseAddress, EnumOperandType.ADDRESS);
+            SpecialRegister.FindSpecialRegister("BR").SetRegisterValue(program.BaseAddress, EnumOperandType.ADDRESS);
         }
 
         #endregion Constructors

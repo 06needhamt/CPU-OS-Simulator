@@ -17,7 +17,7 @@ namespace CPUTests
         public void setRegisterValueTest()
         {
             Register reg = Register.R00;
-            reg.setRegisterValue(10, EnumOperandType.VALUE);
+            reg.SetRegisterValue(10, EnumOperandType.VALUE);
             Assert.AreEqual(reg.Value, 10);
         }
 

@@ -25,7 +25,7 @@ namespace CPUTests
         public void setRegisterValueTest()
         {
             SpecialRegister sp = SpecialRegister.FindSpecialRegister("PC");
-            sp.setRegisterValue(100, EnumOperandType.ADDRESS);
+            sp.SetRegisterValue(100, EnumOperandType.ADDRESS);
             Assert.AreEqual(sp.Value, 100);
         }
 

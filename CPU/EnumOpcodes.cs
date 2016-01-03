@@ -33,6 +33,10 @@ namespace CPU_OS_Simulator.CPU
         [NumberOfOperands(2)]
         LDW = 5,
 
+        [Description("Data Transfer: LDDW Loads double word from memory into register")]
+        [NumberOfOperands(2)]
+        LDDW = 53,
+
         [Description("Data Transfer: LNS  Loads word from memory into register - No SR update")]
         [NumberOfOperands(2)]
         LNS = 6,
@@ -44,6 +48,10 @@ namespace CPU_OS_Simulator.CPU
         [Description("Data Transfer: LDWI  Loads word from memory into register, increments indirect source address")]
         [NumberOfOperands(2)]
         LDWI = 8,
+
+        [Description("Data Transfer: LDDWI Loads double word from memory into register increments indirect source address")]
+        [NumberOfOperands(2)]
+        LDDWI = 54,
 
         [Description("Data Transfer: TAS Test and set")]
         [NumberOfOperands(1)]
@@ -57,6 +65,10 @@ namespace CPU_OS_Simulator.CPU
         [NumberOfOperands(2)]
         STW = 11,
 
+        [Description("Data Transfer: STDW Stores double word to memory")]
+        [NumberOfOperands(2)]
+        STDW = 55,
+
         [Description("Data Transfer: STBI Stores byte to memory, increments indirect destination address")]
         [NumberOfOperands(2)]
         STBI = 12,
@@ -64,6 +76,10 @@ namespace CPU_OS_Simulator.CPU
         [Description("Data Transfer: STWI Stores word to memory, increments indirect destination address")]
         [NumberOfOperands(2)]
         STWI = 13,
+
+        [Description("Data Transfer: STDWI Stores double word to memory, increments indirect destination address")]
+        [NumberOfOperands(2)]
+        STDWI = 56,
 
         [Description("Data Transfer: PUSH Pushes value or value in register onto top of stack")]
         [NumberOfOperands(1)]

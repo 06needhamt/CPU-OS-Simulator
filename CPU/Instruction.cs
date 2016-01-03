@@ -613,6 +613,26 @@ namespace CPU_OS_Simulator.CPU
                         execute = () => NOP(operand1, operand2); // save the function in memory to call later
                         break;
                     }
+                case 53:
+                    {
+                        execute = () => LDDW(operand1, operand2); // save the function in memory to call later
+                        break;
+                    }
+                case 54:
+                    {
+                        execute = () => LDDWI(operand1, operand2); // save the function in memory to call later
+                        break;
+                    }
+                case 55:
+                    {
+                        execute = () => STDW(operand1, operand2); // save the function in memory to call later
+                        break;
+                    }
+                case 56:
+                    {
+                        execute = () => STDWI(operand1, operand2); // save the function in memory to call later
+                        break;
+                    }
                 default:
                     {
                         break;
@@ -696,6 +716,11 @@ namespace CPU_OS_Simulator.CPU
         {
             dynamic wind = GetMainWindowInstance();
             PhysicalMemory memory = wind.Memory;
+            while (pageOffset > 255)
+            {
+                pageNumber++;
+                pageOffset -= 255;
+            }
             int frameNumber = FindRequiredPage(pageNumber);
             if (memory.RequestMemoryPage(frameNumber) != null)
             {
@@ -711,6 +736,11 @@ namespace CPU_OS_Simulator.CPU
         {
             dynamic wind = GetMainWindowInstance();
             PhysicalMemory memory = wind.Memory;
+            while (pageOffset > 255)
+            {
+                pageNumber++;
+                pageOffset -= 255;
+            }
             int frameNumber = FindRequiredPage(pageNumber);
             if (memory.RequestMemoryPage(frameNumber) != null)
             {
@@ -802,7 +832,7 @@ namespace CPU_OS_Simulator.CPU
                 if (lhs.IsRegister)
                 {
                     Register.FindRegister(lhs.Register.Name)
-                        .setRegisterValue(BitConverter.ToInt32(sourceBytes, 0), EnumOperandType.VALUE);
+                        .SetRegisterValue(BitConverter.ToInt32(sourceBytes, 0), EnumOperandType.VALUE);
                 }
                 else
                 {
@@ -814,7 +844,7 @@ namespace CPU_OS_Simulator.CPU
             //if (lhs.IsRegister)
             //{
             //    lhs.Register.Value = result;
-            //    Register.FindRegister(lhs.Register.Name).setRegisterValue(result, EnumOperandType.VALUE);
+            //    Register.FindRegister(lhs.Register.Name).SetRegisterValue(result, EnumOperandType.VALUE);
             //}
             //return result;
 
@@ -1189,7 +1219,7 @@ namespace CPU_OS_Simulator.CPU
             }
             lhs.Register.Value = p.Stack.popItem();
             result = lhs.Register.Value;
-            Register.FindRegister(lhs.Register.Name).setRegisterValue(result, EnumOperandType.VALUE);
+            Register.FindRegister(lhs.Register.Name).SetRegisterValue(result, EnumOperandType.VALUE);
             //MessageBox.Show("POP Instruction is not currently implemented", "", MessageBoxButton.OK, MessageBoxImage.Information);
             Thread.Sleep(20);
             return result;
@@ -1212,10 +1242,139 @@ namespace CPU_OS_Simulator.CPU
             int rightvalue = rhs.Register.Value;
             lhs.Register.Value = rightvalue;
             rhs.Register.Value = leftvalue;
-            Register.FindRegister(rhs.Register.Name).setRegisterValue(lhs.Register.Value, EnumOperandType.VALUE);
-            Register.FindRegister(lhs.Register.Name).setRegisterValue(rhs.Register.Value, EnumOperandType.VALUE);
+            Register.FindRegister(rhs.Register.Name).SetRegisterValue(lhs.Register.Value, EnumOperandType.VALUE);
+            Register.FindRegister(lhs.Register.Name).SetRegisterValue(rhs.Register.Value, EnumOperandType.VALUE);
             result = lhs.Register.Value;
             return result;
+        }
+
+        /// <summary>
+        /// This function is called whenever a LDDW instruction is executed
+        /// </summary>
+        /// <param name="lhs"> The left hand operand of the instruction </param>
+        /// <param name="rhs"> The right hand operand of the instruction </param>
+        /// <returns> the result of the instruction or int.MINVALUE if no result is returned </returns>
+        private int LDDW(Operand lhs, Operand rhs)
+        {
+            int value = 0;
+            int address = 0;
+            byte[] bytes = new byte[4];
+            if (rhs.Type == EnumOperandType.ADDRESS)
+            {
+                if (rhs.IsRegister)
+                {
+                    address = Register.FindRegister(rhs.Register.Name).Value;
+                }
+                else
+                {
+                    address = rhs.Value;
+                }
+            }
+            else
+            {
+                MessageBox.Show("Source operand of LDDW must be an address");
+                return int.MinValue;
+            }
+            if (lhs.IsRegister && lhs.Type != EnumOperandType.ADDRESS)
+            {
+                int pageNumber = address / MemoryPage.PAGE_SIZE;
+                int pageOffset = address % MemoryPage.PAGE_SIZE;
+                for (int i = 0; i < bytes.Length; i++)
+                {
+                    byte? loadByte = LoadByte(pageNumber, pageOffset + i);
+                    if (loadByte != null)
+                        bytes[i] = loadByte.Value;
+                }
+                value = BitConverter.ToInt32(bytes,0);
+                result = value;
+                Register.FindRegister(lhs.Register.Name).SetRegisterValue(result,EnumOperandType.VALUE);
+            }
+            else
+            {
+                MessageBox.Show("Destination Operand of LDDW must be a value register");
+                return int.MinValue;
+            }
+
+            //MessageBox.Show("LDDW Instruction is not currently implemented", "", MessageBoxButton.OK, MessageBoxImage.Information);
+            return result;
+        }
+
+        /// <summary>
+        /// This function is called whenever a LDDWI instruction is executed
+        /// </summary>
+        /// <param name="lhs"> The left hand operand of the instruction </param>
+        /// <param name="rhs"> The right hand operand of the instruction </param>
+        /// <returns> the result of the instruction or int.MINVALUE if no result is returned </returns>
+        private int LDDWI(Operand lhs, Operand rhs)
+        {   
+            MessageBox.Show("LDDWI Instruction is not currently implemented", "", MessageBoxButton.OK, MessageBoxImage.Information);
+            return 0;
+        }
+
+        /// <summary>
+        /// This function is called whenever a STDW instruction is executed
+        /// </summary>
+        /// <param name="lhs"> The left hand operand of the instruction </param>
+        /// <param name="rhs"> The right hand operand of the instruction </param>
+        /// <returns> the result of the instruction or int.MINVALUE if no result is returned </returns>
+        private int STDW(Operand lhs, Operand rhs)
+        {
+            int value = 0;
+            int address = 0;
+
+            byte[] bytes = new byte[4];
+
+            if (rhs.IsRegister && rhs.Type != EnumOperandType.ADDRESS)
+            {
+                value = Register.FindRegister(rhs.Register.Name).Value;
+                bytes = BitConverter.GetBytes(value);
+                Array.Reverse(bytes);
+                if (BitConverter.IsLittleEndian)
+                {
+                    Array.Reverse(bytes);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Source Operand of STDW must be a value register");
+                return int.MinValue;
+            }
+            if (lhs.Type == EnumOperandType.ADDRESS)
+            {
+                if (lhs.IsRegister)
+                {
+                    address = Register.FindRegister(lhs.Register.Name).Value;
+                }
+                else
+                {
+                    address = lhs.Value;
+                }
+            }
+            else
+            {
+                MessageBox.Show("Destination Operand of STDW must be a Address");
+                return int.MinValue;
+            }
+            int pageNumber = address/MemoryPage.PAGE_SIZE;
+            int pageOffset = address%MemoryPage.PAGE_SIZE;
+            for (int i = 0; i < bytes.Length; i++)
+            {
+                StoreByte(pageNumber, pageOffset + i, bytes[i]);
+            }
+            //MessageBox.Show("STDW Instruction is not currently implemented", "", MessageBoxButton.OK, MessageBoxImage.Information);
+            return 0;
+        }
+
+        /// <summary>
+        /// This function is called whenever a STDWI instruction is executed
+        /// </summary>
+        /// <param name="lhs"> The left hand operand of the instruction </param>
+        /// <param name="rhs"> The right hand operand of the instruction </param>
+        /// <returns> the result of the instruction or int.MINVALUE if no result is returned </returns>
+        private int STDWI(Operand lhs, Operand rhs)
+        {
+            MessageBox.Show("STDWI Instruction is not currently implemented", "", MessageBoxButton.OK, MessageBoxImage.Information);
+            return 0;
         }
 
         #endregion Data Transfer
@@ -1316,12 +1475,12 @@ namespace CPU_OS_Simulator.CPU
                 if (lhs.IsRegister)
                 {
                     //Register.FindRegister(lhs.Register.Name)
-                    //    .setRegisterValue(BitConverter.ToInt32(sourceBytes, 0), EnumOperandType.VALUE);
+                    //    .SetRegisterValue(BitConverter.ToInt32(sourceBytes, 0), EnumOperandType.VALUE);
                     destBytes = BitConverter.GetBytes(Register.FindRegister(lhs.Register.Name).Value);
                     int value = BitConverter.ToInt32(destBytes, 0);
                     int source = BitConverter.ToInt32(sourceBytes, 0);
                     value &= source;
-                    Register.FindRegister(lhs.Register.Name).setRegisterValue(value, EnumOperandType.VALUE);
+                    Register.FindRegister(lhs.Register.Name).SetRegisterValue(value, EnumOperandType.VALUE);
                 }
                 else
                 {
@@ -1334,7 +1493,7 @@ namespace CPU_OS_Simulator.CPU
             //{
             //    lhs.Register.Value = Register.FindRegister(lhs.Register.Name).Value;
             //    result = lhs.Register.Value;
-            //    //Register.FindRegister(lhs.Register.Name).setRegisterValue(result, EnumOperandType.VALUE);
+            //    //Register.FindRegister(lhs.Register.Name).SetRegisterValue(result, EnumOperandType.VALUE);
             //}
             //else
             //{
@@ -1350,7 +1509,7 @@ namespace CPU_OS_Simulator.CPU
             //    lhs.Register.Value &= rhs.Value;
             //}
             //result = lhs.Register.Value;
-            //Register.FindRegister(lhs.Register.Name).setRegisterValue(result, EnumOperandType.VALUE);
+            //Register.FindRegister(lhs.Register.Name).SetRegisterValue(result, EnumOperandType.VALUE);
             //return result;
             #endregion OLD
         }
@@ -1449,12 +1608,12 @@ namespace CPU_OS_Simulator.CPU
                 if (lhs.IsRegister)
                 {
                     //Register.FindRegister(lhs.Register.Name)
-                    //    .setRegisterValue(BitConverter.ToInt32(sourceBytes, 0), EnumOperandType.VALUE);
+                    //    .SetRegisterValue(BitConverter.ToInt32(sourceBytes, 0), EnumOperandType.VALUE);
                     destBytes = BitConverter.GetBytes(Register.FindRegister(lhs.Register.Name).Value);
                     int value = BitConverter.ToInt32(destBytes, 0);
                     int source = BitConverter.ToInt32(sourceBytes, 0);
                     value |= source;
-                    Register.FindRegister(lhs.Register.Name).setRegisterValue(value, EnumOperandType.VALUE);
+                    Register.FindRegister(lhs.Register.Name).SetRegisterValue(value, EnumOperandType.VALUE);
                 }
                 else
                 {
@@ -1467,7 +1626,7 @@ namespace CPU_OS_Simulator.CPU
             //{
             //    lhs.Register.Value = Register.FindRegister(lhs.Register.Name).Value;
             //    result = lhs.Register.Value;
-            //    //Register.FindRegister(lhs.Register.Name).setRegisterValue(result, EnumOperandType.VALUE);
+            //    //Register.FindRegister(lhs.Register.Name).SetRegisterValue(result, EnumOperandType.VALUE);
             //}
             //else
             //{
@@ -1483,7 +1642,7 @@ namespace CPU_OS_Simulator.CPU
             //    lhs.Register.Value |= rhs.Value;
             //}
             //result = lhs.Register.Value;
-            //Register.FindRegister(lhs.Register.Name).setRegisterValue(result, EnumOperandType.VALUE);
+            //Register.FindRegister(lhs.Register.Name).SetRegisterValue(result, EnumOperandType.VALUE);
             //return result;
             #endregion OLD
         }
@@ -1582,11 +1741,11 @@ namespace CPU_OS_Simulator.CPU
                 if (lhs.IsRegister)
                 {
                     //Register.FindRegister(lhs.Register.Name)
-                    //    .setRegisterValue(BitConverter.ToInt32(sourceBytes, 0), EnumOperandType.VALUE);
+                    //    .SetRegisterValue(BitConverter.ToInt32(sourceBytes, 0), EnumOperandType.VALUE);
                     destBytes = BitConverter.GetBytes(Register.FindRegister(lhs.Register.Name).Value);
                     int source = BitConverter.ToInt32(sourceBytes, 0);
                     int value = ~source;
-                    Register.FindRegister(lhs.Register.Name).setRegisterValue(value, EnumOperandType.VALUE);
+                    Register.FindRegister(lhs.Register.Name).SetRegisterValue(value, EnumOperandType.VALUE);
                 }
                 else
                 {
@@ -1615,7 +1774,7 @@ namespace CPU_OS_Simulator.CPU
             //    lhs.Register.Value = ~rhs.Value;
             //}
             //result = lhs.Register.Value;
-            //Register.FindRegister(lhs.Register.Name).setRegisterValue(result, EnumOperandType.VALUE);
+            //Register.FindRegister(lhs.Register.Name).SetRegisterValue(result, EnumOperandType.VALUE);
             //return result;
             #endregion OLD
         }
@@ -1714,12 +1873,12 @@ namespace CPU_OS_Simulator.CPU
                 if (lhs.IsRegister)
                 {
                     //Register.FindRegister(lhs.Register.Name)
-                    //    .setRegisterValue(BitConverter.ToInt32(sourceBytes, 0), EnumOperandType.VALUE);
+                    //    .SetRegisterValue(BitConverter.ToInt32(sourceBytes, 0), EnumOperandType.VALUE);
                     destBytes = BitConverter.GetBytes(Register.FindRegister(lhs.Register.Name).Value);
                     int value = BitConverter.ToInt32(destBytes, 0);
                     int source = BitConverter.ToInt32(sourceBytes, 0);
                     value <<= source;
-                    Register.FindRegister(lhs.Register.Name).setRegisterValue(value, EnumOperandType.VALUE);
+                    Register.FindRegister(lhs.Register.Name).SetRegisterValue(value, EnumOperandType.VALUE);
                 }
                 else
                 {
@@ -1734,7 +1893,7 @@ namespace CPU_OS_Simulator.CPU
             //{
             //    lhs.Register.Value = Register.FindRegister(lhs.Register.Name).Value;
             //    result = lhs.Register.Value;
-            //    //Register.FindRegister(lhs.Register.Name).setRegisterValue(result, EnumOperandType.VALUE);
+            //    //Register.FindRegister(lhs.Register.Name).SetRegisterValue(result, EnumOperandType.VALUE);
             //}
             //else
             //{
@@ -1750,7 +1909,7 @@ namespace CPU_OS_Simulator.CPU
             //    lhs.Register.Value <<= rhs.Value;
             //}
             //result = lhs.Register.Value;
-            //Register.FindRegister(lhs.Register.Name).setRegisterValue(result, EnumOperandType.VALUE);
+            //Register.FindRegister(lhs.Register.Name).SetRegisterValue(result, EnumOperandType.VALUE);
             //return result;
 
             #endregion OLD
@@ -1850,12 +2009,12 @@ namespace CPU_OS_Simulator.CPU
                 if (lhs.IsRegister)
                 {
                     //Register.FindRegister(lhs.Register.Name)
-                    //    .setRegisterValue(BitConverter.ToInt32(sourceBytes, 0), EnumOperandType.VALUE);
+                    //    .SetRegisterValue(BitConverter.ToInt32(sourceBytes, 0), EnumOperandType.VALUE);
                     destBytes = BitConverter.GetBytes(Register.FindRegister(lhs.Register.Name).Value);
                     int value = BitConverter.ToInt32(destBytes, 0);
                     int source = BitConverter.ToInt32(sourceBytes, 0);
                     value >>= source;
-                    Register.FindRegister(lhs.Register.Name).setRegisterValue(value, EnumOperandType.VALUE);
+                    Register.FindRegister(lhs.Register.Name).SetRegisterValue(value, EnumOperandType.VALUE);
                 }
                 else
                 {
@@ -1868,7 +2027,7 @@ namespace CPU_OS_Simulator.CPU
             //{
             //    lhs.Register.Value = Register.FindRegister(lhs.Register.Name).Value;
             //    result = lhs.Register.Value;
-            //    //Register.FindRegister(lhs.Register.Name).setRegisterValue(result, EnumOperandType.VALUE);
+            //    //Register.FindRegister(lhs.Register.Name).SetRegisterValue(result, EnumOperandType.VALUE);
             //}
             //else
             //{
@@ -1884,7 +2043,7 @@ namespace CPU_OS_Simulator.CPU
             //    lhs.Register.Value >>= rhs.Value;
             //}
             //result = lhs.Register.Value;
-            //Register.FindRegister(lhs.Register.Name).setRegisterValue(result, EnumOperandType.VALUE);
+            //Register.FindRegister(lhs.Register.Name).SetRegisterValue(result, EnumOperandType.VALUE);
             //return result;
             #endregion OLD
         }
@@ -1987,12 +2146,12 @@ namespace CPU_OS_Simulator.CPU
                 if (lhs.IsRegister)
                 {
                     //Register.FindRegister(lhs.Register.Name)
-                    //    .setRegisterValue(BitConverter.ToInt32(sourceBytes, 0), EnumOperandType.VALUE);
+                    //    .SetRegisterValue(BitConverter.ToInt32(sourceBytes, 0), EnumOperandType.VALUE);
                     destBytes = BitConverter.GetBytes(Register.FindRegister(lhs.Register.Name).Value);
                     int value = BitConverter.ToInt32(destBytes, 0);
                     int source = BitConverter.ToInt32(sourceBytes, 0);
                     value += source;
-                    Register.FindRegister(lhs.Register.Name).setRegisterValue(value,EnumOperandType.VALUE);
+                    Register.FindRegister(lhs.Register.Name).SetRegisterValue(value,EnumOperandType.VALUE);
                 }
                 else
                 {
@@ -2005,7 +2164,7 @@ namespace CPU_OS_Simulator.CPU
             //{
             //    lhs.Register.Value = Register.FindRegister(lhs.Register.Name).Value;
             //    result = lhs.Register.Value;
-            //    //Register.FindRegister(lhs.Register.Name).setRegisterValue(result, EnumOperandType.VALUE);
+            //    //Register.FindRegister(lhs.Register.Name).SetRegisterValue(result, EnumOperandType.VALUE);
             //}
             //else
             //{
@@ -2021,7 +2180,7 @@ namespace CPU_OS_Simulator.CPU
             //    lhs.Register.Value += rhs.Value;
             //}
             //result = lhs.Register.Value;
-            //Register.FindRegister(lhs.Register.Name).setRegisterValue(result, EnumOperandType.VALUE);
+            //Register.FindRegister(lhs.Register.Name).SetRegisterValue(result, EnumOperandType.VALUE);
             //return result;
             #endregion OLD
         }
@@ -2120,12 +2279,12 @@ namespace CPU_OS_Simulator.CPU
                 if (lhs.IsRegister)
                 {
                     //Register.FindRegister(lhs.Register.Name)
-                    //    .setRegisterValue(BitConverter.ToInt32(sourceBytes, 0), EnumOperandType.VALUE);
+                    //    .SetRegisterValue(BitConverter.ToInt32(sourceBytes, 0), EnumOperandType.VALUE);
                     destBytes = BitConverter.GetBytes(Register.FindRegister(lhs.Register.Name).Value);
                     int value = BitConverter.ToInt32(destBytes, 0);
                     int source = BitConverter.ToInt32(sourceBytes, 0);
                     value -= source;
-                    Register.FindRegister(lhs.Register.Name).setRegisterValue(value, EnumOperandType.VALUE);
+                    Register.FindRegister(lhs.Register.Name).SetRegisterValue(value, EnumOperandType.VALUE);
                 }
                 else
                 {
@@ -2138,7 +2297,7 @@ namespace CPU_OS_Simulator.CPU
             //{
             //    lhs.Register.Value = Register.FindRegister(lhs.Register.Name).Value;
             //    result = lhs.Register.Value;
-            //    //Register.FindRegister(lhs.Register.Name).setRegisterValue(result, EnumOperandType.VALUE);
+            //    //Register.FindRegister(lhs.Register.Name).SetRegisterValue(result, EnumOperandType.VALUE);
             //}
             //else
             //{
@@ -2154,7 +2313,7 @@ namespace CPU_OS_Simulator.CPU
             //    lhs.Register.Value -= rhs.Value;
             //}
             //result = lhs.Register.Value;
-            //Register.FindRegister(lhs.Register.Name).setRegisterValue(result, EnumOperandType.VALUE);
+            //Register.FindRegister(lhs.Register.Name).SetRegisterValue(result, EnumOperandType.VALUE);
             //return result;
             #endregion OLD
         }
@@ -2253,12 +2412,12 @@ namespace CPU_OS_Simulator.CPU
                 if (lhs.IsRegister)
                 {
                     //Register.FindRegister(lhs.Register.Name)
-                    //    .setRegisterValue(BitConverter.ToInt32(sourceBytes, 0), EnumOperandType.VALUE);
+                    //    .SetRegisterValue(BitConverter.ToInt32(sourceBytes, 0), EnumOperandType.VALUE);
                     destBytes = BitConverter.GetBytes(Register.FindRegister(lhs.Register.Name).Value);
                     int value = BitConverter.ToInt32(destBytes, 0);
                     int source = BitConverter.ToInt32(sourceBytes, 0);
                     value = Math.Abs(value - source);
-                    Register.FindRegister(lhs.Register.Name).setRegisterValue(value, EnumOperandType.VALUE);
+                    Register.FindRegister(lhs.Register.Name).SetRegisterValue(value, EnumOperandType.VALUE);
                 }
                 else
                 {
@@ -2271,7 +2430,7 @@ namespace CPU_OS_Simulator.CPU
             //{
             //    lhs.Register.Value = Register.FindRegister(lhs.Register.Name).Value;
             //    result = lhs.Register.Value;
-            //    //Register.FindRegister(lhs.Register.Name).setRegisterValue(result, EnumOperandType.VALUE);
+            //    //Register.FindRegister(lhs.Register.Name).SetRegisterValue(result, EnumOperandType.VALUE);
             //}
             //else
             //{
@@ -2287,7 +2446,7 @@ namespace CPU_OS_Simulator.CPU
             //    lhs.Register.Value = Math.Abs(lhs.Register.Value - rhs.Value);
             //}
             //result = lhs.Register.Value;
-            //Register.FindRegister(lhs.Register.Name).setRegisterValue(result, EnumOperandType.VALUE);
+            //Register.FindRegister(lhs.Register.Name).SetRegisterValue(result, EnumOperandType.VALUE);
             //return result;
             #endregion OLD
         }
@@ -2386,12 +2545,12 @@ namespace CPU_OS_Simulator.CPU
                 if (lhs.IsRegister)
                 {
                     //Register.FindRegister(lhs.Register.Name)
-                    //    .setRegisterValue(BitConverter.ToInt32(sourceBytes, 0), EnumOperandType.VALUE);
+                    //    .SetRegisterValue(BitConverter.ToInt32(sourceBytes, 0), EnumOperandType.VALUE);
                     destBytes = BitConverter.GetBytes(Register.FindRegister(lhs.Register.Name).Value);
                     int value = BitConverter.ToInt32(destBytes, 0);
                     int source = BitConverter.ToInt32(sourceBytes, 0);
                     value *= source;
-                    Register.FindRegister(lhs.Register.Name).setRegisterValue(value, EnumOperandType.VALUE);
+                    Register.FindRegister(lhs.Register.Name).SetRegisterValue(value, EnumOperandType.VALUE);
                 }
                 else
                 {
@@ -2404,7 +2563,7 @@ namespace CPU_OS_Simulator.CPU
             //{
             //    lhs.Register.Value = Register.FindRegister(lhs.Register.Name).Value;
             //    result = lhs.Register.Value;
-            //    //Register.FindRegister(lhs.Register.Name).setRegisterValue(result, EnumOperandType.VALUE);
+            //    //Register.FindRegister(lhs.Register.Name).SetRegisterValue(result, EnumOperandType.VALUE);
             //}
             //else
             //{
@@ -2420,7 +2579,7 @@ namespace CPU_OS_Simulator.CPU
             //    lhs.Register.Value *= rhs.Value;
             //}
             //result = lhs.Register.Value;
-            //Register.FindRegister(lhs.Register.Name).setRegisterValue(result, EnumOperandType.VALUE);
+            //Register.FindRegister(lhs.Register.Name).SetRegisterValue(result, EnumOperandType.VALUE);
             //return result;
             #endregion OLD
         }
@@ -2527,7 +2686,7 @@ namespace CPU_OS_Simulator.CPU
                 if (lhs.IsRegister)
                 {
                     //Register.FindRegister(lhs.Register.Name)
-                    //    .setRegisterValue(BitConverter.ToInt32(sourceBytes, 0), EnumOperandType.VALUE);
+                    //    .SetRegisterValue(BitConverter.ToInt32(sourceBytes, 0), EnumOperandType.VALUE);
                     destBytes = BitConverter.GetBytes(Register.FindRegister(lhs.Register.Name).Value);
                     int value = BitConverter.ToInt32(destBytes, 0);
                     int source = BitConverter.ToInt32(sourceBytes, 0);
@@ -2539,7 +2698,7 @@ namespace CPU_OS_Simulator.CPU
                     else
                     {
                         value /= source;
-                        Register.FindRegister(lhs.Register.Name).setRegisterValue(value, EnumOperandType.VALUE);
+                        Register.FindRegister(lhs.Register.Name).SetRegisterValue(value, EnumOperandType.VALUE);
                     }
                 }
                 else
@@ -2555,7 +2714,7 @@ namespace CPU_OS_Simulator.CPU
             //{
             //    lhs.Register.Value = Register.FindRegister(lhs.Register.Name).Value;
             //    result = lhs.Register.Value;
-            //    //Register.FindRegister(lhs.Register.Name).setRegisterValue(result, EnumOperandType.VALUE);
+            //    //Register.FindRegister(lhs.Register.Name).SetRegisterValue(result, EnumOperandType.VALUE);
             //}
             //else
             //{
@@ -2585,7 +2744,7 @@ namespace CPU_OS_Simulator.CPU
             //    lhs.Register.Value /= rhs.Value;
             //}
             //result = lhs.Register.Value;
-            //Register.FindRegister(lhs.Register.Name).setRegisterValue(result, EnumOperandType.VALUE);
+            //Register.FindRegister(lhs.Register.Name).SetRegisterValue(result, EnumOperandType.VALUE);
             //return result;
             #endregion OLD
         }
@@ -2642,12 +2801,12 @@ namespace CPU_OS_Simulator.CPU
                 if (lhs.IsRegister)
                 {
                     //Register.FindRegister(lhs.Register.Name)
-                    //    .setRegisterValue(BitConverter.ToInt32(sourceBytes, 0), EnumOperandType.VALUE);
+                    //    .SetRegisterValue(BitConverter.ToInt32(sourceBytes, 0), EnumOperandType.VALUE);
                     destBytes = BitConverter.GetBytes(Register.FindRegister(lhs.Register.Name).Value);
                     int value = BitConverter.ToInt32(destBytes, 0);
                     int source = 1;
                     value += source;
-                    Register.FindRegister(lhs.Register.Name).setRegisterValue(value, EnumOperandType.VALUE);
+                    Register.FindRegister(lhs.Register.Name).SetRegisterValue(value, EnumOperandType.VALUE);
                 }
                 else
                 {
@@ -2661,7 +2820,7 @@ namespace CPU_OS_Simulator.CPU
             //    lhs.Register.Value = Register.FindRegister(lhs.Register.Name).Value;
             //    lhs.Register.Value++;
             //    result = lhs.Register.Value;
-            //    Register.FindRegister(lhs.Register.Name).setRegisterValue(result, EnumOperandType.VALUE);
+            //    Register.FindRegister(lhs.Register.Name).SetRegisterValue(result, EnumOperandType.VALUE);
             //    return result;
             //}
             //MessageBox.Show("Operand of INC instruction must be a register", "", MessageBoxButton.OK, MessageBoxImage.Information);
@@ -2721,12 +2880,12 @@ namespace CPU_OS_Simulator.CPU
                 if (lhs.IsRegister)
                 {
                     //Register.FindRegister(lhs.Register.Name)
-                    //    .setRegisterValue(BitConverter.ToInt32(sourceBytes, 0), EnumOperandType.VALUE);
+                    //    .SetRegisterValue(BitConverter.ToInt32(sourceBytes, 0), EnumOperandType.VALUE);
                     destBytes = BitConverter.GetBytes(Register.FindRegister(lhs.Register.Name).Value);
                     int value = BitConverter.ToInt32(destBytes, 0);
                     int source = 1;
                     value -= source;
-                    Register.FindRegister(lhs.Register.Name).setRegisterValue(value, EnumOperandType.VALUE);
+                    Register.FindRegister(lhs.Register.Name).SetRegisterValue(value, EnumOperandType.VALUE);
                 }
                 else
                 {
@@ -2740,7 +2899,7 @@ namespace CPU_OS_Simulator.CPU
             //    lhs.Register.Value = Register.FindRegister(lhs.Register.Name).Value;
             //    lhs.Register.Value++;
             //    result = lhs.Register.Value;
-            //    Register.FindRegister(lhs.Register.Name).setRegisterValue(result, EnumOperandType.VALUE);
+            //    Register.FindRegister(lhs.Register.Name).SetRegisterValue(result, EnumOperandType.VALUE);
             //    return result;
             //}
             //MessageBox.Show("Operand of DEC instruction must be a register", "", MessageBoxButton.OK, MessageBoxImage.Information);
