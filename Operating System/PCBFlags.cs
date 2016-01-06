@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using CPU_OS_Simulator.CPU;
 
 namespace CPU_OS_Simulator.Operating_System
 {
@@ -21,6 +22,9 @@ namespace CPU_OS_Simulator.Operating_System
         public bool resourceStarved;
         public List<SystemResource> allocatedResources;
         public List<SystemResource> requestedResources;
+
+        public Register[] registers;
+        public SpecialRegister[] specialRegisters;
 
     }
 }

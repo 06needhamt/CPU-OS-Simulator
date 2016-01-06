@@ -247,6 +247,8 @@ namespace CPU_OS_Simulator.Operating_System
                         {
                             readyQueue = new Queue<SimulatorProcess>(readyQueue.OrderBy(x => x.ProcessPriority));
                             int timeOutMills = 0;
+                            runningProcess = readyQueue.Dequeue();
+
                             if (timeSliceUnit == EnumTimeUnit.SECONDS)
                             {
                                 timeOutMills = (int) (RR_TimeSlice*1000);
@@ -259,10 +261,24 @@ namespace CPU_OS_Simulator.Operating_System
                             {
                                 MessageBox.Show("Unknown time slice unit specified " + timeSliceUnit.ToString());
                             }
-                            runningProcess = readyQueue.Dequeue();
 
                             while (runningProcess != null)
                             {
+                                if (runningProcess.ControlBlock != null)
+                                {
+                                    ProcessControlBlock p = runningProcess.ControlBlock;
+                                    runningProcess.Unit.CurrentIndex = p.SpecialRegisters[0].Value / 4;
+                                    for (int i = 0; i < runningProcess.ControlBlock.Registers.Length; i++)
+                                    {
+                                        string registerName = String.Format("R{0:00}",i);
+                                        Register.FindRegister(registerName).SetRegisterValue(p.Registers[0].Value,p.Registers[0].Type);
+                                    }
+                                    for (int i = 0; i < p.SpecialRegisters.Length; i++)
+                                    {
+                                            SpecialRegister.FindSpecialRegister(p.SpecialRegisters[i].Name).SetRegisterValue(p.SpecialRegisters[i].ValueString, EnumOperandType.VALUE);
+                                    }
+
+                                }
                                     System.Timers.Timer t = new System.Timers.Timer((double)timeOutMills);
                                     t.Elapsed += TOnElapsed;
                                     t.Start();
@@ -307,6 +323,7 @@ namespace CPU_OS_Simulator.Operating_System
         {
             if (runningProcess != null)
             {
+                runningProcess.Unit.TimedOut = true;
                 runningProcess.ProcessState = EnumProcessState.READY;
                 readyQueue.Enqueue(runningProcess);
                 PCBFlags? flags = CreatePCBFlags(ref runningProcess);
@@ -319,7 +336,11 @@ namespace CPU_OS_Simulator.Operating_System
                     MessageBox.Show("There was an error while creating process control block flags");
                     return;
                 }
-                runningProcess = readyQueue.Dequeue();
+                if (readyQueue.Count > 0)
+                {
+                    runningProcess = readyQueue.Dequeue();
+                    runningProcess.ProcessState = EnumProcessState.RUNNING;
+                }
             }
         }
 
@@ -356,6 +377,24 @@ namespace CPU_OS_Simulator.Operating_System
             flags.requestedResources = currentProcess.RequestedResources;
             flags.resourceStarved = currentProcess.ResourceStarved;
             flags.startAddress = currentProcess.Program.BaseAddress; // TODO Implement program start address
+            flags.registers = new Register[21];
+            for (int i = 0; i < flags.registers.Length; i++)
+            {
+                string registerName = String.Empty;
+                if (i < 10)
+                    registerName = "R0" + i;
+                else
+                    registerName = "R" + i;
+                flags.registers[i] = Register.FindRegister(registerName);
+            }
+            flags.specialRegisters = new SpecialRegister[7];
+            flags.specialRegisters[0] = SpecialRegister.PC;
+            flags.specialRegisters[1] = SpecialRegister.BR;
+            flags.specialRegisters[2] = SpecialRegister.SP;
+            flags.specialRegisters[3] = SpecialRegister.IR;
+            flags.specialRegisters[4] = SpecialRegister.SR;
+            flags.specialRegisters[5] = SpecialRegister.MAR;
+            flags.specialRegisters[6] = SpecialRegister.MDR;
             return flags;
         }
 

@@ -475,8 +475,7 @@ namespace CPU_OS_Simulator
             temp.allocatedResources = new List<SystemResource>();
             temp.requestedResources = new List<SystemResource>();
             temp.terminated = false;
-            PCBFlags? flags = CreatePCBFlags();
-            temp.processControlBlock = new ProcessControlBlock(flags.Value);
+            temp.processControlBlock = null;
             temp.OSid = 0;
             temp.unit = null;
             temp.clockSpeed = (int) sld_ClockSpeed.Value;

@@ -3606,6 +3606,8 @@ namespace CPU_OS_Simulator.CPU
             dynamic osCore = osWindow.OsCore;
             dynamic scheduler = osCore.Scheduler;
             dynamic currentProcess = scheduler.RunningProcess;
+            if (currentProcess == null)
+                return null;
             dynamic currentUnit = currentProcess.Unit;
             return currentUnit;
         }
