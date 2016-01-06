@@ -271,11 +271,15 @@ namespace CPU_OS_Simulator.Operating_System
                                     for (int i = 0; i < runningProcess.ControlBlock.Registers.Length; i++)
                                     {
                                         string registerName = String.Format("R{0:00}",i);
-                                        Register.FindRegister(registerName).SetRegisterValue(p.Registers[0].Value,p.Registers[0].Type);
+                                        Register.FindRegister(registerName).SetRegisterValue(p.Registers[i].Value,p.Registers[i].Type);
                                     }
                                     for (int i = 0; i < p.SpecialRegisters.Length; i++)
                                     {
-                                            SpecialRegister.FindSpecialRegister(p.SpecialRegisters[i].Name).SetRegisterValue(p.SpecialRegisters[i].ValueString, EnumOperandType.VALUE);
+                                        int v = 0;
+                                        if (int.TryParse(p.SpecialRegisters[i].ValueString, out v))
+                                            SpecialRegister.FindSpecialRegister(p.SpecialRegisters[i].Name).SetRegisterValue(p.SpecialRegisters[i].Value,p.SpecialRegisters[i].Type);
+                                        else
+                                            SpecialRegister.FindSpecialRegister(p.SpecialRegisters[i].Name).SetRegisterValue(p.SpecialRegisters[i].ValueString, p.SpecialRegisters[i].Type);
                                     }
 
                                 }
