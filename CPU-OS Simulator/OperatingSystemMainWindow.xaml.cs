@@ -98,6 +98,7 @@ namespace CPU_OS_Simulator
         private void btn_Start_Click(object sender, RoutedEventArgs e)
         {
             int t = 0;
+
             if (osCore == null)
             {
                 CreateOsCore();
@@ -132,6 +133,8 @@ namespace CPU_OS_Simulator
             OSFlags temp = new OSFlags();
             if (rdb_Round_Robin.IsChecked != null && rdb_Round_Robin.IsChecked.Value) // if round robin is selected
             {
+                temp.schedulingPolicy = EnumSchedulingPolicies.ROUND_ROBIN;
+
                 if (rdb_RR_Seconds.IsChecked != null && rdb_RR_Seconds.IsChecked.Value) // if the seconds time unit is selected
                 {
                     temp.RR_Time_Slice_Unit = EnumTimeUnit.SECONDS;
