@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using CPU_OS_Simulator.CPU;
 
 namespace CPU_OS_Simulator.Operating_System
 {
@@ -24,6 +25,8 @@ namespace CPU_OS_Simulator.Operating_System
         private bool resourceStarved;
         private List<SystemResource> allocatedResources;
         private List<SystemResource> requestedResources;
+        private Register[] registers;
+        private SpecialRegister[] specialRegisters;
         /// <summary>
         /// Default Constructor for process control block used when deserialising a process control block
         /// NOTE: DO NOT USE IN CODE:
@@ -66,6 +69,8 @@ namespace CPU_OS_Simulator.Operating_System
             {
                 this.allocatedResources = flags.allocatedResources;
             }
+            this.specialRegisters = flags.specialRegisters;
+            this.registers = flags.registers;
         }
 
         /// <summary>
@@ -190,6 +195,18 @@ namespace CPU_OS_Simulator.Operating_System
         {
             get { return requestedResources; }
             set { requestedResources = value; }
+        }
+
+        public Register[] Registers
+        {
+            get { return registers; }
+            set { registers = value; }
+        }
+
+        public SpecialRegister[] SpecialRegisters
+        {
+            get { return specialRegisters; }
+            set { specialRegisters = value; }
         }
     }
 }

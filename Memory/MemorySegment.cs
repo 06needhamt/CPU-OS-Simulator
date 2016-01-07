@@ -228,6 +228,34 @@ namespace CPU_OS_Simulator.Memory
             this.physicalAddress = physicalAddress;
         }
 
+        #endregion Constructors
+
+        #region Methods
+        /// <summary>
+        /// Returns the data string for this memory segment
+        /// </summary>
+        /// <returns>the data string for this memory segment</returns>
+        public override string ToString()
+        {
+            return BuildDataString();
+        }
+        /// <summary>
+        /// Builds the data string for this memory segment
+        /// </summary>
+        /// <returns>the data string for this memory segment</returns>
+        public string BuildDataString()
+        {
+            StringBuilder sb = new StringBuilder(8);
+            sb.Append((char)byte0);
+            sb.Append((char)byte1);
+            sb.Append((char)byte2);
+            sb.Append((char)byte4);
+            sb.Append((char)byte5);
+            sb.Append((char)byte6);
+            sb.Append((char)byte7);
+            return sb.ToString();
+        }
+
         /// <summary>
         /// Gets a specified byte from this memory segment
         /// </summary>
@@ -277,34 +305,6 @@ namespace CPU_OS_Simulator.Memory
             }
         }
 
-        #endregion Constructors
-
-        #region Methods
-        /// <summary>
-        /// Returns the data string for this memory segment
-        /// </summary>
-        /// <returns>the data string for this memory segment</returns>
-        public override string ToString()
-        {
-            return BuildDataString();
-        }
-        /// <summary>
-        /// Builds the data string for this memory segment
-        /// </summary>
-        /// <returns>the data string for this memory segment</returns>
-        public string BuildDataString()
-        {
-            StringBuilder sb = new StringBuilder(8);
-            sb.Append((char)byte0);
-            sb.Append((char)byte1);
-            sb.Append((char)byte2);
-            sb.Append((char)byte4);
-            sb.Append((char)byte5);
-            sb.Append((char)byte6);
-            sb.Append((char)byte7);
-            return sb.ToString();
-        }
-
         /// <summary>
         /// Sets the requested byte in this memory segment
         /// </summary>
@@ -316,52 +316,51 @@ namespace CPU_OS_Simulator.Memory
             switch (number)
             {
                 case 0:
-                    {
-                        Byte0 = value;
-                        break;
-                    }
+                {
+                    Byte0 = value;
+                    break;
+                }
                 case 1:
-                    {
-                        Byte1 = value;
-                        break;
-                    }
+                {
+                    Byte1 = value;
+                    break;
+                }
                 case 2:
-                    {
-                        Byte2 = value;
-                        break;
-                    }
+                {
+                    Byte2 = value;
+                    break;
+                }
                 case 3:
-                    {
-                        Byte3 = value;
-                        break;
-                    }
+                {
+                    Byte3 = value;
+                    break;
+                }
                 case 4:
-                    {
-                        Byte4 = value;
-                        break;
-                    }
+                {
+                    Byte4 = value;
+                    break;
+                }
                 case 5:
-                    {
-                        Byte5 = value;
-                        break;
-                    }
+                {
+                    Byte5 = value;
+                    break;
+                }
                 case 6:
-                    {
-                        Byte6 = value;
-                        break;
-                    }
+                {
+                    Byte6 = value;
+                    break;
+                }
                 case 7:
-                    {
-                        Byte7 = value;
-                        break;
-                    }
+                {
+                    Byte7 = value;
+                    break;
+                }
                 default:
-                    {
-                        throw new InvalidOperationException("Invalid byte number");
-                    }
+                {
+                    throw new InvalidOperationException("Invalid byte number");
+                }
             }
-
-            #endregion Methods
         }
+        #endregion Methods
     }
 }

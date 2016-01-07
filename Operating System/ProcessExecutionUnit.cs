@@ -7,6 +7,7 @@ namespace CPU_OS_Simulator.Operating_System
         private ProcessControlBlock processControlBlock;
         private new SimulatorProgram program;
         private SimulatorProcess process;
+        private bool timedOut = false;
 
         /// <summary>
         /// Constructor for execution unit that starts executing from the beginning of the program
@@ -52,7 +53,13 @@ namespace CPU_OS_Simulator.Operating_System
             set { process = value; }
         }
 
-        
+        public bool TimedOut
+        {
+            get { return timedOut; }
+            set { timedOut = value; }
+        }
+
+
         public void Terminate()
         {
             process.Terminate();

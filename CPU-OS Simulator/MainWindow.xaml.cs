@@ -236,10 +236,10 @@ namespace CPU_OS_Simulator
             Title += " " + GetProgramVersion();
             SpecialRegister.FindSpecialRegister("BR")
                 .SetRegisterValue(Convert.ToInt32(txt_BR.Text), EnumOperandType.VALUE);
-            SpecialRegister.FindSpecialRegister("IR").setRegisterValue(txt_IR.Text, EnumOperandType.VALUE);
+            SpecialRegister.FindSpecialRegister("IR").SetRegisterValue(txt_IR.Text, EnumOperandType.VALUE);
             SpecialRegister.FindSpecialRegister("MAR")
                 .SetRegisterValue(Convert.ToInt32(txt_MAR.Text), EnumOperandType.ADDRESS);
-            SpecialRegister.FindSpecialRegister("MDR").setRegisterValue(txt_MDR.Text, EnumOperandType.VALUE);
+            SpecialRegister.FindSpecialRegister("MDR").SetRegisterValue(txt_MDR.Text, EnumOperandType.VALUE);
             SpecialRegister.FindSpecialRegister("PC")
                 .SetRegisterValue(Convert.ToInt32(txt_PC.Text), EnumOperandType.ADDRESS);
             SpecialRegister.FindSpecialRegister("SP")
@@ -799,8 +799,8 @@ namespace CPU_OS_Simulator
             activeUnit.ExecuteInstruction();
             lst_InstructionsList.SelectedIndex = activeUnit.CurrentIndex;
             SpecialRegister.FindSpecialRegister("PC").SetRegisterValue(prog.Instructions.ElementAt(lst_InstructionsList.SelectedIndex).LogicalAddress, EnumOperandType.VALUE);
-            SpecialRegister.FindSpecialRegister("IR").setRegisterValue(prog.Instructions.ElementAt(lst_InstructionsList.SelectedIndex).InstructionString, EnumOperandType.VALUE);
-            SpecialRegister.FindSpecialRegister("MDR").setRegisterValue(prog.Instructions.ElementAt(lst_InstructionsList.SelectedIndex).InstructionString, EnumOperandType.VALUE);
+            SpecialRegister.FindSpecialRegister("IR").SetRegisterValue(prog.Instructions.ElementAt(lst_InstructionsList.SelectedIndex).InstructionString, EnumOperandType.VALUE);
+            SpecialRegister.FindSpecialRegister("MDR").SetRegisterValue(prog.Instructions.ElementAt(lst_InstructionsList.SelectedIndex).InstructionString, EnumOperandType.VALUE);
             SpecialRegister.FindSpecialRegister("MAR").SetRegisterValue(prog.Instructions.ElementAt(lst_InstructionsList.SelectedIndex).PhysicalAddress, EnumOperandType.VALUE);
             UpdateRegisters();
             UpdateStack();
@@ -841,8 +841,8 @@ namespace CPU_OS_Simulator
             SimulatorProgram prog = programList.Where(x => x.Name.Equals(currentProgram)).FirstOrDefault();
             lst_InstructionsList.SelectedIndex = activeUnit.CurrentIndex;
             SpecialRegister.FindSpecialRegister("PC").SetRegisterValue(prog.Instructions.ElementAt(lst_InstructionsList.SelectedIndex).LogicalAddress, EnumOperandType.VALUE);
-            SpecialRegister.FindSpecialRegister("IR").setRegisterValue(prog.Instructions.ElementAt(lst_InstructionsList.SelectedIndex).InstructionString, EnumOperandType.VALUE);
-            SpecialRegister.FindSpecialRegister("MDR").setRegisterValue(prog.Instructions.ElementAt(lst_InstructionsList.SelectedIndex).InstructionString, EnumOperandType.VALUE);
+            SpecialRegister.FindSpecialRegister("IR").SetRegisterValue(prog.Instructions.ElementAt(lst_InstructionsList.SelectedIndex).InstructionString, EnumOperandType.VALUE);
+            SpecialRegister.FindSpecialRegister("MDR").SetRegisterValue(prog.Instructions.ElementAt(lst_InstructionsList.SelectedIndex).InstructionString, EnumOperandType.VALUE);
             SpecialRegister.FindSpecialRegister("MAR").SetRegisterValue(prog.Instructions.ElementAt(lst_InstructionsList.SelectedIndex).PhysicalAddress, EnumOperandType.VALUE);
             UpdateRegisters();
             UpdateStack();
@@ -865,8 +865,8 @@ namespace CPU_OS_Simulator
             SimulatorProgram prog = programList.Where(x => x.Name.Equals(currentProgram)).FirstOrDefault();
             lst_InstructionsList.SelectedIndex = activeUnit.CurrentIndex;
             SpecialRegister.FindSpecialRegister("PC").SetRegisterValue(prog.Instructions.ElementAt(lst_InstructionsList.SelectedIndex).LogicalAddress, EnumOperandType.VALUE);
-            SpecialRegister.FindSpecialRegister("IR").setRegisterValue(prog.Instructions.ElementAt(lst_InstructionsList.SelectedIndex).InstructionString, EnumOperandType.VALUE);
-            SpecialRegister.FindSpecialRegister("MDR").setRegisterValue(prog.Instructions.ElementAt(lst_InstructionsList.SelectedIndex).InstructionString, EnumOperandType.VALUE);
+            SpecialRegister.FindSpecialRegister("IR").SetRegisterValue(prog.Instructions.ElementAt(lst_InstructionsList.SelectedIndex).InstructionString, EnumOperandType.VALUE);
+            SpecialRegister.FindSpecialRegister("MDR").SetRegisterValue(prog.Instructions.ElementAt(lst_InstructionsList.SelectedIndex).InstructionString, EnumOperandType.VALUE);
             SpecialRegister.FindSpecialRegister("MAR").SetRegisterValue(prog.Instructions.ElementAt(lst_InstructionsList.SelectedIndex).PhysicalAddress, EnumOperandType.VALUE);
             UpdateRegisters();
             UpdateStack();

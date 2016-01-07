@@ -33,7 +33,7 @@ namespace CPUTests
         public void setRegisterValueTest1()
         {
             SpecialRegister sp = SpecialRegister.FindSpecialRegister("IR");
-            sp.setRegisterValue("MOV R00,10", EnumOperandType.VALUE);
+            sp.SetRegisterValue("MOV R00,10", EnumOperandType.VALUE);
             Assert.IsTrue(sp.ValueString.Equals("MOV R00,10"));
         }
     }

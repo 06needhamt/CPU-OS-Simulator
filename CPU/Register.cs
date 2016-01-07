@@ -1,4 +1,6 @@
-﻿namespace CPU_OS_Simulator.CPU
+﻿using System;
+
+namespace CPU_OS_Simulator.CPU
 {
     /// <summary>
     /// This class represents a CPU register
@@ -106,6 +108,11 @@
         {
             this.value = value;
             this.type = type;
+        }
+
+        public virtual void SetRegisterValue(string value, EnumOperandType type)
+        {
+            throw new NotSupportedException();
         }
         /// <summary>
         /// This function finds a register by its name

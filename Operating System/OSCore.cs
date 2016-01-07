@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.Specialized;
 using System.Reflection;
 using System.Windows;
 
@@ -9,7 +10,7 @@ namespace CPU_OS_Simulator.Operating_System
     /// This class represents the core of the operating system
     /// </summary>
     [Serializable]
-    public class OSCore
+    public class OSCore : INotifyCollectionChanged
     {
         private EnumSchedulingPolicies schedulingPolicy = EnumSchedulingPolicies.UNKNOWN;
         private double RR_Time_Slice;
@@ -31,8 +32,9 @@ namespace CPU_OS_Simulator.Operating_System
         private EnumErrorCodes errorCode = EnumErrorCodes.UNKNOWN;
         private Scheduler scheduler;
         private Queue<SimulatorProcess> readyQueue;
-        private Queue<SimulatorProcess> waitingQueue;  
+        private Queue<SimulatorProcess> waitingQueue;
 
+        public event NotifyCollectionChangedEventHandler CollectionChanged;
         /// <summary>
         /// Default Constructor for the OS Core
         /// </summary>
@@ -66,8 +68,15 @@ namespace CPU_OS_Simulator.Operating_System
             scheduler = flags.scheduler;
             readyQueue = new Queue<SimulatorProcess>();
             waitingQueue = new Queue<SimulatorProcess>();
+            CollectionChanged += OnCollectionChanged;
 
         }
+
+        private void OnCollectionChanged(object sender, NotifyCollectionChangedEventArgs notifyCollectionChangedEventArgs)
+        {
+            System.Console.WriteLine("Queue contents have changed" + sender.ToString());
+        }
+
         /// <summary>
         /// This function is called to start the operating system
         /// </summary>
@@ -315,5 +324,6 @@ namespace CPU_OS_Simulator.Operating_System
             get { return scheduler; }
             set { scheduler = value; }
         }
+
     }
 }

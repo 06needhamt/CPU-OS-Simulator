@@ -152,7 +152,7 @@ namespace CPU_OS_Simulator.CPU
         /// </summary>
         /// <param name="value"> the value to store in the register</param>
         /// <param name="type">the type of data memory or value</param>
-        public void setRegisterValue(string value, EnumOperandType type)
+        public override void SetRegisterValue(string value, EnumOperandType type)
         {
             valueString = value;
             this.type = type;

@@ -121,6 +121,10 @@ namespace CPU_OS_Simulator.CPU
                     currentInstruction.Execute();
                     currentIndex++;
                 }
+                SpecialRegister.FindSpecialRegister("PC").SetRegisterValue(currentInstruction.LogicalAddress, EnumOperandType.VALUE);
+                SpecialRegister.FindSpecialRegister("IR").SetRegisterValue(currentInstruction.InstructionString, EnumOperandType.VALUE);
+                SpecialRegister.FindSpecialRegister("MDR").SetRegisterValue(currentInstruction.InstructionString, EnumOperandType.VALUE);
+                SpecialRegister.FindSpecialRegister("MAR").SetRegisterValue(currentInstruction.PhysicalAddress, EnumOperandType.VALUE);
                 if (currentIndex == program.Instructions.Count)
                 {
                     Done = true;

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Activities.Tracking;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
@@ -1655,7 +1656,6 @@ namespace CPU_OS_Simulator.CPU
         /// <returns> the result of the instruction or int.MINVALUE if no result is returned </returns>
         private int NOT(Operand lhs, Operand rhs)
         {
-            //TODO update not for memory operands
             byte[] sourceBytes = new byte[sizeof(int)];
             byte[] destBytes = new byte[sizeof(int)];
             if (rhs.Type == EnumOperandType.ADDRESS) //if the source operand is a memory address 
@@ -3605,6 +3605,8 @@ namespace CPU_OS_Simulator.CPU
             dynamic osCore = osWindow.OsCore;
             dynamic scheduler = osCore.Scheduler;
             dynamic currentProcess = scheduler.RunningProcess;
+            if (currentProcess == null)
+                return null;
             dynamic currentUnit = currentProcess.Unit;
             return currentUnit;
         }
