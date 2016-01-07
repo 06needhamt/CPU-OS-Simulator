@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.Specialized;
 using System.Reflection;
 using System.Windows;
 using System.Windows.Threading;
@@ -11,7 +12,7 @@ namespace CPU_OS_Simulator
     /// <summary>
     /// Interaction logic for OperatingSystemMainWindow.xaml
     /// </summary>
-    public partial class OperatingSystemMainWindow : Window
+    public partial class OperatingSystemMainWindow : Window , INotifyCollectionChanged
     {
         private MainWindow parent;
         private List<SimulatorProgram> programList;
@@ -24,6 +25,9 @@ namespace CPU_OS_Simulator
         /// Variable to hold the current instance of this window so it can be accessed by other modules
         /// </summary>
         public static OperatingSystemMainWindow currentInstance;
+
+        public event NotifyCollectionChangedEventHandler CollectionChanged;
+
         /// <summary>
         /// Default constructor for OperatingSystemMainWindow
         /// </summary>
@@ -33,6 +37,7 @@ namespace CPU_OS_Simulator
             currentInstance = this;
             SetOSWindowInstance();
             processes = new List<SimulatorProcess>();
+            CollectionChanged += OnCollectionChanged;
         }
         /// <summary>
         /// Constructor for operating system window that takes the window instance that is creating this window
@@ -46,6 +51,12 @@ namespace CPU_OS_Simulator
             currentInstance = this;
             SetOSWindowInstance();
             processes = new List<SimulatorProcess>();
+            CollectionChanged += OnCollectionChanged;
+        }
+
+        private void OnCollectionChanged(object sender, NotifyCollectionChangedEventArgs notifyCollectionChangedEventArgs)
+        {
+            System.Console.WriteLine("Queue contents have changed" + sender.ToString());
         }
 
         public List<SimulatorProcess> Processes

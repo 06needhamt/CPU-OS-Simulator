@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.Specialized;
 using System.ComponentModel;
 using System.Diagnostics;
 using System.Linq;
@@ -18,7 +19,7 @@ namespace CPU_OS_Simulator.Operating_System
     /// This class represents the process scheduler / manager for the virtual operating system
     /// </summary>
     [Serializable]
-    public class Scheduler
+    public class Scheduler : INotifyCollectionChanged
     {
         private Queue<SimulatorProcess> readyQueue;
         private Queue<SimulatorProcess> waitingQueue;
@@ -35,6 +36,11 @@ namespace CPU_OS_Simulator.Operating_System
         private int cpuClockSpeed;
         private BackgroundWorker executionWorker;
         private Dispatcher dispatcher = Dispatcher.CurrentDispatcher;
+        //private System.Timers.Timer t;
+        private Stopwatch s;
+        private Object thisLock = new Object();
+
+        public event NotifyCollectionChangedEventHandler CollectionChanged;
 
         /// <summary>
         /// Default Constructor for scheduler used when deserialising the scheduler
@@ -63,7 +69,13 @@ namespace CPU_OS_Simulator.Operating_System
             allowCPUAffinity = flags.allowCPUAffinity;
             runningWithNoProcesses = flags.runningWithNoProcesses;
             cpuClockSpeed = flags.cpuClockSpeed;
+            CollectionChanged += OnCollectionChanged;
             CreateBackgroundWorker();
+        }
+
+        private void OnCollectionChanged(object sender, NotifyCollectionChangedEventArgs notifyCollectionChangedEventArgs)
+        {
+            System.Console.WriteLine("Queue contents have changed" + sender.ToString());
         }
 
         private void CreateBackgroundWorker()
@@ -243,56 +255,32 @@ namespace CPU_OS_Simulator.Operating_System
                         }
                     case EnumSchedulingPolicies.ROUND_ROBIN:
                     {
-                        if (RR_Priority_Policy == EnumPriorityPolicy.NON_PRE_EMPTIVE)
+                        switch (RR_Priority_Policy)
                         {
-                            readyQueue = new Queue<SimulatorProcess>(readyQueue.OrderBy(x => x.ProcessPriority));
-                            int timeOutMills = 0;
-                            runningProcess = readyQueue.Dequeue();
-
-                            if (timeSliceUnit == EnumTimeUnit.SECONDS)
+                           case EnumPriorityPolicy.NON_PRE_EMPTIVE:
                             {
-                                timeOutMills = (int) (RR_TimeSlice*1000);
+                                readyQueue = new Queue<SimulatorProcess>(readyQueue.OrderBy(x => x.ProcessPriority));
+                                int timeout = CalculateTimeSlice();
+                                ExecuteRoundRobin(timeout);
+                                break;
                             }
-                            else if (timeSliceUnit == EnumTimeUnit.TICKS)
+                            case EnumPriorityPolicy.NO_PRIORITY:
                             {
-                                timeOutMills = (int) (RR_TimeSlice*runningProcess.Unit.ClockSpeed);
+                                break;
                             }
-                            else
+                            case EnumPriorityPolicy.PRE_EMPTIVE:
                             {
-                                MessageBox.Show("Unknown time slice unit specified " + timeSliceUnit.ToString());
+                                break;
                             }
-
-                            while (runningProcess != null)
+                            case EnumPriorityPolicy.UNKNOWN:
                             {
-                                if (runningProcess.ControlBlock != null)
-                                {
-                                    ProcessControlBlock p = runningProcess.ControlBlock;
-                                    runningProcess.Unit.CurrentIndex = p.SpecialRegisters[0].Value / 4;
-                                    for (int i = 0; i < runningProcess.ControlBlock.Registers.Length; i++)
-                                    {
-                                        string registerName = String.Format("R{0:00}",i);
-                                        Register.FindRegister(registerName).SetRegisterValue(p.Registers[i].Value,p.Registers[i].Type);
-                                    }
-                                    for (int i = 0; i < p.SpecialRegisters.Length; i++)
-                                    {
-                                        int v = 0;
-                                        if (int.TryParse(p.SpecialRegisters[i].ValueString, out v))
-                                            SpecialRegister.FindSpecialRegister(p.SpecialRegisters[i].Name).SetRegisterValue(p.SpecialRegisters[i].Value,p.SpecialRegisters[i].Type);
-                                        else
-                                            SpecialRegister.FindSpecialRegister(p.SpecialRegisters[i].Name).SetRegisterValue(p.SpecialRegisters[i].ValueString, p.SpecialRegisters[i].Type);
-                                    }
-
-                                }
-                                    System.Timers.Timer t = new System.Timers.Timer((double)timeOutMills);
-                                    t.Elapsed += TOnElapsed;
-                                    t.Start();
-                                    
-                                while (!runningProcess.Unit.Stop && !runningProcess.Unit.Done &&
-                                        !runningProcess.Unit.Process.Terminated && !runningProcess.Unit.TimedOut)
-                                {
-                                    runningProcess.Unit.ExecuteInstruction();
-                                    await CallFromMainThread(UpdateInterface);
-                                }
+                                MessageBox.Show("Unknown priority policy selected");
+                                return;
+                            }
+                            default:
+                            {
+                                MessageBox.Show("An unknown error occurred"); // TODO give better error message
+                                return;
                             }
                         }
                         break;
@@ -323,13 +311,63 @@ namespace CPU_OS_Simulator.Operating_System
             return;
         }
 
-        private async void TOnElapsed(object sender, ElapsedEventArgs elapsedEventArgs)
+        private int CalculateTimeSlice()
         {
+            int timeOutMills = 0;
+            runningProcess = readyQueue.Dequeue();
+
+            if (timeSliceUnit == EnumTimeUnit.SECONDS)
+            {
+                timeOutMills = (int)(RR_TimeSlice * 1000);
+            }
+            else if (timeSliceUnit == EnumTimeUnit.TICKS)
+            {
+                timeOutMills = (int)(RR_TimeSlice * runningProcess.Unit.ClockSpeed);
+            }
+            else
+            {
+                MessageBox.Show("Unknown time slice unit specified " + timeSliceUnit.ToString());
+                return int.MaxValue;
+            }
+            return timeOutMills;
+        }
+
+        private async void ExecuteRoundRobin(int timeout)
+        {
+            s = new Stopwatch();
+            while (readyQueue.Count > 0 && readyQueue.Peek() != null)
+            {
+
+                runningProcess = readyQueue.Dequeue();
+                LoadPCB();
+                runningProcess.Unit.TimedOut = false;
+                runningProcess.ProcessState = EnumProcessState.RUNNING;
+
+                while (runningProcess != null && !runningProcess.Unit.Done && !runningProcess.Unit.Stop && !runningProcess.Unit.TimedOut)
+                {
+                    s.Start();
+                    if (s.ElapsedMilliseconds >= timeout)
+                    {
+                        TimeOutProcess();
+                        break;
+                    }
+                    runningProcess.Unit.ExecuteInstruction();
+                    await CallFromMainThread(UpdateInterface);
+                }
+                runningProcess = null;
+            }
+        }
+
+        private void TimeOutProcess()
+        {
+            s.Stop();
+            s.Reset();
+
             if (runningProcess != null)
             {
                 runningProcess.Unit.TimedOut = true;
                 runningProcess.ProcessState = EnumProcessState.READY;
-                readyQueue.Enqueue(runningProcess);
+
                 PCBFlags? flags = CreatePCBFlags(ref runningProcess);
                 if (flags != null)
                 {
@@ -337,30 +375,50 @@ namespace CPU_OS_Simulator.Operating_System
                 }
                 else
                 {
-                    MessageBox.Show("There was an error while creating process control block flags");
+                    MessageBox.Show("There was an error while creating the PCB flags");
                     return;
                 }
-                if (readyQueue.Count > 0)
+                readyQueue.Enqueue(runningProcess);
+                // runningProcess = readyQueue.Dequeue();
+                // runningProcess.Unit.TimedOut = false;
+                // runningProcess.ProcessState = EnumProcessState.RUNNING;
+            }
+        }
+
+        private void LoadPCB()
+        {
+            if (runningProcess.ControlBlock != null)
+            {
+                ProcessControlBlock p = runningProcess.ControlBlock;
+                runningProcess.Unit.CurrentIndex = p.SpecialRegisters[0].Value/4; // TODO Change this to parse the value string when special registers are updated
+                for (int i = 0; i < runningProcess.ControlBlock.Registers.Length; i++)
                 {
-                    runningProcess = readyQueue.Dequeue();
-                    runningProcess.ProcessState = EnumProcessState.RUNNING;
+                    string registerName = String.Format("R{0:00}", i);
+                    Register.FindRegister(registerName).SetRegisterValue(p.Registers[i].Value, p.Registers[i].Type);
+                }
+                for (int i = 0; i < p.SpecialRegisters.Length; i++)
+                {
+                    int v = 0;
+                    if (p.SpecialRegisters[i].ValueString != null)
+                    {
+                        if (int.TryParse(p.SpecialRegisters[i].ValueString, out v))
+                            SpecialRegister.FindSpecialRegister(p.SpecialRegisters[i].Name)
+                                .SetRegisterValue(p.SpecialRegisters[i].Value, p.SpecialRegisters[i].Type);
+                        else
+                            SpecialRegister.FindSpecialRegister(p.SpecialRegisters[i].Name)
+                                .SetRegisterValue(p.SpecialRegisters[i].ValueString, p.SpecialRegisters[i].Type);
+                    }
+                    else
+                    {
+                        SpecialRegister.FindSpecialRegister(p.SpecialRegisters[i].Name)
+                            .SetRegisterValue(p.SpecialRegisters[i].Value,p.SpecialRegisters[i].Type);
+                    }
                 }
             }
         }
 
-        //private void OnProcessTimeout(object state)
-        //{
-        //    runningProcess.ProcessState = EnumProcessState.READY;
-        //    readyQueue.Enqueue(runningProcess);
-        //    if (readyQueue.Count > 0)
-        //    {
-        //        runningProcess = readyQueue.Dequeue();
-        //    }
-        //    else
-        //    {
-        //        runningProcess = null;
-        //    }
-        //}
+       
+
         private PCBFlags? CreatePCBFlags(ref SimulatorProcess currentProcess)
         {
             //SimulatorProcess currentProcess = waitingQueue.Peek();
@@ -508,5 +566,7 @@ namespace CPU_OS_Simulator.Operating_System
             get { return runningWithNoProcesses; }
             set { runningWithNoProcesses = value; }
         }
+
+        
     }
 }
