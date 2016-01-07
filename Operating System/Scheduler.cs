@@ -11,6 +11,7 @@ using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Threading;
 using System.Timers;
+using System.Windows.Data;
 using CPU_OS_Simulator.CPU;
 
 namespace CPU_OS_Simulator.Operating_System
@@ -38,7 +39,7 @@ namespace CPU_OS_Simulator.Operating_System
         private Dispatcher dispatcher = Dispatcher.CurrentDispatcher;
         //private System.Timers.Timer t;
         private Stopwatch s;
-        private Object thisLock = new Object();
+        //private Object thisLock = new Object();
 
         public event NotifyCollectionChangedEventHandler CollectionChanged;
 
@@ -71,11 +72,13 @@ namespace CPU_OS_Simulator.Operating_System
             cpuClockSpeed = flags.cpuClockSpeed;
             CollectionChanged += OnCollectionChanged;
             CreateBackgroundWorker();
+            //BindingOperations.EnableCollectionSynchronization(readyQueue,thisLock);
         }
 
-        private void OnCollectionChanged(object sender, NotifyCollectionChangedEventArgs notifyCollectionChangedEventArgs)
+        private async void OnCollectionChanged(object sender, NotifyCollectionChangedEventArgs notifyCollectionChangedEventArgs)
         {
             System.Console.WriteLine("Queue contents have changed" + sender.ToString());
+            await CallFromMainThread(UpdateInterface);
         }
 
         private void CreateBackgroundWorker()
@@ -134,6 +137,7 @@ namespace CPU_OS_Simulator.Operating_System
             OSWindow.lst_ReadyProcesses.ItemsSource = OSWindow.OsCore.Scheduler.ReadyQueue;
             OSWindow.lst_WaitingProcesses.ItemsSource = OSWindow.OsCore.Scheduler.WaitingQueue;
             OSWindow.txtProcessName.Text = "P" + Convert.ToString(OSWindow.Processes.Count + 1);
+            
         }
         /// <summary>
         /// Asynchronous function called after every instruction is executed to update required values and user interface asynchronously
@@ -164,95 +168,14 @@ namespace CPU_OS_Simulator.Operating_System
                 {
                     case EnumSchedulingPolicies.FIRST_COME_FIRST_SERVED:
                     {
-                        runningProcess = readyQueue.Dequeue();
-                        //ProcessExecutionUnit unit = runningProcess.Unit;
-                        while (!runningProcess.Unit.Stop && !runningProcess.Unit.Done &&
-                               !runningProcess.Unit.Process.Terminated && !runningProcess.Unit.TimedOut)
-                        {
-                            runningProcess.Unit.ExecuteInstruction();
-                            await CallFromMainThread(UpdateInterface);
-                        }
-                        if (runningProcess.Unit.TimedOut)
-                        {
-                            runningProcess.ProcessState = EnumProcessState.READY;
-                            readyQueue.Enqueue(runningProcess);
-                            PCBFlags? flags = CreatePCBFlags(ref runningProcess);
-                            if (flags != null)
-                            {
-                                runningProcess.ControlBlock = new ProcessControlBlock(flags.Value);
-                            }
-                            else
-                            {
-                                MessageBox.Show("There was an error while creating process control block flags");
-                                return;
-                            }
-                                runningProcess = readyQueue.Dequeue();
-
-                            }
-                        if (runningProcess.Unit.Stop)
-                        {
-                            runningProcess.ProcessState = EnumProcessState.WAITING;
-                            waitingQueue.Enqueue(runningProcess);
-                            PCBFlags? flags = CreatePCBFlags(ref runningProcess);
-                            if (flags != null)
-                            {
-                                runningProcess.ControlBlock = new ProcessControlBlock(flags.Value);
-                            }
-                            else
-                            {
-                                MessageBox.Show("There was an error while creating process control block flags");
-                                return;
-                            }
-                            runningProcess = readyQueue.Dequeue();
-                        }
+                        ExecuteFirstComeFirstServed();
                         break;
                     }
                     case EnumSchedulingPolicies.SHORTEST_JOB_FIRST:
                     {
-                        readyQueue = new Queue<SimulatorProcess>(readyQueue.OrderBy(x => x.Program.Instructions.Count));
-                        runningProcess = readyQueue.Dequeue();
-                        await CallFromMainThread(UpdateInterface);
-                          while (!runningProcess.Unit.Stop && !runningProcess.Unit.Done &&
-                                 !runningProcess.Unit.Process.Terminated && !runningProcess.Unit.TimedOut)
-                          {
-                              runningProcess.Unit.ExecuteInstruction();
-                              await CallFromMainThread(UpdateInterface);
-                          }
-                          if (runningProcess.Unit.TimedOut)
-                          {
-                             runningProcess.ProcessState = EnumProcessState.READY;
-                              readyQueue.Enqueue(runningProcess);
-                              PCBFlags? flags = CreatePCBFlags(ref runningProcess);
-                              if (flags != null)
-                              {
-                                  runningProcess.ControlBlock = new ProcessControlBlock(flags.Value);
-                              }
-                              else
-                              {
-                                  MessageBox.Show("There was an error while creating process control block flags");
-                                  return;
-                              }
-                              runningProcess = readyQueue.Dequeue();
-
-                          }
-                          if (runningProcess.Unit.Stop)
-                          {
-                              runningProcess.ProcessState = EnumProcessState.WAITING;
-                              waitingQueue.Enqueue(runningProcess);
-                              PCBFlags? flags = CreatePCBFlags(ref runningProcess);
-                              if (flags != null)
-                              {
-                                  runningProcess.ControlBlock = new ProcessControlBlock(flags.Value);
-                              }
-                              else
-                               {
-                                  MessageBox.Show("There was an error while creating process control block flags");
-                                  return;
-                               }
-                               runningProcess = readyQueue.Dequeue();
-                            }
-                            break;
-                        }
+                        ExecuteShortestJobFirst();
+                        break;
+                    }
                     case EnumSchedulingPolicies.ROUND_ROBIN:
                     {
                         switch (RR_Priority_Policy)
@@ -261,15 +184,22 @@ namespace CPU_OS_Simulator.Operating_System
                             {
                                 readyQueue = new Queue<SimulatorProcess>(readyQueue.OrderBy(x => x.ProcessPriority));
                                 int timeout = CalculateTimeSlice();
-                                ExecuteRoundRobin(timeout);
+                                await CallFromMainThread(UpdateInterface);
+                                ExecuteRoundRobin(timeout,false);
                                 break;
                             }
                             case EnumPriorityPolicy.NO_PRIORITY:
                             {
+                                int timeout = CalculateTimeSlice();
+                                ExecuteRoundRobin(timeout,false);
                                 break;
                             }
                             case EnumPriorityPolicy.PRE_EMPTIVE:
                             {
+                                readyQueue = new Queue<SimulatorProcess>(readyQueue.OrderBy(x => x.ProcessPriority));
+                                int timeout = CalculateTimeSlice();
+                                await CallFromMainThread(UpdateInterface);
+                                ExecuteRoundRobin(timeout,true);
                                 break;
                             }
                             case EnumPriorityPolicy.UNKNOWN:
@@ -311,10 +241,103 @@ namespace CPU_OS_Simulator.Operating_System
             return;
         }
 
+        private async void ExecuteShortestJobFirst()
+        {
+            // TODO Shortest job first uses the number of instructions to calculate how long the job is, which may not be correct
+
+            readyQueue = new Queue<SimulatorProcess>(readyQueue.OrderBy(x => x.Program.Instructions.Count));
+            runningProcess = readyQueue.Dequeue();
+            await CallFromMainThread(UpdateInterface);
+            while (!runningProcess.Unit.Stop && !runningProcess.Unit.Done &&
+                   !runningProcess.Unit.Process.Terminated && !runningProcess.Unit.TimedOut)
+            {
+                runningProcess.Unit.ExecuteInstruction();
+                await CallFromMainThread(UpdateInterface);
+            }
+            if (runningProcess.Unit.TimedOut)
+            {
+                runningProcess.ProcessState = EnumProcessState.READY;
+                readyQueue.Enqueue(runningProcess);
+                PCBFlags? flags = CreatePCBFlags(ref runningProcess);
+                if (flags != null)
+                {
+                    runningProcess.ControlBlock = new ProcessControlBlock(flags.Value);
+                }
+                else
+                {
+                    MessageBox.Show("There was an error while creating process control block flags");
+                    return;
+                }
+                runningProcess = readyQueue.Dequeue();
+
+            }
+            if (runningProcess.Unit.Stop)
+            {
+                runningProcess.ProcessState = EnumProcessState.WAITING;
+                waitingQueue.Enqueue(runningProcess);
+                PCBFlags? flags = CreatePCBFlags(ref runningProcess);
+                if (flags != null)
+                {
+                    runningProcess.ControlBlock = new ProcessControlBlock(flags.Value);
+                }
+                else
+                {
+                    MessageBox.Show("There was an error while creating process control block flags");
+                    return;
+                }
+                runningProcess = readyQueue.Dequeue();
+            }
+        }
+
+        private async void ExecuteFirstComeFirstServed()
+        {
+            runningProcess = readyQueue.Dequeue();
+            //ProcessExecutionUnit unit = runningProcess.Unit;
+            while (!runningProcess.Unit.Stop && !runningProcess.Unit.Done &&
+                   !runningProcess.Unit.Process.Terminated && !runningProcess.Unit.TimedOut)
+            {
+                runningProcess.Unit.ExecuteInstruction();
+                await CallFromMainThread(UpdateInterface);
+            }
+            if (runningProcess.Unit.TimedOut)
+            {
+                runningProcess.ProcessState = EnumProcessState.READY;
+                readyQueue.Enqueue(runningProcess);
+                PCBFlags? flags = CreatePCBFlags(ref runningProcess);
+                if (flags != null)
+                {
+                    runningProcess.ControlBlock = new ProcessControlBlock(flags.Value);
+                }
+                else
+                {
+                    MessageBox.Show("There was an error while creating process control block flags");
+                    return;
+                }
+                runningProcess = readyQueue.Dequeue();
+
+            }
+            if (runningProcess.Unit.Stop)
+            {
+                runningProcess.ProcessState = EnumProcessState.WAITING;
+                waitingQueue.Enqueue(runningProcess);
+                PCBFlags? flags = CreatePCBFlags(ref runningProcess);
+                if (flags != null)
+                {
+                    runningProcess.ControlBlock = new ProcessControlBlock(flags.Value);
+                }
+                else
+                {
+                    MessageBox.Show("There was an error while creating process control block flags");
+                    return;
+                }
+                runningProcess = readyQueue.Dequeue();
+            }
+        }
+
         private int CalculateTimeSlice()
         {
             int timeOutMills = 0;
-            runningProcess = readyQueue.Dequeue();
+            runningProcess = readyQueue.Peek();
 
             if (timeSliceUnit == EnumTimeUnit.SECONDS)
             {
@@ -332,12 +355,11 @@ namespace CPU_OS_Simulator.Operating_System
             return timeOutMills;
         }
 
-        private async void ExecuteRoundRobin(int timeout)
+        private async void ExecuteRoundRobin(int timeout, bool preEmptive)
         {
             s = new Stopwatch();
             while (readyQueue.Count > 0 && readyQueue.Peek() != null)
             {
-
                 runningProcess = readyQueue.Dequeue();
                 LoadPCB();
                 runningProcess.Unit.TimedOut = false;
@@ -348,7 +370,7 @@ namespace CPU_OS_Simulator.Operating_System
                     s.Start();
                     if (s.ElapsedMilliseconds >= timeout)
                     {
-                        TimeOutProcess();
+                        TimeOutProcess(preEmptive);
                         break;
                     }
                     runningProcess.Unit.ExecuteInstruction();
@@ -358,7 +380,7 @@ namespace CPU_OS_Simulator.Operating_System
             }
         }
 
-        private void TimeOutProcess()
+        private async void TimeOutProcess(bool preEmptive)
         {
             s.Stop();
             s.Reset();
@@ -379,6 +401,14 @@ namespace CPU_OS_Simulator.Operating_System
                     return;
                 }
                 readyQueue.Enqueue(runningProcess);
+                //await CallFromMainThread(UpdateInterface);
+                if (preEmptive)
+                {
+                    readyQueue = new Queue<SimulatorProcess>(readyQueue.OrderBy(x => x.ProcessPriority));
+                    //Thread.Sleep(50);
+                    await CallFromMainThread(UpdateInterface);
+                }
+
                 // runningProcess = readyQueue.Dequeue();
                 // runningProcess.Unit.TimedOut = false;
                 // runningProcess.ProcessState = EnumProcessState.RUNNING;

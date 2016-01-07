@@ -1656,7 +1656,6 @@ namespace CPU_OS_Simulator.CPU
         /// <returns> the result of the instruction or int.MINVALUE if no result is returned </returns>
         private int NOT(Operand lhs, Operand rhs)
         {
-            //TODO update not for memory operands
             byte[] sourceBytes = new byte[sizeof(int)];
             byte[] destBytes = new byte[sizeof(int)];
             if (rhs.Type == EnumOperandType.ADDRESS) //if the source operand is a memory address 
