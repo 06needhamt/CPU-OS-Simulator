@@ -364,6 +364,12 @@ namespace CPU_OS_Simulator.Operating_System
                 LoadPCB();
                 runningProcess.Unit.TimedOut = false;
                 runningProcess.ProcessState = EnumProcessState.RUNNING;
+                if (preEmptive)
+                {
+                    readyQueue = new Queue<SimulatorProcess>(readyQueue.OrderBy(x => x.ProcessPriority));
+                    //Thread.Sleep(50);
+                    await CallFromMainThread(UpdateInterface); //HACK My WTF Train Goes WTF WTF WTF Chugga Chugga
+                }
 
                 while (runningProcess != null && !runningProcess.Unit.Done && !runningProcess.Unit.Stop && !runningProcess.Unit.TimedOut)
                 {
@@ -401,14 +407,14 @@ namespace CPU_OS_Simulator.Operating_System
                     return;
                 }
                 readyQueue.Enqueue(runningProcess);
-                //await CallFromMainThread(UpdateInterface);
-                if (preEmptive)
-                {
-                    readyQueue = new Queue<SimulatorProcess>(readyQueue.OrderBy(x => x.ProcessPriority));
-                    //Thread.Sleep(50);
-                    await CallFromMainThread(UpdateInterface);
-                }
+                //if (preEmptive)
+                //{
+                //    readyQueue = new Queue<SimulatorProcess>(readyQueue.OrderBy(x => x.ProcessPriority));
+                //    //Thread.Sleep(50);
+                //    await CallFromMainThread(UpdateInterface); //HACK Why does this work above but not here? My WTF Train Goes WTF WTF WTF Chugga Chugga 
+                //}
 
+                //await CallFromMainThread(UpdateInterface);
                 // runningProcess = readyQueue.Dequeue();
                 // runningProcess.Unit.TimedOut = false;
                 // runningProcess.ProcessState = EnumProcessState.RUNNING;
