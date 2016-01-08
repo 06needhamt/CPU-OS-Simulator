@@ -41,6 +41,12 @@ bool \hyperlink{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_process
 List$<$ \hyperlink{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_system_resource}{System\+Resource} $>$ \hyperlink{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_process_control_block_ac63dd8fe20184d49ee5ddc2a229137b8}{Allocated\+Resources}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
 \item 
 List$<$ \hyperlink{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_system_resource}{System\+Resource} $>$ \hyperlink{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_process_control_block_addc78e3524753fd0fd20cfcfd0796bf0}{Requested\+Resources}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\item 
+\hyperlink{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_register}{Register}\mbox{[}$\,$\mbox{]} \hyperlink{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_process_control_block_abab92b09a34fb79823064fca79ed32ae}{Registers}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\item 
+\hyperlink{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_special_register}{Special\+Register}\mbox{[}$\,$\mbox{]} \hyperlink{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_process_control_block_af9716c755f2e5957ea4f4a7af4a7a190}{Special\+Registers}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\item 
+int \hyperlink{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_process_control_block_ae285b06f82507297a0f006ff3bece008}{Lifetime\+Mills}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
 \end{DoxyCompactItemize}
 \subsection*{Private Attributes}
 \begin{DoxyCompactItemize}
@@ -74,13 +80,19 @@ bool \hyperlink{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_process
 List$<$ \hyperlink{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_system_resource}{System\+Resource} $>$ \hyperlink{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_process_control_block_a2bf5eeea4cfbc85d2eea2d7fca022d42}{allocated\+Resources}
 \item 
 List$<$ \hyperlink{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_system_resource}{System\+Resource} $>$ \hyperlink{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_process_control_block_a7896862017234b7736e377b5a0e3a253}{requested\+Resources}
+\item 
+\hyperlink{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_register}{Register}\mbox{[}$\,$\mbox{]} \hyperlink{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_process_control_block_abf1ea0cffc667a8119d25d8a9c283483}{registers}
+\item 
+\hyperlink{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_special_register}{Special\+Register}\mbox{[}$\,$\mbox{]} \hyperlink{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_process_control_block_a1e39a81f5ee1a47350ee3a77cf331646}{special\+Registers}
+\item 
+int \hyperlink{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_process_control_block_a31259298bf00ca63f7a9f879f0e67c45}{lifetime\+Mills}
 \end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
 
 
-Definition at line 8 of file Process\+Control\+Block.\+cs.
+Definition at line 9 of file Process\+Control\+Block.\+cs.
 
 
 
@@ -98,7 +110,7 @@ Default Constructor for process control block used when deserialising a process 
 
 
 
-Definition at line 31 of file Process\+Control\+Block.\+cs.
+Definition at line 37 of file Process\+Control\+Block.\+cs.
 
 \hypertarget{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_process_control_block_a95c13984ceebe2b73b0cd48b82361179}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Process\+Control\+Block@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Process\+Control\+Block}!Process\+Control\+Block@{Process\+Control\+Block}}
 \index{Process\+Control\+Block@{Process\+Control\+Block}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Process\+Control\+Block@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Process\+Control\+Block}}
@@ -118,7 +130,7 @@ Constructor for process control block with construction flags
 \end{DoxyParams}
 
 
-Definition at line 39 of file Process\+Control\+Block.\+cs.
+Definition at line 45 of file Process\+Control\+Block.\+cs.
 
 
 
@@ -139,7 +151,7 @@ A string that represents the current object.
 \end{DoxyReturn}
 
 
-Definition at line 77 of file Process\+Control\+Block.\+cs.
+Definition at line 86 of file Process\+Control\+Block.\+cs.
 
 
 
@@ -149,105 +161,126 @@ Definition at line 77 of file Process\+Control\+Block.\+cs.
 \subsubsection[{allocated\+Resources}]{\setlength{\rightskip}{0pt plus 5cm}List$<${\bf System\+Resource}$>$ C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Operating\+\_\+\+System.\+Process\+Control\+Block.\+allocated\+Resources\hspace{0.3cm}{\ttfamily [private]}}\label{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_process_control_block_a2bf5eeea4cfbc85d2eea2d7fca022d42}
 
 
-Definition at line 25 of file Process\+Control\+Block.\+cs.
+Definition at line 26 of file Process\+Control\+Block.\+cs.
 
 \hypertarget{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_process_control_block_afec04aefe69def148099512dc2024ded}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Process\+Control\+Block@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Process\+Control\+Block}!avg\+Burst\+Time@{avg\+Burst\+Time}}
 \index{avg\+Burst\+Time@{avg\+Burst\+Time}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Process\+Control\+Block@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Process\+Control\+Block}}
 \subsubsection[{avg\+Burst\+Time}]{\setlength{\rightskip}{0pt plus 5cm}double C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Operating\+\_\+\+System.\+Process\+Control\+Block.\+avg\+Burst\+Time\hspace{0.3cm}{\ttfamily [private]}}\label{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_process_control_block_afec04aefe69def148099512dc2024ded}
 
 
-Definition at line 21 of file Process\+Control\+Block.\+cs.
+Definition at line 22 of file Process\+Control\+Block.\+cs.
 
 \hypertarget{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_process_control_block_ab2aadabc87960312728806d747db342c}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Process\+Control\+Block@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Process\+Control\+Block}!avg\+Waiting\+Time@{avg\+Waiting\+Time}}
 \index{avg\+Waiting\+Time@{avg\+Waiting\+Time}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Process\+Control\+Block@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Process\+Control\+Block}}
 \subsubsection[{avg\+Waiting\+Time}]{\setlength{\rightskip}{0pt plus 5cm}double C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Operating\+\_\+\+System.\+Process\+Control\+Block.\+avg\+Waiting\+Time\hspace{0.3cm}{\ttfamily [private]}}\label{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_process_control_block_ab2aadabc87960312728806d747db342c}
 
 
-Definition at line 22 of file Process\+Control\+Block.\+cs.
+Definition at line 23 of file Process\+Control\+Block.\+cs.
 
 \hypertarget{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_process_control_block_aa539c0c08de4523f8d6e9b21fe4165e6}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Process\+Control\+Block@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Process\+Control\+Block}!base\+Address@{base\+Address}}
 \index{base\+Address@{base\+Address}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Process\+Control\+Block@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Process\+Control\+Block}}
 \subsubsection[{base\+Address}]{\setlength{\rightskip}{0pt plus 5cm}int C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Operating\+\_\+\+System.\+Process\+Control\+Block.\+base\+Address\hspace{0.3cm}{\ttfamily [private]}}\label{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_process_control_block_aa539c0c08de4523f8d6e9b21fe4165e6}
 
 
-Definition at line 17 of file Process\+Control\+Block.\+cs.
+Definition at line 18 of file Process\+Control\+Block.\+cs.
 
 \hypertarget{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_process_control_block_abb9341cb0d47b6acb52a4f219d69b600}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Process\+Control\+Block@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Process\+Control\+Block}!C\+P\+U\+I\+D@{C\+P\+U\+I\+D}}
 \index{C\+P\+U\+I\+D@{C\+P\+U\+I\+D}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Process\+Control\+Block@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Process\+Control\+Block}}
 \subsubsection[{C\+P\+U\+I\+D}]{\setlength{\rightskip}{0pt plus 5cm}int C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Operating\+\_\+\+System.\+Process\+Control\+Block.\+C\+P\+U\+I\+D\hspace{0.3cm}{\ttfamily [private]}}\label{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_process_control_block_abb9341cb0d47b6acb52a4f219d69b600}
 
 
-Definition at line 10 of file Process\+Control\+Block.\+cs.
+Definition at line 11 of file Process\+Control\+Block.\+cs.
+
+\hypertarget{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_process_control_block_a31259298bf00ca63f7a9f879f0e67c45}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Process\+Control\+Block@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Process\+Control\+Block}!lifetime\+Mills@{lifetime\+Mills}}
+\index{lifetime\+Mills@{lifetime\+Mills}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Process\+Control\+Block@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Process\+Control\+Block}}
+\subsubsection[{lifetime\+Mills}]{\setlength{\rightskip}{0pt plus 5cm}int C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Operating\+\_\+\+System.\+Process\+Control\+Block.\+lifetime\+Mills\hspace{0.3cm}{\ttfamily [private]}}\label{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_process_control_block_a31259298bf00ca63f7a9f879f0e67c45}
+
+
+Definition at line 31 of file Process\+Control\+Block.\+cs.
 
 \hypertarget{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_process_control_block_a417b892bfe8ec7f9d5a64eb413b2a333}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Process\+Control\+Block@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Process\+Control\+Block}!O\+S\+I\+D@{O\+S\+I\+D}}
 \index{O\+S\+I\+D@{O\+S\+I\+D}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Process\+Control\+Block@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Process\+Control\+Block}}
 \subsubsection[{O\+S\+I\+D}]{\setlength{\rightskip}{0pt plus 5cm}int C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Operating\+\_\+\+System.\+Process\+Control\+Block.\+O\+S\+I\+D\hspace{0.3cm}{\ttfamily [private]}}\label{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_process_control_block_a417b892bfe8ec7f9d5a64eb413b2a333}
 
 
-Definition at line 11 of file Process\+Control\+Block.\+cs.
+Definition at line 12 of file Process\+Control\+Block.\+cs.
 
 \hypertarget{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_process_control_block_afb21210abfe66fa59efd3fbc7cd6d556}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Process\+Control\+Block@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Process\+Control\+Block}!proceess\+Memory@{proceess\+Memory}}
 \index{proceess\+Memory@{proceess\+Memory}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Process\+Control\+Block@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Process\+Control\+Block}}
 \subsubsection[{proceess\+Memory}]{\setlength{\rightskip}{0pt plus 5cm}int C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Operating\+\_\+\+System.\+Process\+Control\+Block.\+proceess\+Memory\hspace{0.3cm}{\ttfamily [private]}}\label{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_process_control_block_afb21210abfe66fa59efd3fbc7cd6d556}
 
 
-Definition at line 20 of file Process\+Control\+Block.\+cs.
+Definition at line 21 of file Process\+Control\+Block.\+cs.
 
 \hypertarget{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_process_control_block_a238d1021130eef6ea4031679338e4719}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Process\+Control\+Block@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Process\+Control\+Block}!process\+I\+D@{process\+I\+D}}
 \index{process\+I\+D@{process\+I\+D}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Process\+Control\+Block@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Process\+Control\+Block}}
 \subsubsection[{process\+I\+D}]{\setlength{\rightskip}{0pt plus 5cm}int C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Operating\+\_\+\+System.\+Process\+Control\+Block.\+process\+I\+D\hspace{0.3cm}{\ttfamily [private]}}\label{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_process_control_block_a238d1021130eef6ea4031679338e4719}
 
 
-Definition at line 12 of file Process\+Control\+Block.\+cs.
+Definition at line 13 of file Process\+Control\+Block.\+cs.
 
 \hypertarget{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_process_control_block_af5ec02be59157c998f2e708bc8b27b59}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Process\+Control\+Block@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Process\+Control\+Block}!process\+Name@{process\+Name}}
 \index{process\+Name@{process\+Name}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Process\+Control\+Block@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Process\+Control\+Block}}
 \subsubsection[{process\+Name}]{\setlength{\rightskip}{0pt plus 5cm}string C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Operating\+\_\+\+System.\+Process\+Control\+Block.\+process\+Name\hspace{0.3cm}{\ttfamily [private]}}\label{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_process_control_block_af5ec02be59157c998f2e708bc8b27b59}
 
 
-Definition at line 13 of file Process\+Control\+Block.\+cs.
+Definition at line 14 of file Process\+Control\+Block.\+cs.
 
 \hypertarget{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_process_control_block_af07e4fc7da3435e5513b842fc177b677}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Process\+Control\+Block@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Process\+Control\+Block}!process\+Priority@{process\+Priority}}
 \index{process\+Priority@{process\+Priority}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Process\+Control\+Block@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Process\+Control\+Block}}
 \subsubsection[{process\+Priority}]{\setlength{\rightskip}{0pt plus 5cm}int C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Operating\+\_\+\+System.\+Process\+Control\+Block.\+process\+Priority\hspace{0.3cm}{\ttfamily [private]}}\label{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_process_control_block_af07e4fc7da3435e5513b842fc177b677}
 
 
-Definition at line 19 of file Process\+Control\+Block.\+cs.
+Definition at line 20 of file Process\+Control\+Block.\+cs.
 
 \hypertarget{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_process_control_block_a8aaf7c8cbb6b9ed7b4bb4194aa85cf92}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Process\+Control\+Block@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Process\+Control\+Block}!process\+State@{process\+State}}
 \index{process\+State@{process\+State}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Process\+Control\+Block@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Process\+Control\+Block}}
 \subsubsection[{process\+State}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Enum\+Process\+State} C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Operating\+\_\+\+System.\+Process\+Control\+Block.\+process\+State = {\bf Enum\+Process\+State.\+U\+N\+K\+N\+O\+W\+N}\hspace{0.3cm}{\ttfamily [private]}}\label{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_process_control_block_a8aaf7c8cbb6b9ed7b4bb4194aa85cf92}
 
 
-Definition at line 14 of file Process\+Control\+Block.\+cs.
+Definition at line 15 of file Process\+Control\+Block.\+cs.
 
 \hypertarget{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_process_control_block_a0b041598cd53af2daee0f2a78cc1a012}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Process\+Control\+Block@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Process\+Control\+Block}!program\+Name@{program\+Name}}
 \index{program\+Name@{program\+Name}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Process\+Control\+Block@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Process\+Control\+Block}}
 \subsubsection[{program\+Name}]{\setlength{\rightskip}{0pt plus 5cm}string C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Operating\+\_\+\+System.\+Process\+Control\+Block.\+program\+Name\hspace{0.3cm}{\ttfamily [private]}}\label{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_process_control_block_a0b041598cd53af2daee0f2a78cc1a012}
 
 
-Definition at line 16 of file Process\+Control\+Block.\+cs.
+Definition at line 17 of file Process\+Control\+Block.\+cs.
+
+\hypertarget{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_process_control_block_abf1ea0cffc667a8119d25d8a9c283483}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Process\+Control\+Block@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Process\+Control\+Block}!registers@{registers}}
+\index{registers@{registers}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Process\+Control\+Block@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Process\+Control\+Block}}
+\subsubsection[{registers}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Register} \mbox{[}$\,$\mbox{]} C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Operating\+\_\+\+System.\+Process\+Control\+Block.\+registers\hspace{0.3cm}{\ttfamily [private]}}\label{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_process_control_block_abf1ea0cffc667a8119d25d8a9c283483}
+
+
+Definition at line 28 of file Process\+Control\+Block.\+cs.
 
 \hypertarget{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_process_control_block_a7896862017234b7736e377b5a0e3a253}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Process\+Control\+Block@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Process\+Control\+Block}!requested\+Resources@{requested\+Resources}}
 \index{requested\+Resources@{requested\+Resources}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Process\+Control\+Block@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Process\+Control\+Block}}
 \subsubsection[{requested\+Resources}]{\setlength{\rightskip}{0pt plus 5cm}List$<${\bf System\+Resource}$>$ C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Operating\+\_\+\+System.\+Process\+Control\+Block.\+requested\+Resources\hspace{0.3cm}{\ttfamily [private]}}\label{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_process_control_block_a7896862017234b7736e377b5a0e3a253}
 
 
-Definition at line 26 of file Process\+Control\+Block.\+cs.
+Definition at line 27 of file Process\+Control\+Block.\+cs.
 
 \hypertarget{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_process_control_block_a78ae58aafcca78f88f6c4a979186d45e}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Process\+Control\+Block@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Process\+Control\+Block}!resource\+Starved@{resource\+Starved}}
 \index{resource\+Starved@{resource\+Starved}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Process\+Control\+Block@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Process\+Control\+Block}}
 \subsubsection[{resource\+Starved}]{\setlength{\rightskip}{0pt plus 5cm}bool C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Operating\+\_\+\+System.\+Process\+Control\+Block.\+resource\+Starved\hspace{0.3cm}{\ttfamily [private]}}\label{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_process_control_block_a78ae58aafcca78f88f6c4a979186d45e}
 
 
-Definition at line 24 of file Process\+Control\+Block.\+cs.
+Definition at line 25 of file Process\+Control\+Block.\+cs.
+
+\hypertarget{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_process_control_block_a1e39a81f5ee1a47350ee3a77cf331646}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Process\+Control\+Block@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Process\+Control\+Block}!special\+Registers@{special\+Registers}}
+\index{special\+Registers@{special\+Registers}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Process\+Control\+Block@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Process\+Control\+Block}}
+\subsubsection[{special\+Registers}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Special\+Register} \mbox{[}$\,$\mbox{]} C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Operating\+\_\+\+System.\+Process\+Control\+Block.\+special\+Registers\hspace{0.3cm}{\ttfamily [private]}}\label{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_process_control_block_a1e39a81f5ee1a47350ee3a77cf331646}
+
+
+Definition at line 29 of file Process\+Control\+Block.\+cs.
 
 \hypertarget{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_process_control_block_a4898c5e44f50c89467d3fe35486face7}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Process\+Control\+Block@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Process\+Control\+Block}!start\+Address@{start\+Address}}
 \index{start\+Address@{start\+Address}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Process\+Control\+Block@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Process\+Control\+Block}}
 \subsubsection[{start\+Address}]{\setlength{\rightskip}{0pt plus 5cm}int C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Operating\+\_\+\+System.\+Process\+Control\+Block.\+start\+Address\hspace{0.3cm}{\ttfamily [private]}}\label{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_process_control_block_a4898c5e44f50c89467d3fe35486face7}
 
 
-Definition at line 18 of file Process\+Control\+Block.\+cs.
+Definition at line 19 of file Process\+Control\+Block.\+cs.
 
 
 
@@ -257,105 +290,126 @@ Definition at line 18 of file Process\+Control\+Block.\+cs.
 \subsubsection[{Allocated\+Resources}]{\setlength{\rightskip}{0pt plus 5cm}List$<${\bf System\+Resource}$>$ C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Operating\+\_\+\+System.\+Process\+Control\+Block.\+Allocated\+Resources\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}\label{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_process_control_block_ac63dd8fe20184d49ee5ddc2a229137b8}
 
 
-Definition at line 184 of file Process\+Control\+Block.\+cs.
+Definition at line 193 of file Process\+Control\+Block.\+cs.
 
 \hypertarget{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_process_control_block_a9420c2a711010a174586bb897c580e3f}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Process\+Control\+Block@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Process\+Control\+Block}!Avg\+Burst\+Time@{Avg\+Burst\+Time}}
 \index{Avg\+Burst\+Time@{Avg\+Burst\+Time}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Process\+Control\+Block@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Process\+Control\+Block}}
 \subsubsection[{Avg\+Burst\+Time}]{\setlength{\rightskip}{0pt plus 5cm}double C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Operating\+\_\+\+System.\+Process\+Control\+Block.\+Avg\+Burst\+Time\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}\label{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_process_control_block_a9420c2a711010a174586bb897c580e3f}
 
 
-Definition at line 166 of file Process\+Control\+Block.\+cs.
+Definition at line 175 of file Process\+Control\+Block.\+cs.
 
 \hypertarget{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_process_control_block_ae03a95dce0f261ea4504a3f83b8950d4}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Process\+Control\+Block@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Process\+Control\+Block}!Avg\+Waiting\+Time@{Avg\+Waiting\+Time}}
 \index{Avg\+Waiting\+Time@{Avg\+Waiting\+Time}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Process\+Control\+Block@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Process\+Control\+Block}}
 \subsubsection[{Avg\+Waiting\+Time}]{\setlength{\rightskip}{0pt plus 5cm}double C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Operating\+\_\+\+System.\+Process\+Control\+Block.\+Avg\+Waiting\+Time\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}\label{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_process_control_block_ae03a95dce0f261ea4504a3f83b8950d4}
 
 
-Definition at line 172 of file Process\+Control\+Block.\+cs.
+Definition at line 181 of file Process\+Control\+Block.\+cs.
 
 \hypertarget{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_process_control_block_a20803d3e907266a7b7920e01e5574a99}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Process\+Control\+Block@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Process\+Control\+Block}!Base\+Address@{Base\+Address}}
 \index{Base\+Address@{Base\+Address}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Process\+Control\+Block@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Process\+Control\+Block}}
 \subsubsection[{Base\+Address}]{\setlength{\rightskip}{0pt plus 5cm}int C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Operating\+\_\+\+System.\+Process\+Control\+Block.\+Base\+Address\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}\label{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_process_control_block_a20803d3e907266a7b7920e01e5574a99}
 
 
-Definition at line 142 of file Process\+Control\+Block.\+cs.
+Definition at line 151 of file Process\+Control\+Block.\+cs.
 
 \hypertarget{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_process_control_block_a45dd5ef24fa73b58f4a335168fd50663}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Process\+Control\+Block@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Process\+Control\+Block}!Cpuid@{Cpuid}}
 \index{Cpuid@{Cpuid}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Process\+Control\+Block@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Process\+Control\+Block}}
 \subsubsection[{Cpuid}]{\setlength{\rightskip}{0pt plus 5cm}int C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Operating\+\_\+\+System.\+Process\+Control\+Block.\+Cpuid\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}\label{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_process_control_block_a45dd5ef24fa73b58f4a335168fd50663}
 
 
-Definition at line 106 of file Process\+Control\+Block.\+cs.
+Definition at line 115 of file Process\+Control\+Block.\+cs.
+
+\hypertarget{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_process_control_block_ae285b06f82507297a0f006ff3bece008}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Process\+Control\+Block@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Process\+Control\+Block}!Lifetime\+Mills@{Lifetime\+Mills}}
+\index{Lifetime\+Mills@{Lifetime\+Mills}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Process\+Control\+Block@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Process\+Control\+Block}}
+\subsubsection[{Lifetime\+Mills}]{\setlength{\rightskip}{0pt plus 5cm}int C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Operating\+\_\+\+System.\+Process\+Control\+Block.\+Lifetime\+Mills\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}\label{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_process_control_block_ae285b06f82507297a0f006ff3bece008}
+
+
+Definition at line 217 of file Process\+Control\+Block.\+cs.
 
 \hypertarget{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_process_control_block_a4543f27a0bafc028e2a76e7ff301d48f}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Process\+Control\+Block@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Process\+Control\+Block}!Osid@{Osid}}
 \index{Osid@{Osid}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Process\+Control\+Block@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Process\+Control\+Block}}
 \subsubsection[{Osid}]{\setlength{\rightskip}{0pt plus 5cm}int C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Operating\+\_\+\+System.\+Process\+Control\+Block.\+Osid\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}\label{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_process_control_block_a4543f27a0bafc028e2a76e7ff301d48f}
 
 
-Definition at line 112 of file Process\+Control\+Block.\+cs.
+Definition at line 121 of file Process\+Control\+Block.\+cs.
 
 \hypertarget{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_process_control_block_a7a73f2ca49a669fc3d2693ee6d0b8aff}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Process\+Control\+Block@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Process\+Control\+Block}!Proceess\+Memory@{Proceess\+Memory}}
 \index{Proceess\+Memory@{Proceess\+Memory}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Process\+Control\+Block@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Process\+Control\+Block}}
 \subsubsection[{Proceess\+Memory}]{\setlength{\rightskip}{0pt plus 5cm}int C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Operating\+\_\+\+System.\+Process\+Control\+Block.\+Proceess\+Memory\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}\label{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_process_control_block_a7a73f2ca49a669fc3d2693ee6d0b8aff}
 
 
-Definition at line 160 of file Process\+Control\+Block.\+cs.
+Definition at line 169 of file Process\+Control\+Block.\+cs.
 
 \hypertarget{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_process_control_block_a65da99ff450282dcbc4d43288237f0e9}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Process\+Control\+Block@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Process\+Control\+Block}!Process\+Id@{Process\+Id}}
 \index{Process\+Id@{Process\+Id}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Process\+Control\+Block@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Process\+Control\+Block}}
 \subsubsection[{Process\+Id}]{\setlength{\rightskip}{0pt plus 5cm}int C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Operating\+\_\+\+System.\+Process\+Control\+Block.\+Process\+Id\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}\label{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_process_control_block_a65da99ff450282dcbc4d43288237f0e9}
 
 
-Definition at line 118 of file Process\+Control\+Block.\+cs.
+Definition at line 127 of file Process\+Control\+Block.\+cs.
 
 \hypertarget{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_process_control_block_a597839d1ff7c6d3e36b2fac398849596}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Process\+Control\+Block@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Process\+Control\+Block}!Process\+Name@{Process\+Name}}
 \index{Process\+Name@{Process\+Name}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Process\+Control\+Block@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Process\+Control\+Block}}
 \subsubsection[{Process\+Name}]{\setlength{\rightskip}{0pt plus 5cm}string C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Operating\+\_\+\+System.\+Process\+Control\+Block.\+Process\+Name\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}\label{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_process_control_block_a597839d1ff7c6d3e36b2fac398849596}
 
 
-Definition at line 124 of file Process\+Control\+Block.\+cs.
+Definition at line 133 of file Process\+Control\+Block.\+cs.
 
 \hypertarget{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_process_control_block_af0629b300d7f2ac582512e881c49f2ea}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Process\+Control\+Block@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Process\+Control\+Block}!Process\+Priority@{Process\+Priority}}
 \index{Process\+Priority@{Process\+Priority}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Process\+Control\+Block@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Process\+Control\+Block}}
 \subsubsection[{Process\+Priority}]{\setlength{\rightskip}{0pt plus 5cm}int C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Operating\+\_\+\+System.\+Process\+Control\+Block.\+Process\+Priority\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}\label{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_process_control_block_af0629b300d7f2ac582512e881c49f2ea}
 
 
-Definition at line 154 of file Process\+Control\+Block.\+cs.
+Definition at line 163 of file Process\+Control\+Block.\+cs.
 
 \hypertarget{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_process_control_block_a6e34b4a9ef3311b94ae9843917fcd720}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Process\+Control\+Block@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Process\+Control\+Block}!Process\+State@{Process\+State}}
 \index{Process\+State@{Process\+State}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Process\+Control\+Block@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Process\+Control\+Block}}
 \subsubsection[{Process\+State}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Enum\+Process\+State} C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Operating\+\_\+\+System.\+Process\+Control\+Block.\+Process\+State\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}\label{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_process_control_block_a6e34b4a9ef3311b94ae9843917fcd720}
 
 
-Definition at line 130 of file Process\+Control\+Block.\+cs.
+Definition at line 139 of file Process\+Control\+Block.\+cs.
 
 \hypertarget{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_process_control_block_a4b07155953b708406e49511447093a1f}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Process\+Control\+Block@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Process\+Control\+Block}!Program\+Name@{Program\+Name}}
 \index{Program\+Name@{Program\+Name}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Process\+Control\+Block@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Process\+Control\+Block}}
 \subsubsection[{Program\+Name}]{\setlength{\rightskip}{0pt plus 5cm}string C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Operating\+\_\+\+System.\+Process\+Control\+Block.\+Program\+Name\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}\label{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_process_control_block_a4b07155953b708406e49511447093a1f}
 
 
-Definition at line 136 of file Process\+Control\+Block.\+cs.
+Definition at line 145 of file Process\+Control\+Block.\+cs.
+
+\hypertarget{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_process_control_block_abab92b09a34fb79823064fca79ed32ae}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Process\+Control\+Block@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Process\+Control\+Block}!Registers@{Registers}}
+\index{Registers@{Registers}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Process\+Control\+Block@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Process\+Control\+Block}}
+\subsubsection[{Registers}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Register} \mbox{[}$\,$\mbox{]} C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Operating\+\_\+\+System.\+Process\+Control\+Block.\+Registers\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}\label{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_process_control_block_abab92b09a34fb79823064fca79ed32ae}
+
+
+Definition at line 205 of file Process\+Control\+Block.\+cs.
 
 \hypertarget{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_process_control_block_addc78e3524753fd0fd20cfcfd0796bf0}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Process\+Control\+Block@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Process\+Control\+Block}!Requested\+Resources@{Requested\+Resources}}
 \index{Requested\+Resources@{Requested\+Resources}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Process\+Control\+Block@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Process\+Control\+Block}}
 \subsubsection[{Requested\+Resources}]{\setlength{\rightskip}{0pt plus 5cm}List$<${\bf System\+Resource}$>$ C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Operating\+\_\+\+System.\+Process\+Control\+Block.\+Requested\+Resources\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}\label{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_process_control_block_addc78e3524753fd0fd20cfcfd0796bf0}
 
 
-Definition at line 190 of file Process\+Control\+Block.\+cs.
+Definition at line 199 of file Process\+Control\+Block.\+cs.
 
 \hypertarget{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_process_control_block_a7fcc2cbbf3ea5f2611f83c742ef1003d}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Process\+Control\+Block@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Process\+Control\+Block}!Resource\+Starved@{Resource\+Starved}}
 \index{Resource\+Starved@{Resource\+Starved}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Process\+Control\+Block@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Process\+Control\+Block}}
 \subsubsection[{Resource\+Starved}]{\setlength{\rightskip}{0pt plus 5cm}bool C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Operating\+\_\+\+System.\+Process\+Control\+Block.\+Resource\+Starved\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}\label{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_process_control_block_a7fcc2cbbf3ea5f2611f83c742ef1003d}
 
 
-Definition at line 178 of file Process\+Control\+Block.\+cs.
+Definition at line 187 of file Process\+Control\+Block.\+cs.
+
+\hypertarget{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_process_control_block_af9716c755f2e5957ea4f4a7af4a7a190}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Process\+Control\+Block@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Process\+Control\+Block}!Special\+Registers@{Special\+Registers}}
+\index{Special\+Registers@{Special\+Registers}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Process\+Control\+Block@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Process\+Control\+Block}}
+\subsubsection[{Special\+Registers}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Special\+Register} \mbox{[}$\,$\mbox{]} C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Operating\+\_\+\+System.\+Process\+Control\+Block.\+Special\+Registers\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}\label{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_process_control_block_af9716c755f2e5957ea4f4a7af4a7a190}
+
+
+Definition at line 211 of file Process\+Control\+Block.\+cs.
 
 \hypertarget{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_process_control_block_a0db4bf8588b286ebe82f80e3e00e2132}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Process\+Control\+Block@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Process\+Control\+Block}!Start\+Address@{Start\+Address}}
 \index{Start\+Address@{Start\+Address}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Process\+Control\+Block@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Process\+Control\+Block}}
 \subsubsection[{Start\+Address}]{\setlength{\rightskip}{0pt plus 5cm}int C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Operating\+\_\+\+System.\+Process\+Control\+Block.\+Start\+Address\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}\label{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_process_control_block_a0db4bf8588b286ebe82f80e3e00e2132}
 
 
-Definition at line 148 of file Process\+Control\+Block.\+cs.
+Definition at line 157 of file Process\+Control\+Block.\+cs.
 
 
 

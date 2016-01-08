@@ -45,6 +45,7 @@ var class_c_p_u___o_s___simulator_1_1_operating___system_1_1_simulator_process =
     [ "ParentProcessID", "class_c_p_u___o_s___simulator_1_1_operating___system_1_1_simulator_process.html#a2cf3da33b863fc09451e13302e9ae20f", null ],
     [ "ProcessID", "class_c_p_u___o_s___simulator_1_1_operating___system_1_1_simulator_process.html#a00d2560b1c6641c316da38e262851723", null ],
     [ "ProcessLifetime", "class_c_p_u___o_s___simulator_1_1_operating___system_1_1_simulator_process.html#afa82367303a9ea2effba290493847605", null ],
+    [ "ProcessLifetimeTimeUnit", "class_c_p_u___o_s___simulator_1_1_operating___system_1_1_simulator_process.html#a66fb700018e537846373d2d37542a02e", null ],
     [ "ProcessMemory", "class_c_p_u___o_s___simulator_1_1_operating___system_1_1_simulator_process.html#a2a82c535caf78396aef37d4ba7815408", null ],
     [ "ProcessName", "class_c_p_u___o_s___simulator_1_1_operating___system_1_1_simulator_process.html#a8dfd5005352af61610e945094c5369b8", null ],
     [ "ProcessPriority", "class_c_p_u___o_s___simulator_1_1_operating___system_1_1_simulator_process.html#a5f5199c59eeb6696cdff475a3d752b8a", null ],

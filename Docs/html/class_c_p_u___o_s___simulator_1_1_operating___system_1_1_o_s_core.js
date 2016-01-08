@@ -6,6 +6,7 @@ var class_c_p_u___o_s___simulator_1_1_operating___system_1_1_o_s_core =
     [ "CreateSchedulerFlags", "class_c_p_u___o_s___simulator_1_1_operating___system_1_1_o_s_core.html#a0370de0efae69664c16b258846a64908", null ],
     [ "GetMainWindowInstance", "class_c_p_u___o_s___simulator_1_1_operating___system_1_1_o_s_core.html#a6aa060134c64a17e248da359846f394b", null ],
     [ "GetOSWindowInstance", "class_c_p_u___o_s___simulator_1_1_operating___system_1_1_o_s_core.html#a8943c071c2bb36810e560ef0e735f108", null ],
+    [ "OnCollectionChanged", "class_c_p_u___o_s___simulator_1_1_operating___system_1_1_o_s_core.html#abc6fc1ed70b080ea9079d548c86e88ec", null ],
     [ "SetClockSpeed", "class_c_p_u___o_s___simulator_1_1_operating___system_1_1_o_s_core.html#a0697465a14d3f6111160c2c5a0d4082b", null ],
     [ "Start", "class_c_p_u___o_s___simulator_1_1_operating___system_1_1_o_s_core.html#adb8186aefcc47d02daa0856e5c9c42b7", null ],
     [ "allowCPUAffinity", "class_c_p_u___o_s___simulator_1_1_operating___system_1_1_o_s_core.html#ad3fc35d621bf2c2afc8b2a66fc38d2c0", null ],
@@ -45,5 +46,6 @@ var class_c_p_u___o_s___simulator_1_1_operating___system_1_1_o_s_core =
     [ "SuspendOnStateChange_Running", "class_c_p_u___o_s___simulator_1_1_operating___system_1_1_o_s_core.html#a8dfe787e5954a595f63012f9a2d00d64", null ],
     [ "SuspendOnStateChange_Waiting", "class_c_p_u___o_s___simulator_1_1_operating___system_1_1_o_s_core.html#a431f6636a3265ebd4c87f973b49a5195", null ],
     [ "UseDefaultScheduler", "class_c_p_u___o_s___simulator_1_1_operating___system_1_1_o_s_core.html#a1fd8b54b31fa415f09f2b9bc407802dd", null ],
-    [ "UsingSingleCpu", "class_c_p_u___o_s___simulator_1_1_operating___system_1_1_o_s_core.html#ac965e1317dc5c6b6ae93c410098dd913", null ]
+    [ "UsingSingleCpu", "class_c_p_u___o_s___simulator_1_1_operating___system_1_1_o_s_core.html#ac965e1317dc5c6b6ae93c410098dd913", null ],
+    [ "CollectionChanged", "class_c_p_u___o_s___simulator_1_1_operating___system_1_1_o_s_core.html#abcbb2efff8a4078fae3edb9b31f62198", null ]
 ];

@@ -8,7 +8,7 @@ var namespace_c_p_u___o_s___simulator =
     [ "Operating_System", "namespace_c_p_u___o_s___simulator_1_1_operating___system.html", "namespace_c_p_u___o_s___simulator_1_1_operating___system" ],
     [ "Properties", "namespace_c_p_u___o_s___simulator_1_1_properties.html", "namespace_c_p_u___o_s___simulator_1_1_properties" ],
     [ "WindowBridge", "namespace_c_p_u___o_s___simulator_1_1_window_bridge.html", "namespace_c_p_u___o_s___simulator_1_1_window_bridge" ],
-    [ "App", "class_c_p_u___o_s___simulator_1_1_app.html", null ],
+    [ "App", "class_c_p_u___o_s___simulator_1_1_app.html", "class_c_p_u___o_s___simulator_1_1_app" ],
     [ "ColourPickerWindow", "class_c_p_u___o_s___simulator_1_1_colour_picker_window.html", "class_c_p_u___o_s___simulator_1_1_colour_picker_window" ],
     [ "ConsoleWindow", "class_c_p_u___o_s___simulator_1_1_console_window.html", "class_c_p_u___o_s___simulator_1_1_console_window" ],
     [ "FontPickerWindow", "class_c_p_u___o_s___simulator_1_1_font_picker_window.html", "class_c_p_u___o_s___simulator_1_1_font_picker_window" ],

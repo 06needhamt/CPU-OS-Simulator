@@ -5,6 +5,12 @@
 This class represents the core of the operating system  
 
 
+Inheritance diagram for C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Operating\+\_\+\+System.\+O\+S\+Core\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_o_s_core}
+\end{center}
+\end{figure}
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
@@ -53,8 +59,15 @@ bool \hyperlink{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_o_s_cor
 \begin{DoxyCompactList}\small\item\em Property for an error code that describes any error that occurred \end{DoxyCompactList}\item 
 \hyperlink{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_scheduler}{Scheduler} \hyperlink{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_o_s_core_aa97bbf90ba03bd17c02f889189108455}{Scheduler}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
 \begin{DoxyCompactList}\small\item\em Property for the current scheduler \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Events}
+\begin{DoxyCompactItemize}
+\item 
+Notify\+Collection\+Changed\+Event\+Handler \hyperlink{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_o_s_core_abcbb2efff8a4078fae3edb9b31f62198}{Collection\+Changed}
+\end{DoxyCompactItemize}
 \subsection*{Private Member Functions}
 \begin{DoxyCompactItemize}
+\item 
+void \hyperlink{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_o_s_core_abc6fc1ed70b080ea9079d548c86e88ec}{On\+Collection\+Changed} (object sender, Notify\+Collection\+Changed\+Event\+Args notify\+Collection\+Changed\+Event\+Args)
 \item 
 void \hyperlink{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_o_s_core_a0697465a14d3f6111160c2c5a0d4082b}{Set\+Clock\+Speed} ()
 \item 
@@ -116,7 +129,7 @@ This class represents the core of the operating system
 
 
 
-Definition at line 12 of file O\+S\+Core.\+cs.
+Definition at line 13 of file O\+S\+Core.\+cs.
 
 
 
@@ -134,7 +147,7 @@ Default Constructor for the O\+S Core
 
 
 
-Definition at line 39 of file O\+S\+Core.\+cs.
+Definition at line 41 of file O\+S\+Core.\+cs.
 
 \hypertarget{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_o_s_core_a65c809ada2e4d0d5f6269e6a9009db0d}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+O\+S\+Core@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+O\+S\+Core}!O\+S\+Core@{O\+S\+Core}}
 \index{O\+S\+Core@{O\+S\+Core}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+O\+S\+Core@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+O\+S\+Core}}
@@ -154,7 +167,7 @@ Constructor for O\+S Core that takes flags which control O\+S behaviour
 \end{DoxyParams}
 
 
-Definition at line 47 of file O\+S\+Core.\+cs.
+Definition at line 49 of file O\+S\+Core.\+cs.
 
 
 
@@ -180,7 +193,7 @@ the created simulator process
 \end{DoxyReturn}
 
 
-Definition at line 111 of file O\+S\+Core.\+cs.
+Definition at line 120 of file O\+S\+Core.\+cs.
 
 \hypertarget{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_o_s_core_a0370de0efae69664c16b258846a64908}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+O\+S\+Core@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+O\+S\+Core}!Create\+Scheduler\+Flags@{Create\+Scheduler\+Flags}}
 \index{Create\+Scheduler\+Flags@{Create\+Scheduler\+Flags}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+O\+S\+Core@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+O\+S\+Core}}
@@ -198,7 +211,7 @@ a struct containing the selected options or null if an error occurred
 \end{DoxyReturn}
 
 
-Definition at line 120 of file O\+S\+Core.\+cs.
+Definition at line 129 of file O\+S\+Core.\+cs.
 
 \hypertarget{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_o_s_core_a6aa060134c64a17e248da359846f394b}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+O\+S\+Core@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+O\+S\+Core}!Get\+Main\+Window\+Instance@{Get\+Main\+Window\+Instance}}
 \index{Get\+Main\+Window\+Instance@{Get\+Main\+Window\+Instance}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+O\+S\+Core@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+O\+S\+Core}}
@@ -216,7 +229,7 @@ the active instance of main window
 \end{DoxyReturn}
 
 
-Definition at line 159 of file O\+S\+Core.\+cs.
+Definition at line 168 of file O\+S\+Core.\+cs.
 
 \hypertarget{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_o_s_core_a8943c071c2bb36810e560ef0e735f108}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+O\+S\+Core@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+O\+S\+Core}!Get\+O\+S\+Window\+Instance@{Get\+O\+S\+Window\+Instance}}
 \index{Get\+O\+S\+Window\+Instance@{Get\+O\+S\+Window\+Instance}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+O\+S\+Core@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+O\+S\+Core}}
@@ -234,7 +247,19 @@ the active instance of main window
 \end{DoxyReturn}
 
 
-Definition at line 172 of file O\+S\+Core.\+cs.
+Definition at line 181 of file O\+S\+Core.\+cs.
+
+\hypertarget{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_o_s_core_abc6fc1ed70b080ea9079d548c86e88ec}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+O\+S\+Core@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+O\+S\+Core}!On\+Collection\+Changed@{On\+Collection\+Changed}}
+\index{On\+Collection\+Changed@{On\+Collection\+Changed}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+O\+S\+Core@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+O\+S\+Core}}
+\subsubsection[{On\+Collection\+Changed(object sender, Notify\+Collection\+Changed\+Event\+Args notify\+Collection\+Changed\+Event\+Args)}]{\setlength{\rightskip}{0pt plus 5cm}void C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Operating\+\_\+\+System.\+O\+S\+Core.\+On\+Collection\+Changed (
+\begin{DoxyParamCaption}
+\item[{object}]{sender, }
+\item[{Notify\+Collection\+Changed\+Event\+Args}]{notify\+Collection\+Changed\+Event\+Args}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_o_s_core_abc6fc1ed70b080ea9079d548c86e88ec}
+
+
+Definition at line 75 of file O\+S\+Core.\+cs.
 
 \hypertarget{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_o_s_core_a0697465a14d3f6111160c2c5a0d4082b}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+O\+S\+Core@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+O\+S\+Core}!Set\+Clock\+Speed@{Set\+Clock\+Speed}}
 \index{Set\+Clock\+Speed@{Set\+Clock\+Speed}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+O\+S\+Core@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+O\+S\+Core}}
@@ -245,7 +270,7 @@ Definition at line 172 of file O\+S\+Core.\+cs.
 )\hspace{0.3cm}{\ttfamily [private]}}\label{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_o_s_core_a0697465a14d3f6111160c2c5a0d4082b}
 
 
-Definition at line 97 of file O\+S\+Core.\+cs.
+Definition at line 106 of file O\+S\+Core.\+cs.
 
 \hypertarget{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_o_s_core_adb8186aefcc47d02daa0856e5c9c42b7}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+O\+S\+Core@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+O\+S\+Core}!Start@{Start}}
 \index{Start@{Start}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+O\+S\+Core@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+O\+S\+Core}}
@@ -263,7 +288,7 @@ whether any errors occurred during execution
 \end{DoxyReturn}
 
 
-Definition at line 75 of file O\+S\+Core.\+cs.
+Definition at line 84 of file O\+S\+Core.\+cs.
 
 
 
@@ -273,147 +298,147 @@ Definition at line 75 of file O\+S\+Core.\+cs.
 \subsubsection[{allow\+C\+P\+U\+Affinity}]{\setlength{\rightskip}{0pt plus 5cm}bool C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Operating\+\_\+\+System.\+O\+S\+Core.\+allow\+C\+P\+U\+Affinity\hspace{0.3cm}{\ttfamily [private]}}\label{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_o_s_core_ad3fc35d621bf2c2afc8b2a66fc38d2c0}
 
 
-Definition at line 21 of file O\+S\+Core.\+cs.
+Definition at line 22 of file O\+S\+Core.\+cs.
 
 \hypertarget{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_o_s_core_a99f66d92928cea0a61e21ea427f16ab2}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+O\+S\+Core@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+O\+S\+Core}!C\+P\+U\+Clock\+Speed@{C\+P\+U\+Clock\+Speed}}
 \index{C\+P\+U\+Clock\+Speed@{C\+P\+U\+Clock\+Speed}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+O\+S\+Core@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+O\+S\+Core}}
 \subsubsection[{C\+P\+U\+Clock\+Speed}]{\setlength{\rightskip}{0pt plus 5cm}int C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Operating\+\_\+\+System.\+O\+S\+Core.\+C\+P\+U\+Clock\+Speed\hspace{0.3cm}{\ttfamily [private]}}\label{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_o_s_core_a99f66d92928cea0a61e21ea427f16ab2}
 
 
-Definition at line 23 of file O\+S\+Core.\+cs.
+Definition at line 24 of file O\+S\+Core.\+cs.
 
 \hypertarget{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_o_s_core_a321ac6d45675953550f32e23068e194f}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+O\+S\+Core@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+O\+S\+Core}!error\+Code@{error\+Code}}
 \index{error\+Code@{error\+Code}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+O\+S\+Core@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+O\+S\+Core}}
 \subsubsection[{error\+Code}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Enum\+Error\+Codes} C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Operating\+\_\+\+System.\+O\+S\+Core.\+error\+Code = {\bf Enum\+Error\+Codes.\+U\+N\+K\+N\+O\+W\+N}\hspace{0.3cm}{\ttfamily [private]}}\label{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_o_s_core_a321ac6d45675953550f32e23068e194f}
 
 
-Definition at line 31 of file O\+S\+Core.\+cs.
+Definition at line 32 of file O\+S\+Core.\+cs.
 
 \hypertarget{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_o_s_core_a94ab635fc88b9a85556a55c8f2c49b89}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+O\+S\+Core@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+O\+S\+Core}!fault\+Kill@{fault\+Kill}}
 \index{fault\+Kill@{fault\+Kill}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+O\+S\+Core@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+O\+S\+Core}}
 \subsubsection[{fault\+Kill}]{\setlength{\rightskip}{0pt plus 5cm}bool C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Operating\+\_\+\+System.\+O\+S\+Core.\+fault\+Kill\hspace{0.3cm}{\ttfamily [private]}}\label{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_o_s_core_a94ab635fc88b9a85556a55c8f2c49b89}
 
 
-Definition at line 29 of file O\+S\+Core.\+cs.
+Definition at line 30 of file O\+S\+Core.\+cs.
 
 \hypertarget{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_o_s_core_aaa9fd56285fb7a3d8718f81e8df847ac}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+O\+S\+Core@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+O\+S\+Core}!force\+Kill@{force\+Kill}}
 \index{force\+Kill@{force\+Kill}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+O\+S\+Core@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+O\+S\+Core}}
 \subsubsection[{force\+Kill}]{\setlength{\rightskip}{0pt plus 5cm}bool C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Operating\+\_\+\+System.\+O\+S\+Core.\+force\+Kill\hspace{0.3cm}{\ttfamily [private]}}\label{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_o_s_core_aaa9fd56285fb7a3d8718f81e8df847ac}
 
 
-Definition at line 28 of file O\+S\+Core.\+cs.
+Definition at line 29 of file O\+S\+Core.\+cs.
 
 \hypertarget{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_o_s_core_ad428ed8c6f24743d016c9ba44ca129a5}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+O\+S\+Core@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+O\+S\+Core}!os\+State@{os\+State}}
 \index{os\+State@{os\+State}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+O\+S\+Core@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+O\+S\+Core}}
 \subsubsection[{os\+State}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Enum\+O\+S\+State} C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Operating\+\_\+\+System.\+O\+S\+Core.\+os\+State = {\bf Enum\+O\+S\+State.\+U\+N\+K\+N\+O\+W\+N}\hspace{0.3cm}{\ttfamily [private]}}\label{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_o_s_core_ad428ed8c6f24743d016c9ba44ca129a5}
 
 
-Definition at line 30 of file O\+S\+Core.\+cs.
+Definition at line 31 of file O\+S\+Core.\+cs.
 
 \hypertarget{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_o_s_core_a866fa4ff3b8aadb3eb57188f6a87e148}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+O\+S\+Core@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+O\+S\+Core}!priority\+Policy@{priority\+Policy}}
 \index{priority\+Policy@{priority\+Policy}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+O\+S\+Core@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+O\+S\+Core}}
 \subsubsection[{priority\+Policy}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Enum\+Priority\+Policy} C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Operating\+\_\+\+System.\+O\+S\+Core.\+priority\+Policy = {\bf Enum\+Priority\+Policy.\+U\+N\+K\+N\+O\+W\+N}\hspace{0.3cm}{\ttfamily [private]}}\label{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_o_s_core_a866fa4ff3b8aadb3eb57188f6a87e148}
 
 
-Definition at line 17 of file O\+S\+Core.\+cs.
+Definition at line 18 of file O\+S\+Core.\+cs.
 
 \hypertarget{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_o_s_core_a5e76bf14a368f77713eaab94b4e4a118}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+O\+S\+Core@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+O\+S\+Core}!ready\+Queue@{ready\+Queue}}
 \index{ready\+Queue@{ready\+Queue}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+O\+S\+Core@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+O\+S\+Core}}
 \subsubsection[{ready\+Queue}]{\setlength{\rightskip}{0pt plus 5cm}Queue$<${\bf Simulator\+Process}$>$ C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Operating\+\_\+\+System.\+O\+S\+Core.\+ready\+Queue\hspace{0.3cm}{\ttfamily [private]}}\label{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_o_s_core_a5e76bf14a368f77713eaab94b4e4a118}
 
 
-Definition at line 33 of file O\+S\+Core.\+cs.
+Definition at line 34 of file O\+S\+Core.\+cs.
 
 \hypertarget{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_o_s_core_a4a891b4c9ed3aa97c389bccab0b2687d}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+O\+S\+Core@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+O\+S\+Core}!round\+Robin\+Type@{round\+Robin\+Type}}
 \index{round\+Robin\+Type@{round\+Robin\+Type}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+O\+S\+Core@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+O\+S\+Core}}
 \subsubsection[{round\+Robin\+Type}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Enum\+Round\+Robin\+Type} C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Operating\+\_\+\+System.\+O\+S\+Core.\+round\+Robin\+Type = {\bf Enum\+Round\+Robin\+Type.\+U\+N\+K\+N\+O\+W\+N}\hspace{0.3cm}{\ttfamily [private]}}\label{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_o_s_core_a4a891b4c9ed3aa97c389bccab0b2687d}
 
 
-Definition at line 18 of file O\+S\+Core.\+cs.
+Definition at line 19 of file O\+S\+Core.\+cs.
 
 \hypertarget{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_o_s_core_a34a8be2fd9187764366ca5a7b48d764e}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+O\+S\+Core@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+O\+S\+Core}!R\+R\+\_\+\+Time\+\_\+\+Slice@{R\+R\+\_\+\+Time\+\_\+\+Slice}}
 \index{R\+R\+\_\+\+Time\+\_\+\+Slice@{R\+R\+\_\+\+Time\+\_\+\+Slice}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+O\+S\+Core@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+O\+S\+Core}}
 \subsubsection[{R\+R\+\_\+\+Time\+\_\+\+Slice}]{\setlength{\rightskip}{0pt plus 5cm}double C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Operating\+\_\+\+System.\+O\+S\+Core.\+R\+R\+\_\+\+Time\+\_\+\+Slice\hspace{0.3cm}{\ttfamily [private]}}\label{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_o_s_core_a34a8be2fd9187764366ca5a7b48d764e}
 
 
-Definition at line 15 of file O\+S\+Core.\+cs.
+Definition at line 16 of file O\+S\+Core.\+cs.
 
 \hypertarget{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_o_s_core_ac0f4c6d450108d3b51e9fc7f9dc930ce}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+O\+S\+Core@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+O\+S\+Core}!R\+R\+\_\+\+Time\+\_\+\+Slice\+\_\+\+Unit@{R\+R\+\_\+\+Time\+\_\+\+Slice\+\_\+\+Unit}}
 \index{R\+R\+\_\+\+Time\+\_\+\+Slice\+\_\+\+Unit@{R\+R\+\_\+\+Time\+\_\+\+Slice\+\_\+\+Unit}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+O\+S\+Core@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+O\+S\+Core}}
 \subsubsection[{R\+R\+\_\+\+Time\+\_\+\+Slice\+\_\+\+Unit}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Enum\+Time\+Unit} C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Operating\+\_\+\+System.\+O\+S\+Core.\+R\+R\+\_\+\+Time\+\_\+\+Slice\+\_\+\+Unit = {\bf Enum\+Time\+Unit.\+U\+N\+K\+N\+O\+W\+N}\hspace{0.3cm}{\ttfamily [private]}}\label{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_o_s_core_ac0f4c6d450108d3b51e9fc7f9dc930ce}
 
 
-Definition at line 16 of file O\+S\+Core.\+cs.
+Definition at line 17 of file O\+S\+Core.\+cs.
 
 \hypertarget{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_o_s_core_ac0526b86d9657a372e44664acf103438}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+O\+S\+Core@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+O\+S\+Core}!run\+With\+No\+Processes@{run\+With\+No\+Processes}}
 \index{run\+With\+No\+Processes@{run\+With\+No\+Processes}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+O\+S\+Core@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+O\+S\+Core}}
 \subsubsection[{run\+With\+No\+Processes}]{\setlength{\rightskip}{0pt plus 5cm}bool C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Operating\+\_\+\+System.\+O\+S\+Core.\+run\+With\+No\+Processes\hspace{0.3cm}{\ttfamily [private]}}\label{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_o_s_core_ac0526b86d9657a372e44664acf103438}
 
 
-Definition at line 22 of file O\+S\+Core.\+cs.
+Definition at line 23 of file O\+S\+Core.\+cs.
 
 \hypertarget{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_o_s_core_a2ef4c455b9babbd12d3e70fb4d82567e}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+O\+S\+Core@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+O\+S\+Core}!scheduler@{scheduler}}
 \index{scheduler@{scheduler}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+O\+S\+Core@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+O\+S\+Core}}
 \subsubsection[{scheduler}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Scheduler} C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Operating\+\_\+\+System.\+O\+S\+Core.\+scheduler\hspace{0.3cm}{\ttfamily [private]}}\label{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_o_s_core_a2ef4c455b9babbd12d3e70fb4d82567e}
 
 
-Definition at line 32 of file O\+S\+Core.\+cs.
+Definition at line 33 of file O\+S\+Core.\+cs.
 
 \hypertarget{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_o_s_core_a379d53a0d661ac56f75c2676bed68b06}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+O\+S\+Core@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+O\+S\+Core}!scheduling\+Policy@{scheduling\+Policy}}
 \index{scheduling\+Policy@{scheduling\+Policy}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+O\+S\+Core@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+O\+S\+Core}}
 \subsubsection[{scheduling\+Policy}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Enum\+Scheduling\+Policies} C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Operating\+\_\+\+System.\+O\+S\+Core.\+scheduling\+Policy = {\bf Enum\+Scheduling\+Policies.\+U\+N\+K\+N\+O\+W\+N}\hspace{0.3cm}{\ttfamily [private]}}\label{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_o_s_core_a379d53a0d661ac56f75c2676bed68b06}
 
 
-Definition at line 14 of file O\+S\+Core.\+cs.
+Definition at line 15 of file O\+S\+Core.\+cs.
 
 \hypertarget{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_o_s_core_a99875cff5880ff8dce2c77758389491b}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+O\+S\+Core@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+O\+S\+Core}!suspend\+On\+Pre\+Emption@{suspend\+On\+Pre\+Emption}}
 \index{suspend\+On\+Pre\+Emption@{suspend\+On\+Pre\+Emption}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+O\+S\+Core@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+O\+S\+Core}}
 \subsubsection[{suspend\+On\+Pre\+Emption}]{\setlength{\rightskip}{0pt plus 5cm}bool C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Operating\+\_\+\+System.\+O\+S\+Core.\+suspend\+On\+Pre\+Emption\hspace{0.3cm}{\ttfamily [private]}}\label{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_o_s_core_a99875cff5880ff8dce2c77758389491b}
 
 
-Definition at line 25 of file O\+S\+Core.\+cs.
+Definition at line 26 of file O\+S\+Core.\+cs.
 
 \hypertarget{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_o_s_core_a2ee0e6e84ca8fd9b7d3daf279d038640}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+O\+S\+Core@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+O\+S\+Core}!suspend\+On\+State\+Change\+\_\+\+Ready@{suspend\+On\+State\+Change\+\_\+\+Ready}}
 \index{suspend\+On\+State\+Change\+\_\+\+Ready@{suspend\+On\+State\+Change\+\_\+\+Ready}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+O\+S\+Core@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+O\+S\+Core}}
 \subsubsection[{suspend\+On\+State\+Change\+\_\+\+Ready}]{\setlength{\rightskip}{0pt plus 5cm}bool C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Operating\+\_\+\+System.\+O\+S\+Core.\+suspend\+On\+State\+Change\+\_\+\+Ready\hspace{0.3cm}{\ttfamily [private]}}\label{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_o_s_core_a2ee0e6e84ca8fd9b7d3daf279d038640}
 
 
-Definition at line 24 of file O\+S\+Core.\+cs.
+Definition at line 25 of file O\+S\+Core.\+cs.
 
 \hypertarget{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_o_s_core_af35a9cd41325505df4cc3894c4b297b4}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+O\+S\+Core@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+O\+S\+Core}!suspend\+On\+State\+Change\+\_\+\+Running@{suspend\+On\+State\+Change\+\_\+\+Running}}
 \index{suspend\+On\+State\+Change\+\_\+\+Running@{suspend\+On\+State\+Change\+\_\+\+Running}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+O\+S\+Core@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+O\+S\+Core}}
 \subsubsection[{suspend\+On\+State\+Change\+\_\+\+Running}]{\setlength{\rightskip}{0pt plus 5cm}bool C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Operating\+\_\+\+System.\+O\+S\+Core.\+suspend\+On\+State\+Change\+\_\+\+Running\hspace{0.3cm}{\ttfamily [private]}}\label{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_o_s_core_af35a9cd41325505df4cc3894c4b297b4}
 
 
-Definition at line 26 of file O\+S\+Core.\+cs.
+Definition at line 27 of file O\+S\+Core.\+cs.
 
 \hypertarget{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_o_s_core_aebfddcf30c39c36876e07017fef6605f}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+O\+S\+Core@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+O\+S\+Core}!suspend\+On\+State\+Change\+\_\+\+Waiting@{suspend\+On\+State\+Change\+\_\+\+Waiting}}
 \index{suspend\+On\+State\+Change\+\_\+\+Waiting@{suspend\+On\+State\+Change\+\_\+\+Waiting}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+O\+S\+Core@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+O\+S\+Core}}
 \subsubsection[{suspend\+On\+State\+Change\+\_\+\+Waiting}]{\setlength{\rightskip}{0pt plus 5cm}bool C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Operating\+\_\+\+System.\+O\+S\+Core.\+suspend\+On\+State\+Change\+\_\+\+Waiting\hspace{0.3cm}{\ttfamily [private]}}\label{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_o_s_core_aebfddcf30c39c36876e07017fef6605f}
 
 
-Definition at line 27 of file O\+S\+Core.\+cs.
+Definition at line 28 of file O\+S\+Core.\+cs.
 
 \hypertarget{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_o_s_core_a9e4390ec19f02a66b2c8ba829fad0e49}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+O\+S\+Core@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+O\+S\+Core}!use\+Default\+Scheduler@{use\+Default\+Scheduler}}
 \index{use\+Default\+Scheduler@{use\+Default\+Scheduler}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+O\+S\+Core@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+O\+S\+Core}}
 \subsubsection[{use\+Default\+Scheduler}]{\setlength{\rightskip}{0pt plus 5cm}bool C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Operating\+\_\+\+System.\+O\+S\+Core.\+use\+Default\+Scheduler\hspace{0.3cm}{\ttfamily [private]}}\label{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_o_s_core_a9e4390ec19f02a66b2c8ba829fad0e49}
 
 
-Definition at line 19 of file O\+S\+Core.\+cs.
+Definition at line 20 of file O\+S\+Core.\+cs.
 
 \hypertarget{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_o_s_core_ac9667b36d2359ddf024ded0a57ba20be}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+O\+S\+Core@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+O\+S\+Core}!use\+Single\+C\+P\+U@{use\+Single\+C\+P\+U}}
 \index{use\+Single\+C\+P\+U@{use\+Single\+C\+P\+U}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+O\+S\+Core@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+O\+S\+Core}}
 \subsubsection[{use\+Single\+C\+P\+U}]{\setlength{\rightskip}{0pt plus 5cm}bool C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Operating\+\_\+\+System.\+O\+S\+Core.\+use\+Single\+C\+P\+U\hspace{0.3cm}{\ttfamily [private]}}\label{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_o_s_core_ac9667b36d2359ddf024ded0a57ba20be}
 
 
-Definition at line 20 of file O\+S\+Core.\+cs.
+Definition at line 21 of file O\+S\+Core.\+cs.
 
 \hypertarget{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_o_s_core_a66baab674b5f03a5d31378af85f73fb7}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+O\+S\+Core@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+O\+S\+Core}!waiting\+Queue@{waiting\+Queue}}
 \index{waiting\+Queue@{waiting\+Queue}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+O\+S\+Core@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+O\+S\+Core}}
 \subsubsection[{waiting\+Queue}]{\setlength{\rightskip}{0pt plus 5cm}Queue$<${\bf Simulator\+Process}$>$ C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Operating\+\_\+\+System.\+O\+S\+Core.\+waiting\+Queue\hspace{0.3cm}{\ttfamily [private]}}\label{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_o_s_core_a66baab674b5f03a5d31378af85f73fb7}
 
 
-Definition at line 34 of file O\+S\+Core.\+cs.
+Definition at line 35 of file O\+S\+Core.\+cs.
 
 
 
@@ -427,7 +452,7 @@ Property for whether \hyperlink{namespace_c_p_u___o_s___simulator_1_1_c_p_u}{C\+
 
 
 
-Definition at line 290 of file O\+S\+Core.\+cs.
+Definition at line 299 of file O\+S\+Core.\+cs.
 
 \hypertarget{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_o_s_core_a1ea93a6cc37dbae4bc607d09fd6e75db}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+O\+S\+Core@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+O\+S\+Core}!Cpu\+Clock\+Speed@{Cpu\+Clock\+Speed}}
 \index{Cpu\+Clock\+Speed@{Cpu\+Clock\+Speed}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+O\+S\+Core@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+O\+S\+Core}}
@@ -438,7 +463,7 @@ Property for the clock speed of the \hyperlink{namespace_c_p_u___o_s___simulator
 
 
 
-Definition at line 226 of file O\+S\+Core.\+cs.
+Definition at line 235 of file O\+S\+Core.\+cs.
 
 \hypertarget{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_o_s_core_a77a647e293c14574919b144cb2e8998f}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+O\+S\+Core@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+O\+S\+Core}!Error\+Code@{Error\+Code}}
 \index{Error\+Code@{Error\+Code}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+O\+S\+Core@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+O\+S\+Core}}
@@ -449,7 +474,7 @@ Property for an error code that describes any error that occurred
 
 
 
-Definition at line 306 of file O\+S\+Core.\+cs.
+Definition at line 315 of file O\+S\+Core.\+cs.
 
 \hypertarget{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_o_s_core_ac620c813df8b2c9ea386cff20d3fee84}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+O\+S\+Core@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+O\+S\+Core}!Os\+State@{Os\+State}}
 \index{Os\+State@{Os\+State}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+O\+S\+Core@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+O\+S\+Core}}
@@ -460,7 +485,7 @@ Property for the current state of the O\+S
 
 
 
-Definition at line 266 of file O\+S\+Core.\+cs.
+Definition at line 275 of file O\+S\+Core.\+cs.
 
 \hypertarget{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_o_s_core_a71b8f167c84a1cb1feba77cd2cb5420d}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+O\+S\+Core@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+O\+S\+Core}!Priority\+Policy@{Priority\+Policy}}
 \index{Priority\+Policy@{Priority\+Policy}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+O\+S\+Core@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+O\+S\+Core}}
@@ -471,7 +496,7 @@ Property for the Round Robin priority policy being used by this scheduler
 
 
 
-Definition at line 202 of file O\+S\+Core.\+cs.
+Definition at line 211 of file O\+S\+Core.\+cs.
 
 \hypertarget{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_o_s_core_a49d248bc5438438d42482a9e962c417c}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+O\+S\+Core@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+O\+S\+Core}!Round\+Robin\+Type@{Round\+Robin\+Type}}
 \index{Round\+Robin\+Type@{Round\+Robin\+Type}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+O\+S\+Core@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+O\+S\+Core}}
@@ -482,7 +507,7 @@ Property for the type of round robin being used by the scheduler
 
 
 
-Definition at line 210 of file O\+S\+Core.\+cs.
+Definition at line 219 of file O\+S\+Core.\+cs.
 
 \hypertarget{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_o_s_core_af72424eea15d262a41f9390e8f3bce97}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+O\+S\+Core@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+O\+S\+Core}!Rr\+\_\+\+Time\+\_\+\+Slice@{Rr\+\_\+\+Time\+\_\+\+Slice}}
 \index{Rr\+\_\+\+Time\+\_\+\+Slice@{Rr\+\_\+\+Time\+\_\+\+Slice}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+O\+S\+Core@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+O\+S\+Core}}
@@ -493,7 +518,7 @@ Property for the length of the round robin time slice being used by this schedul
 
 
 
-Definition at line 185 of file O\+S\+Core.\+cs.
+Definition at line 194 of file O\+S\+Core.\+cs.
 
 \hypertarget{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_o_s_core_a8f8e6705ddbf4a04900b343e65bd71d2}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+O\+S\+Core@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+O\+S\+Core}!Rr\+\_\+\+Time\+\_\+\+Slice\+\_\+\+Unit@{Rr\+\_\+\+Time\+\_\+\+Slice\+\_\+\+Unit}}
 \index{Rr\+\_\+\+Time\+\_\+\+Slice\+\_\+\+Unit@{Rr\+\_\+\+Time\+\_\+\+Slice\+\_\+\+Unit}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+O\+S\+Core@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+O\+S\+Core}}
@@ -504,7 +529,7 @@ Property for the unit of time used for time slices i.\+e ticks or seconds
 
 
 
-Definition at line 194 of file O\+S\+Core.\+cs.
+Definition at line 203 of file O\+S\+Core.\+cs.
 
 \hypertarget{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_o_s_core_a1f01594c8f33961b5dc5ffffaf7644ce}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+O\+S\+Core@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+O\+S\+Core}!Running\+With\+No\+Processes@{Running\+With\+No\+Processes}}
 \index{Running\+With\+No\+Processes@{Running\+With\+No\+Processes}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+O\+S\+Core@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+O\+S\+Core}}
@@ -515,7 +540,7 @@ Property for whether the scheduler is running with no processes
 
 
 
-Definition at line 298 of file O\+S\+Core.\+cs.
+Definition at line 307 of file O\+S\+Core.\+cs.
 
 \hypertarget{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_o_s_core_aa97bbf90ba03bd17c02f889189108455}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+O\+S\+Core@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+O\+S\+Core}!Scheduler@{Scheduler}}
 \index{Scheduler@{Scheduler}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+O\+S\+Core@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+O\+S\+Core}}
@@ -526,7 +551,7 @@ Property for the current scheduler
 
 
 
-Definition at line 314 of file O\+S\+Core.\+cs.
+Definition at line 323 of file O\+S\+Core.\+cs.
 
 \hypertarget{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_o_s_core_a265614d635fd57e6275b2bfc13d7a597}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+O\+S\+Core@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+O\+S\+Core}!Scheduling\+Policy@{Scheduling\+Policy}}
 \index{Scheduling\+Policy@{Scheduling\+Policy}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+O\+S\+Core@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+O\+S\+Core}}
@@ -537,7 +562,7 @@ Property for the scheduling policy currently being used by this scheduler
 
 
 
-Definition at line 274 of file O\+S\+Core.\+cs.
+Definition at line 283 of file O\+S\+Core.\+cs.
 
 \hypertarget{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_o_s_core_aaea8e895847f690b5a4104bf4326f3ab}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+O\+S\+Core@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+O\+S\+Core}!Suspend\+On\+Pre\+Emption@{Suspend\+On\+Pre\+Emption}}
 \index{Suspend\+On\+Pre\+Emption@{Suspend\+On\+Pre\+Emption}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+O\+S\+Core@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+O\+S\+Core}}
@@ -548,7 +573,7 @@ Property for whether the process should suspend when it is pre-\/empted by anoth
 
 
 
-Definition at line 242 of file O\+S\+Core.\+cs.
+Definition at line 251 of file O\+S\+Core.\+cs.
 
 \hypertarget{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_o_s_core_a58135ead5821cb968f25c20417dd460a}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+O\+S\+Core@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+O\+S\+Core}!Suspend\+On\+State\+Change\+\_\+\+Ready@{Suspend\+On\+State\+Change\+\_\+\+Ready}}
 \index{Suspend\+On\+State\+Change\+\_\+\+Ready@{Suspend\+On\+State\+Change\+\_\+\+Ready}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+O\+S\+Core@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+O\+S\+Core}}
@@ -559,7 +584,7 @@ Property for whether the process should suspend when it enters the ready state
 
 
 
-Definition at line 234 of file O\+S\+Core.\+cs.
+Definition at line 243 of file O\+S\+Core.\+cs.
 
 \hypertarget{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_o_s_core_a8dfe787e5954a595f63012f9a2d00d64}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+O\+S\+Core@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+O\+S\+Core}!Suspend\+On\+State\+Change\+\_\+\+Running@{Suspend\+On\+State\+Change\+\_\+\+Running}}
 \index{Suspend\+On\+State\+Change\+\_\+\+Running@{Suspend\+On\+State\+Change\+\_\+\+Running}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+O\+S\+Core@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+O\+S\+Core}}
@@ -570,7 +595,7 @@ Property for whether the process should suspend when it enters the running state
 
 
 
-Definition at line 250 of file O\+S\+Core.\+cs.
+Definition at line 259 of file O\+S\+Core.\+cs.
 
 \hypertarget{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_o_s_core_a431f6636a3265ebd4c87f973b49a5195}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+O\+S\+Core@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+O\+S\+Core}!Suspend\+On\+State\+Change\+\_\+\+Waiting@{Suspend\+On\+State\+Change\+\_\+\+Waiting}}
 \index{Suspend\+On\+State\+Change\+\_\+\+Waiting@{Suspend\+On\+State\+Change\+\_\+\+Waiting}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+O\+S\+Core@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+O\+S\+Core}}
@@ -581,7 +606,7 @@ Property for whether the process should suspend when it enters the waiting state
 
 
 
-Definition at line 258 of file O\+S\+Core.\+cs.
+Definition at line 267 of file O\+S\+Core.\+cs.
 
 \hypertarget{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_o_s_core_a1fd8b54b31fa415f09f2b9bc407802dd}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+O\+S\+Core@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+O\+S\+Core}!Use\+Default\+Scheduler@{Use\+Default\+Scheduler}}
 \index{Use\+Default\+Scheduler@{Use\+Default\+Scheduler}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+O\+S\+Core@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+O\+S\+Core}}
@@ -592,7 +617,7 @@ Property for whether we are using the default scheduler
 
 
 
-Definition at line 218 of file O\+S\+Core.\+cs.
+Definition at line 227 of file O\+S\+Core.\+cs.
 
 \hypertarget{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_o_s_core_ac965e1317dc5c6b6ae93c410098dd913}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+O\+S\+Core@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+O\+S\+Core}!Using\+Single\+Cpu@{Using\+Single\+Cpu}}
 \index{Using\+Single\+Cpu@{Using\+Single\+Cpu}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+O\+S\+Core@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+O\+S\+Core}}
@@ -603,7 +628,17 @@ Property for whether the scheduler is running on a single \hyperlink{namespace_c
 
 
 
-Definition at line 282 of file O\+S\+Core.\+cs.
+Definition at line 291 of file O\+S\+Core.\+cs.
+
+
+
+\subsection{Event Documentation}
+\hypertarget{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_o_s_core_abcbb2efff8a4078fae3edb9b31f62198}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+O\+S\+Core@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+O\+S\+Core}!Collection\+Changed@{Collection\+Changed}}
+\index{Collection\+Changed@{Collection\+Changed}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+O\+S\+Core@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+O\+S\+Core}}
+\subsubsection[{Collection\+Changed}]{\setlength{\rightskip}{0pt plus 5cm}Notify\+Collection\+Changed\+Event\+Handler C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Operating\+\_\+\+System.\+O\+S\+Core.\+Collection\+Changed}\label{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_o_s_core_abcbb2efff8a4078fae3edb9b31f62198}
+
+
+Definition at line 37 of file O\+S\+Core.\+cs.
 
 
 

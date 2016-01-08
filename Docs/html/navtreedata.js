@@ -16,7 +16,8 @@ var NAVTREE =
         [ "All", "functions.html", "functions_dup" ],
         [ "Functions", "functions_func.html", "functions_func" ],
         [ "Variables", "functions_vars.html", "functions_vars" ],
-        [ "Properties", "functions_prop.html", "functions_prop" ]
+        [ "Properties", "functions_prop.html", "functions_prop" ],
+        [ "Events", "functions_evnt.html", null ]
       ] ]
     ] ],
     [ "Files", null, [
@@ -34,14 +35,17 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "_a_s_t_8cs.html",
-"_enum_process_state_8cs.html#a836ee2204e78fcb3a7dd6c3c942b1a24a1869d56535e8b1449a6da54ff5e11f50",
-"_window_bridge_2_properties_2_assembly_info_8cs_source.html",
-"class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_status_flags.html#aa38943c12054a3f613161ecde5580f27",
-"class_c_p_u___o_s___simulator_1_1_compiler_1_1_frontend_1_1_syntax_tree_1_1_string_node.html#a409841a2c8cdb16e19e500187d5c4567",
-"class_c_p_u___o_s___simulator_1_1_main_window.html#a195e7715af146b207e5b973bd10c80c6",
-"class_c_p_u___o_s___simulator_1_1_operating___system_1_1_process_control_block.html#af0629b300d7f2ac582512e881c49f2ea",
-"dir_71ab4721a5238a8f7ea24c2275f54756.html",
-"struct_c_p_u___o_s___simulator_1_1_operating___system_1_1_scheduler_flags.html#a4a2747b82ac75696e646bf03b0b3c8f6"
+"_enum_instruction_segment_sizes_8cs.html#a366a7efa6fcfb05aa404e76da1cf3c5ea696b031073e74bf2cb98e5ef201d4aa3",
+"_integer_node_8cs.html",
+"class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_compiled_program.html#ac3d1adb46ebd2132f53d3a1b880acc58",
+"class_c_p_u___o_s___simulator_1_1_colour_picker_window.html#a0a40b478316b3e45a63c67347ff9fc63",
+"class_c_p_u___o_s___simulator_1_1_compiler_1_1_frontend_1_1_syntax_tree_1_1_string_array_node.html#ae8ce8f85a313e577506546a26c954e34",
+"class_c_p_u___o_s___simulator_1_1_instructions_window.html#a0efa7624a59a6abc64d0940ffaa100b0",
+"class_c_p_u___o_s___simulator_1_1_instructions_window.html#ace26d2d0e3de3715d755e91ab04a054a",
+"class_c_p_u___o_s___simulator_1_1_main_window.html#afcd7446d65f9b9370ddf07499c2b8113",
+"class_c_p_u___o_s___simulator_1_1_operating___system_1_1_scheduler.html#a3637999160bc25da430731042f42dd81",
+"class_c_p_u___o_s___simulator_1_1_page_table_window.html#a7d71ad4194ceafa3573e5f65e8dbe90a",
+"functions_vars_f.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

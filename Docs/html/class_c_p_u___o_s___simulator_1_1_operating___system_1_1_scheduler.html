@@ -109,6 +109,7 @@ $(document).ready(function(){initNavTree('class_c_p_u___o_s___simulator_1_1_oper
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#properties">Properties</a> &#124;
+<a href="#events">Events</a> &#124;
 <a href="#pri-methods">Private Member Functions</a> &#124;
 <a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="class_c_p_u___o_s___simulator_1_1_operating___system_1_1_scheduler-members.html">List of all members</a>  </div>
@@ -119,6 +120,14 @@ $(document).ready(function(){initNavTree('class_c_p_u___o_s___simulator_1_1_oper
 
 <p>This class represents the process scheduler / manager for the virtual operating system  
  <a href="class_c_p_u___o_s___simulator_1_1_operating___system_1_1_scheduler.html#details">More...</a></p>
+<div class="dynheader">
+Inheritance diagram for CPU_OS_Simulator.Operating_System.Scheduler:</div>
+<div class="dyncontent">
+ <div class="center">
+  <img src="class_c_p_u___o_s___simulator_1_1_operating___system_1_1_scheduler.png" usemap="#CPU_OS_Simulator.Operating_System.Scheduler_map" alt=""/>
+  <map id="CPU_OS_Simulator.Operating_System.Scheduler_map" name="CPU_OS_Simulator.Operating_System.Scheduler_map">
+</map>
+ </div></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
@@ -129,6 +138,7 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:a686c31e6925c34fa366b0dfee0881950"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor for process <a class="el" href="class_c_p_u___o_s___simulator_1_1_operating___system_1_1_scheduler.html" title="This class represents the process scheduler / manager for the virtual operating system ...">Scheduler</a>  <a href="#a686c31e6925c34fa366b0dfee0881950">More...</a><br /></td></tr>
 <tr class="separator:a686c31e6925c34fa366b0dfee0881950"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0c5d3add7cf99eeb8c58c0a009ba6741"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_p_u___o_s___simulator_1_1_operating___system_1_1_scheduler.html#a0c5d3add7cf99eeb8c58c0a009ba6741">Start</a> ()</td></tr>
+<tr class="memdesc:a0c5d3add7cf99eeb8c58c0a009ba6741"><td class="mdescLeft">&#160;</td><td class="mdescRight">This function is called to start the Operating system scheduler  <a href="#a0c5d3add7cf99eeb8c58c0a009ba6741">More...</a><br /></td></tr>
 <tr class="separator:a0c5d3add7cf99eeb8c58c0a009ba6741"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="properties"></a>
@@ -170,11 +180,20 @@ Properties</h2></td></tr>
 <tr class="memdesc:a17ad8e2a5da8823a25da6fa4190f532d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Property for whether the scheduler is running with no processes  <a href="#a17ad8e2a5da8823a25da6fa4190f532d">More...</a><br /></td></tr>
 <tr class="separator:a17ad8e2a5da8823a25da6fa4190f532d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="events"></a>
+Events</h2></td></tr>
+<tr class="memitem:a13cc271f1cf9b76d1cbc87988c45e1fb"><td class="memItemLeft" align="right" valign="top">NotifyCollectionChangedEventHandler&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_p_u___o_s___simulator_1_1_operating___system_1_1_scheduler.html#a13cc271f1cf9b76d1cbc87988c45e1fb">CollectionChanged</a></td></tr>
+<tr class="separator:a13cc271f1cf9b76d1cbc87988c45e1fb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
 Private Member Functions</h2></td></tr>
+<tr class="memitem:adad5f14e290b9b67f727cd24b4f09158"><td class="memItemLeft" align="right" valign="top">async void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_p_u___o_s___simulator_1_1_operating___system_1_1_scheduler.html#adad5f14e290b9b67f727cd24b4f09158">OnCollectionChanged</a> (object sender, NotifyCollectionChangedEventArgs notifyCollectionChangedEventArgs)</td></tr>
+<tr class="separator:adad5f14e290b9b67f727cd24b4f09158"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5de68bce87efcb0d511d7e5a9bd4fe1f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_p_u___o_s___simulator_1_1_operating___system_1_1_scheduler.html#a5de68bce87efcb0d511d7e5a9bd4fe1f">CreateBackgroundWorker</a> ()</td></tr>
+<tr class="memdesc:a5de68bce87efcb0d511d7e5a9bd4fe1f"><td class="mdescLeft">&#160;</td><td class="mdescRight">This function creates a background worker to run the scheduler on while keeping the Interface responsive  <a href="#a5de68bce87efcb0d511d7e5a9bd4fe1f">More...</a><br /></td></tr>
 <tr class="separator:a5de68bce87efcb0d511d7e5a9bd4fe1f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6b7d6ca2dc12aa2290263cc94aab7779"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_p_u___o_s___simulator_1_1_operating___system_1_1_scheduler.html#a6b7d6ca2dc12aa2290263cc94aab7779">CreateExecutionThread</a> (object sender, DoWorkEventArgs e)</td></tr>
+<tr class="memdesc:a6b7d6ca2dc12aa2290263cc94aab7779"><td class="mdescLeft">&#160;</td><td class="mdescRight">This function creates a background thread to run the scheduler NOTE: This function is called automatically by the background worker and should not be called manually  <a href="#a6b7d6ca2dc12aa2290263cc94aab7779">More...</a><br /></td></tr>
 <tr class="separator:a6b7d6ca2dc12aa2290263cc94aab7779"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6b162741d7ccadc56da0e5a1b545efda"><td class="memItemLeft" align="right" valign="top">async Task&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_p_u___o_s___simulator_1_1_operating___system_1_1_scheduler.html#a6b162741d7ccadc56da0e5a1b545efda">CallFromMainThread</a> (Func&lt; Task&lt; int &gt;&gt; FunctionPointer)</td></tr>
 <tr class="memdesc:a6b162741d7ccadc56da0e5a1b545efda"><td class="mdescLeft">&#160;</td><td class="mdescRight">Bridge function used to call functions on the main thread from within the background thread  <a href="#a6b162741d7ccadc56da0e5a1b545efda">More...</a><br /></td></tr>
@@ -186,10 +205,46 @@ Private Member Functions</h2></td></tr>
 <tr class="memdesc:aa412769133cc4c67741cba7dd2381061"><td class="mdescLeft">&#160;</td><td class="mdescRight">Asynchronous function called after every instruction is executed to update required values and user interface asynchronously  <a href="#aa412769133cc4c67741cba7dd2381061">More...</a><br /></td></tr>
 <tr class="separator:aa412769133cc4c67741cba7dd2381061"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8981966e2ec66bf9684b0a7af88b45d4"><td class="memItemLeft" align="right" valign="top">async void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_p_u___o_s___simulator_1_1_operating___system_1_1_scheduler.html#a8981966e2ec66bf9684b0a7af88b45d4">RunScheduler</a> ()</td></tr>
+<tr class="memdesc:a8981966e2ec66bf9684b0a7af88b45d4"><td class="mdescLeft">&#160;</td><td class="mdescRight">This function is the main scheduler loop that runs until no processes remain or the OS is suspended  <a href="#a8981966e2ec66bf9684b0a7af88b45d4">More...</a><br /></td></tr>
 <tr class="separator:a8981966e2ec66bf9684b0a7af88b45d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae1a00245d53240a2caf3395cde0a7a90"><td class="memItemLeft" align="right" valign="top">long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_p_u___o_s___simulator_1_1_operating___system_1_1_scheduler.html#ae1a00245d53240a2caf3395cde0a7a90">CalculateLifetime</a> ()</td></tr>
+<tr class="memdesc:ae1a00245d53240a2caf3395cde0a7a90"><td class="mdescLeft">&#160;</td><td class="mdescRight">This function calculates the lifetime of the current process  <a href="#ae1a00245d53240a2caf3395cde0a7a90">More...</a><br /></td></tr>
+<tr class="separator:ae1a00245d53240a2caf3395cde0a7a90"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afed92ccdd4c4a4c02fdd762b290b4a57"><td class="memItemLeft" align="right" valign="top">async void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_p_u___o_s___simulator_1_1_operating___system_1_1_scheduler.html#afed92ccdd4c4a4c02fdd762b290b4a57">ExecuteShortestJobFirst</a> (long life)</td></tr>
+<tr class="memdesc:afed92ccdd4c4a4c02fdd762b290b4a57"><td class="mdescLeft">&#160;</td><td class="mdescRight">This function runs the scheduler in shortest job first </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">life</td><td>the lifetime of the current process</td></tr>
+  </table>
+  </dd>
+</dl>
+ <a href="#afed92ccdd4c4a4c02fdd762b290b4a57">More...</a><br /></td></tr>
+<tr class="separator:afed92ccdd4c4a4c02fdd762b290b4a57"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a457c5c63cdd37789a5812c8356612bdf"><td class="memItemLeft" align="right" valign="top">async void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_p_u___o_s___simulator_1_1_operating___system_1_1_scheduler.html#a457c5c63cdd37789a5812c8356612bdf">ExecuteFirstComeFirstServed</a> (long life)</td></tr>
+<tr class="memdesc:a457c5c63cdd37789a5812c8356612bdf"><td class="mdescLeft">&#160;</td><td class="mdescRight">This function runs the scheduler in first come first served mode </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">life</td><td>the lifetime of the current process</td></tr>
+  </table>
+  </dd>
+</dl>
+ <a href="#a457c5c63cdd37789a5812c8356612bdf">More...</a><br /></td></tr>
+<tr class="separator:a457c5c63cdd37789a5812c8356612bdf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8331f2af3784e67f666b477487349262"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_p_u___o_s___simulator_1_1_operating___system_1_1_scheduler.html#a8331f2af3784e67f666b477487349262">CalculateTimeSlice</a> ()</td></tr>
+<tr class="memdesc:a8331f2af3784e67f666b477487349262"><td class="mdescLeft">&#160;</td><td class="mdescRight">This function calculates the length of the timeslice when running in round robin mode  <a href="#a8331f2af3784e67f666b477487349262">More...</a><br /></td></tr>
+<tr class="separator:a8331f2af3784e67f666b477487349262"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3332d58240380341a41583f8a042dd72"><td class="memItemLeft" align="right" valign="top">async void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_p_u___o_s___simulator_1_1_operating___system_1_1_scheduler.html#a3332d58240380341a41583f8a042dd72">ExecuteRoundRobin</a> (int timeSlice, long life, bool preEmptive)</td></tr>
+<tr class="memdesc:a3332d58240380341a41583f8a042dd72"><td class="mdescLeft">&#160;</td><td class="mdescRight">This function runs the scheduler in round robin mode  <a href="#a3332d58240380341a41583f8a042dd72">More...</a><br /></td></tr>
+<tr class="separator:a3332d58240380341a41583f8a042dd72"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6a2257724b7574dc62b68037e523a640"><td class="memItemLeft" align="right" valign="top">async void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_p_u___o_s___simulator_1_1_operating___system_1_1_scheduler.html#a6a2257724b7574dc62b68037e523a640">TimeOutProcess</a> (bool preEmptive)</td></tr>
+<tr class="memdesc:a6a2257724b7574dc62b68037e523a640"><td class="mdescLeft">&#160;</td><td class="mdescRight">This function is called when a process times out  <a href="#a6a2257724b7574dc62b68037e523a640">More...</a><br /></td></tr>
+<tr class="separator:a6a2257724b7574dc62b68037e523a640"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3624587e4b65412422951fa59e64e885"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_p_u___o_s___simulator_1_1_operating___system_1_1_scheduler.html#a3624587e4b65412422951fa59e64e885">LoadPCB</a> ()</td></tr>
+<tr class="memdesc:a3624587e4b65412422951fa59e64e885"><td class="mdescLeft">&#160;</td><td class="mdescRight">This function Loads a processes PCB (Process Control Block) when a process re-enters the running state after it was timed out so it can carry on where it left off  <a href="#a3624587e4b65412422951fa59e64e885">More...</a><br /></td></tr>
+<tr class="separator:a3624587e4b65412422951fa59e64e885"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad2cbb7bbe41e0eae42a68c3c691a4283"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_c_p_u___o_s___simulator_1_1_operating___system_1_1_p_c_b_flags.html">PCBFlags</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_p_u___o_s___simulator_1_1_operating___system_1_1_scheduler.html#ad2cbb7bbe41e0eae42a68c3c691a4283">CreatePCBFlags</a> (ref <a class="el" href="class_c_p_u___o_s___simulator_1_1_operating___system_1_1_simulator_process.html">SimulatorProcess</a> currentProcess)</td></tr>
+<tr class="memdesc:ad2cbb7bbe41e0eae42a68c3c691a4283"><td class="mdescLeft">&#160;</td><td class="mdescRight">This function creates the flags required to construct a PCB (Process Control Block)  <a href="#ad2cbb7bbe41e0eae42a68c3c691a4283">More...</a><br /></td></tr>
 <tr class="separator:ad2cbb7bbe41e0eae42a68c3c691a4283"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abc2f3e3b3fe3881744a269575675d108"><td class="memItemLeft" align="right" valign="top">dynamic&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_p_u___o_s___simulator_1_1_operating___system_1_1_scheduler.html#abc2f3e3b3fe3881744a269575675d108">GetOSWindow</a> ()</td></tr>
+<tr class="memdesc:abc2f3e3b3fe3881744a269575675d108"><td class="mdescLeft">&#160;</td><td class="mdescRight">This function gets the current operating system window instance from the window bridge  <a href="#abc2f3e3b3fe3881744a269575675d108">More...</a><br /></td></tr>
 <tr class="separator:abc2f3e3b3fe3881744a269575675d108"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
@@ -224,11 +279,17 @@ Private Attributes</h2></td></tr>
 <tr class="separator:a8b68cea278d24fcc12c6721210fe8dcb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab29898ad206dbc3a62234321cefe73ee"><td class="memItemLeft" align="right" valign="top">Dispatcher&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_p_u___o_s___simulator_1_1_operating___system_1_1_scheduler.html#ab29898ad206dbc3a62234321cefe73ee">dispatcher</a> = Dispatcher.CurrentDispatcher</td></tr>
 <tr class="separator:ab29898ad206dbc3a62234321cefe73ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adbb08b11d6d774001e688db129336719"><td class="memItemLeft" align="right" valign="top">Stopwatch&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_p_u___o_s___simulator_1_1_operating___system_1_1_scheduler.html#adbb08b11d6d774001e688db129336719">timeout</a></td></tr>
+<tr class="separator:adbb08b11d6d774001e688db129336719"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a765eabf93b7584d7d1476d18f283a85e"><td class="memItemLeft" align="right" valign="top">Stopwatch&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_p_u___o_s___simulator_1_1_operating___system_1_1_scheduler.html#a765eabf93b7584d7d1476d18f283a85e">lifetime</a></td></tr>
+<tr class="separator:a765eabf93b7584d7d1476d18f283a85e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a844b64fe6c3917f055b61c4620995b74"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_p_u___o_s___simulator_1_1_operating___system_1_1_scheduler.html#a844b64fe6c3917f055b61c4620995b74">suspended</a></td></tr>
+<tr class="separator:a844b64fe6c3917f055b61c4620995b74"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>This class represents the process scheduler / manager for the virtual operating system </p>
 
-<p>Definition at line <a class="el" href="_scheduler_8cs_source.html#l00018">18</a> of file <a class="el" href="_scheduler_8cs_source.html">Scheduler.cs</a>.</p>
+<p>Definition at line <a class="el" href="_scheduler_8cs_source.html#l00023">23</a> of file <a class="el" href="_scheduler_8cs_source.html">Scheduler.cs</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="a5911adf7a88d4bc66f0de915bb925461"></a>
 <div class="memitem">
@@ -245,7 +306,7 @@ Private Attributes</h2></td></tr>
 
 <p>Default Constructor for scheduler used when deserialising the scheduler NOTE: DO NOT USE IN CODE </p>
 
-<p>Definition at line <a class="el" href="_scheduler_8cs_source.html#l00040">40</a> of file <a class="el" href="_scheduler_8cs_source.html">Scheduler.cs</a>.</p>
+<p>Definition at line <a class="el" href="_scheduler_8cs_source.html#l00050">50</a> of file <a class="el" href="_scheduler_8cs_source.html">Scheduler.cs</a>.</p>
 
 </div>
 </div>
@@ -271,11 +332,67 @@ Private Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="_scheduler_8cs_source.html#l00048">48</a> of file <a class="el" href="_scheduler_8cs_source.html">Scheduler.cs</a>.</p>
+<p>Definition at line <a class="el" href="_scheduler_8cs_source.html#l00058">58</a> of file <a class="el" href="_scheduler_8cs_source.html">Scheduler.cs</a>.</p>
 
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a class="anchor" id="ae1a00245d53240a2caf3395cde0a7a90"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">long CPU_OS_Simulator.Operating_System.Scheduler.CalculateLifetime </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>This function calculates the lifetime of the current process </p>
+<dl class="section return"><dt>Returns</dt><dd>the lifetime of the current process in milliseconds </dd></dl>
+
+<p>Definition at line <a class="el" href="_scheduler_8cs_source.html#l00272">272</a> of file <a class="el" href="_scheduler_8cs_source.html">Scheduler.cs</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a8331f2af3784e67f666b477487349262"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int CPU_OS_Simulator.Operating_System.Scheduler.CalculateTimeSlice </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>This function calculates the length of the timeslice when running in round robin mode </p>
+<dl class="section return"><dt>Returns</dt><dd>the length of the timeslice in milliseconds </dd></dl>
+
+<p>Definition at line <a class="el" href="_scheduler_8cs_source.html#l00416">416</a> of file <a class="el" href="_scheduler_8cs_source.html">Scheduler.cs</a>.</p>
+
+</div>
+</div>
 <a class="anchor" id="a6b162741d7ccadc56da0e5a1b545efda"></a>
 <div class="memitem">
 <div class="memproto">
@@ -305,9 +422,9 @@ Private Attributes</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>A task to indicate to the main thread that the function has finished executing</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>A task to indicate to the calling thread that the function has finished executing</dd></dl>
 
-<p>Definition at line <a class="el" href="_scheduler_8cs_source.html#l00086">86</a> of file <a class="el" href="_scheduler_8cs_source.html">Scheduler.cs</a>.</p>
+<p>Definition at line <a class="el" href="_scheduler_8cs_source.html#l00114">114</a> of file <a class="el" href="_scheduler_8cs_source.html">Scheduler.cs</a>.</p>
 
 </div>
 </div>
@@ -332,7 +449,9 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_scheduler_8cs_source.html#l00066">66</a> of file <a class="el" href="_scheduler_8cs_source.html">Scheduler.cs</a>.</p>
+<p>This function creates a background worker to run the scheduler on while keeping the Interface responsive </p>
+
+<p>Definition at line <a class="el" href="_scheduler_8cs_source.html#l00088">88</a> of file <a class="el" href="_scheduler_8cs_source.html">Scheduler.cs</a>.</p>
 
 </div>
 </div>
@@ -368,7 +487,16 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_scheduler_8cs_source.html#l00075">75</a> of file <a class="el" href="_scheduler_8cs_source.html">Scheduler.cs</a>.</p>
+<p>This function creates a background thread to run the scheduler NOTE: This function is called automatically by the background worker and should not be called manually </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">sender</td><td>the object that triggered this event</td></tr>
+    <tr><td class="paramname">e</td><td>The parameters passed to this event</td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="_scheduler_8cs_source.html#l00103">103</a> of file <a class="el" href="_scheduler_8cs_source.html">Scheduler.cs</a>.</p>
 
 </div>
 </div>
@@ -394,7 +522,136 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_scheduler_8cs_source.html#l00184">184</a> of file <a class="el" href="_scheduler_8cs_source.html">Scheduler.cs</a>.</p>
+<p>This function creates the flags required to construct a PCB (Process Control Block) </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">currentProcess</td><td>a reference to the process that the PCB will belong to</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>a struct containing the flags to create a PCB or null if an error occurred</dd></dl>
+
+<p>Definition at line <a class="el" href="_scheduler_8cs_source.html#l00569">569</a> of file <a class="el" href="_scheduler_8cs_source.html">Scheduler.cs</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a457c5c63cdd37789a5812c8356612bdf"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">async void CPU_OS_Simulator.Operating_System.Scheduler.ExecuteFirstComeFirstServed </td>
+          <td>(</td>
+          <td class="paramtype">long&#160;</td>
+          <td class="paramname"><em>life</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>This function runs the scheduler in first come first served mode </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">life</td><td>the lifetime of the current process</td></tr>
+  </table>
+  </dd>
+</dl>
+</p>
+
+<p>Definition at line <a class="el" href="_scheduler_8cs_source.html#l00360">360</a> of file <a class="el" href="_scheduler_8cs_source.html">Scheduler.cs</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a3332d58240380341a41583f8a042dd72"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">async void CPU_OS_Simulator.Operating_System.Scheduler.ExecuteRoundRobin </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>timeSlice</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">long&#160;</td>
+          <td class="paramname"><em>life</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>preEmptive</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>This function runs the scheduler in round robin mode </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">timeSlice</td><td>the timeslice allocated to each process</td></tr>
+    <tr><td class="paramname">life</td><td>the lifetime of the current process</td></tr>
+    <tr><td class="paramname">preEmptive</td><td>whether the scheduler should be preEmptive i.e if a higher priority process enters the ready queue it will immediately start running</td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="_scheduler_8cs_source.html#l00444">444</a> of file <a class="el" href="_scheduler_8cs_source.html">Scheduler.cs</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="afed92ccdd4c4a4c02fdd762b290b4a57"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">async void CPU_OS_Simulator.Operating_System.Scheduler.ExecuteShortestJobFirst </td>
+          <td>(</td>
+          <td class="paramtype">long&#160;</td>
+          <td class="paramname"><em>life</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>This function runs the scheduler in shortest job first </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">life</td><td>the lifetime of the current process</td></tr>
+  </table>
+  </dd>
+</dl>
+</p>
+
+<p>Definition at line <a class="el" href="_scheduler_8cs_source.html#l00303">303</a> of file <a class="el" href="_scheduler_8cs_source.html">Scheduler.cs</a>.</p>
 
 </div>
 </div>
@@ -419,7 +676,73 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_scheduler_8cs_source.html#l00207">207</a> of file <a class="el" href="_scheduler_8cs_source.html">Scheduler.cs</a>.</p>
+<p>This function gets the current operating system window instance from the window bridge </p>
+<dl class="section return"><dt>Returns</dt><dd>the current operating system window instance </dd></dl>
+
+<p>Definition at line <a class="el" href="_scheduler_8cs_source.html#l00614">614</a> of file <a class="el" href="_scheduler_8cs_source.html">Scheduler.cs</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a3624587e4b65412422951fa59e64e885"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void CPU_OS_Simulator.Operating_System.Scheduler.LoadPCB </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>This function Loads a processes PCB (Process Control Block) when a process re-enters the running state after it was timed out so it can carry on where it left off </p>
+
+<p>Definition at line <a class="el" href="_scheduler_8cs_source.html#l00529">529</a> of file <a class="el" href="_scheduler_8cs_source.html">Scheduler.cs</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="adad5f14e290b9b67f727cd24b4f09158"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">async void CPU_OS_Simulator.Operating_System.Scheduler.OnCollectionChanged </td>
+          <td>(</td>
+          <td class="paramtype">object&#160;</td>
+          <td class="paramname"><em>sender</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">NotifyCollectionChangedEventArgs&#160;</td>
+          <td class="paramname"><em>notifyCollectionChangedEventArgs</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_scheduler_8cs_source.html#l00079">79</a> of file <a class="el" href="_scheduler_8cs_source.html">Scheduler.cs</a>.</p>
 
 </div>
 </div>
@@ -444,7 +767,9 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_scheduler_8cs_source.html#l00144">144</a> of file <a class="el" href="_scheduler_8cs_source.html">Scheduler.cs</a>.</p>
+<p>This function is the main scheduler loop that runs until no processes remain or the OS is suspended </p>
+
+<p>Definition at line <a class="el" href="_scheduler_8cs_source.html#l00183">183</a> of file <a class="el" href="_scheduler_8cs_source.html">Scheduler.cs</a>.</p>
 
 </div>
 </div>
@@ -461,7 +786,50 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_scheduler_8cs_source.html#l00092">92</a> of file <a class="el" href="_scheduler_8cs_source.html">Scheduler.cs</a>.</p>
+<p>This function is called to start the Operating system scheduler </p>
+<dl class="section return"><dt>Returns</dt><dd>whether the scheduler completed successfully</dd></dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">InvalidOperationException</td><td>P:System.ComponentModel.BackgroundWorker.IsBusy is true.</td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="_scheduler_8cs_source.html#l00126">126</a> of file <a class="el" href="_scheduler_8cs_source.html">Scheduler.cs</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a6a2257724b7574dc62b68037e523a640"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">async void CPU_OS_Simulator.Operating_System.Scheduler.TimeOutProcess </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>preEmptive</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>This function is called when a process times out </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">preEmptive</td><td>whether the scheduler is preEmptive</td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="_scheduler_8cs_source.html#l00488">488</a> of file <a class="el" href="_scheduler_8cs_source.html">Scheduler.cs</a>.</p>
 
 </div>
 </div>
@@ -506,7 +874,7 @@ Private Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="_scheduler_8cs_source.html#l00107">107</a> of file <a class="el" href="_scheduler_8cs_source.html">Scheduler.cs</a>.</p>
+<p>Definition at line <a class="el" href="_scheduler_8cs_source.html#l00141">141</a> of file <a class="el" href="_scheduler_8cs_source.html">Scheduler.cs</a>.</p>
 
 </div>
 </div>
@@ -534,7 +902,7 @@ Private Attributes</h2></td></tr>
 <p>Asynchronous function called after every instruction is executed to update required values and user interface asynchronously </p>
 <dl class="section return"><dt>Returns</dt><dd>A task to indicate to the main thread that the function has finished executing</dd></dl>
 
-<p>Definition at line <a class="el" href="_scheduler_8cs_source.html#l00127">127</a> of file <a class="el" href="_scheduler_8cs_source.html">Scheduler.cs</a>.</p>
+<p>Definition at line <a class="el" href="_scheduler_8cs_source.html#l00162">162</a> of file <a class="el" href="_scheduler_8cs_source.html">Scheduler.cs</a>.</p>
 
 </div>
 </div>
@@ -557,7 +925,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_scheduler_8cs_source.html#l00030">30</a> of file <a class="el" href="_scheduler_8cs_source.html">Scheduler.cs</a>.</p>
+<p>Definition at line <a class="el" href="_scheduler_8cs_source.html#l00035">35</a> of file <a class="el" href="_scheduler_8cs_source.html">Scheduler.cs</a>.</p>
 
 </div>
 </div>
@@ -579,7 +947,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_scheduler_8cs_source.html#l00032">32</a> of file <a class="el" href="_scheduler_8cs_source.html">Scheduler.cs</a>.</p>
+<p>Definition at line <a class="el" href="_scheduler_8cs_source.html#l00037">37</a> of file <a class="el" href="_scheduler_8cs_source.html">Scheduler.cs</a>.</p>
 
 </div>
 </div>
@@ -601,7 +969,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_scheduler_8cs_source.html#l00026">26</a> of file <a class="el" href="_scheduler_8cs_source.html">Scheduler.cs</a>.</p>
+<p>Definition at line <a class="el" href="_scheduler_8cs_source.html#l00031">31</a> of file <a class="el" href="_scheduler_8cs_source.html">Scheduler.cs</a>.</p>
 
 </div>
 </div>
@@ -623,7 +991,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_scheduler_8cs_source.html#l00034">34</a> of file <a class="el" href="_scheduler_8cs_source.html">Scheduler.cs</a>.</p>
+<p>Definition at line <a class="el" href="_scheduler_8cs_source.html#l00039">39</a> of file <a class="el" href="_scheduler_8cs_source.html">Scheduler.cs</a>.</p>
 
 </div>
 </div>
@@ -645,7 +1013,29 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_scheduler_8cs_source.html#l00033">33</a> of file <a class="el" href="_scheduler_8cs_source.html">Scheduler.cs</a>.</p>
+<p>Definition at line <a class="el" href="_scheduler_8cs_source.html#l00038">38</a> of file <a class="el" href="_scheduler_8cs_source.html">Scheduler.cs</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a765eabf93b7584d7d1476d18f283a85e"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Stopwatch CPU_OS_Simulator.Operating_System.Scheduler.lifetime</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_scheduler_8cs_source.html#l00041">41</a> of file <a class="el" href="_scheduler_8cs_source.html">Scheduler.cs</a>.</p>
 
 </div>
 </div>
@@ -667,7 +1057,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_scheduler_8cs_source.html#l00020">20</a> of file <a class="el" href="_scheduler_8cs_source.html">Scheduler.cs</a>.</p>
+<p>Definition at line <a class="el" href="_scheduler_8cs_source.html#l00025">25</a> of file <a class="el" href="_scheduler_8cs_source.html">Scheduler.cs</a>.</p>
 
 </div>
 </div>
@@ -689,7 +1079,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_scheduler_8cs_source.html#l00027">27</a> of file <a class="el" href="_scheduler_8cs_source.html">Scheduler.cs</a>.</p>
+<p>Definition at line <a class="el" href="_scheduler_8cs_source.html#l00032">32</a> of file <a class="el" href="_scheduler_8cs_source.html">Scheduler.cs</a>.</p>
 
 </div>
 </div>
@@ -711,7 +1101,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_scheduler_8cs_source.html#l00024">24</a> of file <a class="el" href="_scheduler_8cs_source.html">Scheduler.cs</a>.</p>
+<p>Definition at line <a class="el" href="_scheduler_8cs_source.html#l00029">29</a> of file <a class="el" href="_scheduler_8cs_source.html">Scheduler.cs</a>.</p>
 
 </div>
 </div>
@@ -733,7 +1123,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_scheduler_8cs_source.html#l00028">28</a> of file <a class="el" href="_scheduler_8cs_source.html">Scheduler.cs</a>.</p>
+<p>Definition at line <a class="el" href="_scheduler_8cs_source.html#l00033">33</a> of file <a class="el" href="_scheduler_8cs_source.html">Scheduler.cs</a>.</p>
 
 </div>
 </div>
@@ -755,7 +1145,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_scheduler_8cs_source.html#l00022">22</a> of file <a class="el" href="_scheduler_8cs_source.html">Scheduler.cs</a>.</p>
+<p>Definition at line <a class="el" href="_scheduler_8cs_source.html#l00027">27</a> of file <a class="el" href="_scheduler_8cs_source.html">Scheduler.cs</a>.</p>
 
 </div>
 </div>
@@ -777,7 +1167,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_scheduler_8cs_source.html#l00031">31</a> of file <a class="el" href="_scheduler_8cs_source.html">Scheduler.cs</a>.</p>
+<p>Definition at line <a class="el" href="_scheduler_8cs_source.html#l00036">36</a> of file <a class="el" href="_scheduler_8cs_source.html">Scheduler.cs</a>.</p>
 
 </div>
 </div>
@@ -799,7 +1189,51 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_scheduler_8cs_source.html#l00023">23</a> of file <a class="el" href="_scheduler_8cs_source.html">Scheduler.cs</a>.</p>
+<p>Definition at line <a class="el" href="_scheduler_8cs_source.html#l00028">28</a> of file <a class="el" href="_scheduler_8cs_source.html">Scheduler.cs</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a844b64fe6c3917f055b61c4620995b74"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool CPU_OS_Simulator.Operating_System.Scheduler.suspended</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_scheduler_8cs_source.html#l00042">42</a> of file <a class="el" href="_scheduler_8cs_source.html">Scheduler.cs</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="adbb08b11d6d774001e688db129336719"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Stopwatch CPU_OS_Simulator.Operating_System.Scheduler.timeout</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_scheduler_8cs_source.html#l00040">40</a> of file <a class="el" href="_scheduler_8cs_source.html">Scheduler.cs</a>.</p>
 
 </div>
 </div>
@@ -821,7 +1255,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_scheduler_8cs_source.html#l00025">25</a> of file <a class="el" href="_scheduler_8cs_source.html">Scheduler.cs</a>.</p>
+<p>Definition at line <a class="el" href="_scheduler_8cs_source.html#l00030">30</a> of file <a class="el" href="_scheduler_8cs_source.html">Scheduler.cs</a>.</p>
 
 </div>
 </div>
@@ -843,7 +1277,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_scheduler_8cs_source.html#l00029">29</a> of file <a class="el" href="_scheduler_8cs_source.html">Scheduler.cs</a>.</p>
+<p>Definition at line <a class="el" href="_scheduler_8cs_source.html#l00034">34</a> of file <a class="el" href="_scheduler_8cs_source.html">Scheduler.cs</a>.</p>
 
 </div>
 </div>
@@ -865,7 +1299,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_scheduler_8cs_source.html#l00021">21</a> of file <a class="el" href="_scheduler_8cs_source.html">Scheduler.cs</a>.</p>
+<p>Definition at line <a class="el" href="_scheduler_8cs_source.html#l00026">26</a> of file <a class="el" href="_scheduler_8cs_source.html">Scheduler.cs</a>.</p>
 
 </div>
 </div>
@@ -890,7 +1324,7 @@ Private Attributes</h2></td></tr>
 
 <p>Property for whether <a class="el" href="namespace_c_p_u___o_s___simulator_1_1_c_p_u.html">CPU</a> affinity is allowed on this scheduler </p>
 
-<p>Definition at line <a class="el" href="_scheduler_8cs_source.html#l00301">301</a> of file <a class="el" href="_scheduler_8cs_source.html">Scheduler.cs</a>.</p>
+<p>Definition at line <a class="el" href="_scheduler_8cs_source.html#l00708">708</a> of file <a class="el" href="_scheduler_8cs_source.html">Scheduler.cs</a>.</p>
 
 </div>
 </div>
@@ -914,7 +1348,7 @@ Private Attributes</h2></td></tr>
 
 <p>Property for whether we are using the default scheduler </p>
 
-<p>Definition at line <a class="el" href="_scheduler_8cs_source.html#l00269">269</a> of file <a class="el" href="_scheduler_8cs_source.html">Scheduler.cs</a>.</p>
+<p>Definition at line <a class="el" href="_scheduler_8cs_source.html#l00676">676</a> of file <a class="el" href="_scheduler_8cs_source.html">Scheduler.cs</a>.</p>
 
 </div>
 </div>
@@ -938,7 +1372,7 @@ Private Attributes</h2></td></tr>
 
 <p>Property for the queue of processes that are ready to be executed </p>
 
-<p>Definition at line <a class="el" href="_scheduler_8cs_source.html#l00220">220</a> of file <a class="el" href="_scheduler_8cs_source.html">Scheduler.cs</a>.</p>
+<p>Definition at line <a class="el" href="_scheduler_8cs_source.html#l00627">627</a> of file <a class="el" href="_scheduler_8cs_source.html">Scheduler.cs</a>.</p>
 
 </div>
 </div>
@@ -962,7 +1396,7 @@ Private Attributes</h2></td></tr>
 
 <p>Property for the Round Robin priority policy being used by this scheduler </p>
 
-<p>Definition at line <a class="el" href="_scheduler_8cs_source.html#l00277">277</a> of file <a class="el" href="_scheduler_8cs_source.html">Scheduler.cs</a>.</p>
+<p>Definition at line <a class="el" href="_scheduler_8cs_source.html#l00684">684</a> of file <a class="el" href="_scheduler_8cs_source.html">Scheduler.cs</a>.</p>
 
 </div>
 </div>
@@ -986,7 +1420,7 @@ Private Attributes</h2></td></tr>
 
 <p>Property for the length of the round robin time slice being used by this scheduler </p>
 
-<p>Definition at line <a class="el" href="_scheduler_8cs_source.html#l00252">252</a> of file <a class="el" href="_scheduler_8cs_source.html">Scheduler.cs</a>.</p>
+<p>Definition at line <a class="el" href="_scheduler_8cs_source.html#l00659">659</a> of file <a class="el" href="_scheduler_8cs_source.html">Scheduler.cs</a>.</p>
 
 </div>
 </div>
@@ -1010,7 +1444,7 @@ Private Attributes</h2></td></tr>
 
 <p>Property for the type of round robin being used by the scheduler </p>
 
-<p>Definition at line <a class="el" href="_scheduler_8cs_source.html#l00285">285</a> of file <a class="el" href="_scheduler_8cs_source.html">Scheduler.cs</a>.</p>
+<p>Definition at line <a class="el" href="_scheduler_8cs_source.html#l00692">692</a> of file <a class="el" href="_scheduler_8cs_source.html">Scheduler.cs</a>.</p>
 
 </div>
 </div>
@@ -1034,7 +1468,7 @@ Private Attributes</h2></td></tr>
 
 <p>Property for the currently running process </p>
 
-<p>Definition at line <a class="el" href="_scheduler_8cs_source.html#l00236">236</a> of file <a class="el" href="_scheduler_8cs_source.html">Scheduler.cs</a>.</p>
+<p>Definition at line <a class="el" href="_scheduler_8cs_source.html#l00643">643</a> of file <a class="el" href="_scheduler_8cs_source.html">Scheduler.cs</a>.</p>
 
 </div>
 </div>
@@ -1058,7 +1492,7 @@ Private Attributes</h2></td></tr>
 
 <p>Property for whether the scheduler is running with no processes </p>
 
-<p>Definition at line <a class="el" href="_scheduler_8cs_source.html#l00309">309</a> of file <a class="el" href="_scheduler_8cs_source.html">Scheduler.cs</a>.</p>
+<p>Definition at line <a class="el" href="_scheduler_8cs_source.html#l00716">716</a> of file <a class="el" href="_scheduler_8cs_source.html">Scheduler.cs</a>.</p>
 
 </div>
 </div>
@@ -1082,7 +1516,7 @@ Private Attributes</h2></td></tr>
 
 <p>Property for the scheduling policy currently being used by this scheduler </p>
 
-<p>Definition at line <a class="el" href="_scheduler_8cs_source.html#l00244">244</a> of file <a class="el" href="_scheduler_8cs_source.html">Scheduler.cs</a>.</p>
+<p>Definition at line <a class="el" href="_scheduler_8cs_source.html#l00651">651</a> of file <a class="el" href="_scheduler_8cs_source.html">Scheduler.cs</a>.</p>
 
 </div>
 </div>
@@ -1106,7 +1540,7 @@ Private Attributes</h2></td></tr>
 
 <p>Property for the unit of time used for time slices i.e ticks or seconds </p>
 
-<p>Definition at line <a class="el" href="_scheduler_8cs_source.html#l00261">261</a> of file <a class="el" href="_scheduler_8cs_source.html">Scheduler.cs</a>.</p>
+<p>Definition at line <a class="el" href="_scheduler_8cs_source.html#l00668">668</a> of file <a class="el" href="_scheduler_8cs_source.html">Scheduler.cs</a>.</p>
 
 </div>
 </div>
@@ -1130,7 +1564,7 @@ Private Attributes</h2></td></tr>
 
 <p>Property for whether the scheduler is running on a single <a class="el" href="namespace_c_p_u___o_s___simulator_1_1_c_p_u.html">CPU</a> </p>
 
-<p>Definition at line <a class="el" href="_scheduler_8cs_source.html#l00293">293</a> of file <a class="el" href="_scheduler_8cs_source.html">Scheduler.cs</a>.</p>
+<p>Definition at line <a class="el" href="_scheduler_8cs_source.html#l00700">700</a> of file <a class="el" href="_scheduler_8cs_source.html">Scheduler.cs</a>.</p>
 
 </div>
 </div>
@@ -1154,7 +1588,22 @@ Private Attributes</h2></td></tr>
 
 <p>Property for the queue of processes that are waiting to be serviced by the operating system </p>
 
-<p>Definition at line <a class="el" href="_scheduler_8cs_source.html#l00228">228</a> of file <a class="el" href="_scheduler_8cs_source.html">Scheduler.cs</a>.</p>
+<p>Definition at line <a class="el" href="_scheduler_8cs_source.html#l00635">635</a> of file <a class="el" href="_scheduler_8cs_source.html">Scheduler.cs</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Event Documentation</h2>
+<a class="anchor" id="a13cc271f1cf9b76d1cbc87988c45e1fb"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">NotifyCollectionChangedEventHandler CPU_OS_Simulator.Operating_System.Scheduler.CollectionChanged</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_scheduler_8cs_source.html#l00044">44</a> of file <a class="el" href="_scheduler_8cs_source.html">Scheduler.cs</a>.</p>
 
 </div>
 </div>

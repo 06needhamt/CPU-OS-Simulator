@@ -82,6 +82,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       <li class="current"><a href="functions_func.html"><span>Functions</span></a></li>
       <li><a href="functions_vars.html"><span>Variables</span></a></li>
       <li><a href="functions_prop.html"><span>Properties</span></a></li>
+      <li><a href="functions_evnt.html"><span>Events</span></a></li>
     </ul>
   </div>
   <div id="navrow4" class="tabs3">
@@ -147,8 +148,14 @@ $(document).ready(function(){initNavTree('functions_func_c.html','');});
 <li>CalculateAddress()
 : <a class="el" href="class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_simulator_program.html#a6ab84d4093d03fc387e4288dfc566388">CPU_OS_Simulator.CPU.SimulatorProgram</a>
 </li>
+<li>CalculateLifetime()
+: <a class="el" href="class_c_p_u___o_s___simulator_1_1_operating___system_1_1_scheduler.html#ae1a00245d53240a2caf3395cde0a7a90">CPU_OS_Simulator.Operating_System.Scheduler</a>
+</li>
 <li>CalculateTime()
 : <a class="el" href="class_c_p_u___o_s___simulator_1_1_main_window.html#ac30c6f157890cb452dc35ec851cc88ad">CPU_OS_Simulator.MainWindow</a>
+</li>
+<li>CalculateTimeSlice()
+: <a class="el" href="class_c_p_u___o_s___simulator_1_1_operating___system_1_1_scheduler.html#a8331f2af3784e67f666b477487349262">CPU_OS_Simulator.Operating_System.Scheduler</a>
 </li>
 <li>CALL()
 : <a class="el" href="class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_instruction.html#a4fd8579b9499063c8112f03b1b7f1652">CPU_OS_Simulator.CPU.Instruction</a>
@@ -266,11 +273,23 @@ $(document).ready(function(){initNavTree('functions_func_c.html','');});
 <li>CompileToBytes()
 : <a class="el" href="class_c_p_u___o_s___simulator_1_1_compiler_1_1_compiler_main.html#aaaa9dbfb3784bd3f4f2f7c5c457a8d0e">CPU_OS_Simulator.Compiler.CompilerMain</a>
 </li>
+<li>Connect()
+: <a class="el" href="class_c_p_u___o_s___simulator_1_1_colour_picker_window.html#a857b5ab5ebf06a29846e0595c3c442ad">CPU_OS_Simulator.ColourPickerWindow</a>
+, <a class="el" href="class_c_p_u___o_s___simulator_1_1_compiler_tester_1_1_main_window.html#ab83b7c7097d501f2d4d2ce623d257c92">CPU_OS_Simulator.CompilerTester.MainWindow</a>
+, <a class="el" href="class_c_p_u___o_s___simulator_1_1_console_window.html#a8fc3e3f38ff00f6239dca33ff68de0d2">CPU_OS_Simulator.ConsoleWindow</a>
+, <a class="el" href="class_c_p_u___o_s___simulator_1_1_font_picker_window.html#ac5f7c5cad6bf2d8dc79c7e59f5a125da">CPU_OS_Simulator.FontPickerWindow</a>
+, <a class="el" href="class_c_p_u___o_s___simulator_1_1_instructions_window.html#a0efa7624a59a6abc64d0940ffaa100b0">CPU_OS_Simulator.InstructionsWindow</a>
+, <a class="el" href="class_c_p_u___o_s___simulator_1_1_main_window.html#ae66177a5319cf24975b9dfab71bc830e">CPU_OS_Simulator.MainWindow</a>
+, <a class="el" href="class_c_p_u___o_s___simulator_1_1_memory_window.html#aba65e66795c99052ebed93162110e908">CPU_OS_Simulator.MemoryWindow</a>
+, <a class="el" href="class_c_p_u___o_s___simulator_1_1_operating_system_main_window.html#ad482fe0b46f681bb64b29500fa69b98b">CPU_OS_Simulator.OperatingSystemMainWindow</a>
+, <a class="el" href="class_c_p_u___o_s___simulator_1_1_page_table_window.html#a5843f37edba076f17d15fe9f9f20d930">CPU_OS_Simulator.PageTableWindow</a>
+, <a class="el" href="class_c_p_u___o_s___simulator_1_1_process_control_block_window.html#aacad273b08eb9ad7e92c47eb5493008b">CPU_OS_Simulator.ProcessControlBlockWindow</a>
+</li>
 <li>ConsoleCommand()
-: <a class="el" href="class_c_p_u___o_s___simulator_1_1_console_1_1_console_command.html#a8e1109932fa1d320557dba1a919b490d">CPU_OS_Simulator.Console.ConsoleCommand</a>
+: <a class="el" href="class_c_p_u___o_s___simulator_1_1_console_1_1_console_command.html#abaf87cf5c18c25a75a90726749bf0c6c">CPU_OS_Simulator.Console.ConsoleCommand</a>
 </li>
 <li>ConsoleInput()
-: <a class="el" href="class_c_p_u___o_s___simulator_1_1_console_1_1_console_input.html#aa3a9e93b929544e9432b4c1604977a25">CPU_OS_Simulator.Console.ConsoleInput</a>
+: <a class="el" href="class_c_p_u___o_s___simulator_1_1_console_1_1_console_input.html#a52dbab6c35b6c3067ae65f5a3d8d6ebb">CPU_OS_Simulator.Console.ConsoleInput</a>
 </li>
 <li>ConsoleOutput()
 : <a class="el" href="class_c_p_u___o_s___simulator_1_1_console_1_1_console_output.html#a8d641979b1d7dee40a2f4a4088f3779f">CPU_OS_Simulator.Console.ConsoleOutput</a>
@@ -312,7 +331,7 @@ $(document).ready(function(){initNavTree('functions_func_c.html','');});
 </li>
 <li>CreateInstruction()
 : <a class="el" href="class_c_p_u___o_s___simulator_1_1_instructions_window.html#aafdc8c843b7f2d0e4c434edc569923c6">CPU_OS_Simulator.InstructionsWindow</a>
-, <a class="el" href="class_c_p_u___o_s___simulator_1_1_main_window.html#a309f3da2c50c0807867f58ddadc14660">CPU_OS_Simulator.MainWindow</a>
+, <a class="el" href="class_c_p_u___o_s___simulator_1_1_main_window.html#a608bc25c49d397aacde6cdd41d4314c3">CPU_OS_Simulator.MainWindow</a>
 </li>
 <li>CreateInstructionTest()
 : <a class="el" href="class_c_p_u___o_s___simulator_tests_1_1_main_window_tests.html#a29622aedce4ad01ba057932fe4575769">CPU_OS_SimulatorTests.MainWindowTests</a>

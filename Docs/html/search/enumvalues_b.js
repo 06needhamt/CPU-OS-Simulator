@@ -2,6 +2,8 @@ var searchData=
 [
   ['ldb',['LDB',['../namespace_c_p_u___o_s___simulator_1_1_c_p_u.html#ac29c87bff87ad404c953b2581024043ea9630d206d80399f359e9ba03ce049143',1,'CPU_OS_Simulator::CPU']]],
   ['ldbi',['LDBI',['../namespace_c_p_u___o_s___simulator_1_1_c_p_u.html#ac29c87bff87ad404c953b2581024043ea8d7bae8c9bed76910d021d8afe706299',1,'CPU_OS_Simulator::CPU']]],
+  ['lddw',['LDDW',['../namespace_c_p_u___o_s___simulator_1_1_c_p_u.html#ac29c87bff87ad404c953b2581024043ea9bb0ce14967fbf9a41706e3c2b39f2c0',1,'CPU_OS_Simulator::CPU']]],
+  ['lddwi',['LDDWI',['../namespace_c_p_u___o_s___simulator_1_1_c_p_u.html#ac29c87bff87ad404c953b2581024043eab1e4a769e53197c275ecbee772562e22',1,'CPU_OS_Simulator::CPU']]],
   ['ldw',['LDW',['../namespace_c_p_u___o_s___simulator_1_1_c_p_u.html#ac29c87bff87ad404c953b2581024043eac3403948896175c390e1c6cf55d56e00',1,'CPU_OS_Simulator::CPU']]],
   ['ldwi',['LDWI',['../namespace_c_p_u___o_s___simulator_1_1_c_p_u.html#ac29c87bff87ad404c953b2581024043ea57875effeaa72131469525bd0dc194b4',1,'CPU_OS_Simulator::CPU']]],
   ['leave',['LEAVE',['../namespace_c_p_u___o_s___simulator_1_1_compiler_1_1_frontend_1_1_tokens.html#a86b87efebad08200cebe3075b5812b13ae0f9ef6d3025baf33497bafcca7ff781',1,'CPU_OS_Simulator::Compiler::Frontend::Tokens']]],

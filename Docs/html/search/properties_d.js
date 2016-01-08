@@ -6,6 +6,7 @@ var searchData=
   ['size',['Size',['../class_c_p_u___o_s___simulator_1_1_compiler_1_1_backend_1_1_instruction_segment.html#a7790c585f15f68011143819aa3ccd9e5',1,'CPU_OS_Simulator.Compiler.Backend.InstructionSegment.Size()'],['../class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_instruction.html#a7c60418808e7bd6cb1964a227dcd9dac',1,'CPU_OS_Simulator.CPU.Instruction.Size()']]],
   ['source',['Source',['../class_c_p_u___o_s___simulator_1_1_console_1_1_console_output.html#a9772128aaf7ca7854af11b63ae6e1579',1,'CPU_OS_Simulator::Console::ConsoleOutput']]],
   ['space',['Space',['../class_c_p_u___o_s___simulator_1_1_memory_1_1_physical_memory.html#a5d0fceb09f51edcfb4f483b5e8a9508a',1,'CPU_OS_Simulator::Memory::PhysicalMemory']]],
+  ['specialregisters',['SpecialRegisters',['../class_c_p_u___o_s___simulator_1_1_operating___system_1_1_process_control_block.html#af9716c755f2e5957ea4f4a7af4a7a190',1,'CPU_OS_Simulator::Operating_System::ProcessControlBlock']]],
   ['stack',['Stack',['../class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_simulator_program.html#ac6065e57e8d108a0aefd27840f3bf01c',1,'CPU_OS_Simulator::CPU::SimulatorProgram']]],
   ['stackitems',['StackItems',['../class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_program_stack.html#a13eb0a485bbcdba8a38bbf80e78692c7',1,'CPU_OS_Simulator::CPU::ProgramStack']]],
   ['stacksize',['StackSize',['../class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_program_stack.html#ac9cedcbfdf26ffa757042280f21da367',1,'CPU_OS_Simulator::CPU::ProgramStack']]],

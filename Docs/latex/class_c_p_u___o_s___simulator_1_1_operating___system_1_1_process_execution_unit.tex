@@ -23,6 +23,8 @@ void \hyperlink{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_process
 new \hyperlink{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_simulator_program}{Simulator\+Program} \hyperlink{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_process_execution_unit_ad5ee10381cd66c0681f1a7be91b679e4}{Program}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
 \item 
 \hyperlink{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_simulator_process}{Simulator\+Process} \hyperlink{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_process_execution_unit_a869fb898b0a61e168220757d921e5bfc}{Process}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\item 
+bool \hyperlink{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_process_execution_unit_aa507b44c8134ffd0e9fbe702e1bf9e32}{Timed\+Out}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
 \end{DoxyCompactItemize}
 \subsection*{Private Attributes}
 \begin{DoxyCompactItemize}
@@ -32,6 +34,8 @@ new \hyperlink{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_simulator_program}{Si
 new \hyperlink{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_simulator_program}{Simulator\+Program} \hyperlink{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_process_execution_unit_ab82d2f53e3b27f272a0c5a9cc6222e9d}{program}
 \item 
 \hyperlink{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_simulator_process}{Simulator\+Process} \hyperlink{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_process_execution_unit_a0a8944c15b618210fe91444a755991ca}{process}
+\item 
+bool \hyperlink{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_process_execution_unit_ad48af599eaa4929c947241f3d8bd754e}{timed\+Out} = false
 \end{DoxyCompactItemize}
 
 
@@ -64,7 +68,7 @@ Constructor for execution unit that starts executing from the beginning of the p
 \end{DoxyParams}
 
 
-Definition at line 16 of file Process\+Execution\+Unit.\+cs.
+Definition at line 17 of file Process\+Execution\+Unit.\+cs.
 
 \hypertarget{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_process_execution_unit_a89783c451bba101568a4a9b0fe09df81}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Process\+Execution\+Unit@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Process\+Execution\+Unit}!Process\+Execution\+Unit@{Process\+Execution\+Unit}}
 \index{Process\+Execution\+Unit@{Process\+Execution\+Unit}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Process\+Execution\+Unit@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Process\+Execution\+Unit}}
@@ -90,7 +94,7 @@ Constructor for execution unit that starts executing from a specified location i
 \end{DoxyParams}
 
 
-Definition at line 29 of file Process\+Execution\+Unit.\+cs.
+Definition at line 30 of file Process\+Execution\+Unit.\+cs.
 
 
 
@@ -104,7 +108,7 @@ Definition at line 29 of file Process\+Execution\+Unit.\+cs.
 )}\label{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_process_execution_unit_a5685d8f35ca37a904236d8e96f3aabb1}
 
 
-Definition at line 56 of file Process\+Execution\+Unit.\+cs.
+Definition at line 63 of file Process\+Execution\+Unit.\+cs.
 
 
 
@@ -130,6 +134,13 @@ Definition at line 7 of file Process\+Execution\+Unit.\+cs.
 
 Definition at line 8 of file Process\+Execution\+Unit.\+cs.
 
+\hypertarget{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_process_execution_unit_ad48af599eaa4929c947241f3d8bd754e}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Process\+Execution\+Unit@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Process\+Execution\+Unit}!timed\+Out@{timed\+Out}}
+\index{timed\+Out@{timed\+Out}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Process\+Execution\+Unit@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Process\+Execution\+Unit}}
+\subsubsection[{timed\+Out}]{\setlength{\rightskip}{0pt plus 5cm}bool C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Operating\+\_\+\+System.\+Process\+Execution\+Unit.\+timed\+Out = false\hspace{0.3cm}{\ttfamily [private]}}\label{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_process_execution_unit_ad48af599eaa4929c947241f3d8bd754e}
+
+
+Definition at line 10 of file Process\+Execution\+Unit.\+cs.
+
 
 
 \subsection{Property Documentation}
@@ -138,21 +149,28 @@ Definition at line 8 of file Process\+Execution\+Unit.\+cs.
 \subsubsection[{Process}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Simulator\+Process} C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Operating\+\_\+\+System.\+Process\+Execution\+Unit.\+Process\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}\label{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_process_execution_unit_a869fb898b0a61e168220757d921e5bfc}
 
 
-Definition at line 50 of file Process\+Execution\+Unit.\+cs.
+Definition at line 51 of file Process\+Execution\+Unit.\+cs.
 
 \hypertarget{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_process_execution_unit_a50dccf62e2bc43d1ad30f6488d3ffa58}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Process\+Execution\+Unit@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Process\+Execution\+Unit}!Process\+Control\+Block@{Process\+Control\+Block}}
 \index{Process\+Control\+Block@{Process\+Control\+Block}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Process\+Execution\+Unit@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Process\+Execution\+Unit}}
 \subsubsection[{Process\+Control\+Block}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Process\+Control\+Block} C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Operating\+\_\+\+System.\+Process\+Execution\+Unit.\+Process\+Control\+Block\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}\label{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_process_execution_unit_a50dccf62e2bc43d1ad30f6488d3ffa58}
 
 
-Definition at line 38 of file Process\+Execution\+Unit.\+cs.
+Definition at line 39 of file Process\+Execution\+Unit.\+cs.
 
 \hypertarget{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_process_execution_unit_ad5ee10381cd66c0681f1a7be91b679e4}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Process\+Execution\+Unit@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Process\+Execution\+Unit}!Program@{Program}}
 \index{Program@{Program}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Process\+Execution\+Unit@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Process\+Execution\+Unit}}
 \subsubsection[{Program}]{\setlength{\rightskip}{0pt plus 5cm}new {\bf Simulator\+Program} C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Operating\+\_\+\+System.\+Process\+Execution\+Unit.\+Program\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}\label{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_process_execution_unit_ad5ee10381cd66c0681f1a7be91b679e4}
 
 
-Definition at line 44 of file Process\+Execution\+Unit.\+cs.
+Definition at line 45 of file Process\+Execution\+Unit.\+cs.
+
+\hypertarget{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_process_execution_unit_aa507b44c8134ffd0e9fbe702e1bf9e32}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Process\+Execution\+Unit@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Process\+Execution\+Unit}!Timed\+Out@{Timed\+Out}}
+\index{Timed\+Out@{Timed\+Out}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Process\+Execution\+Unit@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Process\+Execution\+Unit}}
+\subsubsection[{Timed\+Out}]{\setlength{\rightskip}{0pt plus 5cm}bool C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Operating\+\_\+\+System.\+Process\+Execution\+Unit.\+Timed\+Out\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}\label{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_process_execution_unit_aa507b44c8134ffd0e9fbe702e1bf9e32}
+
+
+Definition at line 57 of file Process\+Execution\+Unit.\+cs.
 
 
 

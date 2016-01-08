@@ -1,8 +1,9 @@
 var dir_4daeced4ad15aeb075514baefd311898 =
 [
+    [ "obj", "dir_d28e6af6bf6617c5b964efedaeb74ce9.html", "dir_d28e6af6bf6617c5b964efedaeb74ce9" ],
     [ "Properties", "dir_78cb5123666b3cee6269b1244ffa6ca9.html", "dir_78cb5123666b3cee6269b1244ffa6ca9" ],
     [ "App.xaml.cs", "_c_p_u-_o_s_01_simulator_2_app_8xaml_8cs.html", [
-      [ "App", "class_c_p_u___o_s___simulator_1_1_app.html", null ]
+      [ "App", "class_c_p_u___o_s___simulator_1_1_app.html", "class_c_p_u___o_s___simulator_1_1_app" ]
     ] ],
     [ "ColourPickerWindow.xaml.cs", "_colour_picker_window_8xaml_8cs.html", [
       [ "ColourPickerWindow", "class_c_p_u___o_s___simulator_1_1_colour_picker_window.html", "class_c_p_u___o_s___simulator_1_1_colour_picker_window" ]
