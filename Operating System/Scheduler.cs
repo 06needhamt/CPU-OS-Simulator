@@ -80,6 +80,7 @@ namespace CPU_OS_Simulator.Operating_System
         {
             System.Console.WriteLine("Queue contents have changed" + sender.ToString());
             await CallFromMainThread(UpdateInterface);
+            await CallFromMainThread(UpdateMainWindowInterface);
         }
 
         /// <summary>
@@ -208,6 +209,7 @@ namespace CPU_OS_Simulator.Operating_System
                                 long life = CalculateLifetime();
                                 int timeout = CalculateTimeSlice();
                                 await CallFromMainThread(UpdateInterface);
+                                await CallFromMainThread(UpdateMainWindowInterface);
                                 ExecuteRoundRobin(timeout,life,false);
                                 break;
                             }
@@ -224,6 +226,7 @@ namespace CPU_OS_Simulator.Operating_System
                                 long life = CalculateLifetime();
                                 int timeout = CalculateTimeSlice();
                                 await CallFromMainThread(UpdateInterface);
+                                await CallFromMainThread(UpdateMainWindowInterface);
                                 ExecuteRoundRobin(timeout,life,true);
                                 break;
                             }
@@ -263,6 +266,7 @@ namespace CPU_OS_Simulator.Operating_System
             MessageBox.Show("OS Execution Complete");
             runningProcess = null;
             await CallFromMainThread(UpdateInterface);
+            await CallFromMainThread(UpdateMainWindowInterface);
             return;
         }
         /// <summary>
@@ -307,6 +311,7 @@ namespace CPU_OS_Simulator.Operating_System
             readyQueue = new Queue<SimulatorProcess>(readyQueue.OrderBy(x => x.Program.Instructions.Count));
             runningProcess = readyQueue.Dequeue();
             await CallFromMainThread(UpdateInterface);
+            await CallFromMainThread(UpdateMainWindowInterface);
             lifetime.Reset();
             lifetime.Start();
             while (!runningProcess.Unit.Stop && !runningProcess.Unit.Done &&
@@ -318,6 +323,7 @@ namespace CPU_OS_Simulator.Operating_System
                 }
                 runningProcess.Unit.ExecuteInstruction();
                 await CallFromMainThread(UpdateInterface);
+                await CallFromMainThread(UpdateMainWindowInterface);
             }
             if (runningProcess.Unit.TimedOut)
             {
@@ -373,6 +379,7 @@ namespace CPU_OS_Simulator.Operating_System
                 }
                 runningProcess.Unit.ExecuteInstruction();
                 await CallFromMainThread(UpdateInterface);
+                await CallFromMainThread(UpdateMainWindowInterface);
             }
             if (runningProcess.Unit.TimedOut)
             {
@@ -460,7 +467,8 @@ namespace CPU_OS_Simulator.Operating_System
                 {
                     readyQueue = new Queue<SimulatorProcess>(readyQueue.OrderBy(x => x.ProcessPriority));
                     //Thread.Sleep(50);
-                    await CallFromMainThread(UpdateInterface); 
+                    await CallFromMainThread(UpdateInterface);
+                    await CallFromMainThread(UpdateMainWindowInterface);
                 }
 
                 while (runningProcess != null && !runningProcess.Unit.Done && !runningProcess.Unit.Stop && !runningProcess.Unit.TimedOut)
@@ -477,6 +485,7 @@ namespace CPU_OS_Simulator.Operating_System
                     }
                     runningProcess.Unit.ExecuteInstruction();
                     await CallFromMainThread(UpdateInterface);
+                    await CallFromMainThread(UpdateMainWindowInterface);
                 }
                 runningProcess = null;
             }
@@ -512,9 +521,11 @@ namespace CPU_OS_Simulator.Operating_System
                 //    readyQueue = new Queue<SimulatorProcess>(readyQueue.OrderBy(x => x.ProcessPriority));
                 //    //Thread.Sleep(50);
                 //    await CallFromMainThread(UpdateInterface); //HACK Why does this work above but not here? My WTF Train Goes WTF WTF WTF Chugga Chugga 
+                //    await CallFromMainThread(UpdateMainWindowInterface);
                 //}
 
                 //await CallFromMainThread(UpdateInterface);
+                //await CallFromMainThread(UpdateMainWindowInterface);
                 // runningProcess = readyQueue.Dequeue();
                 // runningProcess.Unit.TimedOut = false;
                 // runningProcess.ProcessState = EnumProcessState.RUNNING;
@@ -614,10 +625,24 @@ namespace CPU_OS_Simulator.Operating_System
         private dynamic GetOSWindow()
         {
             Assembly windowBridge = Assembly.LoadFrom("CPU_OS_Simulator.WindowBridge.dll"); // Load the window bridge module
-            System.Console.WriteLine(windowBridge.GetExportedTypes()[0]);
-            Type WindowType = windowBridge.GetType(windowBridge.GetExportedTypes()[0].ToString()); // get the name of the type that contains the window instances
+            System.Console.WriteLine(windowBridge.GetExportedTypes()[1]);
+            Type WindowType = windowBridge.GetType(windowBridge.GetExportedTypes()[1].ToString()); // get the name of the type that contains the window instances
             dynamic window = WindowType.GetField("OperatingSystemMainWindowInstance").GetValue(null); // get the value of the static OperatingSystemMainWindowInstance field
             return window;
+        }
+        /// <summary>
+        /// This function updates the main window interface while the operating system executes
+        /// </summary>
+        /// <returns>a task object indicating to the calling thread that the task has completed</returns>
+        private async Task<int> UpdateMainWindowInterface()
+        {
+            Assembly windowBridge = Assembly.LoadFrom("CPU_OS_Simulator.WindowBridge.dll"); // Load the window bridge module
+            System.Console.WriteLine(windowBridge.GetExportedTypes()[0]);
+            Type WindowType = windowBridge.GetType(windowBridge.GetExportedTypes()[0].ToString()); // get the name of the type that contains the window instances
+            object tyref = Activator.CreateInstance(WindowType);
+            Task<int> result = (Task<int>) WindowType.GetMethod("UpdateMainWindowInterface").Invoke(tyref, null);
+            return result.Result;
+
         }
 
         /// <summary>

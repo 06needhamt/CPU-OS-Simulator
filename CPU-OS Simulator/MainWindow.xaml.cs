@@ -836,7 +836,7 @@ namespace CPU_OS_Simulator
         /// </summary>
         /// <param name="sender"> the object that triggered this event</param>
         /// <param name="e">The parameters passed to this event ></param>
-        private async void UpdateInterface(object sender, ProgressChangedEventArgs e)
+        public async void UpdateInterface(object sender, ProgressChangedEventArgs e)
         {
             SimulatorProgram prog = programList.Where(x => x.Name.Equals(currentProgram)).FirstOrDefault();
             lst_InstructionsList.SelectedIndex = activeUnit.CurrentIndex;
@@ -860,14 +860,17 @@ namespace CPU_OS_Simulator
         /// Asynchronous function called after every instruction is executed to update required values and user interface asynchronously
         /// </summary>
         /// <returns> A task to indicate to the main thread that the function has finished executing</returns>
-        private async Task<int> UpdateInterface()
+        public async Task<int> UpdateInterface()
         {
             SimulatorProgram prog = programList.Where(x => x.Name.Equals(currentProgram)).FirstOrDefault();
-            lst_InstructionsList.SelectedIndex = activeUnit.CurrentIndex;
-            SpecialRegister.FindSpecialRegister("PC").SetRegisterValue(prog.Instructions.ElementAt(lst_InstructionsList.SelectedIndex).LogicalAddress, EnumOperandType.VALUE);
-            SpecialRegister.FindSpecialRegister("IR").SetRegisterValue(prog.Instructions.ElementAt(lst_InstructionsList.SelectedIndex).InstructionString, EnumOperandType.VALUE);
-            SpecialRegister.FindSpecialRegister("MDR").SetRegisterValue(prog.Instructions.ElementAt(lst_InstructionsList.SelectedIndex).InstructionString, EnumOperandType.VALUE);
-            SpecialRegister.FindSpecialRegister("MAR").SetRegisterValue(prog.Instructions.ElementAt(lst_InstructionsList.SelectedIndex).PhysicalAddress, EnumOperandType.VALUE);
+            if (activeUnit != null)
+            {
+                lst_InstructionsList.SelectedIndex = activeUnit.CurrentIndex;
+            }
+            //SpecialRegister.FindSpecialRegister("PC").SetRegisterValue(prog.Instructions.ElementAt(lst_InstructionsList.SelectedIndex).LogicalAddress, EnumOperandType.VALUE);
+            //SpecialRegister.FindSpecialRegister("IR").SetRegisterValue(prog.Instructions.ElementAt(lst_InstructionsList.SelectedIndex).InstructionString, EnumOperandType.VALUE);
+            //SpecialRegister.FindSpecialRegister("MDR").SetRegisterValue(prog.Instructions.ElementAt(lst_InstructionsList.SelectedIndex).InstructionString, EnumOperandType.VALUE);
+            //SpecialRegister.FindSpecialRegister("MAR").SetRegisterValue(prog.Instructions.ElementAt(lst_InstructionsList.SelectedIndex).PhysicalAddress, EnumOperandType.VALUE);
             UpdateRegisters();
             UpdateStack();
             UpdateSpecialRegisters();
