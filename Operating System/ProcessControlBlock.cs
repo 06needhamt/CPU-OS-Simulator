@@ -27,6 +27,9 @@ namespace CPU_OS_Simulator.Operating_System
         private List<SystemResource> requestedResources;
         private Register[] registers;
         private SpecialRegister[] specialRegisters;
+
+        private int lifetimeMills;
+
         /// <summary>
         /// Default Constructor for process control block used when deserialising a process control block
         /// NOTE: DO NOT USE IN CODE:
@@ -71,6 +74,7 @@ namespace CPU_OS_Simulator.Operating_System
             }
             this.specialRegisters = flags.specialRegisters;
             this.registers = flags.registers;
+            this.lifetimeMills = flags.lifetimeMills;
         }
 
         /// <summary>
@@ -207,6 +211,12 @@ namespace CPU_OS_Simulator.Operating_System
         {
             get { return specialRegisters; }
             set { specialRegisters = value; }
+        }
+
+        public int LifetimeMills
+        {
+            get { return lifetimeMills; }
+            set { lifetimeMills = value; }
         }
     }
 }

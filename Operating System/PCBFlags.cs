@@ -26,5 +26,7 @@ namespace CPU_OS_Simulator.Operating_System
         public Register[] registers;
         public SpecialRegister[] specialRegisters;
 
+        public int lifetimeMills;
+
     }
 }

@@ -37,9 +37,9 @@ namespace CPU_OS_Simulator.Operating_System
         private int cpuClockSpeed;
         private BackgroundWorker executionWorker;
         private Dispatcher dispatcher = Dispatcher.CurrentDispatcher;
-        //private System.Timers.Timer t;
-        private Stopwatch s;
-        //private Object thisLock = new Object();
+        private Stopwatch timeout;
+        private Stopwatch lifetime;
+        private bool suspended;
 
         public event NotifyCollectionChangedEventHandler CollectionChanged;
 
@@ -70,6 +70,7 @@ namespace CPU_OS_Simulator.Operating_System
             allowCPUAffinity = flags.allowCPUAffinity;
             runningWithNoProcesses = flags.runningWithNoProcesses;
             cpuClockSpeed = flags.cpuClockSpeed;
+            suspended = false;
             CollectionChanged += OnCollectionChanged;
             CreateBackgroundWorker();
             //BindingOperations.EnableCollectionSynchronization(readyQueue,thisLock);
@@ -81,6 +82,9 @@ namespace CPU_OS_Simulator.Operating_System
             await CallFromMainThread(UpdateInterface);
         }
 
+        /// <summary>
+        /// This function creates a background worker to run the scheduler on while keeping the Interface responsive
+        /// </summary>
         private void CreateBackgroundWorker()
         {
             executionWorker = new BackgroundWorker();
@@ -90,6 +94,12 @@ namespace CPU_OS_Simulator.Operating_System
             executionWorker.ProgressChanged += UpdateInterface;
         }
 
+        /// <summary>
+        /// This function creates a background thread to run the scheduler 
+        /// NOTE: This function is called automatically by the background worker and should not be called manually 
+        /// </summary>
+        /// <param name="sender"> the object that triggered this event</param>
+        /// <param name="e">The parameters passed to this event</param>
         private void CreateExecutionThread(object sender, DoWorkEventArgs e)
         {
             var executionThread = new Thread(RunScheduler);
@@ -100,13 +110,19 @@ namespace CPU_OS_Simulator.Operating_System
         /// Bridge function used to call functions on the main thread from within the background thread
         /// </summary>
         /// <param name="FunctionPointer"> The function to call </param>
-        /// <returns>A task to indicate to the main thread that the function has finished executing</returns>
+        /// <returns>A task to indicate to the calling thread that the function has finished executing</returns>
         private async Task<int> CallFromMainThread(Func<Task<int>> FunctionPointer)
         {
             var invoke = dispatcher.Invoke(FunctionPointer);
             if (invoke != null) await invoke;
             return 0;
         }
+
+        /// <summary>
+        /// This function is called to start the Operating system scheduler
+        /// </summary>
+        /// <returns> whether the scheduler completed successfully</returns>
+        /// <exception cref="InvalidOperationException"><see cref="P:System.ComponentModel.BackgroundWorker.IsBusy" /> is true.</exception>
         public bool Start()
         {
             if (readyQueue.Count == 0 && !runningWithNoProcesses)
@@ -160,20 +176,26 @@ namespace CPU_OS_Simulator.Operating_System
             OSWindow.txtProcessName.Text = "P" + Convert.ToString(OSWindow.Processes.Count + 1);
             return 0;
         }
+
+        /// <summary>
+        /// This function is the main scheduler loop that runs until no processes remain or the OS is suspended
+        /// </summary>
         private async void RunScheduler()
         {
-            while (readyQueue.Count > 0)
+            while (readyQueue.Count > 0 && readyQueue.Peek() != null && !suspended)
             {
                 switch (schedulingPolicy)
                 {
                     case EnumSchedulingPolicies.FIRST_COME_FIRST_SERVED:
                     {
-                        ExecuteFirstComeFirstServed();
+                        long life = CalculateLifetime();
+                        ExecuteFirstComeFirstServed(life);
                         break;
                     }
                     case EnumSchedulingPolicies.SHORTEST_JOB_FIRST:
                     {
-                        ExecuteShortestJobFirst();
+                        long life = CalculateLifetime();
+                        ExecuteShortestJobFirst(life);
                         break;
                     }
                     case EnumSchedulingPolicies.ROUND_ROBIN:
@@ -183,23 +205,26 @@ namespace CPU_OS_Simulator.Operating_System
                            case EnumPriorityPolicy.NON_PRE_EMPTIVE:
                             {
                                 readyQueue = new Queue<SimulatorProcess>(readyQueue.OrderBy(x => x.ProcessPriority));
+                                long life = CalculateLifetime();
                                 int timeout = CalculateTimeSlice();
                                 await CallFromMainThread(UpdateInterface);
-                                ExecuteRoundRobin(timeout,false);
+                                ExecuteRoundRobin(timeout,life,false);
                                 break;
                             }
                             case EnumPriorityPolicy.NO_PRIORITY:
                             {
+                                long life = CalculateLifetime();
                                 int timeout = CalculateTimeSlice();
-                                ExecuteRoundRobin(timeout,false);
+                                ExecuteRoundRobin(timeout,life,false);
                                 break;
                             }
                             case EnumPriorityPolicy.PRE_EMPTIVE:
                             {
                                 readyQueue = new Queue<SimulatorProcess>(readyQueue.OrderBy(x => x.ProcessPriority));
+                                long life = CalculateLifetime();
                                 int timeout = CalculateTimeSlice();
                                 await CallFromMainThread(UpdateInterface);
-                                ExecuteRoundRobin(timeout,true);
+                                ExecuteRoundRobin(timeout,life,true);
                                 break;
                             }
                             case EnumPriorityPolicy.UNKNOWN:
@@ -240,17 +265,57 @@ namespace CPU_OS_Simulator.Operating_System
             await CallFromMainThread(UpdateInterface);
             return;
         }
+        /// <summary>
+        /// This function calculates the lifetime of the current process
+        /// </summary>
+        /// <returns> the lifetime of the current process in milliseconds </returns>
+        private long CalculateLifetime()
+        {
+            long procLifetime = 0;
+            runningProcess = readyQueue.Peek();
+            if (runningProcess.ProcessLifetime == 0 || runningProcess.ProcessLifetime == int.MaxValue)
+            {
+                procLifetime = ((long) int.MaxValue * 1000);
+            }
+            else
+            {
+                if (runningProcess.ProcessLifetimeTimeUnit == EnumTimeUnit.TICKS)
+                {
+                    procLifetime = (long) (runningProcess.ProcessLifetime*runningProcess.ClockSpeed);
+                }
+                else if (runningProcess.ProcessLifetimeTimeUnit == EnumTimeUnit.SECONDS)
+                {
+                    procLifetime = (long) (runningProcess.ProcessLifetime*1000);
+                }
+                else
+                {
+                    procLifetime = long.MaxValue;
+                    MessageBox.Show("Unknown Time Unit supplied for process lifetime");
+                }
+            }
+            return procLifetime;
+        }
 
-        private async void ExecuteShortestJobFirst()
+        /// <summary>
+        /// This function runs the scheduler in shortest job first
+        /// <param name="life"> the lifetime of the current process</param>
+        /// </summary>
+        private async void ExecuteShortestJobFirst(long life)
         {
             // TODO Shortest job first uses the number of instructions to calculate how long the job is, which may not be correct
-
+            lifetime = new Stopwatch();
             readyQueue = new Queue<SimulatorProcess>(readyQueue.OrderBy(x => x.Program.Instructions.Count));
             runningProcess = readyQueue.Dequeue();
             await CallFromMainThread(UpdateInterface);
+            lifetime.Reset();
+            lifetime.Start();
             while (!runningProcess.Unit.Stop && !runningProcess.Unit.Done &&
                    !runningProcess.Unit.Process.Terminated && !runningProcess.Unit.TimedOut)
             {
+                if (lifetime.ElapsedMilliseconds > life)
+                {
+                    runningProcess.Unit.Done = true;
+                }
                 runningProcess.Unit.ExecuteInstruction();
                 await CallFromMainThread(UpdateInterface);
             }
@@ -288,14 +353,24 @@ namespace CPU_OS_Simulator.Operating_System
                 runningProcess = readyQueue.Dequeue();
             }
         }
-
-        private async void ExecuteFirstComeFirstServed()
+        /// <summary>
+        /// This function runs the scheduler in first come first served mode
+        /// <param name="life">the lifetime of the current process</param>
+        /// </summary>
+        private async void ExecuteFirstComeFirstServed(long life)
         {
+            lifetime = new Stopwatch();
             runningProcess = readyQueue.Dequeue();
             //ProcessExecutionUnit unit = runningProcess.Unit;
+            lifetime.Reset();
+            lifetime.Start();
             while (!runningProcess.Unit.Stop && !runningProcess.Unit.Done &&
                    !runningProcess.Unit.Process.Terminated && !runningProcess.Unit.TimedOut)
             {
+                if (lifetime.ElapsedMilliseconds > life)
+                {
+                    runningProcess.Unit.Done = true;
+                }
                 runningProcess.Unit.ExecuteInstruction();
                 await CallFromMainThread(UpdateInterface);
             }
@@ -334,6 +409,10 @@ namespace CPU_OS_Simulator.Operating_System
             }
         }
 
+        /// <summary>
+        /// This function calculates the length of the timeslice when running in round robin mode
+        /// </summary>
+        /// <returns> the length of the timeslice in milliseconds </returns>
         private int CalculateTimeSlice()
         {
             int timeOutMills = 0;
@@ -354,30 +433,47 @@ namespace CPU_OS_Simulator.Operating_System
             }
             return timeOutMills;
         }
-
-        private async void ExecuteRoundRobin(int timeout, bool preEmptive)
+        /// <summary>
+        ///  This function runs the scheduler in round robin mode
+        /// </summary>
+        /// <param name="timeSlice"> the timeslice allocated to each process</param>
+        /// <param name="life"> the lifetime of the current process</param>
+        /// <param name="preEmptive"> whether the scheduler should be preEmptive 
+        /// i.e if a higher priority process enters the ready queue 
+        /// it will immediately start running</param>
+        private async void ExecuteRoundRobin(int timeSlice,long life, bool preEmptive)
         {
-            s = new Stopwatch();
+            timeout = new Stopwatch();
+            lifetime = new Stopwatch();
+
             while (readyQueue.Count > 0 && readyQueue.Peek() != null)
             {
                 runningProcess = readyQueue.Dequeue();
                 LoadPCB();
+                life = runningProcess.ProcessLifetime;
                 runningProcess.Unit.TimedOut = false;
                 runningProcess.ProcessState = EnumProcessState.RUNNING;
+                lifetime.Reset();
+                lifetime.Start();
+
                 if (preEmptive)
                 {
                     readyQueue = new Queue<SimulatorProcess>(readyQueue.OrderBy(x => x.ProcessPriority));
                     //Thread.Sleep(50);
-                    await CallFromMainThread(UpdateInterface); //HACK My WTF Train Goes WTF WTF WTF Chugga Chugga
+                    await CallFromMainThread(UpdateInterface); 
                 }
 
                 while (runningProcess != null && !runningProcess.Unit.Done && !runningProcess.Unit.Stop && !runningProcess.Unit.TimedOut)
                 {
-                    s.Start();
-                    if (s.ElapsedMilliseconds >= timeout)
+                    timeout.Start();
+                    if (this.timeout.ElapsedMilliseconds >= timeSlice)
                     {
                         TimeOutProcess(preEmptive);
                         break;
+                    }
+                    if (lifetime.ElapsedMilliseconds > life)
+                    {
+                        runningProcess.Unit.Done = true;
                     }
                     runningProcess.Unit.ExecuteInstruction();
                     await CallFromMainThread(UpdateInterface);
@@ -385,11 +481,15 @@ namespace CPU_OS_Simulator.Operating_System
                 runningProcess = null;
             }
         }
-
+        /// <summary>
+        /// This function is called when a process times out
+        /// </summary>
+        /// <param name="preEmptive">whether the scheduler is preEmptive</param>
         private async void TimeOutProcess(bool preEmptive)
         {
-            s.Stop();
-            s.Reset();
+            timeout.Stop();
+            timeout.Reset();
+            lifetime.Stop();
 
             if (runningProcess != null)
             {
@@ -421,12 +521,17 @@ namespace CPU_OS_Simulator.Operating_System
             }
         }
 
+        /// <summary>
+        /// This function Loads a processes PCB (Process Control Block) 
+        /// when a process re-enters the running state after it was timed out 
+        /// so it can carry on where it left off 
+        /// </summary>
         private void LoadPCB()
         {
             if (runningProcess.ControlBlock != null)
             {
                 ProcessControlBlock p = runningProcess.ControlBlock;
-                runningProcess.Unit.CurrentIndex = p.SpecialRegisters[0].Value/4; // TODO Change this to parse the value string when special registers are updated
+                runningProcess.Unit.CurrentIndex = p.SpecialRegisters[0].Value/4;
                 for (int i = 0; i < runningProcess.ControlBlock.Registers.Length; i++)
                 {
                     string registerName = String.Format("R{0:00}", i);
@@ -450,11 +555,17 @@ namespace CPU_OS_Simulator.Operating_System
                             .SetRegisterValue(p.SpecialRegisters[i].Value,p.SpecialRegisters[i].Type);
                     }
                 }
+                runningProcess.ProcessLifetime = p.LifetimeMills;
+                
             }
         }
 
        
-
+        /// <summary>
+        /// This function creates the flags required to construct a PCB (Process Control Block)
+        /// </summary>
+        /// <param name="currentProcess"> a reference to the process that the PCB will belong to</param>
+        /// <returns> a struct containing the flags to create a PCB or null if an error occurred</returns>
         private PCBFlags? CreatePCBFlags(ref SimulatorProcess currentProcess)
         {
             //SimulatorProcess currentProcess = waitingQueue.Peek();
@@ -475,6 +586,7 @@ namespace CPU_OS_Simulator.Operating_System
             flags.requestedResources = currentProcess.RequestedResources;
             flags.resourceStarved = currentProcess.ResourceStarved;
             flags.startAddress = currentProcess.Program.BaseAddress; // TODO Implement program start address
+            flags.lifetimeMills = (int) (currentProcess.ProcessLifetime - lifetime.ElapsedMilliseconds);
             flags.registers = new Register[21];
             for (int i = 0; i < flags.registers.Length; i++)
             {
@@ -495,7 +607,10 @@ namespace CPU_OS_Simulator.Operating_System
             flags.specialRegisters[6] = SpecialRegister.MDR;
             return flags;
         }
-
+        /// <summary>
+        /// This function gets the current operating system window instance from the window bridge
+        /// </summary>
+        /// <returns> the current operating system window instance </returns>
         private dynamic GetOSWindow()
         {
             Assembly windowBridge = Assembly.LoadFrom("CPU_OS_Simulator.WindowBridge.dll"); // Load the window bridge module

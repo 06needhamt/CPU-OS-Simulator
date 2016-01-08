@@ -251,6 +251,12 @@ namespace CPU_OS_Simulator.Operating_System
             set { unit = value; }
         }
 
+        public EnumTimeUnit ProcessLifetimeTimeUnit
+        {
+            get { return processLifetimeTimeUnit; }
+            set { processLifetimeTimeUnit = value; }
+        }
+
         /// <summary>
         /// Compares the current object with another object of the same type.
         /// </summary>
