@@ -19,6 +19,7 @@ var class_c_p_u___o_s___simulator_1_1_operating___system_1_1_scheduler =
     [ "TimeOutProcess", "class_c_p_u___o_s___simulator_1_1_operating___system_1_1_scheduler.html#a6a2257724b7574dc62b68037e523a640", null ],
     [ "UpdateInterface", "class_c_p_u___o_s___simulator_1_1_operating___system_1_1_scheduler.html#ac34fa53a93283545f0049794306e30a1", null ],
     [ "UpdateInterface", "class_c_p_u___o_s___simulator_1_1_operating___system_1_1_scheduler.html#aa412769133cc4c67741cba7dd2381061", null ],
+    [ "UpdateMainWindowInterface", "class_c_p_u___o_s___simulator_1_1_operating___system_1_1_scheduler.html#a01d61c6e4fe36cbb34322f9f9818f313", null ],
     [ "allowCPUAffinity", "class_c_p_u___o_s___simulator_1_1_operating___system_1_1_scheduler.html#a732d4b0d95cad3e280f9b69dd4f9f7c4", null ],
     [ "cpuClockSpeed", "class_c_p_u___o_s___simulator_1_1_operating___system_1_1_scheduler.html#ae1829f5340f76cad2150c9e1f9ab3c69", null ],
     [ "defaultScheduler", "class_c_p_u___o_s___simulator_1_1_operating___system_1_1_scheduler.html#afe8019eea4f52f2bd30c40c0ae576eac", null ],

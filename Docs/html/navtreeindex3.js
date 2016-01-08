@@ -1,5 +1,7 @@
 var NAVTREEINDEX3 =
 {
+"class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_compiled_program.html#a7cc5523ba4a83ee2842b246c83721be4":[1,0,0,3,0,1],
+"class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_compiled_program.html#ac046a32b0bd513aa4c7337ac987500c4":[1,0,0,3,0,2],
 "class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_compiled_program.html#ac3d1adb46ebd2132f53d3a1b880acc58":[1,0,0,3,0,5],
 "class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_compiled_program.html#afa16131ff99534fd4fe9bc4aaa21ac02":[1,0,0,3,0,4],
 "class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_execution_unit.html":[1,0,0,3,1],
@@ -247,7 +249,5 @@ var NAVTREEINDEX3 =
 "class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_status_flags.html#a96ee01f7bcf0a1d0810c75705e462b43":[1,0,0,3,12,7],
 "class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_status_flags.html#aa38943c12054a3f613161ecde5580f27":[1,0,0,3,12,6],
 "class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_status_flags.html#ab99e9cd2522d43a7dfd3224ff9ae0d79":[1,0,0,3,12,0],
-"class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_status_flags.html#aca93016e4ad4e70951b071ba2ae575c1":[1,0,0,3,12,1],
-"class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_status_flags.html#ad4725b32f8d1718df7e6a1b6b4a21170":[1,0,0,3,12,4],
-"class_c_p_u___o_s___simulator_1_1_colour_picker_window.html":[1,0,0,9]
+"class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_status_flags.html#aca93016e4ad4e70951b071ba2ae575c1":[1,0,0,3,12,1]
 };

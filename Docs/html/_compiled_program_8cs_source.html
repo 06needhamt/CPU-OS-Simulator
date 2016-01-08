@@ -157,7 +157,7 @@ $(document).ready(function(){initNavTree('_compiled_program_8cs_source.html','')
 <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    {</div>
 <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        Assembly windowBridge = Assembly.LoadFrom(<span class="stringliteral">&quot;CPU_OS_Simulator.WindowBridge.dll&quot;</span>); <span class="comment">// Load the window bridge module</span></div>
 <div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        Console.WriteLine(windowBridge.GetExportedTypes()[0]);</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        Type WindowType = windowBridge.GetType(windowBridge.GetExportedTypes()[0].ToString()); <span class="comment">// get the name of the type that contains the window instances</span></div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        Type WindowType = windowBridge.GetType(windowBridge.GetExportedTypes()[1].ToString()); <span class="comment">// get the name of the type that contains the window instances</span></div>
 <div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;        dynamic window = WindowType.GetField(<span class="stringliteral">&quot;MainWindowInstance&quot;</span>).GetValue(<a class="code" href="_old_01_process_01_flags_8cs.html#afb8e110345c45e74478894341ab6b28e">null</a>); <span class="comment">// get the value of the static MainWindowInstance field</span></div>
 <div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        <span class="keywordflow">return</span> window;</div>
 <div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    }</div>

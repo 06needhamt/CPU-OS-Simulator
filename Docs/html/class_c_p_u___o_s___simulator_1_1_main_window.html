@@ -149,6 +149,12 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ae73f56ccee0f45b0df54438b3d397dd9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_p_u___o_s___simulator_1_1_main_window.html#ae73f56ccee0f45b0df54438b3d397dd9">AddInstruction</a> (<a class="el" href="class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_instruction.html">Instruction</a> ins, int index)</td></tr>
 <tr class="memdesc:ae73f56ccee0f45b0df54438b3d397dd9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds an instruction to the currently loaded program  <a href="#ae73f56ccee0f45b0df54438b3d397dd9">More...</a><br /></td></tr>
 <tr class="separator:ae73f56ccee0f45b0df54438b3d397dd9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a27c9bde14aab0b0a82f5e13e0a71c86c"><td class="memItemLeft" align="right" valign="top">async void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_p_u___o_s___simulator_1_1_main_window.html#a27c9bde14aab0b0a82f5e13e0a71c86c">UpdateInterface</a> (object sender, ProgressChangedEventArgs e)</td></tr>
+<tr class="memdesc:a27c9bde14aab0b0a82f5e13e0a71c86c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Asynchronous function called after every instruction is executed to update required values and user interface asynchronously  <a href="#a27c9bde14aab0b0a82f5e13e0a71c86c">More...</a><br /></td></tr>
+<tr class="separator:a27c9bde14aab0b0a82f5e13e0a71c86c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adbb759abbf37061f785e82a9e7f7b3e1"><td class="memItemLeft" align="right" valign="top">async Task&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_p_u___o_s___simulator_1_1_main_window.html#adbb759abbf37061f785e82a9e7f7b3e1">UpdateInterface</a> ()</td></tr>
+<tr class="memdesc:adbb759abbf37061f785e82a9e7f7b3e1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Asynchronous function called after every instruction is executed to update required values and user interface asynchronously  <a href="#adbb759abbf37061f785e82a9e7f7b3e1">More...</a><br /></td></tr>
+<tr class="separator:adbb759abbf37061f785e82a9e7f7b3e1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a195e7715af146b207e5b973bd10c80c6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_p_u___o_s___simulator_1_1_main_window.html#a195e7715af146b207e5b973bd10c80c6">Dispose</a> ()</td></tr>
 <tr class="memdesc:a195e7715af146b207e5b973bd10c80c6"><td class="mdescLeft">&#160;</td><td class="mdescRight">This method is called when the window is getting disposed  <a href="#a195e7715af146b207e5b973bd10c80c6">More...</a><br /></td></tr>
 <tr class="separator:a195e7715af146b207e5b973bd10c80c6"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -485,14 +491,8 @@ Private Member Functions</h2></td></tr>
 <tr class="memitem:ad225bd7394d6ad45de9db58b562b91f7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_p_u___o_s___simulator_1_1_main_window.html#ad225bd7394d6ad45de9db58b562b91f7">CreateBackgroundWorker</a> ()</td></tr>
 <tr class="memdesc:ad225bd7394d6ad45de9db58b562b91f7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a background worker for the execution thread to run on  <a href="#ad225bd7394d6ad45de9db58b562b91f7">More...</a><br /></td></tr>
 <tr class="separator:ad225bd7394d6ad45de9db58b562b91f7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a27c9bde14aab0b0a82f5e13e0a71c86c"><td class="memItemLeft" align="right" valign="top">async void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_p_u___o_s___simulator_1_1_main_window.html#a27c9bde14aab0b0a82f5e13e0a71c86c">UpdateInterface</a> (object sender, ProgressChangedEventArgs e)</td></tr>
-<tr class="memdesc:a27c9bde14aab0b0a82f5e13e0a71c86c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Asynchronous function called after every instruction is executed to update required values and user interface asynchronously  <a href="#a27c9bde14aab0b0a82f5e13e0a71c86c">More...</a><br /></td></tr>
-<tr class="separator:a27c9bde14aab0b0a82f5e13e0a71c86c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a83ba6352a96515569978030013c84b72"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_p_u___o_s___simulator_1_1_main_window.html#a83ba6352a96515569978030013c84b72">CreateExecutionThread</a> (object sender, DoWorkEventArgs e)</td></tr>
 <tr class="separator:a83ba6352a96515569978030013c84b72"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adbb759abbf37061f785e82a9e7f7b3e1"><td class="memItemLeft" align="right" valign="top">async Task&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_p_u___o_s___simulator_1_1_main_window.html#adbb759abbf37061f785e82a9e7f7b3e1">UpdateInterface</a> ()</td></tr>
-<tr class="memdesc:adbb759abbf37061f785e82a9e7f7b3e1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Asynchronous function called after every instruction is executed to update required values and user interface asynchronously  <a href="#adbb759abbf37061f785e82a9e7f7b3e1">More...</a><br /></td></tr>
-<tr class="separator:adbb759abbf37061f785e82a9e7f7b3e1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8230feb5feca0e0cb95a8bd7e228426b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_p_u___o_s___simulator_1_1_main_window.html#a8230feb5feca0e0cb95a8bd7e228426b">UpdateStatusFlags</a> ()</td></tr>
 <tr class="separator:a8230feb5feca0e0cb95a8bd7e228426b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a03d4ec6b5990ad572db709f5305dd7ca"><td class="memItemLeft" align="right" valign="top">async void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_p_u___o_s___simulator_1_1_main_window.html#a03d4ec6b5990ad572db709f5305dd7ca">ExecuteProgram</a> (object program)</td></tr>
@@ -772,7 +772,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_c_p_u-_o_s_01_simulator_2_main_window_8xaml_8cs_source.html#l01035">1035</a> of file <a class="el" href="_c_p_u-_o_s_01_simulator_2_main_window_8xaml_8cs_source.html">MainWindow.xaml.cs</a>.</p>
+<p>Definition at line <a class="el" href="_c_p_u-_o_s_01_simulator_2_main_window_8xaml_8cs_source.html#l01038">1038</a> of file <a class="el" href="_c_p_u-_o_s_01_simulator_2_main_window_8xaml_8cs_source.html">MainWindow.xaml.cs</a>.</p>
 
 </div>
 </div>
@@ -979,7 +979,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_c_p_u-_o_s_01_simulator_2_main_window_8xaml_8cs_source.html#l01042">1042</a> of file <a class="el" href="_c_p_u-_o_s_01_simulator_2_main_window_8xaml_8cs_source.html">MainWindow.xaml.cs</a>.</p>
+<p>Definition at line <a class="el" href="_c_p_u-_o_s_01_simulator_2_main_window_8xaml_8cs_source.html#l01045">1045</a> of file <a class="el" href="_c_p_u-_o_s_01_simulator_2_main_window_8xaml_8cs_source.html">MainWindow.xaml.cs</a>.</p>
 
 </div>
 </div>
@@ -1060,7 +1060,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_c_p_u-_o_s_01_simulator_2_main_window_8xaml_8cs_source.html#l00945">945</a> of file <a class="el" href="_c_p_u-_o_s_01_simulator_2_main_window_8xaml_8cs_source.html">MainWindow.xaml.cs</a>.</p>
+<p>Definition at line <a class="el" href="_c_p_u-_o_s_01_simulator_2_main_window_8xaml_8cs_source.html#l00948">948</a> of file <a class="el" href="_c_p_u-_o_s_01_simulator_2_main_window_8xaml_8cs_source.html">MainWindow.xaml.cs</a>.</p>
 
 </div>
 </div>
@@ -1213,7 +1213,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_c_p_u-_o_s_01_simulator_2_main_window_8xaml_8cs_source.html#l01006">1006</a> of file <a class="el" href="_c_p_u-_o_s_01_simulator_2_main_window_8xaml_8cs_source.html">MainWindow.xaml.cs</a>.</p>
+<p>Definition at line <a class="el" href="_c_p_u-_o_s_01_simulator_2_main_window_8xaml_8cs_source.html#l01009">1009</a> of file <a class="el" href="_c_p_u-_o_s_01_simulator_2_main_window_8xaml_8cs_source.html">MainWindow.xaml.cs</a>.</p>
 
 </div>
 </div>
@@ -1249,7 +1249,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_c_p_u-_o_s_01_simulator_2_main_window_8xaml_8cs_source.html#l01048">1048</a> of file <a class="el" href="_c_p_u-_o_s_01_simulator_2_main_window_8xaml_8cs_source.html">MainWindow.xaml.cs</a>.</p>
+<p>Definition at line <a class="el" href="_c_p_u-_o_s_01_simulator_2_main_window_8xaml_8cs_source.html#l01051">1051</a> of file <a class="el" href="_c_p_u-_o_s_01_simulator_2_main_window_8xaml_8cs_source.html">MainWindow.xaml.cs</a>.</p>
 
 </div>
 </div>
@@ -1321,7 +1321,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_c_p_u-_o_s_01_simulator_2_main_window_8xaml_8cs_source.html#l00938">938</a> of file <a class="el" href="_c_p_u-_o_s_01_simulator_2_main_window_8xaml_8cs_source.html">MainWindow.xaml.cs</a>.</p>
+<p>Definition at line <a class="el" href="_c_p_u-_o_s_01_simulator_2_main_window_8xaml_8cs_source.html#l00941">941</a> of file <a class="el" href="_c_p_u-_o_s_01_simulator_2_main_window_8xaml_8cs_source.html">MainWindow.xaml.cs</a>.</p>
 
 </div>
 </div>
@@ -1356,7 +1356,7 @@ Private Attributes</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd></dd></dl>
 
-<p>Definition at line <a class="el" href="_c_p_u-_o_s_01_simulator_2_main_window_8xaml_8cs_source.html#l00929">929</a> of file <a class="el" href="_c_p_u-_o_s_01_simulator_2_main_window_8xaml_8cs_source.html">MainWindow.xaml.cs</a>.</p>
+<p>Definition at line <a class="el" href="_c_p_u-_o_s_01_simulator_2_main_window_8xaml_8cs_source.html#l00932">932</a> of file <a class="el" href="_c_p_u-_o_s_01_simulator_2_main_window_8xaml_8cs_source.html">MainWindow.xaml.cs</a>.</p>
 
 </div>
 </div>
@@ -1391,7 +1391,7 @@ Private Attributes</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>A task to indicate to the main thread that the function has finished executing</dd></dl>
 
-<p>Definition at line <a class="el" href="_c_p_u-_o_s_01_simulator_2_main_window_8xaml_8cs_source.html#l00917">917</a> of file <a class="el" href="_c_p_u-_o_s_01_simulator_2_main_window_8xaml_8cs_source.html">MainWindow.xaml.cs</a>.</p>
+<p>Definition at line <a class="el" href="_c_p_u-_o_s_01_simulator_2_main_window_8xaml_8cs_source.html#l00920">920</a> of file <a class="el" href="_c_p_u-_o_s_01_simulator_2_main_window_8xaml_8cs_source.html">MainWindow.xaml.cs</a>.</p>
 
 </div>
 </div>
@@ -1427,7 +1427,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_c_p_u-_o_s_01_simulator_2_main_window_8xaml_8cs_source.html#l00984">984</a> of file <a class="el" href="_c_p_u-_o_s_01_simulator_2_main_window_8xaml_8cs_source.html">MainWindow.xaml.cs</a>.</p>
+<p>Definition at line <a class="el" href="_c_p_u-_o_s_01_simulator_2_main_window_8xaml_8cs_source.html#l00987">987</a> of file <a class="el" href="_c_p_u-_o_s_01_simulator_2_main_window_8xaml_8cs_source.html">MainWindow.xaml.cs</a>.</p>
 
 </div>
 </div>
@@ -1463,7 +1463,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_c_p_u-_o_s_01_simulator_2_main_window_8xaml_8cs_source.html#l00991">991</a> of file <a class="el" href="_c_p_u-_o_s_01_simulator_2_main_window_8xaml_8cs_source.html">MainWindow.xaml.cs</a>.</p>
+<p>Definition at line <a class="el" href="_c_p_u-_o_s_01_simulator_2_main_window_8xaml_8cs_source.html#l00994">994</a> of file <a class="el" href="_c_p_u-_o_s_01_simulator_2_main_window_8xaml_8cs_source.html">MainWindow.xaml.cs</a>.</p>
 
 </div>
 </div>
@@ -1499,7 +1499,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_c_p_u-_o_s_01_simulator_2_main_window_8xaml_8cs_source.html#l00956">956</a> of file <a class="el" href="_c_p_u-_o_s_01_simulator_2_main_window_8xaml_8cs_source.html">MainWindow.xaml.cs</a>.</p>
+<p>Definition at line <a class="el" href="_c_p_u-_o_s_01_simulator_2_main_window_8xaml_8cs_source.html#l00959">959</a> of file <a class="el" href="_c_p_u-_o_s_01_simulator_2_main_window_8xaml_8cs_source.html">MainWindow.xaml.cs</a>.</p>
 
 </div>
 </div>
@@ -1535,7 +1535,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_c_p_u-_o_s_01_simulator_2_main_window_8xaml_8cs_source.html#l00963">963</a> of file <a class="el" href="_c_p_u-_o_s_01_simulator_2_main_window_8xaml_8cs_source.html">MainWindow.xaml.cs</a>.</p>
+<p>Definition at line <a class="el" href="_c_p_u-_o_s_01_simulator_2_main_window_8xaml_8cs_source.html#l00966">966</a> of file <a class="el" href="_c_p_u-_o_s_01_simulator_2_main_window_8xaml_8cs_source.html">MainWindow.xaml.cs</a>.</p>
 
 </div>
 </div>
@@ -1571,7 +1571,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_c_p_u-_o_s_01_simulator_2_main_window_8xaml_8cs_source.html#l00970">970</a> of file <a class="el" href="_c_p_u-_o_s_01_simulator_2_main_window_8xaml_8cs_source.html">MainWindow.xaml.cs</a>.</p>
+<p>Definition at line <a class="el" href="_c_p_u-_o_s_01_simulator_2_main_window_8xaml_8cs_source.html#l00973">973</a> of file <a class="el" href="_c_p_u-_o_s_01_simulator_2_main_window_8xaml_8cs_source.html">MainWindow.xaml.cs</a>.</p>
 
 </div>
 </div>
@@ -1607,7 +1607,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_c_p_u-_o_s_01_simulator_2_main_window_8xaml_8cs_source.html#l00977">977</a> of file <a class="el" href="_c_p_u-_o_s_01_simulator_2_main_window_8xaml_8cs_source.html">MainWindow.xaml.cs</a>.</p>
+<p>Definition at line <a class="el" href="_c_p_u-_o_s_01_simulator_2_main_window_8xaml_8cs_source.html#l00980">980</a> of file <a class="el" href="_c_p_u-_o_s_01_simulator_2_main_window_8xaml_8cs_source.html">MainWindow.xaml.cs</a>.</p>
 
 </div>
 </div>
@@ -2097,7 +2097,7 @@ Private Attributes</h2></td></tr>
 
 <p>This method is called when the window is getting disposed </p>
 
-<p>Definition at line <a class="el" href="_c_p_u-_o_s_01_simulator_2_main_window_8xaml_8cs_source.html#l01000">1000</a> of file <a class="el" href="_c_p_u-_o_s_01_simulator_2_main_window_8xaml_8cs_source.html">MainWindow.xaml.cs</a>.</p>
+<p>Definition at line <a class="el" href="_c_p_u-_o_s_01_simulator_2_main_window_8xaml_8cs_source.html#l01003">1003</a> of file <a class="el" href="_c_p_u-_o_s_01_simulator_2_main_window_8xaml_8cs_source.html">MainWindow.xaml.cs</a>.</p>
 
 </div>
 </div>
@@ -2131,7 +2131,7 @@ Private Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="_c_p_u-_o_s_01_simulator_2_main_window_8xaml_8cs_source.html#l00890">890</a> of file <a class="el" href="_c_p_u-_o_s_01_simulator_2_main_window_8xaml_8cs_source.html">MainWindow.xaml.cs</a>.</p>
+<p>Definition at line <a class="el" href="_c_p_u-_o_s_01_simulator_2_main_window_8xaml_8cs_source.html#l00893">893</a> of file <a class="el" href="_c_p_u-_o_s_01_simulator_2_main_window_8xaml_8cs_source.html">MainWindow.xaml.cs</a>.</p>
 
 </div>
 </div>
@@ -2684,9 +2684,6 @@ Private Attributes</h2></td></tr>
 <a class="anchor" id="a27c9bde14aab0b0a82f5e13e0a71c86c"></a>
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">async void CPU_OS_Simulator.MainWindow.UpdateInterface </td>
@@ -2706,11 +2703,6 @@ Private Attributes</h2></td></tr>
           <td></td><td></td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
 <p>Asynchronous function called after every instruction is executed to update required values and user interface asynchronously </p>
@@ -2729,9 +2721,6 @@ Private Attributes</h2></td></tr>
 <a class="anchor" id="adbb759abbf37061f785e82a9e7f7b3e1"></a>
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">async Task&lt;int&gt; CPU_OS_Simulator.MainWindow.UpdateInterface </td>
@@ -2740,11 +2729,6 @@ Private Attributes</h2></td></tr>
           <td></td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
 <p>Asynchronous function called after every instruction is executed to update required values and user interface asynchronously </p>
@@ -2883,7 +2867,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_c_p_u-_o_s_01_simulator_2_main_window_8xaml_8cs_source.html#l00879">879</a> of file <a class="el" href="_c_p_u-_o_s_01_simulator_2_main_window_8xaml_8cs_source.html">MainWindow.xaml.cs</a>.</p>
+<p>Definition at line <a class="el" href="_c_p_u-_o_s_01_simulator_2_main_window_8xaml_8cs_source.html#l00882">882</a> of file <a class="el" href="_c_p_u-_o_s_01_simulator_2_main_window_8xaml_8cs_source.html">MainWindow.xaml.cs</a>.</p>
 
 </div>
 </div>

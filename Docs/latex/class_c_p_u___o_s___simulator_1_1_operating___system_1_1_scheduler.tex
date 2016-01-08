@@ -96,7 +96,9 @@ void \hyperlink{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_schedul
 \hyperlink{struct_c_p_u___o_s___simulator_1_1_operating___system_1_1_p_c_b_flags}{P\+C\+B\+Flags} \hyperlink{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_scheduler_ad2cbb7bbe41e0eae42a68c3c691a4283}{Create\+P\+C\+B\+Flags} (ref \hyperlink{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_simulator_process}{Simulator\+Process} current\+Process)
 \begin{DoxyCompactList}\small\item\em This function creates the flags required to construct a P\+C\+B (Process Control Block) \end{DoxyCompactList}\item 
 dynamic \hyperlink{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_scheduler_abc2f3e3b3fe3881744a269575675d108}{Get\+O\+S\+Window} ()
-\begin{DoxyCompactList}\small\item\em This function gets the current operating system window instance from the window bridge \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em This function gets the current operating system window instance from the window bridge \end{DoxyCompactList}\item 
+async Task$<$ int $>$ \hyperlink{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_scheduler_a01d61c6e4fe36cbb34322f9f9818f313}{Update\+Main\+Window\+Interface} ()
+\begin{DoxyCompactList}\small\item\em This function updates the main window interface while the operating system executes \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Private Attributes}
 \begin{DoxyCompactItemize}
 \item 
@@ -202,7 +204,7 @@ the lifetime of the current process in milliseconds
 \end{DoxyReturn}
 
 
-Definition at line 272 of file Scheduler.\+cs.
+Definition at line 276 of file Scheduler.\+cs.
 
 \hypertarget{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_scheduler_a8331f2af3784e67f666b477487349262}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Scheduler@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Scheduler}!Calculate\+Time\+Slice@{Calculate\+Time\+Slice}}
 \index{Calculate\+Time\+Slice@{Calculate\+Time\+Slice}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Scheduler@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Scheduler}}
@@ -220,7 +222,7 @@ the length of the timeslice in milliseconds
 \end{DoxyReturn}
 
 
-Definition at line 416 of file Scheduler.\+cs.
+Definition at line 423 of file Scheduler.\+cs.
 
 \hypertarget{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_scheduler_a6b162741d7ccadc56da0e5a1b545efda}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Scheduler@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Scheduler}!Call\+From\+Main\+Thread@{Call\+From\+Main\+Thread}}
 \index{Call\+From\+Main\+Thread@{Call\+From\+Main\+Thread}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Scheduler@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Scheduler}}
@@ -243,7 +245,7 @@ A task to indicate to the calling thread that the function has finished executin
 \end{DoxyReturn}
 
 
-Definition at line 114 of file Scheduler.\+cs.
+Definition at line 115 of file Scheduler.\+cs.
 
 \hypertarget{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_scheduler_a5de68bce87efcb0d511d7e5a9bd4fe1f}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Scheduler@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Scheduler}!Create\+Background\+Worker@{Create\+Background\+Worker}}
 \index{Create\+Background\+Worker@{Create\+Background\+Worker}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Scheduler@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Scheduler}}
@@ -258,7 +260,7 @@ This function creates a background worker to run the scheduler on while keeping 
 
 
 
-Definition at line 88 of file Scheduler.\+cs.
+Definition at line 89 of file Scheduler.\+cs.
 
 \hypertarget{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_scheduler_a6b7d6ca2dc12aa2290263cc94aab7779}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Scheduler@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Scheduler}!Create\+Execution\+Thread@{Create\+Execution\+Thread}}
 \index{Create\+Execution\+Thread@{Create\+Execution\+Thread}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Scheduler@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Scheduler}}
@@ -281,7 +283,7 @@ This function creates a background thread to run the scheduler N\+O\+T\+E\+: Thi
 \end{DoxyParams}
 
 
-Definition at line 103 of file Scheduler.\+cs.
+Definition at line 104 of file Scheduler.\+cs.
 
 \hypertarget{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_scheduler_ad2cbb7bbe41e0eae42a68c3c691a4283}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Scheduler@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Scheduler}!Create\+P\+C\+B\+Flags@{Create\+P\+C\+B\+Flags}}
 \index{Create\+P\+C\+B\+Flags@{Create\+P\+C\+B\+Flags}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Scheduler@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Scheduler}}
@@ -304,7 +306,7 @@ a struct containing the flags to create a P\+C\+B or null if an error occurred
 \end{DoxyReturn}
 
 
-Definition at line 569 of file Scheduler.\+cs.
+Definition at line 580 of file Scheduler.\+cs.
 
 \hypertarget{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_scheduler_a457c5c63cdd37789a5812c8356612bdf}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Scheduler@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Scheduler}!Execute\+First\+Come\+First\+Served@{Execute\+First\+Come\+First\+Served}}
 \index{Execute\+First\+Come\+First\+Served@{Execute\+First\+Come\+First\+Served}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Scheduler@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Scheduler}}
@@ -324,7 +326,7 @@ This function runs the scheduler in first come first served mode
 
 
 
-Definition at line 360 of file Scheduler.\+cs.
+Definition at line 366 of file Scheduler.\+cs.
 
 \hypertarget{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_scheduler_a3332d58240380341a41583f8a042dd72}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Scheduler@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Scheduler}!Execute\+Round\+Robin@{Execute\+Round\+Robin}}
 \index{Execute\+Round\+Robin@{Execute\+Round\+Robin}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Scheduler@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Scheduler}}
@@ -350,7 +352,7 @@ This function runs the scheduler in round robin mode
 \end{DoxyParams}
 
 
-Definition at line 444 of file Scheduler.\+cs.
+Definition at line 451 of file Scheduler.\+cs.
 
 \hypertarget{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_scheduler_afed92ccdd4c4a4c02fdd762b290b4a57}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Scheduler@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Scheduler}!Execute\+Shortest\+Job\+First@{Execute\+Shortest\+Job\+First}}
 \index{Execute\+Shortest\+Job\+First@{Execute\+Shortest\+Job\+First}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Scheduler@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Scheduler}}
@@ -370,7 +372,7 @@ This function runs the scheduler in shortest job first
 
 
 
-Definition at line 303 of file Scheduler.\+cs.
+Definition at line 307 of file Scheduler.\+cs.
 
 \hypertarget{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_scheduler_abc2f3e3b3fe3881744a269575675d108}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Scheduler@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Scheduler}!Get\+O\+S\+Window@{Get\+O\+S\+Window}}
 \index{Get\+O\+S\+Window@{Get\+O\+S\+Window}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Scheduler@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Scheduler}}
@@ -388,7 +390,7 @@ the current operating system window instance
 \end{DoxyReturn}
 
 
-Definition at line 614 of file Scheduler.\+cs.
+Definition at line 625 of file Scheduler.\+cs.
 
 \hypertarget{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_scheduler_a3624587e4b65412422951fa59e64e885}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Scheduler@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Scheduler}!Load\+P\+C\+B@{Load\+P\+C\+B}}
 \index{Load\+P\+C\+B@{Load\+P\+C\+B}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Scheduler@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Scheduler}}
@@ -403,7 +405,7 @@ This function Loads a processes P\+C\+B (Process Control Block) when a process r
 
 
 
-Definition at line 529 of file Scheduler.\+cs.
+Definition at line 540 of file Scheduler.\+cs.
 
 \hypertarget{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_scheduler_adad5f14e290b9b67f727cd24b4f09158}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Scheduler@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Scheduler}!On\+Collection\+Changed@{On\+Collection\+Changed}}
 \index{On\+Collection\+Changed@{On\+Collection\+Changed}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Scheduler@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Scheduler}}
@@ -430,7 +432,7 @@ This function is the main scheduler loop that runs until no processes remain or 
 
 
 
-Definition at line 183 of file Scheduler.\+cs.
+Definition at line 184 of file Scheduler.\+cs.
 
 \hypertarget{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_scheduler_a0c5d3add7cf99eeb8c58c0a009ba6741}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Scheduler@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Scheduler}!Start@{Start}}
 \index{Start@{Start}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Scheduler@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Scheduler}}
@@ -453,7 +455,7 @@ whether the scheduler completed successfully
 \end{DoxyExceptions}
 
 
-Definition at line 126 of file Scheduler.\+cs.
+Definition at line 127 of file Scheduler.\+cs.
 
 \hypertarget{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_scheduler_a6a2257724b7574dc62b68037e523a640}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Scheduler@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Scheduler}!Time\+Out\+Process@{Time\+Out\+Process}}
 \index{Time\+Out\+Process@{Time\+Out\+Process}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Scheduler@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Scheduler}}
@@ -473,7 +475,7 @@ This function is called when a process times out
 \end{DoxyParams}
 
 
-Definition at line 488 of file Scheduler.\+cs.
+Definition at line 497 of file Scheduler.\+cs.
 
 \hypertarget{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_scheduler_ac34fa53a93283545f0049794306e30a1}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Scheduler@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Scheduler}!Update\+Interface@{Update\+Interface}}
 \index{Update\+Interface@{Update\+Interface}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Scheduler@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Scheduler}}
@@ -496,7 +498,7 @@ Asynchronous function called after every instruction is executed to update requi
 \end{DoxyParams}
 
 
-Definition at line 141 of file Scheduler.\+cs.
+Definition at line 142 of file Scheduler.\+cs.
 
 \hypertarget{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_scheduler_aa412769133cc4c67741cba7dd2381061}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Scheduler@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Scheduler}!Update\+Interface@{Update\+Interface}}
 \index{Update\+Interface@{Update\+Interface}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Scheduler@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Scheduler}}
@@ -514,7 +516,25 @@ A task to indicate to the main thread that the function has finished executing
 \end{DoxyReturn}
 
 
-Definition at line 162 of file Scheduler.\+cs.
+Definition at line 163 of file Scheduler.\+cs.
+
+\hypertarget{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_scheduler_a01d61c6e4fe36cbb34322f9f9818f313}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Scheduler@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Scheduler}!Update\+Main\+Window\+Interface@{Update\+Main\+Window\+Interface}}
+\index{Update\+Main\+Window\+Interface@{Update\+Main\+Window\+Interface}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Scheduler@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Scheduler}}
+\subsubsection[{Update\+Main\+Window\+Interface()}]{\setlength{\rightskip}{0pt plus 5cm}async Task$<$int$>$ C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Operating\+\_\+\+System.\+Scheduler.\+Update\+Main\+Window\+Interface (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_scheduler_a01d61c6e4fe36cbb34322f9f9818f313}
+
+
+This function updates the main window interface while the operating system executes 
+
+\begin{DoxyReturn}{Returns}
+a task object indicating to the calling thread that the task has completed
+\end{DoxyReturn}
+
+
+Definition at line 637 of file Scheduler.\+cs.
 
 
 
@@ -657,7 +677,7 @@ Property for whether \hyperlink{namespace_c_p_u___o_s___simulator_1_1_c_p_u}{C\+
 
 
 
-Definition at line 708 of file Scheduler.\+cs.
+Definition at line 733 of file Scheduler.\+cs.
 
 \hypertarget{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_scheduler_acef6087d200a91657055a533ac0e3474}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Scheduler@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Scheduler}!Default\+Scheduler@{Default\+Scheduler}}
 \index{Default\+Scheduler@{Default\+Scheduler}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Scheduler@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Scheduler}}
@@ -668,7 +688,7 @@ Property for whether we are using the default scheduler
 
 
 
-Definition at line 676 of file Scheduler.\+cs.
+Definition at line 701 of file Scheduler.\+cs.
 
 \hypertarget{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_scheduler_a7f0cc5668527496de0028013dae3be0c}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Scheduler@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Scheduler}!Ready\+Queue@{Ready\+Queue}}
 \index{Ready\+Queue@{Ready\+Queue}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Scheduler@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Scheduler}}
@@ -679,7 +699,7 @@ Property for the queue of processes that are ready to be executed
 
 
 
-Definition at line 627 of file Scheduler.\+cs.
+Definition at line 652 of file Scheduler.\+cs.
 
 \hypertarget{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_scheduler_aadb6b79c667cfd6baef113c44fb98f9e}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Scheduler@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Scheduler}!Rr\+\_\+\+Priority\+\_\+\+Policy@{Rr\+\_\+\+Priority\+\_\+\+Policy}}
 \index{Rr\+\_\+\+Priority\+\_\+\+Policy@{Rr\+\_\+\+Priority\+\_\+\+Policy}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Scheduler@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Scheduler}}
@@ -690,7 +710,7 @@ Property for the Round Robin priority policy being used by this scheduler
 
 
 
-Definition at line 684 of file Scheduler.\+cs.
+Definition at line 709 of file Scheduler.\+cs.
 
 \hypertarget{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_scheduler_ab21e8ffe8d0f06388cc2310d3dbb3b48}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Scheduler@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Scheduler}!Rr\+\_\+\+Time\+Slice@{Rr\+\_\+\+Time\+Slice}}
 \index{Rr\+\_\+\+Time\+Slice@{Rr\+\_\+\+Time\+Slice}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Scheduler@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Scheduler}}
@@ -701,7 +721,7 @@ Property for the length of the round robin time slice being used by this schedul
 
 
 
-Definition at line 659 of file Scheduler.\+cs.
+Definition at line 684 of file Scheduler.\+cs.
 
 \hypertarget{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_scheduler_acc7c4b6c0383e4cf1a65251335f44e6d}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Scheduler@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Scheduler}!Rr\+\_\+\+Type@{Rr\+\_\+\+Type}}
 \index{Rr\+\_\+\+Type@{Rr\+\_\+\+Type}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Scheduler@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Scheduler}}
@@ -712,7 +732,7 @@ Property for the type of round robin being used by the scheduler
 
 
 
-Definition at line 692 of file Scheduler.\+cs.
+Definition at line 717 of file Scheduler.\+cs.
 
 \hypertarget{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_scheduler_a6de759cc7e75011ef51456dd95104a95}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Scheduler@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Scheduler}!Running\+Process@{Running\+Process}}
 \index{Running\+Process@{Running\+Process}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Scheduler@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Scheduler}}
@@ -723,7 +743,7 @@ Property for the currently running process
 
 
 
-Definition at line 643 of file Scheduler.\+cs.
+Definition at line 668 of file Scheduler.\+cs.
 
 \hypertarget{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_scheduler_a17ad8e2a5da8823a25da6fa4190f532d}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Scheduler@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Scheduler}!Running\+With\+No\+Processes@{Running\+With\+No\+Processes}}
 \index{Running\+With\+No\+Processes@{Running\+With\+No\+Processes}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Scheduler@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Scheduler}}
@@ -734,7 +754,7 @@ Property for whether the scheduler is running with no processes
 
 
 
-Definition at line 716 of file Scheduler.\+cs.
+Definition at line 741 of file Scheduler.\+cs.
 
 \hypertarget{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_scheduler_afbf291846705747709c32eb79f1106b4}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Scheduler@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Scheduler}!Scheduling\+Policy@{Scheduling\+Policy}}
 \index{Scheduling\+Policy@{Scheduling\+Policy}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Scheduler@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Scheduler}}
@@ -745,7 +765,7 @@ Property for the scheduling policy currently being used by this scheduler
 
 
 
-Definition at line 651 of file Scheduler.\+cs.
+Definition at line 676 of file Scheduler.\+cs.
 
 \hypertarget{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_scheduler_aaf31b58cc7c6e632c0ce7ca34612e1ba}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Scheduler@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Scheduler}!Time\+Slice\+Unit@{Time\+Slice\+Unit}}
 \index{Time\+Slice\+Unit@{Time\+Slice\+Unit}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Scheduler@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Scheduler}}
@@ -756,7 +776,7 @@ Property for the unit of time used for time slices i.\+e ticks or seconds
 
 
 
-Definition at line 668 of file Scheduler.\+cs.
+Definition at line 693 of file Scheduler.\+cs.
 
 \hypertarget{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_scheduler_a3637999160bc25da430731042f42dd81}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Scheduler@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Scheduler}!Using\+Single\+Cpu@{Using\+Single\+Cpu}}
 \index{Using\+Single\+Cpu@{Using\+Single\+Cpu}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Scheduler@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Scheduler}}
@@ -767,7 +787,7 @@ Property for whether the scheduler is running on a single \hyperlink{namespace_c
 
 
 
-Definition at line 700 of file Scheduler.\+cs.
+Definition at line 725 of file Scheduler.\+cs.
 
 \hypertarget{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_scheduler_aac41827d1eff5710d0a9b5ea664dd99f}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Scheduler@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Scheduler}!Waiting\+Queue@{Waiting\+Queue}}
 \index{Waiting\+Queue@{Waiting\+Queue}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Scheduler@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Scheduler}}
@@ -778,7 +798,7 @@ Property for the queue of processes that are waiting to be serviced by the opera
 
 
 
-Definition at line 635 of file Scheduler.\+cs.
+Definition at line 660 of file Scheduler.\+cs.
 
 
 

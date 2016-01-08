@@ -1,0 +1,114 @@
+\hypertarget{class_c_p_u___o_s___simulator_1_1_window_bridge_1_1_window_accessor}{}\section{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Window\+Bridge.\+Window\+Accessor Class Reference}
+\label{class_c_p_u___o_s___simulator_1_1_window_bridge_1_1_window_accessor}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Window\+Bridge.\+Window\+Accessor@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Window\+Bridge.\+Window\+Accessor}}
+
+
+This class represents a way to access the user interface windows within code modules  
+
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_c_p_u___o_s___simulator_1_1_window_bridge_1_1_window_accessor_a526e9c20ad587f6fb7522748d75e4977}{Window\+Accessor} ()
+\begin{DoxyCompactList}\small\item\em Constructor for Window Accessor \end{DoxyCompactList}\item 
+async Task$<$ int $>$ \hyperlink{class_c_p_u___o_s___simulator_1_1_window_bridge_1_1_window_accessor_af977260a6abab473be320e316ea924c6}{Update\+Main\+Window\+Interface} ()
+\begin{DoxyCompactList}\small\item\em This function updates the main window interface by dispatching a task to the main thread \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Dispatcher \hyperlink{class_c_p_u___o_s___simulator_1_1_window_bridge_1_1_window_accessor_ac0574a3bce05895b0806df96ee20e27f}{dispatcher} = Dispatcher.\+Current\+Dispatcher
+\begin{DoxyCompactList}\small\item\em A dispatcher object which can dispatch tasks to the main program thread \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+async Task$<$ int $>$ \hyperlink{class_c_p_u___o_s___simulator_1_1_window_bridge_1_1_window_accessor_af8594312af2d637ebe4b6b982504038f}{Call\+From\+Main\+Thread} (Func$<$ Task$<$ int $>$$>$ Function\+Pointer)
+\begin{DoxyCompactList}\small\item\em Bridge function used to call functions on the main thread from within the background thread \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This class represents a way to access the user interface windows within code modules 
+
+
+
+Definition at line 13 of file Window\+Accessor.\+cs.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_c_p_u___o_s___simulator_1_1_window_bridge_1_1_window_accessor_a526e9c20ad587f6fb7522748d75e4977}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Window\+Bridge\+::\+Window\+Accessor@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Window\+Bridge\+::\+Window\+Accessor}!Window\+Accessor@{Window\+Accessor}}
+\index{Window\+Accessor@{Window\+Accessor}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Window\+Bridge\+::\+Window\+Accessor@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Window\+Bridge\+::\+Window\+Accessor}}
+\subsubsection[{Window\+Accessor()}]{\setlength{\rightskip}{0pt plus 5cm}C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Window\+Bridge.\+Window\+Accessor.\+Window\+Accessor (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{class_c_p_u___o_s___simulator_1_1_window_bridge_1_1_window_accessor_a526e9c20ad587f6fb7522748d75e4977}
+
+
+Constructor for Window Accessor 
+
+
+
+Definition at line 23 of file Window\+Accessor.\+cs.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_c_p_u___o_s___simulator_1_1_window_bridge_1_1_window_accessor_af8594312af2d637ebe4b6b982504038f}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Window\+Bridge\+::\+Window\+Accessor@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Window\+Bridge\+::\+Window\+Accessor}!Call\+From\+Main\+Thread@{Call\+From\+Main\+Thread}}
+\index{Call\+From\+Main\+Thread@{Call\+From\+Main\+Thread}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Window\+Bridge\+::\+Window\+Accessor@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Window\+Bridge\+::\+Window\+Accessor}}
+\subsubsection[{Call\+From\+Main\+Thread(\+Func$<$ Task$<$ int $>$$>$ Function\+Pointer)}]{\setlength{\rightskip}{0pt plus 5cm}async Task$<$int$>$ C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Window\+Bridge.\+Window\+Accessor.\+Call\+From\+Main\+Thread (
+\begin{DoxyParamCaption}
+\item[{Func$<$ Task$<$ int $>$$>$}]{Function\+Pointer}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{class_c_p_u___o_s___simulator_1_1_window_bridge_1_1_window_accessor_af8594312af2d637ebe4b6b982504038f}
+
+
+Bridge function used to call functions on the main thread from within the background thread 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Function\+Pointer} & The function to call \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A task to indicate to the calling thread that the function has finished executing
+\end{DoxyReturn}
+
+
+Definition at line 44 of file Window\+Accessor.\+cs.
+
+\hypertarget{class_c_p_u___o_s___simulator_1_1_window_bridge_1_1_window_accessor_af977260a6abab473be320e316ea924c6}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Window\+Bridge\+::\+Window\+Accessor@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Window\+Bridge\+::\+Window\+Accessor}!Update\+Main\+Window\+Interface@{Update\+Main\+Window\+Interface}}
+\index{Update\+Main\+Window\+Interface@{Update\+Main\+Window\+Interface}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Window\+Bridge\+::\+Window\+Accessor@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Window\+Bridge\+::\+Window\+Accessor}}
+\subsubsection[{Update\+Main\+Window\+Interface()}]{\setlength{\rightskip}{0pt plus 5cm}async Task$<$int$>$ C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Window\+Bridge.\+Window\+Accessor.\+Update\+Main\+Window\+Interface (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{class_c_p_u___o_s___simulator_1_1_window_bridge_1_1_window_accessor_af977260a6abab473be320e316ea924c6}
+
+
+This function updates the main window interface by dispatching a task to the main thread 
+
+\begin{DoxyReturn}{Returns}
+A task to indicate to the calling thread that the function has finished executing
+\end{DoxyReturn}
+
+
+Definition at line 32 of file Window\+Accessor.\+cs.
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{class_c_p_u___o_s___simulator_1_1_window_bridge_1_1_window_accessor_ac0574a3bce05895b0806df96ee20e27f}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Window\+Bridge\+::\+Window\+Accessor@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Window\+Bridge\+::\+Window\+Accessor}!dispatcher@{dispatcher}}
+\index{dispatcher@{dispatcher}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Window\+Bridge\+::\+Window\+Accessor@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Window\+Bridge\+::\+Window\+Accessor}}
+\subsubsection[{dispatcher}]{\setlength{\rightskip}{0pt plus 5cm}Dispatcher C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Window\+Bridge.\+Window\+Accessor.\+dispatcher = Dispatcher.\+Current\+Dispatcher}\label{class_c_p_u___o_s___simulator_1_1_window_bridge_1_1_window_accessor_ac0574a3bce05895b0806df96ee20e27f}
+
+
+A dispatcher object which can dispatch tasks to the main program thread 
+
+
+
+Definition at line 18 of file Window\+Accessor.\+cs.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Window\+Bridge/\hyperlink{_window_accessor_8cs}{Window\+Accessor.\+cs}\end{DoxyCompactItemize}

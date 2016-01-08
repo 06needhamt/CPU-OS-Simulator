@@ -1,5 +1,7 @@
 var NAVTREEINDEX4 =
 {
+"class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_status_flags.html#ad4725b32f8d1718df7e6a1b6b4a21170":[1,0,0,3,12,4],
+"class_c_p_u___o_s___simulator_1_1_colour_picker_window.html":[1,0,0,9],
 "class_c_p_u___o_s___simulator_1_1_colour_picker_window.html#a0a40b478316b3e45a63c67347ff9fc63":[1,0,0,9,14],
 "class_c_p_u___o_s___simulator_1_1_colour_picker_window.html#a1c1653bebad209bd313da5a18ecea9bc":[1,0,0,9,17],
 "class_c_p_u___o_s___simulator_1_1_colour_picker_window.html#a2969d055fb398db5c470dd91d89abffd":[1,0,0,9,6],
@@ -11,8 +13,8 @@ var NAVTREEINDEX4 =
 "class_c_p_u___o_s___simulator_1_1_colour_picker_window.html#a83c3f68e51fd577446e25cfb2a8d05ed":[1,0,0,9,10],
 "class_c_p_u___o_s___simulator_1_1_colour_picker_window.html#a83c3f68e51fd577446e25cfb2a8d05ed":[1,0,0,9,11],
 "class_c_p_u___o_s___simulator_1_1_colour_picker_window.html#a857b5ab5ebf06a29846e0595c3c442ad":[1,0,0,9,2],
-"class_c_p_u___o_s___simulator_1_1_colour_picker_window.html#a857b5ab5ebf06a29846e0595c3c442ad":[1,0,0,9,3],
 "class_c_p_u___o_s___simulator_1_1_colour_picker_window.html#a857b5ab5ebf06a29846e0595c3c442ad":[1,0,0,9,4],
+"class_c_p_u___o_s___simulator_1_1_colour_picker_window.html#a857b5ab5ebf06a29846e0595c3c442ad":[1,0,0,9,3],
 "class_c_p_u___o_s___simulator_1_1_colour_picker_window.html#a857b5ab5ebf06a29846e0595c3c442ad":[1,0,0,9,5],
 "class_c_p_u___o_s___simulator_1_1_colour_picker_window.html#ad3f58999085d75f00e86e4796aa87ed3":[1,0,0,9,15],
 "class_c_p_u___o_s___simulator_1_1_colour_picker_window.html#ae1fb4e0b93aecac6fdff7fe54382e033":[1,0,0,9,13],
@@ -247,7 +249,5 @@ var NAVTREEINDEX4 =
 "class_c_p_u___o_s___simulator_1_1_compiler_1_1_frontend_1_1_syntax_tree_1_1_string_array_node.html#a559630365acec250f2eed840010535f8":[1,0,0,0,1,1,13,0],
 "class_c_p_u___o_s___simulator_1_1_compiler_1_1_frontend_1_1_syntax_tree_1_1_string_array_node.html#a57893a3c331b998350c0bb8d5f220b79":[1,0,0,0,1,1,13,3],
 "class_c_p_u___o_s___simulator_1_1_compiler_1_1_frontend_1_1_syntax_tree_1_1_string_array_node.html#a57b4d674b9257b7304559bd8f6e796f4":[1,0,0,0,1,1,13,7],
-"class_c_p_u___o_s___simulator_1_1_compiler_1_1_frontend_1_1_syntax_tree_1_1_string_array_node.html#a736bb824c3e207f918237e1fdde209e7":[1,0,0,0,1,1,13,8],
-"class_c_p_u___o_s___simulator_1_1_compiler_1_1_frontend_1_1_syntax_tree_1_1_string_array_node.html#ab1fe0f32903bdd2b0980341665cbea63":[1,0,0,0,1,1,13,6],
-"class_c_p_u___o_s___simulator_1_1_compiler_1_1_frontend_1_1_syntax_tree_1_1_string_array_node.html#ad651c9685e3085bdcc0e6d7759239146":[1,0,0,0,1,1,13,4]
+"class_c_p_u___o_s___simulator_1_1_compiler_1_1_frontend_1_1_syntax_tree_1_1_string_array_node.html#a736bb824c3e207f918237e1fdde209e7":[1,0,0,0,1,1,13,8]
 };
