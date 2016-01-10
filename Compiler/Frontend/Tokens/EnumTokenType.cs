@@ -1,7 +1,11 @@
 ﻿namespace CPU_OS_Simulator.Compiler.Frontend.Tokens
 {
+    /// <summary>
+    /// This enum defines the different types of tokens used in the simulator programming language
+    /// </summary>
     public enum EnumTokenType
     {
+        #pragma warning disable 1591
         UNKNOWNN = -1,
         TYPE = 0,
         KEYWORD = 1,

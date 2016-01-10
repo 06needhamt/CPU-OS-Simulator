@@ -2,8 +2,17 @@
 
 namespace CPU_OS_Simulator.Compiler
 {
+    /// <summary>
+    /// This class contains extension methods used by the compiler module
+    /// </summary>
     public static class Extentions
     {
+        /// <summary>
+        /// This function splits a string while keeping all delimiter characters
+        /// </summary>
+        /// <param name="s">the string to split</param>
+        /// <param name="delims"> the delimiters to split on</param>
+        /// <returns></returns>
         public static IEnumerable<string> SplitAndKeep(this string s, char[] delims)
         {
             int start = 0, index;

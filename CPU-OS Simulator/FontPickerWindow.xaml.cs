@@ -12,11 +12,18 @@ namespace CPU_OS_Simulator
     public partial class FontPickerWindow : Window
     {
         private ConsoleWindow parent;
+        /// <summary>
+        /// Default constructor for font picker window
+        /// </summary>
         public FontPickerWindow()
         {
             InitializeComponent();
         }
-
+        /// <summary>
+        /// Constructor for font picker window that takes the window instance that is creating this window
+        /// PLEASE NOTE: This constructor should always be used so data can be passed back to the parent window
+        /// </summary>
+        /// <param name="parent">The window that is creating this window </param>
         public FontPickerWindow(ConsoleWindow parent)
         {
             this.parent = parent;
@@ -30,6 +37,9 @@ namespace CPU_OS_Simulator
 
         }
 
+        /// <summary>
+        /// This function populates the list of font styles
+        /// </summary>
         private void PopulateStyles()
         {
             lstbx_Style.ItemsSource = null;
@@ -40,6 +50,9 @@ namespace CPU_OS_Simulator
             lstbx_Style.Items.Add(FontStyles.Strikeout);
         }
 
+        /// <summary>
+        /// This function populates the list of fonts
+        /// </summary>
         private void PopulateFonts()
         {
             lstbx_Font.ItemsSource = null;

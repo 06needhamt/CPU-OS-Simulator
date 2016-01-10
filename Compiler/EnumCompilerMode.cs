@@ -5,6 +5,7 @@
     /// </summary>
     public enum EnumCompilerMode
     {
+        #pragma warning disable 1591
         UNKNOWN = -1,
         SOURCE_CODE = 0,
         INSTRUCTIONS = 1

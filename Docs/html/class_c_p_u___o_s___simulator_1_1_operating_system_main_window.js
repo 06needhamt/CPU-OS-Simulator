@@ -14,6 +14,7 @@ var class_c_p_u___o_s___simulator_1_1_operating_system_main_window =
     [ "CreatePCBFlags", "class_c_p_u___o_s___simulator_1_1_operating_system_main_window.html#a0994a475aa1e602964f610cce778b117", null ],
     [ "CreateProcessFlags", "class_c_p_u___o_s___simulator_1_1_operating_system_main_window.html#aa44b77efc3ae2c300ebb19e6854c3290", null ],
     [ "CreateSchedulerFlags", "class_c_p_u___o_s___simulator_1_1_operating_system_main_window.html#affe29a16b5dcb4faa896fd12b87268f6", null ],
+    [ "Delay", "class_c_p_u___o_s___simulator_1_1_operating_system_main_window.html#a981c8ed38feb78ab874753c641d278d6", null ],
     [ "InitializeComponent", "class_c_p_u___o_s___simulator_1_1_operating_system_main_window.html#abf657079159db7bb54ea7089f5b7b5db", null ],
     [ "InitializeComponent", "class_c_p_u___o_s___simulator_1_1_operating_system_main_window.html#abf657079159db7bb54ea7089f5b7b5db", null ],
     [ "InitializeComponent", "class_c_p_u___o_s___simulator_1_1_operating_system_main_window.html#abf657079159db7bb54ea7089f5b7b5db", null ],

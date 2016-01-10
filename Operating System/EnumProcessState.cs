@@ -5,6 +5,7 @@
     /// </summary>
     public enum EnumProcessState
     {
+        #pragma warning disable 1591
         UNKNOWN = -1,
         RUNNING = 0,
         READY = 1,

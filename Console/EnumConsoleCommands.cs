@@ -5,6 +5,7 @@
     /// </summary>
     public enum EnumConsoleCommands
     {
+        #pragma warning disable 1591
         [NumberOfParameters(0)]
         UNKNOWN = -1,
         [NumberOfParameters(0)]

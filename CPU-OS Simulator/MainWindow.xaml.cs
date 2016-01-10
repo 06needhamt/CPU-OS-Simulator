@@ -480,7 +480,9 @@ namespace CPU_OS_Simulator
         /// </summary>
         /// <param name="opcode"> the instruction opcode</param>
         /// <param name="op1"> the first operand</param>
+        /// <param name="op1mem"> whether the first operand is a memory address</param>
         /// <param name="op2"> the second operand</param>
+        /// <param name="op2mem"> whether the second operand is a memory address</param>
         /// <param name="Size"> the size of the instruction</param>
         /// <returns></returns>
         public Instruction CreateInstruction(EnumOpcodes opcode, Operand op1, bool op1mem, Operand op2, bool op2mem, int Size)
@@ -493,6 +495,7 @@ namespace CPU_OS_Simulator
         /// </summary>
         /// <param name="opcode"> the instruction opcode</param>
         /// <param name="op1"> the first operand</param>
+        /// <param name="op1mem"> whether the first operand is a memory address</param>
         /// <param name="Size"> the size of the instruction</param>
         public Instruction CreateInstruction(EnumOpcodes opcode, Operand op1, bool op1mem, int Size)
         {

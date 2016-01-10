@@ -1,7 +1,11 @@
 ﻿namespace CPU_OS_Simulator.Compiler.Frontend.Tokens
 {
+    /// <summary>
+    /// This enum defines the built in types in the simulator programming language
+    /// </summary>
     public enum EnumTypes
     {
+        #pragma warning disable 1591
         UNKNOWN = -1,
         INTEGER = 0,
         BOOLEAN = 1,

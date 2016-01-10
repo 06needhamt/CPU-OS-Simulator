@@ -5,6 +5,7 @@
     /// </summary>
     public enum EnumInstructionSegmentSizes
     {
+        #pragma warning disable 1591
         UNKNOWN = -1,
         OPCODE = 1,
         OPERAND = 5

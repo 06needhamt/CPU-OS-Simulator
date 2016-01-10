@@ -5,6 +5,7 @@
     /// </summary>
     public enum EnumOSState
     {
+        #pragma warning disable 1591
         UNKNOWN = -1,
         SUSPENDED = 0,
         RUNNING = 1,

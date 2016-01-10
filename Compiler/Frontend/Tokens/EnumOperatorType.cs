@@ -1,7 +1,11 @@
 ﻿namespace CPU_OS_Simulator.Compiler.Frontend.Tokens
 {
+    /// <summary>
+    /// This enum defines all of the operators in the simulator programming language
+    /// </summary>
     public enum EnumOperatorType
     {
+        #pragma warning disable 1591
         UNKNOWN = -1,
         PLUS = 1,
         MINUS =2,

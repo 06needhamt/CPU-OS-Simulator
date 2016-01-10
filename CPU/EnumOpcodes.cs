@@ -7,6 +7,8 @@ namespace CPU_OS_Simulator.CPU
     /// </summary>
     public enum EnumOpcodes
     {
+        #pragma warning disable 1591
+        
         #region Data Transfer
 
         [Description("Data Transfer: MOV Moves data to register")]

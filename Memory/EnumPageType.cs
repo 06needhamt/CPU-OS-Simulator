@@ -5,6 +5,7 @@
     /// </summary>
     public enum EnumPageType
     {
+        #pragma warning disable 1591
         UNKNOWN = -1,
         CODE = 0,
         DATA = 1

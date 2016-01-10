@@ -6,6 +6,7 @@
     /// </summary>
     public enum EnumRoundRobinType
     {
+        #pragma warning disable 1591
         UNKNOWN = -1,
         STATIC = 0,
         DYNAMIC = 1

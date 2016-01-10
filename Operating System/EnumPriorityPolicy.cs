@@ -5,6 +5,7 @@
     /// </summary>
     public enum EnumPriorityPolicy
     {
+        #pragma warning disable 1591
         UNKNOWN = -1,
         NO_PRIORITY = 0,
         NON_PRE_EMPTIVE = 1,

@@ -5,6 +5,7 @@
     /// </summary>
     public enum EnumSchedulingPolicies
     {
+        #pragma warning disable 1591
         UNKNOWN = -1,
         FIRST_COME_FIRST_SERVED = 0,
         SHORTEST_JOB_FIRST = 1,

@@ -4,6 +4,7 @@ var searchData=
   ['definefunctions',['DefineFunctions',['../class_c_p_u___o_s___simulator_1_1_compiler_1_1_frontend_1_1_lexer.html#a20ba99982182d2482f56f46d4d661a7d',1,'CPU_OS_Simulator::Compiler::Frontend::Lexer']]],
   ['definesubroutines',['DefineSubroutines',['../class_c_p_u___o_s___simulator_1_1_compiler_1_1_frontend_1_1_lexer.html#ab611ae0862d84b5446643fd75577324e',1,'CPU_OS_Simulator::Compiler::Frontend::Lexer']]],
   ['definevariables',['DefineVariables',['../class_c_p_u___o_s___simulator_1_1_compiler_1_1_frontend_1_1_lexer.html#a03760dde9cbc1aa09267e98d0788e544',1,'CPU_OS_Simulator::Compiler::Frontend::Lexer']]],
+  ['delay',['Delay',['../class_c_p_u___o_s___simulator_1_1_operating_system_main_window.html#a981c8ed38feb78ab874753c641d278d6',1,'CPU_OS_Simulator::OperatingSystemMainWindow']]],
   ['descriptionattr_3c_20t_20_3e',['DescriptionAttr&lt; T &gt;',['../class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_extentions.html#a57b9eeabb06f5b69160698e7106b2193',1,'CPU_OS_Simulator::CPU::Extentions']]],
   ['deserializeobject_3c_20t_20_3e',['DeSerializeObject&lt; T &gt;',['../class_c_p_u___o_s___simulator_1_1_main_window.html#a44e09f35524cd53ddab77488989c5833',1,'CPU_OS_Simulator::MainWindow']]],
   ['deserializeobjecttest',['DeSerializeObjectTest',['../class_c_p_u___o_s___simulator_tests_1_1_main_window_tests.html#a540e4db419a8cb65c5e0156a4dc5f6d1',1,'CPU_OS_SimulatorTests::MainWindowTests']]],

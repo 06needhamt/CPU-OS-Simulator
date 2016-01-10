@@ -5,9 +5,9 @@
     /// </summary>
     public enum EnumInstructionSize
     {
+        #pragma warning disable 1591
         //TODO add more instruction sizes
         MOV = 4,
-
         POP = 4
     }
 }

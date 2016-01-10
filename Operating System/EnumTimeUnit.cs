@@ -6,6 +6,7 @@
     /// </summary>
     public enum EnumTimeUnit
     {
+        #pragma warning disable 1591
         UNKNOWN = -1,
         TICKS = 0,
         SECONDS = 1,

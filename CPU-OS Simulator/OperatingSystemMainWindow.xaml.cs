@@ -46,7 +46,7 @@ namespace CPU_OS_Simulator
         /// Constructor for operating system window that takes the window instance that is creating this window
         /// PLEASE NOTE: This constructor should always be used so data can be passed back to the parent window
         /// </summary>
-        /// <param name="parentWindow">The window that is creating this window </param>
+        /// <param name="parent">The window that is creating this window </param>
         public OperatingSystemMainWindow(MainWindow parent)
         {
             this.parent = parent;
@@ -112,8 +112,7 @@ namespace CPU_OS_Simulator
 
         private void btn_Start_Click(object sender, RoutedEventArgs e)
         {
-            int t = 0;
-
+            
             if (osCore == null)
             {
                 CreateOsCore();

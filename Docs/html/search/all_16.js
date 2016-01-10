@@ -13,5 +13,5 @@ var searchData=
   ['windowinstances',['WindowInstances',['../class_c_p_u___o_s___simulator_1_1_window_bridge_1_1_window_instances.html',1,'CPU_OS_Simulator::WindowBridge']]],
   ['windowinstances_2ecs',['WindowInstances.cs',['../_window_instances_8cs.html',1,'']]],
   ['write',['WRITE',['../namespace_c_p_u___o_s___simulator_1_1_compiler_1_1_frontend_1_1_tokens.html#a86b87efebad08200cebe3075b5812b13ad4b9e47f65b6e79b010582f15785867e',1,'CPU_OS_Simulator::Compiler::Frontend::Tokens']]],
-  ['writingtocompilertester',['writingToCompilerTester',['../class_c_p_u___o_s___simulator_1_1_compiler_1_1_frontend_1_1_lexer.html#a8a75fa6d30d6d3b2ab713a729d85b081',1,'CPU_OS_Simulator.Compiler.Frontend.Lexer.writingToCompilerTester()'],['../class_c_p_u___o_s___simulator_1_1_compiler_1_1_frontend_1_1_lexer.html#ab036c4c1dbff32b7a8a54d58f4c4195c',1,'CPU_OS_Simulator.Compiler.Frontend.Lexer.WritingToCompilerTester()']]]
+  ['writingtocompilertester',['WritingToCompilerTester',['../class_c_p_u___o_s___simulator_1_1_compiler_1_1_frontend_1_1_lexer.html#ab036c4c1dbff32b7a8a54d58f4c4195c',1,'CPU_OS_Simulator.Compiler.Frontend.Lexer.WritingToCompilerTester()'],['../class_c_p_u___o_s___simulator_1_1_compiler_1_1_frontend_1_1_lexer.html#a8a75fa6d30d6d3b2ab713a729d85b081',1,'CPU_OS_Simulator.Compiler.Frontend.Lexer.writingToCompilerTester()']]]
 ];
