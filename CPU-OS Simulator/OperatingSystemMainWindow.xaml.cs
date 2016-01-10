@@ -1,7 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.Specialized;
+using System.Diagnostics;
 using System.Reflection;
+using System.Threading;
+using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Threading;
 using CPU_OS_Simulator.CPU;
@@ -329,6 +332,24 @@ namespace CPU_OS_Simulator
 
         private async void btn_CreateNewProcess_Click(object sender, RoutedEventArgs e)
         {
+            long delayMills = 0;
+            if (chk_DelayedProcess.IsChecked != null && chk_DelayedProcess.IsChecked.Value)
+            {
+                if (rdb_DelaySecs.IsChecked != null && rdb_DelaySecs.IsChecked.Value)
+                {
+                    delayMills = ((Convert.ToInt64(cmb_Arrival_Delay.SelectedValue) * 1000));
+                    await Delay(delayMills);
+                }
+                else if (rdb_DelayTicks.IsChecked != null && rdb_DelayTicks.IsChecked.Value)
+                {
+                    delayMills = (long)(Convert.ToInt64(cmb_Arrival_Delay.SelectedValue) * sld_ClockSpeed.Value);
+                    await Delay(delayMills);
+                }
+                else
+                {
+                    MessageBox.Show("Invalid Delay Time Unit Selected");
+                }
+            }
             if (osCore == null)
             {
                 CreateOsCore(); // try to create the OS Core
@@ -365,6 +386,23 @@ namespace CPU_OS_Simulator
             }
             osCore.Scheduler.ReadyQueue.Enqueue(proc); // add the process to the ready queue
             await dispatcher.InvokeAsync(UpdateInterface);
+        }
+
+        private async Task<long> Delay(long delayMills)
+        {
+            Thread DelayThread = new Thread(delegate(object o)
+            {
+                long i = 0; 
+                Stopwatch DelayStopwatch = new Stopwatch();
+                DelayStopwatch.Start();
+                while (DelayStopwatch.ElapsedMilliseconds < delayMills)
+                {
+                    i++;
+                }
+                DelayStopwatch.Reset();
+            });
+            DelayThread.Start(null);
+            return delayMills;
         }
 
         private async void UpdateInterface()

@@ -31,17 +31,19 @@ namespace CPU_OS_Simulator
 
         private List<SimulatorProgram> programList;
         private EnumInstructionMode instructionMode;
+
         /// <summary>
         /// String variable to hold the name of the currently loaded program
         /// </summary>
         public string currentProgram = string.Empty;
         private ExecutionUnit activeUnit;
         private Stopwatch s;
+
         /// <summary>
         /// Variable to hold the current instance of this window
         /// </summary>
         public static MainWindow currentInstance;
-        Dispatcher dispatcher = Dispatcher.CurrentDispatcher;
+        private Dispatcher dispatcher = Dispatcher.CurrentDispatcher;
         private BackgroundWorker executionWorker;
         private bool saved;
         private PageTableEntry currentPage;
