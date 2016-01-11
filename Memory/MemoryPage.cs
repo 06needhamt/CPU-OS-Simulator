@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using System.Reflection;
 using System.Windows;
 
@@ -149,13 +150,15 @@ namespace CPU_OS_Simulator.Memory
             dynamic wind = GetMainWindowInstance();
             PhysicalMemory physicalMemory = wind.Memory; // get a reference to physical memory from the main window
             SwapSpace swap = wind.SwapSpace;
-            temp = swap.SwappedMemoryPages[FrameNumber];
+            temp = swap.SwappedMemoryPages.Where(x => x.StartOffsetPhysical 
+            == physicalMemory.Table.Entries[FrameNumber].Page.startOffsetPhysical).FirstOrDefault();
+            int index = swap.SwappedMemoryPages.IndexOf(temp);
             if (physicalMemory.Table.Entries[FrameNumber].SwappedOut)// if this memory page is not already swapped in
             {
                 physicalMemory.Table.Entries[FrameNumber].SwappedOut = false;
                 physicalMemory.Table.Entries[FrameNumber].Faults++;
                 physicalMemory.AddPage(temp, FrameNumber);
-                swap.SwappedMemoryPages.RemoveAt(FrameNumber);
+                swap.SwappedMemoryPages.RemoveAt(index);
             }
             else
             {
