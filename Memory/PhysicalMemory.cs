@@ -45,7 +45,7 @@ namespace CPU_OS_Simulator.Memory
         {
             if (!isFull()) // if memory is not full
             {
-                pages.Insert(index,page);
+                pages.Add(page);
                 pageTable.Entries.Add(new PageTableEntry(pageTable.Entries.Count, page.StartOffset,
                     page.StartOffsetPhysical, false, page)); // add it to memory
                 
@@ -61,7 +61,7 @@ namespace CPU_OS_Simulator.Memory
                 MemoryPage swappedMemoryPage = pageTable.Entries[number].Page; 
                 //pageTable.Entries[number].SwappedOut = true;
                 swappedMemoryPage.SwapOut(swappedMemoryPage.StartOffsetPhysical,number); // swap out this memory page
-                pages.Insert(index - 1,page); // insert the new memory page
+                pages.Add(page); // insert the new memory page
                 /*pageTable.Entries.Add(new PageTableEntry(pageTable.Entries.Count + 1, page.StartOffset,
                     page.StartOffsetPhysical, false, page)); */
             }
