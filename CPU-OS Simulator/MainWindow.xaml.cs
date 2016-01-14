@@ -437,11 +437,20 @@ namespace CPU_OS_Simulator
         /// <param name="e"></param>
         private void btn_Delete_Click(object sender, RoutedEventArgs e)
         {
-            int index = lst_InstructionsList.SelectedIndex;
-            lst_InstructionsList.ItemsSource = null;
-            SimulatorProgram prog = programList.Where(x => x.Name.Equals(currentProgram)).FirstOrDefault();
-            prog.Instructions.RemoveAt(index);
-            UpdateIntructions();
+            try
+            {
+                int index = lst_InstructionsList.SelectedIndex;
+                lst_InstructionsList.ItemsSource = null;
+                SimulatorProgram prog = programList.Where(x => x.Name.Equals(currentProgram)).FirstOrDefault();
+                prog.Instructions.RemoveAt(index);
+                UpdateIntructions();
+            }
+            catch (Exception ex)
+            {
+                System.Console.WriteLine(ex.StackTrace);
+                MessageBox.Show("Could not delete instruction or there was no instruction selected to delete");
+            }
+           
         }
 
         /// <summary>
@@ -663,23 +672,38 @@ namespace CPU_OS_Simulator
 
         private void btn_Load_Click(object sender, RoutedEventArgs e)
         {
-            bool isloaded = LoadProgram(); // load a program file
-            if (!isloaded)
+            try
             {
-                throw new Exception("An error occurred while loading the program");
+                bool isloaded = LoadProgram(); // load a program file
+                if (!isloaded)
+                {
+                    throw new Exception("An error occurred while loading the program");
+                }
+                lst_ProgramList.SelectedItem = lst_ProgramList.Items[0];
+                System.Console.WriteLine("Program Loaded Successfully");
             }
-            lst_ProgramList.SelectedItem = lst_ProgramList.Items[0];
-            System.Console.WriteLine("Program Loaded Successfully");
+            catch (Exception ex)
+            {
+                System.Console.WriteLine(ex.StackTrace);
+            }
         }
 
         private void btn_Save_Click(object sender, RoutedEventArgs e)
         {
-            bool issaved = SaveProgram(); //save a program file
-            if (!issaved)
+            try
             {
-                throw new Exception("An error occurred while saving the program");
+                bool issaved = SaveProgram(); //save a program file
+                if (!issaved)
+                {
+                    throw new Exception("An error occurred while saving the program");
+                }
+                System.Console.WriteLine("Program Saved Successfully");
             }
-            System.Console.WriteLine("Program Saved Successfully");
+            catch (Exception ex)
+            {
+                System.Console.WriteLine(ex.StackTrace);
+            }
+            
         }
 
         /// <summary>
@@ -796,20 +820,38 @@ namespace CPU_OS_Simulator
 
         private void btn_Step_Click(object sender, RoutedEventArgs e)
         {
-            SimulatorProgram prog = programList.Where(x => x.Name.Equals(currentProgram)).FirstOrDefault();
-            if (activeUnit == null || !activeUnit.Program.Equals(prog))
+            try
             {
-                activeUnit = new ExecutionUnit(prog, (int)sld_ClockSpeed.Value, lst_InstructionsList.SelectedIndex);
+                SimulatorProgram prog = programList.Where(x => x.Name.Equals(currentProgram)).FirstOrDefault();
+                if (activeUnit == null || !activeUnit.Program.Equals(prog))
+                {
+                    activeUnit = new ExecutionUnit(prog, (int) sld_ClockSpeed.Value, lst_InstructionsList.SelectedIndex);
+                }
+                activeUnit.ExecuteInstruction();
+                lst_InstructionsList.SelectedIndex = activeUnit.CurrentIndex;
+                SpecialRegister.FindSpecialRegister("PC")
+                    .SetRegisterValue(prog.Instructions.ElementAt(lst_InstructionsList.SelectedIndex).LogicalAddress,
+                        EnumOperandType.VALUE);
+                SpecialRegister.FindSpecialRegister("IR")
+                    .SetRegisterValue(
+                        prog.Instructions.ElementAt(lst_InstructionsList.SelectedIndex).InstructionString,
+                        EnumOperandType.VALUE);
+                SpecialRegister.FindSpecialRegister("MDR")
+                    .SetRegisterValue(
+                        prog.Instructions.ElementAt(lst_InstructionsList.SelectedIndex).InstructionString,
+                        EnumOperandType.VALUE);
+                SpecialRegister.FindSpecialRegister("MAR")
+                    .SetRegisterValue(prog.Instructions.ElementAt(lst_InstructionsList.SelectedIndex).PhysicalAddress,
+                        EnumOperandType.VALUE);
+                UpdateRegisters();
+                UpdateStack();
+                UpdateSpecialRegisters();
             }
-            activeUnit.ExecuteInstruction();
-            lst_InstructionsList.SelectedIndex = activeUnit.CurrentIndex;
-            SpecialRegister.FindSpecialRegister("PC").SetRegisterValue(prog.Instructions.ElementAt(lst_InstructionsList.SelectedIndex).LogicalAddress, EnumOperandType.VALUE);
-            SpecialRegister.FindSpecialRegister("IR").SetRegisterValue(prog.Instructions.ElementAt(lst_InstructionsList.SelectedIndex).InstructionString, EnumOperandType.VALUE);
-            SpecialRegister.FindSpecialRegister("MDR").SetRegisterValue(prog.Instructions.ElementAt(lst_InstructionsList.SelectedIndex).InstructionString, EnumOperandType.VALUE);
-            SpecialRegister.FindSpecialRegister("MAR").SetRegisterValue(prog.Instructions.ElementAt(lst_InstructionsList.SelectedIndex).PhysicalAddress, EnumOperandType.VALUE);
-            UpdateRegisters();
-            UpdateStack();
-            UpdateSpecialRegisters();
+            catch (Exception ex)
+            {
+                System.Console.WriteLine(ex.StackTrace);
+                //MessageBox.Show("Please Load a Program before running the CPU");
+            }
         }
 
         private void btn_Run_Click(object sender, RoutedEventArgs e)
@@ -897,25 +939,33 @@ namespace CPU_OS_Simulator
         /// <param name="program"> The program object to execute</param>
         private async void ExecuteProgram(object program)
         {
-            s = new Stopwatch();
-            s.Start();
-            while (!activeUnit.Done && !activeUnit.Stop && !executionWorker.CancellationPending)
+            try
             {
-                activeUnit.ExecuteInstruction();
-                try
+                s = new Stopwatch();
+                s.Start();
+                while (!activeUnit.Done && !activeUnit.Stop && !executionWorker.CancellationPending)
                 {
-                    await CallFromMainThread(UpdateInterface);
+                    activeUnit.ExecuteInstruction();
+                    try
+                    {
+                        await CallFromMainThread(UpdateInterface);
+                    }
+                    catch (TaskCanceledException ex)
+                    {
+                        System.Console.WriteLine(ex.StackTrace);
+                        Environment.Exit(0);
+                    }
+
                 }
-                catch (TaskCanceledException ex)
-                {
-                    System.Console.WriteLine(ex.StackTrace);
-                    Environment.Exit(0);
-                }
-                
+                s.Stop();
+                MessageBox.Show("Program Completed in: " + await CalculateTime(s.ElapsedMilliseconds) + " Seconds", "", MessageBoxButton.OK, MessageBoxImage.Information);
+                //Thread.CurrentThread.Join();
             }
-            s.Stop();
-            MessageBox.Show("Program Completed in: " + await CalculateTime(s.ElapsedMilliseconds) + " Seconds", "", MessageBoxButton.OK, MessageBoxImage.Information);
-            //Thread.CurrentThread.Join();
+            catch (Exception ex)
+            {
+                System.Console.WriteLine(ex.StackTrace);
+            }
+          
         }
         /// <summary>
         /// Bridge function used to call functions on the main thread from within the background thread
@@ -945,7 +995,16 @@ namespace CPU_OS_Simulator
 
         private void btn_Stop_Click(object sender, RoutedEventArgs e)
         {
-            executionWorker.CancelAsync();
+            try
+            {
+                executionWorker.CancelAsync();
+            }
+            catch (Exception ex)
+            {
+                System.Console.WriteLine(ex.StackTrace);
+                MessageBox.Show("No Program to Stop");
+            }
+            
         }
 
         #endregion Methods

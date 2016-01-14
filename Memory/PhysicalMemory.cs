@@ -169,12 +169,23 @@ namespace CPU_OS_Simulator.Memory
         /// <returns> the requested memory page</returns>
         public MemoryPage RequestMemoryPage(int frameNumber)
         {
-            PageTableEntry requiredPage = pageTable.Entries.FirstOrDefault(x => x.FrameNumber == frameNumber);
-            if (requiredPage.SwappedOut)
+            try
             {
-                requiredPage.Page.SwapIn(requiredPage.Page.StartOffsetPhysical, frameNumber);
+                PageTableEntry requiredPage = pageTable.Entries.FirstOrDefault(x => x.FrameNumber == frameNumber);
+                if (requiredPage.SwappedOut)
+                {
+                    requiredPage.Page.SwapIn(requiredPage.Page.StartOffsetPhysical, frameNumber);
+                }
+                return pages[frameNumber];
             }
-            return pages[frameNumber];
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.StackTrace);
+                MessageBox.Show("The requested page is not available");
+                return null;
+            }
+            
+
         }
 
     }

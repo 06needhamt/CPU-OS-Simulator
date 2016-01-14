@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Linq;
 using System.Threading;
+using System.Windows;
 
 namespace CPU_OS_Simulator.CPU
 {
@@ -57,14 +58,23 @@ namespace CPU_OS_Simulator.CPU
         /// <param name="clockSpeed"> the clock speed of the CPU </param>
         public ExecutionUnit(SimulatorProgram program, int clockSpeed)
         {
-            this.program = program;
-            this.clockSpeed = clockSpeed;
-            currentIndex = 0;
-            logicalAddress = currentIndex * 4;
-            currentInstruction = program.Instructions.Where(x => x.LogicalAddress == logicalAddress).FirstOrDefault();
-            stop = false;
-            done = false;
-            SpecialRegister.FindSpecialRegister("BR").SetRegisterValue(program.BaseAddress, EnumOperandType.ADDRESS);
+            try
+            {
+                this.program = program;
+                this.clockSpeed = clockSpeed;
+                currentIndex = 0;
+                logicalAddress = currentIndex*4;
+                currentInstruction =
+                    program.Instructions.Where(x => x.LogicalAddress == logicalAddress).FirstOrDefault();
+                stop = false;
+                done = false;
+                SpecialRegister.FindSpecialRegister("BR").SetRegisterValue(program.BaseAddress, EnumOperandType.ADDRESS);
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.StackTrace);
+                MessageBox.Show("Please load a program before running the CPU");
+            }
         }
 
         /// <summary>
@@ -75,17 +85,27 @@ namespace CPU_OS_Simulator.CPU
         /// <param name="clockSpeed"> the clock speed of the CPU </param>
         public ExecutionUnit(SimulatorProgram program, int clockSpeed, int currentIndex) : this(program, clockSpeed)
         {
-            if (currentIndex < 0)
+            try
             {
-                currentIndex = 0;
+                if (currentIndex < 0)
+                {
+                    currentIndex = 0;
+                }
+                this.currentIndex = currentIndex;
+                logicalAddress = currentIndex*4;
+                currentInstruction =
+                    program.Instructions.Where(x => x.LogicalAddress == logicalAddress).FirstOrDefault();
+                stop = false;
+                done = false;
+                SpecialRegister.FindSpecialRegister("BR").SetRegisterValue(program.BaseAddress, EnumOperandType.ADDRESS);
             }
-            this.currentIndex = currentIndex;
-            logicalAddress = currentIndex * 4;
-            currentInstruction = program.Instructions.Where(x => x.LogicalAddress == logicalAddress).FirstOrDefault();
-            stop = false;
-            done = false;
-            SpecialRegister.FindSpecialRegister("BR").SetRegisterValue(program.BaseAddress, EnumOperandType.ADDRESS);
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.StackTrace);
+                //MessageBox.Show("Please load a program before running the CPU");
+            }
         }
+
 
         #endregion Constructors
 
@@ -96,44 +116,57 @@ namespace CPU_OS_Simulator.CPU
         /// </summary>
         public void ExecuteInstruction()
         {
-            Console.WriteLine("Executing instruction");
-            logicalAddress = currentIndex * 4;
-            Console.WriteLine(logicalAddress);
-            currentInstruction = program.Instructions.Where(x => x.LogicalAddress == logicalAddress).FirstOrDefault();
-            if (currentInstruction != null)
+            try
             {
-                if (currentInstruction.Opcode == (int) EnumOpcodes.JMP
-                    || currentInstruction.Opcode == (int) EnumOpcodes.JEQ
-                    || currentInstruction.Opcode == (int) EnumOpcodes.JNE
-                    || currentInstruction.Opcode == (int) EnumOpcodes.JGT
-                    || currentInstruction.Opcode == (int) EnumOpcodes.JGE
-                    || currentInstruction.Opcode == (int) EnumOpcodes.JLT
-                    || currentInstruction.Opcode == (int) EnumOpcodes.JLE
-                    || currentInstruction.Opcode == (int) EnumOpcodes.JNZ
-                    || currentInstruction.Opcode == (int) EnumOpcodes.JZR) // if we are executing a jump instruction do not increment the program counter
+                Console.WriteLine("Executing instruction");
+                logicalAddress = currentIndex*4;
+                Console.WriteLine(logicalAddress);
+                currentInstruction =
+                    program.Instructions.Where(x => x.LogicalAddress == logicalAddress).FirstOrDefault();
+                if (currentInstruction != null)
                 {
-                    //program.Instructions.ElementAt(currentIndex).Execute();
-                    currentInstruction.Execute();
+                    if (currentInstruction.Opcode == (int) EnumOpcodes.JMP
+                        || currentInstruction.Opcode == (int) EnumOpcodes.JEQ
+                        || currentInstruction.Opcode == (int) EnumOpcodes.JNE
+                        || currentInstruction.Opcode == (int) EnumOpcodes.JGT
+                        || currentInstruction.Opcode == (int) EnumOpcodes.JGE
+                        || currentInstruction.Opcode == (int) EnumOpcodes.JLT
+                        || currentInstruction.Opcode == (int) EnumOpcodes.JLE
+                        || currentInstruction.Opcode == (int) EnumOpcodes.JNZ
+                        || currentInstruction.Opcode == (int) EnumOpcodes.JZR)
+                        // if we are executing a jump instruction do not increment the program counter
+                    {
+                        //program.Instructions.ElementAt(currentIndex).Execute();
+                        currentInstruction.Execute();
+                    }
+                    else // otherwise increment the program counter
+                    {
+                        //program.Instructions.ElementAt(currentIndex).Execute();
+                        currentInstruction.Execute();
+                        currentIndex++;
+                    }
+                    SpecialRegister.FindSpecialRegister("PC")
+                        .SetRegisterValue(currentInstruction.LogicalAddress, EnumOperandType.VALUE);
+                    SpecialRegister.FindSpecialRegister("IR")
+                        .SetRegisterValue(currentInstruction.InstructionString, EnumOperandType.VALUE);
+                    SpecialRegister.FindSpecialRegister("MDR")
+                        .SetRegisterValue(currentInstruction.InstructionString, EnumOperandType.VALUE);
+                    SpecialRegister.FindSpecialRegister("MAR")
+                        .SetRegisterValue(currentInstruction.PhysicalAddress, EnumOperandType.VALUE);
+                    if (currentIndex == program.Instructions.Count)
+                    {
+                        Done = true;
+                    }
+                    Thread.Sleep(clockSpeed);
                 }
-                else // otherwise increment the program counter
-                {
-                    //program.Instructions.ElementAt(currentIndex).Execute();
-                    currentInstruction.Execute();
-                    currentIndex++;
-                }
-                SpecialRegister.FindSpecialRegister("PC").SetRegisterValue(currentInstruction.LogicalAddress, EnumOperandType.VALUE);
-                SpecialRegister.FindSpecialRegister("IR").SetRegisterValue(currentInstruction.InstructionString, EnumOperandType.VALUE);
-                SpecialRegister.FindSpecialRegister("MDR").SetRegisterValue(currentInstruction.InstructionString, EnumOperandType.VALUE);
-                SpecialRegister.FindSpecialRegister("MAR").SetRegisterValue(currentInstruction.PhysicalAddress, EnumOperandType.VALUE);
-                if (currentIndex == program.Instructions.Count)
+                else
                 {
                     Done = true;
                 }
-                Thread.Sleep(clockSpeed);
             }
-            else
+            catch (Exception ex)
             {
-                Done = true;
+                Console.WriteLine(ex.StackTrace);
             }
         }
 

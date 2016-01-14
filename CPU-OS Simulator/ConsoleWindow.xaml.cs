@@ -8,6 +8,7 @@ using System.Reflection;
 using System.Windows;
 using System.Windows.Input;
 using System.Windows.Media;
+using System.Printing;
 using CPU_OS_Simulator.Console;
 using Color = System.Windows.Media.Color;
 using FontStyle = System.Drawing.FontStyle;
@@ -24,6 +25,7 @@ namespace CPU_OS_Simulator
         private string fontName = String.Empty;
         private int fontSize = 12;
         private int fontStyles;
+        private PrintQueue defaultPrintQueue = LocalPrintServer.GetDefaultPrintQueue();
 
         /// <summary>
         /// The current active instance of the console window
@@ -139,7 +141,7 @@ namespace CPU_OS_Simulator
         }
 
         /// <summary>
-        /// This method sets the console window instance in the window bridge o it can be accessed by other modules
+        /// This method sets the console window instance in the window bridge so it can be accessed by other modules
         /// </summary>
         private void SetConsoleWindowInstance()
         {
@@ -151,30 +153,43 @@ namespace CPU_OS_Simulator
 
         private void btn_Print_Click(object sender, RoutedEventArgs e)
         {
-            string textToPrint = txt_Console.Text;
-            if (fontName == String.Empty)
-            {
-                fontName = "Consolas";
-                fontStyles = 0;
-                fontSize = 12;
-            }
-            textColor = ((SolidColorBrush)txt_Console.Foreground).Color;
-            PrintableDocument printableDocument = new PrintableDocument();
-            Font f = new Font(fontName, fontSize, (FontStyle)fontStyles);
-            printableDocument.PrintPage += delegate (object o, PrintPageEventArgs args)
-            {
-                args.Graphics.DrawString(textToPrint, f, new SolidBrush(System.Drawing.Color.Black), 0, 0);
-            };
+            //try
+            //{
+                string textToPrint = txt_Console.Text;
+                if (fontName == String.Empty)
+                {
+                    fontName = "Consolas";
+                    fontStyles = 0;
+                    fontSize = 12;
+                }
+                textColor = ((SolidColorBrush) txt_Console.Foreground).Color;
+                PrintableDocument printableDocument = new PrintableDocument();
+                Font f = new Font(fontName, fontSize, (FontStyle) fontStyles);
+                printableDocument.PrintPage += delegate(object o, PrintPageEventArgs args)
+                {
+                    args.Graphics.DrawString(textToPrint, f, new SolidBrush(System.Drawing.Color.Black), 0, 0);
+                };
 #if DEBUG
-            printableDocument.PrinterSettings.PrintToFile = true;
-            printableDocument.PrinterSettings.PrintFileName = "Test File \n";
-            txt_Console.Text += "\n Printing To File: " + printableDocument.PrinterSettings.PrintFileName + "\n";
-            txt_Console.CaretIndex = txt_Console.Text.Length;
-            printableDocument.Print();
+                Assembly ass = Assembly.GetEntryAssembly();
+                string directory = ass.Location;
+                string fileName = directory.Substring(0, directory.Length - 21) + @"\Test Print";
+                printableDocument.PrinterSettings.PrintToFile = true;
+                printableDocument.PrinterSettings.PrintFileName = fileName;
+                printableDocument.PrinterSettings.Copies = 1;
+                txt_Console.Text += "\n Printing To File: " + printableDocument.PrinterSettings.PrintFileName + "\n";
+                txt_Console.CaretIndex = txt_Console.Text.Length;
+                printableDocument.Print();
+                PrintSystemJobInfo info = defaultPrintQueue.AddJob(fileName, fileName, false);
 #else
             printableDocument.PrinterSettings.PrintToFile = false;
             printableDocument.Print();
 #endif
+            //}
+            //catch (Exception ex)
+            //{
+            //    System.Console.WriteLine(ex.StackTrace);
+            //    MessageBox.Show("There was an error while printing the document");
+            //}
         }
 
         private void btn_Clear_Click(object sender, RoutedEventArgs e)
