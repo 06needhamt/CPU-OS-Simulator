@@ -622,5 +622,30 @@ namespace CPU_OS_Simulator
             PCBFlags flags = new PCBFlags();
             return flags;
         }
+
+        private void btn_Wait_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                SimulatorProcess selectedProcess = (SimulatorProcess) lst_RunningProcesses.SelectedItem;
+                if (selectedProcess == null)
+                {
+                    MessageBox.Show("Please Select A Process");
+                    return;
+                }
+                Stopwatch s = new Stopwatch();
+                int waitTime = (int) cmb_Wait_Period.SelectedItem*1000;
+                osCore.Scheduler.WaitingQueue.Enqueue(selectedProcess);
+                s.Start();
+                while (s.ElapsedMilliseconds < waitTime) ;
+                selectedProcess = osCore.Scheduler.WaitingQueue.Dequeue();
+                osCore.Scheduler.ReadyQueue.Enqueue(selectedProcess);
+            }
+            catch (Exception ex)
+            {
+                System.Console.WriteLine(ex.StackTrace);
+                MessageBox.Show("An error occurred while moving the selected process to the waiting state");
+            }
+        }
     }
 }
