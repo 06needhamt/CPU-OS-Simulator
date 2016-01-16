@@ -1,14 +1,18 @@
 ﻿using System;
+using System.CodeDom;
 using System.Collections.Generic;
 using System.Collections.Specialized;
 using System.Diagnostics;
+using System.IO;
 using System.Reflection;
 using System.Threading;
 using System.Threading.Tasks;
+using System.Web.Script.Serialization;
 using System.Windows;
 using System.Windows.Threading;
 using CPU_OS_Simulator.CPU;
 using CPU_OS_Simulator.Operating_System;
+using Microsoft.Win32;
 
 namespace CPU_OS_Simulator
 {
@@ -17,16 +21,18 @@ namespace CPU_OS_Simulator
     /// </summary>
     public partial class OperatingSystemMainWindow : Window , INotifyCollectionChanged
     {
+        [ScriptIgnore]
         private MainWindow parent;
         private List<SimulatorProgram> programList;
         private OSCore osCore = null;
-        private string missingFlag = String.Empty;
         private List<SimulatorProcess> processes;
-        private OSFlags globalFlags;
+        private OSFlags? globalFlags;
+        [ScriptIgnore]
         private Dispatcher dispatcher = Dispatcher.CurrentDispatcher;
         /// <summary>
         /// Variable to hold the current instance of this window so it can be accessed by other modules
         /// </summary>
+        [ScriptIgnore]
         public static OperatingSystemMainWindow currentInstance;
 
         public event NotifyCollectionChangedEventHandler CollectionChanged;
@@ -371,7 +377,7 @@ namespace CPU_OS_Simulator
             processes.Add(proc); // add the process to the OS
             if (osCore.Scheduler == null) // if the scheduler is null try to create it
             {
-                SchedulerFlags? schedulerFlags = CreateSchedulerFlags(globalFlags); // create scheduler flags
+                SchedulerFlags? schedulerFlags = CreateSchedulerFlags(globalFlags.Value); // create scheduler flags
                 if (schedulerFlags != null) // if the flags are valid
                     osCore.Scheduler = new Scheduler(schedulerFlags.Value); // create a new Scheduler
                 else
@@ -384,7 +390,7 @@ namespace CPU_OS_Simulator
                 }
             }
             osCore.Scheduler.ReadyQueue.Enqueue(proc); // add the process to the ready queue
-            await dispatcher.InvokeAsync(UpdateInterface);
+            await dispatcher.InvokeAsync((Func<Task<int>>)UpdateInterface);
         }
 
         private async Task<long> Delay(long delayMills)
@@ -404,8 +410,11 @@ namespace CPU_OS_Simulator
             return delayMills;
         }
 
-        private async void UpdateInterface()
+        private async Task<int> UpdateInterface()
         {
+            int RunningIndex = lst_RunningProcesses.SelectedIndex;
+            int ReadyIndex = lst_ReadyProcesses.SelectedIndex;
+            int WaitingIndex = lst_WaitingProcesses.SelectedIndex;
             lst_ReadyProcesses.ItemsSource = null;
             lst_RunningProcesses.ItemsSource = null;
             lst_WaitingProcesses.ItemsSource = null;
@@ -418,7 +427,12 @@ namespace CPU_OS_Simulator
             lst_ReadyProcesses.ItemsSource = osCore.Scheduler.ReadyQueue;
             lst_WaitingProcesses.ItemsSource = osCore.Scheduler.WaitingQueue;
             txtProcessName.Text = "P" + Convert.ToString(processes.Count + 1);
+            lst_RunningProcesses.SelectedIndex = RunningIndex;
+            lst_ReadyProcesses.SelectedIndex = ReadyIndex;
+            lst_WaitingProcesses.SelectedIndex = WaitingIndex; //TODO URGENT Keep selected items after updating the interface
+            return 0;
         }
+
 
         /// <summary>
         /// This function creates the process flags
@@ -623,7 +637,7 @@ namespace CPU_OS_Simulator
             return flags;
         }
 
-        private void btn_Wait_Click(object sender, RoutedEventArgs e)
+        private async void btn_Wait_Click(object sender, RoutedEventArgs e)
         {
             try
             {
@@ -640,6 +654,7 @@ namespace CPU_OS_Simulator
                 while (s.ElapsedMilliseconds < waitTime) ;
                 selectedProcess = osCore.Scheduler.WaitingQueue.Dequeue();
                 osCore.Scheduler.ReadyQueue.Enqueue(selectedProcess);
+                await UpdateInterface();
             }
             catch (Exception ex)
             {
@@ -647,5 +662,141 @@ namespace CPU_OS_Simulator
                 MessageBox.Show("An error occurred while moving the selected process to the waiting state");
             }
         }
+
+        private void btn_Queue_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private async void btn_SaveState_Click(object sender, RoutedEventArgs e)
+        {
+            SaveFileDialog sfd = new SaveFileDialog();
+            sfd.DefaultExt = "*.soss";
+            sfd.Filter = "Simulator OS State | *.soss";
+            sfd.ShowDialog();
+            bool saved = await SaveOSState(sfd.FileName);
+            if (!saved)
+            {
+                MessageBox.Show("There was an error while saving the OS State");
+                return;
+            }
+            await UpdateInterface();
+        }
+
+        private async Task<bool> SaveOSState(string fileName)
+        {
+            SerializeObject<OSCore>(osCore,fileName);
+            if (File.Exists(fileName))
+            {
+                return true;
+            }
+            return false;
+        }
+
+        private async void btn_LoadState_Click(object sender, RoutedEventArgs e)
+        {
+            OpenFileDialog ofd = new OpenFileDialog();
+            ofd.DefaultExt = "*.soss";
+            ofd.Filter = "Simulator OS State | *.soss";
+            ofd.ShowDialog();
+            bool loaded = await LoadOSState(ofd.FileName);
+            if (!loaded)
+            {
+                MessageBox.Show("There was an error while loading the OS state");
+                return;
+            }
+            await UpdateInterface();
+        }
+
+        private async Task<bool> LoadOSState(string fileName)
+        {
+            DeSerializeObject<object>(fileName);
+            if (osCore != null && processes != null && programList != null && globalFlags != null)
+            {
+                return true;
+            }
+            return false;
+        } 
+
+        /// <summary>
+        /// Serializes a program List.
+        /// </summary>
+        /// <typeparam name="T">The type of program</typeparam>
+        /// <param name="serializableObject"> the object to serialize</param>
+        /// <param name="filePath">the file to save the objects to</param>
+        private void SerializeObject<T>(T serializableObject, string filePath)
+        {
+            if (serializableObject == null) { return; }
+
+            StreamWriter writer = new StreamWriter(filePath, true); // initialize a file writer
+            JavaScriptSerializer serializer = new JavaScriptSerializer(); // initialize a serialize
+            serializer.RegisterConverters(new JavaScriptConverter[] { new NullPropertiesConverter()});
+            string json = serializer.Serialize(serializableObject); // serialize the object
+            writer.WriteLine(json); // write the object to the file
+            writer.Flush();
+            writer.Close();
+            writer.Dispose(); // flush close and dispose of the writer
+        }
+
+        /// <summary>
+        /// De-serializes an .sas file into a program list
+        /// </summary>
+        /// <typeparam name="T">The type to deserialise</typeparam>
+        /// <param name="fileName"> the name of the file to load the objects from</param>
+        private void DeSerializeObject<T>(string fileName)
+        {
+            try
+            {
+                if (string.IsNullOrEmpty(fileName))
+                {
+                    return;
+                }
+                JavaScriptSerializer deserializer = new JavaScriptSerializer(); // initialize the deserializer
+                StreamReader reader = new StreamReader(fileName); // initialize file reader
+                string json;
+                //programList.Clear();
+                //lst_ProgramList.Items.Clear();
+                while ((json = reader.ReadLine()) != null) // while there are lines to read
+                {
+                    object obj = deserializer.Deserialize<object>(json);
+                    if (obj is OSCore)
+                    {
+                        osCore = (OSCore) obj;
+                    }
+                    else
+                    {
+                        if (osCore == null)
+                        {
+                            MessageBox.Show("First Object in file must be the osCore");
+                            return;
+                        }
+                        if (obj is List<SimulatorProcess>)
+                        {
+                            processes = (List<SimulatorProcess>) obj;
+                        }
+                        else if (obj is List<SimulatorProgram>)
+                        {
+                            programList = (List<SimulatorProgram>) obj;
+                        }
+                        else if (obj is OSFlags)
+                        {
+                            globalFlags = (OSFlags) obj;
+                        }
+                        else
+                        {
+                            MessageBox.Show("Unknown Object Type Detected in File");
+                            return;
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                System.Console.WriteLine(ex.StackTrace);
+                MessageBox.Show("There was an error while loading the OS state");
+            }
+        }
+
+
     }
 }

@@ -37,6 +37,7 @@
     <Reference Include="PresentationFramework" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Windows" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -54,6 +55,7 @@
     <Compile Include="EnumRoundRobinType.cs" />
     <Compile Include="EnumSchedulingPolicies.cs" />
     <Compile Include="EnumTimeUnit.cs" />
+    <Compile Include="NullPropertyConverter.cs" />
     <Compile Include="OSCore.cs" />
     <Compile Include="OSFlags.cs" />
     <Compile Include="PCBFlags.cs" />

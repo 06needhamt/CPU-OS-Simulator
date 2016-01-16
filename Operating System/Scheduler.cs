@@ -13,6 +13,7 @@ using System.Windows.Threading;
 using System.Timers;
 using System.Windows.Data;
 using CPU_OS_Simulator.CPU;
+using System.Web.Script.Serialization;
 
 namespace CPU_OS_Simulator.Operating_System
 {
@@ -35,7 +36,9 @@ namespace CPU_OS_Simulator.Operating_System
         private bool allowCPUAffinity;
         private bool runningWithNoProcesses;
         private int cpuClockSpeed;
+        [ScriptIgnore]
         private BackgroundWorker executionWorker;
+        [ScriptIgnore]
         private Dispatcher dispatcher = Dispatcher.CurrentDispatcher;
         private Stopwatch timeout;
         private Stopwatch lifetime;

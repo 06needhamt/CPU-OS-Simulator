@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Web.Script.Serialization;
 using CPU_OS_Simulator.CPU;
 
 namespace CPU_OS_Simulator.Operating_System
@@ -96,6 +97,7 @@ namespace CPU_OS_Simulator.Operating_System
         /// <summary>
         /// Property for this process's parent
         /// </summary>
+        [ScriptIgnore]
         public SimulatorProcess ParentProcess
         {
              get { return parentProcess; }
