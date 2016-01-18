@@ -1,0 +1,20 @@
+﻿<Window x:Class="CPU_OS_Simulator.Save_File_Editor.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SaveFileEditor"
+        mc:Ignorable="d"
+        Title="Save File Editor" Height="280" Width="130" Icon="CPU-OS Simulator 7-5-50_1.ico" ResizeMode="NoResize">
+    <Grid>
+        <Menu x:Name="MenuStrip" HorizontalAlignment="Left" Height="19" VerticalAlignment="Top" Width="517" RenderTransformOrigin="-0.304,0.403">
+            <MenuItem Header="_File" Name="FileMenuItem">
+                <MenuItem Header="_Open" Name="OpenItem" Click="OpenItem_Click"/>
+            </MenuItem>
+        </Menu>
+        <ListBox x:Name="lst_Programs" HorizontalAlignment="Left" Height="153" Margin="10,46,0,0" VerticalAlignment="Top" Width="100"/>
+        <Label x:Name="label" Content="Programs" HorizontalAlignment="Left" Margin="26,20,0,0" VerticalAlignment="Top"/>
+        <Button x:Name="btn_Open" Content="Button" HorizontalAlignment="Left" Margin="26,216,0,0" VerticalAlignment="Top" Width="75" Click="btn_Open_Click"/>
+
+    </Grid>
+</Window>
