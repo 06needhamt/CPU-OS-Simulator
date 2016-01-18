@@ -685,7 +685,7 @@ namespace CPU_OS_Simulator
 
         private async Task<bool> SaveOSState(string fileName)
         {
-            SerializeObject<OSCore>(osCore,fileName);
+            SerializeObjectNoLib<OSCore>(osCore,fileName);
             if (File.Exists(fileName))
             {
                 return true;
@@ -710,7 +710,7 @@ namespace CPU_OS_Simulator
 
         private async Task<bool> LoadOSState(string fileName)
         {
-            DeSerializeObject<object>(fileName);
+            DeSerializeObjectNoLib<object>(fileName);
             if (osCore != null && processes != null && programList != null && globalFlags != null)
             {
                 return true;
@@ -724,7 +724,7 @@ namespace CPU_OS_Simulator
         /// <typeparam name="T">The type of program</typeparam>
         /// <param name="serializableObject"> the object to serialize</param>
         /// <param name="filePath">the file to save the objects to</param>
-        private void SerializeObject<T>(T serializableObject, string filePath)
+        private void SerializeObjectNoLib<T>(T serializableObject, string filePath)
         {
             if (serializableObject == null) { return; }
 
@@ -743,7 +743,7 @@ namespace CPU_OS_Simulator
         /// </summary>
         /// <typeparam name="T">The type to deserialise</typeparam>
         /// <param name="fileName"> the name of the file to load the objects from</param>
-        private void DeSerializeObject<T>(string fileName)
+        private void DeSerializeObjectNoLib<T>(string fileName)
         {
             try
             {

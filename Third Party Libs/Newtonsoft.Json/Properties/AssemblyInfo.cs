@@ -93,6 +93,6 @@ using System.Security;
 // You can specify all the values or you can default the Revision and Build Numbers 
 // by using the '*' as shown below:
 
-[assembly: AssemblyVersion("2016.1.18.1911")]
-[assembly: AssemblyFileVersion("2016.1.18.1911")]
+[assembly: AssemblyVersion("2016.1.18.2001")]
+[assembly: AssemblyFileVersion("2016.1.18.2001")]
 [assembly: CLSCompliant(true)]

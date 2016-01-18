@@ -7,17 +7,21 @@ using System.Linq;
 using System.Reflection;
 using System.Runtime.InteropServices;
 using System.Security.Principal;
+using System.Text.RegularExpressions;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Web.Script.Serialization;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Threading;
+using Microsoft.Win32;
 using CPU_OS_Simulator.Compiler;
 using CPU_OS_Simulator.Compiler.Backend;
 using CPU_OS_Simulator.CPU;
 using CPU_OS_Simulator.Memory;
-using Microsoft.Win32;
+using Newtonsoft;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 
 namespace CPU_OS_Simulator
 {
@@ -726,7 +730,8 @@ namespace CPU_OS_Simulator
                 SimulatorProgram[] progs = programList.ToArray();
                 foreach (SimulatorProgram t in progs)
                 {
-                    SerializeObject(t, dlg.FileName); // save all programs in the program list
+                    //SerializeObjectNoLib(t,dlg.FileName);
+                    SerializeObjectLib<SimulatorProgram>(t, dlg.FileName); // save all programs in the program list
                 }
             }
             saved = true;
@@ -746,7 +751,7 @@ namespace CPU_OS_Simulator
             bool? result = ofd.ShowDialog();
             if (result.Value)
             {
-                DeSerializeObject<SimulatorProgram>(ofd.FileName); // load all programs from the file
+                DeSerializeObjectNoLib<SimulatorProgram>(ofd.FileName); // load all programs from the file
             }
             return true;
         }
@@ -757,9 +762,9 @@ namespace CPU_OS_Simulator
         /// <typeparam name="T">The type of program</typeparam>
         /// <param name="serializableObject"> the object to serialize</param>
         /// <param name="filePath">the file to save the objects to</param>
-        private void SerializeObject<T>(T serializableObject, string filePath)
+        private void SerializeObjectNoLib<T>(T serializableObject, string filePath)
         {
-            if (serializableObject == null) { return; }
+            if (serializableObject == null || filePath.Equals(String.Empty)) { return; }
 
             StreamWriter writer = new StreamWriter(filePath, true); // initialize a file writer
             JavaScriptSerializer serializer = new JavaScriptSerializer(); // initialize a serialize
@@ -770,12 +775,31 @@ namespace CPU_OS_Simulator
             writer.Dispose(); // flush close and dispose of the writer
         }
 
+        private void SerializeObjectLib<T>(T serializableObject, string filePath)
+        {
+            if (serializableObject == null || filePath.Equals(String.Empty)){ return; }
+            JsonSerializerSettings settings = new JsonSerializerSettings
+            {
+                PreserveReferencesHandling = PreserveReferencesHandling.Objects,
+                ReferenceLoopHandling = ReferenceLoopHandling.Serialize,
+                Formatting = Formatting.None
+            };
+            StreamWriter writer = new StreamWriter(filePath,true);
+            //JsonSerializer serializer = JsonSerializer.Create(settings);
+            string json = JsonConvert.SerializeObject(serializableObject, settings);
+            json = Regex.Replace(json, "(\"(?:[^\"\\\\]|\\\\.)*\")|\\s+", "$1"); // remove all whitespace from the string
+            writer.WriteLine(json);
+            writer.Flush();
+            writer.Close();
+            writer.Dispose();
+        }
+
         /// <summary>
         /// De-serializes an .sas file into a program list
         /// </summary>
         /// <typeparam name="T">The type to deserialise</typeparam>
         /// <param name="fileName"> the name of the file to load the objects from</param>
-        private void DeSerializeObject<T>(string fileName)
+        private void DeSerializeObjectNoLib<T>(string fileName)
         {
             if (string.IsNullOrEmpty(fileName)) { return; }
             JavaScriptSerializer deserializer = new JavaScriptSerializer(); // initialize the deserializer
@@ -799,6 +823,11 @@ namespace CPU_OS_Simulator
                 programList.Add(prog);
                 lst_ProgramList.Items.Add(prog); // add the object to the program list
             }
+        }
+
+        private void DeSerialiseObjectLib<T>(string fileName)
+        {
+            
         }
 
         /// <summary>

@@ -122,6 +122,8 @@ namespace CPU_OS_Simulator.Operating_System
             SimulatorProcess proc = new SimulatorProcess(flags);
             return proc;
         }
+
+
         /// <summary>
         /// this method creates flags for the operating system scheduler based on selected UI options
         /// </summary>
