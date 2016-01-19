@@ -8,6 +8,7 @@ namespace CPU_OS_Simulator.CPU
     /// <summary>
     /// This class represents the part of the CPU which executes instructions
     /// </summary>
+    [Serializable]
     public class ExecutionUnit
     {
         #region Global Variables

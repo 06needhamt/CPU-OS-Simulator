@@ -767,7 +767,7 @@ namespace CPU_OS_Simulator
         {
             if (serializableObject == null || string.IsNullOrEmpty(filePath)) { return; }
 
-            StreamWriter writer = new StreamWriter(filePath, true); // initialize a file writer
+            StreamWriter writer = new StreamWriter(filePath, false); // initialize a file writer
             JavaScriptSerializer serializer = new JavaScriptSerializer(); // initialize a serialize
             string json = serializer.Serialize(serializableObject); // serialize the object
             writer.WriteLine(json); // write the object to the file
@@ -785,7 +785,7 @@ namespace CPU_OS_Simulator
                 ReferenceLoopHandling = ReferenceLoopHandling.Serialize,
                 Formatting = Formatting.None
             };
-            StreamWriter writer = new StreamWriter(filePath,true);
+            StreamWriter writer = new StreamWriter(filePath,false);
             //JsonSerializer serializer = JsonSerializer.Create(settings);
             string json = JsonConvert.SerializeObject(serializableObject, settings);
             json = Regex.Replace(json, "(\"(?:[^\"\\\\]|\\\\.)*\")|\\s+", "$1"); // remove all whitespace from the string

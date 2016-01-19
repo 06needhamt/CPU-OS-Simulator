@@ -84,6 +84,10 @@
       <Project>{2fba6a60-9499-4c9e-8b43-abb459a9c0b6}</Project>
       <Name>Memory</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Third Party Libs\Newtonsoft.Json\Newtonsoft.Json.Net40.csproj">
+      <Project>{a9ae40ff-1a21-414a-9fe7-3be13644cc6d}</Project>
+      <Name>Newtonsoft.Json.Net40</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

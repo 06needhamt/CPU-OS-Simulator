@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Web.Script.Serialization;
 using CPU_OS_Simulator.CPU;
+using Newtonsoft.Json;
 
 namespace CPU_OS_Simulator.Operating_System
 {
@@ -74,6 +75,10 @@ namespace CPU_OS_Simulator.Operating_System
             {
                 parentProcessID = parentProcess.processID;
             }
+            else
+            {
+                parentProcessID = -1;
+            }
             this.childProcesses = flags.childProcesses;
             this.processSwapped = flags.processSwapped;
             this.ProcessState = flags.processState;
@@ -97,7 +102,6 @@ namespace CPU_OS_Simulator.Operating_System
         /// <summary>
         /// Property for this process's parent
         /// </summary>
-        [ScriptIgnore]
         public SimulatorProcess ParentProcess
         {
              get { return parentProcess; }

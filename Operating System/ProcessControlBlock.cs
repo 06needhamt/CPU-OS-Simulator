@@ -2,10 +2,11 @@
 using System.Collections.Generic;
 using System.Linq;
 using CPU_OS_Simulator.CPU;
+using Newtonsoft.Json;
 
 namespace CPU_OS_Simulator.Operating_System
 {
-    [Serializable]
+    
     public class ProcessControlBlock
     {
         private int CPUID;
@@ -34,9 +35,10 @@ namespace CPU_OS_Simulator.Operating_System
         /// Default Constructor for process control block used when deserialising a process control block
         /// NOTE: DO NOT USE IN CODE:
         /// </summary>
+        [JsonConstructor]
         public ProcessControlBlock()
         {
-            
+           
         }
         /// <summary>
         /// Constructor for process control block with construction flags

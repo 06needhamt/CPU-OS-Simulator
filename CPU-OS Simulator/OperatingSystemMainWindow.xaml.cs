@@ -5,6 +5,7 @@ using System.Collections.Specialized;
 using System.Diagnostics;
 using System.IO;
 using System.Reflection;
+using System.Text.RegularExpressions;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Web.Script.Serialization;
@@ -13,6 +14,7 @@ using System.Windows.Threading;
 using CPU_OS_Simulator.CPU;
 using CPU_OS_Simulator.Operating_System;
 using Microsoft.Win32;
+using Newtonsoft.Json;
 
 namespace CPU_OS_Simulator
 {
@@ -680,12 +682,14 @@ namespace CPU_OS_Simulator
                 MessageBox.Show("There was an error while saving the OS State");
                 return;
             }
+            System.Console.WriteLine("OS State Saved Successfully");
             await UpdateInterface();
         }
 
         private async Task<bool> SaveOSState(string fileName)
         {
-            SerializeObjectNoLib<OSCore>(osCore,fileName);
+            //SerializeObjectNoLib<OSCore>(osCore,fileName);
+            SerializeObjectLib(osCore,fileName);
             if (File.Exists(fileName))
             {
                 return true;
@@ -705,13 +709,15 @@ namespace CPU_OS_Simulator
                 MessageBox.Show("There was an error while loading the OS state");
                 return;
             }
+            System.Console.WriteLine("OS State Loaded Successfully");
             await UpdateInterface();
         }
 
         private async Task<bool> LoadOSState(string fileName)
         {
-            DeSerializeObjectNoLib<object>(fileName);
-            if (osCore != null && processes != null && programList != null && globalFlags != null)
+            //DeSerializeObjectNoLib<object>(fileName);
+            DeserializeObjectLib(fileName);
+            if (osCore != null)
             {
                 return true;
             }
@@ -726,18 +732,27 @@ namespace CPU_OS_Simulator
         /// <param name="filePath">the file to save the objects to</param>
         private void SerializeObjectNoLib<T>(T serializableObject, string filePath)
         {
-            if (serializableObject == null) { return; }
-
-            StreamWriter writer = new StreamWriter(filePath, true); // initialize a file writer
-            JavaScriptSerializer serializer = new JavaScriptSerializer(); // initialize a serialize
-            serializer.RegisterConverters(new JavaScriptConverter[] { new NullPropertiesConverter()});
-            string json = serializer.Serialize(serializableObject); // serialize the object
-            writer.WriteLine(json); // write the object to the file
-            writer.Flush();
-            writer.Close();
-            writer.Dispose(); // flush close and dispose of the writer
+            throw new NotImplementedException();
         }
 
+        private void SerializeObjectLib(OSCore serializableObject, string filePath)
+        {
+            if (serializableObject == null || filePath.Equals(String.Empty)) { return; }
+            JsonSerializerSettings settings = new JsonSerializerSettings
+            {
+                PreserveReferencesHandling = PreserveReferencesHandling.Objects,
+                ReferenceLoopHandling = ReferenceLoopHandling.Serialize,
+                Formatting = Formatting.None
+            };
+            StreamWriter writer = new StreamWriter(filePath, false);
+            //JsonSerializer serializer = JsonSerializer.Create(settings);
+            string json = JsonConvert.SerializeObject(serializableObject, settings);
+            json = Regex.Replace(json, "(\"(?:[^\"\\\\]|\\\\.)*\")|\\s+", "$1"); // remove all whitespace from the string
+            writer.WriteLine(json);
+            writer.Flush();
+            writer.Close();
+            writer.Dispose();
+        }
         /// <summary>
         /// De-serializes an .sas file into a program list
         /// </summary>
@@ -745,58 +760,29 @@ namespace CPU_OS_Simulator
         /// <param name="fileName"> the name of the file to load the objects from</param>
         private void DeSerializeObjectNoLib<T>(string fileName)
         {
-            try
-            {
-                if (string.IsNullOrEmpty(fileName))
-                {
-                    return;
-                }
-                JavaScriptSerializer deserializer = new JavaScriptSerializer(); // initialize the deserializer
-                StreamReader reader = new StreamReader(fileName); // initialize file reader
-                string json;
-                //programList.Clear();
-                //lst_ProgramList.Items.Clear();
-                while ((json = reader.ReadLine()) != null) // while there are lines to read
-                {
-                    object obj = deserializer.Deserialize<object>(json);
-                    if (obj is OSCore)
-                    {
-                        osCore = (OSCore) obj;
-                    }
-                    else
-                    {
-                        if (osCore == null)
-                        {
-                            MessageBox.Show("First Object in file must be the osCore");
-                            return;
-                        }
-                        if (obj is List<SimulatorProcess>)
-                        {
-                            processes = (List<SimulatorProcess>) obj;
-                        }
-                        else if (obj is List<SimulatorProgram>)
-                        {
-                            programList = (List<SimulatorProgram>) obj;
-                        }
-                        else if (obj is OSFlags)
-                        {
-                            globalFlags = (OSFlags) obj;
-                        }
-                        else
-                        {
-                            MessageBox.Show("Unknown Object Type Detected in File");
-                            return;
-                        }
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                System.Console.WriteLine(ex.StackTrace);
-                MessageBox.Show("There was an error while loading the OS state");
-            }
+           throw new NotImplementedException();
         }
 
-
+        private void DeserializeObjectLib(string fileName)
+        {
+            if (string.IsNullOrEmpty(fileName)) { return; }
+            string json = String.Empty;
+            StreamReader reader = new StreamReader(fileName);
+            osCore = null;
+            while ((json = reader.ReadLine()) != null)
+            {
+                JsonSerializerSettings settings = new JsonSerializerSettings
+                {
+                    PreserveReferencesHandling = PreserveReferencesHandling.Objects,
+                    ReferenceLoopHandling = ReferenceLoopHandling.Serialize,
+                    Formatting = Formatting.None
+                };
+                OSCore core = JsonConvert.DeserializeObject<OSCore>(json, settings);
+                osCore = core;
+                if(osCore != null)
+                    break;
+            }
+       }
+        
     }
 }

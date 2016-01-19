@@ -1,7 +1,9 @@
-﻿using CPU_OS_Simulator.CPU;
+﻿using System;
+using CPU_OS_Simulator.CPU;
 
 namespace CPU_OS_Simulator.Operating_System
 {
+    [Serializable]
     public class ProcessExecutionUnit : ExecutionUnit
     {
         private ProcessControlBlock processControlBlock;

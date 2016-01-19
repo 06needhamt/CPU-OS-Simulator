@@ -2,6 +2,7 @@
 
 namespace CPU_OS_Simulator.Operating_System
 {
+    [Serializable]
     public class SystemResource
     {
         private string resourceName = String.Empty;

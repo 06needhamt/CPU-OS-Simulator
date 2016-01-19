@@ -14,6 +14,7 @@ using System.Timers;
 using System.Windows.Data;
 using CPU_OS_Simulator.CPU;
 using System.Web.Script.Serialization;
+using Newtonsoft.Json;
 
 namespace CPU_OS_Simulator.Operating_System
 {
@@ -37,8 +38,10 @@ namespace CPU_OS_Simulator.Operating_System
         private bool runningWithNoProcesses;
         private int cpuClockSpeed;
         [ScriptIgnore]
+        [JsonIgnore]
         private BackgroundWorker executionWorker;
         [ScriptIgnore]
+        [JsonIgnore]
         private Dispatcher dispatcher = Dispatcher.CurrentDispatcher;
         private Stopwatch timeout;
         private Stopwatch lifetime;
