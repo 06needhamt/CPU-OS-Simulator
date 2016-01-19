@@ -7,6 +7,7 @@ using System.Threading;
 using System.Web.Script.Serialization;
 using System.Windows;
 using CPU_OS_Simulator.Memory;
+using Newtonsoft.Json;
 
 namespace CPU_OS_Simulator.CPU
 {
@@ -32,6 +33,7 @@ namespace CPU_OS_Simulator.CPU
         /// The function that will be executed when the instruction is executed
         /// </summary>
         [ScriptIgnore]
+        [JsonIgnore]
         private Func<int> execute;
 
         /// <summary>
@@ -84,6 +86,7 @@ namespace CPU_OS_Simulator.CPU
         /// </summary>
         [ScriptIgnore]
         [NonSerialized]
+        [JsonIgnore]
         private ExecutionUnit unit;
 
         #endregion Global Variables
@@ -223,6 +226,7 @@ namespace CPU_OS_Simulator.CPU
         /// The function that will be executed when the instruction is executed
         /// </summary>
         [ScriptIgnore]
+        [JsonIgnore]
         public Func<int> Execute
         {
             get
@@ -331,6 +335,7 @@ namespace CPU_OS_Simulator.CPU
         /// The execution unit that will be executing this instruction
         /// </summary>
         [ScriptIgnore]
+        [JsonIgnore]
         public ExecutionUnit Unit
         {
             get { return unit; }

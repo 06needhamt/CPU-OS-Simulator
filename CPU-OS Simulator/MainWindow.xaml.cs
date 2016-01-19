@@ -731,7 +731,7 @@ namespace CPU_OS_Simulator
                 foreach (SimulatorProgram t in progs)
                 {
                     //SerializeObjectNoLib(t,dlg.FileName);
-                    SerializeObjectLib<SimulatorProgram>(t, dlg.FileName); // save all programs in the program list
+                    SerializeObjectLib(t, dlg.FileName); // save all programs in the program list
                 }
             }
             saved = true;
@@ -751,7 +751,8 @@ namespace CPU_OS_Simulator
             bool? result = ofd.ShowDialog();
             if (result.Value)
             {
-                DeSerializeObjectNoLib<SimulatorProgram>(ofd.FileName); // load all programs from the file
+                //DeSerializeObjectNoLib<SimulatorProgram>(ofd.FileName); 
+                DeSerialiseObjectLib(ofd.FileName); // load all programs from the file
             }
             return true;
         }
@@ -764,7 +765,7 @@ namespace CPU_OS_Simulator
         /// <param name="filePath">the file to save the objects to</param>
         private void SerializeObjectNoLib<T>(T serializableObject, string filePath)
         {
-            if (serializableObject == null || filePath.Equals(String.Empty)) { return; }
+            if (serializableObject == null || string.IsNullOrEmpty(filePath)) { return; }
 
             StreamWriter writer = new StreamWriter(filePath, true); // initialize a file writer
             JavaScriptSerializer serializer = new JavaScriptSerializer(); // initialize a serialize
@@ -775,7 +776,7 @@ namespace CPU_OS_Simulator
             writer.Dispose(); // flush close and dispose of the writer
         }
 
-        private void SerializeObjectLib<T>(T serializableObject, string filePath)
+        private void SerializeObjectLib(SimulatorProgram serializableObject, string filePath)
         {
             if (serializableObject == null || filePath.Equals(String.Empty)){ return; }
             JsonSerializerSettings settings = new JsonSerializerSettings
@@ -825,9 +826,34 @@ namespace CPU_OS_Simulator
             }
         }
 
-        private void DeSerialiseObjectLib<T>(string fileName)
+        private void DeSerialiseObjectLib(string fileName)
         {
-            
+            if (string.IsNullOrEmpty(fileName)) { return; }
+            string json = String.Empty;
+            StreamReader reader = new StreamReader(fileName);
+            while ((json = reader.ReadLine()) != null)
+            {
+                //JToken root = JObject.Parse(json);
+                //JToken program = root["$id"];
+                JsonSerializerSettings settings = new JsonSerializerSettings
+                {
+                    PreserveReferencesHandling = PreserveReferencesHandling.Objects,
+                    ReferenceLoopHandling = ReferenceLoopHandling.Serialize,
+                    Formatting = Formatting.None
+                };
+                SimulatorProgram prog = JsonConvert.DeserializeObject<SimulatorProgram>(json,settings);
+                BindInstructionDelegates(ref prog);
+                if (prog.Stack == null)
+                {
+                    prog.Stack = new ProgramStack();
+                }
+                for (int i = 0; i < prog.Pages; i++)
+                {
+                    MemoryPage page = new MemoryPage(i,i * MemoryPage.PAGE_SIZE);
+                }
+                programList.Add(prog);
+                lst_ProgramList.Items.Add(prog);
+            }
         }
 
         /// <summary>
