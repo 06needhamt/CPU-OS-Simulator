@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Collections.Specialized;
 using System.Diagnostics;
 using System.IO;
+using System.Linq;
 using System.Reflection;
 using System.Text.RegularExpressions;
 using System.Threading;
@@ -107,6 +108,7 @@ namespace CPU_OS_Simulator
         private void OperatingSystemWindow_Loaded(object sender, RoutedEventArgs e)
         {
             programList = parent.ProgramList ?? new List<SimulatorProgram>();
+            lst_Programs.ItemsSource = null;
             lst_Programs.Items.Clear();
             lst_Programs.ItemsSource = programList;
 
@@ -412,7 +414,7 @@ namespace CPU_OS_Simulator
             return delayMills;
         }
 
-        private async Task<int> UpdateInterface()
+        public async Task<int> UpdateInterface()
         {
             int RunningIndex = lst_RunningProcesses.SelectedIndex;
             int ReadyIndex = lst_ReadyProcesses.SelectedIndex;
@@ -432,6 +434,10 @@ namespace CPU_OS_Simulator
             lst_RunningProcesses.SelectedIndex = RunningIndex;
             lst_ReadyProcesses.SelectedIndex = ReadyIndex;
             lst_WaitingProcesses.SelectedIndex = WaitingIndex; //TODO URGENT Keep selected items after updating the interface
+            programList = parent.ProgramList ?? new List<SimulatorProgram>();
+            lst_Programs.ItemsSource = null;
+            lst_Programs.Items.Clear();
+            lst_Programs.ItemsSource = programList;
             return 0;
         }
 
@@ -676,7 +682,7 @@ namespace CPU_OS_Simulator
             sfd.DefaultExt = "*.soss";
             sfd.Filter = "Simulator OS State | *.soss";
             sfd.ShowDialog();
-            bool saved = await SaveOSState(sfd.FileName);
+            bool saved = SaveOSState(sfd.FileName);
             if (!saved)
             {
                 MessageBox.Show("There was an error while saving the OS State");
@@ -686,7 +692,7 @@ namespace CPU_OS_Simulator
             await UpdateInterface();
         }
 
-        private async Task<bool> SaveOSState(string fileName)
+        private bool SaveOSState(string fileName)
         {
             //SerializeObjectNoLib<OSCore>(osCore,fileName);
             SerializeObjectLib(osCore,fileName);
@@ -763,9 +769,9 @@ namespace CPU_OS_Simulator
            throw new NotImplementedException();
         }
 
-        private void DeserializeObjectLib(string fileName)
+        private async Task<bool> DeserializeObjectLib(string fileName)
         {
-            if (string.IsNullOrEmpty(fileName)) { return; }
+            if (string.IsNullOrEmpty(fileName)) { return true; }
             string json = String.Empty;
             StreamReader reader = new StreamReader(fileName);
             osCore = null;
@@ -782,7 +788,57 @@ namespace CPU_OS_Simulator
                 if(osCore != null)
                     break;
             }
-       }
-        
+            processes.Add(osCore.Scheduler.RunningProcess);
+            processes.AddRange(osCore.Scheduler.ReadyQueue);
+            processes.AddRange(osCore.Scheduler.WaitingQueue);
+            processes = processes.Where(x => x != null).ToList();
+
+            //dynamic window = GetMainWindowInstance();
+            //List<SimulatorProgram> programs = new List<SimulatorProgram>();
+            //string ProgramsToLoad = "Please load the following programs before running the OS: \n ";
+            //foreach (SimulatorProcess process in processes)
+            //{
+            //    if (programs.Any(x => x.Name == process.ProgramName))
+            //        continue;
+            //    programs.Add(process.Program);
+            //    ProgramsToLoad += process.ProgramName + "\n";
+
+            //}
+            //window.ProgramList.AddRange(programs);
+            //programList = programs;
+            await UpdateInterface();
+            await UpdateMainWindowInterface();
+            //MessageBox.Show(ProgramsToLoad);
+            return true;
+
+        }
+
+        /// <summary>
+        /// This function gets the main window instance from the window bridge
+        /// </summary>
+        /// <returns> the active instance of main window </returns>
+        private dynamic GetMainWindowInstance()
+        {
+            Assembly windowBridge = Assembly.LoadFrom("CPU_OS_Simulator.WindowBridge.dll"); // Load the window bridge module
+            System.Console.WriteLine(windowBridge.GetExportedTypes()[0]);
+            Type WindowType = windowBridge.GetType(windowBridge.GetExportedTypes()[1].ToString()); // get the name of the type that contains the window instances
+            dynamic window = WindowType.GetField("MainWindowInstance").GetValue(null); // get the value of the static MainWindowInstance field
+            return window;
+        }
+
+        /// <summary>
+        /// This function updates the main window interface while the operating system executes
+        /// </summary>
+        /// <returns>a task object indicating to the calling thread that the task has completed</returns>
+        private async Task<int> UpdateMainWindowInterface()
+        {
+            Assembly windowBridge = Assembly.LoadFrom("CPU_OS_Simulator.WindowBridge.dll"); // Load the window bridge module
+            System.Console.WriteLine(windowBridge.GetExportedTypes()[0]);
+            Type WindowType = windowBridge.GetType(windowBridge.GetExportedTypes()[0].ToString()); // get the name of the type that contains the window instances
+            object tyref = Activator.CreateInstance(WindowType);
+            Task<int> result = (Task<int>)WindowType.GetMethod("UpdateMainWindowInterface").Invoke(tyref, null);
+            return result.Result;
+
+        }
     }
 }

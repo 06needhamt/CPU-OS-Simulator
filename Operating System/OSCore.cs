@@ -142,6 +142,7 @@ namespace CPU_OS_Simulator.Operating_System
             temp.allowCPUAffinity = allowCPUAffinity;
             temp.defaultScheduler = useDefaultScheduler;
             temp.runningWithNoProcesses = runWithNoProcesses;
+            temp.usingSingleCPU = true; //TODO Change this when multiple CPU's are Implemented
             if (!temp.runningWithNoProcesses) // if the user selected to run the scheduler no processes
             {
                 temp.readyQueue = readyQueue;

@@ -16,7 +16,7 @@ namespace CPU_OS_Simulator.CPU
         /// <summary>
         /// The current program being executed
         /// </summary>
-        private SimulatorProgram program;
+        protected SimulatorProgram program;
 
         /// <summary>
         /// The clock speed that the CPU is running at
@@ -51,6 +51,11 @@ namespace CPU_OS_Simulator.CPU
         #endregion Global Variables
 
         #region Constructors
+
+        public ExecutionUnit()
+        {
+            
+        }
 
         /// <summary>
         /// Constructor for execution unit that starts executing from the beginning of the program
@@ -126,6 +131,10 @@ namespace CPU_OS_Simulator.CPU
                     program.Instructions.Where(x => x.LogicalAddress == logicalAddress).FirstOrDefault();
                 if (currentInstruction != null)
                 {
+                    if (CurrentInstruction.Execute == null)
+                    {
+                        BindInstructionDelegates(ref program);
+                    }
                     if (currentInstruction.Opcode == (int) EnumOpcodes.JMP
                         || currentInstruction.Opcode == (int) EnumOpcodes.JEQ
                         || currentInstruction.Opcode == (int) EnumOpcodes.JNE
@@ -171,6 +180,18 @@ namespace CPU_OS_Simulator.CPU
             }
         }
 
+
+        /// <summary>
+        /// This function rebinds the delegate function to each instruction in a program after it is loaded from a file.
+        /// </summary>
+        /// <param name="prog"> the program to bind its instruction delegates </param>
+        private void BindInstructionDelegates(ref SimulatorProgram prog)
+        {
+            foreach (Instruction i in prog.Instructions)
+            {
+                i.BindDelegate();
+            }
+        }
         #endregion Methods
 
         #region Properties

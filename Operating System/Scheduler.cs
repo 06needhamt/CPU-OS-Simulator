@@ -137,6 +137,10 @@ namespace CPU_OS_Simulator.Operating_System
                 MessageBox.Show("OS Execution complete");
                 return true;
             }
+            if (executionWorker == null)
+            {
+                CreateBackgroundWorker();
+            }
             executionWorker.RunWorkerAsync();
             return true;
         }

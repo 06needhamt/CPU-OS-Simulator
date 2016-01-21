@@ -7,9 +7,14 @@ namespace CPU_OS_Simulator.Operating_System
     public class ProcessExecutionUnit : ExecutionUnit
     {
         private ProcessControlBlock processControlBlock;
-        private new SimulatorProgram program;
+        //private SimulatorProgram program;
         private SimulatorProcess process;
         private bool timedOut = false;
+
+        public ProcessExecutionUnit() : base()
+        {
+            
+        }
 
         /// <summary>
         /// Constructor for execution unit that starts executing from the beginning of the program
@@ -43,7 +48,7 @@ namespace CPU_OS_Simulator.Operating_System
             set { processControlBlock = value; }
         }
 
-        public new  SimulatorProgram Program
+        public SimulatorProgram Program
         {
             get { return program; }
             set { program = value; }
