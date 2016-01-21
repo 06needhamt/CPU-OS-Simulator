@@ -46,7 +46,8 @@ namespace CPU_OS_Simulator.Operating_System
         private Stopwatch timeout;
         private Stopwatch lifetime;
         private bool suspended;
-
+        private List<LotteryTicket> issuedLotteryTickets;
+        private List<LotteryTicket> drawnLotteryTickets; 
         public event NotifyCollectionChangedEventHandler CollectionChanged;
 
         /// <summary>
@@ -77,6 +78,8 @@ namespace CPU_OS_Simulator.Operating_System
             runningWithNoProcesses = flags.runningWithNoProcesses;
             cpuClockSpeed = flags.cpuClockSpeed;
             suspended = false;
+            issuedLotteryTickets = flags.issuedLotteryTickets;
+            drawnLotteryTickets = flags.drawnLotteryTickets;
             CollectionChanged += OnCollectionChanged;
             CreateBackgroundWorker();
             //BindingOperations.EnableCollectionSynchronization(readyQueue,thisLock);
@@ -255,6 +258,11 @@ namespace CPU_OS_Simulator.Operating_System
                     }
                     case EnumSchedulingPolicies.LOTTERY_SCHEDULING:
                     {
+                        await AllocateLotteryTickets();
+                        long life = CalculateLifetime();
+                        ExecuteLottery(DateTime.Now.Ticks,life);
+                        await CallFromMainThread(UpdateInterface);
+                        await CallFromMainThread(UpdateMainWindowInterface);
                         break;
                     }
                     case EnumSchedulingPolicies.FAIR_SHARE_SCEDULING:
@@ -279,6 +287,97 @@ namespace CPU_OS_Simulator.Operating_System
             await CallFromMainThread(UpdateMainWindowInterface);
             return;
         }
+
+        private async void ExecuteLottery(long seed, long life)
+        {
+            Random r = new Random((int) (seed << 32));
+            await DrawLottery(r.Next(0, issuedLotteryTickets.Max(x => x.Id)));
+            //ProcessExecutionUnit unit = runningProcess.Unit;
+            lifetime = new Stopwatch();
+            lifetime.Reset();
+            lifetime.Start();
+            while (!runningProcess.Unit.Stop && !runningProcess.Unit.Done &&
+                   !runningProcess.Unit.Process.Terminated && !runningProcess.Unit.TimedOut)
+            {
+                if (lifetime.ElapsedMilliseconds > life)
+                {
+                    runningProcess.Unit.Done = true;
+                }
+                runningProcess.Unit.ExecuteInstruction();
+                await CallFromMainThread(UpdateInterface);
+                await CallFromMainThread(UpdateMainWindowInterface);
+            }
+            if (runningProcess.Unit.TimedOut)
+            {
+                runningProcess.ProcessState = EnumProcessState.READY;
+                readyQueue.Enqueue(runningProcess);
+                PCBFlags? flags = CreatePCBFlags(ref runningProcess);
+                if (flags != null)
+                {
+                    runningProcess.ControlBlock = new ProcessControlBlock(flags.Value);
+                }
+                else
+                {
+                    MessageBox.Show("There was an error while creating process control block flags");
+                    return;
+                }
+                await DrawLottery(r.Next(0,issuedLotteryTickets.Max(x => x.Id)));
+
+            }
+            if (runningProcess.Unit.Stop)
+            {
+                runningProcess.ProcessState = EnumProcessState.WAITING;
+                waitingQueue.Enqueue(runningProcess);
+                PCBFlags? flags = CreatePCBFlags(ref runningProcess);
+                if (flags != null)
+                {
+                    runningProcess.ControlBlock = new ProcessControlBlock(flags.Value);
+                }
+                else
+                {
+                    MessageBox.Show("There was an error while creating process control block flags");
+                    return;
+                }
+                await DrawLottery(r.Next(0, issuedLotteryTickets.Max(x => x.Id)));
+            }
+            if (runningProcess.Unit.Done)
+            {
+                issuedLotteryTickets = issuedLotteryTickets.Where(x => x.Owner != runningProcess).ToList();
+                await DrawLottery(r.Next(0, issuedLotteryTickets.Max(x => x.Id)));
+            }
+        }
+
+        private async Task<int> DrawLottery(int ticketNumber)
+        {
+            LotteryTicket ticket = issuedLotteryTickets.Where(x => x.Id == ticketNumber).FirstOrDefault();
+            if(ticket == null)
+                return 0;
+            while (runningProcess != ticket.Owner)
+            {
+                if (runningProcess != null)
+                {
+                    readyQueue.Enqueue(runningProcess);
+                }
+                runningProcess = readyQueue.Dequeue();
+            }
+            return 0;
+
+        }
+
+        private async Task<int> AllocateLotteryTickets()
+        {
+            //Random r = new Random((int) (seed << 32));
+            foreach (SimulatorProcess process in readyQueue)
+            {
+                for (int i = 0; i < (10 - process.ProcessPriority); i++)
+                {
+                    LotteryTicket ticket = new LotteryTicket(issuedLotteryTickets.Count,process,1);
+                    issuedLotteryTickets.Add(ticket);
+                }
+            }
+            return 0;
+        }
+
         /// <summary>
         /// This function calculates the lifetime of the current process
         /// </summary>

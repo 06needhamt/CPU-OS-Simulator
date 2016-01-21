@@ -161,6 +161,8 @@ namespace CPU_OS_Simulator.Operating_System
                 temp.runningProcess = null;
             }
             temp.cpuClockSpeed = CPUClockSpeed;
+            temp.issuedLotteryTickets = new List<LotteryTicket>();
+            temp.drawnLotteryTickets = new List<LotteryTicket>();
             return temp;
         }
 

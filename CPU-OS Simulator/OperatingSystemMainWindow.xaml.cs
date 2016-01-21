@@ -24,18 +24,15 @@ namespace CPU_OS_Simulator
     /// </summary>
     public partial class OperatingSystemMainWindow : Window , INotifyCollectionChanged
     {
-        [ScriptIgnore]
         private MainWindow parent;
         private List<SimulatorProgram> programList;
         private OSCore osCore = null;
         private List<SimulatorProcess> processes;
         private OSFlags? globalFlags;
-        [ScriptIgnore]
         private Dispatcher dispatcher = Dispatcher.CurrentDispatcher;
         /// <summary>
         /// Variable to hold the current instance of this window so it can be accessed by other modules
         /// </summary>
-        [ScriptIgnore]
         public static OperatingSystemMainWindow currentInstance;
 
         public event NotifyCollectionChangedEventHandler CollectionChanged;
@@ -336,6 +333,8 @@ namespace CPU_OS_Simulator
             temp.defaultScheduler = flags.useDefaultScheduler;
             temp.runningWithNoProcesses = flags.runWithNoprocesses;
             temp.cpuClockSpeed = (int) sld_ClockSpeed.Value;
+            temp.issuedLotteryTickets = new List<LotteryTicket>();
+            temp.drawnLotteryTickets = new List<LotteryTicket>();
             return temp;
         }
 
@@ -550,6 +549,7 @@ namespace CPU_OS_Simulator
             temp.OSid = 0;
             temp.unit = null;
             temp.clockSpeed = (int) sld_ClockSpeed.Value;
+            temp.lotteryTickets = new List<LotteryTicket>();
             return temp;
             #region OLD
             //temp.burstTime = 0;

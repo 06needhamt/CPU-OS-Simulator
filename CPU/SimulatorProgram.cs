@@ -21,6 +21,7 @@ namespace CPU_OS_Simulator.CPU
         private const int DEFAULT_PAGE_SIZE = 256;
 
         [ScriptIgnore]
+
         [NonSerialized]
         private ExecutionUnit unit;
 
