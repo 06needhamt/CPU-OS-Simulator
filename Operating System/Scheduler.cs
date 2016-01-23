@@ -260,9 +260,10 @@ namespace CPU_OS_Simulator.Operating_System
                     {
                         await AllocateLotteryTickets();
                         long life = CalculateLifetime();
-                        ExecuteLottery(DateTime.Now.Ticks,life);
                         await CallFromMainThread(UpdateInterface);
                         await CallFromMainThread(UpdateMainWindowInterface);
+                        ExecuteLottery(DateTime.Now.Ticks,life);
+
                         break;
                     }
                     case EnumSchedulingPolicies.FAIR_SHARE_SCEDULING:
@@ -343,6 +344,8 @@ namespace CPU_OS_Simulator.Operating_System
             if (runningProcess.Unit.Done)
             {
                 issuedLotteryTickets = issuedLotteryTickets.Where(x => x.Owner != runningProcess).ToList();
+                if(issuedLotteryTickets.Count == 0)
+                    return;
                 await DrawLottery(r.Next(0, issuedLotteryTickets.Max(x => x.Id)));
             }
         }
@@ -354,10 +357,12 @@ namespace CPU_OS_Simulator.Operating_System
                 return 0;
             while (runningProcess != ticket.Owner)
             {
-                if (runningProcess != null)
+                if (runningProcess != null && !runningProcess.Unit.Done)
                 {
                     readyQueue.Enqueue(runningProcess);
+                    runningProcess = null;
                 }
+                System.Console.WriteLine("Items in Queue: " + readyQueue.Count);
                 runningProcess = readyQueue.Dequeue();
             }
             return 0;
@@ -371,13 +376,32 @@ namespace CPU_OS_Simulator.Operating_System
             {
                 for (int i = 0; i < (10 - process.ProcessPriority); i++)
                 {
-                    LotteryTicket ticket = new LotteryTicket(issuedLotteryTickets.Count,process,1);
+                    LotteryTicket ticket = new LotteryTicket(issuedLotteryTickets.Count, process, 1);
                     issuedLotteryTickets.Add(ticket);
                 }
             }
             return 0;
         }
 
+        public static int FindWinningTicket(IEnumerable<int> source)
+        {
+            if (source == null) throw new ArgumentNullException("source");
+            int value = 0;
+            bool hasValue = false;
+            foreach (int x in source)
+            {
+                if (hasValue)
+                {
+                    if (x > value) value = x;
+                }
+                else {
+                    value = x;
+                    hasValue = true;
+                }
+            }
+            if (hasValue) return value;
+            throw new ArgumentException("No Elements");
+        }
         /// <summary>
         /// This function calculates the lifetime of the current process
         /// </summary>
