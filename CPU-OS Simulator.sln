@@ -34,6 +34,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Newtonsoft.Json.Net40", "Th
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Save File Editor", "SaveFileEditor\Save File Editor.csproj", "{9B8C95C1-48C9-4D9A-90D6-55FCB5609107}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleTests", "ConsoleTests\ConsoleTests.csproj", "{326CEC05-A490-4D69-AAD3-760716377891}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -92,6 +94,10 @@ Global
 		{9B8C95C1-48C9-4D9A-90D6-55FCB5609107}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9B8C95C1-48C9-4D9A-90D6-55FCB5609107}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9B8C95C1-48C9-4D9A-90D6-55FCB5609107}.Release|Any CPU.Build.0 = Release|Any CPU
+		{326CEC05-A490-4D69-AAD3-760716377891}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{326CEC05-A490-4D69-AAD3-760716377891}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{326CEC05-A490-4D69-AAD3-760716377891}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{326CEC05-A490-4D69-AAD3-760716377891}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -47,6 +47,21 @@ namespace CPU_OS_Simulator.Console
             set { execute = value; }
         }
 
+        public string Name
+        {
+            get { return name; }
+        }
+
+        public string[] Parameters
+        {
+            get { return parameters; }
+        }
+
+        public EnumConsoleCommands ECommand1
+        {
+            get { return ECommand; }
+        }
+
         /// <summary>
         /// This function binds a function pointer to a command
         /// the function pointer bound here will be executed when the command it inputted into the console

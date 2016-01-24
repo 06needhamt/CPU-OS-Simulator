@@ -1,7 +1,7 @@
 ﻿using CPU_OS_Simulator.CPU;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace CPUTests
+namespace CPU_OS_Simulator.CPU.Tests
 {
     [TestClass]
     public class InstructionTests
@@ -23,21 +23,23 @@ namespace CPUTests
         [TestMethod]
         public void InstructionTest2()
         {
-            Instruction ins = new Instruction(3, new Operand(10, EnumOperandType.VALUE),false, 4);
+            Instruction ins = new Instruction(3, new Operand(10, EnumOperandType.VALUE), false, 4);
             Assert.IsInstanceOfType(ins, typeof(Instruction));
         }
 
         [TestMethod]
         public void InstructionTest3()
         {
-            Instruction ins = new Instruction(3, new Operand(10, EnumOperandType.VALUE), false, new Operand(10, EnumOperandType.VALUE),false, 4);
+            Instruction ins = new Instruction(3, new Operand(10, EnumOperandType.VALUE), false,
+                new Operand(10, EnumOperandType.VALUE), false, 4);
             Assert.IsInstanceOfType(ins, typeof(Instruction));
         }
 
         [TestMethod]
         public void BindDelegateTest()
         {
-            Instruction ins = new Instruction(0, new Operand(10, EnumOperandType.VALUE), false, new Operand(10, EnumOperandType.VALUE), false, 4);
+            Instruction ins = new Instruction(0, new Operand(10, EnumOperandType.VALUE), false,
+                new Operand(10, EnumOperandType.VALUE), false, 4);
             ins.BindDelegate();
             Assert.IsNotNull(ins.Execute);
         }
@@ -45,7 +47,8 @@ namespace CPUTests
         [TestMethod]
         public void ToStringTest()
         {
-            Instruction ins = new Instruction(0, new Operand(10, EnumOperandType.VALUE), false, new Operand(10, EnumOperandType.VALUE), false, 4);
+            Instruction ins = new Instruction(0, new Operand(10, EnumOperandType.VALUE), false,
+                new Operand(10, EnumOperandType.VALUE), false, 4);
             Assert.AreEqual("MOV 10,10", ins.ToString());
         }
     }

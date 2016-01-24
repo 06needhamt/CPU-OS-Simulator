@@ -199,7 +199,7 @@ namespace CPU_OS_Simulator.Memory
             }
         }
 
-        public int GetIndexMemory(int frameNumber)
+        private int GetIndexMemory(int frameNumber)
         {
             dynamic wind = GetMainWindowInstance();
             PhysicalMemory memory = wind.Memory;
@@ -207,7 +207,7 @@ namespace CPU_OS_Simulator.Memory
             return index;
         }
 
-        public int GetIndexSwap(int frameNumber)
+        private int GetIndexSwap(int frameNumber)
         {
             dynamic wind = GetMainWindowInstance();
             SwapSpace swap = wind.SwapSpace;

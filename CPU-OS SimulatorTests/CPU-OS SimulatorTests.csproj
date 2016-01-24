@@ -68,6 +68,10 @@
       <Project>{6ebcf9cd-c6a9-4535-9154-2fc7e303bfc4}</Project>
       <Name>CPU</Name>
     </ProjectReference>
+    <ProjectReference Include="..\WindowBridge\WindowBridge.csproj">
+      <Project>{d364aa4c-54ce-4bd3-ad4d-8790deb58d2f}</Project>
+      <Name>WindowBridge</Name>
+    </ProjectReference>
   </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">

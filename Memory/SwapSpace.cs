@@ -3,7 +3,7 @@
 namespace CPU_OS_Simulator.Memory
 {
     /// <summary>
-    /// This class represents swap space where swapped outmemory pages are moved to
+    /// This class represents swap space where swapped out memory pages are moved to
     /// </summary>
     public class SwapSpace
     {

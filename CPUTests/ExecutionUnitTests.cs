@@ -1,7 +1,7 @@
 ﻿using CPU_OS_Simulator.CPU;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace CPUTests
+namespace CPU_OS_Simulator.CPU.Tests
 {
     [TestClass]
     public class ExecutionUnitTests
@@ -30,7 +30,7 @@ namespace CPUTests
             Operand op2 = new Operand(10, EnumOperandType.VALUE);
             Instruction ins = new Instruction((int)EnumOpcodes.ADD, op1, false, op2, false, 4);
             int result = ins.Execute();
-            Assert.AreEqual(result, 10);
+            Assert.AreEqual(result, 0);
         }
     }
 }

@@ -1,7 +1,7 @@
 ﻿using CPU_OS_Simulator.CPU;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace CPUTests
+namespace CPU_OS_Simulator.CPU.Tests
 {
     [TestClass]
     public class OperandTests

@@ -2,7 +2,7 @@
 using CPU_OS_Simulator.CPU;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace CPU_OS_SimulatorTests
+namespace CPU_OS_Simulator.Tests
 {
     [TestClass]
     public class MainWindowTests

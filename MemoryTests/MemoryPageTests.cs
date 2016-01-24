@@ -1,4 +1,10 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+using CPU_OS_Simulator.Memory;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace CPU_OS_Simulator.Memory.Tests
 {
@@ -8,8 +14,8 @@ namespace CPU_OS_Simulator.Memory.Tests
         [TestMethod()]
         public void MemoryPageTest()
         {
-            MemoryPage m = new MemoryPage(0,0);
-            Assert.IsInstanceOfType(m,typeof(MemoryPage));
+            MemoryPage m = new MemoryPage(0, 0);
+            Assert.IsInstanceOfType(m, typeof(MemoryPage));
         }
 
         [TestMethod()]
@@ -19,7 +25,7 @@ namespace CPU_OS_Simulator.Memory.Tests
             PageTable table = new PageTable(0);
             MemoryPage m = new MemoryPage(0, 0);
             mem.AddPage(m, 0);
-            m.SwapOut(0,0);
+            m.SwapOut(0, 0);
             Assert.IsTrue(table.Entries[0].SwappedOut);
         }
 
@@ -31,17 +37,17 @@ namespace CPU_OS_Simulator.Memory.Tests
             MemoryPage m = new MemoryPage(0, 0);
             mem.AddPage(m, 0);
             m.SwapOut(0, 0);
-            m.SwapIn(0,0);
+            m.SwapIn(0, 0);
             Assert.IsFalse(table.Entries[0].SwappedOut);
         }
 
         [TestMethod()]
         public void ZeroMemoryTest()
         {
-            MemoryPage m = new MemoryPage(0,0);
+            MemoryPage m = new MemoryPage(0, 0);
             int count = 0;
             m.ZeroMemory();
-            for (int i = 0; i < MemoryPage.PAGE_SIZE/8; i++)
+            for (int i = 0; i < MemoryPage.PAGE_SIZE / 8; i++)
             {
                 for (int j = 0; j < 8; j++)
                 {

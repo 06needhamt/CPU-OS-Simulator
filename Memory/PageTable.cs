@@ -4,7 +4,7 @@ namespace CPU_OS_Simulator.Memory
 {
     /// <summary>
     /// This class represents a page table
-    /// where information about the loctions of memory pages are kept
+    /// where information about the locations of memory pages are kept
     /// </summary>
     public class PageTable
     {
