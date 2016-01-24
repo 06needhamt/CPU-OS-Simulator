@@ -13,6 +13,7 @@ namespace CPU_OS_Simulator.Memory
         private int pageIndex;
         private int startOffsetPhysical;
         private readonly int startOffset;
+        private int frameNumber;
         /// <summary>
         /// The size of the memory pages to manage
         /// </summary>
@@ -85,6 +86,12 @@ namespace CPU_OS_Simulator.Memory
             }
         }
 
+        public int FrameNumber
+        {
+            get { return frameNumber; }
+            set { frameNumber = value; }
+        }
+
         #region Constructors
         /// <summary>
         /// Constructor for memory page
@@ -125,12 +132,12 @@ namespace CPU_OS_Simulator.Memory
             dynamic wind = GetMainWindowInstance();
             PhysicalMemory physicalMemory = wind.Memory; // get a reference to physical memory from the main window
             SwapSpace swap = wind.SwapSpace;
-            temp = physicalMemory.Pages[GetIndex(FrameNumber)];
+            temp = physicalMemory.Pages[GetIndexMemory(FrameNumber)];
             if (!physicalMemory.Table.Entries[FrameNumber].SwappedOut) // if this memory page is not already swapped out
             {
                 physicalMemory.Table.Entries[FrameNumber].SwappedOut = true;
                 physicalMemory.Table.Entries[FrameNumber].Faults++;
-                physicalMemory.Pages.RemoveAt(GetIndex(FrameNumber));
+                physicalMemory.Pages.RemoveAt(GetIndexMemory(FrameNumber));
                 swap.SwappedMemoryPages.Add(temp);
             }
             else
@@ -157,8 +164,8 @@ namespace CPU_OS_Simulator.Memory
             {
                 physicalMemory.Table.Entries[FrameNumber].SwappedOut = false;
                 physicalMemory.Table.Entries[FrameNumber].Faults++;
-                physicalMemory.AddPage(temp, FrameNumber);
-                swap.SwappedMemoryPages.RemoveAt(GetIndex(FrameNumber));
+                physicalMemory.Pages.Add(temp);
+                swap.SwappedMemoryPages.RemoveAt(GetIndexSwap(FrameNumber));
             }
             else
             {
@@ -192,16 +199,23 @@ namespace CPU_OS_Simulator.Memory
             }
         }
 
-        public int GetIndex(int framenumber)
+        public int GetIndexMemory(int frameNumber)
         {
             dynamic wind = GetMainWindowInstance();
-            PhysicalMemory physicalMemory = wind.Memory; // get a reference to physical memory from the main window
-            int index =
-                physicalMemory.Pages.IndexOf(
-                    physicalMemory.Pages.Where(
-                        x => x.startOffset == physicalMemory.Table.Entries[framenumber].Page.startOffset)
-                        .FirstOrDefault());
+            PhysicalMemory memory = wind.Memory;
+            int index = memory.Pages.IndexOf(memory.Pages.Where(x => x.FrameNumber == frameNumber).FirstOrDefault());
             return index;
+        }
+
+        public int GetIndexSwap(int frameNumber)
+        {
+            dynamic wind = GetMainWindowInstance();
+            SwapSpace swap = wind.SwapSpace;
+            int index =
+                swap.SwappedMemoryPages.IndexOf(
+                    swap.SwappedMemoryPages.Where(x => x.FrameNumber == frameNumber).FirstOrDefault());
+            return index;
+
         }
 
     }

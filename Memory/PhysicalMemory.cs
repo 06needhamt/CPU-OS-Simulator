@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
+using System.Security.Cryptography.X509Certificates;
 using System.Windows;
 
 namespace CPU_OS_Simulator.Memory
@@ -110,12 +111,12 @@ namespace CPU_OS_Simulator.Memory
             dynamic wind = GetMainWindowInstance();
             PhysicalMemory physicalMemory = wind.Memory;
             SwapSpace swap = wind.SwapSpace;
-            temp = physicalMemory.Pages[FrameNumber];
+            temp = RequestMemoryPage(FrameNumber);
             if (!physicalMemory.Table.Entries[FrameNumber].SwappedOut)
             {
                 physicalMemory.Table.Entries[FrameNumber].SwappedOut = true;
                 physicalMemory.Table.Entries[FrameNumber].Faults++;
-                physicalMemory.Pages.RemoveAt(FrameNumber);
+                physicalMemory.Pages.RemoveAt(GetIndexMemory(FrameNumber));
                 swap.SwappedMemoryPages.Add(temp);
              }
             else
@@ -142,7 +143,7 @@ namespace CPU_OS_Simulator.Memory
                 physicalMemory.Table.Entries[FrameNumber].SwappedOut = false;
                 physicalMemory.Table.Entries[FrameNumber].Faults++;
                 physicalMemory.AddPage(temp,FrameNumber);
-                swap.SwappedMemoryPages.RemoveAt(FrameNumber);
+                swap.SwappedMemoryPages.RemoveAt(GetIndexSwap(FrameNumber));
             }
             else
             {
@@ -185,6 +186,25 @@ namespace CPU_OS_Simulator.Memory
                 return null;
             }
             
+           
+        }
+
+        public int GetIndexMemory(int frameNumber)
+        {
+            dynamic wind = GetMainWindowInstance();
+            PhysicalMemory memory = wind.Memory;
+            int index = memory.Pages.IndexOf(memory.Pages.Where(x => x.FrameNumber == frameNumber).FirstOrDefault());
+            return index;
+        }
+
+        public int GetIndexSwap(int frameNumber)
+        {
+            dynamic wind = GetMainWindowInstance();
+            SwapSpace swap = wind.SwapSpace;
+            int index =
+                swap.SwappedMemoryPages.IndexOf(
+                    swap.SwappedMemoryPages.Where(x => x.FrameNumber == frameNumber).FirstOrDefault());
+            return index;
 
         }
 

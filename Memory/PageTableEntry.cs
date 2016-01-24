@@ -28,6 +28,7 @@
             this.swappedOut = swappedOut;
             faults = 0;
             this.page = page;
+            page.FrameNumber = frameNumber;
         }
         /// <summary>
         /// Property for the frame number
