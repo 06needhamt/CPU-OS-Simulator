@@ -850,6 +850,7 @@ namespace CPU_OS_Simulator
                 for (int i = 0; i < prog.Pages; i++)
                 {
                     MemoryPage page = new MemoryPage(i,i * MemoryPage.PAGE_SIZE);
+                    memory.AddPage(page, memory.Pages.Count);
                 }
                 programList.Add(prog);
                 lst_ProgramList.Items.Add(prog);

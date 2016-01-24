@@ -292,12 +292,15 @@ namespace CPU_OS_Simulator.Operating_System
         private async void ExecuteLottery(long seed, long life)
         {
             Random r = new Random((int) (seed << 32));
-            await DrawLottery(r.Next(0, issuedLotteryTickets.Max(x => x.Id)));
+            if (runningProcess == null || runningProcess.Unit.Done)
+            {
+                await DrawLottery(r.Next(0, issuedLotteryTickets.Max(x => x.Id)));
+            }
             //ProcessExecutionUnit unit = runningProcess.Unit;
             lifetime = new Stopwatch();
             lifetime.Reset();
             lifetime.Start();
-            while (!runningProcess.Unit.Stop && !runningProcess.Unit.Done &&
+            while (runningProcess != null && !runningProcess.Unit.Stop && !runningProcess.Unit.Done &&
                    !runningProcess.Unit.Process.Terminated && !runningProcess.Unit.TimedOut)
             {
                 if (lifetime.ElapsedMilliseconds > life)
@@ -344,9 +347,10 @@ namespace CPU_OS_Simulator.Operating_System
             if (runningProcess.Unit.Done)
             {
                 issuedLotteryTickets = issuedLotteryTickets.Where(x => x.Owner != runningProcess).ToList();
-                if(issuedLotteryTickets.Count == 0)
+                if(issuedLotteryTickets.Count == 0 || readyQueue.Count == 0)
                     return;
-                await DrawLottery(r.Next(0, issuedLotteryTickets.Max(x => x.Id)));
+                else
+                    await DrawLottery(r.Next(0, issuedLotteryTickets.Max(x => x.Id)));
             }
         }
 
@@ -447,7 +451,7 @@ namespace CPU_OS_Simulator.Operating_System
             await CallFromMainThread(UpdateMainWindowInterface);
             lifetime.Reset();
             lifetime.Start();
-            while (!runningProcess.Unit.Stop && !runningProcess.Unit.Done &&
+            while (runningProcess != null && !runningProcess.Unit.Stop && !runningProcess.Unit.Done &&
                    !runningProcess.Unit.Process.Terminated && !runningProcess.Unit.TimedOut)
             {
                 if (lifetime.ElapsedMilliseconds > life)
@@ -503,7 +507,7 @@ namespace CPU_OS_Simulator.Operating_System
             //ProcessExecutionUnit unit = runningProcess.Unit;
             lifetime.Reset();
             lifetime.Start();
-            while (!runningProcess.Unit.Stop && !runningProcess.Unit.Done &&
+            while (runningProcess != null && !runningProcess.Unit.Stop && !runningProcess.Unit.Done &&
                    !runningProcess.Unit.Process.Terminated && !runningProcess.Unit.TimedOut)
             {
                 if (lifetime.ElapsedMilliseconds > life)

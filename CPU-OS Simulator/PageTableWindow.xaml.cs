@@ -64,7 +64,7 @@ namespace CPU_OS_Simulator
             {
                 int index = lst_Pages.SelectedIndex;
                 parent.ParentWindow.Memory.Table.Entries[index].Page.SwapIn(0, index);
-                parent.ParentWindow.Memory.Table.Entries.RemoveAt(parent.ParentWindow.Memory.Table.Entries.Count - 1);
+                //parent.ParentWindow.Memory.Table.Entries.RemoveAt(parent.ParentWindow.Memory.Table.Entries.Count - 1);
             }
             else
             {
