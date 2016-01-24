@@ -37,6 +37,7 @@ namespace CPU_OS_Simulator.Operating_System
         public int OSid;
         public int clockSpeed;
         public ProcessExecutionUnit unit;
-        
+        public List<LotteryTicket> lotteryTickets;
+
     }
 }

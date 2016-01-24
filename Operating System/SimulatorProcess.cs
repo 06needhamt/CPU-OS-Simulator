@@ -41,6 +41,7 @@ namespace CPU_OS_Simulator.Operating_System
         private ProcessControlBlock processControlBlock;
         private int clockSpeed;
         private ProcessExecutionUnit unit;
+        private List<LotteryTicket> lotteryTickets; 
 
         /// <summary>
         /// Default Constructor for a process used when deserialising processes
@@ -89,6 +90,7 @@ namespace CPU_OS_Simulator.Operating_System
             this.OSid = flags.OSid;
             this.clockSpeed = flags.clockSpeed;
             this.unit = new ProcessExecutionUnit(this,clockSpeed);
+            this.lotteryTickets = flags.lotteryTickets;
         }
 
         /// <summary>
@@ -261,6 +263,12 @@ namespace CPU_OS_Simulator.Operating_System
         {
             get { return processLifetimeTimeUnit; }
             set { processLifetimeTimeUnit = value; }
+        }
+
+        public List<LotteryTicket> LotteryTickets
+        {
+            get { return lotteryTickets; }
+            set { lotteryTickets = value; }
         }
 
         /// <summary>

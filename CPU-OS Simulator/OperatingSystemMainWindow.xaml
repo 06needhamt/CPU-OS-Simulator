@@ -108,7 +108,7 @@
                 <Grid x:Name="grid_Policies" Background="White">
                     <RadioButton x:Name="rdb_FirstCome_FirstServed" Content="First Come First Served (FCFS)" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" GroupName="Scheduling Policies" IsChecked="True"/>
                     <RadioButton x:Name="rdb_Shortest_Job_First" Content="Shortest Job First (SJF)" HorizontalAlignment="Left" Margin="10,31,0,0" VerticalAlignment="Top" GroupName="Scheduling Policies"/>
-                    <RadioButton x:Name="rdb_Lottery" Content="Lottery Scheduling" HorizontalAlignment="Left" Margin="212,10,0,0" VerticalAlignment="Top" GroupName="Scheduling Policies" IsEnabled="False"/>
+                    <RadioButton x:Name="rdb_Lottery" Content="Lottery Scheduling" HorizontalAlignment="Left" Margin="212,10,0,0" VerticalAlignment="Top" GroupName="Scheduling Policies"/>
                     <RadioButton x:Name="rdb_FairShare" Content="Fair Share Scheduling" HorizontalAlignment="Left" Margin="212,30,0,0" VerticalAlignment="Top" GroupName="Scheduling Policies" IsEnabled="False"/>
                     <RadioButton x:Name="rdb_Round_Robin" Content="Round Robin (RR)" HorizontalAlignment="Left" Margin="10,57,0,0" VerticalAlignment="Top" GroupName="Scheduling Policies"/>
                     <CheckBox x:Name="chk_Use_Default_Scheduler" Content="Use Default" HorizontalAlignment="Left" Margin="212,57,0,0" VerticalAlignment="Top"/>
