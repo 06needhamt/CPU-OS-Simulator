@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Collections.Specialized;
 using System.Reflection;
 using System.Windows;
+using CPU_OS_Simulator.Memory;
 
 namespace CPU_OS_Simulator.Operating_System
 {
@@ -120,9 +121,25 @@ namespace CPU_OS_Simulator.Operating_System
         public SimulatorProcess CreateProcess(ProcessFlags flags)
         {
             SimulatorProcess proc = new SimulatorProcess(flags);
+            AllocateProcessMemory(ref proc);
             return proc;
         }
 
+        public void AllocateProcessMemory(ref SimulatorProcess proc)
+        {
+            if (proc == null)
+            {
+                MessageBox.Show("Can't allocate memory for a null process");
+                return;
+            }
+            dynamic wind = GetMainWindowInstance();
+            PhysicalMemory mem = wind.Memory;
+            for (int i = 0; i < proc.Program.Pages; i++)
+            {
+                MemoryPage m = new MemoryPage(i, i * MemoryPage.PAGE_SIZE);
+                mem.AddPage(m, i);
+            }
+        }
 
         /// <summary>
         /// this method creates flags for the operating system scheduler based on selected UI options
