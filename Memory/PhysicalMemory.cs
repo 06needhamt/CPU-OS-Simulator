@@ -63,8 +63,8 @@ namespace CPU_OS_Simulator.Memory
                 //pageTable.Entries[number].SwappedOut = true;
                 swappedMemoryPage.SwapOut(swappedMemoryPage.StartOffsetPhysical,number); // swap out this memory page
                 pages.Add(page); // insert the new memory page
-                /*pageTable.Entries.Add(new PageTableEntry(pageTable.Entries.Count + 1, page.StartOffset,
-                    page.StartOffsetPhysical, false, page)); */
+                pageTable.Entries.Add(new PageTableEntry(pageTable.Entries.Count, page.StartOffset,
+                    page.StartOffsetPhysical, false, page));
             }
             return page;
         }
