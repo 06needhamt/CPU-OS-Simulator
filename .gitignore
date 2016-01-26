@@ -43,6 +43,7 @@ dlldata.c
 *.obj
 *.pch
 *.pdb
+!Third Party Libs/Newtonsoft.Json/Newtonsoft.Json.pdb
 *.pgc
 *.pgd
 *.rsp
