@@ -1,8 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.24720.0
-MinimumVisualStudioVersion = 10.0.40219.1
+# Visual Studio 2012
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CPU-OS Simulator", "CPU-OS Simulator\CPU-OS Simulator.csproj", "{C2EFCEE0-984E-4C61-B323-65AADD76F783}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CPU", "CPU\CPU.csproj", "{6EBCF9CD-C6A9-4535-9154-2FC7E303BFC4}"
@@ -30,11 +28,16 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Third Party Libs", "Third P
 		Third Party Libs\Credits.txt = Third Party Libs\Credits.txt
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Newtonsoft.Json.Net40", "Third Party Libs\Newtonsoft.Json\Newtonsoft.Json.Net40.csproj", "{A9AE40FF-1A21-414A-9FE7-3BE13644CC6D}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Save File Editor", "SaveFileEditor\Save File Editor.csproj", "{9B8C95C1-48C9-4D9A-90D6-55FCB5609107}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleTests", "ConsoleTests\ConsoleTests.csproj", "{326CEC05-A490-4D69-AAD3-760716377891}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Newtonsoft.Json", "Newtonsoft.Json", "{AE88583A-452C-4A99-8081-01DE09BE3D9E}"
+	ProjectSection(SolutionItems) = preProject
+		Third Party Libs\Newtonsoft.Json\Newtonsoft.Json.dll = Third Party Libs\Newtonsoft.Json\Newtonsoft.Json.dll
+		Third Party Libs\Newtonsoft.Json\Newtonsoft.Json.pdb = Third Party Libs\Newtonsoft.Json\Newtonsoft.Json.pdb
+		Third Party Libs\Newtonsoft.Json\Newtonsoft.Json.xml = Third Party Libs\Newtonsoft.Json\Newtonsoft.Json.xml
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -86,10 +89,6 @@ Global
 		{33BA51F9-D0A8-4E7D-81B9-D948C002AE85}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{33BA51F9-D0A8-4E7D-81B9-D948C002AE85}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{33BA51F9-D0A8-4E7D-81B9-D948C002AE85}.Release|Any CPU.Build.0 = Release|Any CPU
-		{A9AE40FF-1A21-414A-9FE7-3BE13644CC6D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{A9AE40FF-1A21-414A-9FE7-3BE13644CC6D}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{A9AE40FF-1A21-414A-9FE7-3BE13644CC6D}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{A9AE40FF-1A21-414A-9FE7-3BE13644CC6D}.Release|Any CPU.Build.0 = Release|Any CPU
 		{9B8C95C1-48C9-4D9A-90D6-55FCB5609107}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{9B8C95C1-48C9-4D9A-90D6-55FCB5609107}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9B8C95C1-48C9-4D9A-90D6-55FCB5609107}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -103,6 +102,6 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{A9AE40FF-1A21-414A-9FE7-3BE13644CC6D} = {14360FE8-C45B-4B96-8E6A-6E41590FB4EF}
+		{AE88583A-452C-4A99-8081-01DE09BE3D9E} = {14360FE8-C45B-4B96-8E6A-6E41590FB4EF}
 	EndGlobalSection
 EndGlobal
