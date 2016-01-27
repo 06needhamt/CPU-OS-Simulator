@@ -262,7 +262,7 @@ namespace CPU_OS_Simulator
         private void DebugFunction()
         { 
             //DebugCompilingProgram();
-            MemoryPage m = new MemoryPage(0, 0);
+            MemoryPage m = new MemoryPage(0, 0,"Debug");
             //m.Data[0] = new MemorySegment(0);
             m.Data[0].Byte0 = (byte)'A';
             m.Data[0].Byte1 = (byte)'B';
@@ -284,7 +284,7 @@ namespace CPU_OS_Simulator
             List<List<InstructionSegment>> segmentList = compiler.CompileFromInstructions();
             List<byte> bytes = compiler.CompileToBytes(segmentList);
             CompiledProgram compiledProgram = new CompiledProgram(bytes,program.Name,bytes.Count);
-            MemoryPage m = new MemoryPage(0, 0);
+            MemoryPage m = new MemoryPage(0, 0,program.Name);
             m.ZeroMemory();
             memory.AddPage(m,0);
             compiledProgram.LoadinMemory(0);
@@ -296,7 +296,7 @@ namespace CPU_OS_Simulator
         {
             for (int i = 0; i < memory.Capacity + 1; i++)
             {
-                MemoryPage m = new MemoryPage(i, i * MemoryPage.PAGE_SIZE);
+                MemoryPage m = new MemoryPage(i, i * MemoryPage.PAGE_SIZE,"Debug");
                 memory.AddPage(m, memory.Pages.Count);
                 System.Console.WriteLine("Pages in Memory = " + memory.Pages.Count);
                 System.Console.WriteLine("Pages Swapped Out = " + swapSpace.SwappedMemoryPages.Count);
@@ -382,7 +382,7 @@ namespace CPU_OS_Simulator
         {
             for (int i = 0; i < prog.Pages; i++)
             {
-                MemoryPage memoryPage = new MemoryPage(i, (i * MemoryPage.PAGE_SIZE));
+                MemoryPage memoryPage = new MemoryPage(i, (i * MemoryPage.PAGE_SIZE),prog.Name);
                 memory.AddPage(memoryPage, memory.Pages.Count);
             }
         }
@@ -818,7 +818,7 @@ namespace CPU_OS_Simulator
                 }
                 for (int i = 0; i < prog.Pages; i++)
                 {
-                    MemoryPage memoryPage = new MemoryPage(i, (i*MemoryPage.PAGE_SIZE));
+                    MemoryPage memoryPage = new MemoryPage(i, (i*MemoryPage.PAGE_SIZE),prog.Name);
                     memory.AddPage(memoryPage, memory.Pages.Count);
                 }
                 programList.Add(prog);
@@ -849,7 +849,7 @@ namespace CPU_OS_Simulator
                 }
                 for (int i = 0; i < prog.Pages; i++)
                 {
-                    MemoryPage page = new MemoryPage(i,i * MemoryPage.PAGE_SIZE);
+                    MemoryPage page = new MemoryPage(i,i * MemoryPage.PAGE_SIZE,prog.Name);
                     memory.AddPage(page, memory.Pages.Count);
                 }
                 programList.Add(prog);
@@ -1186,6 +1186,39 @@ namespace CPU_OS_Simulator
             Type WindowType = windowBridge.GetType(windowBridge.GetExportedTypes()[1].ToString()); // get the name of the type that contains the window instances
             OperatingSystemMainWindow window = (OperatingSystemMainWindow) WindowType.GetField("OperatingSystemMainWindowInstance").GetValue(null); // get the value of the static OperatingSystemMainWindowInstance field
             return window;
+        }
+
+        private void btn_LoadCode_Click(object sender, RoutedEventArgs e)
+        {
+            CompileProgramFromInstructions();
+        }
+
+        private void CompileProgramFromInstructions()
+        {
+            //try
+            //{
+                //TODO Not Fully Working because compiler is not complete
+                SimulatorProgram p = programList.Where(x => x.Name.Equals(currentProgram)).FirstOrDefault();
+                CompilerMain compiler = new CompilerMain(p.Instructions, p.Name);
+                List<List<InstructionSegment>> compiledInstructions = compiler.CompileFromInstructions();
+                if (compiledInstructions == null || compiledInstructions.Count == 0)
+                {
+                    MessageBox.Show("An error occurred during compilation");
+                    return;
+                }
+                List<byte> programBytes = compiler.CompileToBytes(compiledInstructions);
+                CompiledProgram compiledProgram = new CompiledProgram(programBytes,p.Name,programBytes.Count);
+                MemoryPage temp = memory.Pages.Where(x => x.ProgramName.Equals(p.Name)).FirstOrDefault();
+                compiledProgram.LoadinMemory(temp.FrameNumber);
+                MemoryWindow wind = new MemoryWindow(this,memory.RequestMemoryPage(temp.FrameNumber));
+                wind.Show();
+
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        System.Console.WriteLine(ex.StackTrace);
+        //        MessageBox.Show("Please Select a program to load code from");
+        //    }
         }
     }
 }

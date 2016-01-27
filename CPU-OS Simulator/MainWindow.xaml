@@ -95,7 +95,7 @@
             </TabControl>
         </Grid>
         <Grid x:Name="ProgramListGrid" HorizontalAlignment="Left" Height="289" Margin="31,232,0,0" VerticalAlignment="Top" Width="249" Grid.Column="1">
-            <GroupBox x:Name="grp_ProgramList" Header="PROGRAM LIST" HorizontalAlignment="Left" VerticalAlignment="Top" Height="282" Width="249" Margin="0,0,0,-66">
+            <GroupBox x:Name="grp_ProgramList" Header="PROGRAM LIST" HorizontalAlignment="Left" VerticalAlignment="Top" Height="290" Width="249" Margin="0,0,0,-66">
                 <Grid x:Name="ProgramListViewGrid" HorizontalAlignment="Left" Height="272" VerticalAlignment="Top" Width="239" Margin="0,0,-2,-12">
                     <ListView x:Name="lst_ProgramList" HorizontalAlignment="Left" Height="140" VerticalAlignment="Top" Width="239" Background="#FFFFFBAC" SelectionChanged="lst_ProgramList_SelectionChanged">
                         <ListView.View>
@@ -107,7 +107,24 @@
                             </GridView>
                         </ListView.View>
                     </ListView>
-                    <Button x:Name="btn_ShowMemory" Content="Show Memory" HorizontalAlignment="Left" Margin="46,158,0,0" VerticalAlignment="Top" Width="75" Click="btn_ShowMemory_Click"/>
+                    <Button x:Name="btn_ShowMemory" HorizontalAlignment="Left" Margin="129,145,0,0" VerticalAlignment="Top" Width="105" Click="btn_ShowMemory_Click" Height="39">
+                        <TextBlock Text="SHOW PROGRAM DATA MEMORY" TextWrapping="Wrap"/>
+                    </Button>
+                    <Button x:Name="btn_LoadCode" HorizontalAlignment="Left" Margin="5,145,0,0" VerticalAlignment="Top" Width="105" Height="39" Click="btn_LoadCode_Click">
+                        <TextBlock Text="LOAD PROGRAM CODE IN MEMORY" TextWrapping="Wrap"/>
+                    </Button>
+                    <Button x:Name="btn_RemovePrograms" HorizontalAlignment="Left" Margin="129,189,0,0" VerticalAlignment="Top" Width="105" Click="btn_ShowMemory_Click" Height="39">
+                        <TextBlock Text="REMOVE PROGRAM" TextWrapping="Wrap"/>
+                    </Button>
+                    <Button x:Name="btn_RemoveAllPrograms" HorizontalAlignment="Left" Margin="5,189,0,0" VerticalAlignment="Top" Width="105" Height="39">
+                        <TextBlock Text="REMOVE ALL PROGRAMS" TextWrapping="Wrap"/>
+                    </Button>
+                    <Button x:Name="btn_CreateProgramInstance" HorizontalAlignment="Left" Margin="129,231,0,0" VerticalAlignment="Top" Width="105" Click="btn_ShowMemory_Click" Height="39">
+                        <TextBlock Text="SHOW PROGRAM DATA MEMORY" TextWrapping="Wrap"/>
+                    </Button>
+                    <Button x:Name="btn_DeleteProgramInstance" HorizontalAlignment="Left" Margin="5,231,0,0" VerticalAlignment="Top" Width="105" Height="39">
+                        <TextBlock Text="LOAD PROGRAM CODE IN MEMORY" TextWrapping="Wrap"/>
+                    </Button>
                 </Grid>
             </GroupBox>
         </Grid>

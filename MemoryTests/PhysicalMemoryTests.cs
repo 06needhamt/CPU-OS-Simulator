@@ -24,7 +24,7 @@ namespace CPU_OS_Simulator.Memory.Tests
             PhysicalMemory m = new PhysicalMemory(10);
             for (int i = 0; i < m.Capacity; i++)
             {
-                m.AddPage(new MemoryPage(0, 0), i);
+                m.AddPage(new MemoryPage(0, 0, "Unit Test"), i);
             }
             Assert.IsTrue(m.isFull());
         }
@@ -33,7 +33,7 @@ namespace CPU_OS_Simulator.Memory.Tests
         public void AddPageTest()
         {
             PhysicalMemory mem = new PhysicalMemory(10);
-            MemoryPage m = new MemoryPage(0,0);
+            MemoryPage m = new MemoryPage(0,0,"Unit Test");
             mem.AddPage(m, 0);
             Assert.IsTrue(mem.Pages.Contains(m));
         }
@@ -54,8 +54,8 @@ namespace CPU_OS_Simulator.Memory.Tests
         public void RequestMemoryPageTest()
         {
             PhysicalMemory mem = new PhysicalMemory(10);
-            MemoryPage p1 = new MemoryPage(0,0);
-            MemoryPage p2 = new MemoryPage(1,1 * MemoryPage.PAGE_SIZE);
+            MemoryPage p1 = new MemoryPage(0,0,"Unit Test");
+            MemoryPage p2 = new MemoryPage(1,1 * MemoryPage.PAGE_SIZE, "Unit Test");
             mem.AddPage(p1, 0);
             mem.AddPage(p2, 1);
             MemoryPage req = mem.RequestMemoryPage(1);

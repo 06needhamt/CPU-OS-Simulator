@@ -14,7 +14,7 @@ namespace CPU_OS_Simulator.Memory.Tests
         [TestMethod()]
         public void PageTableEntryTest()
         {
-            PageTableEntry entry = new PageTableEntry(0,0,0,false,new MemoryPage(0,0));
+            PageTableEntry entry = new PageTableEntry(0,0,0,false,new MemoryPage(0,0,"Unit Test"));
             Assert.IsInstanceOfType(entry,typeof(PageTableEntry));
         }
     }

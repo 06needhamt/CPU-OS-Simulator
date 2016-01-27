@@ -20,6 +20,7 @@ namespace CPU_OS_Simulator.Memory
         public const int PAGE_SIZE = 256;
         private readonly int endOffset;
         private MemorySegment[] data;
+        private string programName;
          /// <summary>
          /// The index of the current page within its program
          /// </summary>
@@ -92,16 +93,24 @@ namespace CPU_OS_Simulator.Memory
             set { frameNumber = value; }
         }
 
+        public string ProgramName
+        {
+            get { return programName; }
+            set { programName = value; }
+        }
+
         #region Constructors
         /// <summary>
         /// Constructor for memory page
         /// </summary>
         /// <param name="pageIndex"> the index of the page within the program</param>
-        /// <param name="startOffset"></param>
-        public MemoryPage(int pageIndex, int startOffset)
+        /// <param name="startOffset">the start offset of this page</param>
+        /// <param name="programName"> the name of the program this belongs to</param>
+        public MemoryPage(int pageIndex, int startOffset, string programName)
         {
             this.pageIndex = pageIndex;
             this.startOffset = startOffset;
+            this.programName = programName;
             //this.PAGE_SIZE = pageSize;
             endOffset = startOffset + PAGE_SIZE;
             data = new MemorySegment[PAGE_SIZE / 8];

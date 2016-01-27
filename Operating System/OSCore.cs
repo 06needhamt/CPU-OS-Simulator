@@ -134,9 +134,9 @@ namespace CPU_OS_Simulator.Operating_System
             }
             dynamic wind = GetMainWindowInstance();
             PhysicalMemory mem = wind.Memory;
-            for (int i = 0; i < proc.Program.Pages; i++)
+            for (int i = 0; i < proc.ProcessMemory; i++)
             {
-                MemoryPage m = new MemoryPage(i, i * MemoryPage.PAGE_SIZE);
+                MemoryPage m = new MemoryPage(i, i * MemoryPage.PAGE_SIZE,proc.Program.Name);
                 mem.AddPage(m, i);
             }
         }
