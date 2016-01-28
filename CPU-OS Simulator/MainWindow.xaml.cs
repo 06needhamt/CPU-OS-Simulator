@@ -19,9 +19,8 @@ using CPU_OS_Simulator.Compiler;
 using CPU_OS_Simulator.Compiler.Backend;
 using CPU_OS_Simulator.CPU;
 using CPU_OS_Simulator.Memory;
-using Newtonsoft;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
+using Newtonsoft.Json; // See Third Party Libs/Credits.txt for licensing information for JSON.Net
+
 
 namespace CPU_OS_Simulator
 {
@@ -141,6 +140,7 @@ namespace CPU_OS_Simulator
             {
                 string path = (new Uri(Assembly.GetExecutingAssembly().CodeBase)).AbsolutePath;
                 SetAssociation(".sas", "Simulator Program File", path, "CPU-OS Simulator Program File");
+                SetAssociation(".soss","Simulator OS State", path, "Simulator OS State");
             }
             programList = new List<SimulatorProgram>();
             PopulateRegisters();
@@ -164,6 +164,13 @@ namespace CPU_OS_Simulator
         [DllImport("shell32.dll", CharSet = CharSet.Auto, SetLastError = true)]
         private static extern void SHChangeNotify(uint wEventId, uint uFlags, IntPtr dwItem1, IntPtr dwItem2);
 
+        /// <summary>
+        /// This Function sets file associations for simulator file types
+        /// </summary>
+        /// <param name="Extension"> the extension of the file type</param>
+        /// <param name="KeyName"> the name of the registry key to hold the association </param>
+        /// <param name="OpenWith"> the program the file should open with</param>
+        /// <param name="FileDescription"> the description of the file type</param>
         private static void SetAssociation(string Extension, string KeyName, string OpenWith, string FileDescription)
         {
             RegistryKey BaseKey;
@@ -184,7 +191,7 @@ namespace CPU_OS_Simulator
             OpenMethod.Close();
             Shell.Close();
 
-            CurrentUser = Registry.CurrentUser.OpenSubKey("Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\FileExts\\.sas", true);
+            CurrentUser = Registry.CurrentUser.OpenSubKey("Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\FileExts\\" + Extension, true);
             CurrentUser.DeleteSubKey("UserChoice", false);
             CurrentUser.Close();
 
@@ -595,12 +602,27 @@ namespace CPU_OS_Simulator
                 activeUnit.Stop = false;
                 activeUnit.Done = false;
             }
+
         }
 
         private void lst_ProgramList_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            UpdateIntructions();
-            UpdateStack();
+            if (lst_ProgramList.Items.Count > 0)
+            {
+                UpdateIntructions();
+                UpdateStack();
+            }
+            else
+            {
+                lst_InstructionsList.ItemsSource = null;
+                lst_Stack.ItemsSource = null;
+                lst_InstructionsList.Items.Clear();
+                lst_Stack.Items.Clear();
+                UpdateIntructions();
+                //lst_InstructionsList.ItemsSource = programList;
+                //lst_InstructionsList.ItemsSource = new List<ItemsControl>(1);
+                //UpdateInterface(sender, null);
+            }
         }
 
         /// <summary>
@@ -638,7 +660,7 @@ namespace CPU_OS_Simulator
         }
 
         /// <summary>
-        /// Updates the list of instructions
+        /// This function updates the list of instructions
         /// </summary>
         private void UpdateIntructions()
         {
@@ -775,7 +797,11 @@ namespace CPU_OS_Simulator
             writer.Close();
             writer.Dispose(); // flush close and dispose of the writer
         }
-
+        /// <summary>
+        /// Serializes a program List using JSON.NET (See Third Party Libs/Credits.txt for more information
+        /// </summary>
+        /// <param name="serializableObject"> the object to serialize</param>
+        /// <param name="filePath">the file to save the objects to</param>
         private void SerializeObjectLib(SimulatorProgram serializableObject, string filePath)
         {
             if (serializableObject == null || filePath.Equals(String.Empty)){ return; }
@@ -825,7 +851,10 @@ namespace CPU_OS_Simulator
                 lst_ProgramList.Items.Add(prog); // add the object to the program list
             }
         }
-
+        /// <summary>
+        /// De-serializes an .sas file into a program list using JSON.NET (See Third Party Libs/Credits.txt for more information
+        /// </summary>
+        /// <param name="fileName"> the name of the file to load the objects from</param>
         private void DeSerialiseObjectLib(string fileName)
         {
             if (string.IsNullOrEmpty(fileName)) { return; }
@@ -1193,10 +1222,13 @@ namespace CPU_OS_Simulator
             CompileProgramFromInstructions();
         }
 
+        /// <summary>
+        /// This function compiles the currently selected program's instructions into their binary equivalent
+        /// </summary>
         private void CompileProgramFromInstructions()
         {
-            //try
-            //{
+            try
+            {
                 //TODO Not Fully Working because compiler is not complete
                 SimulatorProgram p = programList.Where(x => x.Name.Equals(currentProgram)).FirstOrDefault();
                 CompilerMain compiler = new CompilerMain(p.Instructions, p.Name);
@@ -1213,12 +1245,99 @@ namespace CPU_OS_Simulator
                 MemoryWindow wind = new MemoryWindow(this,memory.RequestMemoryPage(temp.FrameNumber));
                 wind.Show();
 
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        System.Console.WriteLine(ex.StackTrace);
-        //        MessageBox.Show("Please Select a program to load code from");
-        //    }
+            }
+            catch (Exception ex)
+            {
+                System.Console.WriteLine(ex.StackTrace);
+                MessageBox.Show("Please Select a program to load code from");
+            }
+        }
+
+        private async void btn_RemoveAllPrograms_Click(object sender, RoutedEventArgs e)
+        {
+            await RemoveAllPrograms();
+        }
+
+        /// <summary>
+        /// This function asynchronously removes all programs from the loaded program list and also deallocates their memory
+        /// </summary>
+        /// <returns>A task to notify the calling thread that the operation has completed </returns>
+        private async Task<int> RemoveAllPrograms()
+        {
+            lst_ProgramList.Items.Clear();
+            lst_ProgramList.ItemsSource = null;
+            foreach (SimulatorProgram program in programList)
+            {
+                memory.Pages.RemoveAll(x => x.ProgramName.Equals(program.Name));
+                programList.Remove(program);
+            }
+            lst_ProgramList.ItemsSource = programList;
+            return await UpdateInterface();
+        }
+
+        private async void btn_RemovePrograms_Click(object sender, RoutedEventArgs e)
+        {
+            await RemoveProgram(currentProgram);
+        }
+
+        /// <summary>
+        /// This function asynchronously removes a program from memory
+        /// </summary>
+        /// <param name="ProgramName">the name of the program to remove </param>
+        /// <returns> a task to notify the calling thread that the task has completed</returns>
+        private async Task<int> RemoveProgram(string ProgramName)
+        {
+            lst_ProgramList.Items.Clear();
+            lst_ProgramList.ItemsSource = null;
+            programList.RemoveAll(x => x.Name.Equals(ProgramName));
+            lst_ProgramList.ItemsSource = programList;
+            return await UpdateInterface();
+        }
+
+        private async void btn_DeleteProgramInstance_Click(object sender, RoutedEventArgs e)
+        {
+            await DeleteProgramInstance(currentProgram);
+        }
+
+        /// <summary>
+        /// This function asynchronously removes a program instance from memory 
+        /// </summary>
+        /// <param name="ProgramName"> the name of the program instance to remove from memory </param>
+        /// <returns> a task to notify the calling thread that the task has completed</returns>
+        private async Task<int> DeleteProgramInstance(string ProgramName)
+        {
+            lst_ProgramList.ItemsSource = null;
+            lst_ProgramList.Items.Clear();
+            programList.RemoveAll(x => x.Name.Equals(ProgramName + "_inst"));
+            lst_ProgramList.ItemsSource = programList;
+            return await UpdateInterface();
+        }
+
+        private async void btn_CreateProgramInstance_Click(object sender, RoutedEventArgs e)
+        {
+            int result = await CreateProgramInstance(currentProgram);
+            if (result == int.MinValue)
+            {
+                MessageBox.Show("An Error Occurred while creating an instance of program " + currentProgram);
+            }
+        }
+
+        /// <summary>
+        /// This method creates a program instance and loads it into memory
+        /// </summary>
+        /// <param name="ProgramName"> the name of the program to create</param>
+        /// <returns> a task to notify the calling thread that the task has completed</returns>
+        private async Task<int> CreateProgramInstance(string ProgramName)
+        {
+            lst_ProgramList.ItemsSource = null;
+            lst_ProgramList.Items.Clear();
+            SimulatorProgram prog = programList.Where(x => x.Name.Equals(ProgramName)).FirstOrDefault();
+            if (prog == null)
+                return int.MinValue;
+            SimulatorProgram newProgram = CreateNewProgram(prog.Name + "_inst", prog.BaseAddress, prog.Pages);
+            programList.Add(newProgram);
+            lst_ProgramList.ItemsSource = programList;
+            return await UpdateInterface();
         }
     }
 }

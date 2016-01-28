@@ -108,22 +108,22 @@
                         </ListView.View>
                     </ListView>
                     <Button x:Name="btn_ShowMemory" HorizontalAlignment="Left" Margin="129,145,0,0" VerticalAlignment="Top" Width="105" Click="btn_ShowMemory_Click" Height="39">
-                        <TextBlock Text="SHOW PROGRAM DATA MEMORY" TextWrapping="Wrap"/>
+                        <TextBlock Text="SHOW PROGRAM DATA MEMORY" TextWrapping="Wrap" TextAlignment="Center"/>
                     </Button>
                     <Button x:Name="btn_LoadCode" HorizontalAlignment="Left" Margin="5,145,0,0" VerticalAlignment="Top" Width="105" Height="39" Click="btn_LoadCode_Click">
-                        <TextBlock Text="LOAD PROGRAM CODE IN MEMORY" TextWrapping="Wrap"/>
+                        <TextBlock Text="LOAD PROGRAM CODE IN MEMORY" TextWrapping="Wrap" TextAlignment="Center"/>
                     </Button>
-                    <Button x:Name="btn_RemovePrograms" HorizontalAlignment="Left" Margin="129,189,0,0" VerticalAlignment="Top" Width="105" Click="btn_ShowMemory_Click" Height="39">
-                        <TextBlock Text="REMOVE PROGRAM" TextWrapping="Wrap"/>
+                    <Button x:Name="btn_RemovePrograms" HorizontalAlignment="Left" Margin="129,189,0,0" VerticalAlignment="Top" Width="105" Height="39" Click="btn_RemovePrograms_Click">
+                        <TextBlock Text="REMOVE PROGRAM" TextWrapping="Wrap" TextAlignment="Center"/>
                     </Button>
-                    <Button x:Name="btn_RemoveAllPrograms" HorizontalAlignment="Left" Margin="5,189,0,0" VerticalAlignment="Top" Width="105" Height="39">
-                        <TextBlock Text="REMOVE ALL PROGRAMS" TextWrapping="Wrap"/>
+                    <Button x:Name="btn_RemoveAllPrograms" HorizontalAlignment="Left" Margin="5,189,0,0" VerticalAlignment="Top" Width="105" Height="39" Click="btn_RemoveAllPrograms_Click">
+                        <TextBlock Text="REMOVE ALL PROGRAMS" TextWrapping="Wrap" TextAlignment="Center"/>
                     </Button>
-                    <Button x:Name="btn_CreateProgramInstance" HorizontalAlignment="Left" Margin="129,231,0,0" VerticalAlignment="Top" Width="105" Click="btn_ShowMemory_Click" Height="39">
-                        <TextBlock Text="SHOW PROGRAM DATA MEMORY" TextWrapping="Wrap"/>
+                    <Button x:Name="btn_CreateProgramInstance" HorizontalAlignment="Left" Margin="129,231,0,0" VerticalAlignment="Top" Width="105" Height="39" Click="btn_CreateProgramInstance_Click">
+                        <TextBlock Text="CREATE PROGRAM INSTANCE" TextWrapping="Wrap" TextAlignment="Center"/>
                     </Button>
-                    <Button x:Name="btn_DeleteProgramInstance" HorizontalAlignment="Left" Margin="5,231,0,0" VerticalAlignment="Top" Width="105" Height="39">
-                        <TextBlock Text="LOAD PROGRAM CODE IN MEMORY" TextWrapping="Wrap"/>
+                    <Button x:Name="btn_DeleteProgramInstance" HorizontalAlignment="Left" Margin="5,231,0,0" VerticalAlignment="Top" Width="105" Height="39" Click="btn_DeleteProgramInstance_Click">
+                        <TextBlock Text="DELETE PROGRAM INSTANCE" TextWrapping="Wrap" TextAlignment="Center"/>
                     </Button>
                 </Grid>
             </GroupBox>
@@ -205,7 +205,7 @@
                         <Label x:Name="label7" Content="Slow" HorizontalAlignment="Left" Margin="123,141,0,0" VerticalAlignment="Top" />
                         <Label x:Name="label8" Content="Fast" HorizontalAlignment="Left" Margin="123,77,0,0" VerticalAlignment="Top" />
                         <Button x:Name="btn_ResetProgram"  HorizontalAlignment="Left" Margin="163,75,0,0" VerticalAlignment="Top" Width="75" Height="40" Click="btn_ResetProgram_Click">
-                            <TextBlock Text="RESET PROGRAM" TextWrapping="Wrap" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                            <TextBlock Text="RESET PROGRAM" TextWrapping="Wrap" HorizontalAlignment="Center" VerticalAlignment="Center" TextAlignment="Center"/>
                         </Button>
                         <Button x:Name="btn_ShowPCB" Content="SHOW PCB" HorizontalAlignment="Left" Margin="162,120,0,0" VerticalAlignment="Top" Width="75" Height="40" Click="btn_ShowPCB_Click" />
                     </Grid>

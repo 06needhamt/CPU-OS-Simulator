@@ -2,6 +2,7 @@
 
 namespace CPU_OS_Simulator.Operating_System
 {
+    #pragma warning disable 1591
     /// <summary>
     /// This struct represents the flags passed to the scheduler
     /// </summary>

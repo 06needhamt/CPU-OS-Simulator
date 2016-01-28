@@ -3,6 +3,7 @@ using CPU_OS_Simulator.CPU;
 
 namespace CPU_OS_Simulator.Operating_System
 {
+    #pragma warning disable 1591
     /// <summary>
     /// this struct represents the flags passed to a process
     /// </summary>

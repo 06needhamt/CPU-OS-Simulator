@@ -14,7 +14,7 @@ using System.Timers;
 using System.Windows.Data;
 using CPU_OS_Simulator.CPU;
 using System.Web.Script.Serialization;
-using Newtonsoft.Json;
+using Newtonsoft.Json; // See Third Party Libs/Credits.txt for licensing information for JSON.Net
 
 namespace CPU_OS_Simulator.Operating_System
 {

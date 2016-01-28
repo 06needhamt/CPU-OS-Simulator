@@ -6,7 +6,7 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows;
-using Newtonsoft.Json;
+using Newtonsoft.Json; // See Third Party Libs/Credits.txt for licensing information for JSON.Net
 using Newtonsoft.Json.Linq;
 
 namespace CPU_OS_Simulator.Save_File_Editor

@@ -120,5 +120,69 @@ namespace CPU_OS_Simulator.CPU
         }
 
         #endregion Properties
+
+        #region Methods
+
+        ///// <summary>
+        ///// Overloaded equality operator for the operator class 
+        ///// </summary>
+        ///// <param name="lhs"> the left hand side of the operation</param>
+        ///// <param name="rhs"> the right hand side of the operation</param>
+        ///// <returns> true if the operands are equal false if not</returns>
+        //public static bool operator ==(Operand lhs, Operand rhs)
+        //{
+        //    if (lhs.Equals(null) || rhs.Equals(null))
+        //        return false;
+        //    if(lhs.isRegister && rhs.isRegister)
+        //        if (lhs.register.Name.Equals(rhs.register.Name))
+        //            if(lhs.Type.Equals(rhs.Type))
+        //                return true;
+        //    if (lhs.value.Equals(rhs.value))
+        //        if(lhs.type.Equals(rhs.Type))
+        //            return true;
+        //    return false;
+        //}
+        ///// <summary>
+        ///// Overloaded not equality operator for the operator class 
+        ///// </summary>
+        ///// <param name="lhs"> the left hand side of the operation</param>
+        ///// <param name="rhs"> the right hand side of the operation</param>
+        ///// <returns> true if the operands are not equal false if they are </returns>
+        //public static bool operator !=(Operand lhs, Operand rhs)
+        //{
+        //    if (lhs.Equals(null) || rhs.Equals(null))
+        //        return false;
+        //    if (lhs.isRegister && rhs.isRegister)
+        //        if (lhs.register.Name.Equals(rhs.register.Name))
+        //            if(lhs.Type.Equals(rhs.Type))
+        //                return false;
+        //    if (lhs.value.Equals(rhs.value))
+        //        if(lhs.Type.Equals(rhs.Type))
+        //            return false;
+        //    return true;
+        //}
+
+        /// <summary>
+        /// Determines whether the specified object is equal to the current object.
+        /// </summary>
+        /// <returns>
+        /// true if the specified object  is equal to the current object; otherwise, false.
+        /// </returns>
+        /// <param name="obj">The object to compare with the current object. </param>
+        public override bool Equals(object obj)
+        {
+            Operand op = obj as Operand;
+            if ((object) op == null)
+                return false;
+            if(op.isRegister && this.isRegister)
+                if (op.register.Name.Equals(this.register.Name))
+                    if(op.Type.Equals(this.Type))
+                        return true;
+            if (op.value.Equals(this.value))
+                if(op.Type.Equals(this.Type))
+                    return true;
+            return false;
+        }
+        #endregion Methods
     }
 }

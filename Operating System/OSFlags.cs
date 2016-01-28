@@ -6,6 +6,7 @@ namespace CPU_OS_Simulator.Operating_System
     /// </summary>
     public struct OSFlags
     {
+        #pragma warning disable 1591
         public EnumSchedulingPolicies schedulingPolicy;
         public double RR_Time_Slice;
         public EnumTimeUnit RR_Time_Slice_Unit;

@@ -3,7 +3,7 @@ using System.Windows;
 using System.IO;
 using System.Text;
 using Microsoft.Win32;
-using Newtonsoft.Json;
+using Newtonsoft.Json;// See Third Party Libs/Credits.txt for licensing information for JSON.Net
 using Newtonsoft.Json.Linq;
 
 namespace CPU_OS_Simulator.Save_File_Editor

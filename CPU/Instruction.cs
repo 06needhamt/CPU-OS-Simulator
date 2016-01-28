@@ -7,7 +7,7 @@ using System.Threading;
 using System.Web.Script.Serialization;
 using System.Windows;
 using CPU_OS_Simulator.Memory;
-using Newtonsoft.Json;
+using Newtonsoft.Json; // See Third Party Libs/Credits.txt for licensing information for JSON.Net
 
 namespace CPU_OS_Simulator.CPU
 {
