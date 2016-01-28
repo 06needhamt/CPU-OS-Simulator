@@ -52,6 +52,10 @@ namespace CPU_OS_Simulator.CPU
 
         #region Constructors
 
+        /// <summary>
+        /// Empty constructor used when deserialising execution units
+        /// NOTE DO NOT USE IN CODE
+        /// </summary>
         public ExecutionUnit()
         {
             

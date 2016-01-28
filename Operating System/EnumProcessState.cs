@@ -9,6 +9,7 @@
         UNKNOWN = -1,
         RUNNING = 0,
         READY = 1,
-        WAITING = 2
+        WAITING = 2,
+        DEADLOCKED = 3
     }
 }
