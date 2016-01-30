@@ -24,8 +24,8 @@ namespace CPU_OS_Simulator.Operating_System
         private double avgWaitingTime;
 
         private bool resourceStarved;
-        private List<SystemResource> allocatedResources;
-        private List<SystemResource> requestedResources;
+        private List<SimulatorResource> allocatedResources;
+        private List<SimulatorResource> requestedResources;
         private Register[] registers;
         private SpecialRegister[] specialRegisters;
 
@@ -60,7 +60,7 @@ namespace CPU_OS_Simulator.Operating_System
             this.resourceStarved = flags.resourceStarved;
             if (flags.allocatedResources == null)
             {
-                this.allocatedResources = new List<SystemResource>();
+                this.allocatedResources = new List<SimulatorResource>();
             }
             else
             {
@@ -68,7 +68,7 @@ namespace CPU_OS_Simulator.Operating_System
             }
             if (flags.requestedResources == null)
             {
-                this.allocatedResources = new List<SystemResource>();
+                this.allocatedResources = new List<SimulatorResource>();
             }
             else
             {
@@ -191,13 +191,13 @@ namespace CPU_OS_Simulator.Operating_System
             set { resourceStarved = value; }
         }
 
-        public List<SystemResource> AllocatedResources
+        public List<SimulatorResource> AllocatedResources
         {
             get { return allocatedResources; }
             set { allocatedResources = value; }
         }
 
-        public List<SystemResource> RequestedResources
+        public List<SimulatorResource> RequestedResources
         {
             get { return requestedResources; }
             set { requestedResources = value; }

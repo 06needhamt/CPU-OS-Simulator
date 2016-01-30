@@ -59,7 +59,6 @@
     <Compile Include="EnumSchedulingPolicies.cs" />
     <Compile Include="EnumTimeUnit.cs" />
     <Compile Include="LotteryTicket.cs" />
-    <Compile Include="NullPropertyConverter.cs" />
     <Compile Include="OSCore.cs" />
     <Compile Include="OSFlags.cs" />
     <Compile Include="PCBFlags.cs" />
@@ -70,13 +69,14 @@
     <Compile Include="SchedulerFlags.cs" />
     <Compile Include="SimulatorProcess.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SystemResource.cs" />
+    <Compile Include="SimulatorResource.cs" />
     <Compile Include="Threading\EnumThreadState.cs" />
     <Compile Include="Threading\Semaphore.cs" />
     <Compile Include="Threading\SimulatorThread.cs" />
     <Compile Include="Threading\TCBFlags.cs" />
     <Compile Include="Threading\ThreadControlBlock.cs" />
     <Compile Include="Threading\ThreadExecutionUnit.cs" />
+    <Compile Include="Threading\ThreadFlags.cs" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="CPU-OS Simulator 7-5-50_1.ico" />

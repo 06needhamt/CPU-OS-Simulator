@@ -30,15 +30,18 @@ namespace CPU_OS_Simulator.Operating_System
         public List<SimulatorProcess> childProcesses;
         public bool processSwapped;
         public EnumProcessState processState;
+        public EnumProcessState previousState;
         public bool resourceStarved;
-        public List<SystemResource> allocatedResources;
-        public List<SystemResource> requestedResources;
+        public List<SimulatorResource> allocatedResources;
+        public List<SimulatorResource> requestedResources;
         public bool terminated;
         public ProcessControlBlock processControlBlock;
         public int OSid;
         public int clockSpeed;
         public ProcessExecutionUnit unit;
         public List<LotteryTicket> lotteryTickets;
+        public bool ownsSemaphore;
+        public bool waitingForSemaphore;
 
     }
 }

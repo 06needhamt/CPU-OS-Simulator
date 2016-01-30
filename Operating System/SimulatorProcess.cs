@@ -10,7 +10,7 @@ namespace CPU_OS_Simulator.Operating_System
     /// This class represents a process that can be run on the virtual operating system
     /// </summary>
     [Serializable]
-    public class SimulatorProcess : IComparable<int>
+    public class SimulatorProcess : IComparable<Int32>
     {
         private SimulatorProgram program;
         private string programName;
@@ -18,7 +18,7 @@ namespace CPU_OS_Simulator.Operating_System
         private int processPriority;
         private int processMemory;
         private int processLifetime;
-        private EnumTimeUnit processLifetimeTimeUnit;
+        private EnumTimeUnit processLifetimeTimeUnit = EnumTimeUnit.UNKNOWN;
         private int processID;
         private int parentProcessID;
         private int CPUid;
@@ -29,19 +29,22 @@ namespace CPU_OS_Simulator.Operating_System
         private bool defaultScheduler;
         private bool delayedProcess;
         private int delayedProcessTime;
-        private EnumTimeUnit delayTimeUnit;
+        private EnumTimeUnit delayTimeUnit = EnumTimeUnit.UNKNOWN;
         private SimulatorProcess parentProcess;
         private List<SimulatorProcess> childProcesses;
         private bool processSwapped;
-        private EnumProcessState processState;
+        private EnumProcessState currentState = EnumProcessState.UNKNOWN;
+        private EnumProcessState previousState = EnumProcessState.UNKNOWN;
         private bool resourceStarved;
-        private List<SystemResource> allocatedResources;
-        private List<SystemResource> requestedResources;
+        private List<SimulatorResource> allocatedResources;
+        private List<SimulatorResource> requestedResources;
         private bool terminated;
         private ProcessControlBlock processControlBlock;
         private int clockSpeed;
         private ProcessExecutionUnit unit;
-        private List<LotteryTicket> lotteryTickets; 
+        private List<LotteryTicket> lotteryTickets;
+        private bool ownsSemaphore;
+        private bool waitingForSemaphore;
 
         /// <summary>
         /// Default Constructor for a process used when deserialising processes
@@ -82,7 +85,8 @@ namespace CPU_OS_Simulator.Operating_System
             }
             this.childProcesses = flags.childProcesses;
             this.processSwapped = flags.processSwapped;
-            this.ProcessState = flags.processState;
+            this.currentState = flags.processState;
+            this.previousState = flags.previousState;
             this.resourceStarved = flags.resourceStarved;
             this.allocatedResources = flags.allocatedResources;
             this.requestedResources = flags.requestedResources;
@@ -91,6 +95,8 @@ namespace CPU_OS_Simulator.Operating_System
             this.clockSpeed = flags.clockSpeed;
             this.unit = new ProcessExecutionUnit(this,clockSpeed);
             this.lotteryTickets = flags.lotteryTickets;
+            this.ownsSemaphore = flags.ownsSemaphore;
+            this.waitingForSemaphore = flags.waitingForSemaphore;
         }
 
         /// <summary>
@@ -192,10 +198,10 @@ namespace CPU_OS_Simulator.Operating_System
         /// <summary>
         /// Property for the state of this process
         /// </summary>
-        public EnumProcessState ProcessState
+        public EnumProcessState CurrentState
         {
-             get { return processState; }
-             set { processState = value; }
+             get { return currentState; }
+             set { currentState = value; }
         }
 
         public int CPUID
@@ -217,13 +223,13 @@ namespace CPU_OS_Simulator.Operating_System
             }
         }
 
-        public List<SystemResource> AllocatedResources
+        public List<SimulatorResource> AllocatedResources
         {
             get { return allocatedResources; }
             set { allocatedResources = value; }
         }
 
-        public List<SystemResource> RequestedResources
+        public List<SimulatorResource> RequestedResources
         {
             get { return requestedResources; }
             set { requestedResources = value; }
@@ -271,6 +277,23 @@ namespace CPU_OS_Simulator.Operating_System
             set { lotteryTickets = value; }
         }
 
+        public bool OwnsSemaphore
+        {
+            get { return ownsSemaphore; }
+            set { ownsSemaphore = value; }
+        }
+
+        public bool WaitingForSemaphore
+        {
+            get { return waitingForSemaphore; }
+            set { waitingForSemaphore = value; }
+        }
+
+        public EnumProcessState PreviousState
+        {
+            get { return previousState; }
+            set { previousState = value; }
+        }
         /// <summary>
         /// Compares the current object with another object of the same type.
         /// </summary>
@@ -299,7 +322,7 @@ namespace CPU_OS_Simulator.Operating_System
         {
             if (resourceStarved)
             {
-                processState = EnumProcessState.WAITING;
+                currentState = EnumProcessState.WAITING;
                 return true;
             }
             return false;

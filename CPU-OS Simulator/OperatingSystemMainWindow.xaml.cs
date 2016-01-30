@@ -541,15 +541,19 @@ namespace CPU_OS_Simulator
             temp.childProcesses = new List<SimulatorProcess>();
             temp.processSwapped = false;
             temp.processState = EnumProcessState.READY;
+            temp.previousState = EnumProcessState.READY;
             temp.resourceStarved = false;
-            temp.allocatedResources = new List<SystemResource>();
-            temp.requestedResources = new List<SystemResource>();
+            temp.allocatedResources = new List<SimulatorResource>();
+            temp.requestedResources = new List<SimulatorResource>();
             temp.terminated = false;
             temp.processControlBlock = null;
             temp.OSid = 0;
             temp.unit = null;
             temp.clockSpeed = (int) sld_ClockSpeed.Value;
             temp.lotteryTickets = new List<LotteryTicket>();
+            temp.waitingForSemaphore = false;
+            temp.ownsSemaphore = false;
+
             return temp;
             #region OLD
             //temp.burstTime = 0;

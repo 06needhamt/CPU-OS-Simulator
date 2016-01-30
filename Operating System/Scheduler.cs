@@ -313,7 +313,7 @@ namespace CPU_OS_Simulator.Operating_System
             }
             if (runningProcess.Unit.TimedOut)
             {
-                runningProcess.ProcessState = EnumProcessState.READY;
+                runningProcess.CurrentState = EnumProcessState.READY;
                 readyQueue.Enqueue(runningProcess);
                 PCBFlags? flags = CreatePCBFlags(ref runningProcess);
                 if (flags != null)
@@ -330,7 +330,7 @@ namespace CPU_OS_Simulator.Operating_System
             }
             if (runningProcess.Unit.Stop)
             {
-                runningProcess.ProcessState = EnumProcessState.WAITING;
+                runningProcess.CurrentState = EnumProcessState.WAITING;
                 waitingQueue.Enqueue(runningProcess);
                 PCBFlags? flags = CreatePCBFlags(ref runningProcess);
                 if (flags != null)
@@ -464,7 +464,7 @@ namespace CPU_OS_Simulator.Operating_System
             }
             if (runningProcess.Unit.TimedOut)
             {
-                runningProcess.ProcessState = EnumProcessState.READY;
+                runningProcess.CurrentState = EnumProcessState.READY;
                 readyQueue.Enqueue(runningProcess);
                 PCBFlags? flags = CreatePCBFlags(ref runningProcess);
                 if (flags != null)
@@ -481,7 +481,7 @@ namespace CPU_OS_Simulator.Operating_System
             }
             if (runningProcess.Unit.Stop)
             {
-                runningProcess.ProcessState = EnumProcessState.WAITING;
+                runningProcess.CurrentState = EnumProcessState.WAITING;
                 waitingQueue.Enqueue(runningProcess);
                 PCBFlags? flags = CreatePCBFlags(ref runningProcess);
                 if (flags != null)
@@ -520,7 +520,7 @@ namespace CPU_OS_Simulator.Operating_System
             }
             if (runningProcess.Unit.TimedOut)
             {
-                runningProcess.ProcessState = EnumProcessState.READY;
+                runningProcess.CurrentState = EnumProcessState.READY;
                 readyQueue.Enqueue(runningProcess);
                 PCBFlags? flags = CreatePCBFlags(ref runningProcess);
                 if (flags != null)
@@ -537,7 +537,7 @@ namespace CPU_OS_Simulator.Operating_System
             }
             if (runningProcess.Unit.Stop)
             {
-                runningProcess.ProcessState = EnumProcessState.WAITING;
+                runningProcess.CurrentState = EnumProcessState.WAITING;
                 waitingQueue.Enqueue(runningProcess);
                 PCBFlags? flags = CreatePCBFlags(ref runningProcess);
                 if (flags != null)
@@ -596,7 +596,7 @@ namespace CPU_OS_Simulator.Operating_System
                 LoadPCB();
                 life = runningProcess.ProcessLifetime;
                 runningProcess.Unit.TimedOut = false;
-                runningProcess.ProcessState = EnumProcessState.RUNNING;
+                runningProcess.CurrentState = EnumProcessState.RUNNING;
                 lifetime.Reset();
                 lifetime.Start();
 
@@ -640,7 +640,7 @@ namespace CPU_OS_Simulator.Operating_System
             if (runningProcess != null)
             {
                 runningProcess.Unit.TimedOut = true;
-                runningProcess.ProcessState = EnumProcessState.READY;
+                runningProcess.CurrentState = EnumProcessState.READY;
 
                 PCBFlags? flags = CreatePCBFlags(ref runningProcess);
                 if (flags != null)
@@ -665,7 +665,7 @@ namespace CPU_OS_Simulator.Operating_System
                 //await CallFromMainThread(UpdateMainWindowInterface);
                 // runningProcess = readyQueue.Dequeue();
                 // runningProcess.Unit.TimedOut = false;
-                // runningProcess.ProcessState = EnumProcessState.RUNNING;
+                // runningProcess.currentState = EnumProcessState.RUNNING;
             }
         }
 
@@ -729,7 +729,7 @@ namespace CPU_OS_Simulator.Operating_System
             flags.processName = currentProcess.ProcessName;
             flags.processPriority = currentProcess.ProcessPriority;
             flags.CPUID = 0; //TODO Change this once multiple CPU's are implemented
-            flags.processState = currentProcess.ProcessState;
+            flags.processState = currentProcess.CurrentState;
             flags.programName = currentProcess.ProgramName;
             flags.requestedResources = currentProcess.RequestedResources;
             flags.resourceStarved = currentProcess.ResourceStarved;

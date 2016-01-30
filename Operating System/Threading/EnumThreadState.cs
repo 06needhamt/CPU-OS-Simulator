@@ -5,8 +5,8 @@
         #pragma warning disable 1591
         UNKNOWN = -1,
         RUNNING = 0,
-        WAITING = 1,
-        READY = 2,
+        READY = 1,
+        WAITING = 2,
         IN_SEMAPHORE = 3,
         WAITING_SEMAPHORE = 4,
         DEADLOCKED = 5,

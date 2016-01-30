@@ -10,6 +10,8 @@
         RUNNING = 0,
         READY = 1,
         WAITING = 2,
-        DEADLOCKED = 3
+        IN_SEMAPHORE = 3,
+        WAITING_SEMAPHORE = 4,
+        DEADLOCKED = 5
     }
 }

@@ -167,7 +167,7 @@ namespace CPU_OS_Simulator.Operating_System
                 SimulatorProcess proc = readyQueue.Dequeue();
                 if (proc != null)
                 {
-                    proc.ProcessState = EnumProcessState.RUNNING;
+                    proc.CurrentState = EnumProcessState.RUNNING;
                 }
                 temp.runningProcess = proc; // populate the queues and set the first processes state to running
             }

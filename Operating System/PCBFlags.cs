@@ -21,8 +21,8 @@ namespace CPU_OS_Simulator.Operating_System
         public double avgWaitingTime;
 
         public bool resourceStarved;
-        public List<SystemResource> allocatedResources;
-        public List<SystemResource> requestedResources;
+        public List<SimulatorResource> allocatedResources;
+        public List<SimulatorResource> requestedResources;
 
         public Register[] registers;
         public SpecialRegister[] specialRegisters;
