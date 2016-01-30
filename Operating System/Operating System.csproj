@@ -59,6 +59,7 @@
     <Compile Include="EnumSchedulingPolicies.cs" />
     <Compile Include="EnumTimeUnit.cs" />
     <Compile Include="LotteryTicket.cs" />
+    <Compile Include="NullPropertyConverter.cs" />
     <Compile Include="OSCore.cs" />
     <Compile Include="OSFlags.cs" />
     <Compile Include="PCBFlags.cs" />
