@@ -11,10 +11,10 @@ namespace CPU_OS_Simulator.Operating_System.Threading
     /// This class implements a simple counting semaphore for managing resource allocation
     /// </summary>
     [Serializable]
-    public class Semaphore
+    public class Semaphore : IDisposable
     {
         private SimulatorResource resource;
-        private int slots;
+        private volatile int slots;
         private List<SimulatorThread> insideThreads;
         private List<SimulatorProcess> insideProcesses; 
         private Queue<SimulatorThread> waitingThreads;
@@ -230,5 +230,12 @@ namespace CPU_OS_Simulator.Operating_System.Threading
                 return null;
         }
 
+        /// <summary>
+        /// Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.
+        /// </summary>
+        public void Dispose()
+        {
+            throw new NotImplementedException();
+        }
     }
 }
