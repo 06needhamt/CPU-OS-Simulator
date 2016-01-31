@@ -51,7 +51,7 @@ namespace CPU_OS_Simulator.Memory.Tests
             {
                 for (int j = 0; j < 8; j++)
                 {
-                    if (m.Data[i].GetByte(j) == 0xAA)
+                    if (m.Data[i].GetByte(j) == 0x00)
                     {
                         count++;
                     }

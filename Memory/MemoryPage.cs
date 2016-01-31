@@ -203,7 +203,7 @@ namespace CPU_OS_Simulator.Memory
             {
                 for (int j = 0; j < 8; j++)
                 {
-                    data[i].SetByte(j,0xAA);
+                    data[i].SetByte(j,0x00);
                 }
             }
         }
