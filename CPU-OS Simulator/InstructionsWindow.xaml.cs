@@ -356,22 +356,25 @@ namespace CPU_OS_Simulator
             EnumOpcodes opcode;
             Operand op1;
             Operand op2;
-            bool op1mem = false;
-            bool op2mem = false;
+            EnumAddressType op1mem = EnumAddressType.UNKNOWN;
+            EnumAddressType op2mem = EnumAddressType.UNKNOWN;
             int index = owner.lst_InstructionsList.SelectedIndex;
 
             SimulatorProgram prog = (SimulatorProgram)owner.lst_ProgramList.SelectedItem;
             opcode = (EnumOpcodes)Enum.Parse(typeof(EnumOpcodes), lst_OpcodeListDataTransfer.SelectedItem.ToString());
 
-            if (rdb_SourceValueDataTransfer.IsChecked.Value)
+            if (rdb_SourceValueDataTransfer.IsChecked != null && rdb_SourceValueDataTransfer.IsChecked.Value)
             {
-                if (rdb_DataTransfer_Source_Direct_Mem.IsChecked.Value ||
-                    rdb_DataTransfer_Source_InDirect_Mem.IsChecked.Value)
+                if (rdb_DataTransfer_Source_Direct_Mem.IsChecked != null && rdb_DataTransfer_Source_Direct_Mem.IsChecked.Value)
                 {
-                    op1mem = true;
+                    op1mem = EnumAddressType.DIRECT;
+                }
+                else if (rdb_DataTransfer_Source_InDirect_Mem.IsChecked != null && rdb_DataTransfer_Source_InDirect_Mem.IsChecked.Value)
+                {
+                    op1mem = EnumAddressType.INDIRECT;
                 }
 
-                if (op1mem)
+                if (op1mem == EnumAddressType.DIRECT || op1mem == EnumAddressType.INDIRECT)
                 {
                     op1 = new Operand(Convert.ToInt32(txtSourceValueDataTransfer.Text), EnumOperandType.ADDRESS);
                 }
@@ -380,16 +383,19 @@ namespace CPU_OS_Simulator
                     op1 = new Operand(Convert.ToInt32(txtSourceValueDataTransfer.Text), EnumOperandType.VALUE);
                 }
             }
-            else if (rdb_SourceRegisterDataTransfer.IsChecked.Value)
+            else if (rdb_SourceRegisterDataTransfer.IsChecked != null && rdb_SourceRegisterDataTransfer.IsChecked.Value)
             {
                 string selectedRegister = (string)cmb_SourceRegisterDataTransfer.SelectedItem;
                 Register reg = Register.FindRegister(selectedRegister);
-                if (rdb_DataTransfer_Source_Reg_Direct.IsChecked.Value ||
-                    rdb_DataTransfer_Source_Reg_Indirect.IsChecked.Value)
+                if (rdb_DataTransfer_Source_Reg_Direct.IsChecked != null && rdb_DataTransfer_Source_Reg_Direct.IsChecked.Value)
                 {
-                    op1mem = true;
+                    op1mem = EnumAddressType.DIRECT;
                 }
-                if (op1mem)
+                else if (rdb_DataTransfer_Source_Reg_Indirect.IsChecked != null && rdb_DataTransfer_Source_Reg_Indirect.IsChecked.Value)
+                {
+                    op1mem = EnumAddressType.INDIRECT;
+                }
+                if (op1mem == EnumAddressType.DIRECT || op1mem == EnumAddressType.INDIRECT)
                 {
                     op1 = new Operand(reg, EnumOperandType.ADDRESS);
                 }
@@ -402,14 +408,17 @@ namespace CPU_OS_Simulator
             {
                 op1 = null;
             }
-            if (rdb_DestinationValueDataTransfer.IsChecked.Value)
+            if (rdb_DestinationValueDataTransfer.IsChecked != null && rdb_DestinationValueDataTransfer.IsChecked.Value)
             {
-                if (rdb_DataTransfer_Destination_Direct_Mem.IsChecked.Value ||
-                    rdb_DataTransfer_Destination_InDirect_Mem.IsChecked.Value)
+                if (rdb_DataTransfer_Destination_Direct_Mem.IsChecked != null && rdb_DataTransfer_Destination_Direct_Mem.IsChecked.Value)
                 {
-                    op2mem = true;
+                    op2mem = EnumAddressType.DIRECT;
                 }
-                if (op2mem)
+                else if (rdb_DataTransfer_Destination_InDirect_Mem.IsChecked != null && rdb_DataTransfer_Destination_InDirect_Mem.IsChecked.Value)
+                {
+                    op2mem = EnumAddressType.INDIRECT;
+                }
+                if (op2mem == EnumAddressType.DIRECT || op2mem == EnumAddressType.INDIRECT)
                 {
                     op2 = new Operand(Convert.ToInt32(txtDestinationValueDataTransfer.Text), EnumOperandType.ADDRESS);
                 }
@@ -419,16 +428,19 @@ namespace CPU_OS_Simulator
                 }
                 
             }
-            else if (rdb_DestinationRegisterDataTransfer.IsChecked.Value)
+            else if (rdb_DestinationRegisterDataTransfer.IsChecked != null && rdb_DestinationRegisterDataTransfer.IsChecked.Value)
             {
                 string selectedRegister = (string)cmb_DestinationRegisterDataTransfer.SelectedItem;
                 Register reg = Register.FindRegister(selectedRegister);
-                if (rdb_DataTransfer_Destination_Reg_Direct.IsChecked.Value ||
-                    rdb_DataTransfer_Destination_Reg_Indirect.IsChecked.Value)
+                if (rdb_DataTransfer_Destination_Reg_Direct.IsChecked != null && rdb_DataTransfer_Destination_Reg_Direct.IsChecked.Value)
                 {
-                    op2mem = true;
+                    op2mem = EnumAddressType.DIRECT;
                 }
-                if (op2mem)
+                else if (rdb_DataTransfer_Destination_Reg_Indirect.IsChecked != null && rdb_DataTransfer_Destination_Reg_Indirect.IsChecked.Value)
+                {
+                    op2mem = EnumAddressType.INDIRECT;
+                }
+                if (op2mem == EnumAddressType.DIRECT || op2mem == EnumAddressType.INDIRECT)
                 {
                     op2 = new Operand(reg, EnumOperandType.ADDRESS);
                 }
@@ -452,22 +464,25 @@ namespace CPU_OS_Simulator
             EnumOpcodes opcode;
             Operand op1;
             Operand op2;
-            bool op1mem = false;
-            bool op2mem = false;
+            EnumAddressType op1mem = EnumAddressType.UNKNOWN;
+            EnumAddressType op2mem = EnumAddressType.UNKNOWN;
             int index = owner.lst_InstructionsList.SelectedIndex;
 
             SimulatorProgram prog = (SimulatorProgram)owner.lst_ProgramList.SelectedItem;
             opcode = (EnumOpcodes)Enum.Parse(typeof(EnumOpcodes), lst_OpcodeListLogical.SelectedItem.ToString());
 
-            if (rdb_SourceValueLogical.IsChecked.Value)
+            if (rdb_SourceValueLogical.IsChecked != null && rdb_SourceValueLogical.IsChecked.Value)
             {
-                if (rdb_Logical_Source_Direct_Mem.IsChecked.Value ||
-                    rdb_Logical_Source_InDirect_Mem.IsChecked.Value)
+                if (rdb_Logical_Source_Direct_Mem.IsChecked != null && rdb_Logical_Source_Direct_Mem.IsChecked.Value)
                 {
-                    op1mem = true;
+                    op1mem = EnumAddressType.DIRECT;
+                }
+                else if (rdb_Logical_Source_InDirect_Mem.IsChecked != null && rdb_Logical_Source_InDirect_Mem.IsChecked.Value)
+                {
+                    op1mem = EnumAddressType.INDIRECT;
                 }
 
-                if (op1mem)
+                if (op1mem == EnumAddressType.DIRECT || op1mem == EnumAddressType.INDIRECT)
                 {
                     op1 = new Operand(Convert.ToInt32(txtSourceValueLogical.Text), EnumOperandType.ADDRESS);
                 }
@@ -476,16 +491,19 @@ namespace CPU_OS_Simulator
                     op1 = new Operand(Convert.ToInt32(txtSourceValueLogical.Text), EnumOperandType.VALUE);
                 }
             }
-            else if (rdb_SourceRegisterLogical.IsChecked.Value)
+            else if (rdb_SourceRegisterLogical.IsChecked != null && rdb_SourceRegisterLogical.IsChecked.Value)
             {
                 string selectedRegister = (string)cmb_SourceRegisterLogical.SelectedItem;
                 Register reg = Register.FindRegister(selectedRegister);
-                if (rdb_Logical_Source_Reg_Direct.IsChecked.Value ||
-                    rdb_Logical_Source_Reg_Indirect.IsChecked.Value)
+                if (rdb_Logical_Source_Reg_Direct.IsChecked != null && rdb_Logical_Source_Reg_Direct.IsChecked.Value)
                 {
-                    op1mem = true;
+                    op1mem = EnumAddressType.DIRECT;
                 }
-                if (op1mem)
+                else if (rdb_Logical_Source_Reg_Indirect.IsChecked != null && rdb_Logical_Source_Reg_Indirect.IsChecked.Value)
+                {
+                    op1mem = EnumAddressType.INDIRECT;
+                }
+                if (op1mem == EnumAddressType.DIRECT || op1mem == EnumAddressType.INDIRECT)
                 {
                     op1 = new Operand(reg, EnumOperandType.ADDRESS);
                 }
@@ -498,14 +516,17 @@ namespace CPU_OS_Simulator
             {
                 op1 = null;
             }
-            if (rdb_DestinationValueLogical.IsChecked.Value)
+            if (rdb_DestinationValueLogical.IsChecked != null && rdb_DestinationValueLogical.IsChecked.Value)
             {
-                if (rdb_Logical_Destination_Direct_Mem.IsChecked.Value ||
-                    rdb_Logical_Destination_InDirect_Mem.IsChecked.Value)
+                if (rdb_Logical_Destination_Direct_Mem.IsChecked != null && rdb_Logical_Destination_Direct_Mem.IsChecked.Value)
                 {
-                    op2mem = true;
+                    op2mem = EnumAddressType.DIRECT;
                 }
-                if (op2mem)
+                else if (rdb_Logical_Destination_InDirect_Mem.IsChecked != null && rdb_Logical_Destination_InDirect_Mem.IsChecked.Value)
+                {
+                    op2mem = EnumAddressType.INDIRECT;
+                }
+                if (op2mem == EnumAddressType.DIRECT || op2mem == EnumAddressType.INDIRECT)
                 {
                     op2 = new Operand(Convert.ToInt32(txtDestinationValueLogical.Text), EnumOperandType.ADDRESS);
                 }
@@ -515,16 +536,19 @@ namespace CPU_OS_Simulator
                 }
 
             }
-            else if (rdb_DestinationRegisterLogical.IsChecked.Value)
+            else if (rdb_DestinationRegisterLogical.IsChecked != null && rdb_DestinationRegisterLogical.IsChecked.Value)
             {
                 string selectedRegister = (string)cmb_DestinationRegisterLogical.SelectedItem;
                 Register reg = Register.FindRegister(selectedRegister);
-                if (rdb_Logical_Destination_Reg_Direct.IsChecked.Value ||
-                    rdb_Logical_Destination_Reg_Indirect.IsChecked.Value)
+                if (rdb_Logical_Destination_Reg_Direct.IsChecked != null && rdb_Logical_Destination_Reg_Direct.IsChecked.Value)
                 {
-                    op2mem = true;
+                    op2mem = EnumAddressType.DIRECT;
                 }
-                if (op2mem)
+                else if (rdb_Logical_Destination_Reg_Indirect.IsChecked != null && rdb_Logical_Destination_Reg_Indirect.IsChecked.Value)
+                {
+                    op2mem = EnumAddressType.INDIRECT;
+                }
+                if (op2mem == EnumAddressType.DIRECT || op2mem == EnumAddressType.INDIRECT)
                 {
                     op2 = new Operand(reg, EnumOperandType.ADDRESS);
                 }
@@ -548,22 +572,25 @@ namespace CPU_OS_Simulator
             EnumOpcodes opcode;
             Operand op1;
             Operand op2;
-            bool op1mem = false;
-            bool op2mem = false;
+            EnumAddressType op1mem = EnumAddressType.UNKNOWN;
+            EnumAddressType op2mem = EnumAddressType.UNKNOWN;
             int index = owner.lst_InstructionsList.SelectedIndex;
 
             SimulatorProgram prog = (SimulatorProgram)owner.lst_ProgramList.SelectedItem;
             opcode = (EnumOpcodes)Enum.Parse(typeof(EnumOpcodes), lst_OpcodeListArithmetic.SelectedItem.ToString());
 
-            if (rdb_SourceValueArithmetic.IsChecked.Value)
+            if (rdb_SourceValueArithmetic.IsChecked != null && rdb_SourceValueArithmetic.IsChecked.Value)
             {
-                if (rdb_Arithmetic_Source_Direct_Mem.IsChecked.Value ||
-                    rdb_Arithmetic_Source_InDirect_Mem.IsChecked.Value)
+                if (rdb_Arithmetic_Source_Direct_Mem.IsChecked != null && rdb_Arithmetic_Source_Direct_Mem.IsChecked.Value)
                 {
-                    op1mem = true;
+                    op1mem = EnumAddressType.DIRECT;
+                }
+                else if (rdb_Arithmetic_Source_InDirect_Mem.IsChecked != null && rdb_Arithmetic_Source_InDirect_Mem.IsChecked.Value)
+                {
+                    op1mem = EnumAddressType.INDIRECT;
                 }
 
-                if (op1mem)
+                if (op1mem == EnumAddressType.DIRECT || op1mem == EnumAddressType.INDIRECT)
                 {
                     op1 = new Operand(Convert.ToInt32(txtSourceValueArithmetic.Text), EnumOperandType.ADDRESS);
                 }
@@ -572,16 +599,19 @@ namespace CPU_OS_Simulator
                     op1 = new Operand(Convert.ToInt32(txtSourceValueArithmetic.Text), EnumOperandType.VALUE);
                 }
             }
-            else if (rdb_SourceRegisterArithmetic.IsChecked.Value)
+            else if (rdb_SourceRegisterArithmetic.IsChecked != null && rdb_SourceRegisterArithmetic.IsChecked.Value)
             {
                 string selectedRegister = (string)cmb_SourceRegisterArithmetic.SelectedItem;
                 Register reg = Register.FindRegister(selectedRegister);
-                if (rdb_Arithmetic_Source_Reg_Direct.IsChecked.Value ||
-                    rdb_Arithmetic_Source_Reg_Indirect.IsChecked.Value)
+                if (rdb_Arithmetic_Source_Reg_Direct.IsChecked != null && rdb_Arithmetic_Source_Reg_Direct.IsChecked.Value)
                 {
-                    op1mem = true;
+                    op1mem = EnumAddressType.DIRECT;
                 }
-                if (op1mem)
+                else if (rdb_Arithmetic_Source_Reg_Indirect.IsChecked != null && rdb_Arithmetic_Source_Reg_Indirect.IsChecked.Value)
+                {
+                    op1mem = EnumAddressType.INDIRECT;
+                }
+                if (op1mem == EnumAddressType.DIRECT || op1mem == EnumAddressType.INDIRECT)
                 {
                     op1 = new Operand(reg, EnumOperandType.ADDRESS);
                 }
@@ -594,14 +624,17 @@ namespace CPU_OS_Simulator
             {
                 op1 = null;
             }
-            if (rdb_DestinationValueArithmetic.IsChecked.Value)
+            if (rdb_DestinationValueArithmetic.IsChecked != null && rdb_DestinationValueArithmetic.IsChecked.Value)
             {
-                if (rdb_Arithmetic_Destination_Direct_Mem.IsChecked.Value ||
-                    rdb_Arithmetic_Destination_InDirect_Mem.IsChecked.Value)
+                if (rdb_Arithmetic_Destination_Direct_Mem.IsChecked != null && rdb_Arithmetic_Destination_Direct_Mem.IsChecked.Value)
                 {
-                    op2mem = true;
+                    op2mem = EnumAddressType.DIRECT;
                 }
-                if (op2mem)
+                else if (rdb_Arithmetic_Destination_InDirect_Mem.IsChecked != null && rdb_Arithmetic_Destination_InDirect_Mem.IsChecked.Value)
+                {
+                    op2mem = EnumAddressType.INDIRECT;
+                }
+                if (op2mem == EnumAddressType.DIRECT || op2mem == EnumAddressType.INDIRECT)
                 {
                     op2 = new Operand(Convert.ToInt32(txtDestinationValueArithmetic.Text), EnumOperandType.ADDRESS);
                 }
@@ -611,16 +644,19 @@ namespace CPU_OS_Simulator
                 }
 
             }
-            else if (rdb_DestinationRegisterArithmetic.IsChecked.Value)
+            else if (rdb_DestinationRegisterArithmetic.IsChecked != null && rdb_DestinationRegisterArithmetic.IsChecked.Value)
             {
                 string selectedRegister = (string)cmb_DestinationRegisterArithmetic.SelectedItem;
                 Register reg = Register.FindRegister(selectedRegister);
-                if (rdb_Arithmetic_Destination_Reg_Direct.IsChecked.Value ||
-                    rdb_Arithmetic_Destination_Reg_Indirect.IsChecked.Value)
+                if (rdb_Arithmetic_Destination_Reg_Direct.IsChecked != null && rdb_Arithmetic_Destination_Reg_Direct.IsChecked.Value)
                 {
-                    op2mem = true;
+                    op2mem = EnumAddressType.DIRECT;
                 }
-                if (op2mem)
+                else if (rdb_Arithmetic_Destination_Reg_Indirect.IsChecked != null && rdb_Arithmetic_Destination_Reg_Indirect.IsChecked.Value)
+                {
+                    op2mem = EnumAddressType.INDIRECT;
+                }
+                if (op2mem == EnumAddressType.DIRECT || op2mem == EnumAddressType.INDIRECT)
                 {
                     op2 = new Operand(reg, EnumOperandType.ADDRESS);
                 }
@@ -644,22 +680,25 @@ namespace CPU_OS_Simulator
             EnumOpcodes opcode;
             Operand op1;
             Operand op2;
-            bool op1mem = false;
-            bool op2mem = false;
+            EnumAddressType op1mem = EnumAddressType.UNKNOWN;
+            EnumAddressType op2mem = EnumAddressType.UNKNOWN;
             int index = owner.lst_InstructionsList.SelectedIndex;
 
             SimulatorProgram prog = (SimulatorProgram)owner.lst_ProgramList.SelectedItem;
             opcode = (EnumOpcodes)Enum.Parse(typeof(EnumOpcodes), lst_OpcodeListControlTransfer.SelectedItem.ToString());
 
-            if (rdb_SourceValueControlTransfer.IsChecked.Value)
+            if (rdb_SourceValueControlTransfer.IsChecked != null && rdb_SourceValueControlTransfer.IsChecked.Value)
             {
-                if (rdb_ControlTransfer_Source_Direct_Mem.IsChecked.Value ||
-                    rdb_ControlTransfer_Source_InDirect_Mem.IsChecked.Value)
+                if (rdb_ControlTransfer_Source_Direct_Mem.IsChecked != null && rdb_ControlTransfer_Source_Direct_Mem.IsChecked.Value)
                 {
-                    op1mem = true;
+                    op1mem = EnumAddressType.DIRECT;
+                }
+                else if (rdb_ControlTransfer_Source_InDirect_Mem.IsChecked != null && rdb_ControlTransfer_Source_InDirect_Mem.IsChecked.Value)
+                {
+                    op1mem = EnumAddressType.INDIRECT;
                 }
 
-                if (op1mem)
+                if (op1mem == EnumAddressType.DIRECT || op1mem == EnumAddressType.INDIRECT)
                 {
                     op1 = new Operand(Convert.ToInt32(txtSourceValueControlTransfer.Text), EnumOperandType.ADDRESS);
                 }
@@ -668,16 +707,19 @@ namespace CPU_OS_Simulator
                     op1 = new Operand(Convert.ToInt32(txtSourceValueControlTransfer.Text), EnumOperandType.VALUE);
                 }
             }
-            else if (rdb_SourceRegisterControlTransfer.IsChecked.Value)
+            else if (rdb_SourceRegisterControlTransfer.IsChecked != null && rdb_SourceRegisterControlTransfer.IsChecked.Value)
             {
                 string selectedRegister = (string)cmb_SourceRegisterControlTransfer.SelectedItem;
                 Register reg = Register.FindRegister(selectedRegister);
-                if (rdb_ControlTransfer_Source_Reg_Direct.IsChecked.Value ||
-                    rdb_ControlTransfer_Source_Reg_Indirect.IsChecked.Value)
+                if (rdb_ControlTransfer_Source_Reg_Direct.IsChecked != null && rdb_ControlTransfer_Source_Reg_Direct.IsChecked.Value)
                 {
-                    op1mem = true;
+                    op1mem = EnumAddressType.DIRECT;
                 }
-                if (op1mem)
+                else if (rdb_ControlTransfer_Source_Reg_Indirect.IsChecked != null && rdb_ControlTransfer_Source_Reg_Indirect.IsChecked.Value)
+                {
+                    op1mem = EnumAddressType.INDIRECT;
+                }
+                if (op1mem == EnumAddressType.DIRECT || op1mem == EnumAddressType.INDIRECT)
                 {
                     op1 = new Operand(reg, EnumOperandType.ADDRESS);
                 }
@@ -690,14 +732,17 @@ namespace CPU_OS_Simulator
             {
                 op1 = null;
             }
-            if (rdb_DestinationValueControlTransfer.IsChecked.Value)
+            if (rdb_DestinationValueControlTransfer.IsChecked != null && rdb_DestinationValueControlTransfer.IsChecked.Value)
             {
-                if (rdb_ControlTransfer_Destination_Direct_Mem.IsChecked.Value ||
-                    rdb_ControlTransfer_Destination_InDirect_Mem.IsChecked.Value)
+                if (rdb_ControlTransfer_Destination_Direct_Mem.IsChecked != null && rdb_ControlTransfer_Destination_Direct_Mem.IsChecked.Value)
                 {
-                    op2mem = true;
+                    op2mem = EnumAddressType.DIRECT;
                 }
-                if (op2mem)
+                else if (rdb_ControlTransfer_Destination_InDirect_Mem.IsChecked != null && rdb_ControlTransfer_Destination_InDirect_Mem.IsChecked.Value)
+                {
+                    op2mem = EnumAddressType.INDIRECT;
+                }
+                if (op2mem == EnumAddressType.DIRECT || op2mem == EnumAddressType.INDIRECT)
                 {
                     op2 = new Operand(Convert.ToInt32(txtDestinationValueControlTransfer.Text), EnumOperandType.ADDRESS);
                 }
@@ -707,16 +752,19 @@ namespace CPU_OS_Simulator
                 }
 
             }
-            else if (rdb_DestinationRegisterControlTransfer.IsChecked.Value)
+            else if (rdb_DestinationRegisterControlTransfer.IsChecked != null && rdb_DestinationRegisterControlTransfer.IsChecked.Value)
             {
                 string selectedRegister = (string)cmb_DestinationRegisterControlTransfer.SelectedItem;
                 Register reg = Register.FindRegister(selectedRegister);
-                if (rdb_ControlTransfer_Destination_Reg_Direct.IsChecked.Value ||
-                    rdb_ControlTransfer_Destination_Reg_Indirect.IsChecked.Value)
+                if (rdb_ControlTransfer_Destination_Reg_Direct.IsChecked != null && rdb_ControlTransfer_Destination_Reg_Direct.IsChecked.Value)
                 {
-                    op2mem = true;
+                    op2mem = EnumAddressType.DIRECT;
                 }
-                if (op2mem)
+                else if (rdb_ControlTransfer_Destination_Reg_Indirect.IsChecked != null && rdb_ControlTransfer_Destination_Reg_Indirect.IsChecked.Value)
+                {
+                    op2mem = EnumAddressType.INDIRECT;
+                }
+                if (op2mem == EnumAddressType.DIRECT || op2mem == EnumAddressType.INDIRECT)
                 {
                     op2 = new Operand(reg, EnumOperandType.ADDRESS);
                 }
@@ -740,22 +788,25 @@ namespace CPU_OS_Simulator
             EnumOpcodes opcode;
             Operand op1;
             Operand op2;
-            bool op1mem = false;
-            bool op2mem = false;
-           int index = owner.lst_InstructionsList.SelectedIndex;
+            EnumAddressType op1mem = EnumAddressType.UNKNOWN;
+            EnumAddressType op2mem = EnumAddressType.UNKNOWN;
+            int index = owner.lst_InstructionsList.SelectedIndex;
 
             SimulatorProgram prog = (SimulatorProgram)owner.lst_ProgramList.SelectedItem;
             opcode = (EnumOpcodes)Enum.Parse(typeof(EnumOpcodes), lst_OpcodeListComparison.SelectedItem.ToString());
 
-            if (rdb_SourceValueComparison.IsChecked.Value)
+            if (rdb_SourceValueComparison.IsChecked != null && rdb_SourceValueComparison.IsChecked.Value)
             {
-                if (rdb_Comparison_Source_Direct_Mem.IsChecked.Value ||
-                    rdb_Comparison_Source_InDirect_Mem.IsChecked.Value)
+                if (rdb_Comparison_Source_Direct_Mem.IsChecked != null && rdb_Comparison_Source_Direct_Mem.IsChecked.Value)
                 {
-                    op1mem = true;
+                    op1mem = EnumAddressType.DIRECT;
+                }
+                else if (rdb_Comparison_Source_InDirect_Mem.IsChecked != null && rdb_Comparison_Source_InDirect_Mem.IsChecked.Value)
+                {
+                    op1mem = EnumAddressType.INDIRECT;
                 }
 
-                if (op1mem)
+                if (op1mem == EnumAddressType.DIRECT || op1mem == EnumAddressType.INDIRECT)
                 {
                     op1 = new Operand(Convert.ToInt32(txtSourceValueComparison.Text), EnumOperandType.ADDRESS);
                 }
@@ -764,16 +815,19 @@ namespace CPU_OS_Simulator
                     op1 = new Operand(Convert.ToInt32(txtSourceValueComparison.Text), EnumOperandType.VALUE);
                 }
             }
-            else if (rdb_SourceRegisterComparison.IsChecked.Value)
+            else if (rdb_SourceRegisterComparison.IsChecked != null && rdb_SourceRegisterComparison.IsChecked.Value)
             {
                 string selectedRegister = (string)cmb_SourceRegisterComparison.SelectedItem;
                 Register reg = Register.FindRegister(selectedRegister);
-                if (rdb_Comparison_Source_Reg_Direct.IsChecked.Value ||
-                    rdb_Comparison_Source_Reg_Indirect.IsChecked.Value)
+                if (rdb_Comparison_Source_Reg_Direct.IsChecked != null && rdb_Comparison_Source_Reg_Direct.IsChecked.Value)
                 {
-                    op1mem = true;
+                    op1mem = EnumAddressType.DIRECT;
                 }
-                if (op1mem)
+                else if (rdb_Comparison_Source_Reg_Indirect.IsChecked != null && rdb_Comparison_Source_Reg_Indirect.IsChecked.Value)
+                {
+                    op1mem = EnumAddressType.INDIRECT;
+                }
+                if (op1mem == EnumAddressType.DIRECT || op1mem == EnumAddressType.INDIRECT)
                 {
                     op1 = new Operand(reg, EnumOperandType.ADDRESS);
                 }
@@ -786,14 +840,17 @@ namespace CPU_OS_Simulator
             {
                 op1 = null;
             }
-            if (rdb_DestinationValueComparison.IsChecked.Value)
+            if (rdb_DestinationValueComparison.IsChecked != null && rdb_DestinationValueComparison.IsChecked.Value)
             {
-                if (rdb_Comparison_Destination_Direct_Mem.IsChecked.Value ||
-                    rdb_Comparison_Destination_InDirect_Mem.IsChecked.Value)
+                if (rdb_Comparison_Destination_Direct_Mem.IsChecked != null && rdb_Comparison_Destination_Direct_Mem.IsChecked.Value)
                 {
-                    op2mem = true;
+                    op2mem = EnumAddressType.DIRECT;
                 }
-                if (op2mem)
+                else if (rdb_Comparison_Destination_InDirect_Mem.IsChecked != null && rdb_Comparison_Destination_InDirect_Mem.IsChecked.Value)
+                {
+                    op2mem = EnumAddressType.INDIRECT;
+                }
+                if (op2mem == EnumAddressType.DIRECT || op2mem == EnumAddressType.INDIRECT)
                 {
                     op2 = new Operand(Convert.ToInt32(txtDestinationValueComparison.Text), EnumOperandType.ADDRESS);
                 }
@@ -803,16 +860,19 @@ namespace CPU_OS_Simulator
                 }
 
             }
-            else if (rdb_DestinationRegisterComparison.IsChecked.Value)
+            else if (rdb_DestinationRegisterComparison.IsChecked != null && rdb_DestinationRegisterComparison.IsChecked.Value)
             {
                 string selectedRegister = (string)cmb_DestinationRegisterComparison.SelectedItem;
                 Register reg = Register.FindRegister(selectedRegister);
-                if (rdb_Comparison_Destination_Reg_Direct.IsChecked.Value ||
-                    rdb_Comparison_Destination_Reg_Indirect.IsChecked.Value)
+                if (rdb_Comparison_Destination_Reg_Direct.IsChecked != null && rdb_Comparison_Destination_Reg_Direct.IsChecked.Value)
                 {
-                    op2mem = true;
+                    op2mem = EnumAddressType.DIRECT;
                 }
-                if (op2mem)
+                else if (rdb_Comparison_Destination_Reg_Indirect.IsChecked != null && rdb_Comparison_Destination_Reg_Indirect.IsChecked.Value)
+                {
+                    op2mem = EnumAddressType.INDIRECT;
+                }
+                if (op2mem == EnumAddressType.DIRECT || op2mem == EnumAddressType.INDIRECT)
                 {
                     op2 = new Operand(reg, EnumOperandType.ADDRESS);
                 }
@@ -836,22 +896,25 @@ namespace CPU_OS_Simulator
             EnumOpcodes opcode;
             Operand op1;
             Operand op2;
-            bool op1mem = false;
-            bool op2mem = false;
+            EnumAddressType op1mem = EnumAddressType.UNKNOWN;
+            EnumAddressType op2mem = EnumAddressType.UNKNOWN;
             int index = owner.lst_InstructionsList.SelectedIndex;
 
             SimulatorProgram prog = (SimulatorProgram)owner.lst_ProgramList.SelectedItem;
             opcode = (EnumOpcodes)Enum.Parse(typeof(EnumOpcodes), lst_OpcodeListIO.SelectedItem.ToString());
 
-            if (rdb_SourceValueIO.IsChecked.Value)
+            if (rdb_SourceValueIO.IsChecked != null && rdb_SourceValueIO.IsChecked.Value)
             {
-                if (rdb_IO_Source_Direct_Mem.IsChecked.Value ||
-                    rdb_IO_Source_InDirect_Mem.IsChecked.Value)
+                if (rdb_IO_Source_Direct_Mem.IsChecked != null && rdb_IO_Source_Direct_Mem.IsChecked.Value)
                 {
-                    op1mem = true;
+                    op1mem = EnumAddressType.DIRECT;
+                }
+                else if (rdb_IO_Source_InDirect_Mem.IsChecked != null && rdb_IO_Source_InDirect_Mem.IsChecked.Value)
+                {
+                    op1mem = EnumAddressType.INDIRECT;
                 }
 
-                if (op1mem)
+                if (op1mem == EnumAddressType.DIRECT || op1mem == EnumAddressType.INDIRECT)
                 {
                     op1 = new Operand(Convert.ToInt32(txtSourceValueIO.Text), EnumOperandType.ADDRESS);
                 }
@@ -860,16 +923,19 @@ namespace CPU_OS_Simulator
                     op1 = new Operand(Convert.ToInt32(txtSourceValueIO.Text), EnumOperandType.VALUE);
                 }
             }
-            else if (rdb_SourceRegisterIO.IsChecked.Value)
+            else if (rdb_SourceRegisterIO.IsChecked != null && rdb_SourceRegisterIO.IsChecked.Value)
             {
                 string selectedRegister = (string)cmb_SourceRegisterIO.SelectedItem;
                 Register reg = Register.FindRegister(selectedRegister);
-                if (rdb_IO_Source_Reg_Direct.IsChecked.Value ||
-                    rdb_IO_Source_Reg_Indirect.IsChecked.Value)
+                if (rdb_IO_Source_Reg_Direct.IsChecked != null && rdb_IO_Source_Reg_Direct.IsChecked.Value)
                 {
-                    op1mem = true;
+                    op1mem = EnumAddressType.DIRECT;
                 }
-                if (op1mem)
+                else if (rdb_IO_Source_Reg_Indirect.IsChecked != null && rdb_IO_Source_Reg_Indirect.IsChecked.Value)
+                {
+                    op1mem = EnumAddressType.INDIRECT;
+                }
+                if (op1mem == EnumAddressType.DIRECT || op1mem == EnumAddressType.INDIRECT)
                 {
                     op1 = new Operand(reg, EnumOperandType.ADDRESS);
                 }
@@ -882,14 +948,17 @@ namespace CPU_OS_Simulator
             {
                 op1 = null;
             }
-            if (rdb_DestinationValueIO.IsChecked.Value)
+            if (rdb_DestinationValueIO.IsChecked != null && rdb_DestinationValueIO.IsChecked.Value)
             {
-                if (rdb_IO_Destination_Direct_Mem.IsChecked.Value ||
-                    rdb_IO_Destination_InDirect_Mem.IsChecked.Value)
+                if (rdb_IO_Destination_Direct_Mem.IsChecked != null && rdb_IO_Destination_Direct_Mem.IsChecked.Value)
                 {
-                    op2mem = true;
+                    op2mem = EnumAddressType.DIRECT;
                 }
-                if (op2mem)
+                else if (rdb_IO_Destination_InDirect_Mem.IsChecked != null && rdb_IO_Destination_InDirect_Mem.IsChecked.Value)
+                {
+                    op2mem = EnumAddressType.INDIRECT;
+                }
+                if (op2mem == EnumAddressType.DIRECT || op2mem == EnumAddressType.INDIRECT)
                 {
                     op2 = new Operand(Convert.ToInt32(txtDestinationValueIO.Text), EnumOperandType.ADDRESS);
                 }
@@ -899,16 +968,19 @@ namespace CPU_OS_Simulator
                 }
 
             }
-            else if (rdb_DestinationRegisterIO.IsChecked.Value)
+            else if (rdb_DestinationRegisterIO.IsChecked != null && rdb_DestinationRegisterIO.IsChecked.Value)
             {
                 string selectedRegister = (string)cmb_DestinationRegisterIO.SelectedItem;
                 Register reg = Register.FindRegister(selectedRegister);
-                if (rdb_IO_Destination_Reg_Direct.IsChecked.Value ||
-                    rdb_IO_Destination_Reg_Indirect.IsChecked.Value)
+                if (rdb_IO_Destination_Reg_Direct.IsChecked != null && rdb_IO_Destination_Reg_Direct.IsChecked.Value)
                 {
-                    op2mem = true;
+                    op2mem = EnumAddressType.DIRECT;
                 }
-                if (op2mem)
+                else if (rdb_IO_Destination_Reg_Indirect.IsChecked != null && rdb_IO_Destination_Reg_Indirect.IsChecked.Value)
+                {
+                    op2mem = EnumAddressType.INDIRECT;
+                }
+                if (op2mem == EnumAddressType.DIRECT || op2mem == EnumAddressType.INDIRECT)
                 {
                     op2 = new Operand(reg, EnumOperandType.ADDRESS);
                 }
@@ -932,22 +1004,25 @@ namespace CPU_OS_Simulator
             EnumOpcodes opcode;
             Operand op1;
             Operand op2;
-            bool op1mem = false;
-            bool op2mem = false;
+            EnumAddressType op1mem = EnumAddressType.UNKNOWN;
+            EnumAddressType op2mem = EnumAddressType.UNKNOWN;
             int index = owner.lst_InstructionsList.SelectedIndex;
 
             SimulatorProgram prog = (SimulatorProgram)owner.lst_ProgramList.SelectedItem;
             opcode = (EnumOpcodes)Enum.Parse(typeof(EnumOpcodes), lst_OpcodeListMiscellaneous.SelectedItem.ToString());
 
-            if (rdb_SourceValueMiscellaneous.IsChecked.Value)
+            if (rdb_SourceValueMiscellaneous.IsChecked != null && rdb_SourceValueMiscellaneous.IsChecked.Value)
             {
-                if (rdb_Miscellaneous_Source_Direct_Mem.IsChecked.Value ||
-                    rdb_Miscellaneous_Source_InDirect_Mem.IsChecked.Value)
+                if (rdb_Miscellaneous_Source_Direct_Mem.IsChecked != null && rdb_Miscellaneous_Source_Direct_Mem.IsChecked.Value)
                 {
-                    op1mem = true;
+                    op1mem = EnumAddressType.DIRECT;
+                }
+                else if (rdb_Miscellaneous_Source_InDirect_Mem.IsChecked != null && rdb_Miscellaneous_Source_InDirect_Mem.IsChecked.Value)
+                {
+                    op1mem = EnumAddressType.INDIRECT;
                 }
 
-                if (op1mem)
+                if (op1mem == EnumAddressType.DIRECT || op1mem == EnumAddressType.INDIRECT)
                 {
                     op1 = new Operand(Convert.ToInt32(txtSourceValueMiscellaneous.Text), EnumOperandType.ADDRESS);
                 }
@@ -956,16 +1031,19 @@ namespace CPU_OS_Simulator
                     op1 = new Operand(Convert.ToInt32(txtSourceValueMiscellaneous.Text), EnumOperandType.VALUE);
                 }
             }
-            else if (rdb_SourceRegisterMiscellaneous.IsChecked.Value)
+            else if (rdb_SourceRegisterMiscellaneous.IsChecked != null && rdb_SourceRegisterMiscellaneous.IsChecked.Value)
             {
                 string selectedRegister = (string)cmb_SourceRegisterMiscellaneous.SelectedItem;
                 Register reg = Register.FindRegister(selectedRegister);
-                if (rdb_Miscellaneous_Source_Reg_Direct.IsChecked.Value ||
-                    rdb_Miscellaneous_Source_Reg_Indirect.IsChecked.Value)
+                if (rdb_Miscellaneous_Source_Reg_Direct.IsChecked != null && rdb_Miscellaneous_Source_Reg_Direct.IsChecked.Value)
                 {
-                    op1mem = true;
+                    op1mem = EnumAddressType.DIRECT;
                 }
-                if (op1mem)
+                else if (rdb_Miscellaneous_Source_Reg_Indirect.IsChecked != null && rdb_Miscellaneous_Source_Reg_Indirect.IsChecked.Value)
+                {
+                    op1mem = EnumAddressType.INDIRECT;
+                }
+                if (op1mem == EnumAddressType.DIRECT || op1mem == EnumAddressType.INDIRECT)
                 {
                     op1 = new Operand(reg, EnumOperandType.ADDRESS);
                 }
@@ -978,14 +1056,17 @@ namespace CPU_OS_Simulator
             {
                 op1 = null;
             }
-            if (rdb_DestinationValueMiscellaneous.IsChecked.Value)
+            if (rdb_DestinationValueMiscellaneous.IsChecked != null && rdb_DestinationValueMiscellaneous.IsChecked.Value)
             {
-                if (rdb_Miscellaneous_Destination_Direct_Mem.IsChecked.Value ||
-                    rdb_Miscellaneous_Destination_InDirect_Mem.IsChecked.Value)
+                if (rdb_Miscellaneous_Destination_Direct_Mem.IsChecked != null && rdb_Miscellaneous_Destination_Direct_Mem.IsChecked.Value)
                 {
-                    op2mem = true;
+                    op2mem = EnumAddressType.DIRECT;
                 }
-                if (op2mem)
+                else if (rdb_Miscellaneous_Destination_InDirect_Mem.IsChecked != null && rdb_Miscellaneous_Destination_InDirect_Mem.IsChecked.Value)
+                {
+                    op2mem = EnumAddressType.INDIRECT;
+                }
+                if (op2mem == EnumAddressType.DIRECT || op2mem == EnumAddressType.INDIRECT)
                 {
                     op2 = new Operand(Convert.ToInt32(txtDestinationValueMiscellaneous.Text), EnumOperandType.ADDRESS);
                 }
@@ -995,16 +1076,19 @@ namespace CPU_OS_Simulator
                 }
 
             }
-            else if (rdb_DestinationRegisterMiscellaneous.IsChecked.Value)
+            else if (rdb_DestinationRegisterMiscellaneous.IsChecked != null && rdb_DestinationRegisterMiscellaneous.IsChecked.Value)
             {
                 string selectedRegister = (string)cmb_DestinationRegisterMiscellaneous.SelectedItem;
                 Register reg = Register.FindRegister(selectedRegister);
-                if (rdb_Miscellaneous_Destination_Reg_Direct.IsChecked.Value ||
-                    rdb_Miscellaneous_Destination_Reg_Indirect.IsChecked.Value)
+                if (rdb_Miscellaneous_Destination_Reg_Direct.IsChecked != null && rdb_Miscellaneous_Destination_Reg_Direct.IsChecked.Value)
                 {
-                    op2mem = true;
+                    op2mem = EnumAddressType.DIRECT;
                 }
-                if (op2mem)
+                else if (rdb_Miscellaneous_Destination_Reg_Indirect.IsChecked != null && rdb_Miscellaneous_Destination_Reg_Indirect.IsChecked.Value)
+                {
+                    op2mem = EnumAddressType.INDIRECT;
+                }
+                if (op2mem == EnumAddressType.DIRECT || op2mem == EnumAddressType.INDIRECT)
                 {
                     op2 = new Operand(reg, EnumOperandType.ADDRESS);
                 }

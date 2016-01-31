@@ -29,7 +29,7 @@ namespace CPU_OS_Simulator.Save_File_Editor
         {
             OpenFileDialog ofd = new OpenFileDialog();
             ofd.Multiselect = false;
-            ofd.DefaultExt = "*.sas";
+            ofd.DefaultExt = ".sas";
             ofd.Filter = "Simulator Programs (.sas)|*.sas | Simulator OS State (.soss)|*.soss"; // Filter files by extension
             bool? result = ofd.ShowDialog(this);
             if (result.Value)
