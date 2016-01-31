@@ -70,20 +70,14 @@ namespace CPU_OS_Simulator.CPU
         /// The string representation of this instruction e.g. ADD R01,10
         /// </summary>
         private string instructionString;
-
-        /// <summary>
-        /// Whether the first operand of the instruction is a memory address
-        /// </summary>
-        private bool op1mem = false;
-
-        /// <summary>
-        /// Whether the second operand of the instruction is a memory address
-        /// </summary>
-        private bool op2mem = false;
-       
         /// <summary>
         /// The execution unit that will be executing this instruction 
         /// </summary>
+        
+        private EnumAddressType op1mem = EnumAddressType.UNKNOWN;
+
+        private EnumAddressType op2mem = EnumAddressType.UNKNOWN;
+
         [ScriptIgnore]
         [NonSerialized]
         [JsonIgnore]
@@ -110,9 +104,9 @@ namespace CPU_OS_Simulator.CPU
         {
             this.opcode = opcode;
             operand1 = null;
-            op1mem = false;
+            op1mem = EnumAddressType.UNKNOWN;
             operand2 = null;
-            op2mem = false;
+            op2mem = EnumAddressType.UNKNOWN;
             this.size = size;
             instructionString = ToString();
             BindDelegate();
@@ -125,13 +119,13 @@ namespace CPU_OS_Simulator.CPU
         /// <param name="op1"> the first operand of the instruction</param>
         /// <param name="op1mem"> whether the first operand is a memory address</param>
         /// <param name="size"> the size of the instruction </param>
-        public Instruction(int opcode, Operand op1, bool op1mem, int size)
+        public Instruction(int opcode, Operand op1, EnumAddressType op1mem, int size)
         {
             this.opcode = opcode;
             operand1 = op1;
             this.op1mem = op1mem;
             operand2 = null;
-            this.op2mem = false;
+            this.op2mem = EnumAddressType.UNKNOWN;
             this.size = size;
             instructionString = ToString();
             BindDelegate();
@@ -146,7 +140,7 @@ namespace CPU_OS_Simulator.CPU
         /// <param name="op2"> the second operand of the instruction</param>
         /// <param name="op2mem"> whether the second operand is a memory address</param>
         /// <param name="size"> the size of the instruction </param>
-        public Instruction(int opcode, Operand op1, bool op1mem, Operand op2, bool op2mem, int size)
+        public Instruction(int opcode, Operand op1, EnumAddressType op1mem, Operand op2, EnumAddressType op2mem, int size)
         {
             this.opcode = opcode;
             operand1 = op1;
@@ -313,23 +307,6 @@ namespace CPU_OS_Simulator.CPU
             {
                 physicalAddress = value;
             }
-        }
-
-        /// <summary>
-        /// Whether the first operand of this instruction is a memory address
-        /// </summary>
-        public bool Op1Mem
-        {
-            get { return op1mem; }
-            set { op1mem = value; }
-        }
-        /// <summary>
-        /// Whether the second operand of this instruction is a memory address
-        /// </summary>
-        public bool Op2Mem
-        {
-            get { return op2mem; }
-            set { op2mem = value; }
         }
         /// <summary>
         /// The execution unit that will be executing this instruction
@@ -677,10 +654,14 @@ namespace CPU_OS_Simulator.CPU
 
             if (operand1 != null)
             {
-                if (op1mem)
+                if (op1mem == EnumAddressType.DIRECT)
                 {
                     op1 += "@";
-                } 
+                }
+                else if(op1mem == EnumAddressType.UNKNOWN)
+                {
+                    op1 += "!";
+                }
                 if (operand1.IsRegister)
                 {
                     op1 += Operand1.Register.Name;
@@ -692,9 +673,13 @@ namespace CPU_OS_Simulator.CPU
             }
             if (operand2 != null)
             {
-                if (op2mem)
+                if (op2mem == EnumAddressType.DIRECT)
                 {
                     op2 += "@";
+                }
+                else if (op2mem == EnumAddressType.INDIRECT)
+                {
+                    op2 += "!";
                 }
                 if (Operand2.IsRegister)
                 {

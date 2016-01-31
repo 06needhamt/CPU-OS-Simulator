@@ -282,7 +282,7 @@ namespace CPU_OS_Simulator
         private void DebugCompilingProgram()
         {
             SimulatorProgram program = CreateNewProgram("Debug", 0, 1);
-            program.Instructions.Add(new Instruction((int) EnumOpcodes.MOV,new Operand(Register.R01, EnumOperandType.VALUE),false, new Operand(13,EnumOperandType.VALUE),false,4));
+            program.Instructions.Add(new Instruction((int) EnumOpcodes.MOV,new Operand(Register.R01, EnumOperandType.VALUE),EnumAddressType.UNKNOWN, new Operand(13,EnumOperandType.VALUE),EnumAddressType.UNKNOWN, 4));
             if (program == null) return;
             lst_ProgramList.Items.Add(program);
             programList.Add(program);
@@ -505,7 +505,7 @@ namespace CPU_OS_Simulator
         /// <param name="op2mem"> whether the second operand is a memory address</param>
         /// <param name="Size"> the size of the instruction</param>
         /// <returns></returns>
-        public Instruction CreateInstruction(EnumOpcodes opcode, Operand op1, bool op1mem, Operand op2, bool op2mem, int Size)
+        public Instruction CreateInstruction(EnumOpcodes opcode, Operand op1, EnumAddressType op1mem, Operand op2, EnumAddressType op2mem, int Size)
         {
             return new Instruction((int)opcode, op1, op1mem, op2, op2mem, Size);
         }
@@ -517,7 +517,7 @@ namespace CPU_OS_Simulator
         /// <param name="op1"> the first operand</param>
         /// <param name="op1mem"> whether the first operand is a memory address</param>
         /// <param name="Size"> the size of the instruction</param>
-        public Instruction CreateInstruction(EnumOpcodes opcode, Operand op1, bool op1mem, int Size)
+        public Instruction CreateInstruction(EnumOpcodes opcode, Operand op1, EnumAddressType op1mem, int Size)
         {
             return new Instruction((int)opcode, op1, op1mem, Size);
         }

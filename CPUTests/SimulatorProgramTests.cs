@@ -25,7 +25,7 @@ namespace CPU_OS_Simulator.CPU.Tests
         public void AddInstructionTest()
         {
             SimulatorProgram prog = new SimulatorProgram("Test", 0, 1);
-            Instruction ins = new Instruction(0, new Operand(Register.R00, EnumOperandType.VALUE), false, new Operand(10, EnumOperandType.VALUE), false, 4);
+            Instruction ins = new Instruction(0, new Operand(Register.R00, EnumOperandType.VALUE), EnumAddressType.UNKNOWN, new Operand(10, EnumOperandType.VALUE), EnumAddressType.UNKNOWN, 4);
             prog.AddInstruction(ref ins);
             Assert.AreEqual(prog.Instructions.Count, 1);
         }
@@ -34,8 +34,8 @@ namespace CPU_OS_Simulator.CPU.Tests
         public void AddInstructionTest1()
         {
             SimulatorProgram prog = new SimulatorProgram("Test", 0, 1);
-            Instruction ins = new Instruction(0, new Operand(Register.R00, EnumOperandType.VALUE), false, new Operand(10, EnumOperandType.VALUE), false, 4);
-            Instruction ins2 = new Instruction(0, new Operand(Register.R01, EnumOperandType.VALUE), false, new Operand(10, EnumOperandType.VALUE), false, 4);
+            Instruction ins = new Instruction(0, new Operand(Register.R00, EnumOperandType.VALUE), EnumAddressType.UNKNOWN, new Operand(10, EnumOperandType.VALUE), EnumAddressType.UNKNOWN, 4);
+            Instruction ins2 = new Instruction(0, new Operand(Register.R01, EnumOperandType.VALUE), EnumAddressType.UNKNOWN, new Operand(10, EnumOperandType.VALUE), EnumAddressType.UNKNOWN, 4);
             prog.AddInstruction(ref ins);
             prog.AddInstruction(ref ins2, 0);
             Assert.IsTrue(prog.Instructions.Count == 2 && prog.Instructions.ElementAt(0).Equals(ins2));
