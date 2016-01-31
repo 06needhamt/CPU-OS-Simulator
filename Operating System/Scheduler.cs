@@ -762,7 +762,7 @@ namespace CPU_OS_Simulator.Operating_System
         private dynamic GetOSWindow()
         {
             Assembly windowBridge = Assembly.LoadFrom("CPU_OS_Simulator.WindowBridge.dll"); // Load the window bridge module
-            System.Console.WriteLine(windowBridge.GetExportedTypes()[1]);
+            //System.Console.WriteLine(windowBridge.GetExportedTypes()[1]);
             Type WindowType = windowBridge.GetType(windowBridge.GetExportedTypes()[1].ToString()); // get the name of the type that contains the window instances
             dynamic window = WindowType.GetField("OperatingSystemMainWindowInstance").GetValue(null); // get the value of the static OperatingSystemMainWindowInstance field
             return window;
@@ -774,7 +774,7 @@ namespace CPU_OS_Simulator.Operating_System
         private async Task<int> UpdateMainWindowInterface()
         {
             Assembly windowBridge = Assembly.LoadFrom("CPU_OS_Simulator.WindowBridge.dll"); // Load the window bridge module
-            System.Console.WriteLine(windowBridge.GetExportedTypes()[0]);
+            //System.Console.WriteLine(windowBridge.GetExportedTypes()[0]);
             Type WindowType = windowBridge.GetType(windowBridge.GetExportedTypes()[0].ToString()); // get the name of the type that contains the window instances
             object tyref = Activator.CreateInstance(WindowType);
             Task<int> result = (Task<int>) WindowType.GetMethod("UpdateMainWindowInterface").Invoke(tyref, null);

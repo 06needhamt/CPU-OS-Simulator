@@ -97,7 +97,7 @@ namespace CPU_OS_Simulator
         private void SetOSWindowInstance()
         {
             Assembly windowBridge = Assembly.LoadFrom("CPU_OS_Simulator.WindowBridge.dll"); // Load the window bridge module
-            System.Console.WriteLine(windowBridge.GetExportedTypes()[1]);
+            //System.Console.WriteLine(windowBridge.GetExportedTypes()[1]);
             Type WindowType = windowBridge.GetType(windowBridge.GetExportedTypes()[1].ToString()); // get the name of the type that contains the window instances
             WindowType.GetField("OperatingSystemMainWindowInstance").SetValue(null, currentInstance);
         }
@@ -824,7 +824,7 @@ namespace CPU_OS_Simulator
         private dynamic GetMainWindowInstance()
         {
             Assembly windowBridge = Assembly.LoadFrom("CPU_OS_Simulator.WindowBridge.dll"); // Load the window bridge module
-            System.Console.WriteLine(windowBridge.GetExportedTypes()[0]);
+            //System.Console.WriteLine(windowBridge.GetExportedTypes()[0]);
             Type WindowType = windowBridge.GetType(windowBridge.GetExportedTypes()[1].ToString()); // get the name of the type that contains the window instances
             dynamic window = WindowType.GetField("MainWindowInstance").GetValue(null); // get the value of the static MainWindowInstance field
             return window;
@@ -837,12 +837,40 @@ namespace CPU_OS_Simulator
         private async Task<int> UpdateMainWindowInterface()
         {
             Assembly windowBridge = Assembly.LoadFrom("CPU_OS_Simulator.WindowBridge.dll"); // Load the window bridge module
-            System.Console.WriteLine(windowBridge.GetExportedTypes()[0]);
+            //System.Console.WriteLine(windowBridge.GetExportedTypes()[0]);
             Type WindowType = windowBridge.GetType(windowBridge.GetExportedTypes()[0].ToString()); // get the name of the type that contains the window instances
             object tyref = Activator.CreateInstance(WindowType);
             Task<int> result = (Task<int>)WindowType.GetMethod("UpdateMainWindowInterface").Invoke(tyref, null);
             return result.Result;
 
+        }
+
+        private void rdb_Round_Robin_Checked(object sender, RoutedEventArgs e)
+        {
+            grp_Time_Slice.IsEnabled = true;
+            grp_Priority.IsEnabled = true;
+            grp_Dynamic.IsEnabled = true;
+        }
+
+        private void rdb_Round_Robin_Unchecked(object sender, RoutedEventArgs e)
+        {
+            grp_Time_Slice.IsEnabled = false;
+            grp_Priority.IsEnabled = false;
+            grp_Dynamic.IsEnabled = false;
+        }
+
+        private void chk_DelayedProcess_Checked(object sender, RoutedEventArgs e)
+        {
+            cmb_Arrival_Delay.IsEnabled = true;
+            rdb_DelayTicks.IsEnabled = true;
+            rdb_DelaySecs.IsEnabled = true;
+        }
+
+        private void chk_DelayedProcess_Unchecked(object sender, RoutedEventArgs e)
+        {
+            cmb_Arrival_Delay.IsEnabled = false;
+            rdb_DelayTicks.IsEnabled = false;
+            rdb_DelaySecs.IsEnabled = false;
         }
     }
 }
