@@ -319,10 +319,38 @@ namespace CPU_OS_Simulator.CPU
             set { unit = value; }
         }
 
+        public EnumAddressType Op1Mem
+        {
+            get { return op1mem; }
+            set { op1mem = value; }
+        }
+
+        public EnumAddressType Op2Mem
+        {
+            get { return op2mem; }
+            set { op2mem = value; }
+        }
+
         #endregion Properties
 
         #region Methods
 
+
+        private int GetIndirectAddress(int address)
+        {
+            int pageNumber = 0;
+            int pageOffset = 0;
+            byte[] bytes = new byte[sizeof(int)];
+            for (int i = 0; i < bytes.Length; i++)
+            {
+                pageNumber = address / MemoryPage.PAGE_SIZE;
+                pageOffset = address % MemoryPage.PAGE_SIZE;
+                byte? loadByte = LoadByte(pageNumber, pageOffset);
+                if (loadByte != null) bytes[i] = loadByte.Value;
+                address++;
+            }
+            return BitConverter.ToInt32(bytes, 0);
+        }
         /// <summary>
         /// this function binds a delegate to an instruction.
         /// The delegate bound here will be called when the instruction is executed
@@ -658,7 +686,7 @@ namespace CPU_OS_Simulator.CPU
                 {
                     op1 += "@";
                 }
-                else if(op1mem == EnumAddressType.UNKNOWN)
+                else if(op1mem == EnumAddressType.INDIRECT)
                 {
                     op1 += "!";
                 }
@@ -771,6 +799,10 @@ namespace CPU_OS_Simulator.CPU
                     {
                         address = rhs.Value + i;
                     }
+                    if (op2mem == EnumAddressType.INDIRECT)
+                    {
+                        address = GetIndirectAddress(address);
+                    }
                     int pageNumber = address / MemoryPage.PAGE_SIZE;
                     int pageOffset = address % MemoryPage.PAGE_SIZE;
                     byte? loadedByte = LoadByte(pageNumber, pageOffset);
@@ -811,6 +843,10 @@ namespace CPU_OS_Simulator.CPU
                     else
                     {
                         address = lhs.Value + i;
+                    }
+                    if (op1mem == EnumAddressType.INDIRECT)
+                    {
+                        address = GetIndirectAddress(address);
                     }
                     int pageNumber = address / MemoryPage.PAGE_SIZE;
                     int pageOffset = address % MemoryPage.PAGE_SIZE;
@@ -1260,6 +1296,10 @@ namespace CPU_OS_Simulator.CPU
                 {
                     address = rhs.Value;
                 }
+                if (op2mem == EnumAddressType.INDIRECT)
+                {
+                    address = GetIndirectAddress(address);
+                }
             }
             else
             {
@@ -1340,6 +1380,10 @@ namespace CPU_OS_Simulator.CPU
                 {
                     address = lhs.Value;
                 }
+                if (op1mem == EnumAddressType.INDIRECT)
+                {
+                    address = GetIndirectAddress(address);
+                }
             }
             else
             {
@@ -1395,6 +1439,10 @@ namespace CPU_OS_Simulator.CPU
                     {
                         address = rhs.Value + i;
                     }
+                    if (op2mem == EnumAddressType.INDIRECT)
+                    {
+                        address = GetIndirectAddress(address);
+                    }
                     int pageNumber = address / MemoryPage.PAGE_SIZE;
                     int pageOffset = address % MemoryPage.PAGE_SIZE;
                     byte? loadedByte = LoadByte(pageNumber, pageOffset);
@@ -1438,6 +1486,10 @@ namespace CPU_OS_Simulator.CPU
                     else
                     {
                         address = lhs.Value + i;
+                    }
+                    if (op1mem == EnumAddressType.INDIRECT)
+                    {
+                        address = GetIndirectAddress(address);
                     }
                     pageNumber = address / MemoryPage.PAGE_SIZE;
                     pageOffset = address % MemoryPage.PAGE_SIZE;
@@ -1528,6 +1580,10 @@ namespace CPU_OS_Simulator.CPU
                     {
                         address = rhs.Value + i;
                     }
+                    if (op2mem == EnumAddressType.INDIRECT)
+                    {
+                        address = GetIndirectAddress(address);
+                    }
                     int pageNumber = address / MemoryPage.PAGE_SIZE;
                     int pageOffset = address % MemoryPage.PAGE_SIZE;
                     byte? loadedByte = LoadByte(pageNumber, pageOffset);
@@ -1571,6 +1627,10 @@ namespace CPU_OS_Simulator.CPU
                     else
                     {
                         address = lhs.Value + i;
+                    }
+                    if (op1mem == EnumAddressType.INDIRECT)
+                    {
+                        address = GetIndirectAddress(address);
                     }
                     pageNumber = address / MemoryPage.PAGE_SIZE;
                     pageOffset = address % MemoryPage.PAGE_SIZE;
@@ -1661,6 +1721,10 @@ namespace CPU_OS_Simulator.CPU
                     {
                         address = rhs.Value + i;
                     }
+                    if (op1mem == EnumAddressType.INDIRECT)
+                    {
+                        address = GetIndirectAddress(address);
+                    }
                     int pageNumber = address / MemoryPage.PAGE_SIZE;
                     int pageOffset = address % MemoryPage.PAGE_SIZE;
                     byte? loadedByte = LoadByte(pageNumber, pageOffset);
@@ -1704,6 +1768,10 @@ namespace CPU_OS_Simulator.CPU
                     else
                     {
                         address = lhs.Value + i;
+                    }
+                    if (op1mem == EnumAddressType.INDIRECT)
+                    {
+                        address = GetIndirectAddress(address);
                     }
                     pageNumber = address / MemoryPage.PAGE_SIZE;
                     pageOffset = address % MemoryPage.PAGE_SIZE;
@@ -1792,6 +1860,10 @@ namespace CPU_OS_Simulator.CPU
                     {
                         address = rhs.Value + i;
                     }
+                    if (op2mem == EnumAddressType.INDIRECT)
+                    {
+                        address = GetIndirectAddress(address);
+                    }
                     int pageNumber = address/MemoryPage.PAGE_SIZE;
                     int pageOffset = address%MemoryPage.PAGE_SIZE;
                     byte? loadedByte = LoadByte(pageNumber, pageOffset);
@@ -1835,6 +1907,10 @@ namespace CPU_OS_Simulator.CPU
                     else
                     {
                         address = lhs.Value + i;
+                    }
+                    if (op1mem == EnumAddressType.INDIRECT)
+                    {
+                        address = GetIndirectAddress(address);
                     }
                     pageNumber = address/MemoryPage.PAGE_SIZE;
                     pageOffset = address%MemoryPage.PAGE_SIZE;
@@ -1928,6 +2004,10 @@ namespace CPU_OS_Simulator.CPU
                     {
                         address = rhs.Value + i;
                     }
+                    if (op2mem == EnumAddressType.INDIRECT)
+                    {
+                        address = GetIndirectAddress(address);
+                    }
                     int pageNumber = address / MemoryPage.PAGE_SIZE;
                     int pageOffset = address % MemoryPage.PAGE_SIZE;
                     byte? loadedByte = LoadByte(pageNumber, pageOffset);
@@ -1971,6 +2051,10 @@ namespace CPU_OS_Simulator.CPU
                     else
                     {
                         address = lhs.Value + i;
+                    }
+                    if (op1mem == EnumAddressType.INDIRECT)
+                    {
+                        address = GetIndirectAddress(address);
                     }
                     pageNumber = address / MemoryPage.PAGE_SIZE;
                     pageOffset = address % MemoryPage.PAGE_SIZE;
@@ -2065,6 +2149,10 @@ namespace CPU_OS_Simulator.CPU
                     {
                         address = rhs.Value + i;
                     }
+                    if (op2mem == EnumAddressType.INDIRECT)
+                    {
+                        address = GetIndirectAddress(address);
+                    }
                     int pageNumber = address / MemoryPage.PAGE_SIZE;
                     int pageOffset = address % MemoryPage.PAGE_SIZE;
                     byte? loadedByte = LoadByte(pageNumber, pageOffset);
@@ -2108,6 +2196,10 @@ namespace CPU_OS_Simulator.CPU
                     else
                     {
                         address = lhs.Value + i;
+                    }
+                    if (op1mem == EnumAddressType.INDIRECT)
+                    {
+                        address = GetIndirectAddress(address);
                     }
                     pageNumber = address / MemoryPage.PAGE_SIZE;
                     pageOffset = address % MemoryPage.PAGE_SIZE;
@@ -2198,6 +2290,10 @@ namespace CPU_OS_Simulator.CPU
                     {
                         address = rhs.Value + i;
                     }
+                    if (op2mem == EnumAddressType.INDIRECT)
+                    {
+                        address = GetIndirectAddress(address);
+                    }
                     int pageNumber = address / MemoryPage.PAGE_SIZE;
                     int pageOffset = address % MemoryPage.PAGE_SIZE;
                     byte? loadedByte = LoadByte(pageNumber, pageOffset);
@@ -2241,6 +2337,10 @@ namespace CPU_OS_Simulator.CPU
                     else
                     {
                         address = lhs.Value + i;
+                    }
+                    if (op1mem == EnumAddressType.INDIRECT)
+                    {
+                        address = GetIndirectAddress(address);
                     }
                     pageNumber = address / MemoryPage.PAGE_SIZE;
                     pageOffset = address % MemoryPage.PAGE_SIZE;
@@ -2331,6 +2431,10 @@ namespace CPU_OS_Simulator.CPU
                     {
                         address = rhs.Value + i;
                     }
+                    if (op2mem == EnumAddressType.INDIRECT)
+                    {
+                        address = GetIndirectAddress(address);
+                    }
                     int pageNumber = address / MemoryPage.PAGE_SIZE;
                     int pageOffset = address % MemoryPage.PAGE_SIZE;
                     byte? loadedByte = LoadByte(pageNumber, pageOffset);
@@ -2374,6 +2478,10 @@ namespace CPU_OS_Simulator.CPU
                     else
                     {
                         address = lhs.Value + i;
+                    }
+                    if (op1mem == EnumAddressType.INDIRECT)
+                    {
+                        address = GetIndirectAddress(address);
                     }
                     pageNumber = address / MemoryPage.PAGE_SIZE;
                     pageOffset = address % MemoryPage.PAGE_SIZE;
@@ -2464,6 +2572,10 @@ namespace CPU_OS_Simulator.CPU
                     {
                         address = rhs.Value + i;
                     }
+                    if (op2mem == EnumAddressType.INDIRECT)
+                    {
+                        address = GetIndirectAddress(address);
+                    }
                     int pageNumber = address / MemoryPage.PAGE_SIZE;
                     int pageOffset = address % MemoryPage.PAGE_SIZE;
                     byte? loadedByte = LoadByte(pageNumber, pageOffset);
@@ -2507,6 +2619,10 @@ namespace CPU_OS_Simulator.CPU
                     else
                     {
                         address = lhs.Value + i;
+                    }
+                    if (op1mem == EnumAddressType.INDIRECT)
+                    {
+                        address = GetIndirectAddress(address);
                     }
                     pageNumber = address / MemoryPage.PAGE_SIZE;
                     pageOffset = address % MemoryPage.PAGE_SIZE;
@@ -2597,6 +2713,10 @@ namespace CPU_OS_Simulator.CPU
                     {
                         address = rhs.Value + i;
                     }
+                    if (op2mem == EnumAddressType.INDIRECT)
+                    {
+                        address = GetIndirectAddress(address);
+                    }
                     int pageNumber = address/MemoryPage.PAGE_SIZE;
                     int pageOffset = address%MemoryPage.PAGE_SIZE;
                     byte? loadedByte = LoadByte(pageNumber, pageOffset);
@@ -2640,6 +2760,10 @@ namespace CPU_OS_Simulator.CPU
                     else
                     {
                         address = lhs.Value + i;
+                    }
+                    if (op1mem == EnumAddressType.INDIRECT)
+                    {
+                        address = GetIndirectAddress(address);
                     }
                     pageNumber = address/MemoryPage.PAGE_SIZE;
                     pageOffset = address%MemoryPage.PAGE_SIZE;
@@ -2764,6 +2888,10 @@ namespace CPU_OS_Simulator.CPU
                     {
                         address = lhs.Value + i;
                     }
+                    if (op1mem == EnumAddressType.INDIRECT)
+                    {
+                        address = GetIndirectAddress(address);
+                    }
                     pageNumber = address / MemoryPage.PAGE_SIZE;
                     pageOffset = address % MemoryPage.PAGE_SIZE;
                     byte? loadedByte = LoadByte(pageNumber, pageOffset);
@@ -2842,6 +2970,10 @@ namespace CPU_OS_Simulator.CPU
                     else
                     {
                         address = lhs.Value + i;
+                    }
+                    if (op1mem == EnumAddressType.INDIRECT)
+                    {
+                        address = GetIndirectAddress(address);
                     }
                     pageNumber = address / MemoryPage.PAGE_SIZE;
                     pageOffset = address % MemoryPage.PAGE_SIZE;
@@ -3376,6 +3508,10 @@ namespace CPU_OS_Simulator.CPU
                     {
                         address = rhs.Value + i;
                     }
+                    if (op2mem == EnumAddressType.INDIRECT)
+                    {
+                        address = GetIndirectAddress(address);
+                    }
                     int pageNumber = address / MemoryPage.PAGE_SIZE;
                     int pageOffset = address % MemoryPage.PAGE_SIZE;
                     byte? loadedByte = LoadByte(pageNumber, pageOffset);
@@ -3416,6 +3552,10 @@ namespace CPU_OS_Simulator.CPU
                     else
                     {
                         address = lhs.Value + i;
+                    }
+                    if (op1mem == EnumAddressType.INDIRECT)
+                    {
+                        address = GetIndirectAddress(address);
                     }
                     int pageNumber = address / MemoryPage.PAGE_SIZE;
                     int pageOffset = address % MemoryPage.PAGE_SIZE;
