@@ -55,24 +55,33 @@ namespace CPU_OS_Simulator
             SetConsoleWindowInstance();
         }
 
+        /// <summary>
+        /// Property for the colour of the text displayed in the console
+        /// </summary>
         public Color TextColor
         {
             get { return textColor; }
             set { textColor = value; }
         }
-
+        /// <summary>
+        /// Property for the name of the font of the text displayed in the console
+        /// </summary>
         public string FontName
         {
             get { return fontName; }
             set { fontName = value; }
         }
-
+        /// <summary>
+        /// Property for the size of the font of the text displayed in the console
+        /// </summary>
         public int FontSizes
         {
             get { return fontSize; }
             set { fontSize = value; }
         }
-
+        /// <summary>
+        /// Property for the style of the font of the text displayed in the console
+        /// </summary>
         public int FontStyles
         {
             get { return fontStyles; }

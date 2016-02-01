@@ -8,6 +8,7 @@ using System.Web.Script.Serialization;
 
 namespace CPU_OS_Simulator.Operating_System
 {
+    #pragma warning disable 1591
     public class NullPropertiesConverter : JavaScriptConverter
     {
         public override object Deserialize(IDictionary<string, object> dictionary, Type type, JavaScriptSerializer serializer)

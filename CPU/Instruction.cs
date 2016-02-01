@@ -318,13 +318,17 @@ namespace CPU_OS_Simulator.CPU
             get { return unit; }
             set { unit = value; }
         }
-
+        /// <summary>
+        /// Property for the memory address type of the first operand
+        /// </summary>
         public EnumAddressType Op1Mem
         {
             get { return op1mem; }
             set { op1mem = value; }
         }
-
+        /// <summary>
+        /// Property for the memory address type of the first operand
+        /// </summary>
         public EnumAddressType Op2Mem
         {
             get { return op2mem; }

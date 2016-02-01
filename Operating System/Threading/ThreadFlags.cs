@@ -4,6 +4,7 @@ namespace CPU_OS_Simulator.Operating_System.Threading
 {
     public struct ThreadFlags
     {
+        #pragma warning disable 1591
         public SimulatorProcess ownerProcess;
         public List<SimulatorThread> childThreads;
         public ThreadControlBlock controlBlock;

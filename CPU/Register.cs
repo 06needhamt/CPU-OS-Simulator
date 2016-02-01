@@ -11,6 +11,7 @@ namespace CPU_OS_Simulator.CPU
         private int value;
         private EnumOperandType type;
 
+        #pragma warning disable 1591
         public static Register R00 = new Register("R00");
         public static Register R01 = new Register("R01");
         public static Register R02 = new Register("R02");

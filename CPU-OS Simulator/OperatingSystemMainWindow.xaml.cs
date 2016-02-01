@@ -34,7 +34,9 @@ namespace CPU_OS_Simulator
         /// Variable to hold the current instance of this window so it can be accessed by other modules
         /// </summary>
         public static OperatingSystemMainWindow currentInstance;
-
+        /// <summary>
+        /// This event is fired when any of the queues are modified
+        /// </summary>
         public event NotifyCollectionChangedEventHandler CollectionChanged;
 
         /// <summary>
@@ -68,13 +70,17 @@ namespace CPU_OS_Simulator
             System.Console.WriteLine("Queue contents have changed" + sender.ToString());
             System.Console.WriteLine("Queue contents have changed" + sender.ToString());
         }
-
+        /// <summary>
+        /// Property for the processes that are currently loaded into the operating system
+        /// </summary>
         public List<SimulatorProcess> Processes
         {
             get { return processes; }
             set { processes = value; }
         }
-
+        /// <summary>
+        /// Property for the object that manages the OS
+        /// </summary>
         public OSCore OsCore
         {
             get { return osCore; }
@@ -413,6 +419,10 @@ namespace CPU_OS_Simulator
             return delayMills;
         }
 
+        /// <summary>
+        /// Asynchronous function called after every instruction is executed to update required values and user interface asynchronously
+        /// </summary>
+        /// <returns> A task to indicate to the main thread that the function has finished executing</returns>
         public async Task<int> UpdateInterface()
         {
             int RunningIndex = lst_RunningProcesses.SelectedIndex;

@@ -6,7 +6,6 @@ using Newtonsoft.Json; // See Third Party Libs/Credits.txt for licensing informa
 
 namespace CPU_OS_Simulator.Operating_System
 {
-    
     public class ProcessControlBlock
     {
         private int CPUID;

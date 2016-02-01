@@ -34,7 +34,9 @@ namespace CPU_OS_Simulator.Operating_System
         private Scheduler scheduler;
         private Queue<SimulatorProcess> readyQueue;
         private Queue<SimulatorProcess> waitingQueue;
-
+        /// <summary>
+        /// This event is fired whenever any of the queues have been modified
+        /// </summary>
         public event NotifyCollectionChangedEventHandler CollectionChanged;
         /// <summary>
         /// Default Constructor for the OS Core
@@ -124,7 +126,10 @@ namespace CPU_OS_Simulator.Operating_System
             AllocateProcessMemory(ref proc);
             return proc;
         }
-
+        /// <summary>
+        /// This function allocates memory for processes
+        /// </summary>
+        /// <param name="proc">reference to the process to allocate memory too</param>
         public void AllocateProcessMemory(ref SimulatorProcess proc)
         {
             if (proc == null)

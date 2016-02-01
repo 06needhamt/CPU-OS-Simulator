@@ -4,6 +4,9 @@ using System.Reflection;
 
 namespace CPU_OS_Simulator.Console
 {
+    /// <summary>
+    /// This class represents a document that can be printed using a printer
+    /// </summary>
     public class PrintableDocument : PrintDocument
     {
         /// <summary>

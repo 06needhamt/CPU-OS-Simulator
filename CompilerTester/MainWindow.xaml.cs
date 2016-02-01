@@ -16,6 +16,10 @@ namespace CPU_OS_Simulator.CompilerTester
     public partial class MainWindow : Window
     {
         private SymbolTable symbolTable;
+
+        /// <summary>
+        /// Default Constructor for Compiler Tester Main Window
+        /// </summary>
         public MainWindow()
         {
             InitializeComponent();

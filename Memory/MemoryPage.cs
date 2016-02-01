@@ -86,13 +86,17 @@ namespace CPU_OS_Simulator.Memory
                 startOffsetPhysical = value;
             }
         }
-
+        /// <summary>
+        /// Property for the current frame number of this page
+        /// </summary>
         public int FrameNumber
         {
             get { return frameNumber; }
             set { frameNumber = value; }
         }
-
+        /// <summary>
+        /// Property for the name of the program that this page belongs to
+        /// </summary>
         public string ProgramName
         {
             get { return programName; }

@@ -46,17 +46,23 @@ namespace CPU_OS_Simulator.Console
             get { return execute; }
             set { execute = value; }
         }
-
+        /// <summary>
+        /// Property for the name of the command
+        /// </summary>
         public string Name
         {
             get { return name; }
         }
-
+        /// <summary>
+        /// Property for the parameters of the command
+        /// </summary>
         public string[] Parameters
         {
             get { return parameters; }
         }
-
+        /// <summary>
+        /// Property for the id of the command
+        /// </summary>
         public EnumConsoleCommands ECommand1
         {
             get { return ECommand; }
