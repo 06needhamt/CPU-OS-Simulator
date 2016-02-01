@@ -1,0 +1,128 @@
+\hypertarget{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_threading_1_1_thread_control_block}{}\section{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Operating\+\_\+\+System.\+Threading.\+Thread\+Control\+Block Class Reference}
+\label{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_threading_1_1_thread_control_block}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Operating\+\_\+\+System.\+Threading.\+Thread\+Control\+Block@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Operating\+\_\+\+System.\+Threading.\+Thread\+Control\+Block}}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_threading_1_1_thread_control_block_adec46684a6dc77022198da6e1af24f13}{C\+P\+U\+I\+D}
+\item 
+int \hyperlink{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_threading_1_1_thread_control_block_aaed988e0c316f89bb561e9e9385f39bf}{O\+S\+I\+D}
+\item 
+int \hyperlink{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_threading_1_1_thread_control_block_aa05f8ca72d6e1c223846ca54e8af5f8f}{process\+I\+D}
+\item 
+string \hyperlink{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_threading_1_1_thread_control_block_a168a5180396d815cade5ef09f03ceae1}{process\+Name}
+\item 
+int \hyperlink{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_threading_1_1_thread_control_block_a661391a66ad6faa73c4702656ec079e4}{lifetime\+Mills}
+\item 
+int \hyperlink{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_threading_1_1_thread_control_block_a5bfadb9128f4e23f5f84175faa44ca93}{current\+Address}
+\item 
+int \hyperlink{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_threading_1_1_thread_control_block_a022f8a117c755ff19268f38b29654207}{start\+Address}
+\item 
+int \hyperlink{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_threading_1_1_thread_control_block_af578f17610e77a46038e4f2e4cf7b849}{priority}
+\item 
+bool \hyperlink{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_threading_1_1_thread_control_block_a3af7da813b6c6d89fcd686cb03c28ab4}{owns\+Semaphore}
+\item 
+bool \hyperlink{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_threading_1_1_thread_control_block_ad779f070727d0c5c33f5e65cc9b1a8dc}{waiting\+For\+Semaphore}
+\item 
+\hyperlink{namespace_c_p_u___o_s___simulator_1_1_operating___system_1_1_threading_af7d2481e1618940da9be7dcc5aff9472}{Enum\+Thread\+State} \hyperlink{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_threading_1_1_thread_control_block_adee332110280c675b2d2ad4851347e0c}{current\+State} = \hyperlink{namespace_c_p_u___o_s___simulator_1_1_operating___system_1_1_threading_af7d2481e1618940da9be7dcc5aff9472a696b031073e74bf2cb98e5ef201d4aa3}{Enum\+Thread\+State.\+U\+N\+K\+N\+O\+W\+N}
+\item 
+\hyperlink{namespace_c_p_u___o_s___simulator_1_1_operating___system_1_1_threading_af7d2481e1618940da9be7dcc5aff9472}{Enum\+Thread\+State} \hyperlink{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_threading_1_1_thread_control_block_aa0970c42cbdf32c8a7c2559c31da8932}{previous\+State} = \hyperlink{namespace_c_p_u___o_s___simulator_1_1_operating___system_1_1_threading_af7d2481e1618940da9be7dcc5aff9472a696b031073e74bf2cb98e5ef201d4aa3}{Enum\+Thread\+State.\+U\+N\+K\+N\+O\+W\+N}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 10 of file Thread\+Control\+Block.\+cs.
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_threading_1_1_thread_control_block_adec46684a6dc77022198da6e1af24f13}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Threading\+::\+Thread\+Control\+Block@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Threading\+::\+Thread\+Control\+Block}!C\+P\+U\+I\+D@{C\+P\+U\+I\+D}}
+\index{C\+P\+U\+I\+D@{C\+P\+U\+I\+D}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Threading\+::\+Thread\+Control\+Block@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Threading\+::\+Thread\+Control\+Block}}
+\subsubsection[{C\+P\+U\+I\+D}]{\setlength{\rightskip}{0pt plus 5cm}int C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Operating\+\_\+\+System.\+Threading.\+Thread\+Control\+Block.\+C\+P\+U\+I\+D\hspace{0.3cm}{\ttfamily [private]}}\label{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_threading_1_1_thread_control_block_adec46684a6dc77022198da6e1af24f13}
+
+
+Definition at line 12 of file Thread\+Control\+Block.\+cs.
+
+\hypertarget{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_threading_1_1_thread_control_block_a5bfadb9128f4e23f5f84175faa44ca93}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Threading\+::\+Thread\+Control\+Block@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Threading\+::\+Thread\+Control\+Block}!current\+Address@{current\+Address}}
+\index{current\+Address@{current\+Address}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Threading\+::\+Thread\+Control\+Block@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Threading\+::\+Thread\+Control\+Block}}
+\subsubsection[{current\+Address}]{\setlength{\rightskip}{0pt plus 5cm}int C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Operating\+\_\+\+System.\+Threading.\+Thread\+Control\+Block.\+current\+Address\hspace{0.3cm}{\ttfamily [private]}}\label{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_threading_1_1_thread_control_block_a5bfadb9128f4e23f5f84175faa44ca93}
+
+
+Definition at line 17 of file Thread\+Control\+Block.\+cs.
+
+\hypertarget{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_threading_1_1_thread_control_block_adee332110280c675b2d2ad4851347e0c}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Threading\+::\+Thread\+Control\+Block@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Threading\+::\+Thread\+Control\+Block}!current\+State@{current\+State}}
+\index{current\+State@{current\+State}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Threading\+::\+Thread\+Control\+Block@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Threading\+::\+Thread\+Control\+Block}}
+\subsubsection[{current\+State}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Enum\+Thread\+State} C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Operating\+\_\+\+System.\+Threading.\+Thread\+Control\+Block.\+current\+State = {\bf Enum\+Thread\+State.\+U\+N\+K\+N\+O\+W\+N}\hspace{0.3cm}{\ttfamily [private]}}\label{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_threading_1_1_thread_control_block_adee332110280c675b2d2ad4851347e0c}
+
+
+Definition at line 22 of file Thread\+Control\+Block.\+cs.
+
+\hypertarget{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_threading_1_1_thread_control_block_a661391a66ad6faa73c4702656ec079e4}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Threading\+::\+Thread\+Control\+Block@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Threading\+::\+Thread\+Control\+Block}!lifetime\+Mills@{lifetime\+Mills}}
+\index{lifetime\+Mills@{lifetime\+Mills}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Threading\+::\+Thread\+Control\+Block@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Threading\+::\+Thread\+Control\+Block}}
+\subsubsection[{lifetime\+Mills}]{\setlength{\rightskip}{0pt plus 5cm}int C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Operating\+\_\+\+System.\+Threading.\+Thread\+Control\+Block.\+lifetime\+Mills\hspace{0.3cm}{\ttfamily [private]}}\label{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_threading_1_1_thread_control_block_a661391a66ad6faa73c4702656ec079e4}
+
+
+Definition at line 16 of file Thread\+Control\+Block.\+cs.
+
+\hypertarget{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_threading_1_1_thread_control_block_aaed988e0c316f89bb561e9e9385f39bf}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Threading\+::\+Thread\+Control\+Block@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Threading\+::\+Thread\+Control\+Block}!O\+S\+I\+D@{O\+S\+I\+D}}
+\index{O\+S\+I\+D@{O\+S\+I\+D}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Threading\+::\+Thread\+Control\+Block@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Threading\+::\+Thread\+Control\+Block}}
+\subsubsection[{O\+S\+I\+D}]{\setlength{\rightskip}{0pt plus 5cm}int C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Operating\+\_\+\+System.\+Threading.\+Thread\+Control\+Block.\+O\+S\+I\+D\hspace{0.3cm}{\ttfamily [private]}}\label{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_threading_1_1_thread_control_block_aaed988e0c316f89bb561e9e9385f39bf}
+
+
+Definition at line 13 of file Thread\+Control\+Block.\+cs.
+
+\hypertarget{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_threading_1_1_thread_control_block_a3af7da813b6c6d89fcd686cb03c28ab4}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Threading\+::\+Thread\+Control\+Block@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Threading\+::\+Thread\+Control\+Block}!owns\+Semaphore@{owns\+Semaphore}}
+\index{owns\+Semaphore@{owns\+Semaphore}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Threading\+::\+Thread\+Control\+Block@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Threading\+::\+Thread\+Control\+Block}}
+\subsubsection[{owns\+Semaphore}]{\setlength{\rightskip}{0pt plus 5cm}bool C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Operating\+\_\+\+System.\+Threading.\+Thread\+Control\+Block.\+owns\+Semaphore\hspace{0.3cm}{\ttfamily [private]}}\label{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_threading_1_1_thread_control_block_a3af7da813b6c6d89fcd686cb03c28ab4}
+
+
+Definition at line 20 of file Thread\+Control\+Block.\+cs.
+
+\hypertarget{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_threading_1_1_thread_control_block_aa0970c42cbdf32c8a7c2559c31da8932}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Threading\+::\+Thread\+Control\+Block@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Threading\+::\+Thread\+Control\+Block}!previous\+State@{previous\+State}}
+\index{previous\+State@{previous\+State}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Threading\+::\+Thread\+Control\+Block@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Threading\+::\+Thread\+Control\+Block}}
+\subsubsection[{previous\+State}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Enum\+Thread\+State} C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Operating\+\_\+\+System.\+Threading.\+Thread\+Control\+Block.\+previous\+State = {\bf Enum\+Thread\+State.\+U\+N\+K\+N\+O\+W\+N}\hspace{0.3cm}{\ttfamily [private]}}\label{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_threading_1_1_thread_control_block_aa0970c42cbdf32c8a7c2559c31da8932}
+
+
+Definition at line 23 of file Thread\+Control\+Block.\+cs.
+
+\hypertarget{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_threading_1_1_thread_control_block_af578f17610e77a46038e4f2e4cf7b849}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Threading\+::\+Thread\+Control\+Block@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Threading\+::\+Thread\+Control\+Block}!priority@{priority}}
+\index{priority@{priority}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Threading\+::\+Thread\+Control\+Block@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Threading\+::\+Thread\+Control\+Block}}
+\subsubsection[{priority}]{\setlength{\rightskip}{0pt plus 5cm}int C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Operating\+\_\+\+System.\+Threading.\+Thread\+Control\+Block.\+priority\hspace{0.3cm}{\ttfamily [private]}}\label{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_threading_1_1_thread_control_block_af578f17610e77a46038e4f2e4cf7b849}
+
+
+Definition at line 19 of file Thread\+Control\+Block.\+cs.
+
+\hypertarget{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_threading_1_1_thread_control_block_aa05f8ca72d6e1c223846ca54e8af5f8f}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Threading\+::\+Thread\+Control\+Block@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Threading\+::\+Thread\+Control\+Block}!process\+I\+D@{process\+I\+D}}
+\index{process\+I\+D@{process\+I\+D}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Threading\+::\+Thread\+Control\+Block@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Threading\+::\+Thread\+Control\+Block}}
+\subsubsection[{process\+I\+D}]{\setlength{\rightskip}{0pt plus 5cm}int C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Operating\+\_\+\+System.\+Threading.\+Thread\+Control\+Block.\+process\+I\+D\hspace{0.3cm}{\ttfamily [private]}}\label{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_threading_1_1_thread_control_block_aa05f8ca72d6e1c223846ca54e8af5f8f}
+
+
+Definition at line 14 of file Thread\+Control\+Block.\+cs.
+
+\hypertarget{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_threading_1_1_thread_control_block_a168a5180396d815cade5ef09f03ceae1}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Threading\+::\+Thread\+Control\+Block@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Threading\+::\+Thread\+Control\+Block}!process\+Name@{process\+Name}}
+\index{process\+Name@{process\+Name}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Threading\+::\+Thread\+Control\+Block@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Threading\+::\+Thread\+Control\+Block}}
+\subsubsection[{process\+Name}]{\setlength{\rightskip}{0pt plus 5cm}string C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Operating\+\_\+\+System.\+Threading.\+Thread\+Control\+Block.\+process\+Name\hspace{0.3cm}{\ttfamily [private]}}\label{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_threading_1_1_thread_control_block_a168a5180396d815cade5ef09f03ceae1}
+
+
+Definition at line 15 of file Thread\+Control\+Block.\+cs.
+
+\hypertarget{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_threading_1_1_thread_control_block_a022f8a117c755ff19268f38b29654207}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Threading\+::\+Thread\+Control\+Block@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Threading\+::\+Thread\+Control\+Block}!start\+Address@{start\+Address}}
+\index{start\+Address@{start\+Address}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Threading\+::\+Thread\+Control\+Block@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Threading\+::\+Thread\+Control\+Block}}
+\subsubsection[{start\+Address}]{\setlength{\rightskip}{0pt plus 5cm}int C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Operating\+\_\+\+System.\+Threading.\+Thread\+Control\+Block.\+start\+Address\hspace{0.3cm}{\ttfamily [private]}}\label{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_threading_1_1_thread_control_block_a022f8a117c755ff19268f38b29654207}
+
+
+Definition at line 18 of file Thread\+Control\+Block.\+cs.
+
+\hypertarget{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_threading_1_1_thread_control_block_ad779f070727d0c5c33f5e65cc9b1a8dc}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Threading\+::\+Thread\+Control\+Block@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Threading\+::\+Thread\+Control\+Block}!waiting\+For\+Semaphore@{waiting\+For\+Semaphore}}
+\index{waiting\+For\+Semaphore@{waiting\+For\+Semaphore}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Threading\+::\+Thread\+Control\+Block@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Threading\+::\+Thread\+Control\+Block}}
+\subsubsection[{waiting\+For\+Semaphore}]{\setlength{\rightskip}{0pt plus 5cm}bool C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Operating\+\_\+\+System.\+Threading.\+Thread\+Control\+Block.\+waiting\+For\+Semaphore\hspace{0.3cm}{\ttfamily [private]}}\label{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_threading_1_1_thread_control_block_ad779f070727d0c5c33f5e65cc9b1a8dc}
+
+
+Definition at line 21 of file Thread\+Control\+Block.\+cs.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Operating System/\+Threading/\hyperlink{_thread_control_block_8cs}{Thread\+Control\+Block.\+cs}\end{DoxyCompactItemize}

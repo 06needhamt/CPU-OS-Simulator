@@ -15,5 +15,8 @@ var class_c_p_u___o_s___simulator_1_1_console_1_1_console_command =
     [ "execute", "class_c_p_u___o_s___simulator_1_1_console_1_1_console_command.html#a14965572ab7b76a453e1dd49d268b48a", null ],
     [ "name", "class_c_p_u___o_s___simulator_1_1_console_1_1_console_command.html#a0ba819d58268ef4f9bab12089a9fd1a4", null ],
     [ "parameters", "class_c_p_u___o_s___simulator_1_1_console_1_1_console_command.html#a00586d96461c740fd20069c604424c22", null ],
-    [ "Execute", "class_c_p_u___o_s___simulator_1_1_console_1_1_console_command.html#a9b4fd5675ec062a721c2e5e78022117b", null ]
+    [ "ECommand1", "class_c_p_u___o_s___simulator_1_1_console_1_1_console_command.html#ae96cab2ae94ba9ee4a18130e7c8f2866", null ],
+    [ "Execute", "class_c_p_u___o_s___simulator_1_1_console_1_1_console_command.html#a9b4fd5675ec062a721c2e5e78022117b", null ],
+    [ "Name", "class_c_p_u___o_s___simulator_1_1_console_1_1_console_command.html#a4ecb871520e9d6453edc4d59d81c5f54", null ],
+    [ "Parameters", "class_c_p_u___o_s___simulator_1_1_console_1_1_console_command.html#a0c21b7943f52a37bcc2481b40202d064", null ]
 ];

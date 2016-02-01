@@ -1,0 +1,67 @@
+\hypertarget{namespace_c_p_u___o_s___simulator_1_1_operating___system_1_1_threading}{}\section{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Operating\+\_\+\+System.\+Threading Namespace Reference}
+\label{namespace_c_p_u___o_s___simulator_1_1_operating___system_1_1_threading}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Operating\+\_\+\+System.\+Threading@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Operating\+\_\+\+System.\+Threading}}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_threading_1_1_mutex}{Mutex}
+\item 
+class \hyperlink{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_threading_1_1_semaphore}{Semaphore}
+\begin{DoxyCompactList}\small\item\em This class implements a simple counting semaphore for managing resource allocation \end{DoxyCompactList}\item 
+class \hyperlink{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_threading_1_1_simulator_thread}{Simulator\+Thread}
+\item 
+class \hyperlink{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_threading_1_1_spin_lock}{Spin\+Lock}
+\item 
+struct \hyperlink{struct_c_p_u___o_s___simulator_1_1_operating___system_1_1_threading_1_1_t_c_b_flags}{T\+C\+B\+Flags}
+\item 
+class \hyperlink{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_threading_1_1_thread_control_block}{Thread\+Control\+Block}
+\item 
+class \hyperlink{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_threading_1_1_thread_execution_unit}{Thread\+Execution\+Unit}
+\item 
+struct \hyperlink{struct_c_p_u___o_s___simulator_1_1_operating___system_1_1_threading_1_1_thread_flags}{Thread\+Flags}
+\end{DoxyCompactItemize}
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{namespace_c_p_u___o_s___simulator_1_1_operating___system_1_1_threading_af7d2481e1618940da9be7dcc5aff9472}{Enum\+Thread\+State} \{ \\*
+\hyperlink{namespace_c_p_u___o_s___simulator_1_1_operating___system_1_1_threading_af7d2481e1618940da9be7dcc5aff9472a696b031073e74bf2cb98e5ef201d4aa3}{Enum\+Thread\+State.\+U\+N\+K\+N\+O\+W\+N} = -\/1, 
+\hyperlink{namespace_c_p_u___o_s___simulator_1_1_operating___system_1_1_threading_af7d2481e1618940da9be7dcc5aff9472a43491564ebcfd38568918efbd6e840fd}{Enum\+Thread\+State.\+R\+U\+N\+N\+I\+N\+G} = 0, 
+\hyperlink{namespace_c_p_u___o_s___simulator_1_1_operating___system_1_1_threading_af7d2481e1618940da9be7dcc5aff9472a2baa69eafc7204f3bd8648eba580c489}{Enum\+Thread\+State.\+R\+E\+A\+D\+Y} = 1, 
+\hyperlink{namespace_c_p_u___o_s___simulator_1_1_operating___system_1_1_threading_af7d2481e1618940da9be7dcc5aff9472a1869d56535e8b1449a6da54ff5e11f50}{Enum\+Thread\+State.\+W\+A\+I\+T\+I\+N\+G} = 2, 
+\\*
+\hyperlink{namespace_c_p_u___o_s___simulator_1_1_operating___system_1_1_threading_af7d2481e1618940da9be7dcc5aff9472a9e8957c612920c788ec947d98e0af024}{Enum\+Thread\+State.\+I\+N\+\_\+\+S\+E\+M\+A\+P\+H\+O\+R\+E} = 3, 
+\hyperlink{namespace_c_p_u___o_s___simulator_1_1_operating___system_1_1_threading_af7d2481e1618940da9be7dcc5aff9472af46b873115ba21acbd559e7f2e1aca0c}{Enum\+Thread\+State.\+W\+A\+I\+T\+I\+N\+G\+\_\+\+S\+E\+M\+A\+P\+H\+O\+R\+E} = 4, 
+\hyperlink{namespace_c_p_u___o_s___simulator_1_1_operating___system_1_1_threading_af7d2481e1618940da9be7dcc5aff9472a0550134156d1220fe47b905f3da1080f}{Enum\+Thread\+State.\+D\+E\+A\+D\+L\+O\+C\+K\+E\+D} = 5, 
+\hyperlink{namespace_c_p_u___o_s___simulator_1_1_operating___system_1_1_threading_af7d2481e1618940da9be7dcc5aff9472a3100f55bb4a31e8ce1ae3ccbcf38465e}{Enum\+Thread\+State.\+J\+O\+I\+N\+E\+D} = 6
+ \}
+\end{DoxyCompactItemize}
+
+
+\subsection{Enumeration Type Documentation}
+\hypertarget{namespace_c_p_u___o_s___simulator_1_1_operating___system_1_1_threading_af7d2481e1618940da9be7dcc5aff9472}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Threading@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Threading}!Enum\+Thread\+State@{Enum\+Thread\+State}}
+\index{Enum\+Thread\+State@{Enum\+Thread\+State}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Threading@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Threading}}
+\subsubsection[{Enum\+Thread\+State}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Operating\+\_\+\+System.\+Threading.\+Enum\+Thread\+State}\hspace{0.3cm}{\ttfamily [strong]}}\label{namespace_c_p_u___o_s___simulator_1_1_operating___system_1_1_threading_af7d2481e1618940da9be7dcc5aff9472}
+\begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{U\+N\+K\+N\+O\+W\+N@{U\+N\+K\+N\+O\+W\+N}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Threading@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Threading}}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Threading@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Threading}!U\+N\+K\+N\+O\+W\+N@{U\+N\+K\+N\+O\+W\+N}}\item[{\em 
+\hypertarget{namespace_c_p_u___o_s___simulator_1_1_operating___system_1_1_threading_af7d2481e1618940da9be7dcc5aff9472a696b031073e74bf2cb98e5ef201d4aa3}{}U\+N\+K\+N\+O\+W\+N\label{namespace_c_p_u___o_s___simulator_1_1_operating___system_1_1_threading_af7d2481e1618940da9be7dcc5aff9472a696b031073e74bf2cb98e5ef201d4aa3}
+}]\index{R\+U\+N\+N\+I\+N\+G@{R\+U\+N\+N\+I\+N\+G}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Threading@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Threading}}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Threading@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Threading}!R\+U\+N\+N\+I\+N\+G@{R\+U\+N\+N\+I\+N\+G}}\item[{\em 
+\hypertarget{namespace_c_p_u___o_s___simulator_1_1_operating___system_1_1_threading_af7d2481e1618940da9be7dcc5aff9472a43491564ebcfd38568918efbd6e840fd}{}R\+U\+N\+N\+I\+N\+G\label{namespace_c_p_u___o_s___simulator_1_1_operating___system_1_1_threading_af7d2481e1618940da9be7dcc5aff9472a43491564ebcfd38568918efbd6e840fd}
+}]\index{R\+E\+A\+D\+Y@{R\+E\+A\+D\+Y}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Threading@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Threading}}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Threading@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Threading}!R\+E\+A\+D\+Y@{R\+E\+A\+D\+Y}}\item[{\em 
+\hypertarget{namespace_c_p_u___o_s___simulator_1_1_operating___system_1_1_threading_af7d2481e1618940da9be7dcc5aff9472a2baa69eafc7204f3bd8648eba580c489}{}R\+E\+A\+D\+Y\label{namespace_c_p_u___o_s___simulator_1_1_operating___system_1_1_threading_af7d2481e1618940da9be7dcc5aff9472a2baa69eafc7204f3bd8648eba580c489}
+}]\index{W\+A\+I\+T\+I\+N\+G@{W\+A\+I\+T\+I\+N\+G}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Threading@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Threading}}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Threading@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Threading}!W\+A\+I\+T\+I\+N\+G@{W\+A\+I\+T\+I\+N\+G}}\item[{\em 
+\hypertarget{namespace_c_p_u___o_s___simulator_1_1_operating___system_1_1_threading_af7d2481e1618940da9be7dcc5aff9472a1869d56535e8b1449a6da54ff5e11f50}{}W\+A\+I\+T\+I\+N\+G\label{namespace_c_p_u___o_s___simulator_1_1_operating___system_1_1_threading_af7d2481e1618940da9be7dcc5aff9472a1869d56535e8b1449a6da54ff5e11f50}
+}]\index{I\+N\+\_\+\+S\+E\+M\+A\+P\+H\+O\+R\+E@{I\+N\+\_\+\+S\+E\+M\+A\+P\+H\+O\+R\+E}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Threading@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Threading}}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Threading@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Threading}!I\+N\+\_\+\+S\+E\+M\+A\+P\+H\+O\+R\+E@{I\+N\+\_\+\+S\+E\+M\+A\+P\+H\+O\+R\+E}}\item[{\em 
+\hypertarget{namespace_c_p_u___o_s___simulator_1_1_operating___system_1_1_threading_af7d2481e1618940da9be7dcc5aff9472a9e8957c612920c788ec947d98e0af024}{}I\+N\+\_\+\+S\+E\+M\+A\+P\+H\+O\+R\+E\label{namespace_c_p_u___o_s___simulator_1_1_operating___system_1_1_threading_af7d2481e1618940da9be7dcc5aff9472a9e8957c612920c788ec947d98e0af024}
+}]\index{W\+A\+I\+T\+I\+N\+G\+\_\+\+S\+E\+M\+A\+P\+H\+O\+R\+E@{W\+A\+I\+T\+I\+N\+G\+\_\+\+S\+E\+M\+A\+P\+H\+O\+R\+E}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Threading@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Threading}}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Threading@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Threading}!W\+A\+I\+T\+I\+N\+G\+\_\+\+S\+E\+M\+A\+P\+H\+O\+R\+E@{W\+A\+I\+T\+I\+N\+G\+\_\+\+S\+E\+M\+A\+P\+H\+O\+R\+E}}\item[{\em 
+\hypertarget{namespace_c_p_u___o_s___simulator_1_1_operating___system_1_1_threading_af7d2481e1618940da9be7dcc5aff9472af46b873115ba21acbd559e7f2e1aca0c}{}W\+A\+I\+T\+I\+N\+G\+\_\+\+S\+E\+M\+A\+P\+H\+O\+R\+E\label{namespace_c_p_u___o_s___simulator_1_1_operating___system_1_1_threading_af7d2481e1618940da9be7dcc5aff9472af46b873115ba21acbd559e7f2e1aca0c}
+}]\index{D\+E\+A\+D\+L\+O\+C\+K\+E\+D@{D\+E\+A\+D\+L\+O\+C\+K\+E\+D}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Threading@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Threading}}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Threading@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Threading}!D\+E\+A\+D\+L\+O\+C\+K\+E\+D@{D\+E\+A\+D\+L\+O\+C\+K\+E\+D}}\item[{\em 
+\hypertarget{namespace_c_p_u___o_s___simulator_1_1_operating___system_1_1_threading_af7d2481e1618940da9be7dcc5aff9472a0550134156d1220fe47b905f3da1080f}{}D\+E\+A\+D\+L\+O\+C\+K\+E\+D\label{namespace_c_p_u___o_s___simulator_1_1_operating___system_1_1_threading_af7d2481e1618940da9be7dcc5aff9472a0550134156d1220fe47b905f3da1080f}
+}]\index{J\+O\+I\+N\+E\+D@{J\+O\+I\+N\+E\+D}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Threading@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Threading}}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Threading@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Threading}!J\+O\+I\+N\+E\+D@{J\+O\+I\+N\+E\+D}}\item[{\em 
+\hypertarget{namespace_c_p_u___o_s___simulator_1_1_operating___system_1_1_threading_af7d2481e1618940da9be7dcc5aff9472a3100f55bb4a31e8ce1ae3ccbcf38465e}{}J\+O\+I\+N\+E\+D\label{namespace_c_p_u___o_s___simulator_1_1_operating___system_1_1_threading_af7d2481e1618940da9be7dcc5aff9472a3100f55bb4a31e8ce1ae3ccbcf38465e}
+}]\end{description}
+\end{Desc}
+
+
+Definition at line 3 of file Enum\+Thread\+State.\+cs.
+

@@ -2,6 +2,7 @@ var class_c_p_u___o_s___simulator_1_1_operating___system_1_1_o_s_core =
 [
     [ "OSCore", "class_c_p_u___o_s___simulator_1_1_operating___system_1_1_o_s_core.html#a3845ed83851b87e64d6918a2a495e45e", null ],
     [ "OSCore", "class_c_p_u___o_s___simulator_1_1_operating___system_1_1_o_s_core.html#a65c809ada2e4d0d5f6269e6a9009db0d", null ],
+    [ "AllocateProcessMemory", "class_c_p_u___o_s___simulator_1_1_operating___system_1_1_o_s_core.html#aaca3eba12c3f4e774d0328e3d3402ae3", null ],
     [ "CreateProcess", "class_c_p_u___o_s___simulator_1_1_operating___system_1_1_o_s_core.html#afee9dd12629e415c420fc7c197f784c4", null ],
     [ "CreateSchedulerFlags", "class_c_p_u___o_s___simulator_1_1_operating___system_1_1_o_s_core.html#a0370de0efae69664c16b258846a64908", null ],
     [ "GetMainWindowInstance", "class_c_p_u___o_s___simulator_1_1_operating___system_1_1_o_s_core.html#a6aa060134c64a17e248da359846f394b", null ],

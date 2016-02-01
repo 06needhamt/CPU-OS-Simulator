@@ -2,6 +2,7 @@ var dir_ff6e109baae131d2332bf0a49ed3a3e4 =
 [
     [ "obj", "dir_4b537e03ebaa4eb547079d1306133a8b.html", "dir_4b537e03ebaa4eb547079d1306133a8b" ],
     [ "Properties", "dir_d6f69375bbd645a0ac2242580d7d31ed.html", "dir_d6f69375bbd645a0ac2242580d7d31ed" ],
+    [ "Threading", "dir_e36b56e5a6b1b1c50429945fae168cfb.html", "dir_e36b56e5a6b1b1c50429945fae168cfb" ],
     [ "EnumErrorCodes.cs", "_operating_01_system_2_enum_error_codes_8cs.html", "_operating_01_system_2_enum_error_codes_8cs" ],
     [ "EnumOSState.cs", "_enum_o_s_state_8cs.html", "_enum_o_s_state_8cs" ],
     [ "EnumPriorityPolicy.cs", "_enum_priority_policy_8cs.html", "_enum_priority_policy_8cs" ],
@@ -9,6 +10,12 @@ var dir_ff6e109baae131d2332bf0a49ed3a3e4 =
     [ "EnumRoundRobinType.cs", "_enum_round_robin_type_8cs.html", "_enum_round_robin_type_8cs" ],
     [ "EnumSchedulingPolicies.cs", "_enum_scheduling_policies_8cs.html", "_enum_scheduling_policies_8cs" ],
     [ "EnumTimeUnit.cs", "_enum_time_unit_8cs.html", "_enum_time_unit_8cs" ],
+    [ "LotteryTicket.cs", "_lottery_ticket_8cs.html", [
+      [ "LotteryTicket", "class_c_p_u___o_s___simulator_1_1_operating___system_1_1_lottery_ticket.html", "class_c_p_u___o_s___simulator_1_1_operating___system_1_1_lottery_ticket" ]
+    ] ],
+    [ "NullPropertyConverter.cs", "_null_property_converter_8cs.html", [
+      [ "NullPropertiesConverter", "class_c_p_u___o_s___simulator_1_1_operating___system_1_1_null_properties_converter.html", "class_c_p_u___o_s___simulator_1_1_operating___system_1_1_null_properties_converter" ]
+    ] ],
     [ "Old Process Flags.cs", "_old_01_process_01_flags_8cs.html", "_old_01_process_01_flags_8cs" ],
     [ "OSCore.cs", "_o_s_core_8cs.html", [
       [ "OSCore", "class_c_p_u___o_s___simulator_1_1_operating___system_1_1_o_s_core.html", "class_c_p_u___o_s___simulator_1_1_operating___system_1_1_o_s_core" ]
@@ -37,7 +44,7 @@ var dir_ff6e109baae131d2332bf0a49ed3a3e4 =
     [ "SimulatorProcess.cs", "_simulator_process_8cs.html", [
       [ "SimulatorProcess", "class_c_p_u___o_s___simulator_1_1_operating___system_1_1_simulator_process.html", "class_c_p_u___o_s___simulator_1_1_operating___system_1_1_simulator_process" ]
     ] ],
-    [ "SystemResource.cs", "_system_resource_8cs.html", [
-      [ "SystemResource", "class_c_p_u___o_s___simulator_1_1_operating___system_1_1_system_resource.html", "class_c_p_u___o_s___simulator_1_1_operating___system_1_1_system_resource" ]
+    [ "SimulatorResource.cs", "_simulator_resource_8cs.html", [
+      [ "SimulatorResource", "class_c_p_u___o_s___simulator_1_1_operating___system_1_1_simulator_resource.html", "class_c_p_u___o_s___simulator_1_1_operating___system_1_1_simulator_resource" ]
     ] ]
 ];

@@ -1,0 +1,172 @@
+\hypertarget{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_lottery_ticket}{}\section{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Operating\+\_\+\+System.\+Lottery\+Ticket Class Reference}
+\label{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_lottery_ticket}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Operating\+\_\+\+System.\+Lottery\+Ticket@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Operating\+\_\+\+System.\+Lottery\+Ticket}}
+
+
+This class represents a Lottery ticket used for the Lottery Scheduling Mode  
+
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_lottery_ticket_ae0d23e5357d910c2ee2cc8bd715face1}{Lottery\+Ticket} ()
+\begin{DoxyCompactList}\small\item\em Default Constructor used when deserialising lottery tickets N\+O\+T\+E\+: D\+O N\+O\+T U\+S\+E I\+N C\+O\+D\+E \end{DoxyCompactList}\item 
+\hyperlink{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_lottery_ticket_a119f33191c10a46412927cf4e786f992}{Lottery\+Ticket} (int \hyperlink{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_lottery_ticket_a66f775e493b834d9cfe753bc9961a935}{id}, \hyperlink{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_simulator_process}{Simulator\+Process} \hyperlink{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_lottery_ticket_a7b67cf29ab87500cc907a30357d858fd}{owner}, int \hyperlink{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_lottery_ticket_a70221785d251a61ae812a60325287249}{currency\+Value})
+\begin{DoxyCompactList}\small\item\em Constructor for lottery ticket \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_lottery_ticket_a36be2545d1ee5498d1c309a5a39ec181}{Id}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Property for the I\+D of this ticked \end{DoxyCompactList}\item 
+\hyperlink{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_simulator_process}{Simulator\+Process} \hyperlink{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_lottery_ticket_ab500b400dea7b986bad4dd13c376f9d2}{Owner}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Property for the process that owns this ticket \end{DoxyCompactList}\item 
+int \hyperlink{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_lottery_ticket_aa76a95e5f004a621d2eb1230c6680273}{Currency\+Value}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Property for the currency value of this ticket (how likely it is to get chosen) \end{DoxyCompactList}\item 
+bool \hyperlink{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_lottery_ticket_aedda5be8ac6feb49a7a140af4e99a7ad}{Selected}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Property value for whether this ticked has been chosen before \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_lottery_ticket_a66f775e493b834d9cfe753bc9961a935}{id}
+\item 
+\hyperlink{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_simulator_process}{Simulator\+Process} \hyperlink{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_lottery_ticket_a7b67cf29ab87500cc907a30357d858fd}{owner}
+\item 
+int \hyperlink{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_lottery_ticket_a70221785d251a61ae812a60325287249}{currency\+Value}
+\item 
+bool \hyperlink{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_lottery_ticket_a161d1696b8262684d835794ab886cbff}{selected}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This class represents a Lottery ticket used for the Lottery Scheduling Mode 
+
+
+
+Definition at line 13 of file Lottery\+Ticket.\+cs.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_lottery_ticket_ae0d23e5357d910c2ee2cc8bd715face1}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Lottery\+Ticket@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Lottery\+Ticket}!Lottery\+Ticket@{Lottery\+Ticket}}
+\index{Lottery\+Ticket@{Lottery\+Ticket}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Lottery\+Ticket@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Lottery\+Ticket}}
+\subsubsection[{Lottery\+Ticket()}]{\setlength{\rightskip}{0pt plus 5cm}C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Operating\+\_\+\+System.\+Lottery\+Ticket.\+Lottery\+Ticket (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_lottery_ticket_ae0d23e5357d910c2ee2cc8bd715face1}
+
+
+Default Constructor used when deserialising lottery tickets N\+O\+T\+E\+: D\+O N\+O\+T U\+S\+E I\+N C\+O\+D\+E 
+
+
+
+Definition at line 24 of file Lottery\+Ticket.\+cs.
+
+\hypertarget{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_lottery_ticket_a119f33191c10a46412927cf4e786f992}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Lottery\+Ticket@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Lottery\+Ticket}!Lottery\+Ticket@{Lottery\+Ticket}}
+\index{Lottery\+Ticket@{Lottery\+Ticket}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Lottery\+Ticket@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Lottery\+Ticket}}
+\subsubsection[{Lottery\+Ticket(int id, Simulator\+Process owner, int currency\+Value)}]{\setlength{\rightskip}{0pt plus 5cm}C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Operating\+\_\+\+System.\+Lottery\+Ticket.\+Lottery\+Ticket (
+\begin{DoxyParamCaption}
+\item[{int}]{id, }
+\item[{{\bf Simulator\+Process}}]{owner, }
+\item[{int}]{currency\+Value}
+\end{DoxyParamCaption}
+)}\label{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_lottery_ticket_a119f33191c10a46412927cf4e786f992}
+
+
+Constructor for lottery ticket 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & the unique identifier of the ticket\\
+\hline
+{\em owner} & the process that owns this ticket\\
+\hline
+{\em currency\+Value} & the currency value of this ticket (how likely it is to get chosen) \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 34 of file Lottery\+Ticket.\+cs.
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_lottery_ticket_a70221785d251a61ae812a60325287249}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Lottery\+Ticket@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Lottery\+Ticket}!currency\+Value@{currency\+Value}}
+\index{currency\+Value@{currency\+Value}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Lottery\+Ticket@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Lottery\+Ticket}}
+\subsubsection[{currency\+Value}]{\setlength{\rightskip}{0pt plus 5cm}int C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Operating\+\_\+\+System.\+Lottery\+Ticket.\+currency\+Value\hspace{0.3cm}{\ttfamily [private]}}\label{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_lottery_ticket_a70221785d251a61ae812a60325287249}
+
+
+Definition at line 17 of file Lottery\+Ticket.\+cs.
+
+\hypertarget{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_lottery_ticket_a66f775e493b834d9cfe753bc9961a935}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Lottery\+Ticket@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Lottery\+Ticket}!id@{id}}
+\index{id@{id}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Lottery\+Ticket@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Lottery\+Ticket}}
+\subsubsection[{id}]{\setlength{\rightskip}{0pt plus 5cm}int C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Operating\+\_\+\+System.\+Lottery\+Ticket.\+id\hspace{0.3cm}{\ttfamily [private]}}\label{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_lottery_ticket_a66f775e493b834d9cfe753bc9961a935}
+
+
+Definition at line 15 of file Lottery\+Ticket.\+cs.
+
+\hypertarget{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_lottery_ticket_a7b67cf29ab87500cc907a30357d858fd}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Lottery\+Ticket@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Lottery\+Ticket}!owner@{owner}}
+\index{owner@{owner}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Lottery\+Ticket@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Lottery\+Ticket}}
+\subsubsection[{owner}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Simulator\+Process} C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Operating\+\_\+\+System.\+Lottery\+Ticket.\+owner\hspace{0.3cm}{\ttfamily [private]}}\label{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_lottery_ticket_a7b67cf29ab87500cc907a30357d858fd}
+
+
+Definition at line 16 of file Lottery\+Ticket.\+cs.
+
+\hypertarget{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_lottery_ticket_a161d1696b8262684d835794ab886cbff}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Lottery\+Ticket@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Lottery\+Ticket}!selected@{selected}}
+\index{selected@{selected}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Lottery\+Ticket@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Lottery\+Ticket}}
+\subsubsection[{selected}]{\setlength{\rightskip}{0pt plus 5cm}bool C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Operating\+\_\+\+System.\+Lottery\+Ticket.\+selected\hspace{0.3cm}{\ttfamily [private]}}\label{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_lottery_ticket_a161d1696b8262684d835794ab886cbff}
+
+
+Definition at line 18 of file Lottery\+Ticket.\+cs.
+
+
+
+\subsection{Property Documentation}
+\hypertarget{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_lottery_ticket_aa76a95e5f004a621d2eb1230c6680273}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Lottery\+Ticket@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Lottery\+Ticket}!Currency\+Value@{Currency\+Value}}
+\index{Currency\+Value@{Currency\+Value}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Lottery\+Ticket@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Lottery\+Ticket}}
+\subsubsection[{Currency\+Value}]{\setlength{\rightskip}{0pt plus 5cm}int C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Operating\+\_\+\+System.\+Lottery\+Ticket.\+Currency\+Value\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}\label{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_lottery_ticket_aa76a95e5f004a621d2eb1230c6680273}
+
+
+Property for the currency value of this ticket (how likely it is to get chosen) 
+
+
+
+Definition at line 61 of file Lottery\+Ticket.\+cs.
+
+\hypertarget{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_lottery_ticket_a36be2545d1ee5498d1c309a5a39ec181}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Lottery\+Ticket@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Lottery\+Ticket}!Id@{Id}}
+\index{Id@{Id}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Lottery\+Ticket@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Lottery\+Ticket}}
+\subsubsection[{Id}]{\setlength{\rightskip}{0pt plus 5cm}int C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Operating\+\_\+\+System.\+Lottery\+Ticket.\+Id\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}\label{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_lottery_ticket_a36be2545d1ee5498d1c309a5a39ec181}
+
+
+Property for the I\+D of this ticked 
+
+
+
+Definition at line 45 of file Lottery\+Ticket.\+cs.
+
+\hypertarget{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_lottery_ticket_ab500b400dea7b986bad4dd13c376f9d2}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Lottery\+Ticket@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Lottery\+Ticket}!Owner@{Owner}}
+\index{Owner@{Owner}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Lottery\+Ticket@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Lottery\+Ticket}}
+\subsubsection[{Owner}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Simulator\+Process} C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Operating\+\_\+\+System.\+Lottery\+Ticket.\+Owner\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}\label{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_lottery_ticket_ab500b400dea7b986bad4dd13c376f9d2}
+
+
+Property for the process that owns this ticket 
+
+
+
+Definition at line 53 of file Lottery\+Ticket.\+cs.
+
+\hypertarget{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_lottery_ticket_aedda5be8ac6feb49a7a140af4e99a7ad}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Lottery\+Ticket@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Lottery\+Ticket}!Selected@{Selected}}
+\index{Selected@{Selected}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Lottery\+Ticket@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Lottery\+Ticket}}
+\subsubsection[{Selected}]{\setlength{\rightskip}{0pt plus 5cm}bool C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Operating\+\_\+\+System.\+Lottery\+Ticket.\+Selected\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}\label{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_lottery_ticket_aedda5be8ac6feb49a7a140af4e99a7ad}
+
+
+Property value for whether this ticked has been chosen before 
+
+
+
+Definition at line 69 of file Lottery\+Ticket.\+cs.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Operating System/\hyperlink{_lottery_ticket_8cs}{Lottery\+Ticket.\+cs}\end{DoxyCompactItemize}

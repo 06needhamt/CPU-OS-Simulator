@@ -3,6 +3,7 @@ var class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_operand =
     [ "Operand", "class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_operand.html#a8f6d642c2e5741c17748379c34a3052c", null ],
     [ "Operand", "class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_operand.html#aaa8877bd8c0018697f49c9f764fbe750", null ],
     [ "Operand", "class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_operand.html#ab1da49c3f7978edcfa8c9b95e5804f08", null ],
+    [ "Equals", "class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_operand.html#ac169b353cb0758a106813a77caa5fc18", null ],
     [ "isRegister", "class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_operand.html#a16cc03d0d4c600b864d9c189529a473d", null ],
     [ "register", "class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_operand.html#a55d446765a50844fcbbc56b757b1b679", null ],
     [ "type", "class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_operand.html#abc8f504a22e9a5c49d91b12f61cc5119", null ],

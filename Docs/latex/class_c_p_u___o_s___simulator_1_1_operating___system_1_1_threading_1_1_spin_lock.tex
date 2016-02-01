@@ -1,0 +1,182 @@
+\hypertarget{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_threading_1_1_spin_lock}{}\section{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Operating\+\_\+\+System.\+Threading.\+Spin\+Lock Class Reference}
+\label{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_threading_1_1_spin_lock}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Operating\+\_\+\+System.\+Threading.\+Spin\+Lock@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Operating\+\_\+\+System.\+Threading.\+Spin\+Lock}}
+Inheritance diagram for C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Operating\+\_\+\+System.\+Threading.\+Spin\+Lock\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_threading_1_1_spin_lock}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_threading_1_1_spin_lock_a894d22445c71ff22fa722077a44dc1ae}{Spin\+Lock} ()
+\item 
+\hyperlink{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_threading_1_1_spin_lock_aa4be46128c6cbe4b9c4570397cf18a10}{Spin\+Lock} (\hyperlink{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_simulator_process}{Simulator\+Process} \hyperlink{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_threading_1_1_spin_lock_a1b176f42008264daf38e29347e36ab49}{process}, int \hyperlink{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_threading_1_1_spin_lock_a253ad9e4ccade1d7c530d388fcc5127b}{timeout}=int.\+Max\+Value)
+\item 
+\hyperlink{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_threading_1_1_spin_lock_a3c836f7b2bbf46e1d0d24a76476f9fa2}{Spin\+Lock} (\hyperlink{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_threading_1_1_simulator_thread}{Simulator\+Thread} \hyperlink{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_threading_1_1_spin_lock_a185fc2c9d71f3aa1ae04e4efd131f509}{thread}, int \hyperlink{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_threading_1_1_spin_lock_a253ad9e4ccade1d7c530d388fcc5127b}{timeout}=int.\+Max\+Value)
+\item 
+bool \hyperlink{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_threading_1_1_spin_lock_a52d98230d9ed80e51a098260c63d481a}{Unlock} ()
+\item 
+bool \hyperlink{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_threading_1_1_spin_lock_ad328ae47673faa145eaa956306f88543}{Lock} ()
+\item 
+void \hyperlink{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_threading_1_1_spin_lock_a6735c7b707333909558a68a96c94bf02}{Dispose} ()
+\begin{DoxyCompactList}\small\item\em Performs application-\/defined tasks associated with freeing, releasing, or resetting unmanaged resources. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+volatile bool \hyperlink{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_threading_1_1_spin_lock_a5add3b666329920817d380f5fb27abbb}{locked}
+\item 
+volatile int \hyperlink{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_threading_1_1_spin_lock_a253ad9e4ccade1d7c530d388fcc5127b}{timeout}
+\end{DoxyCompactItemize}
+\subsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_simulator_process}{Simulator\+Process} \hyperlink{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_threading_1_1_spin_lock_a4237b6dc28a141c97ff1e03e96f11e22}{Process}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\item 
+\hyperlink{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_threading_1_1_simulator_thread}{Simulator\+Thread} \hyperlink{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_threading_1_1_spin_lock_a1e950dc0372acfa9f7c9cd625a0f1417}{Thread}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_simulator_process}{Simulator\+Process} \hyperlink{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_threading_1_1_spin_lock_a1b176f42008264daf38e29347e36ab49}{process}
+\item 
+\hyperlink{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_threading_1_1_simulator_thread}{Simulator\+Thread} \hyperlink{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_threading_1_1_spin_lock_a185fc2c9d71f3aa1ae04e4efd131f509}{thread}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 11 of file Spin\+Lock.\+cs.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_threading_1_1_spin_lock_a894d22445c71ff22fa722077a44dc1ae}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Threading\+::\+Spin\+Lock@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Threading\+::\+Spin\+Lock}!Spin\+Lock@{Spin\+Lock}}
+\index{Spin\+Lock@{Spin\+Lock}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Threading\+::\+Spin\+Lock@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Threading\+::\+Spin\+Lock}}
+\subsubsection[{Spin\+Lock()}]{\setlength{\rightskip}{0pt plus 5cm}C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Operating\+\_\+\+System.\+Threading.\+Spin\+Lock.\+Spin\+Lock (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_threading_1_1_spin_lock_a894d22445c71ff22fa722077a44dc1ae}
+
+
+Definition at line 18 of file Spin\+Lock.\+cs.
+
+\hypertarget{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_threading_1_1_spin_lock_aa4be46128c6cbe4b9c4570397cf18a10}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Threading\+::\+Spin\+Lock@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Threading\+::\+Spin\+Lock}!Spin\+Lock@{Spin\+Lock}}
+\index{Spin\+Lock@{Spin\+Lock}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Threading\+::\+Spin\+Lock@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Threading\+::\+Spin\+Lock}}
+\subsubsection[{Spin\+Lock(\+Simulator\+Process process, int timeout=int.\+Max\+Value)}]{\setlength{\rightskip}{0pt plus 5cm}C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Operating\+\_\+\+System.\+Threading.\+Spin\+Lock.\+Spin\+Lock (
+\begin{DoxyParamCaption}
+\item[{{\bf Simulator\+Process}}]{process, }
+\item[{int}]{timeout = {\ttfamily int.MaxValue}}
+\end{DoxyParamCaption}
+)}\label{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_threading_1_1_spin_lock_aa4be46128c6cbe4b9c4570397cf18a10}
+
+
+Definition at line 23 of file Spin\+Lock.\+cs.
+
+\hypertarget{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_threading_1_1_spin_lock_a3c836f7b2bbf46e1d0d24a76476f9fa2}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Threading\+::\+Spin\+Lock@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Threading\+::\+Spin\+Lock}!Spin\+Lock@{Spin\+Lock}}
+\index{Spin\+Lock@{Spin\+Lock}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Threading\+::\+Spin\+Lock@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Threading\+::\+Spin\+Lock}}
+\subsubsection[{Spin\+Lock(\+Simulator\+Thread thread, int timeout=int.\+Max\+Value)}]{\setlength{\rightskip}{0pt plus 5cm}C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Operating\+\_\+\+System.\+Threading.\+Spin\+Lock.\+Spin\+Lock (
+\begin{DoxyParamCaption}
+\item[{{\bf Simulator\+Thread}}]{thread, }
+\item[{int}]{timeout = {\ttfamily int.MaxValue}}
+\end{DoxyParamCaption}
+)}\label{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_threading_1_1_spin_lock_a3c836f7b2bbf46e1d0d24a76476f9fa2}
+
+
+Definition at line 31 of file Spin\+Lock.\+cs.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_threading_1_1_spin_lock_a6735c7b707333909558a68a96c94bf02}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Threading\+::\+Spin\+Lock@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Threading\+::\+Spin\+Lock}!Dispose@{Dispose}}
+\index{Dispose@{Dispose}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Threading\+::\+Spin\+Lock@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Threading\+::\+Spin\+Lock}}
+\subsubsection[{Dispose()}]{\setlength{\rightskip}{0pt plus 5cm}void C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Operating\+\_\+\+System.\+Threading.\+Spin\+Lock.\+Dispose (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_threading_1_1_spin_lock_a6735c7b707333909558a68a96c94bf02}
+
+
+Performs application-\/defined tasks associated with freeing, releasing, or resetting unmanaged resources. 
+
+
+
+Definition at line 72 of file Spin\+Lock.\+cs.
+
+\hypertarget{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_threading_1_1_spin_lock_ad328ae47673faa145eaa956306f88543}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Threading\+::\+Spin\+Lock@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Threading\+::\+Spin\+Lock}!Lock@{Lock}}
+\index{Lock@{Lock}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Threading\+::\+Spin\+Lock@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Threading\+::\+Spin\+Lock}}
+\subsubsection[{Lock()}]{\setlength{\rightskip}{0pt plus 5cm}bool C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Operating\+\_\+\+System.\+Threading.\+Spin\+Lock.\+Lock (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_threading_1_1_spin_lock_ad328ae47673faa145eaa956306f88543}
+
+
+Definition at line 60 of file Spin\+Lock.\+cs.
+
+\hypertarget{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_threading_1_1_spin_lock_a52d98230d9ed80e51a098260c63d481a}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Threading\+::\+Spin\+Lock@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Threading\+::\+Spin\+Lock}!Unlock@{Unlock}}
+\index{Unlock@{Unlock}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Threading\+::\+Spin\+Lock@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Threading\+::\+Spin\+Lock}}
+\subsubsection[{Unlock()}]{\setlength{\rightskip}{0pt plus 5cm}bool C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Operating\+\_\+\+System.\+Threading.\+Spin\+Lock.\+Unlock (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_threading_1_1_spin_lock_a52d98230d9ed80e51a098260c63d481a}
+
+
+Definition at line 51 of file Spin\+Lock.\+cs.
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_threading_1_1_spin_lock_a5add3b666329920817d380f5fb27abbb}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Threading\+::\+Spin\+Lock@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Threading\+::\+Spin\+Lock}!locked@{locked}}
+\index{locked@{locked}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Threading\+::\+Spin\+Lock@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Threading\+::\+Spin\+Lock}}
+\subsubsection[{locked}]{\setlength{\rightskip}{0pt plus 5cm}volatile bool C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Operating\+\_\+\+System.\+Threading.\+Spin\+Lock.\+locked}\label{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_threading_1_1_spin_lock_a5add3b666329920817d380f5fb27abbb}
+
+
+Definition at line 13 of file Spin\+Lock.\+cs.
+
+\hypertarget{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_threading_1_1_spin_lock_a1b176f42008264daf38e29347e36ab49}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Threading\+::\+Spin\+Lock@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Threading\+::\+Spin\+Lock}!process@{process}}
+\index{process@{process}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Threading\+::\+Spin\+Lock@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Threading\+::\+Spin\+Lock}}
+\subsubsection[{process}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Simulator\+Process} C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Operating\+\_\+\+System.\+Threading.\+Spin\+Lock.\+process\hspace{0.3cm}{\ttfamily [private]}}\label{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_threading_1_1_spin_lock_a1b176f42008264daf38e29347e36ab49}
+
+
+Definition at line 14 of file Spin\+Lock.\+cs.
+
+\hypertarget{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_threading_1_1_spin_lock_a185fc2c9d71f3aa1ae04e4efd131f509}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Threading\+::\+Spin\+Lock@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Threading\+::\+Spin\+Lock}!thread@{thread}}
+\index{thread@{thread}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Threading\+::\+Spin\+Lock@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Threading\+::\+Spin\+Lock}}
+\subsubsection[{thread}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Simulator\+Thread} C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Operating\+\_\+\+System.\+Threading.\+Spin\+Lock.\+thread\hspace{0.3cm}{\ttfamily [private]}}\label{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_threading_1_1_spin_lock_a185fc2c9d71f3aa1ae04e4efd131f509}
+
+
+Definition at line 15 of file Spin\+Lock.\+cs.
+
+\hypertarget{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_threading_1_1_spin_lock_a253ad9e4ccade1d7c530d388fcc5127b}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Threading\+::\+Spin\+Lock@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Threading\+::\+Spin\+Lock}!timeout@{timeout}}
+\index{timeout@{timeout}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Threading\+::\+Spin\+Lock@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Threading\+::\+Spin\+Lock}}
+\subsubsection[{timeout}]{\setlength{\rightskip}{0pt plus 5cm}volatile int C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Operating\+\_\+\+System.\+Threading.\+Spin\+Lock.\+timeout}\label{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_threading_1_1_spin_lock_a253ad9e4ccade1d7c530d388fcc5127b}
+
+
+Definition at line 16 of file Spin\+Lock.\+cs.
+
+
+
+\subsection{Property Documentation}
+\hypertarget{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_threading_1_1_spin_lock_a4237b6dc28a141c97ff1e03e96f11e22}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Threading\+::\+Spin\+Lock@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Threading\+::\+Spin\+Lock}!Process@{Process}}
+\index{Process@{Process}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Threading\+::\+Spin\+Lock@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Threading\+::\+Spin\+Lock}}
+\subsubsection[{Process}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Simulator\+Process} C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Operating\+\_\+\+System.\+Threading.\+Spin\+Lock.\+Process\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}\label{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_threading_1_1_spin_lock_a4237b6dc28a141c97ff1e03e96f11e22}
+
+
+Definition at line 40 of file Spin\+Lock.\+cs.
+
+\hypertarget{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_threading_1_1_spin_lock_a1e950dc0372acfa9f7c9cd625a0f1417}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Threading\+::\+Spin\+Lock@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Threading\+::\+Spin\+Lock}!Thread@{Thread}}
+\index{Thread@{Thread}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Threading\+::\+Spin\+Lock@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Threading\+::\+Spin\+Lock}}
+\subsubsection[{Thread}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Simulator\+Thread} C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Operating\+\_\+\+System.\+Threading.\+Spin\+Lock.\+Thread\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}\label{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_threading_1_1_spin_lock_a1e950dc0372acfa9f7c9cd625a0f1417}
+
+
+Definition at line 46 of file Spin\+Lock.\+cs.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Operating System/\+Threading/\hyperlink{_spin_lock_8cs}{Spin\+Lock.\+cs}\end{DoxyCompactItemize}

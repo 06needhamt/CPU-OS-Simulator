@@ -2,6 +2,8 @@ var class_c_p_u___o_s___simulator_1_1_memory_1_1_physical_memory =
 [
     [ "PhysicalMemory", "class_c_p_u___o_s___simulator_1_1_memory_1_1_physical_memory.html#ab870660d7d17f3e34b71c75ee89d9935", null ],
     [ "AddPage", "class_c_p_u___o_s___simulator_1_1_memory_1_1_physical_memory.html#aae1eddd302bb1494c2501e8127ff02bc", null ],
+    [ "GetIndexMemory", "class_c_p_u___o_s___simulator_1_1_memory_1_1_physical_memory.html#aa37a178a2a3114c4377b9458ae47bbbc", null ],
+    [ "GetIndexSwap", "class_c_p_u___o_s___simulator_1_1_memory_1_1_physical_memory.html#a8497f98d7f88ca1ba466c911e0086c81", null ],
     [ "GetMainWindowInstance", "class_c_p_u___o_s___simulator_1_1_memory_1_1_physical_memory.html#a78a9b68e70b5f44ac1d38fc653b51724", null ],
     [ "isFull", "class_c_p_u___o_s___simulator_1_1_memory_1_1_physical_memory.html#a10cd5c3c1c36f246acfbe96fecbf81cc", null ],
     [ "RequestMemoryPage", "class_c_p_u___o_s___simulator_1_1_memory_1_1_physical_memory.html#a525c8a54ebd978b870884dc30f5800ff", null ],

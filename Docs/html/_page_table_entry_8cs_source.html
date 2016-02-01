@@ -127,45 +127,47 @@ $(document).ready(function(){initNavTree('_page_table_entry_8cs_source.html','')
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;            this.swappedOut = swappedOut;</div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;            faults = 0;</div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;            this.page = page;</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        }</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        <span class="keyword">public</span> <span class="keywordtype">int</span> FrameNumber</div>
-<div class="line"><a name="l00036"></a><span class="lineno"><a class="line" href="class_c_p_u___o_s___simulator_1_1_memory_1_1_page_table_entry.html#a4c1fb37bb101546867d77a4f781ba51d">   36</a></span>&#160;        {</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;            <span class="keyword">get</span> { <span class="keywordflow">return</span> frameNumber; }</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;            set { frameNumber = value; }</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        }</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        <span class="keyword">public</span> <span class="keywordtype">int</span> LogicalAddress</div>
-<div class="line"><a name="l00044"></a><span class="lineno"><a class="line" href="class_c_p_u___o_s___simulator_1_1_memory_1_1_page_table_entry.html#a22a89428526ff3d2c8247a14eba38242">   44</a></span>&#160;        {</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;            <span class="keyword">get</span> { <span class="keywordflow">return</span> logicalAddress; }</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;            set { logicalAddress = value; }</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        }</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        <span class="keyword">public</span> <span class="keywordtype">int</span> PhysicalAddress</div>
-<div class="line"><a name="l00052"></a><span class="lineno"><a class="line" href="class_c_p_u___o_s___simulator_1_1_memory_1_1_page_table_entry.html#ab52b7572557f81a63006101b4b348f8f">   52</a></span>&#160;        {</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;            <span class="keyword">get</span> { <span class="keywordflow">return</span> physicalAddress; }</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;            set { physicalAddress = value; }</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        }</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        <span class="keyword">public</span> <span class="keywordtype">bool</span> SwappedOut</div>
-<div class="line"><a name="l00060"></a><span class="lineno"><a class="line" href="class_c_p_u___o_s___simulator_1_1_memory_1_1_page_table_entry.html#a334eb63f388b19d1cf6907970f29e204">   60</a></span>&#160;        {</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;            <span class="keyword">get</span> { <span class="keywordflow">return</span> swappedOut; }</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;            set { swappedOut = value; }</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        }</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        <span class="keyword">public</span> <a class="code" href="class_c_p_u___o_s___simulator_1_1_memory_1_1_memory_page.html">MemoryPage</a> Page</div>
-<div class="line"><a name="l00068"></a><span class="lineno"><a class="line" href="class_c_p_u___o_s___simulator_1_1_memory_1_1_page_table_entry.html#aa592969e0204f85ad96a9ab76ca7f50d">   68</a></span>&#160;        {</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;            <span class="keyword">get</span> { <span class="keywordflow">return</span> page; }</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;            set { page = value; }</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;        }</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;        <span class="keyword">public</span> <span class="keywordtype">int</span> Faults</div>
-<div class="line"><a name="l00077"></a><span class="lineno"><a class="line" href="class_c_p_u___o_s___simulator_1_1_memory_1_1_page_table_entry.html#a2a8e194e6452298fe5b0a0c6405bf57b">   77</a></span>&#160;        {</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;            <span class="keyword">get</span> { <span class="keywordflow">return</span> faults; }</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;            set { faults = value; }</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;        }</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    }</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;}</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;            page.<a class="code" href="class_c_p_u___o_s___simulator_1_1_memory_1_1_memory_page.html#a89857b70d4065fdc15ce2ea577a7f0ff">FrameNumber</a> = frameNumber;</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        }</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        <span class="keyword">public</span> <span class="keywordtype">int</span> FrameNumber</div>
+<div class="line"><a name="l00037"></a><span class="lineno"><a class="line" href="class_c_p_u___o_s___simulator_1_1_memory_1_1_page_table_entry.html#a4c1fb37bb101546867d77a4f781ba51d">   37</a></span>&#160;        {</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;            <span class="keyword">get</span> { <span class="keywordflow">return</span> frameNumber; }</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;            set { frameNumber = value; }</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        }</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        <span class="keyword">public</span> <span class="keywordtype">int</span> LogicalAddress</div>
+<div class="line"><a name="l00045"></a><span class="lineno"><a class="line" href="class_c_p_u___o_s___simulator_1_1_memory_1_1_page_table_entry.html#a22a89428526ff3d2c8247a14eba38242">   45</a></span>&#160;        {</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;            <span class="keyword">get</span> { <span class="keywordflow">return</span> logicalAddress; }</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;            set { logicalAddress = value; }</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        }</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        <span class="keyword">public</span> <span class="keywordtype">int</span> PhysicalAddress</div>
+<div class="line"><a name="l00053"></a><span class="lineno"><a class="line" href="class_c_p_u___o_s___simulator_1_1_memory_1_1_page_table_entry.html#ab52b7572557f81a63006101b4b348f8f">   53</a></span>&#160;        {</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;            <span class="keyword">get</span> { <span class="keywordflow">return</span> physicalAddress; }</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;            set { physicalAddress = value; }</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        }</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        <span class="keyword">public</span> <span class="keywordtype">bool</span> SwappedOut</div>
+<div class="line"><a name="l00061"></a><span class="lineno"><a class="line" href="class_c_p_u___o_s___simulator_1_1_memory_1_1_page_table_entry.html#a334eb63f388b19d1cf6907970f29e204">   61</a></span>&#160;        {</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;            <span class="keyword">get</span> { <span class="keywordflow">return</span> swappedOut; }</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;            set { swappedOut = value; }</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        }</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        <span class="keyword">public</span> <a class="code" href="class_c_p_u___o_s___simulator_1_1_memory_1_1_memory_page.html">MemoryPage</a> Page</div>
+<div class="line"><a name="l00069"></a><span class="lineno"><a class="line" href="class_c_p_u___o_s___simulator_1_1_memory_1_1_page_table_entry.html#aa592969e0204f85ad96a9ab76ca7f50d">   69</a></span>&#160;        {</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;            <span class="keyword">get</span> { <span class="keywordflow">return</span> page; }</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;            set { page = value; }</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;        }</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;        <span class="keyword">public</span> <span class="keywordtype">int</span> Faults</div>
+<div class="line"><a name="l00078"></a><span class="lineno"><a class="line" href="class_c_p_u___o_s___simulator_1_1_memory_1_1_page_table_entry.html#a2a8e194e6452298fe5b0a0c6405bf57b">   78</a></span>&#160;        {</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;            <span class="keyword">get</span> { <span class="keywordflow">return</span> faults; }</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;            set { faults = value; }</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;        }</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    }</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;}</div>
 <div class="ttc" id="class_c_p_u___o_s___simulator_1_1_memory_1_1_page_table_entry_html_a5c70feafd00522bc15c8b5461ae22622"><div class="ttname"><a href="class_c_p_u___o_s___simulator_1_1_memory_1_1_page_table_entry.html#a5c70feafd00522bc15c8b5461ae22622">CPU_OS_Simulator.Memory.PageTableEntry.PageTableEntry</a></div><div class="ttdeci">PageTableEntry(int frameNumber, int logicalAddress, int physicalAddress, bool swappedOut, MemoryPage page)</div><div class="ttdoc">Constructor for a page table entry </div><div class="ttdef"><b>Definition:</b> <a href="_page_table_entry_8cs_source.html#l00023">PageTableEntry.cs:23</a></div></div>
 <div class="ttc" id="class_c_p_u___o_s___simulator_1_1_memory_1_1_page_table_entry_html_a6b89a8e8d1cbbd3b52a7af37ba8669a7"><div class="ttname"><a href="class_c_p_u___o_s___simulator_1_1_memory_1_1_page_table_entry.html#a6b89a8e8d1cbbd3b52a7af37ba8669a7">CPU_OS_Simulator.Memory.PageTableEntry.page</a></div><div class="ttdeci">MemoryPage page</div><div class="ttdef"><b>Definition:</b> <a href="_page_table_entry_8cs_source.html#l00013">PageTableEntry.cs:13</a></div></div>
+<div class="ttc" id="class_c_p_u___o_s___simulator_1_1_memory_1_1_memory_page_html_a89857b70d4065fdc15ce2ea577a7f0ff"><div class="ttname"><a href="class_c_p_u___o_s___simulator_1_1_memory_1_1_memory_page.html#a89857b70d4065fdc15ce2ea577a7f0ff">CPU_OS_Simulator.Memory.MemoryPage.FrameNumber</a></div><div class="ttdeci">int FrameNumber</div><div class="ttdoc">Property for the current frame number of this page </div><div class="ttdef"><b>Definition:</b> <a href="_memory_page_8cs_source.html#l00093">MemoryPage.cs:93</a></div></div>
 <div class="ttc" id="namespace_c_p_u___o_s___simulator_html"><div class="ttname"><a href="namespace_c_p_u___o_s___simulator.html">CPU_OS_Simulator</a></div></div>
 <div class="ttc" id="class_c_p_u___o_s___simulator_1_1_memory_1_1_page_table_entry_html_ab3e63e9a522928053429134a5da1be6f"><div class="ttname"><a href="class_c_p_u___o_s___simulator_1_1_memory_1_1_page_table_entry.html#ab3e63e9a522928053429134a5da1be6f">CPU_OS_Simulator.Memory.PageTableEntry.frameNumber</a></div><div class="ttdeci">int frameNumber</div><div class="ttdef"><b>Definition:</b> <a href="_page_table_entry_8cs_source.html#l00008">PageTableEntry.cs:8</a></div></div>
 <div class="ttc" id="class_c_p_u___o_s___simulator_1_1_memory_1_1_page_table_entry_html_a7aefba3f2cb43ba3d9cb37e659d90d44"><div class="ttname"><a href="class_c_p_u___o_s___simulator_1_1_memory_1_1_page_table_entry.html#a7aefba3f2cb43ba3d9cb37e659d90d44">CPU_OS_Simulator.Memory.PageTableEntry.faults</a></div><div class="ttdeci">int faults</div><div class="ttdef"><b>Definition:</b> <a href="_page_table_entry_8cs_source.html#l00012">PageTableEntry.cs:12</a></div></div>
-<div class="ttc" id="class_c_p_u___o_s___simulator_1_1_memory_1_1_memory_page_html"><div class="ttname"><a href="class_c_p_u___o_s___simulator_1_1_memory_1_1_memory_page.html">CPU_OS_Simulator.Memory.MemoryPage</a></div><div class="ttdoc">This class represents a page of data within memory </div><div class="ttdef"><b>Definition:</b> <a href="_memory_page_8cs_source.html#l00010">MemoryPage.cs:10</a></div></div>
+<div class="ttc" id="class_c_p_u___o_s___simulator_1_1_memory_1_1_memory_page_html"><div class="ttname"><a href="class_c_p_u___o_s___simulator_1_1_memory_1_1_memory_page.html">CPU_OS_Simulator.Memory.MemoryPage</a></div><div class="ttdoc">This class represents a page of data within memory </div><div class="ttdef"><b>Definition:</b> <a href="_memory_page_8cs_source.html#l00011">MemoryPage.cs:11</a></div></div>
 <div class="ttc" id="class_c_p_u___o_s___simulator_1_1_memory_1_1_page_table_entry_html"><div class="ttname"><a href="class_c_p_u___o_s___simulator_1_1_memory_1_1_page_table_entry.html">CPU_OS_Simulator.Memory.PageTableEntry</a></div><div class="ttdoc">This class represents an entry within a page table </div><div class="ttdef"><b>Definition:</b> <a href="_page_table_entry_8cs_source.html#l00006">PageTableEntry.cs:6</a></div></div>
 <div class="ttc" id="class_c_p_u___o_s___simulator_1_1_memory_1_1_page_table_entry_html_a8450b36db4a744e50336172e5d4b46b2"><div class="ttname"><a href="class_c_p_u___o_s___simulator_1_1_memory_1_1_page_table_entry.html#a8450b36db4a744e50336172e5d4b46b2">CPU_OS_Simulator.Memory.PageTableEntry.logicalAddress</a></div><div class="ttdeci">int logicalAddress</div><div class="ttdef"><b>Definition:</b> <a href="_page_table_entry_8cs_source.html#l00009">PageTableEntry.cs:9</a></div></div>
 <div class="ttc" id="class_c_p_u___o_s___simulator_1_1_memory_1_1_page_table_entry_html_ab31d6265aff999ff7a94481f1efc45b5"><div class="ttname"><a href="class_c_p_u___o_s___simulator_1_1_memory_1_1_page_table_entry.html#ab31d6265aff999ff7a94481f1efc45b5">CPU_OS_Simulator.Memory.PageTableEntry.swappedOut</a></div><div class="ttdeci">bool swappedOut</div><div class="ttdef"><b>Definition:</b> <a href="_page_table_entry_8cs_source.html#l00011">PageTableEntry.cs:11</a></div></div>

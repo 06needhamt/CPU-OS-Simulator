@@ -5,6 +5,7 @@ var dir_3e504b0d3bcf24da5cd743a5b933950b =
     [ "CompiledProgram.cs", "_compiled_program_8cs.html", [
       [ "CompiledProgram", "class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_compiled_program.html", "class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_compiled_program" ]
     ] ],
+    [ "EnumAddressType.cs", "_enum_address_type_8cs.html", "_enum_address_type_8cs" ],
     [ "EnumInstructionSize.cs", "_enum_instruction_size_8cs.html", "_enum_instruction_size_8cs" ],
     [ "EnumOpcodes.cs", "_enum_opcodes_8cs.html", "_enum_opcodes_8cs" ],
     [ "EnumOperandType.cs", "_enum_operand_type_8cs.html", "_enum_operand_type_8cs" ],

@@ -7,6 +7,8 @@ var namespace_c_p_u___o_s___simulator =
     [ "Memory", "namespace_c_p_u___o_s___simulator_1_1_memory.html", "namespace_c_p_u___o_s___simulator_1_1_memory" ],
     [ "Operating_System", "namespace_c_p_u___o_s___simulator_1_1_operating___system.html", "namespace_c_p_u___o_s___simulator_1_1_operating___system" ],
     [ "Properties", "namespace_c_p_u___o_s___simulator_1_1_properties.html", "namespace_c_p_u___o_s___simulator_1_1_properties" ],
+    [ "Save_File_Editor", "namespace_c_p_u___o_s___simulator_1_1_save___file___editor.html", "namespace_c_p_u___o_s___simulator_1_1_save___file___editor" ],
+    [ "Tests", "namespace_c_p_u___o_s___simulator_1_1_tests.html", "namespace_c_p_u___o_s___simulator_1_1_tests" ],
     [ "WindowBridge", "namespace_c_p_u___o_s___simulator_1_1_window_bridge.html", "namespace_c_p_u___o_s___simulator_1_1_window_bridge" ],
     [ "App", "class_c_p_u___o_s___simulator_1_1_app.html", "class_c_p_u___o_s___simulator_1_1_app" ],
     [ "ColourPickerWindow", "class_c_p_u___o_s___simulator_1_1_colour_picker_window.html", "class_c_p_u___o_s___simulator_1_1_colour_picker_window" ],
@@ -17,5 +19,6 @@ var namespace_c_p_u___o_s___simulator =
     [ "MemoryWindow", "class_c_p_u___o_s___simulator_1_1_memory_window.html", "class_c_p_u___o_s___simulator_1_1_memory_window" ],
     [ "OperatingSystemMainWindow", "class_c_p_u___o_s___simulator_1_1_operating_system_main_window.html", "class_c_p_u___o_s___simulator_1_1_operating_system_main_window" ],
     [ "PageTableWindow", "class_c_p_u___o_s___simulator_1_1_page_table_window.html", "class_c_p_u___o_s___simulator_1_1_page_table_window" ],
-    [ "ProcessControlBlockWindow", "class_c_p_u___o_s___simulator_1_1_process_control_block_window.html", "class_c_p_u___o_s___simulator_1_1_process_control_block_window" ]
+    [ "ProcessControlBlockWindow", "class_c_p_u___o_s___simulator_1_1_process_control_block_window.html", "class_c_p_u___o_s___simulator_1_1_process_control_block_window" ],
+    [ "ProcessListWindow", "class_c_p_u___o_s___simulator_1_1_process_list_window.html", "class_c_p_u___o_s___simulator_1_1_process_list_window" ]
 ];

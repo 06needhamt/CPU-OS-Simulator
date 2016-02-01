@@ -28,5 +28,8 @@ var dir_4daeced4ad15aeb075514baefd311898 =
     ] ],
     [ "ProcessControlBlockWindow.xaml.cs", "_process_control_block_window_8xaml_8cs.html", [
       [ "ProcessControlBlockWindow", "class_c_p_u___o_s___simulator_1_1_process_control_block_window.html", "class_c_p_u___o_s___simulator_1_1_process_control_block_window" ]
+    ] ],
+    [ "ProcessListWindow.xaml.cs", "_process_list_window_8xaml_8cs.html", [
+      [ "ProcessListWindow", "class_c_p_u___o_s___simulator_1_1_process_list_window.html", "class_c_p_u___o_s___simulator_1_1_process_list_window" ]
     ] ]
 ];

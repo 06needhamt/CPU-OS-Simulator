@@ -1,0 +1,303 @@
+\hypertarget{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_threading_1_1_semaphore}{}\section{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Operating\+\_\+\+System.\+Threading.\+Semaphore Class Reference}
+\label{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_threading_1_1_semaphore}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Operating\+\_\+\+System.\+Threading.\+Semaphore@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Operating\+\_\+\+System.\+Threading.\+Semaphore}}
+
+
+This class implements a simple counting semaphore for managing resource allocation  
+
+
+Inheritance diagram for C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Operating\+\_\+\+System.\+Threading.\+Semaphore\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_threading_1_1_semaphore}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_threading_1_1_semaphore_a0b4125f7ad910b112ba70c0f2110967e}{Semaphore} (ref \hyperlink{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_simulator_resource}{Simulator\+Resource} \hyperlink{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_threading_1_1_semaphore_a9e455411df1e6ee61e1479f63767771c}{resource}, int \hyperlink{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_threading_1_1_semaphore_af038c196aad3640c1342b6cd5e67c758}{slots})
+\begin{DoxyCompactList}\small\item\em Constructor for semaphore \end{DoxyCompactList}\item 
+int \hyperlink{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_threading_1_1_semaphore_a14fc9e99e29d84637eea9bf880b269d3}{Up} (ref \hyperlink{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_threading_1_1_simulator_thread}{Simulator\+Thread} thread)
+\begin{DoxyCompactList}\small\item\em This function releases a thread from the semaphore \end{DoxyCompactList}\item 
+int \hyperlink{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_threading_1_1_semaphore_af4692bedba8598ad15a35127731ff752}{Up} (ref \hyperlink{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_simulator_process}{Simulator\+Process} process)
+\begin{DoxyCompactList}\small\item\em This function releases a process from the semaphore \end{DoxyCompactList}\item 
+int \hyperlink{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_threading_1_1_semaphore_af675ae6bbd057311e8fb4a36404b8d82}{Down} (ref \hyperlink{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_threading_1_1_simulator_thread}{Simulator\+Thread} thread)
+\begin{DoxyCompactList}\small\item\em This function captures a thread inside the semaphore \end{DoxyCompactList}\item 
+int \hyperlink{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_threading_1_1_semaphore_a22ec2c746ac1936cb2451f032292868c}{Down} (ref \hyperlink{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_simulator_process}{Simulator\+Process} process)
+\item 
+\hyperlink{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_threading_1_1_simulator_thread}{Simulator\+Thread} \hyperlink{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_threading_1_1_semaphore_a9861d826aa6e3b0c8358563a7dfa982b}{Get\+Current\+Thread} ()
+\begin{DoxyCompactList}\small\item\em This function returns the current thread using this semaphore \end{DoxyCompactList}\item 
+\hyperlink{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_simulator_process}{Simulator\+Process} \hyperlink{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_threading_1_1_semaphore_a44c628f33567e65a68325c1a87e2837d}{Get\+Current\+Process} ()
+\begin{DoxyCompactList}\small\item\em This function returns the current process using this semaphore \end{DoxyCompactList}\item 
+void \hyperlink{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_threading_1_1_semaphore_ae57f72f85556cefc3cfeb2840cc1984a}{Dispose} ()
+\begin{DoxyCompactList}\small\item\em Performs application-\/defined tasks associated with freeing, releasing, or resetting unmanaged resources. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_threading_1_1_semaphore_ad60e03cbc54c47059390547e17171f04}{Capture\+Next\+Thread} ()
+\begin{DoxyCompactList}\small\item\em This function captures the next thread waiting for the semaphore after a thread has been released \end{DoxyCompactList}\item 
+void \hyperlink{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_threading_1_1_semaphore_a771b24de24c83bf3d8bd1af6a0b41cf8}{Capture\+Next\+Process} ()
+\begin{DoxyCompactList}\small\item\em This function captures the next process waiting for the semaphore after a process has been released \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_simulator_resource}{Simulator\+Resource} \hyperlink{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_threading_1_1_semaphore_a9e455411df1e6ee61e1479f63767771c}{resource}
+\item 
+volatile int \hyperlink{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_threading_1_1_semaphore_af038c196aad3640c1342b6cd5e67c758}{slots}
+\item 
+List$<$ \hyperlink{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_threading_1_1_simulator_thread}{Simulator\+Thread} $>$ \hyperlink{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_threading_1_1_semaphore_ae3abcf563abc5ec4c98b4df6a57a25fc}{inside\+Threads}
+\item 
+List$<$ \hyperlink{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_simulator_process}{Simulator\+Process} $>$ \hyperlink{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_threading_1_1_semaphore_a3d77008b1c601d57f7b18e8e1921e457}{inside\+Processes}
+\item 
+Queue$<$ \hyperlink{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_threading_1_1_simulator_thread}{Simulator\+Thread} $>$ \hyperlink{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_threading_1_1_semaphore_aedb8f404f0caf1c69f6f56153c39635a}{waiting\+Threads}
+\item 
+Queue$<$ \hyperlink{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_simulator_process}{Simulator\+Process} $>$ \hyperlink{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_threading_1_1_semaphore_a6adac6dc7832c6b8b1aef64971595b10}{waiting\+Processes}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This class implements a simple counting semaphore for managing resource allocation 
+
+
+
+Definition at line 14 of file Semaphore.\+cs.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_threading_1_1_semaphore_a0b4125f7ad910b112ba70c0f2110967e}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Threading\+::\+Semaphore@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Threading\+::\+Semaphore}!Semaphore@{Semaphore}}
+\index{Semaphore@{Semaphore}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Threading\+::\+Semaphore@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Threading\+::\+Semaphore}}
+\subsubsection[{Semaphore(ref Simulator\+Resource resource, int slots)}]{\setlength{\rightskip}{0pt plus 5cm}C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Operating\+\_\+\+System.\+Threading.\+Semaphore.\+Semaphore (
+\begin{DoxyParamCaption}
+\item[{ref {\bf Simulator\+Resource}}]{resource, }
+\item[{int}]{slots}
+\end{DoxyParamCaption}
+)}\label{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_threading_1_1_semaphore_a0b4125f7ad910b112ba70c0f2110967e}
+
+
+Constructor for semaphore 
+
+
+\begin{DoxyParams}{Parameters}
+{\em resource} & the resource this semaphore will be managing\\
+\hline
+{\em slots} & the number of allocation slots available\\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 28 of file Semaphore.\+cs.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_threading_1_1_semaphore_a771b24de24c83bf3d8bd1af6a0b41cf8}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Threading\+::\+Semaphore@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Threading\+::\+Semaphore}!Capture\+Next\+Process@{Capture\+Next\+Process}}
+\index{Capture\+Next\+Process@{Capture\+Next\+Process}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Threading\+::\+Semaphore@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Threading\+::\+Semaphore}}
+\subsubsection[{Capture\+Next\+Process()}]{\setlength{\rightskip}{0pt plus 5cm}void C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Operating\+\_\+\+System.\+Threading.\+Semaphore.\+Capture\+Next\+Process (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_threading_1_1_semaphore_a771b24de24c83bf3d8bd1af6a0b41cf8}
+
+
+This function captures the next process waiting for the semaphore after a process has been released 
+
+
+
+Definition at line 193 of file Semaphore.\+cs.
+
+\hypertarget{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_threading_1_1_semaphore_ad60e03cbc54c47059390547e17171f04}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Threading\+::\+Semaphore@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Threading\+::\+Semaphore}!Capture\+Next\+Thread@{Capture\+Next\+Thread}}
+\index{Capture\+Next\+Thread@{Capture\+Next\+Thread}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Threading\+::\+Semaphore@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Threading\+::\+Semaphore}}
+\subsubsection[{Capture\+Next\+Thread()}]{\setlength{\rightskip}{0pt plus 5cm}void C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Operating\+\_\+\+System.\+Threading.\+Semaphore.\+Capture\+Next\+Thread (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_threading_1_1_semaphore_ad60e03cbc54c47059390547e17171f04}
+
+
+This function captures the next thread waiting for the semaphore after a thread has been released 
+
+
+
+Definition at line 173 of file Semaphore.\+cs.
+
+\hypertarget{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_threading_1_1_semaphore_ae57f72f85556cefc3cfeb2840cc1984a}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Threading\+::\+Semaphore@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Threading\+::\+Semaphore}!Dispose@{Dispose}}
+\index{Dispose@{Dispose}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Threading\+::\+Semaphore@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Threading\+::\+Semaphore}}
+\subsubsection[{Dispose()}]{\setlength{\rightskip}{0pt plus 5cm}void C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Operating\+\_\+\+System.\+Threading.\+Semaphore.\+Dispose (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_threading_1_1_semaphore_ae57f72f85556cefc3cfeb2840cc1984a}
+
+
+Performs application-\/defined tasks associated with freeing, releasing, or resetting unmanaged resources. 
+
+
+
+Definition at line 236 of file Semaphore.\+cs.
+
+\hypertarget{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_threading_1_1_semaphore_af675ae6bbd057311e8fb4a36404b8d82}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Threading\+::\+Semaphore@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Threading\+::\+Semaphore}!Down@{Down}}
+\index{Down@{Down}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Threading\+::\+Semaphore@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Threading\+::\+Semaphore}}
+\subsubsection[{Down(ref Simulator\+Thread thread)}]{\setlength{\rightskip}{0pt plus 5cm}int C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Operating\+\_\+\+System.\+Threading.\+Semaphore.\+Down (
+\begin{DoxyParamCaption}
+\item[{ref {\bf Simulator\+Thread}}]{thread}
+\end{DoxyParamCaption}
+)}\label{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_threading_1_1_semaphore_af675ae6bbd057311e8fb4a36404b8d82}
+
+
+This function captures a thread inside the semaphore 
+
+
+\begin{DoxyParams}{Parameters}
+{\em thread} & a reference to the thread to capture\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the number of free allocation slots available after capturing the thread
+\end{DoxyReturn}
+
+
+Definition at line 107 of file Semaphore.\+cs.
+
+\hypertarget{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_threading_1_1_semaphore_a22ec2c746ac1936cb2451f032292868c}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Threading\+::\+Semaphore@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Threading\+::\+Semaphore}!Down@{Down}}
+\index{Down@{Down}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Threading\+::\+Semaphore@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Threading\+::\+Semaphore}}
+\subsubsection[{Down(ref Simulator\+Process process)}]{\setlength{\rightskip}{0pt plus 5cm}int C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Operating\+\_\+\+System.\+Threading.\+Semaphore.\+Down (
+\begin{DoxyParamCaption}
+\item[{ref {\bf Simulator\+Process}}]{process}
+\end{DoxyParamCaption}
+)}\label{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_threading_1_1_semaphore_a22ec2c746ac1936cb2451f032292868c}
+
+
+Definition at line 140 of file Semaphore.\+cs.
+
+\hypertarget{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_threading_1_1_semaphore_a44c628f33567e65a68325c1a87e2837d}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Threading\+::\+Semaphore@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Threading\+::\+Semaphore}!Get\+Current\+Process@{Get\+Current\+Process}}
+\index{Get\+Current\+Process@{Get\+Current\+Process}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Threading\+::\+Semaphore@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Threading\+::\+Semaphore}}
+\subsubsection[{Get\+Current\+Process()}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Simulator\+Process} C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Operating\+\_\+\+System.\+Threading.\+Semaphore.\+Get\+Current\+Process (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_threading_1_1_semaphore_a44c628f33567e65a68325c1a87e2837d}
+
+
+This function returns the current process using this semaphore 
+
+\begin{DoxyReturn}{Returns}
+the current process using this semaphore
+\end{DoxyReturn}
+
+
+Definition at line 225 of file Semaphore.\+cs.
+
+\hypertarget{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_threading_1_1_semaphore_a9861d826aa6e3b0c8358563a7dfa982b}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Threading\+::\+Semaphore@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Threading\+::\+Semaphore}!Get\+Current\+Thread@{Get\+Current\+Thread}}
+\index{Get\+Current\+Thread@{Get\+Current\+Thread}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Threading\+::\+Semaphore@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Threading\+::\+Semaphore}}
+\subsubsection[{Get\+Current\+Thread()}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Simulator\+Thread} C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Operating\+\_\+\+System.\+Threading.\+Semaphore.\+Get\+Current\+Thread (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_threading_1_1_semaphore_a9861d826aa6e3b0c8358563a7dfa982b}
+
+
+This function returns the current thread using this semaphore 
+
+\begin{DoxyReturn}{Returns}
+the current thread using this semaphore
+\end{DoxyReturn}
+
+
+Definition at line 213 of file Semaphore.\+cs.
+
+\hypertarget{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_threading_1_1_semaphore_a14fc9e99e29d84637eea9bf880b269d3}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Threading\+::\+Semaphore@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Threading\+::\+Semaphore}!Up@{Up}}
+\index{Up@{Up}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Threading\+::\+Semaphore@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Threading\+::\+Semaphore}}
+\subsubsection[{Up(ref Simulator\+Thread thread)}]{\setlength{\rightskip}{0pt plus 5cm}int C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Operating\+\_\+\+System.\+Threading.\+Semaphore.\+Up (
+\begin{DoxyParamCaption}
+\item[{ref {\bf Simulator\+Thread}}]{thread}
+\end{DoxyParamCaption}
+)}\label{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_threading_1_1_semaphore_a14fc9e99e29d84637eea9bf880b269d3}
+
+
+This function releases a thread from the semaphore 
+
+
+\begin{DoxyParams}{Parameters}
+{\em thread} & a reference to the thread to release\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the number of free allocation slots available after releasing the thread
+\end{DoxyReturn}
+
+
+Definition at line 44 of file Semaphore.\+cs.
+
+\hypertarget{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_threading_1_1_semaphore_af4692bedba8598ad15a35127731ff752}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Threading\+::\+Semaphore@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Threading\+::\+Semaphore}!Up@{Up}}
+\index{Up@{Up}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Threading\+::\+Semaphore@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Threading\+::\+Semaphore}}
+\subsubsection[{Up(ref Simulator\+Process process)}]{\setlength{\rightskip}{0pt plus 5cm}int C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Operating\+\_\+\+System.\+Threading.\+Semaphore.\+Up (
+\begin{DoxyParamCaption}
+\item[{ref {\bf Simulator\+Process}}]{process}
+\end{DoxyParamCaption}
+)}\label{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_threading_1_1_semaphore_af4692bedba8598ad15a35127731ff752}
+
+
+This function releases a process from the semaphore 
+
+
+\begin{DoxyParams}{Parameters}
+{\em process} & a reference to the process to release\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the number of free allocation slots available after releasing the process
+\end{DoxyReturn}
+
+
+Definition at line 83 of file Semaphore.\+cs.
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_threading_1_1_semaphore_a3d77008b1c601d57f7b18e8e1921e457}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Threading\+::\+Semaphore@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Threading\+::\+Semaphore}!inside\+Processes@{inside\+Processes}}
+\index{inside\+Processes@{inside\+Processes}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Threading\+::\+Semaphore@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Threading\+::\+Semaphore}}
+\subsubsection[{inside\+Processes}]{\setlength{\rightskip}{0pt plus 5cm}List$<${\bf Simulator\+Process}$>$ C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Operating\+\_\+\+System.\+Threading.\+Semaphore.\+inside\+Processes\hspace{0.3cm}{\ttfamily [private]}}\label{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_threading_1_1_semaphore_a3d77008b1c601d57f7b18e8e1921e457}
+
+
+Definition at line 19 of file Semaphore.\+cs.
+
+\hypertarget{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_threading_1_1_semaphore_ae3abcf563abc5ec4c98b4df6a57a25fc}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Threading\+::\+Semaphore@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Threading\+::\+Semaphore}!inside\+Threads@{inside\+Threads}}
+\index{inside\+Threads@{inside\+Threads}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Threading\+::\+Semaphore@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Threading\+::\+Semaphore}}
+\subsubsection[{inside\+Threads}]{\setlength{\rightskip}{0pt plus 5cm}List$<${\bf Simulator\+Thread}$>$ C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Operating\+\_\+\+System.\+Threading.\+Semaphore.\+inside\+Threads\hspace{0.3cm}{\ttfamily [private]}}\label{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_threading_1_1_semaphore_ae3abcf563abc5ec4c98b4df6a57a25fc}
+
+
+Definition at line 18 of file Semaphore.\+cs.
+
+\hypertarget{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_threading_1_1_semaphore_a9e455411df1e6ee61e1479f63767771c}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Threading\+::\+Semaphore@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Threading\+::\+Semaphore}!resource@{resource}}
+\index{resource@{resource}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Threading\+::\+Semaphore@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Threading\+::\+Semaphore}}
+\subsubsection[{resource}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Simulator\+Resource} C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Operating\+\_\+\+System.\+Threading.\+Semaphore.\+resource\hspace{0.3cm}{\ttfamily [private]}}\label{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_threading_1_1_semaphore_a9e455411df1e6ee61e1479f63767771c}
+
+
+Definition at line 16 of file Semaphore.\+cs.
+
+\hypertarget{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_threading_1_1_semaphore_af038c196aad3640c1342b6cd5e67c758}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Threading\+::\+Semaphore@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Threading\+::\+Semaphore}!slots@{slots}}
+\index{slots@{slots}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Threading\+::\+Semaphore@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Threading\+::\+Semaphore}}
+\subsubsection[{slots}]{\setlength{\rightskip}{0pt plus 5cm}volatile int C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Operating\+\_\+\+System.\+Threading.\+Semaphore.\+slots\hspace{0.3cm}{\ttfamily [private]}}\label{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_threading_1_1_semaphore_af038c196aad3640c1342b6cd5e67c758}
+
+
+Definition at line 17 of file Semaphore.\+cs.
+
+\hypertarget{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_threading_1_1_semaphore_a6adac6dc7832c6b8b1aef64971595b10}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Threading\+::\+Semaphore@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Threading\+::\+Semaphore}!waiting\+Processes@{waiting\+Processes}}
+\index{waiting\+Processes@{waiting\+Processes}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Threading\+::\+Semaphore@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Threading\+::\+Semaphore}}
+\subsubsection[{waiting\+Processes}]{\setlength{\rightskip}{0pt plus 5cm}Queue$<${\bf Simulator\+Process}$>$ C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Operating\+\_\+\+System.\+Threading.\+Semaphore.\+waiting\+Processes\hspace{0.3cm}{\ttfamily [private]}}\label{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_threading_1_1_semaphore_a6adac6dc7832c6b8b1aef64971595b10}
+
+
+Definition at line 21 of file Semaphore.\+cs.
+
+\hypertarget{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_threading_1_1_semaphore_aedb8f404f0caf1c69f6f56153c39635a}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Threading\+::\+Semaphore@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Threading\+::\+Semaphore}!waiting\+Threads@{waiting\+Threads}}
+\index{waiting\+Threads@{waiting\+Threads}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Threading\+::\+Semaphore@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Threading\+::\+Semaphore}}
+\subsubsection[{waiting\+Threads}]{\setlength{\rightskip}{0pt plus 5cm}Queue$<${\bf Simulator\+Thread}$>$ C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Operating\+\_\+\+System.\+Threading.\+Semaphore.\+waiting\+Threads\hspace{0.3cm}{\ttfamily [private]}}\label{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_threading_1_1_semaphore_aedb8f404f0caf1c69f6f56153c39635a}
+
+
+Definition at line 20 of file Semaphore.\+cs.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Operating System/\+Threading/\hyperlink{_semaphore_8cs}{Semaphore.\+cs}\end{DoxyCompactItemize}

@@ -3,6 +3,8 @@ var struct_c_p_u___o_s___simulator_1_1_operating___system_1_1_scheduler_flags =
     [ "allowCPUAffinity", "struct_c_p_u___o_s___simulator_1_1_operating___system_1_1_scheduler_flags.html#ad2d1f81a34e9cce1553bfdf8e8a719ea", null ],
     [ "cpuClockSpeed", "struct_c_p_u___o_s___simulator_1_1_operating___system_1_1_scheduler_flags.html#a3ce064f3abe5ac1762f0e7bbfab2eee5", null ],
     [ "defaultScheduler", "struct_c_p_u___o_s___simulator_1_1_operating___system_1_1_scheduler_flags.html#a3ccbd91b280afcd060460a7668d75d0f", null ],
+    [ "drawnLotteryTickets", "struct_c_p_u___o_s___simulator_1_1_operating___system_1_1_scheduler_flags.html#a215ea3393e8df669cbe8c2133ba768c8", null ],
+    [ "issuedLotteryTickets", "struct_c_p_u___o_s___simulator_1_1_operating___system_1_1_scheduler_flags.html#afb4de8c16fd93a7e44acddfa4c2484f2", null ],
     [ "readyQueue", "struct_c_p_u___o_s___simulator_1_1_operating___system_1_1_scheduler_flags.html#a6345abea6614091648d1529683ec02f4", null ],
     [ "RR_Priority_Policy", "struct_c_p_u___o_s___simulator_1_1_operating___system_1_1_scheduler_flags.html#a293340444e5a9fdb921a9f1dbcef3428", null ],
     [ "RR_TimeSlice", "struct_c_p_u___o_s___simulator_1_1_operating___system_1_1_scheduler_flags.html#a4a2747b82ac75696e646bf03b0b3c8f6", null ],

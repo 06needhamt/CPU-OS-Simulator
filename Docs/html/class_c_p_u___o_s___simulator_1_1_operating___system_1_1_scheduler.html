@@ -108,6 +108,7 @@ $(document).ready(function(){initNavTree('class_c_p_u___o_s___simulator_1_1_oper
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pub-static-methods">Static Public Member Functions</a> &#124;
 <a href="#properties">Properties</a> &#124;
 <a href="#events">Events</a> &#124;
 <a href="#pri-methods">Private Member Functions</a> &#124;
@@ -140,6 +141,11 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a0c5d3add7cf99eeb8c58c0a009ba6741"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_p_u___o_s___simulator_1_1_operating___system_1_1_scheduler.html#a0c5d3add7cf99eeb8c58c0a009ba6741">Start</a> ()</td></tr>
 <tr class="memdesc:a0c5d3add7cf99eeb8c58c0a009ba6741"><td class="mdescLeft">&#160;</td><td class="mdescRight">This function is called to start the Operating system scheduler  <a href="#a0c5d3add7cf99eeb8c58c0a009ba6741">More...</a><br /></td></tr>
 <tr class="separator:a0c5d3add7cf99eeb8c58c0a009ba6741"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
+Static Public Member Functions</h2></td></tr>
+<tr class="memitem:a652b744d35a335b5e834ea25c1df00e5"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_p_u___o_s___simulator_1_1_operating___system_1_1_scheduler.html#a652b744d35a335b5e834ea25c1df00e5">FindWinningTicket</a> (IEnumerable&lt; int &gt; source)</td></tr>
+<tr class="separator:a652b744d35a335b5e834ea25c1df00e5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="properties"></a>
 Properties</h2></td></tr>
@@ -207,6 +213,12 @@ Private Member Functions</h2></td></tr>
 <tr class="memitem:a8981966e2ec66bf9684b0a7af88b45d4"><td class="memItemLeft" align="right" valign="top">async void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_p_u___o_s___simulator_1_1_operating___system_1_1_scheduler.html#a8981966e2ec66bf9684b0a7af88b45d4">RunScheduler</a> ()</td></tr>
 <tr class="memdesc:a8981966e2ec66bf9684b0a7af88b45d4"><td class="mdescLeft">&#160;</td><td class="mdescRight">This function is the main scheduler loop that runs until no processes remain or the OS is suspended  <a href="#a8981966e2ec66bf9684b0a7af88b45d4">More...</a><br /></td></tr>
 <tr class="separator:a8981966e2ec66bf9684b0a7af88b45d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2e1c3f9379a5672a99b4793aa8406ba7"><td class="memItemLeft" align="right" valign="top">async void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_p_u___o_s___simulator_1_1_operating___system_1_1_scheduler.html#a2e1c3f9379a5672a99b4793aa8406ba7">ExecuteLottery</a> (long seed, long life)</td></tr>
+<tr class="separator:a2e1c3f9379a5672a99b4793aa8406ba7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af711656e2c73b5e9de7a8f8c028f4efe"><td class="memItemLeft" align="right" valign="top">async Task&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_p_u___o_s___simulator_1_1_operating___system_1_1_scheduler.html#af711656e2c73b5e9de7a8f8c028f4efe">DrawLottery</a> (int ticketNumber)</td></tr>
+<tr class="separator:af711656e2c73b5e9de7a8f8c028f4efe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0a177bab565d7b19d7fe9e62598db781"><td class="memItemLeft" align="right" valign="top">async Task&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_p_u___o_s___simulator_1_1_operating___system_1_1_scheduler.html#a0a177bab565d7b19d7fe9e62598db781">AllocateLotteryTickets</a> ()</td></tr>
+<tr class="separator:a0a177bab565d7b19d7fe9e62598db781"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae1a00245d53240a2caf3395cde0a7a90"><td class="memItemLeft" align="right" valign="top">long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_p_u___o_s___simulator_1_1_operating___system_1_1_scheduler.html#ae1a00245d53240a2caf3395cde0a7a90">CalculateLifetime</a> ()</td></tr>
 <tr class="memdesc:ae1a00245d53240a2caf3395cde0a7a90"><td class="mdescLeft">&#160;</td><td class="mdescRight">This function calculates the lifetime of the current process  <a href="#ae1a00245d53240a2caf3395cde0a7a90">More...</a><br /></td></tr>
 <tr class="separator:ae1a00245d53240a2caf3395cde0a7a90"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -288,11 +300,15 @@ Private Attributes</h2></td></tr>
 <tr class="separator:a765eabf93b7584d7d1476d18f283a85e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a844b64fe6c3917f055b61c4620995b74"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_p_u___o_s___simulator_1_1_operating___system_1_1_scheduler.html#a844b64fe6c3917f055b61c4620995b74">suspended</a></td></tr>
 <tr class="separator:a844b64fe6c3917f055b61c4620995b74"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2cc17fd33517614da823a344f54cdd7c"><td class="memItemLeft" align="right" valign="top">List&lt; <a class="el" href="class_c_p_u___o_s___simulator_1_1_operating___system_1_1_lottery_ticket.html">LotteryTicket</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_p_u___o_s___simulator_1_1_operating___system_1_1_scheduler.html#a2cc17fd33517614da823a344f54cdd7c">issuedLotteryTickets</a></td></tr>
+<tr class="separator:a2cc17fd33517614da823a344f54cdd7c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac3e38df2939f98dd2e91b979329376ab"><td class="memItemLeft" align="right" valign="top">List&lt; <a class="el" href="class_c_p_u___o_s___simulator_1_1_operating___system_1_1_lottery_ticket.html">LotteryTicket</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_p_u___o_s___simulator_1_1_operating___system_1_1_scheduler.html#ac3e38df2939f98dd2e91b979329376ab">drawnLotteryTickets</a></td></tr>
+<tr class="separator:ac3e38df2939f98dd2e91b979329376ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>This class represents the process scheduler / manager for the virtual operating system </p>
 
-<p>Definition at line <a class="el" href="_scheduler_8cs_source.html#l00023">23</a> of file <a class="el" href="_scheduler_8cs_source.html">Scheduler.cs</a>.</p>
+<p>Definition at line <a class="el" href="_scheduler_8cs_source.html#l00025">25</a> of file <a class="el" href="_scheduler_8cs_source.html">Scheduler.cs</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="a5911adf7a88d4bc66f0de915bb925461"></a>
 <div class="memitem">
@@ -309,7 +325,7 @@ Private Attributes</h2></td></tr>
 
 <p>Default Constructor for scheduler used when deserialising the scheduler NOTE: DO NOT USE IN CODE </p>
 
-<p>Definition at line <a class="el" href="_scheduler_8cs_source.html#l00050">50</a> of file <a class="el" href="_scheduler_8cs_source.html">Scheduler.cs</a>.</p>
+<p>Definition at line <a class="el" href="_scheduler_8cs_source.html#l00057">57</a> of file <a class="el" href="_scheduler_8cs_source.html">Scheduler.cs</a>.</p>
 
 </div>
 </div>
@@ -335,11 +351,36 @@ Private Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="_scheduler_8cs_source.html#l00058">58</a> of file <a class="el" href="_scheduler_8cs_source.html">Scheduler.cs</a>.</p>
+<p>Definition at line <a class="el" href="_scheduler_8cs_source.html#l00065">65</a> of file <a class="el" href="_scheduler_8cs_source.html">Scheduler.cs</a>.</p>
 
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a class="anchor" id="a0a177bab565d7b19d7fe9e62598db781"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">async Task&lt;int&gt; CPU_OS_Simulator.Operating_System.Scheduler.AllocateLotteryTickets </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_scheduler_8cs_source.html#l00376">376</a> of file <a class="el" href="_scheduler_8cs_source.html">Scheduler.cs</a>.</p>
+
+</div>
+</div>
 <a class="anchor" id="ae1a00245d53240a2caf3395cde0a7a90"></a>
 <div class="memitem">
 <div class="memproto">
@@ -364,7 +405,7 @@ Private Attributes</h2></td></tr>
 <p>This function calculates the lifetime of the current process </p>
 <dl class="section return"><dt>Returns</dt><dd>the lifetime of the current process in milliseconds </dd></dl>
 
-<p>Definition at line <a class="el" href="_scheduler_8cs_source.html#l00276">276</a> of file <a class="el" href="_scheduler_8cs_source.html">Scheduler.cs</a>.</p>
+<p>Definition at line <a class="el" href="_scheduler_8cs_source.html#l00413">413</a> of file <a class="el" href="_scheduler_8cs_source.html">Scheduler.cs</a>.</p>
 
 </div>
 </div>
@@ -392,7 +433,7 @@ Private Attributes</h2></td></tr>
 <p>This function calculates the length of the timeslice when running in round robin mode </p>
 <dl class="section return"><dt>Returns</dt><dd>the length of the timeslice in milliseconds </dd></dl>
 
-<p>Definition at line <a class="el" href="_scheduler_8cs_source.html#l00423">423</a> of file <a class="el" href="_scheduler_8cs_source.html">Scheduler.cs</a>.</p>
+<p>Definition at line <a class="el" href="_scheduler_8cs_source.html#l00560">560</a> of file <a class="el" href="_scheduler_8cs_source.html">Scheduler.cs</a>.</p>
 
 </div>
 </div>
@@ -427,7 +468,7 @@ Private Attributes</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>A task to indicate to the calling thread that the function has finished executing</dd></dl>
 
-<p>Definition at line <a class="el" href="_scheduler_8cs_source.html#l00115">115</a> of file <a class="el" href="_scheduler_8cs_source.html">Scheduler.cs</a>.</p>
+<p>Definition at line <a class="el" href="_scheduler_8cs_source.html#l00124">124</a> of file <a class="el" href="_scheduler_8cs_source.html">Scheduler.cs</a>.</p>
 
 </div>
 </div>
@@ -454,7 +495,7 @@ Private Attributes</h2></td></tr>
 
 <p>This function creates a background worker to run the scheduler on while keeping the Interface responsive </p>
 
-<p>Definition at line <a class="el" href="_scheduler_8cs_source.html#l00089">89</a> of file <a class="el" href="_scheduler_8cs_source.html">Scheduler.cs</a>.</p>
+<p>Definition at line <a class="el" href="_scheduler_8cs_source.html#l00098">98</a> of file <a class="el" href="_scheduler_8cs_source.html">Scheduler.cs</a>.</p>
 
 </div>
 </div>
@@ -499,7 +540,7 @@ Private Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="_scheduler_8cs_source.html#l00104">104</a> of file <a class="el" href="_scheduler_8cs_source.html">Scheduler.cs</a>.</p>
+<p>Definition at line <a class="el" href="_scheduler_8cs_source.html#l00113">113</a> of file <a class="el" href="_scheduler_8cs_source.html">Scheduler.cs</a>.</p>
 
 </div>
 </div>
@@ -534,7 +575,33 @@ Private Attributes</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>a struct containing the flags to create a PCB or null if an error occurred</dd></dl>
 
-<p>Definition at line <a class="el" href="_scheduler_8cs_source.html#l00580">580</a> of file <a class="el" href="_scheduler_8cs_source.html">Scheduler.cs</a>.</p>
+<p>Definition at line <a class="el" href="_scheduler_8cs_source.html#l00717">717</a> of file <a class="el" href="_scheduler_8cs_source.html">Scheduler.cs</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="af711656e2c73b5e9de7a8f8c028f4efe"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">async Task&lt;int&gt; CPU_OS_Simulator.Operating_System.Scheduler.DrawLottery </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>ticketNumber</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_scheduler_8cs_source.html#l00357">357</a> of file <a class="el" href="_scheduler_8cs_source.html">Scheduler.cs</a>.</p>
 
 </div>
 </div>
@@ -568,7 +635,43 @@ Private Attributes</h2></td></tr>
 </dl>
 </p>
 
-<p>Definition at line <a class="el" href="_scheduler_8cs_source.html#l00366">366</a> of file <a class="el" href="_scheduler_8cs_source.html">Scheduler.cs</a>.</p>
+<p>Definition at line <a class="el" href="_scheduler_8cs_source.html#l00503">503</a> of file <a class="el" href="_scheduler_8cs_source.html">Scheduler.cs</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a2e1c3f9379a5672a99b4793aa8406ba7"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">async void CPU_OS_Simulator.Operating_System.Scheduler.ExecuteLottery </td>
+          <td>(</td>
+          <td class="paramtype">long&#160;</td>
+          <td class="paramname"><em>seed</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">long&#160;</td>
+          <td class="paramname"><em>life</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_scheduler_8cs_source.html#l00292">292</a> of file <a class="el" href="_scheduler_8cs_source.html">Scheduler.cs</a>.</p>
 
 </div>
 </div>
@@ -620,7 +723,7 @@ Private Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="_scheduler_8cs_source.html#l00451">451</a> of file <a class="el" href="_scheduler_8cs_source.html">Scheduler.cs</a>.</p>
+<p>Definition at line <a class="el" href="_scheduler_8cs_source.html#l00588">588</a> of file <a class="el" href="_scheduler_8cs_source.html">Scheduler.cs</a>.</p>
 
 </div>
 </div>
@@ -654,7 +757,33 @@ Private Attributes</h2></td></tr>
 </dl>
 </p>
 
-<p>Definition at line <a class="el" href="_scheduler_8cs_source.html#l00307">307</a> of file <a class="el" href="_scheduler_8cs_source.html">Scheduler.cs</a>.</p>
+<p>Definition at line <a class="el" href="_scheduler_8cs_source.html#l00444">444</a> of file <a class="el" href="_scheduler_8cs_source.html">Scheduler.cs</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a652b744d35a335b5e834ea25c1df00e5"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static int CPU_OS_Simulator.Operating_System.Scheduler.FindWinningTicket </td>
+          <td>(</td>
+          <td class="paramtype">IEnumerable&lt; int &gt;&#160;</td>
+          <td class="paramname"><em>source</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_scheduler_8cs_source.html#l00390">390</a> of file <a class="el" href="_scheduler_8cs_source.html">Scheduler.cs</a>.</p>
 
 </div>
 </div>
@@ -682,7 +811,7 @@ Private Attributes</h2></td></tr>
 <p>This function gets the current operating system window instance from the window bridge </p>
 <dl class="section return"><dt>Returns</dt><dd>the current operating system window instance </dd></dl>
 
-<p>Definition at line <a class="el" href="_scheduler_8cs_source.html#l00625">625</a> of file <a class="el" href="_scheduler_8cs_source.html">Scheduler.cs</a>.</p>
+<p>Definition at line <a class="el" href="_scheduler_8cs_source.html#l00762">762</a> of file <a class="el" href="_scheduler_8cs_source.html">Scheduler.cs</a>.</p>
 
 </div>
 </div>
@@ -709,7 +838,7 @@ Private Attributes</h2></td></tr>
 
 <p>This function Loads a processes PCB (Process Control Block) when a process re-enters the running state after it was timed out so it can carry on where it left off </p>
 
-<p>Definition at line <a class="el" href="_scheduler_8cs_source.html#l00540">540</a> of file <a class="el" href="_scheduler_8cs_source.html">Scheduler.cs</a>.</p>
+<p>Definition at line <a class="el" href="_scheduler_8cs_source.html#l00677">677</a> of file <a class="el" href="_scheduler_8cs_source.html">Scheduler.cs</a>.</p>
 
 </div>
 </div>
@@ -745,7 +874,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_scheduler_8cs_source.html#l00079">79</a> of file <a class="el" href="_scheduler_8cs_source.html">Scheduler.cs</a>.</p>
+<p>Definition at line <a class="el" href="_scheduler_8cs_source.html#l00088">88</a> of file <a class="el" href="_scheduler_8cs_source.html">Scheduler.cs</a>.</p>
 
 </div>
 </div>
@@ -772,7 +901,7 @@ Private Attributes</h2></td></tr>
 
 <p>This function is the main scheduler loop that runs until no processes remain or the OS is suspended </p>
 
-<p>Definition at line <a class="el" href="_scheduler_8cs_source.html#l00184">184</a> of file <a class="el" href="_scheduler_8cs_source.html">Scheduler.cs</a>.</p>
+<p>Definition at line <a class="el" href="_scheduler_8cs_source.html#l00197">197</a> of file <a class="el" href="_scheduler_8cs_source.html">Scheduler.cs</a>.</p>
 
 </div>
 </div>
@@ -798,7 +927,7 @@ Private Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="_scheduler_8cs_source.html#l00127">127</a> of file <a class="el" href="_scheduler_8cs_source.html">Scheduler.cs</a>.</p>
+<p>Definition at line <a class="el" href="_scheduler_8cs_source.html#l00136">136</a> of file <a class="el" href="_scheduler_8cs_source.html">Scheduler.cs</a>.</p>
 
 </div>
 </div>
@@ -832,7 +961,7 @@ Private Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="_scheduler_8cs_source.html#l00497">497</a> of file <a class="el" href="_scheduler_8cs_source.html">Scheduler.cs</a>.</p>
+<p>Definition at line <a class="el" href="_scheduler_8cs_source.html#l00634">634</a> of file <a class="el" href="_scheduler_8cs_source.html">Scheduler.cs</a>.</p>
 
 </div>
 </div>
@@ -877,7 +1006,7 @@ Private Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="_scheduler_8cs_source.html#l00142">142</a> of file <a class="el" href="_scheduler_8cs_source.html">Scheduler.cs</a>.</p>
+<p>Definition at line <a class="el" href="_scheduler_8cs_source.html#l00155">155</a> of file <a class="el" href="_scheduler_8cs_source.html">Scheduler.cs</a>.</p>
 
 </div>
 </div>
@@ -905,7 +1034,7 @@ Private Attributes</h2></td></tr>
 <p>Asynchronous function called after every instruction is executed to update required values and user interface asynchronously </p>
 <dl class="section return"><dt>Returns</dt><dd>A task to indicate to the main thread that the function has finished executing</dd></dl>
 
-<p>Definition at line <a class="el" href="_scheduler_8cs_source.html#l00163">163</a> of file <a class="el" href="_scheduler_8cs_source.html">Scheduler.cs</a>.</p>
+<p>Definition at line <a class="el" href="_scheduler_8cs_source.html#l00176">176</a> of file <a class="el" href="_scheduler_8cs_source.html">Scheduler.cs</a>.</p>
 
 </div>
 </div>
@@ -933,7 +1062,7 @@ Private Attributes</h2></td></tr>
 <p>This function updates the main window interface while the operating system executes </p>
 <dl class="section return"><dt>Returns</dt><dd>a task object indicating to the calling thread that the task has completed</dd></dl>
 
-<p>Definition at line <a class="el" href="_scheduler_8cs_source.html#l00637">637</a> of file <a class="el" href="_scheduler_8cs_source.html">Scheduler.cs</a>.</p>
+<p>Definition at line <a class="el" href="_scheduler_8cs_source.html#l00774">774</a> of file <a class="el" href="_scheduler_8cs_source.html">Scheduler.cs</a>.</p>
 
 </div>
 </div>
@@ -956,7 +1085,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_scheduler_8cs_source.html#l00035">35</a> of file <a class="el" href="_scheduler_8cs_source.html">Scheduler.cs</a>.</p>
+<p>Definition at line <a class="el" href="_scheduler_8cs_source.html#l00037">37</a> of file <a class="el" href="_scheduler_8cs_source.html">Scheduler.cs</a>.</p>
 
 </div>
 </div>
@@ -978,7 +1107,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_scheduler_8cs_source.html#l00037">37</a> of file <a class="el" href="_scheduler_8cs_source.html">Scheduler.cs</a>.</p>
+<p>Definition at line <a class="el" href="_scheduler_8cs_source.html#l00039">39</a> of file <a class="el" href="_scheduler_8cs_source.html">Scheduler.cs</a>.</p>
 
 </div>
 </div>
@@ -1000,7 +1129,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_scheduler_8cs_source.html#l00031">31</a> of file <a class="el" href="_scheduler_8cs_source.html">Scheduler.cs</a>.</p>
+<p>Definition at line <a class="el" href="_scheduler_8cs_source.html#l00033">33</a> of file <a class="el" href="_scheduler_8cs_source.html">Scheduler.cs</a>.</p>
 
 </div>
 </div>
@@ -1022,7 +1151,29 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_scheduler_8cs_source.html#l00039">39</a> of file <a class="el" href="_scheduler_8cs_source.html">Scheduler.cs</a>.</p>
+<p>Definition at line <a class="el" href="_scheduler_8cs_source.html#l00045">45</a> of file <a class="el" href="_scheduler_8cs_source.html">Scheduler.cs</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ac3e38df2939f98dd2e91b979329376ab"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">List&lt;<a class="el" href="class_c_p_u___o_s___simulator_1_1_operating___system_1_1_lottery_ticket.html">LotteryTicket</a>&gt; CPU_OS_Simulator.Operating_System.Scheduler.drawnLotteryTickets</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_scheduler_8cs_source.html#l00050">50</a> of file <a class="el" href="_scheduler_8cs_source.html">Scheduler.cs</a>.</p>
 
 </div>
 </div>
@@ -1044,7 +1195,29 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_scheduler_8cs_source.html#l00038">38</a> of file <a class="el" href="_scheduler_8cs_source.html">Scheduler.cs</a>.</p>
+<p>Definition at line <a class="el" href="_scheduler_8cs_source.html#l00042">42</a> of file <a class="el" href="_scheduler_8cs_source.html">Scheduler.cs</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a2cc17fd33517614da823a344f54cdd7c"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">List&lt;<a class="el" href="class_c_p_u___o_s___simulator_1_1_operating___system_1_1_lottery_ticket.html">LotteryTicket</a>&gt; CPU_OS_Simulator.Operating_System.Scheduler.issuedLotteryTickets</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_scheduler_8cs_source.html#l00049">49</a> of file <a class="el" href="_scheduler_8cs_source.html">Scheduler.cs</a>.</p>
 
 </div>
 </div>
@@ -1066,7 +1239,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_scheduler_8cs_source.html#l00041">41</a> of file <a class="el" href="_scheduler_8cs_source.html">Scheduler.cs</a>.</p>
+<p>Definition at line <a class="el" href="_scheduler_8cs_source.html#l00047">47</a> of file <a class="el" href="_scheduler_8cs_source.html">Scheduler.cs</a>.</p>
 
 </div>
 </div>
@@ -1088,7 +1261,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_scheduler_8cs_source.html#l00025">25</a> of file <a class="el" href="_scheduler_8cs_source.html">Scheduler.cs</a>.</p>
+<p>Definition at line <a class="el" href="_scheduler_8cs_source.html#l00027">27</a> of file <a class="el" href="_scheduler_8cs_source.html">Scheduler.cs</a>.</p>
 
 </div>
 </div>
@@ -1110,7 +1283,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_scheduler_8cs_source.html#l00032">32</a> of file <a class="el" href="_scheduler_8cs_source.html">Scheduler.cs</a>.</p>
+<p>Definition at line <a class="el" href="_scheduler_8cs_source.html#l00034">34</a> of file <a class="el" href="_scheduler_8cs_source.html">Scheduler.cs</a>.</p>
 
 </div>
 </div>
@@ -1132,7 +1305,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_scheduler_8cs_source.html#l00029">29</a> of file <a class="el" href="_scheduler_8cs_source.html">Scheduler.cs</a>.</p>
+<p>Definition at line <a class="el" href="_scheduler_8cs_source.html#l00031">31</a> of file <a class="el" href="_scheduler_8cs_source.html">Scheduler.cs</a>.</p>
 
 </div>
 </div>
@@ -1154,7 +1327,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_scheduler_8cs_source.html#l00033">33</a> of file <a class="el" href="_scheduler_8cs_source.html">Scheduler.cs</a>.</p>
+<p>Definition at line <a class="el" href="_scheduler_8cs_source.html#l00035">35</a> of file <a class="el" href="_scheduler_8cs_source.html">Scheduler.cs</a>.</p>
 
 </div>
 </div>
@@ -1176,7 +1349,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_scheduler_8cs_source.html#l00027">27</a> of file <a class="el" href="_scheduler_8cs_source.html">Scheduler.cs</a>.</p>
+<p>Definition at line <a class="el" href="_scheduler_8cs_source.html#l00029">29</a> of file <a class="el" href="_scheduler_8cs_source.html">Scheduler.cs</a>.</p>
 
 </div>
 </div>
@@ -1198,7 +1371,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_scheduler_8cs_source.html#l00036">36</a> of file <a class="el" href="_scheduler_8cs_source.html">Scheduler.cs</a>.</p>
+<p>Definition at line <a class="el" href="_scheduler_8cs_source.html#l00038">38</a> of file <a class="el" href="_scheduler_8cs_source.html">Scheduler.cs</a>.</p>
 
 </div>
 </div>
@@ -1220,7 +1393,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_scheduler_8cs_source.html#l00028">28</a> of file <a class="el" href="_scheduler_8cs_source.html">Scheduler.cs</a>.</p>
+<p>Definition at line <a class="el" href="_scheduler_8cs_source.html#l00030">30</a> of file <a class="el" href="_scheduler_8cs_source.html">Scheduler.cs</a>.</p>
 
 </div>
 </div>
@@ -1242,7 +1415,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_scheduler_8cs_source.html#l00042">42</a> of file <a class="el" href="_scheduler_8cs_source.html">Scheduler.cs</a>.</p>
+<p>Definition at line <a class="el" href="_scheduler_8cs_source.html#l00048">48</a> of file <a class="el" href="_scheduler_8cs_source.html">Scheduler.cs</a>.</p>
 
 </div>
 </div>
@@ -1264,7 +1437,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_scheduler_8cs_source.html#l00040">40</a> of file <a class="el" href="_scheduler_8cs_source.html">Scheduler.cs</a>.</p>
+<p>Definition at line <a class="el" href="_scheduler_8cs_source.html#l00046">46</a> of file <a class="el" href="_scheduler_8cs_source.html">Scheduler.cs</a>.</p>
 
 </div>
 </div>
@@ -1286,7 +1459,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_scheduler_8cs_source.html#l00030">30</a> of file <a class="el" href="_scheduler_8cs_source.html">Scheduler.cs</a>.</p>
+<p>Definition at line <a class="el" href="_scheduler_8cs_source.html#l00032">32</a> of file <a class="el" href="_scheduler_8cs_source.html">Scheduler.cs</a>.</p>
 
 </div>
 </div>
@@ -1308,7 +1481,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_scheduler_8cs_source.html#l00034">34</a> of file <a class="el" href="_scheduler_8cs_source.html">Scheduler.cs</a>.</p>
+<p>Definition at line <a class="el" href="_scheduler_8cs_source.html#l00036">36</a> of file <a class="el" href="_scheduler_8cs_source.html">Scheduler.cs</a>.</p>
 
 </div>
 </div>
@@ -1330,7 +1503,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_scheduler_8cs_source.html#l00026">26</a> of file <a class="el" href="_scheduler_8cs_source.html">Scheduler.cs</a>.</p>
+<p>Definition at line <a class="el" href="_scheduler_8cs_source.html#l00028">28</a> of file <a class="el" href="_scheduler_8cs_source.html">Scheduler.cs</a>.</p>
 
 </div>
 </div>
@@ -1355,7 +1528,7 @@ Private Attributes</h2></td></tr>
 
 <p>Property for whether <a class="el" href="namespace_c_p_u___o_s___simulator_1_1_c_p_u.html">CPU</a> affinity is allowed on this scheduler </p>
 
-<p>Definition at line <a class="el" href="_scheduler_8cs_source.html#l00733">733</a> of file <a class="el" href="_scheduler_8cs_source.html">Scheduler.cs</a>.</p>
+<p>Definition at line <a class="el" href="_scheduler_8cs_source.html#l00870">870</a> of file <a class="el" href="_scheduler_8cs_source.html">Scheduler.cs</a>.</p>
 
 </div>
 </div>
@@ -1379,7 +1552,7 @@ Private Attributes</h2></td></tr>
 
 <p>Property for whether we are using the default scheduler </p>
 
-<p>Definition at line <a class="el" href="_scheduler_8cs_source.html#l00701">701</a> of file <a class="el" href="_scheduler_8cs_source.html">Scheduler.cs</a>.</p>
+<p>Definition at line <a class="el" href="_scheduler_8cs_source.html#l00838">838</a> of file <a class="el" href="_scheduler_8cs_source.html">Scheduler.cs</a>.</p>
 
 </div>
 </div>
@@ -1403,7 +1576,7 @@ Private Attributes</h2></td></tr>
 
 <p>Property for the queue of processes that are ready to be executed </p>
 
-<p>Definition at line <a class="el" href="_scheduler_8cs_source.html#l00652">652</a> of file <a class="el" href="_scheduler_8cs_source.html">Scheduler.cs</a>.</p>
+<p>Definition at line <a class="el" href="_scheduler_8cs_source.html#l00789">789</a> of file <a class="el" href="_scheduler_8cs_source.html">Scheduler.cs</a>.</p>
 
 </div>
 </div>
@@ -1427,7 +1600,7 @@ Private Attributes</h2></td></tr>
 
 <p>Property for the Round Robin priority policy being used by this scheduler </p>
 
-<p>Definition at line <a class="el" href="_scheduler_8cs_source.html#l00709">709</a> of file <a class="el" href="_scheduler_8cs_source.html">Scheduler.cs</a>.</p>
+<p>Definition at line <a class="el" href="_scheduler_8cs_source.html#l00846">846</a> of file <a class="el" href="_scheduler_8cs_source.html">Scheduler.cs</a>.</p>
 
 </div>
 </div>
@@ -1451,7 +1624,7 @@ Private Attributes</h2></td></tr>
 
 <p>Property for the length of the round robin time slice being used by this scheduler </p>
 
-<p>Definition at line <a class="el" href="_scheduler_8cs_source.html#l00684">684</a> of file <a class="el" href="_scheduler_8cs_source.html">Scheduler.cs</a>.</p>
+<p>Definition at line <a class="el" href="_scheduler_8cs_source.html#l00821">821</a> of file <a class="el" href="_scheduler_8cs_source.html">Scheduler.cs</a>.</p>
 
 </div>
 </div>
@@ -1475,7 +1648,7 @@ Private Attributes</h2></td></tr>
 
 <p>Property for the type of round robin being used by the scheduler </p>
 
-<p>Definition at line <a class="el" href="_scheduler_8cs_source.html#l00717">717</a> of file <a class="el" href="_scheduler_8cs_source.html">Scheduler.cs</a>.</p>
+<p>Definition at line <a class="el" href="_scheduler_8cs_source.html#l00854">854</a> of file <a class="el" href="_scheduler_8cs_source.html">Scheduler.cs</a>.</p>
 
 </div>
 </div>
@@ -1499,7 +1672,7 @@ Private Attributes</h2></td></tr>
 
 <p>Property for the currently running process </p>
 
-<p>Definition at line <a class="el" href="_scheduler_8cs_source.html#l00668">668</a> of file <a class="el" href="_scheduler_8cs_source.html">Scheduler.cs</a>.</p>
+<p>Definition at line <a class="el" href="_scheduler_8cs_source.html#l00805">805</a> of file <a class="el" href="_scheduler_8cs_source.html">Scheduler.cs</a>.</p>
 
 </div>
 </div>
@@ -1523,7 +1696,7 @@ Private Attributes</h2></td></tr>
 
 <p>Property for whether the scheduler is running with no processes </p>
 
-<p>Definition at line <a class="el" href="_scheduler_8cs_source.html#l00741">741</a> of file <a class="el" href="_scheduler_8cs_source.html">Scheduler.cs</a>.</p>
+<p>Definition at line <a class="el" href="_scheduler_8cs_source.html#l00878">878</a> of file <a class="el" href="_scheduler_8cs_source.html">Scheduler.cs</a>.</p>
 
 </div>
 </div>
@@ -1547,7 +1720,7 @@ Private Attributes</h2></td></tr>
 
 <p>Property for the scheduling policy currently being used by this scheduler </p>
 
-<p>Definition at line <a class="el" href="_scheduler_8cs_source.html#l00676">676</a> of file <a class="el" href="_scheduler_8cs_source.html">Scheduler.cs</a>.</p>
+<p>Definition at line <a class="el" href="_scheduler_8cs_source.html#l00813">813</a> of file <a class="el" href="_scheduler_8cs_source.html">Scheduler.cs</a>.</p>
 
 </div>
 </div>
@@ -1571,7 +1744,7 @@ Private Attributes</h2></td></tr>
 
 <p>Property for the unit of time used for time slices i.e ticks or seconds </p>
 
-<p>Definition at line <a class="el" href="_scheduler_8cs_source.html#l00693">693</a> of file <a class="el" href="_scheduler_8cs_source.html">Scheduler.cs</a>.</p>
+<p>Definition at line <a class="el" href="_scheduler_8cs_source.html#l00830">830</a> of file <a class="el" href="_scheduler_8cs_source.html">Scheduler.cs</a>.</p>
 
 </div>
 </div>
@@ -1595,7 +1768,7 @@ Private Attributes</h2></td></tr>
 
 <p>Property for whether the scheduler is running on a single <a class="el" href="namespace_c_p_u___o_s___simulator_1_1_c_p_u.html">CPU</a> </p>
 
-<p>Definition at line <a class="el" href="_scheduler_8cs_source.html#l00725">725</a> of file <a class="el" href="_scheduler_8cs_source.html">Scheduler.cs</a>.</p>
+<p>Definition at line <a class="el" href="_scheduler_8cs_source.html#l00862">862</a> of file <a class="el" href="_scheduler_8cs_source.html">Scheduler.cs</a>.</p>
 
 </div>
 </div>
@@ -1619,7 +1792,7 @@ Private Attributes</h2></td></tr>
 
 <p>Property for the queue of processes that are waiting to be serviced by the operating system </p>
 
-<p>Definition at line <a class="el" href="_scheduler_8cs_source.html#l00660">660</a> of file <a class="el" href="_scheduler_8cs_source.html">Scheduler.cs</a>.</p>
+<p>Definition at line <a class="el" href="_scheduler_8cs_source.html#l00797">797</a> of file <a class="el" href="_scheduler_8cs_source.html">Scheduler.cs</a>.</p>
 
 </div>
 </div>
@@ -1634,7 +1807,7 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_scheduler_8cs_source.html#l00044">44</a> of file <a class="el" href="_scheduler_8cs_source.html">Scheduler.cs</a>.</p>
+<p>Definition at line <a class="el" href="_scheduler_8cs_source.html#l00051">51</a> of file <a class="el" href="_scheduler_8cs_source.html">Scheduler.cs</a>.</p>
 
 </div>
 </div>

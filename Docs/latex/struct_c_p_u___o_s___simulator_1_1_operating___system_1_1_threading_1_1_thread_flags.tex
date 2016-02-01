@@ -1,0 +1,146 @@
+\hypertarget{struct_c_p_u___o_s___simulator_1_1_operating___system_1_1_threading_1_1_thread_flags}{}\section{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Operating\+\_\+\+System.\+Threading.\+Thread\+Flags Struct Reference}
+\label{struct_c_p_u___o_s___simulator_1_1_operating___system_1_1_threading_1_1_thread_flags}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Operating\+\_\+\+System.\+Threading.\+Thread\+Flags@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Operating\+\_\+\+System.\+Threading.\+Thread\+Flags}}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_simulator_process}{Simulator\+Process} \hyperlink{struct_c_p_u___o_s___simulator_1_1_operating___system_1_1_threading_1_1_thread_flags_a221fa945feaddce8cf77888e2346ae89}{owner\+Process}
+\item 
+List$<$ \hyperlink{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_threading_1_1_simulator_thread}{Simulator\+Thread} $>$ \hyperlink{struct_c_p_u___o_s___simulator_1_1_operating___system_1_1_threading_1_1_thread_flags_ac16ee9d27f576e74b32f7d6adc428791}{child\+Threads}
+\item 
+\hyperlink{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_threading_1_1_thread_control_block}{Thread\+Control\+Block} \hyperlink{struct_c_p_u___o_s___simulator_1_1_operating___system_1_1_threading_1_1_thread_flags_a64038f3c7b2598bb4365002668132fb9}{control\+Block}
+\item 
+\hyperlink{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_threading_1_1_thread_execution_unit}{Thread\+Execution\+Unit} \hyperlink{struct_c_p_u___o_s___simulator_1_1_operating___system_1_1_threading_1_1_thread_flags_afc9d9feb6b1b8ed24d2fb42583df38f2}{execution\+Unit}
+\item 
+\hyperlink{namespace_c_p_u___o_s___simulator_1_1_operating___system_1_1_threading_af7d2481e1618940da9be7dcc5aff9472}{Enum\+Thread\+State} \hyperlink{struct_c_p_u___o_s___simulator_1_1_operating___system_1_1_threading_1_1_thread_flags_a59cb7b9d6d8b632f08f4be053af34581}{current\+State}
+\item 
+\hyperlink{namespace_c_p_u___o_s___simulator_1_1_operating___system_1_1_threading_af7d2481e1618940da9be7dcc5aff9472}{Enum\+Thread\+State} \hyperlink{struct_c_p_u___o_s___simulator_1_1_operating___system_1_1_threading_1_1_thread_flags_a36a82d73377290fac958bb0434a37496}{previous\+State}
+\item 
+int \hyperlink{struct_c_p_u___o_s___simulator_1_1_operating___system_1_1_threading_1_1_thread_flags_a1183510de09fd457d2ffd281e09bc9c4}{thread\+Priority}
+\item 
+bool \hyperlink{struct_c_p_u___o_s___simulator_1_1_operating___system_1_1_threading_1_1_thread_flags_a05c61a19f2ce3a9239896e9720580c0a}{owns\+Semaphore}
+\item 
+bool \hyperlink{struct_c_p_u___o_s___simulator_1_1_operating___system_1_1_threading_1_1_thread_flags_ad519fd59ad20838f252f66885d7b9357}{waiting\+For\+Semaphore}
+\item 
+bool \hyperlink{struct_c_p_u___o_s___simulator_1_1_operating___system_1_1_threading_1_1_thread_flags_aa5000831e8efc8a6c9c2fcc6e602044d}{resource\+Starved}
+\item 
+List$<$ \hyperlink{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_simulator_resource}{Simulator\+Resource} $>$ \hyperlink{struct_c_p_u___o_s___simulator_1_1_operating___system_1_1_threading_1_1_thread_flags_abe528720dcf27f540d51dd97231ca989}{allocated\+Resources}
+\item 
+List$<$ \hyperlink{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_simulator_resource}{Simulator\+Resource} $>$ \hyperlink{struct_c_p_u___o_s___simulator_1_1_operating___system_1_1_threading_1_1_thread_flags_ac6e85e7ef7ada7466a58d1c8f7e15640}{requested\+Resources}
+\item 
+bool \hyperlink{struct_c_p_u___o_s___simulator_1_1_operating___system_1_1_threading_1_1_thread_flags_a6e3031c842d5751cde6732b40f600834}{terminated}
+\item 
+List$<$ \hyperlink{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_lottery_ticket}{Lottery\+Ticket} $>$ \hyperlink{struct_c_p_u___o_s___simulator_1_1_operating___system_1_1_threading_1_1_thread_flags_a0d79cd3049072a7573cad5b3dcb35419}{lottery\+Tickets}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 5 of file Thread\+Flags.\+cs.
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{struct_c_p_u___o_s___simulator_1_1_operating___system_1_1_threading_1_1_thread_flags_abe528720dcf27f540d51dd97231ca989}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Threading\+::\+Thread\+Flags@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Threading\+::\+Thread\+Flags}!allocated\+Resources@{allocated\+Resources}}
+\index{allocated\+Resources@{allocated\+Resources}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Threading\+::\+Thread\+Flags@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Threading\+::\+Thread\+Flags}}
+\subsubsection[{allocated\+Resources}]{\setlength{\rightskip}{0pt plus 5cm}List$<${\bf Simulator\+Resource}$>$ C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Operating\+\_\+\+System.\+Threading.\+Thread\+Flags.\+allocated\+Resources}\label{struct_c_p_u___o_s___simulator_1_1_operating___system_1_1_threading_1_1_thread_flags_abe528720dcf27f540d51dd97231ca989}
+
+
+Definition at line 18 of file Thread\+Flags.\+cs.
+
+\hypertarget{struct_c_p_u___o_s___simulator_1_1_operating___system_1_1_threading_1_1_thread_flags_ac16ee9d27f576e74b32f7d6adc428791}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Threading\+::\+Thread\+Flags@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Threading\+::\+Thread\+Flags}!child\+Threads@{child\+Threads}}
+\index{child\+Threads@{child\+Threads}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Threading\+::\+Thread\+Flags@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Threading\+::\+Thread\+Flags}}
+\subsubsection[{child\+Threads}]{\setlength{\rightskip}{0pt plus 5cm}List$<${\bf Simulator\+Thread}$>$ C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Operating\+\_\+\+System.\+Threading.\+Thread\+Flags.\+child\+Threads}\label{struct_c_p_u___o_s___simulator_1_1_operating___system_1_1_threading_1_1_thread_flags_ac16ee9d27f576e74b32f7d6adc428791}
+
+
+Definition at line 9 of file Thread\+Flags.\+cs.
+
+\hypertarget{struct_c_p_u___o_s___simulator_1_1_operating___system_1_1_threading_1_1_thread_flags_a64038f3c7b2598bb4365002668132fb9}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Threading\+::\+Thread\+Flags@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Threading\+::\+Thread\+Flags}!control\+Block@{control\+Block}}
+\index{control\+Block@{control\+Block}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Threading\+::\+Thread\+Flags@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Threading\+::\+Thread\+Flags}}
+\subsubsection[{control\+Block}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Thread\+Control\+Block} C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Operating\+\_\+\+System.\+Threading.\+Thread\+Flags.\+control\+Block}\label{struct_c_p_u___o_s___simulator_1_1_operating___system_1_1_threading_1_1_thread_flags_a64038f3c7b2598bb4365002668132fb9}
+
+
+Definition at line 10 of file Thread\+Flags.\+cs.
+
+\hypertarget{struct_c_p_u___o_s___simulator_1_1_operating___system_1_1_threading_1_1_thread_flags_a59cb7b9d6d8b632f08f4be053af34581}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Threading\+::\+Thread\+Flags@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Threading\+::\+Thread\+Flags}!current\+State@{current\+State}}
+\index{current\+State@{current\+State}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Threading\+::\+Thread\+Flags@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Threading\+::\+Thread\+Flags}}
+\subsubsection[{current\+State}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Enum\+Thread\+State} C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Operating\+\_\+\+System.\+Threading.\+Thread\+Flags.\+current\+State}\label{struct_c_p_u___o_s___simulator_1_1_operating___system_1_1_threading_1_1_thread_flags_a59cb7b9d6d8b632f08f4be053af34581}
+
+
+Definition at line 12 of file Thread\+Flags.\+cs.
+
+\hypertarget{struct_c_p_u___o_s___simulator_1_1_operating___system_1_1_threading_1_1_thread_flags_afc9d9feb6b1b8ed24d2fb42583df38f2}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Threading\+::\+Thread\+Flags@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Threading\+::\+Thread\+Flags}!execution\+Unit@{execution\+Unit}}
+\index{execution\+Unit@{execution\+Unit}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Threading\+::\+Thread\+Flags@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Threading\+::\+Thread\+Flags}}
+\subsubsection[{execution\+Unit}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Thread\+Execution\+Unit} C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Operating\+\_\+\+System.\+Threading.\+Thread\+Flags.\+execution\+Unit}\label{struct_c_p_u___o_s___simulator_1_1_operating___system_1_1_threading_1_1_thread_flags_afc9d9feb6b1b8ed24d2fb42583df38f2}
+
+
+Definition at line 11 of file Thread\+Flags.\+cs.
+
+\hypertarget{struct_c_p_u___o_s___simulator_1_1_operating___system_1_1_threading_1_1_thread_flags_a0d79cd3049072a7573cad5b3dcb35419}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Threading\+::\+Thread\+Flags@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Threading\+::\+Thread\+Flags}!lottery\+Tickets@{lottery\+Tickets}}
+\index{lottery\+Tickets@{lottery\+Tickets}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Threading\+::\+Thread\+Flags@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Threading\+::\+Thread\+Flags}}
+\subsubsection[{lottery\+Tickets}]{\setlength{\rightskip}{0pt plus 5cm}List$<${\bf Lottery\+Ticket}$>$ C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Operating\+\_\+\+System.\+Threading.\+Thread\+Flags.\+lottery\+Tickets}\label{struct_c_p_u___o_s___simulator_1_1_operating___system_1_1_threading_1_1_thread_flags_a0d79cd3049072a7573cad5b3dcb35419}
+
+
+Definition at line 21 of file Thread\+Flags.\+cs.
+
+\hypertarget{struct_c_p_u___o_s___simulator_1_1_operating___system_1_1_threading_1_1_thread_flags_a221fa945feaddce8cf77888e2346ae89}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Threading\+::\+Thread\+Flags@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Threading\+::\+Thread\+Flags}!owner\+Process@{owner\+Process}}
+\index{owner\+Process@{owner\+Process}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Threading\+::\+Thread\+Flags@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Threading\+::\+Thread\+Flags}}
+\subsubsection[{owner\+Process}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Simulator\+Process} C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Operating\+\_\+\+System.\+Threading.\+Thread\+Flags.\+owner\+Process}\label{struct_c_p_u___o_s___simulator_1_1_operating___system_1_1_threading_1_1_thread_flags_a221fa945feaddce8cf77888e2346ae89}
+
+
+Definition at line 8 of file Thread\+Flags.\+cs.
+
+\hypertarget{struct_c_p_u___o_s___simulator_1_1_operating___system_1_1_threading_1_1_thread_flags_a05c61a19f2ce3a9239896e9720580c0a}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Threading\+::\+Thread\+Flags@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Threading\+::\+Thread\+Flags}!owns\+Semaphore@{owns\+Semaphore}}
+\index{owns\+Semaphore@{owns\+Semaphore}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Threading\+::\+Thread\+Flags@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Threading\+::\+Thread\+Flags}}
+\subsubsection[{owns\+Semaphore}]{\setlength{\rightskip}{0pt plus 5cm}bool C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Operating\+\_\+\+System.\+Threading.\+Thread\+Flags.\+owns\+Semaphore}\label{struct_c_p_u___o_s___simulator_1_1_operating___system_1_1_threading_1_1_thread_flags_a05c61a19f2ce3a9239896e9720580c0a}
+
+
+Definition at line 15 of file Thread\+Flags.\+cs.
+
+\hypertarget{struct_c_p_u___o_s___simulator_1_1_operating___system_1_1_threading_1_1_thread_flags_a36a82d73377290fac958bb0434a37496}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Threading\+::\+Thread\+Flags@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Threading\+::\+Thread\+Flags}!previous\+State@{previous\+State}}
+\index{previous\+State@{previous\+State}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Threading\+::\+Thread\+Flags@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Threading\+::\+Thread\+Flags}}
+\subsubsection[{previous\+State}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Enum\+Thread\+State} C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Operating\+\_\+\+System.\+Threading.\+Thread\+Flags.\+previous\+State}\label{struct_c_p_u___o_s___simulator_1_1_operating___system_1_1_threading_1_1_thread_flags_a36a82d73377290fac958bb0434a37496}
+
+
+Definition at line 13 of file Thread\+Flags.\+cs.
+
+\hypertarget{struct_c_p_u___o_s___simulator_1_1_operating___system_1_1_threading_1_1_thread_flags_ac6e85e7ef7ada7466a58d1c8f7e15640}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Threading\+::\+Thread\+Flags@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Threading\+::\+Thread\+Flags}!requested\+Resources@{requested\+Resources}}
+\index{requested\+Resources@{requested\+Resources}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Threading\+::\+Thread\+Flags@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Threading\+::\+Thread\+Flags}}
+\subsubsection[{requested\+Resources}]{\setlength{\rightskip}{0pt plus 5cm}List$<${\bf Simulator\+Resource}$>$ C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Operating\+\_\+\+System.\+Threading.\+Thread\+Flags.\+requested\+Resources}\label{struct_c_p_u___o_s___simulator_1_1_operating___system_1_1_threading_1_1_thread_flags_ac6e85e7ef7ada7466a58d1c8f7e15640}
+
+
+Definition at line 19 of file Thread\+Flags.\+cs.
+
+\hypertarget{struct_c_p_u___o_s___simulator_1_1_operating___system_1_1_threading_1_1_thread_flags_aa5000831e8efc8a6c9c2fcc6e602044d}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Threading\+::\+Thread\+Flags@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Threading\+::\+Thread\+Flags}!resource\+Starved@{resource\+Starved}}
+\index{resource\+Starved@{resource\+Starved}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Threading\+::\+Thread\+Flags@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Threading\+::\+Thread\+Flags}}
+\subsubsection[{resource\+Starved}]{\setlength{\rightskip}{0pt plus 5cm}bool C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Operating\+\_\+\+System.\+Threading.\+Thread\+Flags.\+resource\+Starved}\label{struct_c_p_u___o_s___simulator_1_1_operating___system_1_1_threading_1_1_thread_flags_aa5000831e8efc8a6c9c2fcc6e602044d}
+
+
+Definition at line 17 of file Thread\+Flags.\+cs.
+
+\hypertarget{struct_c_p_u___o_s___simulator_1_1_operating___system_1_1_threading_1_1_thread_flags_a6e3031c842d5751cde6732b40f600834}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Threading\+::\+Thread\+Flags@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Threading\+::\+Thread\+Flags}!terminated@{terminated}}
+\index{terminated@{terminated}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Threading\+::\+Thread\+Flags@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Threading\+::\+Thread\+Flags}}
+\subsubsection[{terminated}]{\setlength{\rightskip}{0pt plus 5cm}bool C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Operating\+\_\+\+System.\+Threading.\+Thread\+Flags.\+terminated}\label{struct_c_p_u___o_s___simulator_1_1_operating___system_1_1_threading_1_1_thread_flags_a6e3031c842d5751cde6732b40f600834}
+
+
+Definition at line 20 of file Thread\+Flags.\+cs.
+
+\hypertarget{struct_c_p_u___o_s___simulator_1_1_operating___system_1_1_threading_1_1_thread_flags_a1183510de09fd457d2ffd281e09bc9c4}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Threading\+::\+Thread\+Flags@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Threading\+::\+Thread\+Flags}!thread\+Priority@{thread\+Priority}}
+\index{thread\+Priority@{thread\+Priority}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Threading\+::\+Thread\+Flags@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Threading\+::\+Thread\+Flags}}
+\subsubsection[{thread\+Priority}]{\setlength{\rightskip}{0pt plus 5cm}int C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Operating\+\_\+\+System.\+Threading.\+Thread\+Flags.\+thread\+Priority}\label{struct_c_p_u___o_s___simulator_1_1_operating___system_1_1_threading_1_1_thread_flags_a1183510de09fd457d2ffd281e09bc9c4}
+
+
+Definition at line 14 of file Thread\+Flags.\+cs.
+
+\hypertarget{struct_c_p_u___o_s___simulator_1_1_operating___system_1_1_threading_1_1_thread_flags_ad519fd59ad20838f252f66885d7b9357}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Threading\+::\+Thread\+Flags@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Threading\+::\+Thread\+Flags}!waiting\+For\+Semaphore@{waiting\+For\+Semaphore}}
+\index{waiting\+For\+Semaphore@{waiting\+For\+Semaphore}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Threading\+::\+Thread\+Flags@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+Threading\+::\+Thread\+Flags}}
+\subsubsection[{waiting\+For\+Semaphore}]{\setlength{\rightskip}{0pt plus 5cm}bool C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Operating\+\_\+\+System.\+Threading.\+Thread\+Flags.\+waiting\+For\+Semaphore}\label{struct_c_p_u___o_s___simulator_1_1_operating___system_1_1_threading_1_1_thread_flags_ad519fd59ad20838f252f66885d7b9357}
+
+
+Definition at line 16 of file Thread\+Flags.\+cs.
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Operating System/\+Threading/\hyperlink{_thread_flags_8cs}{Thread\+Flags.\+cs}\end{DoxyCompactItemize}

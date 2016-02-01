@@ -41,7 +41,11 @@ List$<$ \hyperlink{class_c_p_u___o_s___simulator_1_1_memory_1_1_memory_page}{Mem
 \begin{DoxyCompactItemize}
 \item 
 dynamic \hyperlink{class_c_p_u___o_s___simulator_1_1_memory_1_1_physical_memory_a78a9b68e70b5f44ac1d38fc653b51724}{Get\+Main\+Window\+Instance} ()
-\begin{DoxyCompactList}\small\item\em This function gets the main window instance from the window bridge \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em This function gets the main window instance from the window bridge \end{DoxyCompactList}\item 
+int \hyperlink{class_c_p_u___o_s___simulator_1_1_memory_1_1_physical_memory_aa37a178a2a3114c4377b9458ae47bbbc}{Get\+Index\+Memory} (int frame\+Number)
+\item 
+int \hyperlink{class_c_p_u___o_s___simulator_1_1_memory_1_1_physical_memory_a8497f98d7f88ca1ba466c911e0086c81}{Get\+Index\+Swap} (int frame\+Number)
+\end{DoxyCompactItemize}
 \subsection*{Private Attributes}
 \begin{DoxyCompactItemize}
 \item 
@@ -60,7 +64,7 @@ This class represents physical memory (R\+A\+M)
 
 
 
-Definition at line 12 of file Physical\+Memory.\+cs.
+Definition at line 13 of file Physical\+Memory.\+cs.
 
 
 
@@ -83,7 +87,7 @@ Constructor for physical memory
 \end{DoxyParams}
 
 
-Definition at line 23 of file Physical\+Memory.\+cs.
+Definition at line 24 of file Physical\+Memory.\+cs.
 
 
 
@@ -112,7 +116,29 @@ a reference to the page that has been added to memory
 \end{DoxyReturn}
 
 
-Definition at line 44 of file Physical\+Memory.\+cs.
+Definition at line 45 of file Physical\+Memory.\+cs.
+
+\hypertarget{class_c_p_u___o_s___simulator_1_1_memory_1_1_physical_memory_aa37a178a2a3114c4377b9458ae47bbbc}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Memory\+::\+Physical\+Memory@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Memory\+::\+Physical\+Memory}!Get\+Index\+Memory@{Get\+Index\+Memory}}
+\index{Get\+Index\+Memory@{Get\+Index\+Memory}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Memory\+::\+Physical\+Memory@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Memory\+::\+Physical\+Memory}}
+\subsubsection[{Get\+Index\+Memory(int frame\+Number)}]{\setlength{\rightskip}{0pt plus 5cm}int C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Memory.\+Physical\+Memory.\+Get\+Index\+Memory (
+\begin{DoxyParamCaption}
+\item[{int}]{frame\+Number}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{class_c_p_u___o_s___simulator_1_1_memory_1_1_physical_memory_aa37a178a2a3114c4377b9458ae47bbbc}
+
+
+Definition at line 192 of file Physical\+Memory.\+cs.
+
+\hypertarget{class_c_p_u___o_s___simulator_1_1_memory_1_1_physical_memory_a8497f98d7f88ca1ba466c911e0086c81}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Memory\+::\+Physical\+Memory@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Memory\+::\+Physical\+Memory}!Get\+Index\+Swap@{Get\+Index\+Swap}}
+\index{Get\+Index\+Swap@{Get\+Index\+Swap}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Memory\+::\+Physical\+Memory@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Memory\+::\+Physical\+Memory}}
+\subsubsection[{Get\+Index\+Swap(int frame\+Number)}]{\setlength{\rightskip}{0pt plus 5cm}int C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Memory.\+Physical\+Memory.\+Get\+Index\+Swap (
+\begin{DoxyParamCaption}
+\item[{int}]{frame\+Number}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{class_c_p_u___o_s___simulator_1_1_memory_1_1_physical_memory_a8497f98d7f88ca1ba466c911e0086c81}
+
+
+Definition at line 200 of file Physical\+Memory.\+cs.
 
 \hypertarget{class_c_p_u___o_s___simulator_1_1_memory_1_1_physical_memory_a78a9b68e70b5f44ac1d38fc653b51724}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Memory\+::\+Physical\+Memory@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Memory\+::\+Physical\+Memory}!Get\+Main\+Window\+Instance@{Get\+Main\+Window\+Instance}}
 \index{Get\+Main\+Window\+Instance@{Get\+Main\+Window\+Instance}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Memory\+::\+Physical\+Memory@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Memory\+::\+Physical\+Memory}}
@@ -130,7 +156,7 @@ the active instance of main window
 \end{DoxyReturn}
 
 
-Definition at line 157 of file Physical\+Memory.\+cs.
+Definition at line 158 of file Physical\+Memory.\+cs.
 
 \hypertarget{class_c_p_u___o_s___simulator_1_1_memory_1_1_physical_memory_a10cd5c3c1c36f246acfbe96fecbf81cc}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Memory\+::\+Physical\+Memory@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Memory\+::\+Physical\+Memory}!is\+Full@{is\+Full}}
 \index{is\+Full@{is\+Full}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Memory\+::\+Physical\+Memory@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Memory\+::\+Physical\+Memory}}
@@ -148,7 +174,7 @@ whether memory is currently full
 \end{DoxyReturn}
 
 
-Definition at line 34 of file Physical\+Memory.\+cs.
+Definition at line 35 of file Physical\+Memory.\+cs.
 
 \hypertarget{class_c_p_u___o_s___simulator_1_1_memory_1_1_physical_memory_a525c8a54ebd978b870884dc30f5800ff}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Memory\+::\+Physical\+Memory@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Memory\+::\+Physical\+Memory}!Request\+Memory\+Page@{Request\+Memory\+Page}}
 \index{Request\+Memory\+Page@{Request\+Memory\+Page}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Memory\+::\+Physical\+Memory@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Memory\+::\+Physical\+Memory}}
@@ -171,7 +197,7 @@ the requested memory page
 \end{DoxyReturn}
 
 
-Definition at line 170 of file Physical\+Memory.\+cs.
+Definition at line 171 of file Physical\+Memory.\+cs.
 
 \hypertarget{class_c_p_u___o_s___simulator_1_1_memory_1_1_physical_memory_ac12efe05d774b7e2ea38142835e0c131}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Memory\+::\+Physical\+Memory@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Memory\+::\+Physical\+Memory}!Swap\+In@{Swap\+In}}
 \index{Swap\+In@{Swap\+In}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Memory\+::\+Physical\+Memory@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Memory\+::\+Physical\+Memory}}
@@ -198,7 +224,7 @@ Implements \hyperlink{interface_c_p_u___o_s___simulator_1_1_memory_1_1_i_swappab
 
 
 
-Definition at line 133 of file Physical\+Memory.\+cs.
+Definition at line 134 of file Physical\+Memory.\+cs.
 
 \hypertarget{class_c_p_u___o_s___simulator_1_1_memory_1_1_physical_memory_a60918e50d8bc9e1a07ac640153343f69}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Memory\+::\+Physical\+Memory@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Memory\+::\+Physical\+Memory}!Swap\+Out@{Swap\+Out}}
 \index{Swap\+Out@{Swap\+Out}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Memory\+::\+Physical\+Memory@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Memory\+::\+Physical\+Memory}}
@@ -225,7 +251,7 @@ Implements \hyperlink{interface_c_p_u___o_s___simulator_1_1_memory_1_1_i_swappab
 
 
 
-Definition at line 107 of file Physical\+Memory.\+cs.
+Definition at line 108 of file Physical\+Memory.\+cs.
 
 
 
@@ -235,28 +261,28 @@ Definition at line 107 of file Physical\+Memory.\+cs.
 \subsubsection[{capacity}]{\setlength{\rightskip}{0pt plus 5cm}int C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Memory.\+Physical\+Memory.\+capacity\hspace{0.3cm}{\ttfamily [private]}}\label{class_c_p_u___o_s___simulator_1_1_memory_1_1_physical_memory_aefbb5641a06c37aa17bb523d8c90dc60}
 
 
-Definition at line 14 of file Physical\+Memory.\+cs.
+Definition at line 15 of file Physical\+Memory.\+cs.
 
 \hypertarget{class_c_p_u___o_s___simulator_1_1_memory_1_1_physical_memory_aaf32bdc314ba84ea7e120fb28e3a3e67}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Memory\+::\+Physical\+Memory@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Memory\+::\+Physical\+Memory}!pages@{pages}}
 \index{pages@{pages}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Memory\+::\+Physical\+Memory@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Memory\+::\+Physical\+Memory}}
 \subsubsection[{pages}]{\setlength{\rightskip}{0pt plus 5cm}List$<${\bf Memory\+Page}$>$ C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Memory.\+Physical\+Memory.\+pages\hspace{0.3cm}{\ttfamily [private]}}\label{class_c_p_u___o_s___simulator_1_1_memory_1_1_physical_memory_aaf32bdc314ba84ea7e120fb28e3a3e67}
 
 
-Definition at line 15 of file Physical\+Memory.\+cs.
+Definition at line 16 of file Physical\+Memory.\+cs.
 
 \hypertarget{class_c_p_u___o_s___simulator_1_1_memory_1_1_physical_memory_a7812a37c95af296758ed7814a95a3ea3}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Memory\+::\+Physical\+Memory@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Memory\+::\+Physical\+Memory}!page\+Table@{page\+Table}}
 \index{page\+Table@{page\+Table}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Memory\+::\+Physical\+Memory@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Memory\+::\+Physical\+Memory}}
 \subsubsection[{page\+Table}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Page\+Table} C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Memory.\+Physical\+Memory.\+page\+Table\hspace{0.3cm}{\ttfamily [private]}}\label{class_c_p_u___o_s___simulator_1_1_memory_1_1_physical_memory_a7812a37c95af296758ed7814a95a3ea3}
 
 
-Definition at line 16 of file Physical\+Memory.\+cs.
+Definition at line 17 of file Physical\+Memory.\+cs.
 
 \hypertarget{class_c_p_u___o_s___simulator_1_1_memory_1_1_physical_memory_a0dedf020af5760e7c9875e4bcc9f5990}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Memory\+::\+Physical\+Memory@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Memory\+::\+Physical\+Memory}!swap\+Space@{swap\+Space}}
 \index{swap\+Space@{swap\+Space}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Memory\+::\+Physical\+Memory@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Memory\+::\+Physical\+Memory}}
 \subsubsection[{swap\+Space}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Swap\+Space} C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Memory.\+Physical\+Memory.\+swap\+Space\hspace{0.3cm}{\ttfamily [private]}}\label{class_c_p_u___o_s___simulator_1_1_memory_1_1_physical_memory_a0dedf020af5760e7c9875e4bcc9f5990}
 
 
-Definition at line 17 of file Physical\+Memory.\+cs.
+Definition at line 18 of file Physical\+Memory.\+cs.
 
 
 
@@ -270,7 +296,7 @@ Property for the capacity of memory
 
 
 
-Definition at line 74 of file Physical\+Memory.\+cs.
+Definition at line 75 of file Physical\+Memory.\+cs.
 
 \hypertarget{class_c_p_u___o_s___simulator_1_1_memory_1_1_physical_memory_ad099afa411ad366a734457fd824fea06}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Memory\+::\+Physical\+Memory@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Memory\+::\+Physical\+Memory}!Pages@{Pages}}
 \index{Pages@{Pages}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Memory\+::\+Physical\+Memory@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Memory\+::\+Physical\+Memory}}
@@ -281,7 +307,7 @@ Property for the list of pages currently in memory
 
 
 
-Definition at line 82 of file Physical\+Memory.\+cs.
+Definition at line 83 of file Physical\+Memory.\+cs.
 
 \hypertarget{class_c_p_u___o_s___simulator_1_1_memory_1_1_physical_memory_a5d0fceb09f51edcfb4f483b5e8a9508a}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Memory\+::\+Physical\+Memory@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Memory\+::\+Physical\+Memory}!Space@{Space}}
 \index{Space@{Space}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Memory\+::\+Physical\+Memory@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Memory\+::\+Physical\+Memory}}
@@ -292,7 +318,7 @@ Property for the swap space where swapped out memory pages are held
 
 
 
-Definition at line 98 of file Physical\+Memory.\+cs.
+Definition at line 99 of file Physical\+Memory.\+cs.
 
 \hypertarget{class_c_p_u___o_s___simulator_1_1_memory_1_1_physical_memory_aaa669f8a92820bf792dd2ccb553254c9}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Memory\+::\+Physical\+Memory@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Memory\+::\+Physical\+Memory}!Table@{Table}}
 \index{Table@{Table}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Memory\+::\+Physical\+Memory@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Memory\+::\+Physical\+Memory}}
@@ -303,7 +329,7 @@ Property for the page table
 
 
 
-Definition at line 90 of file Physical\+Memory.\+cs.
+Definition at line 91 of file Physical\+Memory.\+cs.
 
 
 

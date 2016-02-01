@@ -1,7 +1,16 @@
 \hypertarget{namespace_c_p_u___o_s___simulator_1_1_operating___system}{}\section{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Operating\+\_\+\+System Namespace Reference}
 \label{namespace_c_p_u___o_s___simulator_1_1_operating___system}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Operating\+\_\+\+System@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Operating\+\_\+\+System}}
+\subsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \hyperlink{namespace_c_p_u___o_s___simulator_1_1_operating___system_1_1_threading}{Threading}
+\end{DoxyCompactItemize}
 \subsection*{Classes}
 \begin{DoxyCompactItemize}
+\item 
+class \hyperlink{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_lottery_ticket}{Lottery\+Ticket}
+\begin{DoxyCompactList}\small\item\em This class represents a Lottery ticket used for the Lottery Scheduling Mode \end{DoxyCompactList}\item 
+class \hyperlink{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_null_properties_converter}{Null\+Properties\+Converter}
 \item 
 class \hyperlink{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_o_s_core}{O\+S\+Core}
 \begin{DoxyCompactList}\small\item\em This class represents the core of the operating system \end{DoxyCompactList}\item 
@@ -21,7 +30,7 @@ struct \hyperlink{struct_c_p_u___o_s___simulator_1_1_operating___system_1_1_sche
 \begin{DoxyCompactList}\small\item\em This struct represents the flags passed to the scheduler \end{DoxyCompactList}\item 
 class \hyperlink{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_simulator_process}{Simulator\+Process}
 \begin{DoxyCompactList}\small\item\em This class represents a process that can be run on the virtual operating system \end{DoxyCompactList}\item 
-class \hyperlink{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_system_resource}{System\+Resource}
+class \hyperlink{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_simulator_resource}{Simulator\+Resource}
 \end{DoxyCompactItemize}
 \subsection*{Enumerations}
 \begin{DoxyCompactItemize}
@@ -50,10 +59,15 @@ enum \hyperlink{namespace_c_p_u___o_s___simulator_1_1_operating___system_a3a9286
 \hyperlink{namespace_c_p_u___o_s___simulator_1_1_operating___system_a3a9286a473bd079e9c65908c0378fa00a952140b26aa6080871aab2eb7a96feb0}{Enum\+Priority\+Policy.\+P\+R\+E\+\_\+\+E\+M\+P\+T\+I\+V\+E} = 2
  \}\begin{DoxyCompactList}\small\item\em This enum represents the priority policies that can be used \end{DoxyCompactList}
 \item 
-enum \hyperlink{namespace_c_p_u___o_s___simulator_1_1_operating___system_a836ee2204e78fcb3a7dd6c3c942b1a24}{Enum\+Process\+State} \{ \hyperlink{namespace_c_p_u___o_s___simulator_1_1_operating___system_a836ee2204e78fcb3a7dd6c3c942b1a24a696b031073e74bf2cb98e5ef201d4aa3}{Enum\+Process\+State.\+U\+N\+K\+N\+O\+W\+N} = -\/1, 
+enum \hyperlink{namespace_c_p_u___o_s___simulator_1_1_operating___system_a836ee2204e78fcb3a7dd6c3c942b1a24}{Enum\+Process\+State} \{ \\*
+\hyperlink{namespace_c_p_u___o_s___simulator_1_1_operating___system_a836ee2204e78fcb3a7dd6c3c942b1a24a696b031073e74bf2cb98e5ef201d4aa3}{Enum\+Process\+State.\+U\+N\+K\+N\+O\+W\+N} = -\/1, 
 \hyperlink{namespace_c_p_u___o_s___simulator_1_1_operating___system_a836ee2204e78fcb3a7dd6c3c942b1a24a43491564ebcfd38568918efbd6e840fd}{Enum\+Process\+State.\+R\+U\+N\+N\+I\+N\+G} = 0, 
 \hyperlink{namespace_c_p_u___o_s___simulator_1_1_operating___system_a836ee2204e78fcb3a7dd6c3c942b1a24a2baa69eafc7204f3bd8648eba580c489}{Enum\+Process\+State.\+R\+E\+A\+D\+Y} = 1, 
-\hyperlink{namespace_c_p_u___o_s___simulator_1_1_operating___system_a836ee2204e78fcb3a7dd6c3c942b1a24a1869d56535e8b1449a6da54ff5e11f50}{Enum\+Process\+State.\+W\+A\+I\+T\+I\+N\+G} = 2
+\hyperlink{namespace_c_p_u___o_s___simulator_1_1_operating___system_a836ee2204e78fcb3a7dd6c3c942b1a24a1869d56535e8b1449a6da54ff5e11f50}{Enum\+Process\+State.\+W\+A\+I\+T\+I\+N\+G} = 2, 
+\\*
+\hyperlink{namespace_c_p_u___o_s___simulator_1_1_operating___system_a836ee2204e78fcb3a7dd6c3c942b1a24a9e8957c612920c788ec947d98e0af024}{Enum\+Process\+State.\+I\+N\+\_\+\+S\+E\+M\+A\+P\+H\+O\+R\+E} = 3, 
+\hyperlink{namespace_c_p_u___o_s___simulator_1_1_operating___system_a836ee2204e78fcb3a7dd6c3c942b1a24af46b873115ba21acbd559e7f2e1aca0c}{Enum\+Process\+State.\+W\+A\+I\+T\+I\+N\+G\+\_\+\+S\+E\+M\+A\+P\+H\+O\+R\+E} = 4, 
+\hyperlink{namespace_c_p_u___o_s___simulator_1_1_operating___system_a836ee2204e78fcb3a7dd6c3c942b1a24a0550134156d1220fe47b905f3da1080f}{Enum\+Process\+State.\+D\+E\+A\+D\+L\+O\+C\+K\+E\+D} = 5
  \}\begin{DoxyCompactList}\small\item\em This enum represents the possible states that a process can be in \end{DoxyCompactList}
 \item 
 enum \hyperlink{namespace_c_p_u___o_s___simulator_1_1_operating___system_a4c7effb8b6725df52018a3a14cede96e}{Enum\+Round\+Robin\+Type} \{ \hyperlink{namespace_c_p_u___o_s___simulator_1_1_operating___system_a4c7effb8b6725df52018a3a14cede96ea696b031073e74bf2cb98e5ef201d4aa3}{Enum\+Round\+Robin\+Type.\+U\+N\+K\+N\+O\+W\+N} = -\/1, 
@@ -173,6 +187,12 @@ This enum represents the possible states that a process can be in
 \hypertarget{namespace_c_p_u___o_s___simulator_1_1_operating___system_a836ee2204e78fcb3a7dd6c3c942b1a24a2baa69eafc7204f3bd8648eba580c489}{}R\+E\+A\+D\+Y\label{namespace_c_p_u___o_s___simulator_1_1_operating___system_a836ee2204e78fcb3a7dd6c3c942b1a24a2baa69eafc7204f3bd8648eba580c489}
 }]\index{W\+A\+I\+T\+I\+N\+G@{W\+A\+I\+T\+I\+N\+G}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System}}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System}!W\+A\+I\+T\+I\+N\+G@{W\+A\+I\+T\+I\+N\+G}}\item[{\em 
 \hypertarget{namespace_c_p_u___o_s___simulator_1_1_operating___system_a836ee2204e78fcb3a7dd6c3c942b1a24a1869d56535e8b1449a6da54ff5e11f50}{}W\+A\+I\+T\+I\+N\+G\label{namespace_c_p_u___o_s___simulator_1_1_operating___system_a836ee2204e78fcb3a7dd6c3c942b1a24a1869d56535e8b1449a6da54ff5e11f50}
+}]\index{I\+N\+\_\+\+S\+E\+M\+A\+P\+H\+O\+R\+E@{I\+N\+\_\+\+S\+E\+M\+A\+P\+H\+O\+R\+E}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System}}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System}!I\+N\+\_\+\+S\+E\+M\+A\+P\+H\+O\+R\+E@{I\+N\+\_\+\+S\+E\+M\+A\+P\+H\+O\+R\+E}}\item[{\em 
+\hypertarget{namespace_c_p_u___o_s___simulator_1_1_operating___system_a836ee2204e78fcb3a7dd6c3c942b1a24a9e8957c612920c788ec947d98e0af024}{}I\+N\+\_\+\+S\+E\+M\+A\+P\+H\+O\+R\+E\label{namespace_c_p_u___o_s___simulator_1_1_operating___system_a836ee2204e78fcb3a7dd6c3c942b1a24a9e8957c612920c788ec947d98e0af024}
+}]\index{W\+A\+I\+T\+I\+N\+G\+\_\+\+S\+E\+M\+A\+P\+H\+O\+R\+E@{W\+A\+I\+T\+I\+N\+G\+\_\+\+S\+E\+M\+A\+P\+H\+O\+R\+E}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System}}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System}!W\+A\+I\+T\+I\+N\+G\+\_\+\+S\+E\+M\+A\+P\+H\+O\+R\+E@{W\+A\+I\+T\+I\+N\+G\+\_\+\+S\+E\+M\+A\+P\+H\+O\+R\+E}}\item[{\em 
+\hypertarget{namespace_c_p_u___o_s___simulator_1_1_operating___system_a836ee2204e78fcb3a7dd6c3c942b1a24af46b873115ba21acbd559e7f2e1aca0c}{}W\+A\+I\+T\+I\+N\+G\+\_\+\+S\+E\+M\+A\+P\+H\+O\+R\+E\label{namespace_c_p_u___o_s___simulator_1_1_operating___system_a836ee2204e78fcb3a7dd6c3c942b1a24af46b873115ba21acbd559e7f2e1aca0c}
+}]\index{D\+E\+A\+D\+L\+O\+C\+K\+E\+D@{D\+E\+A\+D\+L\+O\+C\+K\+E\+D}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System}}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System}!D\+E\+A\+D\+L\+O\+C\+K\+E\+D@{D\+E\+A\+D\+L\+O\+C\+K\+E\+D}}\item[{\em 
+\hypertarget{namespace_c_p_u___o_s___simulator_1_1_operating___system_a836ee2204e78fcb3a7dd6c3c942b1a24a0550134156d1220fe47b905f3da1080f}{}D\+E\+A\+D\+L\+O\+C\+K\+E\+D\label{namespace_c_p_u___o_s___simulator_1_1_operating___system_a836ee2204e78fcb3a7dd6c3c942b1a24a0550134156d1220fe47b905f3da1080f}
 }]\end{description}
 \end{Desc}
 

@@ -1,5 +1,6 @@
 var namespace_c_p_u___o_s___simulator_1_1_console =
 [
+    [ "Tests", "namespace_c_p_u___o_s___simulator_1_1_console_1_1_tests.html", "namespace_c_p_u___o_s___simulator_1_1_console_1_1_tests" ],
     [ "ConsoleCommand", "class_c_p_u___o_s___simulator_1_1_console_1_1_console_command.html", "class_c_p_u___o_s___simulator_1_1_console_1_1_console_command" ],
     [ "ConsoleInput", "class_c_p_u___o_s___simulator_1_1_console_1_1_console_input.html", "class_c_p_u___o_s___simulator_1_1_console_1_1_console_input" ],
     [ "ConsoleOutput", "class_c_p_u___o_s___simulator_1_1_console_1_1_console_output.html", "class_c_p_u___o_s___simulator_1_1_console_1_1_console_output" ],

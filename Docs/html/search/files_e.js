@@ -1,16 +1,22 @@
 var searchData=
 [
+  ['savefileparser_2ecs',['SaveFileParser.cs',['../_save_file_parser_8cs.html',1,'']]],
   ['scheduler_2ecs',['Scheduler.cs',['../_scheduler_8cs.html',1,'']]],
   ['schedulerflags_2ecs',['SchedulerFlags.cs',['../_scheduler_flags_8cs.html',1,'']]],
   ['scope_2ecs',['Scope.cs',['../_scope_8cs.html',1,'']]],
+  ['semaphore_2ecs',['Semaphore.cs',['../_semaphore_8cs.html',1,'']]],
   ['settings_2edesigner_2ecs',['Settings.Designer.cs',['../_compiler_tester_2_properties_2_settings_8_designer_8cs.html',1,'']]],
+  ['settings_2edesigner_2ecs',['Settings.Designer.cs',['../_save_file_editor_2_properties_2_settings_8_designer_8cs.html',1,'']]],
   ['settings_2edesigner_2ecs',['Settings.Designer.cs',['../_c_p_u-_o_s_01_simulator_2_properties_2_settings_8_designer_8cs.html',1,'']]],
   ['simulatorprocess_2ecs',['SimulatorProcess.cs',['../_simulator_process_8cs.html',1,'']]],
   ['simulatorprogram_2ecs',['SimulatorProgram.cs',['../_simulator_program_8cs.html',1,'']]],
   ['simulatorprogramtests_2ecs',['SimulatorProgramTests.cs',['../_simulator_program_tests_8cs.html',1,'']]],
+  ['simulatorresource_2ecs',['SimulatorResource.cs',['../_simulator_resource_8cs.html',1,'']]],
+  ['simulatorthread_2ecs',['SimulatorThread.cs',['../_simulator_thread_8cs.html',1,'']]],
   ['sourcefile_2ecs',['SourceFile.cs',['../_source_file_8cs.html',1,'']]],
   ['specialregister_2ecs',['SpecialRegister.cs',['../_special_register_8cs.html',1,'']]],
   ['specialregistertests_2ecs',['SpecialRegisterTests.cs',['../_special_register_tests_8cs.html',1,'']]],
+  ['spinlock_2ecs',['SpinLock.cs',['../_spin_lock_8cs.html',1,'']]],
   ['stackitem_2ecs',['StackItem.cs',['../_stack_item_8cs.html',1,'']]],
   ['stackitemtests_2ecs',['StackItemTests.cs',['../_stack_item_tests_8cs.html',1,'']]],
   ['statusflags_2ecs',['StatusFlags.cs',['../_status_flags_8cs.html',1,'']]],
@@ -20,7 +26,7 @@ var searchData=
   ['stringnode_2ecs',['StringNode.cs',['../_string_node_8cs.html',1,'']]],
   ['subroutine_2ecs',['Subroutine.cs',['../_subroutine_8cs.html',1,'']]],
   ['swapspace_2ecs',['SwapSpace.cs',['../_swap_space_8cs.html',1,'']]],
+  ['swapspacetests_2ecs',['SwapSpaceTests.cs',['../_swap_space_tests_8cs.html',1,'']]],
   ['symbol_2ecs',['Symbol.cs',['../_symbol_8cs.html',1,'']]],
-  ['symboltable_2ecs',['SymbolTable.cs',['../_symbol_table_8cs.html',1,'']]],
-  ['systemresource_2ecs',['SystemResource.cs',['../_system_resource_8cs.html',1,'']]]
+  ['symboltable_2ecs',['SymbolTable.cs',['../_symbol_table_8cs.html',1,'']]]
 ];
