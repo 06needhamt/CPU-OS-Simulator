@@ -12,41 +12,81 @@ namespace CPU_OS_Simulator
     /// </summary>
     public partial class ProcessControlBlockWindow : Window
     {
-        private MainWindow main_Parent = null;
-        private OperatingSystemMainWindow os_Parent = null;
-        private LinkedListNode<ProcessControlBlock> currentControlBlock = null;
-        private LinkedList<ProcessControlBlock> currentControlBlocks = null;
+        private MainWindow main_Parent;
+        private OperatingSystemMainWindow os_Parent;
+        private ProcessListWindow procList_Parent;
+        private LinkedListNode<ProcessControlBlock> currentControlBlock;
+        private LinkedList<ProcessControlBlock> currentControlBlocks;
+        /// <summary>
+        /// This variable holds the current active instance of this window
+        /// </summary>
         public static ProcessControlBlockWindow currentInstance;
 
+        /// <summary>
+        /// Default Constructor for process control block window
+        /// </summary>
         public ProcessControlBlockWindow()
         {
             InitializeComponent();
             currentInstance = this;
             SetPCBWindowInstance();
         }
-
+        /// <summary>
+        /// Constructor for process control block window when constructing from MainWindow
+        /// </summary>
+        /// <param name="main_Parent"> the window that is creating this window</param>
+        /// <param name="currentControlBlock"> the control block to be loaded</param>
         public ProcessControlBlockWindow(MainWindow main_Parent, LinkedListNode<ProcessControlBlock> currentControlBlock)
         {
             this.main_Parent = main_Parent;
+            this.os_Parent = null;
+            this.procList_Parent = null;
             InitializeComponent();
             currentInstance = this;
             this.currentControlBlock = currentControlBlock;
             currentControlBlocks = new LinkedList<ProcessControlBlock>();
-            if (currentControlBlock != null)
+            if (currentControlBlock != null && currentControlBlock.Value != null)
             {
                 currentControlBlocks.AddLast(currentControlBlock);
             }
             SetPCBWindowInstance();
         }
-
+        /// <summary>
+        /// Constructor for process control block window when constructing from OperatingSystemMainWindow
+        /// </summary>
+        /// <param name="os_Parent"> the window that is creating this window</param>
+        /// <param name="currentControlBlock"> the control block to be loaded</param>
         public ProcessControlBlockWindow(OperatingSystemMainWindow os_Parent, LinkedListNode<ProcessControlBlock> currentControlBlock)
         {
             this.os_Parent = os_Parent;
+            this.main_Parent = null;
+            this.procList_Parent = null;
             InitializeComponent();
             currentInstance = this;
             this.currentControlBlock = currentControlBlock;
             currentControlBlocks = new LinkedList<ProcessControlBlock>();
-            if (currentControlBlock != null)
+            if (currentControlBlock != null && currentControlBlock.Value != null)
+            {
+                currentControlBlocks.AddLast(currentControlBlock);
+            }
+            SetPCBWindowInstance();
+        }
+        /// <summary>
+        /// Constructor for process control block window when constructing from ProcessListWindow
+        /// </summary>
+        /// <param name="procList_Parent"> the window that is creating this window</param>
+        /// <param name="currentControlBlock"> the control block to be loaded</param>
+        public ProcessControlBlockWindow(ProcessListWindow procList_Parent,
+            LinkedListNode<ProcessControlBlock> currentControlBlock)
+        {
+            this.procList_Parent = procList_Parent;
+            this.main_Parent = null;
+            this.os_Parent = null;
+            InitializeComponent();
+            currentInstance = this;
+            this.currentControlBlock = currentControlBlock;
+            currentControlBlocks = new LinkedList<ProcessControlBlock>();
+            if (currentControlBlock != null && currentControlBlock.Value != null)
             {
                 currentControlBlocks.AddLast(currentControlBlock);
             }
@@ -63,11 +103,14 @@ namespace CPU_OS_Simulator
             UpdateText();
         }
 
+        /// <summary>
+        /// This function updates the text block with information from the current PCB
+        /// </summary>
         private void UpdateText()
         {
-            if (currentControlBlock != null)
+            if (currentControlBlock != null && currentControlBlock.Value != null)
             {
-                txt_PCB_Info.Text = currentControlBlock.ToString();
+                txt_PCB_Info.Text = currentControlBlock.Value.ToString();
             }
             else
             {
@@ -108,6 +151,12 @@ namespace CPU_OS_Simulator
                 currentControlBlock = currentControlBlock.Next;
                 UpdateText();
             }
+        }
+
+        private void ProcessControlBlockWindow1_Closing(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            currentInstance = null;
+            SetPCBWindowInstance();
         }
     }
 }

@@ -5,12 +5,14 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CPU_OS_Simulator"
         mc:Ignorable="d"
-        Title="ProcessControlBlockWindow" Height="310" Width="310" Loaded="ProcessControlBlockWindow1_Loaded" Icon="CPU-OS Simulator 7-5-50_1.ico" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
-    <Grid>
-        <TextBlock x:Name="txt_PCB_Info" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Height="235" Width="294" Background="#FFFFFBAC"/>
-        <Button x:Name="btn_NextPCB" Content="NEXT PCB" HorizontalAlignment="Left" Margin="73,235,0,0" VerticalAlignment="Top" Width="58" Height="31" Click="btn_NextPCB_Click"/>
-        <Button x:Name="btn_Previous_PCB" Content="PREV PCB" HorizontalAlignment="Left" Margin="4,235,0,0" VerticalAlignment="Top" Width="58" Height="31" Click="btn_Previous_PCB_Click"/>
-        <Button x:Name="btn_Close" Content="CLOSE" HorizontalAlignment="Left" Margin="229,235,0,0" VerticalAlignment="Top" Width="58" Height="31" Click="btn_Close_Click"/>
+        Title="ProcessControlBlockWindow" Height="310" Width="310" Loaded="ProcessControlBlockWindow1_Loaded" Icon="CPU-OS Simulator 7-5-50_1.ico" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" Closing="ProcessControlBlockWindow1_Closing">
+    <Grid x:Name="RootGrid">
+        <Border BorderThickness="2" BorderBrush="Black" Margin="0,0,0,46">
+            <TextBlock x:Name="txt_PCB_Info" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Height="235" Width="294" Background="#FFFFFBAC" Margin="3,0,0,0"/>
+        </Border>
+        <Button x:Name="btn_NextPCB" Content="NEXT PCB" HorizontalAlignment="Left" Margin="73,239,0,0" VerticalAlignment="Top" Width="58" Height="31" Click="btn_NextPCB_Click"/>
+        <Button x:Name="btn_Previous_PCB" Content="PREV PCB" HorizontalAlignment="Left" Margin="4,239,0,0" VerticalAlignment="Top" Width="58" Height="31" Click="btn_Previous_PCB_Click"/>
+        <Button x:Name="btn_Close" Content="CLOSE" HorizontalAlignment="Left" Margin="229,239,0,0" VerticalAlignment="Top" Width="58" Height="31" Click="btn_Close_Click"/>
 
     </Grid>
 </Window>

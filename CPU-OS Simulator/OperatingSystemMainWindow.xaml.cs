@@ -872,5 +872,11 @@ namespace CPU_OS_Simulator
             rdb_DelayTicks.IsEnabled = false;
             rdb_DelaySecs.IsEnabled = false;
         }
+
+        private void btn_ViewProcessList_Click(object sender, RoutedEventArgs e)
+        {
+            ProcessListWindow window = new ProcessListWindow(this,processes);
+            window.Show();
+        }
     }
 }
