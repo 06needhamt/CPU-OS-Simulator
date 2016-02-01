@@ -31,5 +31,7 @@
         /// This variable represents the active process list window instance
         /// </summary>
         public static ProcessListWindow ProcessListWindowInstance = ProcessListWindow.currentInstance;
+
+        public static LogWindow LogWindowInstance = LogWindow.currentInstance;
     }
 }
