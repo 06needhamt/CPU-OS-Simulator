@@ -66,7 +66,7 @@ namespace CPU_OS_Simulator
         }
 
 
-        public void Info(string message)
+        public void Critical(string message)
         {
             EnumLogLevel level;
             if (Enum.TryParse<EnumLogLevel>(outputWindow.cmb_Level.SelectedItem.ToString(), out level))

@@ -1,6 +1,8 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2012
+# Visual Studio 14
+VisualStudioVersion = 14.0.24720.0
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CPU-OS Simulator", "CPU-OS Simulator\CPU-OS Simulator.csproj", "{C2EFCEE0-984E-4C61-B323-65AADD76F783}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CPU", "CPU\CPU.csproj", "{6EBCF9CD-C6A9-4535-9154-2FC7E303BFC4}"
@@ -37,6 +39,14 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Newtonsoft.Json", "Newtonso
 		Third Party Libs\Newtonsoft.Json\Newtonsoft.Json.dll = Third Party Libs\Newtonsoft.Json\Newtonsoft.Json.dll
 		Third Party Libs\Newtonsoft.Json\Newtonsoft.Json.pdb = Third Party Libs\Newtonsoft.Json\Newtonsoft.Json.pdb
 		Third Party Libs\Newtonsoft.Json\Newtonsoft.Json.xml = Third Party Libs\Newtonsoft.Json\Newtonsoft.Json.xml
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "OxyPlot", "OxyPlot", "{751AC38C-E62E-4ADC-9676-4AE6C4B3B097}"
+	ProjectSection(SolutionItems) = preProject
+		Third Party Libs\OxyPlot\OxyPlot.dll = Third Party Libs\OxyPlot\OxyPlot.dll
+		Third Party Libs\OxyPlot\OxyPlot.pdb = Third Party Libs\OxyPlot\OxyPlot.pdb
+		Third Party Libs\OxyPlot\OxyPlot.Wpf.dll = Third Party Libs\OxyPlot\OxyPlot.Wpf.dll
+		Third Party Libs\OxyPlot\OxyPlot.Wpf.pdb = Third Party Libs\OxyPlot\OxyPlot.Wpf.pdb
 	EndProjectSection
 EndProject
 Global
@@ -103,5 +113,6 @@ Global
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{AE88583A-452C-4A99-8081-01DE09BE3D9E} = {14360FE8-C45B-4B96-8E6A-6E41590FB4EF}
+		{751AC38C-E62E-4ADC-9676-4AE6C4B3B097} = {14360FE8-C45B-4B96-8E6A-6E41590FB4EF}
 	EndGlobalSection
 EndGlobal
