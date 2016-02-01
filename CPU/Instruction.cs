@@ -805,7 +805,7 @@ namespace CPU_OS_Simulator.CPU
                     }
                     if (op2mem == EnumAddressType.INDIRECT)
                     {
-                        address = GetIndirectAddress(address);
+                        address = GetIndirectAddress(address - i) + i;
                     }
                     int pageNumber = address / MemoryPage.PAGE_SIZE;
                     int pageOffset = address % MemoryPage.PAGE_SIZE;
