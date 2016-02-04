@@ -19,6 +19,7 @@ namespace CPU_OS_Simulator.Controls.Graphs.ViewModels
         public MainViewModel()
         {
             PlotModel = new PlotModel();
+            Draw();
         }
 
         [NotifyPropertyChangedInvocator]
@@ -26,7 +27,13 @@ namespace CPU_OS_Simulator.Controls.Graphs.ViewModels
         {
             var handler = PropertyChanged;
 
-            if (handler != null) handler(this, new PropertyChangedEventArgs(propertyName));
+            if (handler != null)
+                handler(this, new PropertyChangedEventArgs(propertyName));
+            System.Console.WriteLine("Property " + propertyName + " Has Been Updated");
+        }
+
+        public virtual void Draw()
+        {
         }
     }
 }

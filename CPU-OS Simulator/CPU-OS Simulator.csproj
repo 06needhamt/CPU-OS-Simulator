@@ -92,6 +92,7 @@
     <Reference Include="System.Drawing" />
     <Reference Include="System.Printing" />
     <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -119,8 +120,12 @@
     <Compile Include="Controls\Graphs\CPUGraph.xaml.cs">
       <DependentUpon>CPUGraph.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Controls\Graphs\MemoryGraph.xaml.cs">
+      <DependentUpon>MemoryGraph.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Controls\Graphs\ViewModels\CPUGraphModel.cs" />
     <Compile Include="Controls\Graphs\ViewModels\MainViewModel.cs" />
+    <Compile Include="Controls\Graphs\ViewModels\MemoryGraphModel.cs" />
     <Compile Include="EnumInstructionMode.cs" />
     <Compile Include="EnumLogLevel.cs" />
     <Compile Include="FontPickerWindow.xaml.cs">
@@ -141,6 +146,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Controls\Graphs\CPUGraph.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\Graphs\MemoryGraph.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

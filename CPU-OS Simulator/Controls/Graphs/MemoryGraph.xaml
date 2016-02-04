@@ -1,4 +1,4 @@
-﻿<UserControl x:Class="CPU_OS_Simulator.Controls.Graphs.CPUGraph"
+﻿<UserControl x:Class="CPU_OS_Simulator.Controls.Graphs.MemoryGraph"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -7,11 +7,11 @@
              xmlns:local="clr-namespace:CPU_OS_Simulator.Controls.Graphs"
              xmlns:models="clr-namespace:CPU_OS_Simulator.Controls.Graphs.ViewModels"
              mc:Ignorable="d" 
-             d:DesignHeight="200" d:DesignWidth="200">
+             d:DesignHeight="300" d:DesignWidth="300">
     <UserControl.DataContext>
-        <models:CPUGraphModel/>
+        <models:MemoryGraphModel/>
     </UserControl.DataContext>
     <Grid x:Name="Root">
-        <oxy:PlotView Model="{Binding PlotModel}"/>
+        <oxy:PlotView Model="{Binding PlotModel}" Margin="0,0,-226,0"/>
     </Grid>
 </UserControl>
