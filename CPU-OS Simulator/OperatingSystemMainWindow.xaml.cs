@@ -888,5 +888,10 @@ namespace CPU_OS_Simulator
             ProcessListWindow window = new ProcessListWindow(this,processes);
             window.Show();
         }
+
+        private void btn_ViewUtilization_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

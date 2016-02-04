@@ -173,7 +173,7 @@
             </TabItem>
             <TabItem x:Name="ViewsTab" Header="Views" HorizontalAlignment="Left" Height="20" VerticalAlignment="Top" Width="54">
                 <Grid x:Name="ViewsGrid" Background="White">
-                    <Button x:Name="btn_ViewUtilization" HorizontalAlignment="Left" Margin="14,5,0,0" VerticalAlignment="Top" Width="105" Height="39">
+                    <Button x:Name="btn_ViewUtilization" HorizontalAlignment="Left" Margin="14,5,0,0" VerticalAlignment="Top" Width="105" Height="39" Click="btn_ViewUtilization_Click">
                         <TextBlock Text="VIEW UTILIZATION..." TextWrapping="Wrap" TextAlignment="Center"/>
                     </Button>
                     <Button x:Name="btn_ViewProcessList" HorizontalAlignment="Left" Margin="129,5,0,0" VerticalAlignment="Top" Width="105" Height="39" Click="btn_ViewProcessList_Click">

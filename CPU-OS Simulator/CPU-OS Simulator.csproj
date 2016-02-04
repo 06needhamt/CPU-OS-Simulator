@@ -116,6 +116,11 @@
     <Compile Include="ConsoleWindow.xaml.cs">
       <DependentUpon>ConsoleWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Controls\Graphs\CPUGraph.xaml.cs">
+      <DependentUpon>CPUGraph.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Graphs\ViewModels\CPUGraphModel.cs" />
+    <Compile Include="Controls\Graphs\ViewModels\MainViewModel.cs" />
     <Compile Include="EnumInstructionMode.cs" />
     <Compile Include="EnumLogLevel.cs" />
     <Compile Include="FontPickerWindow.xaml.cs">
@@ -124,11 +129,18 @@
     <Compile Include="InstructionsWindow.xaml.cs">
       <DependentUpon>InstructionsWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="UtilisationWindow.xaml.cs">
+      <DependentUpon>UtilisationWindow.xaml</DependentUpon>
+    </Compile>
     <Page Include="ColourPickerWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="ConsoleWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\Graphs\CPUGraph.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -180,6 +192,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="UtilisationWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="MemoryWindow.xaml.cs">
@@ -197,6 +213,7 @@
     <Compile Include="ProcessListWindow.xaml.cs">
       <DependentUpon>ProcessListWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Properties\Annotations.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -260,6 +277,7 @@
       <Name>Operating System</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
