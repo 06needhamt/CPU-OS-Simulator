@@ -66,16 +66,19 @@ namespace CPU_OS_Simulator.Controls.Graphs.ViewModels
             alloc.Items.Add(new ColumnItem(256));
             alloc.ColumnWidth = 25;
             alloc.FillColor = Colors.CornflowerBlue.ToOxyColor();
+            alloc.Title = "Allocated";
             PlotModel.Series.Add(alloc);
             ColumnSeries free = new ColumnSeries();
             free.Items.Add(new ColumnItem(512));
             free.ColumnWidth = 25;
             free.FillColor = Colors.GreenYellow.ToOxyColor();
+            free.Title = "Free";
             PlotModel.Series.Add(free);
             ColumnSeries swap = new ColumnSeries();
             swap.Items.Add(new ColumnItem(768));
             swap.ColumnWidth = 25;
             swap.FillColor = Colors.Red.ToOxyColor();
+            swap.Title = "Swap";
             PlotModel.Series.Add(swap);
 
         }
