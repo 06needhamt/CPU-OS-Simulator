@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CPU_OS_Simulator"
         mc:Ignorable="d"
-        Title="ProcessListWindow" Height="316.918" Width="476.017" Closing="ProcessListWindow1_Closing" ScrollViewer.VerticalScrollBarVisibility="Auto" ScrollViewer.CanContentScroll="True" ScrollViewer.HorizontalScrollBarVisibility="Auto" Loaded="ProcessListWindow1_Loaded" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
+        Title="ProcessListWindow" Height="316.918" Width="476.017" Closing="ProcessListWindow1_Closing" ScrollViewer.VerticalScrollBarVisibility="Auto" ScrollViewer.CanContentScroll="True" ScrollViewer.HorizontalScrollBarVisibility="Auto" Loaded="ProcessListWindow1_Loaded" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" Icon="CPU-OS Simulator 7-5-50_1.ico">
     <Grid x:Name="RootGrid">
         <ListView x:Name="lst_Processes" HorizontalAlignment="Left" Background="#FFFFFBAC" Height="229" VerticalAlignment="Top" Width="468">
             <ListView.View>

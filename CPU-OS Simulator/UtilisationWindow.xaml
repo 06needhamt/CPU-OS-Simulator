@@ -1,13 +1,48 @@
-﻿<Window x:Name="UtilisationWindow1" x:Class="CPU_OS_Simulator.UtilisationWindow"
+﻿<Window
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CPU_OS_Simulator"
+        xmlns:graphs="clr-namespace:CPU_OS_Simulator.Controls.Graphs"
         xmlns:oxy="clr-namespace:OxyPlot.Wpf;assembly=OxyPlot.Wpf"
+        xmlns:System="clr-namespace:System;assembly=mscorlib" x:Name="UtilisationWindow1" x:Class="CPU_OS_Simulator.UtilisationWindow"
         mc:Ignorable="d"
-        Title="UtilisationWindow" Height="400" Width="650" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
+        Title="UtilisationWindow" Height="414" Width="743" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" Icon="CPU-OS Simulator 7-5-50_1.ico" Closing="UtilisationWindow1_Closing">
     <Grid x:Name="RootGrid">
+        <GroupBox x:Name="grp_CPU" Header="" HorizontalAlignment="Left" VerticalAlignment="Top" Height="328" Width="314">
+            <Grid x:Name="cpu_groupGrid" HorizontalAlignment="Left" Height="328" Margin="0,-10,-2,-12" VerticalAlignment="Top" Width="304">
+                <Grid x:Name="cpu_GraphGrid" HorizontalAlignment="Left" Height="264" VerticalAlignment="Top" Width="304">
+                    <graphs:CPUGraph x:Name="CpuGraph">
 
+                    </graphs:CPUGraph>
+                </Grid>
+                <Label x:Name="label" Content="Graph Scale" HorizontalAlignment="Left" Margin="10,283,0,0" VerticalAlignment="Top"/>
+                <ComboBox x:Name="cmb_CPUGraphScale" HorizontalAlignment="Left" Margin="88,287,0,0" VerticalAlignment="Top" Width="53" SelectedIndex="3">
+                    <System:Int32>1</System:Int32>
+                    <System:Int32>2</System:Int32>
+                    <System:Int32>5</System:Int32>
+                    <System:Int32>10</System:Int32>
+                    <System:Int32>20</System:Int32>
+                </ComboBox>
+                <Button x:Name="btn_Reset" Content="RESET" HorizontalAlignment="Left" Margin="219,289,0,0" VerticalAlignment="Top" Width="75" Click="btn_Reset_Click"/>
+            </Grid>
+        </GroupBox>
+        <GroupBox x:Name="grp_Memory" Header="" HorizontalAlignment="Left" Margin="319,0,0,0" VerticalAlignment="Top" Height="328" Width="408">
+            <Grid x:Name="memory_groupGrid" HorizontalAlignment="Left" Height="328" Margin="0,-10,-2,-12" VerticalAlignment="Top" Width="412">
+                <Grid x:Name="memory_GraphGrid" HorizontalAlignment="Left" Height="264" VerticalAlignment="Top" Width="304">
+                    <graphs:MemoryGraph x:Name="MemoryGraph">
+
+                    </graphs:MemoryGraph>
+                </Grid>
+                <Button x:Name="btn_MemReset" Content="RESET" HorizontalAlignment="Left" Margin="306,289,0,0" VerticalAlignment="Top" Width="75" Click="btn_MemReset_Click"/>
+                <Label x:Name="label1" Content="Max Swap" HorizontalAlignment="Left" Margin="15,283,0,0" VerticalAlignment="Top"/>
+                <TextBox x:Name="txt_MaxSwap" HorizontalAlignment="Left" Height="23" Margin="84,286,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="78" Text="2560"/>
+                <Button x:Name="btn_SetSwap" Content="SET" HorizontalAlignment="Left" Margin="208,289,0,0" VerticalAlignment="Top" Width="75" Click="btn_SetSwap_Click"/>
+            </Grid>
+        </GroupBox>
+        <CheckBox x:Name="chk_StayOnTop" Content="Stay On Top" HorizontalAlignment="Left" Margin="10,348,0,0" VerticalAlignment="Top" Checked="chk_StayOnTop_Checked" Unchecked="chk_StayOnTop_Unchecked"/>
+        <Button x:Name="btn_ViewMemory" Content="VIEW MEMORY ..." HorizontalAlignment="Left" Margin="492,333,0,0" VerticalAlignment="Top" Width="106" Height="42"/>
+        <Button x:Name="btn_Close" Content="CLOSE" HorizontalAlignment="Left" Margin="609,333,0,0" VerticalAlignment="Top" Width="106" Height="42" Click="btn_Close_Click"/>
     </Grid>
 </Window>

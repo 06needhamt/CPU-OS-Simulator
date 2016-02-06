@@ -891,7 +891,8 @@ namespace CPU_OS_Simulator
 
         private void btn_ViewUtilization_Click(object sender, RoutedEventArgs e)
         {
-
+            UtilisationWindow window = new UtilisationWindow(this);
+            window.Show();
         }
     }
 }

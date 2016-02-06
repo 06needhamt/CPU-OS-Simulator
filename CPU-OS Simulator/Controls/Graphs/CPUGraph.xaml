@@ -12,6 +12,6 @@
         <models:CPUGraphModel/>
     </UserControl.DataContext>
     <Grid x:Name="Root">
-        <oxy:PlotView Model="{Binding PlotModel}"/>
+        <oxy:PlotView Model="{Binding PlotModel}" Background="BlanchedAlmond"/>
     </Grid>
 </UserControl>
