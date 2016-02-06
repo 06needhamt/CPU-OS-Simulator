@@ -1,0 +1,38 @@
+\hypertarget{class_provides_context_attribute}{}\section{Provides\+Context\+Attribute Class Reference}
+\label{class_provides_context_attribute}\index{Provides\+Context\+Attribute@{Provides\+Context\+Attribute}}
+
+
+Indicates the type member or parameter of some type, that should be used instead of all other ways to get the value that type. This annotation is useful when you have some \char`\"{}context\char`\"{} value evaluated and stored somewhere, meaning that all other ways to get this value must be consolidated with existing one.  
+
+
+Inheritance diagram for Provides\+Context\+Attribute\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_provides_context_attribute}
+\end{center}
+\end{figure}
+
+
+\subsection{Detailed Description}
+Indicates the type member or parameter of some type, that should be used instead of all other ways to get the value that type. This annotation is useful when you have some \char`\"{}context\char`\"{} value evaluated and stored somewhere, meaning that all other ways to get this value must be consolidated with existing one. 
+
+
+\begin{DoxyCode}
+\textcolor{keyword}{class }\hyperlink{_annotations_8cs_a710c2378b43f44cd4a9b365c85be5d6c}{Foo} \{
+  [ProvidesContext] IBarService \_barService = ...;
+
+  \textcolor{keywordtype}{void} ProcessNode(INode node) \{
+    DoSomething(node, node.GetGlobalServices().Bar);
+    \textcolor{comment}{//              ^ Warning: use value of '\_barService' field}
+  \}
+\}
+\end{DoxyCode}
+
+
+Definition at line 452 of file Annotations.\+cs.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+P\+U-\/\+O\+S Simulator/\+Properties/\hyperlink{_annotations_8cs}{Annotations.\+cs}\end{DoxyCompactItemize}

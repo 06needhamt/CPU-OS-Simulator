@@ -1,0 +1,35 @@
+\hypertarget{class_asp_mvc_action_selector_attribute}{}\section{Asp\+Mvc\+Action\+Selector\+Attribute Class Reference}
+\label{class_asp_mvc_action_selector_attribute}\index{Asp\+Mvc\+Action\+Selector\+Attribute@{Asp\+Mvc\+Action\+Selector\+Attribute}}
+
+
+A\+S\+P.\+N\+E\+T M\+V\+C attribute. When applied to a parameter of an attribute, indicates that this parameter is an M\+V\+C action name.  
+
+
+Inheritance diagram for Asp\+Mvc\+Action\+Selector\+Attribute\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_asp_mvc_action_selector_attribute}
+\end{center}
+\end{figure}
+
+
+\subsection{Detailed Description}
+A\+S\+P.\+N\+E\+T M\+V\+C attribute. When applied to a parameter of an attribute, indicates that this parameter is an M\+V\+C action name. 
+
+
+\begin{DoxyCode}
+[ActionName(\textcolor{stringliteral}{"Foo"})]
+\textcolor{keyword}{public} ActionResult Login(\textcolor{keywordtype}{string} returnUrl) \{
+  ViewBag.ReturnUrl = Url.Action(\textcolor{stringliteral}{"Foo"}); \textcolor{comment}{// OK}
+  \textcolor{keywordflow}{return} RedirectToAction(\textcolor{stringliteral}{"Bar"}); \textcolor{comment}{// Error: Cannot resolve action}
+\}
+\end{DoxyCode}
+
+
+Definition at line 757 of file Annotations.\+cs.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+P\+U-\/\+O\+S Simulator/\+Properties/\hyperlink{_annotations_8cs}{Annotations.\+cs}\end{DoxyCompactItemize}

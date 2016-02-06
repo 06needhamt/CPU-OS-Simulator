@@ -9,6 +9,7 @@ var class_c_p_u___o_s___simulator_1_1_operating_system_main_window =
     [ "btn_SaveState_Click", "class_c_p_u___o_s___simulator_1_1_operating_system_main_window.html#a41de5410a79f29c686ae3c52cb733de1", null ],
     [ "btn_Start_Click", "class_c_p_u___o_s___simulator_1_1_operating_system_main_window.html#a49ee2facd64a57c8a3450ccd5582dfff", null ],
     [ "btn_ViewProcessList_Click", "class_c_p_u___o_s___simulator_1_1_operating_system_main_window.html#a42980152348f9d1cee3fd0bb77346f65", null ],
+    [ "btn_ViewUtilization_Click", "class_c_p_u___o_s___simulator_1_1_operating_system_main_window.html#a622ee248dca3a212f7f3486b11825f78", null ],
     [ "btn_Wait_Click", "class_c_p_u___o_s___simulator_1_1_operating_system_main_window.html#a37aa75fec8d0549b2fdecd8923dc5199", null ],
     [ "chk_DelayedProcess_Checked", "class_c_p_u___o_s___simulator_1_1_operating_system_main_window.html#af5f4146e6a7a937a9951ab388710690f", null ],
     [ "chk_DelayedProcess_Unchecked", "class_c_p_u___o_s___simulator_1_1_operating_system_main_window.html#af44e2e2524c4d76e7af6d3e058fe594d", null ],

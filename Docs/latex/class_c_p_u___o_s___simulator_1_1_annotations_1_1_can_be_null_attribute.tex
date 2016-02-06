@@ -1,0 +1,36 @@
+\hypertarget{class_c_p_u___o_s___simulator_1_1_annotations_1_1_can_be_null_attribute}{}\section{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Annotations.\+Can\+Be\+Null\+Attribute Class Reference}
+\label{class_c_p_u___o_s___simulator_1_1_annotations_1_1_can_be_null_attribute}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Annotations.\+Can\+Be\+Null\+Attribute@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Annotations.\+Can\+Be\+Null\+Attribute}}
+
+
+Indicates that the value of the marked element could be {\ttfamily null} sometimes, so the check for {\ttfamily null} is necessary before its usage.  
+
+
+Inheritance diagram for C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Annotations.\+Can\+Be\+Null\+Attribute\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_c_p_u___o_s___simulator_1_1_annotations_1_1_can_be_null_attribute}
+\end{center}
+\end{figure}
+
+
+\subsection{Detailed Description}
+Indicates that the value of the marked element could be {\ttfamily null} sometimes, so the check for {\ttfamily null} is necessary before its usage. 
+
+
+\begin{DoxyCode}
+[CanBeNull] \textcolor{keywordtype}{object} Test() => \hyperlink{_old_01_process_01_flags_8cs_afb8e110345c45e74478894341ab6b28e}{null};
+
+\textcolor{keywordtype}{void} UseTest() \{
+  var p = Test();
+  var s = p.ToString(); \textcolor{comment}{// Warning: Possible 'System.NullReferenceException'}
+\}
+\end{DoxyCode}
+
+
+Definition at line 28 of file Annotations.\+cs.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+P\+U-\/\+O\+S Simulator/\+Properties/\hyperlink{_annotations_8cs}{Annotations.\+cs}\end{DoxyCompactItemize}

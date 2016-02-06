@@ -1,0 +1,42 @@
+\hypertarget{class_cannot_apply_equality_operator_attribute}{}\section{Cannot\+Apply\+Equality\+Operator\+Attribute Class Reference}
+\label{class_cannot_apply_equality_operator_attribute}\index{Cannot\+Apply\+Equality\+Operator\+Attribute@{Cannot\+Apply\+Equality\+Operator\+Attribute}}
+
+
+Indicates that the value of the marked type (or its derivatives) cannot be compared using \textquotesingle{}==\textquotesingle{} or \textquotesingle{}!=\textquotesingle{} operators and {\ttfamily Equals()} should be used instead. However, using \textquotesingle{}==\textquotesingle{} or \textquotesingle{}!=\textquotesingle{} for comparison with {\ttfamily null} is always permitted.  
+
+
+Inheritance diagram for Cannot\+Apply\+Equality\+Operator\+Attribute\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_cannot_apply_equality_operator_attribute}
+\end{center}
+\end{figure}
+
+
+\subsection{Detailed Description}
+Indicates that the value of the marked type (or its derivatives) cannot be compared using \textquotesingle{}==\textquotesingle{} or \textquotesingle{}!=\textquotesingle{} operators and {\ttfamily Equals()} should be used instead. However, using \textquotesingle{}==\textquotesingle{} or \textquotesingle{}!=\textquotesingle{} for comparison with {\ttfamily null} is always permitted. 
+
+
+\begin{DoxyCode}
+[CannotApplyEqualityOperator]
+\textcolor{keyword}{class }NoEquality \{ \}
+
+\textcolor{keyword}{class }UsesNoEquality \{
+  \textcolor{keywordtype}{void} Test() \{
+    var ca1 = \textcolor{keyword}{new} NoEquality();
+    var ca2 = \textcolor{keyword}{new} NoEquality();
+    \textcolor{keywordflow}{if} (ca1 != \hyperlink{_old_01_process_01_flags_8cs_afb8e110345c45e74478894341ab6b28e}{null}) \{ \textcolor{comment}{// OK}
+      \textcolor{keywordtype}{bool} condition = ca1 == ca2; \textcolor{comment}{// Warning}
+    \}
+  \}
+\}
+\end{DoxyCode}
+
+
+Definition at line 272 of file Annotations.\+cs.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+P\+U-\/\+O\+S Simulator/\+Properties/\hyperlink{_annotations_8cs}{Annotations.\+cs}\end{DoxyCompactItemize}

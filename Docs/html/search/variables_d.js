@@ -5,6 +5,7 @@ var searchData=
   ['nextsymbol',['nextSymbol',['../class_c_p_u___o_s___simulator_1_1_compiler_1_1_frontend_1_1_symbols_1_1_symbol_table.html#aae0b08c3eb5d6ada83e944352bc77ebb',1,'CPU_OS_Simulator::Compiler::Frontend::Symbols::SymbolTable']]],
   ['nexttoken',['nextToken',['../class_c_p_u___o_s___simulator_1_1_compiler_1_1_frontend_1_1_lexer.html#a9bdd0bc4e775f8708a1efebd0e84bc7c',1,'CPU_OS_Simulator::Compiler::Frontend::Lexer']]],
   ['nexttokenstring',['nextTokenString',['../class_c_p_u___o_s___simulator_1_1_compiler_1_1_frontend_1_1_lexer.html#a6795b61d4a157858e6471adb636a16f0',1,'CPU_OS_Simulator::Compiler::Frontend::Lexer']]],
+  ['notifications',['notifications',['../_annotations_8cs.html#a499afdc7b16351761369c64979c345e5',1,'Annotations.cs']]],
   ['null',['null',['../_old_01_process_01_flags_8cs.html#afb8e110345c45e74478894341ab6b28e',1,'Old Process Flags.cs']]],
   ['numberofoperands',['NumberOfOperands',['../class_c_p_u___o_s___simulator_1_1_instructions_window.html#a6a10065d655000cc37a281b242fb7fb5',1,'CPU_OS_Simulator::InstructionsWindow']]]
 ];

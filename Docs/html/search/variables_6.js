@@ -12,5 +12,6 @@ var searchData=
   ['fontstyles',['fontStyles',['../class_c_p_u___o_s___simulator_1_1_console_window.html#abe8a7e3f2f861cd266a24426b2ffbc1c',1,'CPU_OS_Simulator::ConsoleWindow']]],
   ['forcekill',['forceKill',['../class_c_p_u___o_s___simulator_1_1_operating___system_1_1_o_s_core.html#aaa9fd56285fb7a3d8718f81e8df847ac',1,'CPU_OS_Simulator.Operating_System.OSCore.forceKill()'],['../struct_c_p_u___o_s___simulator_1_1_operating___system_1_1_o_s_flags.html#a36b9fca448bc8bc9d3fa51063b9efce5',1,'CPU_OS_Simulator.Operating_System.OSFlags.forceKill()']]],
   ['framenumber',['frameNumber',['../class_c_p_u___o_s___simulator_1_1_memory_1_1_memory_page.html#aa2201f66e00641ff4eb07f881ac5413f',1,'CPU_OS_Simulator.Memory.MemoryPage.frameNumber()'],['../class_c_p_u___o_s___simulator_1_1_memory_1_1_page_table_entry.html#ab3e63e9a522928053429134a5da1be6f',1,'CPU_OS_Simulator.Memory.PageTableEntry.frameNumber()']]],
+  ['freebytes',['freeBytes',['../class_c_p_u___o_s___simulator_1_1_controls_1_1_graphs_1_1_view_models_1_1_memory_graph_model.html#accf22086ffe8ea5126a505ebd5ceeb5a',1,'CPU_OS_Simulator::Controls::Graphs::ViewModels::MemoryGraphModel']]],
   ['functions',['functions',['../class_c_p_u___o_s___simulator_1_1_compiler_1_1_frontend_1_1_lexer.html#ab56c14f20b221345bcb9ef4bdd7d5c87',1,'CPU_OS_Simulator::Compiler::Frontend::Lexer']]]
 ];

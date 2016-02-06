@@ -1,0 +1,35 @@
+\hypertarget{class_pure_attribute}{}\section{Pure\+Attribute Class Reference}
+\label{class_pure_attribute}\index{Pure\+Attribute@{Pure\+Attribute}}
+
+
+Indicates that a method does not make any observable state changes. The same as {\ttfamily System.\+Diagnostics.\+Contracts.\+Pure\+Attribute}.  
+
+
+Inheritance diagram for Pure\+Attribute\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_pure_attribute}
+\end{center}
+\end{figure}
+
+
+\subsection{Detailed Description}
+Indicates that a method does not make any observable state changes. The same as {\ttfamily System.\+Diagnostics.\+Contracts.\+Pure\+Attribute}. 
+
+
+\begin{DoxyCode}
+[Pure] \textcolor{keywordtype}{int} Multiply(\textcolor{keywordtype}{int} x, \textcolor{keywordtype}{int} y) => x * y;
+
+\textcolor{keywordtype}{void} M() \{
+  Multiply(123, 42); \textcolor{comment}{// Waring: Return value of pure method is not used}
+\}
+\end{DoxyCode}
+
+
+Definition at line 417 of file Annotations.\+cs.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+P\+U-\/\+O\+S Simulator/\+Properties/\hyperlink{_annotations_8cs}{Annotations.\+cs}\end{DoxyCompactItemize}

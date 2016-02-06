@@ -26,7 +26,8 @@ var NAVTREE =
         [ "All", "globals.html", null ],
         [ "Functions", "globals_func.html", null ],
         [ "Variables", "globals_vars.html", null ],
-        [ "Typedefs", "globals_type.html", null ]
+        [ "Typedefs", "globals_type.html", null ],
+        [ "Enumerations", "globals_enum.html", null ]
       ] ]
     ] ]
   ] ]
@@ -35,18 +36,20 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "_a_s_t_8cs.html",
-"_enum_opcodes_8cs.html#ac29c87bff87ad404c953b2581024043ea1d00e7dce692e8dc3f6877f035e3a616",
-"_memory_window_8xaml_8cs.html",
-"class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_execution_unit.html#af6807cb5343acc2c40a08166c748f1f0",
-"class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_tests_1_1_program_stack_tests.html#aa0f5fc338f3b32423b71181218721c40",
-"class_c_p_u___o_s___simulator_1_1_compiler_1_1_frontend_1_1_syntax_tree_1_1_object_array_node.html#ae2b8cfd71ef1f35f3f74d700fc542fc1",
-"class_c_p_u___o_s___simulator_1_1_instructions_window.html",
-"class_c_p_u___o_s___simulator_1_1_instructions_window.html#abe4b97375077fb5bfe686b84fd2a7b77",
-"class_c_p_u___o_s___simulator_1_1_main_window.html#adbb759abbf37061f785e82a9e7f7b3e1",
-"class_c_p_u___o_s___simulator_1_1_operating___system_1_1_o_s_core.html#ac620c813df8b2c9ea386cff20d3fee84",
-"class_c_p_u___o_s___simulator_1_1_operating___system_1_1_threading_1_1_simulator_thread.html#ae8ea167e131fbfed720951726b1b92c8",
-"class_c_p_u___o_s___simulator_1_1_process_list_window.html#a74ca7787bf825406ce05b71e357e29ed",
-"functions_vars_n.html"
+"_enum_keyword_type_8cs.html#a86b87efebad08200cebe3075b5812b13a696b031073e74bf2cb98e5ef201d4aa3",
+"_instruction_segment_8cs_source.html",
+"_status_flags_tests_8cs.html",
+"class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_number_of_operands_attribute.html#a00873634b211bcf2fd8b1425aa5143d6",
+"class_c_p_u___o_s___simulator_1_1_compiler_1_1_frontend_1_1_symbols_1_1_function.html",
+"class_c_p_u___o_s___simulator_1_1_compiler_tester_1_1_main_window.html#ab5592e604de397f2517ac3754544b6c1",
+"class_c_p_u___o_s___simulator_1_1_instructions_window.html#a30064f400e25a6b155a34108a3fba816",
+"class_c_p_u___o_s___simulator_1_1_instructions_window.html#af4fcd7a0d54d2cfcdf44a209eefa7d93",
+"class_c_p_u___o_s___simulator_1_1_memory_1_1_memory_page.html#a6fe2e28385db19a1968a41efe3df3f38",
+"class_c_p_u___o_s___simulator_1_1_operating___system_1_1_process_control_block.html#ac1559146d5dd5b86333a16fb2256f256",
+"class_c_p_u___o_s___simulator_1_1_operating_system_main_window.html#a07752984a7eedac5dab517b7f57b9af2",
+"class_c_p_u___o_s___simulator_1_1_save___file___editor_1_1_main_window.html#ac7273f5cbb0c6d3d0d50b763cff3e68e",
+"dir_dd26492dc5e44d7684f46df38a97d3db.html",
+"struct_c_p_u___o_s___simulator_1_1_operating___system_1_1_process_flags.html#a28dbea54b61ff7f12d5dc8c3c40f632d"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

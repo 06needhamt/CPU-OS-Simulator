@@ -1,0 +1,38 @@
+\hypertarget{class_source_template_attribute}{}\section{Source\+Template\+Attribute Class Reference}
+\label{class_source_template_attribute}\index{Source\+Template\+Attribute@{Source\+Template\+Attribute}}
+
+
+An extension method marked with this attribute is processed by Re\+Sharper code completion as a \textquotesingle{}Source Template\textquotesingle{}. When extension method is completed over some expression, it\textquotesingle{}s source code is automatically expanded like a template at call site.  
+
+
+Inheritance diagram for Source\+Template\+Attribute\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_source_template_attribute}
+\end{center}
+\end{figure}
+
+
+\subsection{Detailed Description}
+An extension method marked with this attribute is processed by Re\+Sharper code completion as a \textquotesingle{}Source Template\textquotesingle{}. When extension method is completed over some expression, it\textquotesingle{}s source code is automatically expanded like a template at call site. 
+
+Template method body can contain valid source code and/or special comments starting with \textquotesingle{}\$\textquotesingle{}. Text inside these comments is added as source code when the template is applied. Template parameters can be used either as additional method parameters or as identifiers wrapped in two \textquotesingle{}\$\textquotesingle{} signs. Use the \hyperlink{class_macro_attribute}{Macro\+Attribute} attribute to specify macros for parameters. 
+
+In this example, the \textquotesingle{}for\+Each\textquotesingle{} method is a source template available over all values of enumerable types, producing ordinary C\# \textquotesingle{}foreach\textquotesingle{} statement and placing caret inside block\+: 
+\begin{DoxyCode}
+[SourceTemplate]
+\textcolor{keyword}{public} \textcolor{keyword}{static} \textcolor{keywordtype}{void} forEach<T>(\textcolor{keyword}{this} IEnumerable<T> xs) \{
+  \textcolor{keywordflow}{foreach} (var x \textcolor{keywordflow}{in} xs) \{
+     \textcolor{comment}{//$ $END$}
+  \}
+\}
+\end{DoxyCode}
+ 
+
+Definition at line 494 of file Annotations.\+cs.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+P\+U-\/\+O\+S Simulator/\+Properties/\hyperlink{_annotations_8cs}{Annotations.\+cs}\end{DoxyCompactItemize}

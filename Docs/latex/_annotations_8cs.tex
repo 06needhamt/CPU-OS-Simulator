@@ -1,0 +1,348 @@
+\hypertarget{_annotations_8cs}{}\section{C\+P\+U-\/\+O\+S Simulator/\+Properties/\+Annotations.cs File Reference}
+\label{_annotations_8cs}\index{C\+P\+U-\/\+O\+S Simulator/\+Properties/\+Annotations.\+cs@{C\+P\+U-\/\+O\+S Simulator/\+Properties/\+Annotations.\+cs}}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{class_c_p_u___o_s___simulator_1_1_annotations_1_1_can_be_null_attribute}{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Annotations.\+Can\+Be\+Null\+Attribute}
+\begin{DoxyCompactList}\small\item\em Indicates that the value of the marked element could be {\ttfamily null} sometimes, so the check for {\ttfamily null} is necessary before its usage. \end{DoxyCompactList}\item 
+class \hyperlink{class_c_p_u___o_s___simulator_1_1_annotations_1_1_not_null_attribute}{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Annotations.\+Not\+Null\+Attribute}
+\begin{DoxyCompactList}\small\item\em Indicates that the value of the marked element could never be {\ttfamily null}. \end{DoxyCompactList}\item 
+class \hyperlink{class_c_p_u___o_s___simulator_1_1_annotations_1_1_item_not_null_attribute}{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Annotations.\+Item\+Not\+Null\+Attribute}
+\begin{DoxyCompactList}\small\item\em Can be appplied to symbols of types derived from I\+Enumerable as well as to symbols of Task and Lazy classes to indicate that the value of a collection item, of the Task.\+Result property or of the Lazy.\+Value property can never be null. \end{DoxyCompactList}\item 
+class \hyperlink{class_c_p_u___o_s___simulator_1_1_annotations_1_1_item_can_be_null_attribute}{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Annotations.\+Item\+Can\+Be\+Null\+Attribute}
+\begin{DoxyCompactList}\small\item\em Can be appplied to symbols of types derived from I\+Enumerable as well as to symbols of Task and Lazy classes to indicate that the value of a collection item, of the Task.\+Result property or of the Lazy.\+Value property can be null. \end{DoxyCompactList}\item 
+class \hyperlink{class_string_format_method_attribute}{String\+Format\+Method\+Attribute}
+\item 
+class \hyperlink{class_value_provider_attribute}{Value\+Provider\+Attribute}
+\begin{DoxyCompactList}\small\item\em For a parameter that is expected to be one of the limited set of values. Specify fields of which type should be used as values for this parameter. \end{DoxyCompactList}\item 
+class \hyperlink{class_invoker_parameter_name_attribute}{Invoker\+Parameter\+Name\+Attribute}
+\begin{DoxyCompactList}\small\item\em Indicates that the function argument should be string literal and match one of the parameters of the caller function. For example, Re\+Sharper annotates the parameter of System.\+Argument\+Null\+Exception. \end{DoxyCompactList}\item 
+class \hyperlink{class_notify_property_changed_invocator_attribute}{Notify\+Property\+Changed\+Invocator\+Attribute}
+\item 
+class \hyperlink{class_contract_annotation_attribute}{Contract\+Annotation\+Attribute}
+\begin{DoxyCompactList}\small\item\em Describes dependency between method input and output. \end{DoxyCompactList}\item 
+class \hyperlink{class_localization_required_attribute}{Localization\+Required\+Attribute}
+\begin{DoxyCompactList}\small\item\em Indicates that marked element should be localized or not. \end{DoxyCompactList}\item 
+class \hyperlink{class_cannot_apply_equality_operator_attribute}{Cannot\+Apply\+Equality\+Operator\+Attribute}
+\begin{DoxyCompactList}\small\item\em Indicates that the value of the marked type (or its derivatives) cannot be compared using \textquotesingle{}==\textquotesingle{} or \textquotesingle{}!=\textquotesingle{} operators and {\ttfamily Equals()} should be used instead. However, using \textquotesingle{}==\textquotesingle{} or \textquotesingle{}!=\textquotesingle{} for comparison with {\ttfamily null} is always permitted. \end{DoxyCompactList}\item 
+class \hyperlink{class_base_type_required_attribute}{Base\+Type\+Required\+Attribute}
+\begin{DoxyCompactList}\small\item\em When applied to a target attribute, specifies a requirement for any type marked with the target attribute to implement or inherit specific type or types. \end{DoxyCompactList}\item 
+class \hyperlink{class_used_implicitly_attribute}{Used\+Implicitly\+Attribute}
+\begin{DoxyCompactList}\small\item\em Indicates that the marked symbol is used implicitly (e.\+g. via reflection, in external library), so this symbol will not be marked as unused (as well as by other usage inspections). \end{DoxyCompactList}\item 
+class \hyperlink{class_means_implicit_use_attribute}{Means\+Implicit\+Use\+Attribute}
+\begin{DoxyCompactList}\small\item\em Should be used on attributes and causes Re\+Sharper to not mark symbols marked with such attributes as unused (as well as by other usage inspections) \end{DoxyCompactList}\item 
+class \hyperlink{class_public_a_p_i_attribute}{Public\+A\+P\+I\+Attribute}
+\begin{DoxyCompactList}\small\item\em This attribute is intended to mark publicly available A\+P\+I which should not be removed and so is treated as used. \end{DoxyCompactList}\item 
+class \hyperlink{class_instant_handle_attribute}{Instant\+Handle\+Attribute}
+\begin{DoxyCompactList}\small\item\em Tells code analysis engine if the parameter is completely handled when the invoked method is on stack. If the parameter is a delegate, indicates that delegate is executed while the method is executed. If the parameter is an enumerable, indicates that it is enumerated while the method is executed. \end{DoxyCompactList}\item 
+class \hyperlink{class_pure_attribute}{Pure\+Attribute}
+\begin{DoxyCompactList}\small\item\em Indicates that a method does not make any observable state changes. The same as {\ttfamily System.\+Diagnostics.\+Contracts.\+Pure\+Attribute}. \end{DoxyCompactList}\item 
+class \hyperlink{class_must_use_return_value_attribute}{Must\+Use\+Return\+Value\+Attribute}
+\begin{DoxyCompactList}\small\item\em Indicates that the return value of method invocation must be used. \end{DoxyCompactList}\item 
+class \hyperlink{class_provides_context_attribute}{Provides\+Context\+Attribute}
+\begin{DoxyCompactList}\small\item\em Indicates the type member or parameter of some type, that should be used instead of all other ways to get the value that type. This annotation is useful when you have some \char`\"{}context\char`\"{} value evaluated and stored somewhere, meaning that all other ways to get this value must be consolidated with existing one. \end{DoxyCompactList}\item 
+class \hyperlink{class_path_reference_attribute}{Path\+Reference\+Attribute}
+\begin{DoxyCompactList}\small\item\em Indicates that a parameter is a path to a file or a folder within a web project. Path can be relative or absolute, starting from web root ($\sim$). \end{DoxyCompactList}\item 
+class \hyperlink{class_source_template_attribute}{Source\+Template\+Attribute}
+\begin{DoxyCompactList}\small\item\em An extension method marked with this attribute is processed by Re\+Sharper code completion as a \textquotesingle{}Source Template\textquotesingle{}. When extension method is completed over some expression, it\textquotesingle{}s source code is automatically expanded like a template at call site. \end{DoxyCompactList}\item 
+class \hyperlink{class_macro_attribute}{Macro\+Attribute}
+\begin{DoxyCompactList}\small\item\em Allows specifying a macro for a parameter of a \hyperlink{class_source_template_attribute}{source template}. \end{DoxyCompactList}\item 
+class \hyperlink{class_asp_mvc_area_master_location_format_attribute}{Asp\+Mvc\+Area\+Master\+Location\+Format\+Attribute}
+\item 
+class \hyperlink{class_asp_mvc_area_partial_view_location_format_attribute}{Asp\+Mvc\+Area\+Partial\+View\+Location\+Format\+Attribute}
+\item 
+class \hyperlink{class_asp_mvc_area_view_location_format_attribute}{Asp\+Mvc\+Area\+View\+Location\+Format\+Attribute}
+\item 
+class \hyperlink{class_asp_mvc_master_location_format_attribute}{Asp\+Mvc\+Master\+Location\+Format\+Attribute}
+\item 
+class \hyperlink{class_asp_mvc_partial_view_location_format_attribute}{Asp\+Mvc\+Partial\+View\+Location\+Format\+Attribute}
+\item 
+class \hyperlink{class_asp_mvc_view_location_format_attribute}{Asp\+Mvc\+View\+Location\+Format\+Attribute}
+\item 
+class \hyperlink{class_asp_mvc_action_attribute}{Asp\+Mvc\+Action\+Attribute}
+\begin{DoxyCompactList}\small\item\em A\+S\+P.\+N\+E\+T M\+V\+C attribute. If applied to a parameter, indicates that the parameter is an M\+V\+C action. If applied to a method, the M\+V\+C action name is calculated implicitly from the context. Use this attribute for custom wrappers similar to {\ttfamily System.\+Web.\+Mvc.\+Html.\+Child\+Action\+Extensions.\+Render\+Action(\+Html\+Helper, String)}. \end{DoxyCompactList}\item 
+class \hyperlink{class_asp_mvc_area_attribute}{Asp\+Mvc\+Area\+Attribute}
+\begin{DoxyCompactList}\small\item\em A\+S\+P.\+N\+E\+T M\+V\+C attribute. Indicates that a parameter is an M\+V\+C area. Use this attribute for custom wrappers similar to {\ttfamily System.\+Web.\+Mvc.\+Html.\+Child\+Action\+Extensions.\+Render\+Action(\+Html\+Helper, String)}. \end{DoxyCompactList}\item 
+class \hyperlink{class_asp_mvc_controller_attribute}{Asp\+Mvc\+Controller\+Attribute}
+\begin{DoxyCompactList}\small\item\em A\+S\+P.\+N\+E\+T M\+V\+C attribute. If applied to a parameter, indicates that the parameter is an M\+V\+C controller. If applied to a method, the M\+V\+C controller name is calculated implicitly from the context. Use this attribute for custom wrappers similar to {\ttfamily System.\+Web.\+Mvc.\+Html.\+Child\+Action\+Extensions.\+Render\+Action(\+Html\+Helper, String, String)}. \end{DoxyCompactList}\item 
+class \hyperlink{class_asp_mvc_master_attribute}{Asp\+Mvc\+Master\+Attribute}
+\begin{DoxyCompactList}\small\item\em A\+S\+P.\+N\+E\+T M\+V\+C attribute. Indicates that a parameter is an M\+V\+C Master. Use this attribute for custom wrappers similar to {\ttfamily System.\+Web.\+Mvc.\+Controller.\+View(\+String, String)}. \end{DoxyCompactList}\item 
+class \hyperlink{class_asp_mvc_model_type_attribute}{Asp\+Mvc\+Model\+Type\+Attribute}
+\begin{DoxyCompactList}\small\item\em A\+S\+P.\+N\+E\+T M\+V\+C attribute. Indicates that a parameter is an M\+V\+C model type. Use this attribute for custom wrappers similar to {\ttfamily System.\+Web.\+Mvc.\+Controller.\+View(\+String, Object)}. \end{DoxyCompactList}\item 
+class \hyperlink{class_asp_mvc_partial_view_attribute}{Asp\+Mvc\+Partial\+View\+Attribute}
+\begin{DoxyCompactList}\small\item\em A\+S\+P.\+N\+E\+T M\+V\+C attribute. If applied to a parameter, indicates that the parameter is an M\+V\+C partial view. If applied to a method, the M\+V\+C partial view name is calculated implicitly from the context. Use this attribute for custom wrappers similar to {\ttfamily System.\+Web.\+Mvc.\+Html.\+Render\+Partial\+Extensions.\+Render\+Partial(\+Html\+Helper, String)}. \end{DoxyCompactList}\item 
+class \hyperlink{class_asp_mvc_suppress_view_error_attribute}{Asp\+Mvc\+Suppress\+View\+Error\+Attribute}
+\begin{DoxyCompactList}\small\item\em A\+S\+P.\+N\+E\+T M\+V\+C attribute. Allows disabling inspections for M\+V\+C views within a class or a method. \end{DoxyCompactList}\item 
+class \hyperlink{class_asp_mvc_display_template_attribute}{Asp\+Mvc\+Display\+Template\+Attribute}
+\begin{DoxyCompactList}\small\item\em A\+S\+P.\+N\+E\+T M\+V\+C attribute. Indicates that a parameter is an M\+V\+C display template. Use this attribute for custom wrappers similar to {\ttfamily System.\+Web.\+Mvc.\+Html.\+Display\+Extensions.\+Display\+For\+Model(\+Html\+Helper, String)}. \end{DoxyCompactList}\item 
+class \hyperlink{class_asp_mvc_editor_template_attribute}{Asp\+Mvc\+Editor\+Template\+Attribute}
+\begin{DoxyCompactList}\small\item\em A\+S\+P.\+N\+E\+T M\+V\+C attribute. Indicates that a parameter is an M\+V\+C editor template. Use this attribute for custom wrappers similar to {\ttfamily System.\+Web.\+Mvc.\+Html.\+Editor\+Extensions.\+Editor\+For\+Model(\+Html\+Helper, String)}. \end{DoxyCompactList}\item 
+class \hyperlink{class_asp_mvc_template_attribute}{Asp\+Mvc\+Template\+Attribute}
+\begin{DoxyCompactList}\small\item\em A\+S\+P.\+N\+E\+T M\+V\+C attribute. Indicates that a parameter is an M\+V\+C template. Use this attribute for custom wrappers similar to {\ttfamily System.\+Component\+Model.\+Data\+Annotations.\+U\+I\+Hint\+Attribute(System.\+String)}. \end{DoxyCompactList}\item 
+class \hyperlink{class_asp_mvc_view_attribute}{Asp\+Mvc\+View\+Attribute}
+\begin{DoxyCompactList}\small\item\em A\+S\+P.\+N\+E\+T M\+V\+C attribute. If applied to a parameter, indicates that the parameter is an M\+V\+C view component. If applied to a method, the M\+V\+C view name is calculated implicitly from the context. Use this attribute for custom wrappers similar to {\ttfamily System.\+Web.\+Mvc.\+Controller.\+View(\+Object)}. \end{DoxyCompactList}\item 
+class \hyperlink{class_asp_mvc_view_component_attribute}{Asp\+Mvc\+View\+Component\+Attribute}
+\begin{DoxyCompactList}\small\item\em A\+S\+P.\+N\+E\+T M\+V\+C attribute. If applied to a parameter, indicates that the parameter is an M\+V\+C view component name. \end{DoxyCompactList}\item 
+class \hyperlink{class_asp_mvc_view_component_view_attribute}{Asp\+Mvc\+View\+Component\+View\+Attribute}
+\begin{DoxyCompactList}\small\item\em A\+S\+P.\+N\+E\+T M\+V\+C attribute. If applied to a parameter, indicates that the parameter is an M\+V\+C view component view. If applied to a method, the M\+V\+C view component view name is default. \end{DoxyCompactList}\item 
+class \hyperlink{class_asp_mvc_action_selector_attribute}{Asp\+Mvc\+Action\+Selector\+Attribute}
+\begin{DoxyCompactList}\small\item\em A\+S\+P.\+N\+E\+T M\+V\+C attribute. When applied to a parameter of an attribute, indicates that this parameter is an M\+V\+C action name. \end{DoxyCompactList}\item 
+class \hyperlink{class_html_element_attributes_attribute}{Html\+Element\+Attributes\+Attribute}
+\item 
+class \hyperlink{class_html_attribute_value_attribute}{Html\+Attribute\+Value\+Attribute}
+\item 
+class \hyperlink{class_razor_section_attribute}{Razor\+Section\+Attribute}
+\begin{DoxyCompactList}\small\item\em Razor attribute. Indicates that a parameter or a method is a Razor section. Use this attribute for custom wrappers similar to {\ttfamily System.\+Web.\+Web\+Pages.\+Web\+Page\+Base.\+Render\+Section(\+String)}. \end{DoxyCompactList}\item 
+class \hyperlink{class_collection_access_attribute}{Collection\+Access\+Attribute}
+\begin{DoxyCompactList}\small\item\em Indicates how method, constructor invocation or property access over collection type affects content of the collection. \end{DoxyCompactList}\item 
+class \hyperlink{class_assertion_method_attribute}{Assertion\+Method\+Attribute}
+\begin{DoxyCompactList}\small\item\em Indicates that the marked method is assertion method, i.\+e. it halts control flow if one of the conditions is satisfied. To set the condition, mark one of the parameters with \hyperlink{class_assertion_condition_attribute}{Assertion\+Condition\+Attribute} attribute. \end{DoxyCompactList}\item 
+class \hyperlink{class_assertion_condition_attribute}{Assertion\+Condition\+Attribute}
+\begin{DoxyCompactList}\small\item\em Indicates the condition parameter of the assertion method. The method itself should be marked by \hyperlink{class_assertion_method_attribute}{Assertion\+Method\+Attribute} attribute. The mandatory argument of the attribute is the assertion type. \end{DoxyCompactList}\item 
+class \hyperlink{class_terminates_program_attribute}{Terminates\+Program\+Attribute}
+\begin{DoxyCompactList}\small\item\em Indicates that the marked method unconditionally terminates control flow execution. For example, it could unconditionally throw exception. \end{DoxyCompactList}\item 
+class \hyperlink{class_linq_tunnel_attribute}{Linq\+Tunnel\+Attribute}
+\begin{DoxyCompactList}\small\item\em Indicates that method is pure L\+I\+N\+Q method, with postponed enumeration (like Enumerable.\+Select, .Where). This annotation allows inference of \mbox{[}Instant\+Handle\mbox{]} annotation for parameters of delegate type by analyzing L\+I\+N\+Q method chains. \end{DoxyCompactList}\item 
+class \hyperlink{class_no_enumeration_attribute}{No\+Enumeration\+Attribute}
+\begin{DoxyCompactList}\small\item\em Indicates that I\+Enumerable, passed as parameter, is not enumerated. \end{DoxyCompactList}\item 
+class \hyperlink{class_regex_pattern_attribute}{Regex\+Pattern\+Attribute}
+\begin{DoxyCompactList}\small\item\em Indicates that parameter is regular expression pattern. \end{DoxyCompactList}\item 
+class \hyperlink{class_xaml_items_control_attribute}{Xaml\+Items\+Control\+Attribute}
+\begin{DoxyCompactList}\small\item\em X\+A\+M\+L attribute. Indicates the type that has {\ttfamily Items\+Source} property and should be treated as {\ttfamily Items\+Control}-\/derived type, to enable inner items {\ttfamily Data\+Context} type resolve. \end{DoxyCompactList}\item 
+class \hyperlink{class_xaml_item_binding_of_items_control_attribute}{Xaml\+Item\+Binding\+Of\+Items\+Control\+Attribute}
+\begin{DoxyCompactList}\small\item\em X\+A\+M\+L attribute. Indicates the property of some {\ttfamily Binding\+Base}-\/derived type, that is used to bind some item of {\ttfamily Items\+Control}-\/derived type. This annotation will enable the {\ttfamily Data\+Context} type resolve for X\+A\+M\+L bindings for such properties. \end{DoxyCompactList}\item 
+class \hyperlink{class_asp_child_control_type_attribute}{Asp\+Child\+Control\+Type\+Attribute}
+\item 
+class \hyperlink{class_asp_data_field_attribute}{Asp\+Data\+Field\+Attribute}
+\item 
+class \hyperlink{class_asp_data_fields_attribute}{Asp\+Data\+Fields\+Attribute}
+\item 
+class \hyperlink{class_asp_method_property_attribute}{Asp\+Method\+Property\+Attribute}
+\item 
+class \hyperlink{class_asp_required_attribute_attribute}{Asp\+Required\+Attribute\+Attribute}
+\item 
+class \hyperlink{class_asp_type_property_attribute}{Asp\+Type\+Property\+Attribute}
+\item 
+class \hyperlink{class_razor_import_namespace_attribute}{Razor\+Import\+Namespace\+Attribute}
+\item 
+class \hyperlink{class_razor_injection_attribute}{Razor\+Injection\+Attribute}
+\item 
+class \hyperlink{class_razor_helper_common_attribute}{Razor\+Helper\+Common\+Attribute}
+\item 
+class \hyperlink{class_razor_layout_attribute}{Razor\+Layout\+Attribute}
+\item 
+class \hyperlink{class_razor_write_literal_method_attribute}{Razor\+Write\+Literal\+Method\+Attribute}
+\item 
+class \hyperlink{class_razor_write_method_attribute}{Razor\+Write\+Method\+Attribute}
+\item 
+class \hyperlink{class_razor_write_method_parameter_attribute}{Razor\+Write\+Method\+Parameter\+Attribute}
+\item 
+class \hyperlink{class_no_reorder}{No\+Reorder}
+\begin{DoxyCompactList}\small\item\em Prevents the Member Reordering feature from tossing members of the marked class. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \hyperlink{namespace_c_p_u___o_s___simulator_1_1_annotations}{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Annotations}
+\end{DoxyCompactItemize}
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{_annotations_8cs_acc26806cec0b003502b38c6c2ee67fd1}{Implicit\+Use\+Kind\+Flags} \{ \\*
+\hyperlink{_annotations_8cs_acc26806cec0b003502b38c6c2ee67fd1a7a1920d61156abc05a60135aefe8bc67}{Implicit\+Use\+Kind\+Flags.\+Default} = Access $\vert$ Assign $\vert$ Instantiated\+With\+Fixed\+Constructor\+Signature, 
+\hyperlink{_annotations_8cs_acc26806cec0b003502b38c6c2ee67fd1abf733d8a933c1601697f364223fc7ecb}{Implicit\+Use\+Kind\+Flags.\+Access} = 1, 
+\hyperlink{_annotations_8cs_acc26806cec0b003502b38c6c2ee67fd1a185b7133db22230701a857c059360cc2}{Implicit\+Use\+Kind\+Flags.\+Assign} = 2, 
+\hyperlink{_annotations_8cs_acc26806cec0b003502b38c6c2ee67fd1a88199ed5f1baf0dc6ed80a0db9336403}{Implicit\+Use\+Kind\+Flags.\+Instantiated\+With\+Fixed\+Constructor\+Signature} = 4, 
+\\*
+\hyperlink{_annotations_8cs_acc26806cec0b003502b38c6c2ee67fd1a4ea3601c5369a85043a3d88bbe23d4f6}{Implicit\+Use\+Kind\+Flags.\+Instantiated\+No\+Fixed\+Constructor\+Signature} = 8
+ \}
+\item 
+enum \hyperlink{_annotations_8cs_a59f21202ead30f3d1e2093e42214bf7c}{Implicit\+Use\+Target\+Flags} \{ \hyperlink{_annotations_8cs_a59f21202ead30f3d1e2093e42214bf7ca7a1920d61156abc05a60135aefe8bc67}{Implicit\+Use\+Target\+Flags.\+Default} = Itself, 
+\hyperlink{_annotations_8cs_a59f21202ead30f3d1e2093e42214bf7cad24a614afd61a4a9097269b8a7225209}{Implicit\+Use\+Target\+Flags.\+Itself} = 1, 
+\hyperlink{_annotations_8cs_a59f21202ead30f3d1e2093e42214bf7caef53538ae41a651c7f72ab6cb1135d8c}{Implicit\+Use\+Target\+Flags.\+Members} = 2, 
+\hyperlink{_annotations_8cs_a59f21202ead30f3d1e2093e42214bf7ca5583bb135f4d32715af96327c369e623}{Implicit\+Use\+Target\+Flags.\+With\+Members} = Itself $\vert$ Members
+ \}\begin{DoxyCompactList}\small\item\em Specify what is considered used implicitly when marked with \hyperlink{class_means_implicit_use_attribute}{Means\+Implicit\+Use\+Attribute} or \hyperlink{class_used_implicitly_attribute}{Used\+Implicitly\+Attribute}. \end{DoxyCompactList}
+\item 
+enum \hyperlink{_annotations_8cs_ac934271c5bff522bfe4934d1e7be46a8}{Collection\+Access\+Type} \{ \hyperlink{_annotations_8cs_ac934271c5bff522bfe4934d1e7be46a8a6adf97f83acf6453d4a6a4b1070f3754}{Collection\+Access\+Type.\+None} = 0, 
+\hyperlink{_annotations_8cs_ac934271c5bff522bfe4934d1e7be46a8a7a1a5f3e79fdc91edf2f5ead9d66abb4}{Collection\+Access\+Type.\+Read} = 1, 
+\hyperlink{_annotations_8cs_ac934271c5bff522bfe4934d1e7be46a8aabf21948b8bdc6b576703a901052dc09}{Collection\+Access\+Type.\+Modify\+Existing\+Content} = 2, 
+\hyperlink{_annotations_8cs_ac934271c5bff522bfe4934d1e7be46a8a424cc5446574f01d7f484e158b23d001}{Collection\+Access\+Type.\+Updated\+Content} = Modify\+Existing\+Content $\vert$ 4
+ \}
+\item 
+enum \hyperlink{_annotations_8cs_a016c132b1d3a6c75524ade006560e87d}{Assertion\+Condition\+Type} \{ \hyperlink{_annotations_8cs_a016c132b1d3a6c75524ade006560e87da23cd5ba5c6eed3d82ba0c6c0526df429}{Assertion\+Condition\+Type.\+I\+S\+\_\+\+T\+R\+U\+E} = 0, 
+\hyperlink{_annotations_8cs_a016c132b1d3a6c75524ade006560e87dadeab83d56dee7ab418359a59b4ff2eb0}{Assertion\+Condition\+Type.\+I\+S\+\_\+\+F\+A\+L\+S\+E} = 1, 
+\hyperlink{_annotations_8cs_a016c132b1d3a6c75524ade006560e87dadbd9c38e0339e6c34bd48cafc59be388}{Assertion\+Condition\+Type.\+I\+S\+\_\+\+N\+U\+L\+L} = 2, 
+\hyperlink{_annotations_8cs_a016c132b1d3a6c75524ade006560e87da05dd132ba23ff57c0ca5ec4100c31fdc}{Assertion\+Condition\+Type.\+I\+S\+\_\+\+N\+O\+T\+\_\+\+N\+U\+L\+L} = 3
+ \}\begin{DoxyCompactList}\small\item\em Specifies assertion type. If the assertion method argument satisfies the condition, then the execution continues. Otherwise, execution is assumed to be halted. \end{DoxyCompactList}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+$\ast$$\ast$void \hyperlink{_annotations_8cs_a710c2378b43f44cd4a9b365c85be5d6c}{Foo} ()
+\item 
+Property$<$/c $>$$<$/item $>$ $\ast$$<$ item $>$$<$ c $>$ \hyperlink{_annotations_8cs_a5e8ab77459b9872b3c9d41933e139809}{Notify\+Changed} ((V\+M x)=\&gt;x.\+Property)$<$/c $>$$<$/item $>$ $\ast$$<$ item $>$$<$ c $>$Set\+Property(ref my\+Field
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+$\ast$$\ast$$\ast$$<$/code $>$ $\ast$Examples of generated \hyperlink{_annotations_8cs_a499afdc7b16351761369c64979c345e5}{notifications}
+\begin{DoxyCompactList}\small\item\em Indicates that the method is contained in a type that implements {\ttfamily System.\+Component\+Model.\+I\+Notify\+Property\+Changed} interface and this method is used to notify that some property value changed. \end{DoxyCompactList}\item 
+Property$<$/c $>$$<$/item $>$ $\ast$$<$ item $>$$<$ c $>$ \hyperlink{_annotations_8cs_aa47dc10177d95db720062975cdba1f3a}{value}
+\end{DoxyCompactItemize}
+
+
+\subsection{Enumeration Type Documentation}
+\hypertarget{_annotations_8cs_a016c132b1d3a6c75524ade006560e87d}{}\index{Annotations.\+cs@{Annotations.\+cs}!Assertion\+Condition\+Type@{Assertion\+Condition\+Type}}
+\index{Assertion\+Condition\+Type@{Assertion\+Condition\+Type}!Annotations.\+cs@{Annotations.\+cs}}
+\subsubsection[{Assertion\+Condition\+Type}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf Assertion\+Condition\+Type}\hspace{0.3cm}{\ttfamily [strong]}}\label{_annotations_8cs_a016c132b1d3a6c75524ade006560e87d}
+
+
+Specifies assertion type. If the assertion method argument satisfies the condition, then the execution continues. Otherwise, execution is assumed to be halted. 
+
+\begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{I\+S\+\_\+\+T\+R\+U\+E@{I\+S\+\_\+\+T\+R\+U\+E}!Annotations.\+cs@{Annotations.\+cs}}\index{Annotations.\+cs@{Annotations.\+cs}!I\+S\+\_\+\+T\+R\+U\+E@{I\+S\+\_\+\+T\+R\+U\+E}}\item[{\em 
+\hypertarget{_annotations_8cs_a016c132b1d3a6c75524ade006560e87da23cd5ba5c6eed3d82ba0c6c0526df429}{}I\+S\+\_\+\+T\+R\+U\+E\label{_annotations_8cs_a016c132b1d3a6c75524ade006560e87da23cd5ba5c6eed3d82ba0c6c0526df429}
+}]Marked parameter should be evaluated to true.\index{I\+S\+\_\+\+F\+A\+L\+S\+E@{I\+S\+\_\+\+F\+A\+L\+S\+E}!Annotations.\+cs@{Annotations.\+cs}}\index{Annotations.\+cs@{Annotations.\+cs}!I\+S\+\_\+\+F\+A\+L\+S\+E@{I\+S\+\_\+\+F\+A\+L\+S\+E}}\item[{\em 
+\hypertarget{_annotations_8cs_a016c132b1d3a6c75524ade006560e87dadeab83d56dee7ab418359a59b4ff2eb0}{}I\+S\+\_\+\+F\+A\+L\+S\+E\label{_annotations_8cs_a016c132b1d3a6c75524ade006560e87dadeab83d56dee7ab418359a59b4ff2eb0}
+}]Marked parameter should be evaluated to false.\index{I\+S\+\_\+\+N\+U\+L\+L@{I\+S\+\_\+\+N\+U\+L\+L}!Annotations.\+cs@{Annotations.\+cs}}\index{Annotations.\+cs@{Annotations.\+cs}!I\+S\+\_\+\+N\+U\+L\+L@{I\+S\+\_\+\+N\+U\+L\+L}}\item[{\em 
+\hypertarget{_annotations_8cs_a016c132b1d3a6c75524ade006560e87dadbd9c38e0339e6c34bd48cafc59be388}{}I\+S\+\_\+\+N\+U\+L\+L\label{_annotations_8cs_a016c132b1d3a6c75524ade006560e87dadbd9c38e0339e6c34bd48cafc59be388}
+}]Marked parameter should be evaluated to null value.\index{I\+S\+\_\+\+N\+O\+T\+\_\+\+N\+U\+L\+L@{I\+S\+\_\+\+N\+O\+T\+\_\+\+N\+U\+L\+L}!Annotations.\+cs@{Annotations.\+cs}}\index{Annotations.\+cs@{Annotations.\+cs}!I\+S\+\_\+\+N\+O\+T\+\_\+\+N\+U\+L\+L@{I\+S\+\_\+\+N\+O\+T\+\_\+\+N\+U\+L\+L}}\item[{\em 
+\hypertarget{_annotations_8cs_a016c132b1d3a6c75524ade006560e87da05dd132ba23ff57c0ca5ec4100c31fdc}{}I\+S\+\_\+\+N\+O\+T\+\_\+\+N\+U\+L\+L\label{_annotations_8cs_a016c132b1d3a6c75524ade006560e87da05dd132ba23ff57c0ca5ec4100c31fdc}
+}]Marked parameter should be evaluated to not null value.\end{description}
+\end{Desc}
+
+
+Definition at line 846 of file Annotations.\+cs.
+
+\hypertarget{_annotations_8cs_ac934271c5bff522bfe4934d1e7be46a8}{}\index{Annotations.\+cs@{Annotations.\+cs}!Collection\+Access\+Type@{Collection\+Access\+Type}}
+\index{Collection\+Access\+Type@{Collection\+Access\+Type}!Annotations.\+cs@{Annotations.\+cs}}
+\subsubsection[{Collection\+Access\+Type}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf Collection\+Access\+Type}\hspace{0.3cm}{\ttfamily [strong]}}\label{_annotations_8cs_ac934271c5bff522bfe4934d1e7be46a8}
+\begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{None@{None}!Annotations.\+cs@{Annotations.\+cs}}\index{Annotations.\+cs@{Annotations.\+cs}!None@{None}}\item[{\em 
+\hypertarget{_annotations_8cs_ac934271c5bff522bfe4934d1e7be46a8a6adf97f83acf6453d4a6a4b1070f3754}{}None\label{_annotations_8cs_ac934271c5bff522bfe4934d1e7be46a8a6adf97f83acf6453d4a6a4b1070f3754}
+}]Method does not use or modify content of the collection.\index{Read@{Read}!Annotations.\+cs@{Annotations.\+cs}}\index{Annotations.\+cs@{Annotations.\+cs}!Read@{Read}}\item[{\em 
+\hypertarget{_annotations_8cs_ac934271c5bff522bfe4934d1e7be46a8a7a1a5f3e79fdc91edf2f5ead9d66abb4}{}Read\label{_annotations_8cs_ac934271c5bff522bfe4934d1e7be46a8a7a1a5f3e79fdc91edf2f5ead9d66abb4}
+}]Method only reads content of the collection but does not modify it.\index{Modify\+Existing\+Content@{Modify\+Existing\+Content}!Annotations.\+cs@{Annotations.\+cs}}\index{Annotations.\+cs@{Annotations.\+cs}!Modify\+Existing\+Content@{Modify\+Existing\+Content}}\item[{\em 
+\hypertarget{_annotations_8cs_ac934271c5bff522bfe4934d1e7be46a8aabf21948b8bdc6b576703a901052dc09}{}Modify\+Existing\+Content\label{_annotations_8cs_ac934271c5bff522bfe4934d1e7be46a8aabf21948b8bdc6b576703a901052dc09}
+}]Method can change content of the collection but does not add new elements.\index{Updated\+Content@{Updated\+Content}!Annotations.\+cs@{Annotations.\+cs}}\index{Annotations.\+cs@{Annotations.\+cs}!Updated\+Content@{Updated\+Content}}\item[{\em 
+\hypertarget{_annotations_8cs_ac934271c5bff522bfe4934d1e7be46a8a424cc5446574f01d7f484e158b23d001}{}Updated\+Content\label{_annotations_8cs_ac934271c5bff522bfe4934d1e7be46a8a424cc5446574f01d7f484e158b23d001}
+}]Method can add new elements to the collection.\end{description}
+\end{Desc}
+
+
+Definition at line 806 of file Annotations.\+cs.
+
+\hypertarget{_annotations_8cs_acc26806cec0b003502b38c6c2ee67fd1}{}\index{Annotations.\+cs@{Annotations.\+cs}!Implicit\+Use\+Kind\+Flags@{Implicit\+Use\+Kind\+Flags}}
+\index{Implicit\+Use\+Kind\+Flags@{Implicit\+Use\+Kind\+Flags}!Annotations.\+cs@{Annotations.\+cs}}
+\subsubsection[{Implicit\+Use\+Kind\+Flags}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf Implicit\+Use\+Kind\+Flags}\hspace{0.3cm}{\ttfamily [strong]}}\label{_annotations_8cs_acc26806cec0b003502b38c6c2ee67fd1}
+\begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{Default@{Default}!Annotations.\+cs@{Annotations.\+cs}}\index{Annotations.\+cs@{Annotations.\+cs}!Default@{Default}}\item[{\em 
+\hypertarget{_annotations_8cs_acc26806cec0b003502b38c6c2ee67fd1a7a1920d61156abc05a60135aefe8bc67}{}Default\label{_annotations_8cs_acc26806cec0b003502b38c6c2ee67fd1a7a1920d61156abc05a60135aefe8bc67}
+}]\index{Access@{Access}!Annotations.\+cs@{Annotations.\+cs}}\index{Annotations.\+cs@{Annotations.\+cs}!Access@{Access}}\item[{\em 
+\hypertarget{_annotations_8cs_acc26806cec0b003502b38c6c2ee67fd1abf733d8a933c1601697f364223fc7ecb}{}Access\label{_annotations_8cs_acc26806cec0b003502b38c6c2ee67fd1abf733d8a933c1601697f364223fc7ecb}
+}]Only entity marked with attribute considered used.\index{Assign@{Assign}!Annotations.\+cs@{Annotations.\+cs}}\index{Annotations.\+cs@{Annotations.\+cs}!Assign@{Assign}}\item[{\em 
+\hypertarget{_annotations_8cs_acc26806cec0b003502b38c6c2ee67fd1a185b7133db22230701a857c059360cc2}{}Assign\label{_annotations_8cs_acc26806cec0b003502b38c6c2ee67fd1a185b7133db22230701a857c059360cc2}
+}]Indicates implicit assignment to a member.\index{Instantiated\+With\+Fixed\+Constructor\+Signature@{Instantiated\+With\+Fixed\+Constructor\+Signature}!Annotations.\+cs@{Annotations.\+cs}}\index{Annotations.\+cs@{Annotations.\+cs}!Instantiated\+With\+Fixed\+Constructor\+Signature@{Instantiated\+With\+Fixed\+Constructor\+Signature}}\item[{\em 
+\hypertarget{_annotations_8cs_acc26806cec0b003502b38c6c2ee67fd1a88199ed5f1baf0dc6ed80a0db9336403}{}Instantiated\+With\+Fixed\+Constructor\+Signature\label{_annotations_8cs_acc26806cec0b003502b38c6c2ee67fd1a88199ed5f1baf0dc6ed80a0db9336403}
+}]Indicates implicit instantiation of a type with fixed constructor signature. That means any unused constructor parameters won\textquotesingle{}t be reported as such. \index{Instantiated\+No\+Fixed\+Constructor\+Signature@{Instantiated\+No\+Fixed\+Constructor\+Signature}!Annotations.\+cs@{Annotations.\+cs}}\index{Annotations.\+cs@{Annotations.\+cs}!Instantiated\+No\+Fixed\+Constructor\+Signature@{Instantiated\+No\+Fixed\+Constructor\+Signature}}\item[{\em 
+\hypertarget{_annotations_8cs_acc26806cec0b003502b38c6c2ee67fd1a4ea3601c5369a85043a3d88bbe23d4f6}{}Instantiated\+No\+Fixed\+Constructor\+Signature\label{_annotations_8cs_acc26806cec0b003502b38c6c2ee67fd1a4ea3601c5369a85043a3d88bbe23d4f6}
+}]Indicates implicit instantiation of a type.\end{description}
+\end{Desc}
+
+
+Definition at line 350 of file Annotations.\+cs.
+
+\hypertarget{_annotations_8cs_a59f21202ead30f3d1e2093e42214bf7c}{}\index{Annotations.\+cs@{Annotations.\+cs}!Implicit\+Use\+Target\+Flags@{Implicit\+Use\+Target\+Flags}}
+\index{Implicit\+Use\+Target\+Flags@{Implicit\+Use\+Target\+Flags}!Annotations.\+cs@{Annotations.\+cs}}
+\subsubsection[{Implicit\+Use\+Target\+Flags}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf Implicit\+Use\+Target\+Flags}\hspace{0.3cm}{\ttfamily [strong]}}\label{_annotations_8cs_a59f21202ead30f3d1e2093e42214bf7c}
+
+
+Specify what is considered used implicitly when marked with \hyperlink{class_means_implicit_use_attribute}{Means\+Implicit\+Use\+Attribute} or \hyperlink{class_used_implicitly_attribute}{Used\+Implicitly\+Attribute}. 
+
+\begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{Default@{Default}!Annotations.\+cs@{Annotations.\+cs}}\index{Annotations.\+cs@{Annotations.\+cs}!Default@{Default}}\item[{\em 
+\hypertarget{_annotations_8cs_a59f21202ead30f3d1e2093e42214bf7ca7a1920d61156abc05a60135aefe8bc67}{}Default\label{_annotations_8cs_a59f21202ead30f3d1e2093e42214bf7ca7a1920d61156abc05a60135aefe8bc67}
+}]\index{Itself@{Itself}!Annotations.\+cs@{Annotations.\+cs}}\index{Annotations.\+cs@{Annotations.\+cs}!Itself@{Itself}}\item[{\em 
+\hypertarget{_annotations_8cs_a59f21202ead30f3d1e2093e42214bf7cad24a614afd61a4a9097269b8a7225209}{}Itself\label{_annotations_8cs_a59f21202ead30f3d1e2093e42214bf7cad24a614afd61a4a9097269b8a7225209}
+}]\index{Members@{Members}!Annotations.\+cs@{Annotations.\+cs}}\index{Annotations.\+cs@{Annotations.\+cs}!Members@{Members}}\item[{\em 
+\hypertarget{_annotations_8cs_a59f21202ead30f3d1e2093e42214bf7caef53538ae41a651c7f72ab6cb1135d8c}{}Members\label{_annotations_8cs_a59f21202ead30f3d1e2093e42214bf7caef53538ae41a651c7f72ab6cb1135d8c}
+}]Members of entity marked with attribute are considered used.\index{With\+Members@{With\+Members}!Annotations.\+cs@{Annotations.\+cs}}\index{Annotations.\+cs@{Annotations.\+cs}!With\+Members@{With\+Members}}\item[{\em 
+\hypertarget{_annotations_8cs_a59f21202ead30f3d1e2093e42214bf7ca5583bb135f4d32715af96327c369e623}{}With\+Members\label{_annotations_8cs_a59f21202ead30f3d1e2093e42214bf7ca5583bb135f4d32715af96327c369e623}
+}]Entity marked with attribute and all its members considered used.\end{description}
+\end{Desc}
+
+
+Definition at line 371 of file Annotations.\+cs.
+
+
+
+\subsection{Function Documentation}
+\hypertarget{_annotations_8cs_a710c2378b43f44cd4a9b365c85be5d6c}{}\index{Annotations.\+cs@{Annotations.\+cs}!Foo@{Foo}}
+\index{Foo@{Foo}!Annotations.\+cs@{Annotations.\+cs}}
+\subsubsection[{Foo()}]{\setlength{\rightskip}{0pt plus 5cm}$\ast$ $\ast$ void Foo (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{_annotations_8cs_a710c2378b43f44cd4a9b365c85be5d6c}
+
+
+Definition at line 72 of file Annotations.\+cs.
+
+\hypertarget{_annotations_8cs_a5e8ab77459b9872b3c9d41933e139809}{}\index{Annotations.\+cs@{Annotations.\+cs}!Notify\+Changed@{Notify\+Changed}}
+\index{Notify\+Changed@{Notify\+Changed}!Annotations.\+cs@{Annotations.\+cs}}
+\subsubsection[{Notify\+Changed((\+V\+M x)=>x.\+Property)$<$/c $>$$<$/item $>$ $\ast$$<$ item $>$$<$ c $>$\+Set\+Property(ref my\+Field}]{\setlength{\rightskip}{0pt plus 5cm}Property$<$/c$>$$<$/item$>$ $\ast$$<$item$>$$<$c$>$ Notify\+Changed (
+\begin{DoxyParamCaption}
+\item[{(V\+M x)}]{ = {\ttfamily \&gt;~x.Property}}
+\end{DoxyParamCaption}
+)}\label{_annotations_8cs_a5e8ab77459b9872b3c9d41933e139809}
+
+
+\subsection{Variable Documentation}
+\hypertarget{_annotations_8cs_a499afdc7b16351761369c64979c345e5}{}\index{Annotations.\+cs@{Annotations.\+cs}!notifications@{notifications}}
+\index{notifications@{notifications}!Annotations.\+cs@{Annotations.\+cs}}
+\subsubsection[{notifications}]{\setlength{\rightskip}{0pt plus 5cm}$\ast$ $\ast$ $\ast$$<$/code$>$ $\ast$ Examples of generated notifications}\label{_annotations_8cs_a499afdc7b16351761369c64979c345e5}
+
+
+Indicates that the method is contained in a type that implements {\ttfamily System.\+Component\+Model.\+I\+Notify\+Property\+Changed} interface and this method is used to notify that some property value changed. 
+
+The method should be non-\/static and conform to one of the supported signatures\+: 
+\begin{DoxyItemize}
+\item {\ttfamily Notify\+Changed(string)} 
+\item {\ttfamily Notify\+Changed(params string\mbox{[}$\,$\mbox{]})} 
+\item {\ttfamily Notify\+Changed\{T\}(Expression\{Func\{T\}\})} 
+\item {\ttfamily Notify\+Changed\{T,U\}(Expression\{Func\{T,U\}\})} 
+\item {\ttfamily Set\+Property\{T\}(ref T, T, string)} 
+\end{DoxyItemize}
+
+
+\begin{DoxyCode}
+1 public class Foo : INotifyPropertyChanged \{
+2   public event PropertyChangedEventHandler PropertyChanged;
+3 
+4   [NotifyPropertyChangedInvocator]
+5   protected virtual void NotifyChanged(string propertyName) \{ ... \}
+6 
+7   string \_name;
+8 
+9   public string Name \{
+10     get \{ return \_name; \}
+11     set \{ \_name = value; NotifyChanged("LastName"); /* Warning  
+\end{DoxyCode}
+
+
+Definition at line 154 of file Annotations.\+cs.
+
+\hypertarget{_annotations_8cs_aa47dc10177d95db720062975cdba1f3a}{}\index{Annotations.\+cs@{Annotations.\+cs}!value@{value}}
+\index{value@{value}!Annotations.\+cs@{Annotations.\+cs}}
+\subsubsection[{value}]{\setlength{\rightskip}{0pt plus 5cm}Property$<$/c$>$$<$/item$>$ $\ast$$<$item$>$$<$c$>$ value}\label{_annotations_8cs_aa47dc10177d95db720062975cdba1f3a}
+
+
+Definition at line 156 of file Annotations.\+cs.
+

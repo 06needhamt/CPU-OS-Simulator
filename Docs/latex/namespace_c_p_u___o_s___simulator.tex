@@ -3,11 +3,15 @@
 \subsection*{Namespaces}
 \begin{DoxyCompactItemize}
 \item 
+namespace \hyperlink{namespace_c_p_u___o_s___simulator_1_1_annotations}{Annotations}
+\item 
 namespace \hyperlink{namespace_c_p_u___o_s___simulator_1_1_compiler}{Compiler}
 \item 
 namespace \hyperlink{namespace_c_p_u___o_s___simulator_1_1_compiler_tester}{Compiler\+Tester}
 \item 
 namespace \hyperlink{namespace_c_p_u___o_s___simulator_1_1_console}{Console}
+\item 
+namespace \hyperlink{namespace_c_p_u___o_s___simulator_1_1_controls}{Controls}
 \item 
 namespace \hyperlink{namespace_c_p_u___o_s___simulator_1_1_c_p_u}{C\+P\+U}
 \item 
@@ -36,6 +40,10 @@ class \hyperlink{class_c_p_u___o_s___simulator_1_1_font_picker_window}{Font\+Pic
 \begin{DoxyCompactList}\small\item\em Interaction logic for Font\+Picker\+Window.\+xaml \end{DoxyCompactList}\item 
 class \hyperlink{class_c_p_u___o_s___simulator_1_1_instructions_window}{Instructions\+Window}
 \begin{DoxyCompactList}\small\item\em Interaction logic for Instructions\+Window.\+xaml \end{DoxyCompactList}\item 
+class \hyperlink{class_c_p_u___o_s___simulator_1_1_logger}{Logger}
+\item 
+class \hyperlink{class_c_p_u___o_s___simulator_1_1_log_window}{Log\+Window}
+\begin{DoxyCompactList}\small\item\em Interaction logic for Log\+Window.\+xaml \end{DoxyCompactList}\item 
 class \hyperlink{class_c_p_u___o_s___simulator_1_1_main_window}{Main\+Window}
 \begin{DoxyCompactList}\small\item\em Interaction logic for Main\+Window.\+xaml \end{DoxyCompactList}\item 
 class \hyperlink{class_c_p_u___o_s___simulator_1_1_memory_window}{Memory\+Window}
@@ -47,7 +55,9 @@ class \hyperlink{class_c_p_u___o_s___simulator_1_1_page_table_window}{Page\+Tabl
 class \hyperlink{class_c_p_u___o_s___simulator_1_1_process_control_block_window}{Process\+Control\+Block\+Window}
 \begin{DoxyCompactList}\small\item\em \hyperlink{class_c_p_u___o_s___simulator_1_1_process_control_block_window}{Process\+Control\+Block\+Window} \end{DoxyCompactList}\item 
 class \hyperlink{class_c_p_u___o_s___simulator_1_1_process_list_window}{Process\+List\+Window}
-\begin{DoxyCompactList}\small\item\em \hyperlink{class_c_p_u___o_s___simulator_1_1_process_list_window}{Process\+List\+Window} \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em \hyperlink{class_c_p_u___o_s___simulator_1_1_process_list_window}{Process\+List\+Window} \end{DoxyCompactList}\item 
+class \hyperlink{class_c_p_u___o_s___simulator_1_1_utilisation_window}{Utilisation\+Window}
+\begin{DoxyCompactList}\small\item\em \hyperlink{class_c_p_u___o_s___simulator_1_1_utilisation_window}{Utilisation\+Window} \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Enumerations}
 \begin{DoxyCompactItemize}
 \item 
@@ -56,6 +66,15 @@ enum \hyperlink{namespace_c_p_u___o_s___simulator_adc17a5a5e004084f05dc8e4d3f70e
 \hyperlink{namespace_c_p_u___o_s___simulator_adc17a5a5e004084f05dc8e4d3f70e31fa956b44f941eb5917f3cfcf0ba56db19b}{Enum\+Instruction\+Mode.\+I\+N\+S\+E\+R\+T\+\_\+\+A\+B\+O\+V\+E} = 2, 
 \hyperlink{namespace_c_p_u___o_s___simulator_adc17a5a5e004084f05dc8e4d3f70e31fa0310160f3dc4ecec481c20ca1cf88be3}{Enum\+Instruction\+Mode.\+I\+N\+S\+E\+R\+T\+\_\+\+B\+E\+L\+O\+W} = 3
  \}\begin{DoxyCompactList}\small\item\em This enum represents the possible modes for adding instructions to a program \end{DoxyCompactList}
+\item 
+enum \hyperlink{namespace_c_p_u___o_s___simulator_ad76442226f076d91d8f4523d7ee3db0f}{Enum\+Log\+Level} \{ \\*
+\hyperlink{namespace_c_p_u___o_s___simulator_ad76442226f076d91d8f4523d7ee3db0fa696b031073e74bf2cb98e5ef201d4aa3}{Enum\+Log\+Level.\+U\+N\+K\+N\+O\+W\+N} = -\/1, 
+\hyperlink{namespace_c_p_u___o_s___simulator_ad76442226f076d91d8f4523d7ee3db0fa41bc94cbd8eebea13ce0491b2ac11b88}{Enum\+Log\+Level.\+L\+O\+W} = 1, 
+\hyperlink{namespace_c_p_u___o_s___simulator_ad76442226f076d91d8f4523d7ee3db0fac87f3be66ffc3c0d4249f1c2cc5f3cce}{Enum\+Log\+Level.\+M\+E\+D\+I\+U\+M} = 2, 
+\hyperlink{namespace_c_p_u___o_s___simulator_ad76442226f076d91d8f4523d7ee3db0fab89de3b4b81c4facfac906edf29aec8c}{Enum\+Log\+Level.\+H\+I\+G\+H} = 3, 
+\\*
+\hyperlink{namespace_c_p_u___o_s___simulator_ad76442226f076d91d8f4523d7ee3db0faec1f06e9fb39c4ef0729b3c7c9c8e8cc}{Enum\+Log\+Level.\+V\+E\+R\+B\+O\+S\+E} = 4
+ \}
 \end{DoxyCompactItemize}
 
 
@@ -83,4 +102,26 @@ This enum represents the possible modes for adding instructions to a program
 
 
 Definition at line 6 of file Enum\+Instruction\+Mode.\+cs.
+
+\hypertarget{namespace_c_p_u___o_s___simulator_ad76442226f076d91d8f4523d7ee3db0f}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator}!Enum\+Log\+Level@{Enum\+Log\+Level}}
+\index{Enum\+Log\+Level@{Enum\+Log\+Level}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator}}
+\subsubsection[{Enum\+Log\+Level}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Enum\+Log\+Level}\hspace{0.3cm}{\ttfamily [strong]}}\label{namespace_c_p_u___o_s___simulator_ad76442226f076d91d8f4523d7ee3db0f}
+\begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{U\+N\+K\+N\+O\+W\+N@{U\+N\+K\+N\+O\+W\+N}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator}}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator}!U\+N\+K\+N\+O\+W\+N@{U\+N\+K\+N\+O\+W\+N}}\item[{\em 
+\hypertarget{namespace_c_p_u___o_s___simulator_ad76442226f076d91d8f4523d7ee3db0fa696b031073e74bf2cb98e5ef201d4aa3}{}U\+N\+K\+N\+O\+W\+N\label{namespace_c_p_u___o_s___simulator_ad76442226f076d91d8f4523d7ee3db0fa696b031073e74bf2cb98e5ef201d4aa3}
+}]\index{L\+O\+W@{L\+O\+W}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator}}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator}!L\+O\+W@{L\+O\+W}}\item[{\em 
+\hypertarget{namespace_c_p_u___o_s___simulator_ad76442226f076d91d8f4523d7ee3db0fa41bc94cbd8eebea13ce0491b2ac11b88}{}L\+O\+W\label{namespace_c_p_u___o_s___simulator_ad76442226f076d91d8f4523d7ee3db0fa41bc94cbd8eebea13ce0491b2ac11b88}
+}]\index{M\+E\+D\+I\+U\+M@{M\+E\+D\+I\+U\+M}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator}}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator}!M\+E\+D\+I\+U\+M@{M\+E\+D\+I\+U\+M}}\item[{\em 
+\hypertarget{namespace_c_p_u___o_s___simulator_ad76442226f076d91d8f4523d7ee3db0fac87f3be66ffc3c0d4249f1c2cc5f3cce}{}M\+E\+D\+I\+U\+M\label{namespace_c_p_u___o_s___simulator_ad76442226f076d91d8f4523d7ee3db0fac87f3be66ffc3c0d4249f1c2cc5f3cce}
+}]\index{H\+I\+G\+H@{H\+I\+G\+H}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator}}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator}!H\+I\+G\+H@{H\+I\+G\+H}}\item[{\em 
+\hypertarget{namespace_c_p_u___o_s___simulator_ad76442226f076d91d8f4523d7ee3db0fab89de3b4b81c4facfac906edf29aec8c}{}H\+I\+G\+H\label{namespace_c_p_u___o_s___simulator_ad76442226f076d91d8f4523d7ee3db0fab89de3b4b81c4facfac906edf29aec8c}
+}]\index{V\+E\+R\+B\+O\+S\+E@{V\+E\+R\+B\+O\+S\+E}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator}}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator}!V\+E\+R\+B\+O\+S\+E@{V\+E\+R\+B\+O\+S\+E}}\item[{\em 
+\hypertarget{namespace_c_p_u___o_s___simulator_ad76442226f076d91d8f4523d7ee3db0faec1f06e9fb39c4ef0729b3c7c9c8e8cc}{}V\+E\+R\+B\+O\+S\+E\label{namespace_c_p_u___o_s___simulator_ad76442226f076d91d8f4523d7ee3db0faec1f06e9fb39c4ef0729b3c7c9c8e8cc}
+}]\end{description}
+\end{Desc}
+
+
+Definition at line 9 of file Enum\+Log\+Level.\+cs.
 

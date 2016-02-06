@@ -2,6 +2,7 @@ var searchData=
 [
   ['global_5fscope',['GLOBAL_SCOPE',['../class_c_p_u___o_s___simulator_1_1_compiler_1_1_frontend_1_1_symbols_1_1_scope.html#a6083ac11708968b2d7cfc0720cf62648',1,'CPU_OS_Simulator::Compiler::Frontend::Symbols::Scope']]],
   ['globalflags',['globalFlags',['../class_c_p_u___o_s___simulator_1_1_operating_system_main_window.html#a905f81a88e7878e936352f6da9ffcb93',1,'CPU_OS_Simulator::OperatingSystemMainWindow']]],
+  ['graphscale',['graphScale',['../class_c_p_u___o_s___simulator_1_1_controls_1_1_graphs_1_1_view_models_1_1_c_p_u_graph_model.html#ae089caf50d0a5f9a02e1bb8d789a5c1d',1,'CPU_OS_Simulator::Controls::Graphs::ViewModels::CPUGraphModel']]],
   ['grid_5fadvanced',['grid_Advanced',['../class_c_p_u___o_s___simulator_1_1_main_window.html#a65cbc082cd4737ec0dd8837efa715510',1,'CPU_OS_Simulator::MainWindow']]],
   ['grid_5fcolours',['grid_Colours',['../class_c_p_u___o_s___simulator_1_1_console_window.html#a0d262972210c72305e20330f5dda9388',1,'CPU_OS_Simulator::ConsoleWindow']]],
   ['grid_5ffonts',['grid_Fonts',['../class_c_p_u___o_s___simulator_1_1_console_window.html#a5dd489a5756d308a9adc8498dea24ddb',1,'CPU_OS_Simulator::ConsoleWindow']]],
@@ -22,6 +23,7 @@ var searchData=
   ['grid_5fwaitingprocesses',['grid_WaitingProcesses',['../class_c_p_u___o_s___simulator_1_1_operating_system_main_window.html#afdd9d749d58fde066217f035ac2c46c4',1,'CPU_OS_Simulator::OperatingSystemMainWindow']]],
   ['groupbox',['groupBox',['../class_c_p_u___o_s___simulator_1_1_console_window.html#ad2d026ec9701c1b7c36dc5038927f1ab',1,'CPU_OS_Simulator::ConsoleWindow']]],
   ['grp_5fcolours',['grp_Colours',['../class_c_p_u___o_s___simulator_1_1_console_window.html#aefc749577a14756234b1a73c0a4a6f50',1,'CPU_OS_Simulator::ConsoleWindow']]],
+  ['grp_5fcpu',['grp_CPU',['../class_c_p_u___o_s___simulator_1_1_utilisation_window.html#a05acd35d0b339101c49d313480d4708a',1,'CPU_OS_Simulator::UtilisationWindow']]],
   ['grp_5fcpumode',['grp_CPUMode',['../class_c_p_u___o_s___simulator_1_1_main_window.html#a0e549bad0f6778b2ea3fffb6c2d1a2bb',1,'CPU_OS_Simulator::MainWindow']]],
   ['grp_5fdatamemory',['grp_DataMemory',['../class_c_p_u___o_s___simulator_1_1_memory_window.html#a283493c20704b70efe355621cd6e5aa4',1,'CPU_OS_Simulator::MemoryWindow']]],
   ['grp_5fdestinationoperand',['grp_DestinationOperand',['../class_c_p_u___o_s___simulator_1_1_instructions_window.html#a836175caed2a6d02d8635bb6cc3f6cae',1,'CPU_OS_Simulator::InstructionsWindow']]],
@@ -36,6 +38,7 @@ var searchData=
   ['grp_5finitialisedata',['grp_InitialiseData',['../class_c_p_u___o_s___simulator_1_1_memory_window.html#a6cfa52c953fe5704090e7e9f4ac2c9d1',1,'CPU_OS_Simulator::MemoryWindow']]],
   ['grp_5finput',['grp_Input',['../class_c_p_u___o_s___simulator_1_1_compiler_tester_1_1_main_window.html#a057e72ce888214ee30da5048c8bdae77',1,'CPU_OS_Simulator::CompilerTester::MainWindow']]],
   ['grp_5finstructionsbox',['grp_InstructionsBox',['../class_c_p_u___o_s___simulator_1_1_main_window.html#aebc1256b654d001b7c4ce2bc08522667',1,'CPU_OS_Simulator::MainWindow']]],
+  ['grp_5fmemory',['grp_Memory',['../class_c_p_u___o_s___simulator_1_1_utilisation_window.html#a8eb460220e13b601c32417a50f108590',1,'CPU_OS_Simulator::UtilisationWindow']]],
   ['grp_5fnewprogram',['grp_NewProgram',['../class_c_p_u___o_s___simulator_1_1_main_window.html#a1e75e7af485b229372a6aafb84c2ffe0',1,'CPU_OS_Simulator::MainWindow']]],
   ['grp_5foutput',['grp_Output',['../class_c_p_u___o_s___simulator_1_1_compiler_tester_1_1_main_window.html#a94d79540c93d5a8682b5d1a64c2efc48',1,'CPU_OS_Simulator::CompilerTester::MainWindow']]],
   ['grp_5fpriority',['grp_Priority',['../class_c_p_u___o_s___simulator_1_1_operating_system_main_window.html#a45f777ff3178acfefdffb311366ab786',1,'CPU_OS_Simulator::OperatingSystemMainWindow']]],

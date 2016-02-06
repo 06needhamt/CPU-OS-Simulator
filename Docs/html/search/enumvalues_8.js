@@ -8,7 +8,14 @@ var searchData=
   ['indirect',['INDIRECT',['../namespace_c_p_u___o_s___simulator_1_1_c_p_u.html#ab76721f84dabbc14c907e6f11fbeb7c0a55e8f99cd4149c397fc50a5d1c86bd06',1,'CPU_OS_Simulator::CPU']]],
   ['insert_5fabove',['INSERT_ABOVE',['../namespace_c_p_u___o_s___simulator.html#adc17a5a5e004084f05dc8e4d3f70e31fa956b44f941eb5917f3cfcf0ba56db19b',1,'CPU_OS_Simulator']]],
   ['insert_5fbelow',['INSERT_BELOW',['../namespace_c_p_u___o_s___simulator.html#adc17a5a5e004084f05dc8e4d3f70e31fa0310160f3dc4ecec481c20ca1cf88be3',1,'CPU_OS_Simulator']]],
+  ['instantiatednofixedconstructorsignature',['InstantiatedNoFixedConstructorSignature',['../_annotations_8cs.html#acc26806cec0b003502b38c6c2ee67fd1a4ea3601c5369a85043a3d88bbe23d4f6',1,'Annotations.cs']]],
+  ['instantiatedwithfixedconstructorsignature',['InstantiatedWithFixedConstructorSignature',['../_annotations_8cs.html#acc26806cec0b003502b38c6c2ee67fd1a88199ed5f1baf0dc6ed80a0db9336403',1,'Annotations.cs']]],
   ['instructions',['INSTRUCTIONS',['../namespace_c_p_u___o_s___simulator_1_1_compiler.html#ada8d93b571fa15a0f2eac8c9647a89fea94a4525d62a2828c7aa1f8dc47a0ffb5',1,'CPU_OS_Simulator::Compiler']]],
   ['integer',['INTEGER',['../namespace_c_p_u___o_s___simulator_1_1_compiler_1_1_frontend_1_1_tokens.html#a7c0cc43763cc9d01c7d5af34d70b96eaa5d5cd46919fa987731fb2edefe0f2a0c',1,'CPU_OS_Simulator::Compiler::Frontend::Tokens']]],
-  ['iret',['IRET',['../namespace_c_p_u___o_s___simulator_1_1_c_p_u.html#ac29c87bff87ad404c953b2581024043ea21a2b29642a44b6b13f86a5dd2b13f42',1,'CPU_OS_Simulator::CPU']]]
+  ['iret',['IRET',['../namespace_c_p_u___o_s___simulator_1_1_c_p_u.html#ac29c87bff87ad404c953b2581024043ea21a2b29642a44b6b13f86a5dd2b13f42',1,'CPU_OS_Simulator::CPU']]],
+  ['is_5ffalse',['IS_FALSE',['../_annotations_8cs.html#a016c132b1d3a6c75524ade006560e87dadeab83d56dee7ab418359a59b4ff2eb0',1,'Annotations.cs']]],
+  ['is_5fnot_5fnull',['IS_NOT_NULL',['../_annotations_8cs.html#a016c132b1d3a6c75524ade006560e87da05dd132ba23ff57c0ca5ec4100c31fdc',1,'Annotations.cs']]],
+  ['is_5fnull',['IS_NULL',['../_annotations_8cs.html#a016c132b1d3a6c75524ade006560e87dadbd9c38e0339e6c34bd48cafc59be388',1,'Annotations.cs']]],
+  ['is_5ftrue',['IS_TRUE',['../_annotations_8cs.html#a016c132b1d3a6c75524ade006560e87da23cd5ba5c6eed3d82ba0c6c0526df429',1,'Annotations.cs']]],
+  ['itself',['Itself',['../_annotations_8cs.html#a59f21202ead30f3d1e2093e42214bf7cad24a614afd61a4a9097269b8a7225209',1,'Annotations.cs']]]
 ];

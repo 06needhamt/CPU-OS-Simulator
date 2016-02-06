@@ -1,0 +1,106 @@
+\hypertarget{class_contract_annotation_attribute}{}\section{Contract\+Annotation\+Attribute Class Reference}
+\label{class_contract_annotation_attribute}\index{Contract\+Annotation\+Attribute@{Contract\+Annotation\+Attribute}}
+
+
+Describes dependency between method input and output.  
+
+
+Inheritance diagram for Contract\+Annotation\+Attribute\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_contract_annotation_attribute}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_contract_annotation_attribute_a635552c48df4e94f26deb7598f7a5028}{Contract\+Annotation\+Attribute} (\mbox{[}Not\+Null\mbox{]} string contract)
+\item 
+\hyperlink{class_contract_annotation_attribute_a886eedce3d8c7a269549a3293a2bfd99}{Contract\+Annotation\+Attribute} (\mbox{[}Not\+Null\mbox{]} string contract, bool force\+Full\+States)
+\end{DoxyCompactItemize}
+\subsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+string \hyperlink{class_contract_annotation_attribute_a19445968a4365371890d047311eaa1c4}{Contract}\hspace{0.3cm}{\ttfamily  \mbox{[}get, private set\mbox{]}}
+\item 
+bool \hyperlink{class_contract_annotation_attribute_a329c6f99fe2ed0c08df3898586cbf965}{Force\+Full\+States}\hspace{0.3cm}{\ttfamily  \mbox{[}get, private set\mbox{]}}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Describes dependency between method input and output. 
+
+$<$syntax$>$ 
+
+Function Definition Table syntax\+:
+
+
+\begin{DoxyItemize}
+\item F\+D\+T \+:\+:= F\+D\+T\+Row \mbox{[};F\+D\+T\+Row\mbox{]}$\ast$ 
+\item F\+D\+T\+Row \+:\+:= Input =$>$ Output $\vert$ Output $<$= Input 
+\item Input \+:\+:= Parameter\+Name\+: Value \mbox{[}, Input\mbox{]}$\ast$ 
+\item Output \+:\+:= \mbox{[}Parameter\+Name\+: Value\mbox{]}$\ast$ \{halt$\vert$stop$\vert$void$\vert$nothing$\vert$\+Value\} 
+\item Value \+:\+:= true $\vert$ false $\vert$ null $\vert$ notnull $\vert$ canbenull 
+\end{DoxyItemize}If method has single input parameter, it\textquotesingle{}s name could be omitted.~\newline
+ Using {\ttfamily halt} (or {\ttfamily void}/{\ttfamily nothing}, which is the same) for method output means that the methos doesn\textquotesingle{}t return normally.~\newline
+ {\ttfamily canbenull} annotation is only applicable for output parameters.~\newline
+ You can use multiple {\ttfamily \mbox{[}Contract\+Annotation\mbox{]}} for each F\+D\+T row, or use single attribute with rows separated by semicolon.~\newline
+ $<$/syntax$>$ $<$examples$>$
+\begin{DoxyItemize}
+\item {\ttfamily  \mbox{[}Contract\+Annotation(\char`\"{}=$>$ halt\char`\"{})\mbox{]} public void Termination\+Method() } 
+\item {\ttfamily  \mbox{[}Contract\+Annotation(\char`\"{}halt <= condition\+: false\char`\"{})\mbox{]} public void Assert(bool condition, string text) // regular assertion method } 
+\item {\ttfamily  \mbox{[}Contract\+Annotation(\char`\"{}s\+:null =$>$ true\char`\"{})\mbox{]} public bool Is\+Null\+Or\+Empty(string s) // string.\+Is\+Null\+Or\+Empty() } 
+\item {\ttfamily  // A method that returns null if the parameter is null, // and not null if the parameter is not null \mbox{[}Contract\+Annotation(\char`\"{}null =$>$ null; notnull =$>$ notnull\char`\"{})\mbox{]} public object Transform(object data) } 
+\item {\ttfamily  \mbox{[}Contract\+Annotation(\char`\"{}s\+:null=$>$false; =$>$true,result\+:notnull; =$>$false, result\+:null\char`\"{})\mbox{]} public bool Try\+Parse(string s, out Person result) } 
+\end{DoxyItemize}$<$/examples$>$ 
+
+Definition at line 215 of file Annotations.\+cs.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_contract_annotation_attribute_a635552c48df4e94f26deb7598f7a5028}{}\index{Contract\+Annotation\+Attribute@{Contract\+Annotation\+Attribute}!Contract\+Annotation\+Attribute@{Contract\+Annotation\+Attribute}}
+\index{Contract\+Annotation\+Attribute@{Contract\+Annotation\+Attribute}!Contract\+Annotation\+Attribute@{Contract\+Annotation\+Attribute}}
+\subsubsection[{Contract\+Annotation\+Attribute([Not\+Null] string contract)}]{\setlength{\rightskip}{0pt plus 5cm}Contract\+Annotation\+Attribute.\+Contract\+Annotation\+Attribute (
+\begin{DoxyParamCaption}
+\item[{\mbox{[}\+Not\+Null\mbox{]} string}]{contract}
+\end{DoxyParamCaption}
+)}\label{class_contract_annotation_attribute_a635552c48df4e94f26deb7598f7a5028}
+
+
+Definition at line 217 of file Annotations.\+cs.
+
+\hypertarget{class_contract_annotation_attribute_a886eedce3d8c7a269549a3293a2bfd99}{}\index{Contract\+Annotation\+Attribute@{Contract\+Annotation\+Attribute}!Contract\+Annotation\+Attribute@{Contract\+Annotation\+Attribute}}
+\index{Contract\+Annotation\+Attribute@{Contract\+Annotation\+Attribute}!Contract\+Annotation\+Attribute@{Contract\+Annotation\+Attribute}}
+\subsubsection[{Contract\+Annotation\+Attribute([Not\+Null] string contract, bool force\+Full\+States)}]{\setlength{\rightskip}{0pt plus 5cm}Contract\+Annotation\+Attribute.\+Contract\+Annotation\+Attribute (
+\begin{DoxyParamCaption}
+\item[{\mbox{[}\+Not\+Null\mbox{]} string}]{contract, }
+\item[{bool}]{force\+Full\+States}
+\end{DoxyParamCaption}
+)}\label{class_contract_annotation_attribute_a886eedce3d8c7a269549a3293a2bfd99}
+
+
+Definition at line 220 of file Annotations.\+cs.
+
+
+
+\subsection{Property Documentation}
+\hypertarget{class_contract_annotation_attribute_a19445968a4365371890d047311eaa1c4}{}\index{Contract\+Annotation\+Attribute@{Contract\+Annotation\+Attribute}!Contract@{Contract}}
+\index{Contract@{Contract}!Contract\+Annotation\+Attribute@{Contract\+Annotation\+Attribute}}
+\subsubsection[{Contract}]{\setlength{\rightskip}{0pt plus 5cm}string Contract\+Annotation\+Attribute.\+Contract\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [private set]}}\label{class_contract_annotation_attribute_a19445968a4365371890d047311eaa1c4}
+
+
+Definition at line 226 of file Annotations.\+cs.
+
+\hypertarget{class_contract_annotation_attribute_a329c6f99fe2ed0c08df3898586cbf965}{}\index{Contract\+Annotation\+Attribute@{Contract\+Annotation\+Attribute}!Force\+Full\+States@{Force\+Full\+States}}
+\index{Force\+Full\+States@{Force\+Full\+States}!Contract\+Annotation\+Attribute@{Contract\+Annotation\+Attribute}}
+\subsubsection[{Force\+Full\+States}]{\setlength{\rightskip}{0pt plus 5cm}bool Contract\+Annotation\+Attribute.\+Force\+Full\+States\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [private set]}}\label{class_contract_annotation_attribute_a329c6f99fe2ed0c08df3898586cbf965}
+
+
+Definition at line 227 of file Annotations.\+cs.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+P\+U-\/\+O\+S Simulator/\+Properties/\hyperlink{_annotations_8cs}{Annotations.\+cs}\end{DoxyCompactItemize}

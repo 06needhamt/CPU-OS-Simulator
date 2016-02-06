@@ -9,5 +9,6 @@ var searchData=
   ['leave',['LEAVE',['../namespace_c_p_u___o_s___simulator_1_1_compiler_1_1_frontend_1_1_tokens.html#a86b87efebad08200cebe3075b5812b13ae0f9ef6d3025baf33497bafcca7ff781',1,'CPU_OS_Simulator::Compiler::Frontend::Tokens']]],
   ['lns',['LNS',['../namespace_c_p_u___o_s___simulator_1_1_c_p_u.html#ac29c87bff87ad404c953b2581024043eaa44cb7d46990322950d0f4b7369de7fa',1,'CPU_OS_Simulator::CPU']]],
   ['loop',['LOOP',['../namespace_c_p_u___o_s___simulator_1_1_compiler_1_1_frontend_1_1_tokens.html#a86b87efebad08200cebe3075b5812b13a9159b3578e4e1eb31ffdf90acd6f6e40',1,'CPU_OS_Simulator.Compiler.Frontend.Tokens.LOOP()'],['../namespace_c_p_u___o_s___simulator_1_1_c_p_u.html#ac29c87bff87ad404c953b2581024043ea9159b3578e4e1eb31ffdf90acd6f6e40',1,'CPU_OS_Simulator.CPU.LOOP()']]],
-  ['lottery_5fscheduling',['LOTTERY_SCHEDULING',['../namespace_c_p_u___o_s___simulator_1_1_operating___system.html#ad0cdaacf9652394d23fa29109640fe08aa4d25b80a5834b7f9ff2a2153f3b5985',1,'CPU_OS_Simulator::Operating_System']]]
+  ['lottery_5fscheduling',['LOTTERY_SCHEDULING',['../namespace_c_p_u___o_s___simulator_1_1_operating___system.html#ad0cdaacf9652394d23fa29109640fe08aa4d25b80a5834b7f9ff2a2153f3b5985',1,'CPU_OS_Simulator::Operating_System']]],
+  ['low',['LOW',['../namespace_c_p_u___o_s___simulator.html#ad76442226f076d91d8f4523d7ee3db0fa41bc94cbd8eebea13ce0491b2ac11b88',1,'CPU_OS_Simulator']]]
 ];
