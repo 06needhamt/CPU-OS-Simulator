@@ -126,6 +126,9 @@
     <Compile Include="Controls\Graphs\ViewModels\CPUGraphModel.cs" />
     <Compile Include="Controls\Graphs\ViewModels\MainViewModel.cs" />
     <Compile Include="Controls\Graphs\ViewModels\MemoryGraphModel.cs" />
+    <Compile Include="Controls\MemoryButton.xaml.cs">
+      <DependentUpon>MemoryButton.xaml</DependentUpon>
+    </Compile>
     <Compile Include="EnumInstructionMode.cs" />
     <Compile Include="EnumLogLevel.cs" />
     <Compile Include="FontPickerWindow.xaml.cs">
@@ -133,6 +136,9 @@
     </Compile>
     <Compile Include="InstructionsWindow.xaml.cs">
       <DependentUpon>InstructionsWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PhysicalMemoryWindow.xaml.cs">
+      <DependentUpon>PhysicalMemoryWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="UtilisationWindow.xaml.cs">
       <DependentUpon>UtilisationWindow.xaml</DependentUpon>
@@ -150,6 +156,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Controls\Graphs\MemoryGraph.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\MemoryButton.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -190,6 +200,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="PageTableWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PhysicalMemoryWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

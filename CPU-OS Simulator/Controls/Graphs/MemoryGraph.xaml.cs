@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using CPU_OS_Simulator.Controls.Graphs.ViewModels;
 
 namespace CPU_OS_Simulator.Controls.Graphs
 {

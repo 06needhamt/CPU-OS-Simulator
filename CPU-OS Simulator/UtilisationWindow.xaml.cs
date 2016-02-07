@@ -12,6 +12,8 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using CPU_OS_Simulator.Controls.Graphs.ViewModels;
+using OxyPlot;
 
 namespace CPU_OS_Simulator
 {
@@ -56,7 +58,12 @@ namespace CPU_OS_Simulator
 
         private void btn_SetSwap_Click(object sender, RoutedEventArgs e)
         {
-            //TODO Find out how to update graph values
+            int newSwap;
+            if (int.TryParse(txt_MaxSwap.Text, out newSwap))
+                ((MemoryGraphModel) MemoryGraph.Content).SwappedBytes = newSwap;
+            else
+                MessageBox.Show("Swap amount must be an integer");
+            ((MemoryGraphModel)MemoryGraph.Content).PlotModel.InvalidatePlot(true);
         }
 
         private void btn_MemReset_Click(object sender, RoutedEventArgs e)
@@ -84,6 +91,11 @@ namespace CPU_OS_Simulator
         private void chk_StayOnTop_Unchecked(object sender, RoutedEventArgs e)
         {
             this.Topmost = false;
+        }
+
+        private void btn_ViewMemory_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }
