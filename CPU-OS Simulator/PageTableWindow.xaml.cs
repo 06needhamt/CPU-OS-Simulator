@@ -11,6 +11,7 @@ namespace CPU_OS_Simulator
     public partial class PageTableWindow : Window
     {
         private MemoryWindow parent;
+        private PhysicalMemoryWindow physicalMemoryParent;
 
         /// <summary>
         /// Default Constructor for page table window
@@ -27,14 +28,53 @@ namespace CPU_OS_Simulator
         public PageTableWindow(MemoryWindow parent)
         {
             this.parent = parent;
+            physicalMemoryParent = null;
             InitializeComponent();
         }
 
+        /// <summary>
+        /// Constructor for page table window that takes the window instance that is creating this window
+        /// PLEASE NOTE: This constructor should always be used so data can be passed back to the parent window
+        /// </summary>
+        /// <param name="parent">The window that is creating this window </param>
+        public PageTableWindow(PhysicalMemoryWindow parent)
+        {
+            this.physicalMemoryParent = parent;
+            this.parent = null;
+            InitializeComponent();
+        }
         private void PageTableWindow1_Loaded(object sender, RoutedEventArgs e)
         {
             lst_Pages.ItemsSource = null;
             lst_Pages.Items.Clear();
-            lst_Pages.ItemsSource = parent.MainParentWindow.Memory.Table.Entries;
+            if (parent.MainParentWindow != null)
+            {
+                lst_Pages.ItemsSource = parent.MainParentWindow.Memory.Table.Entries;
+            }
+            else if (parent.PhysicalMemoryParentWindow != null)
+            {
+                if (parent.PhysicalMemoryParentWindow.OsParent != null)
+                {
+                    lst_Pages.ItemsSource = parent.PhysicalMemoryParentWindow.OsParent.WindowParent.Memory.Table.Entries;
+                }
+                else if (parent.PhysicalMemoryParentWindow.UtilisationParent != null)
+                {
+                    lst_Pages.ItemsSource =
+                        parent.PhysicalMemoryParentWindow.UtilisationParent.OsParent.WindowParent.Memory.Table.Entries;
+                }
+                else
+                {
+                    MessageBox.Show(
+                   "ERROR: An ERROR has occurred in the window manager please report this to your tutor, the program will now terminate");
+                    Environment.Exit(1);
+                }
+            }
+            else
+            {
+                MessageBox.Show(
+                    "ERROR: An ERROR has occurred in the window manager please report this to your tutor, the program will now terminate");
+                Environment.Exit(1);
+            }
 
         }
 

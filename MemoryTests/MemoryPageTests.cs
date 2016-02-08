@@ -14,7 +14,7 @@ namespace CPU_OS_Simulator.Memory.Tests
         [TestMethod()]
         public void MemoryPageTest()
         {
-            MemoryPage m = new MemoryPage(0, 0,"Unit Test");
+            MemoryPage m = new MemoryPage(0, 0,"Unit Test",-1);
             Assert.IsInstanceOfType(m, typeof(MemoryPage));
         }
 
@@ -23,7 +23,7 @@ namespace CPU_OS_Simulator.Memory.Tests
         {
             PhysicalMemory mem = new PhysicalMemory(10);
             PageTable table = new PageTable(0);
-            MemoryPage m = new MemoryPage(0, 0,"Unit Test");
+            MemoryPage m = new MemoryPage(0, 0,"Unit Test",-1);
             mem.AddPage(m, 0);
             m.SwapOut(0, 0);
             Assert.IsTrue(table.Entries[0].SwappedOut);
@@ -34,7 +34,7 @@ namespace CPU_OS_Simulator.Memory.Tests
         {
             PhysicalMemory mem = new PhysicalMemory(10);
             PageTable table = new PageTable(0);
-            MemoryPage m = new MemoryPage(0, 0,"Unit Test");
+            MemoryPage m = new MemoryPage(0, 0,"Unit Test",-1);
             mem.AddPage(m, 0);
             m.SwapOut(0, 0);
             m.SwapIn(0, 0);
@@ -44,7 +44,7 @@ namespace CPU_OS_Simulator.Memory.Tests
         [TestMethod()]
         public void ZeroMemoryTest()
         {
-            MemoryPage m = new MemoryPage(0, 0,"Unit Test");
+            MemoryPage m = new MemoryPage(0, 0,"Unit Test",-1);
             int count = 0;
             m.ZeroMemory();
             for (int i = 0; i < MemoryPage.PAGE_SIZE / 8; i++)

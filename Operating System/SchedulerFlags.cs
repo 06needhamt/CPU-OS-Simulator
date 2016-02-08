@@ -23,5 +23,6 @@ namespace CPU_OS_Simulator.Operating_System
         public int cpuClockSpeed;
         public List<LotteryTicket> issuedLotteryTickets;
         public List<LotteryTicket> drawnLotteryTickets;
+        public OSCore core;
     }
 }

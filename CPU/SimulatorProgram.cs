@@ -178,7 +178,7 @@ namespace CPU_OS_Simulator.CPU
             List<MemoryPage> memoryPages = new List<MemoryPage>(pages);
             for (int i = 0; i < pages; i++)
             {
-                memoryPages.Add(new MemoryPage(i, (i * MemoryPage.PAGE_SIZE),"Obsolete"));
+                memoryPages.Add(new MemoryPage(i, (i * MemoryPage.PAGE_SIZE),"Obsolete",-1));
             }
             return memoryPages;
         }

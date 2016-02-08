@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.Specialized;
+using System.Linq;
 using System.Reflection;
 using System.Windows;
 using CPU_OS_Simulator.Memory;
@@ -141,9 +142,21 @@ namespace CPU_OS_Simulator.Operating_System
             PhysicalMemory mem = wind.Memory;
             for (int i = 0; i < proc.ProcessMemory; i++)
             {
-                MemoryPage m = new MemoryPage(i, i * MemoryPage.PAGE_SIZE,proc.Program.Name);
+                MemoryPage m = new MemoryPage(i, i * MemoryPage.PAGE_SIZE,proc.Program.Name,proc.ProcessID);
                 mem.AddPage(m, i);
             }
+        }
+
+        public void DeallocateProcessMemory(SimulatorProcess proc)
+        {
+            if (proc == null)
+            {
+                MessageBox.Show("Can't de-allocate memory for a null process");
+                return;
+            }
+            dynamic wind = GetMainWindowInstance();
+            PhysicalMemory mem = wind.Memory;
+            mem.Pages.RemoveAll(x => x.ProcessId == proc.ProcessID);
         }
 
         /// <summary>
@@ -185,6 +198,7 @@ namespace CPU_OS_Simulator.Operating_System
             temp.cpuClockSpeed = CPUClockSpeed;
             temp.issuedLotteryTickets = new List<LotteryTicket>();
             temp.drawnLotteryTickets = new List<LotteryTicket>();
+            temp.core = this;
             return temp;
         }
 

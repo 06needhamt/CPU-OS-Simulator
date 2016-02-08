@@ -14,6 +14,7 @@ namespace CPU_OS_Simulator.Memory
         private int startOffsetPhysical;
         private readonly int startOffset;
         private int frameNumber;
+        private int processID;
         /// <summary>
         /// The size of the memory pages to manage
         /// </summary>
@@ -103,6 +104,12 @@ namespace CPU_OS_Simulator.Memory
             set { programName = value; }
         }
 
+        public int ProcessId
+        {
+            get { return processID; }
+            set { processID = value; }
+        }
+
         #region Constructors
         /// <summary>
         /// Constructor for memory page
@@ -110,11 +117,12 @@ namespace CPU_OS_Simulator.Memory
         /// <param name="pageIndex"> the index of the page within the program</param>
         /// <param name="startOffset">the start offset of this page</param>
         /// <param name="programName"> the name of the program this belongs to</param>
-        public MemoryPage(int pageIndex, int startOffset, string programName)
+        public MemoryPage(int pageIndex, int startOffset, string programName, int processID)
         {
             this.pageIndex = pageIndex;
             this.startOffset = startOffset;
             this.programName = programName;
+            this.processID = processID;
             //this.PAGE_SIZE = pageSize;
             endOffset = startOffset + PAGE_SIZE;
             data = new MemorySegment[PAGE_SIZE / 8];

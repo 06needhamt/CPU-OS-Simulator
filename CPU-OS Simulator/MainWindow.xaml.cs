@@ -269,7 +269,7 @@ namespace CPU_OS_Simulator
         private void DebugFunction()
         { 
             //DebugCompilingProgram();
-            MemoryPage m = new MemoryPage(0, 0,"Debug");
+            MemoryPage m = new MemoryPage(0, 0,"Debug",-1);
             //m.Data[0] = new MemorySegment(0);
             m.Data[0].Byte0 = (byte)'A';
             m.Data[0].Byte1 = (byte)'B';
@@ -291,7 +291,7 @@ namespace CPU_OS_Simulator
             List<List<InstructionSegment>> segmentList = compiler.CompileFromInstructions();
             List<byte> bytes = compiler.CompileToBytes(segmentList);
             CompiledProgram compiledProgram = new CompiledProgram(bytes,program.Name,bytes.Count);
-            MemoryPage m = new MemoryPage(0, 0,program.Name);
+            MemoryPage m = new MemoryPage(0, 0,program.Name,-1);
             m.ZeroMemory();
             memory.AddPage(m,0);
             compiledProgram.LoadinMemory(0);
@@ -303,7 +303,7 @@ namespace CPU_OS_Simulator
         {
             for (int i = 0; i < memory.Capacity + 1; i++)
             {
-                MemoryPage m = new MemoryPage(i, i * MemoryPage.PAGE_SIZE,"Debug");
+                MemoryPage m = new MemoryPage(i, i * MemoryPage.PAGE_SIZE,"Debug",-1);
                 memory.AddPage(m, memory.Pages.Count);
                 System.Console.WriteLine("Pages in Memory = " + memory.Pages.Count);
                 System.Console.WriteLine("Pages Swapped Out = " + swapSpace.SwappedMemoryPages.Count);
@@ -389,7 +389,7 @@ namespace CPU_OS_Simulator
         {
             for (int i = 0; i < prog.Pages; i++)
             {
-                MemoryPage memoryPage = new MemoryPage(i, (i * MemoryPage.PAGE_SIZE),prog.Name);
+                MemoryPage memoryPage = new MemoryPage(i, (i * MemoryPage.PAGE_SIZE),prog.Name,-1);
                 memory.AddPage(memoryPage, memory.Pages.Count);
             }
         }
@@ -844,7 +844,7 @@ namespace CPU_OS_Simulator
                 }
                 for (int i = 0; i < prog.Pages; i++)
                 {
-                    MemoryPage memoryPage = new MemoryPage(i, (i*MemoryPage.PAGE_SIZE),prog.Name);
+                    MemoryPage memoryPage = new MemoryPage(i, (i*MemoryPage.PAGE_SIZE),prog.Name,-1);
                     memory.AddPage(memoryPage, memory.Pages.Count);
                 }
                 programList.Add(prog);
@@ -878,7 +878,7 @@ namespace CPU_OS_Simulator
                 }
                 for (int i = 0; i < prog.Pages; i++)
                 {
-                    MemoryPage page = new MemoryPage(i,i * MemoryPage.PAGE_SIZE,prog.Name);
+                    MemoryPage page = new MemoryPage(i,i * MemoryPage.PAGE_SIZE,prog.Name,-1);
                     memory.AddPage(page, memory.Pages.Count);
                 }
                 programList.Add(prog);

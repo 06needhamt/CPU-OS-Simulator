@@ -60,6 +60,13 @@ namespace CPU_OS_Simulator
             get { return mainParentWindow; }
             set { mainParentWindow = value; }
         }
+
+        public PhysicalMemoryWindow PhysicalMemoryParentWindow
+        {
+            get { return physicalMemoryParentWindow; }
+            set { physicalMemoryParentWindow = value; }
+        }
+
         /// <summary>
         /// This function populates the data view with the contents of the current memoryPage
         /// </summary>

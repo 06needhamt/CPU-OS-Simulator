@@ -23,6 +23,7 @@ namespace CPU_OS_Simulator
     public partial class PhysicalMemoryWindow : Window
     {
         public static PhysicalMemoryWindow currentInstance;
+
         private MainWindow mainParent;
         private OperatingSystemMainWindow osParent;
         private UtilisationWindow utilisationParent;
@@ -76,12 +77,12 @@ namespace CPU_OS_Simulator
                     foreach (MemoryPage page in osParent.WindowParent.Memory.Pages)
                     {
                         MemoryButton b = new MemoryButton(page);
-                        b.Content = "Size: " + MemoryPage.PAGE_SIZE + " Frame Number: " + page.FrameNumber + "Start Offset: " + page.StartOffset;
+                        b.Content = "Size: " + MemoryPage.PAGE_SIZE + " Frame Number: " + page.FrameNumber + "Start Offset: " + page.StartOffset + "PID: " + page.ProcessId;
                         b.Width = lst_Pages.Width - 5;
                         b.Height = lst_Pages.Height / 10;
                         b.Click += delegate
                         {
-                            MemoryWindow wind = new MemoryWindow(currentInstance, page);
+                            MemoryWindow wind = new MemoryWindow(this, page);
                             wind.Show();
                         };
                         lst_Pages.Items.Add((MemoryButton)b);
@@ -103,12 +104,12 @@ namespace CPU_OS_Simulator
                     foreach (MemoryPage page in utilisationParent.OsParent.WindowParent.Memory.Pages)
                     {
                         MemoryButton b = new MemoryButton(page);
-                        b.Content = "Size: " + MemoryPage.PAGE_SIZE + " Frame Number: " + page.FrameNumber + "Start Offset: " + page.StartOffset;
+                        b.Content = "Size: " + MemoryPage.PAGE_SIZE + " Frame Number: " + page.FrameNumber + "Start Offset: " + page.StartOffset + "PID: " + page.ProcessId;
                         b.Width = lst_Pages.Width - 5;
                         b.Height = lst_Pages.Height / 10;
                         b.Click += delegate
                         {
-                            MemoryWindow wind = new MemoryWindow(currentInstance, page);
+                            MemoryWindow wind = new MemoryWindow(this, page);
                             wind.Show();
                         };
                         lst_Pages.Items.Add((MemoryButton)b);
@@ -126,12 +127,12 @@ namespace CPU_OS_Simulator
                 foreach (MemoryPage page in mainParent.Memory.Pages)
                 {
                     MemoryButton b = new MemoryButton(page);
-                    b.Content = "Size: " + MemoryPage.PAGE_SIZE + " Frame Number: " + page.FrameNumber + "Start Offset: " + page.StartOffset;
+                    b.Content = "Size: " + MemoryPage.PAGE_SIZE + " Frame Number: " + page.FrameNumber + "Start Offset: " + page.StartOffset + "PID: " + page.ProcessId ;
                     b.Width = lst_Pages.Width - 5;
                     b.Height = lst_Pages.Height / 10;
                     b.Click += delegate
                     {
-                        MemoryWindow wind = new MemoryWindow(currentInstance, page);
+                        MemoryWindow wind = new MemoryWindow(this, page);
                         wind.Show();
                     };
                     lst_Pages.Items.Add((MemoryButton)b);
@@ -156,6 +157,24 @@ namespace CPU_OS_Simulator
             //System.Console.WriteLine(windowBridge.GetExportedTypes()[1]);
             Type WindowType = windowBridge.GetType(windowBridge.GetExportedTypes()[1].ToString()); // get the name of the type that contains the window instances
             WindowType.GetField("PhysicalMemoryWindowInstance").SetValue(null, currentInstance);
+        }
+
+        public MainWindow MainParent
+        {
+            get { return mainParent; }
+            set { mainParent = value; }
+        }
+
+        public OperatingSystemMainWindow OsParent
+        {
+            get { return osParent; }
+            set { osParent = value; }
+        }
+
+        public UtilisationWindow UtilisationParent
+        {
+            get { return utilisationParent; }
+            set { utilisationParent = value; }
         }
     }
 }

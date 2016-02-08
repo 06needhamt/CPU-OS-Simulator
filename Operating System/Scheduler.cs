@@ -49,6 +49,9 @@ namespace CPU_OS_Simulator.Operating_System
         private List<LotteryTicket> issuedLotteryTickets;
         private List<LotteryTicket> drawnLotteryTickets; 
         public event NotifyCollectionChangedEventHandler CollectionChanged;
+        [ScriptIgnore]
+        [JsonIgnore]
+        private OSCore core;
 
         /// <summary>
         /// Default Constructor for scheduler used when deserialising the scheduler
@@ -80,6 +83,7 @@ namespace CPU_OS_Simulator.Operating_System
             suspended = false;
             issuedLotteryTickets = flags.issuedLotteryTickets;
             drawnLotteryTickets = flags.drawnLotteryTickets;
+            core = flags.core;
             CollectionChanged += OnCollectionChanged;
             CreateBackgroundWorker();
             //BindingOperations.EnableCollectionSynchronization(readyQueue,thisLock);
@@ -346,6 +350,7 @@ namespace CPU_OS_Simulator.Operating_System
             }
             if (runningProcess.Unit.Done)
             {
+                core.DeallocateProcessMemory(runningProcess);
                 issuedLotteryTickets = issuedLotteryTickets.Where(x => x.Owner != runningProcess).ToList();
                 if(issuedLotteryTickets.Count == 0 || readyQueue.Count == 0)
                     return;
@@ -493,6 +498,7 @@ namespace CPU_OS_Simulator.Operating_System
                     MessageBox.Show("There was an error while creating process control block flags");
                     return;
                 }
+                core.DeallocateProcessMemory(runningProcess);
                 runningProcess = readyQueue.Dequeue();
             }
         }
@@ -549,6 +555,7 @@ namespace CPU_OS_Simulator.Operating_System
                     MessageBox.Show("There was an error while creating process control block flags");
                     return;
                 }
+                core.DeallocateProcessMemory(runningProcess);
                 runningProcess = readyQueue.Dequeue();
             }
         }
@@ -623,6 +630,10 @@ namespace CPU_OS_Simulator.Operating_System
                     runningProcess.Unit.ExecuteInstruction();
                     await CallFromMainThread(UpdateInterface);
                     await CallFromMainThread(UpdateMainWindowInterface);
+                }
+                if (runningProcess.Unit.Done)
+                {
+                    core.DeallocateProcessMemory(runningProcess);
                 }
                 runningProcess = null;
             }
