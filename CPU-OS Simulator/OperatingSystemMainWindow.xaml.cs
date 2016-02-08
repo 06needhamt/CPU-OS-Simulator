@@ -24,7 +24,7 @@ namespace CPU_OS_Simulator
     /// </summary>
     public partial class OperatingSystemMainWindow : Window , INotifyCollectionChanged
     {
-        private MainWindow parent;
+        private MainWindow MainParent;
         private List<SimulatorProgram> programList;
         private OSCore osCore = null;
         private List<SimulatorProcess> processes;
@@ -57,7 +57,7 @@ namespace CPU_OS_Simulator
         /// <param name="parent">The window that is creating this window </param>
         public OperatingSystemMainWindow(MainWindow parent)
         {
-            this.parent = parent;
+            this.MainParent = parent;
             InitializeComponent();
             currentInstance = this;
             SetOSWindowInstance();
@@ -86,6 +86,12 @@ namespace CPU_OS_Simulator
             get { return osCore; }
             set { osCore = value; }
         }
+
+        public MainWindow WindowParent
+        {
+            get { return MainParent; }
+            set { MainParent = value; }
+        }
         /// <summary>
         /// This method is called when the close button is clicked
         /// </summary>
@@ -110,7 +116,7 @@ namespace CPU_OS_Simulator
 
         private void OperatingSystemWindow_Loaded(object sender, RoutedEventArgs e)
         {
-            programList = parent.ProgramList ?? new List<SimulatorProgram>();
+            programList = MainParent.ProgramList ?? new List<SimulatorProgram>();
             lst_Programs.ItemsSource = null;
             lst_Programs.Items.Clear();
             lst_Programs.ItemsSource = programList;
@@ -443,7 +449,7 @@ namespace CPU_OS_Simulator
             lst_RunningProcesses.SelectedIndex = RunningIndex;
             lst_ReadyProcesses.SelectedIndex = ReadyIndex;
             lst_WaitingProcesses.SelectedIndex = WaitingIndex; //TODO URGENT Keep selected items after updating the interface
-            programList = parent.ProgramList ?? new List<SimulatorProgram>();
+            programList = MainParent.ProgramList ?? new List<SimulatorProgram>();
             lst_Programs.ItemsSource = null;
             lst_Programs.Items.Clear();
             lst_Programs.ItemsSource = programList;

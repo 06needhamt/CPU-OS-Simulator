@@ -39,5 +39,9 @@
         /// This variable represents the active Utilisation Window
         /// </summary>
         public static UtilisationWindow UtilisationWindowInstance = UtilisationWindow.currentInstance;
+        /// <summary>
+        /// This variable represents the active  PhysicalMemoryWindow instance
+        /// </summary>
+        public static PhysicalMemoryWindow PhysicalMemoryWindowInstance = PhysicalMemoryWindow.currentInstance;
     }
 }

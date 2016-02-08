@@ -22,11 +22,21 @@ namespace CPU_OS_Simulator.Controls
     public partial class MemoryButton : Button
     {
         private MemoryPage page;
+
         public MemoryButton()
         {
             InitializeComponent();
             Click += new RoutedEventHandler(button_Click);
+            this.page = null;
         }
+
+        public MemoryButton(MemoryPage page)
+        {
+            this.page = page;
+            InitializeComponent();
+            Click += new RoutedEventHandler(button_Click);
+        }
+
 
         public MemoryPage GetMemoryPage(int frameNumber)
         {
@@ -44,7 +54,7 @@ namespace CPU_OS_Simulator.Controls
 
         private void button_Click(object sender, RoutedEventArgs e)
         {
-            
+            //MessageBox.Show("On Click Listener has not been overridden");
         }
     }
 }

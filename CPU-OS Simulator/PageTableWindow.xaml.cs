@@ -34,7 +34,7 @@ namespace CPU_OS_Simulator
         {
             lst_Pages.ItemsSource = null;
             lst_Pages.Items.Clear();
-            lst_Pages.ItemsSource = parent.ParentWindow.Memory.Table.Entries;
+            lst_Pages.ItemsSource = parent.MainParentWindow.Memory.Table.Entries;
 
         }
 
@@ -58,12 +58,12 @@ namespace CPU_OS_Simulator
             if (((Button) sender).Content.ToString().Equals("SWAP OUT"))
             {
                 int index = lst_Pages.SelectedIndex;
-                parent.ParentWindow.Memory.Table.Entries[index].Page.SwapOut(0, index);
+                parent.MainParentWindow.Memory.Table.Entries[index].Page.SwapOut(0, index);
             }
             else if (((Button) sender).Content.ToString().Equals("SWAP IN"))
             {
                 int index = lst_Pages.SelectedIndex;
-                parent.ParentWindow.Memory.Table.Entries[index].Page.SwapIn(0, index);
+                parent.MainParentWindow.Memory.Table.Entries[index].Page.SwapIn(0, index);
                 //parent.ParentWindow.Memory.Table.Entries.RemoveAt(parent.ParentWindow.Memory.Table.Entries.Count - 1);
             }
             else
@@ -79,7 +79,7 @@ namespace CPU_OS_Simulator
         {
             lst_Pages.ItemsSource = null;
             lst_Pages.Items.Clear();
-            lst_Pages.ItemsSource = parent.ParentWindow.Memory.Table.Entries;
+            lst_Pages.ItemsSource = parent.MainParentWindow.Memory.Table.Entries;
         }
 
         private void lst_Pages_SelectionChanged(object sender, SelectionChangedEventArgs e)

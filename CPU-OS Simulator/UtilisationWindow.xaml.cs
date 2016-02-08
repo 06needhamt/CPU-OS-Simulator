@@ -23,7 +23,7 @@ namespace CPU_OS_Simulator
     public partial class UtilisationWindow : Window
     {
         public static UtilisationWindow currentInstance;
-        private OperatingSystemMainWindow parent;
+        private OperatingSystemMainWindow osParent;
 
         public UtilisationWindow()
         {
@@ -32,12 +32,19 @@ namespace CPU_OS_Simulator
 
         public UtilisationWindow(OperatingSystemMainWindow parent)
         {
-            this.parent = parent;
+            this.osParent = parent;
             InitializeComponent();
             currentInstance = this;
             SetUtilisationWindowInstance();
 
         }
+
+        public OperatingSystemMainWindow OsParent
+        {
+            get { return osParent; }
+            set { osParent = value; }
+        }
+
         private void btn_Reset_Click(object sender, RoutedEventArgs e)
         {
             cmb_CPUGraphScale.SelectedIndex = 3;
@@ -95,7 +102,8 @@ namespace CPU_OS_Simulator
 
         private void btn_ViewMemory_Click(object sender, RoutedEventArgs e)
         {
-
+            PhysicalMemoryWindow wind = new PhysicalMemoryWindow(this);
+            wind.Show();
         }
     }
 }

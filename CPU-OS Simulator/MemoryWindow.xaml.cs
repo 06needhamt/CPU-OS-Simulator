@@ -11,7 +11,8 @@ namespace CPU_OS_Simulator
     /// </summary>
     public partial class MemoryWindow : Window
     {
-        private MainWindow parentWindow;
+        private MainWindow mainParentWindow;
+        private PhysicalMemoryWindow physicalMemoryParentWindow;
         private MemoryPage currentPage;
         /// <summary>
         /// Variable to hold the current instance of the memory window
@@ -34,7 +35,18 @@ namespace CPU_OS_Simulator
         /// <param name="currentPage"> The memory page to be displayed in the window </param>
         public MemoryWindow(MainWindow parentWindow, MemoryPage currentPage) : this()
         {
-            this.parentWindow = parentWindow;
+            this.mainParentWindow = parentWindow;
+            this.currentPage = currentPage;
+            currentInstance = this;
+            SetMemoryWindowInstance();
+            PopulateDataView();
+        }
+
+        public MemoryWindow(PhysicalMemoryWindow parentWindow, MemoryPage currentPage)
+            : this()
+        {
+            this.mainParentWindow = null;
+            this.physicalMemoryParentWindow = parentWindow;
             this.currentPage = currentPage;
             currentInstance = this;
             SetMemoryWindowInstance();
@@ -43,10 +55,10 @@ namespace CPU_OS_Simulator
         /// <summary>
         /// Property to hold the current instance of the memory window
         /// </summary>
-        public MainWindow ParentWindow
+        public MainWindow MainParentWindow
         {
-            get { return parentWindow; }
-            set { parentWindow = value; }
+            get { return mainParentWindow; }
+            set { mainParentWindow = value; }
         }
         /// <summary>
         /// This function populates the data view with the contents of the current memoryPage
