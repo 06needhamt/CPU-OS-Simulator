@@ -139,8 +139,11 @@ namespace CPU_OS_Simulator.Memory
             int pageCount = mem.Table.Entries.Count;
             for (int i = 0; i < data.Length; i++)
             {
-                data[i] = new MemorySegment((pageCount * MemoryPage.PAGE_SIZE) + (i*8));
-                data[i].LogicalAddress = i*8;
+                if (data[i] == null)
+                {
+                    data[i] = new MemorySegment((pageCount*MemoryPage.PAGE_SIZE) + (i*8));
+                    data[i].LogicalAddress = i*8;
+                }
             }
         }
 
