@@ -144,6 +144,10 @@ namespace CPU_OS_Simulator.Memory
             {
                 physicalMemory.Table.Entries[FrameNumber].SwappedOut = false;
                 physicalMemory.Table.Entries[FrameNumber].Faults++;
+                for (int i = 0; i < temp.Data.Length; i++)
+                {
+                    temp.Data[i].PhysicalAddress = (FrameNumber * MemoryPage.PAGE_SIZE) * (i * 8);
+                }
                 physicalMemory.Pages.Add(temp);
                 swap.SwappedMemoryPages.RemoveAt(GetIndexSwap(FrameNumber));
             }

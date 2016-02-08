@@ -134,9 +134,12 @@ namespace CPU_OS_Simulator.Memory
         /// </summary>
         private void PopulateData()
         {
+            dynamic wind = GetMainWindowInstance();
+            PhysicalMemory mem = wind.Memory;
+            int pageCount = mem.Table.Entries.Count;
             for (int i = 0; i < data.Length; i++)
             {
-                data[i] = new MemorySegment(startOffset + (i*8));
+                data[i] = new MemorySegment((pageCount * MemoryPage.PAGE_SIZE) + (i*8));
                 data[i].LogicalAddress = i*8;
             }
         }
@@ -185,6 +188,10 @@ namespace CPU_OS_Simulator.Memory
             {
                 physicalMemory.Table.Entries[FrameNumber].SwappedOut = false;
                 physicalMemory.Table.Entries[FrameNumber].Faults++;
+                for (int i = 0; i < temp.data.Length; i++)
+                {
+                    temp.data[i].PhysicalAddress = (frameNumber*MemoryPage.PAGE_SIZE)*(i*8);
+                }
                 physicalMemory.Pages.Add(temp);
                 swap.SwappedMemoryPages.RemoveAt(GetIndexSwap(FrameNumber));
             }

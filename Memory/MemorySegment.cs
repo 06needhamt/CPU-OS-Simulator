@@ -256,6 +256,7 @@ namespace CPU_OS_Simulator.Memory
             return sb.ToString();
         }
 
+
         /// <summary>
         /// Gets a specified byte from this memory segment
         /// </summary>
