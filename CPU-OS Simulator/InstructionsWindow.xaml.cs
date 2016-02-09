@@ -36,6 +36,7 @@ namespace CPU_OS_Simulator
         /// </summary>
         private Func<int>[] InstructionCreationFunctions = new Func<int>[7];
 
+        private bool isLabel = false;
         /// <summary>
         /// Default Constructor for Instruction Window
         /// </summary>
@@ -679,9 +680,16 @@ namespace CPU_OS_Simulator
             EnumAddressType op1mem = EnumAddressType.UNKNOWN;
             EnumAddressType op2mem = EnumAddressType.UNKNOWN;
             int index = owner.lst_InstructionsList.SelectedIndex;
+            int parse;
 
             SimulatorProgram prog = (SimulatorProgram)owner.lst_ProgramList.SelectedItem;
             opcode = (EnumOpcodes)Enum.Parse(typeof(EnumOpcodes), lst_OpcodeListControlTransfer.SelectedItem.ToString());
+
+            if (!int.TryParse(txtSourceValueControlTransfer.Text, out parse))
+            {
+                op1mem = EnumAddressType.UNKNOWN;
+                op1 = new Operand(txtSourceValueControlTransfer.Text, EnumOperandType.LABEL);
+            }
 
             if (rdb_SourceValueControlTransfer.IsChecked != null && rdb_SourceValueControlTransfer.IsChecked.Value)
             {
@@ -1459,6 +1467,11 @@ namespace CPU_OS_Simulator
             {
                 CreateInstruction();
             }
+        }
+
+        private void btn_NewLabel_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

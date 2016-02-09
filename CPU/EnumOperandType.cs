@@ -8,6 +8,7 @@
         #pragma warning disable 1591
         UNKNOWN = -1,
         VALUE = 0,
-        ADDRESS = 1
+        ADDRESS = 1,
+        LABEL = 2
     }
 }

@@ -532,6 +532,12 @@ namespace CPU_OS_Simulator
             return new Instruction((int)opcode, Size);
         }
 
+        public void AddLabel(string name, int logicalAddress, int physicalAddress)
+        {
+            SimulatorProgram prog = ProgramList.Where(x => x.Name.Equals(currentProgram)).FirstOrDefault();
+            prog.Labels.Add(new SimulatorLabel(prog,logicalAddress,physicalAddress,name));
+        }
+
         /// <summary>
         /// Adds an instruction to the currently loaded program
         /// </summary>
