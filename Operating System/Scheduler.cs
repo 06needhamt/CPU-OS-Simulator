@@ -13,6 +13,7 @@ using System.Windows.Threading;
 using System.Timers;
 using System.Windows.Data;
 using CPU_OS_Simulator.CPU;
+using CPU_OS_Simulator.Memory;
 using System.Web.Script.Serialization;
 using Newtonsoft.Json; // See Third Party Libs/Credits.txt for licensing information for JSON.Net
 
@@ -208,12 +209,14 @@ namespace CPU_OS_Simulator.Operating_System
                     {
                         long life = CalculateLifetime();
                         ExecuteFirstComeFirstServed(life);
+                        DeallocateProcessMemory(runningProcess);
                         break;
                     }
                     case EnumSchedulingPolicies.SHORTEST_JOB_FIRST:
                     {
                         long life = CalculateLifetime();
                         ExecuteShortestJobFirst(life);
+                        DeallocateProcessMemory(runningProcess);
                         break;
                     }
                     case EnumSchedulingPolicies.ROUND_ROBIN:
@@ -228,6 +231,7 @@ namespace CPU_OS_Simulator.Operating_System
                                 await CallFromMainThread(UpdateInterface);
                                 await CallFromMainThread(UpdateMainWindowInterface);
                                 ExecuteRoundRobin(timeout,life,false);
+                                DeallocateProcessMemory(runningProcess);
                                 break;
                             }
                             case EnumPriorityPolicy.NO_PRIORITY:
@@ -235,6 +239,7 @@ namespace CPU_OS_Simulator.Operating_System
                                 long life = CalculateLifetime();
                                 int timeout = CalculateTimeSlice();
                                 ExecuteRoundRobin(timeout,life,false);
+                                DeallocateProcessMemory(runningProcess);
                                 break;
                             }
                             case EnumPriorityPolicy.PRE_EMPTIVE:
@@ -245,6 +250,7 @@ namespace CPU_OS_Simulator.Operating_System
                                 await CallFromMainThread(UpdateInterface);
                                 await CallFromMainThread(UpdateMainWindowInterface);
                                 ExecuteRoundRobin(timeout,life,true);
+                                DeallocateProcessMemory(runningProcess);
                                 break;
                             }
                             case EnumPriorityPolicy.UNKNOWN:
@@ -267,6 +273,7 @@ namespace CPU_OS_Simulator.Operating_System
                         await CallFromMainThread(UpdateInterface);
                         await CallFromMainThread(UpdateMainWindowInterface);
                         ExecuteLottery(DateTime.Now.Ticks,life);
+                        DeallocateProcessMemory(runningProcess);
 
                         break;
                     }
@@ -350,7 +357,7 @@ namespace CPU_OS_Simulator.Operating_System
             }
             if (runningProcess.Unit.Done)
             {
-                core.DeallocateProcessMemory(runningProcess);
+                DeallocateProcessMemory(runningProcess);
                 issuedLotteryTickets = issuedLotteryTickets.Where(x => x.Owner != runningProcess).ToList();
                 if(issuedLotteryTickets.Count == 0 || readyQueue.Count == 0)
                     return;
@@ -498,7 +505,7 @@ namespace CPU_OS_Simulator.Operating_System
                     MessageBox.Show("There was an error while creating process control block flags");
                     return;
                 }
-                core.DeallocateProcessMemory(runningProcess);
+                DeallocateProcessMemory(runningProcess);
                 runningProcess = readyQueue.Dequeue();
             }
         }
@@ -555,7 +562,7 @@ namespace CPU_OS_Simulator.Operating_System
                     MessageBox.Show("There was an error while creating process control block flags");
                     return;
                 }
-                core.DeallocateProcessMemory(runningProcess);
+                DeallocateProcessMemory(runningProcess);
                 runningProcess = readyQueue.Dequeue();
             }
         }
@@ -633,7 +640,7 @@ namespace CPU_OS_Simulator.Operating_System
                 }
                 if (runningProcess.Unit.Done)
                 {
-                    core.DeallocateProcessMemory(runningProcess);
+                    DeallocateProcessMemory(runningProcess);
                 }
                 runningProcess = null;
             }
@@ -685,6 +692,19 @@ namespace CPU_OS_Simulator.Operating_System
         /// when a process re-enters the running state after it was timed out 
         /// so it can carry on where it left off 
         /// </summary>
+        /// 
+                /// <summary>
+        /// This function gets the main window instance from the window bridge
+        /// </summary>
+        /// <returns> the active instance of main window </returns>
+        private dynamic GetMainWindowInstance()
+        {
+            Assembly windowBridge = Assembly.LoadFrom("CPU_OS_Simulator.WindowBridge.dll"); // Load the window bridge module
+            //System.Console.WriteLine(windowBridge.GetExportedTypes()[0]);
+            Type WindowType = windowBridge.GetType(windowBridge.GetExportedTypes()[1].ToString()); // get the name of the type that contains the window instances
+            dynamic window = WindowType.GetField("MainWindowInstance").GetValue(null); // get the value of the static MainWindowInstance field
+            return window;
+        }
         private void LoadPCB()
         {
             if (runningProcess.ControlBlock != null)
@@ -719,6 +739,18 @@ namespace CPU_OS_Simulator.Operating_System
             }
         }
 
+        public void DeallocateProcessMemory(SimulatorProcess proc)
+        {
+            if (proc == null)
+            {
+                MessageBox.Show("Can't de-allocate memory for a null process");
+                return;
+            }
+            dynamic wind = GetMainWindowInstance();
+            PhysicalMemory mem = wind.Memory;
+            mem.Pages.RemoveAll(x => x.ProcessId == proc.ProcessID);
+        }
+        
        
         /// <summary>
         /// This function creates the flags required to construct a PCB (Process Control Block)

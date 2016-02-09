@@ -200,5 +200,6 @@ namespace CPU_OS_Simulator
             Type WindowType = windowBridge.GetType(windowBridge.GetExportedTypes()[1].ToString()); // get the name of the type that contains the window instances
             WindowType.GetField("MemoryWindowInstance").SetValue(null, currentInstance);
         }
+
     }
 }

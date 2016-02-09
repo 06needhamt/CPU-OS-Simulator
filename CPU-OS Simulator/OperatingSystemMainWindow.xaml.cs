@@ -861,6 +861,8 @@ namespace CPU_OS_Simulator
 
         }
 
+
+
         private void rdb_Round_Robin_Checked(object sender, RoutedEventArgs e)
         {
             grp_Time_Slice.IsEnabled = true;
