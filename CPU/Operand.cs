@@ -13,6 +13,7 @@ namespace CPU_OS_Simulator.CPU
         private int value;
         private EnumOperandType type;
         private bool isRegister;
+        private string labelName;
         [NonSerialized]
         private Register register;
 
@@ -52,6 +53,15 @@ namespace CPU_OS_Simulator.CPU
             register = reg;
             value = reg.Value;
             this.type = type;
+        }
+
+        public Operand(string labelName, EnumOperandType type)
+        {
+            isRegister = false;
+            register = null;
+            value = 0;
+            this.type = type;
+            this.labelName = labelName;
         }
 
         #endregion Constructors
@@ -119,6 +129,11 @@ namespace CPU_OS_Simulator.CPU
             }
         }
 
+        public string LabelName
+        {
+            get { return labelName; }
+            set { labelName = value; }
+        }
         #endregion Properties
 
         #region Methods

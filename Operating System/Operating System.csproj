@@ -8,7 +8,7 @@
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>CPU_OS_Simulator.Operating_System</RootNamespace>
-    <AssemblyName>CPU-OS Simulator.Operating System</AssemblyName>
+    <AssemblyName>CPU-OS_Simulator.Operating System</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />
@@ -22,7 +22,7 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <LangVersion>5</LangVersion>
-    <DocumentationFile>bin\Debug\CPU-OS Simulator.Operating System.XML</DocumentationFile>
+    <DocumentationFile>bin\Debug\CPU-OS_Simulator.Operating System.xml</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>

@@ -19,9 +19,9 @@ namespace CPU_OS_Simulator.CPU
         private int logicalAddress;
         private int pages;
         private const int DEFAULT_PAGE_SIZE = 256;
+        private List<SimulatorLabel> labels;
 
         [ScriptIgnore]
-
         [NonSerialized]
         private ExecutionUnit unit;
 
@@ -63,6 +63,7 @@ namespace CPU_OS_Simulator.CPU
             unit = new ExecutionUnit(this, 100);
             stack = new ProgramStack();
             Console.WriteLine("Program Created");
+            labels = new List<SimulatorLabel>();
         }
 
 
@@ -163,6 +164,12 @@ namespace CPU_OS_Simulator.CPU
             {
                 stack = value;
             }
+        }
+
+        public List<SimulatorLabel> Labels
+        {
+            get { return labels; }
+            set { labels = value; }
         }
 
         #endregion Properties

@@ -765,7 +765,7 @@
             </TabControl>
             <Button x:Name="btn_Close" Content="CLOSE" HorizontalAlignment="Left" Margin="493,423,0,0" VerticalAlignment="Top" Width="95" Height="33" Click="btn_Close_Click" />
             <Button x:Name="btn_NewInstruction" Content="NEW INSTRUCTION" HorizontalAlignment="Left" Margin="235,423,0,0" VerticalAlignment="Top" Width="131" Height="33" Click="btn_NewInstruction_Click" />
-            <Button x:Name="btn_NewLabel" Content="NEW LABEL" HorizontalAlignment="Left" Margin="20,423,0,0" VerticalAlignment="Top" Width="95" Height="33"/>
+            <Button x:Name="btn_NewLabel" Content="NEW LABEL" HorizontalAlignment="Left" Margin="20,423,0,0" VerticalAlignment="Top" Width="95" Height="33" Click="btn_NewLabel_Click"/>
         </Grid>
     </Grid>
 </Window>

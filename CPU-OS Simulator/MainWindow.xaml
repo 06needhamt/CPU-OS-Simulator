@@ -4,7 +4,9 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CPU_OS_Simulator"
-        xmlns:System="clr-namespace:System;assembly=mscorlib" x:Name="MainWindow2" x:Class="CPU_OS_Simulator.MainWindow"
+        xmlns:System="clr-namespace:System;assembly=mscorlib"
+        xmlns:cpu="clr-namespace:CPU_OS_Simulator.CPU;assembly=CPU-OS-Simulator.CPU"
+        x:Name="MainWindow2" x:Class="CPU_OS_Simulator.MainWindow"
         mc:Ignorable="d"
         Title="CPU-OS Simulator" Height="768" Width="1280" Icon="CPU-OS Simulator 7-5-50_1.ico" ResizeMode="NoResize" Closing="MainWindow2_Closing" Loaded="MainWindow2_Loaded" WindowStartupLocation="CenterScreen">
     <Grid x:Name="MainWindowGrid" Cursor="Arrow">
@@ -15,18 +17,24 @@
         <Grid x:Name="InstructionsGrid" HorizontalAlignment="Left" Height="479" Margin="10,10,0,0" VerticalAlignment="Top" Width="436" Grid.ColumnSpan="2">
             <GroupBox x:Name="grp_InstructionsBox" Header="CPU INSTRUCTIONS IM MEMORY (RAM)" HorizontalAlignment="Left" VerticalAlignment="Top" Height="479" Width="436">
                 <Grid x:Name="InstructionsInnerGrid" HorizontalAlignment="Left" Height="469" VerticalAlignment="Top" Width="426" Margin="0,0,-2,-12">
-                    <ListView x:Name="lst_InstructionsList" HorizontalAlignment="Left" Height="459" VerticalAlignment="Top" Width="426" Background="#FF8BF4FF" SelectionChanged="lst_InstructionsList_SelectionChanged">
+                    <ListView x:Name="lst_InstructionsList" HorizontalAlignment="Left" Height="459" VerticalAlignment="Top" Width="426" Background="#FF8BF4FF" SelectionChanged="lst_InstructionsList_SelectionChanged" ScrollViewer.HorizontalScrollBarVisibility="Visible" ScrollViewer.VerticalScrollBarVisibility="Visible">
                         <ListView.View>
                             <GridView>
-                                <GridViewColumn Header="PAdd" DisplayMemberBinding="{Binding PhysicalAddress}" Width="100" />
-                                <GridViewColumn Header="LAdd" DisplayMemberBinding="{Binding LogicalAddress}" Width="100" />
+                                <GridViewColumn Header="PAdd" DisplayMemberBinding="{Binding PhysicalAddress}" Width="50" />
+                                <GridViewColumn Header="LAdd" DisplayMemberBinding="{Binding LogicalAddress}" Width="50" />
+                                <GridViewColumn Header="Label" Width="100">
+                                    <GridViewColumn.CellTemplate>
+                                        <DataTemplate DataType="cpu:SimulatorLabel">
+                                            <TextBlock Text="{Binding Name}"/>
+                                        </DataTemplate>
+                                    </GridViewColumn.CellTemplate>
+                                </GridViewColumn>
                                 <GridViewColumn Header="Instruction" DisplayMemberBinding="{Binding InstructionString}" Width="200" />
                                 <GridViewColumn Header="Base" DisplayMemberBinding="{Binding Test1}" Width="50" />
                                 <GridViewColumn Header="T" DisplayMemberBinding="{Binding Test1}" Width="20" />
                                 <GridViewColumn />
                             </GridView>
                         </ListView.View>
-                        <ScrollBar x:Name="scrollBar1" />
                     </ListView>
                 </Grid>
             </GroupBox>

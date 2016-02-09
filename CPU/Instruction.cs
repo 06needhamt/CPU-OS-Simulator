@@ -3052,6 +3052,41 @@ namespace CPU_OS_Simulator.CPU
             {
                 lhs.Value = Register.FindRegister(lhs.Register.Name).Value;
             }
+            else if (lhs.Type == EnumOperandType.LABEL)
+            {
+                string labelname = lhs.LabelName;
+                SimulatorProgram program = GetCurrentProgram();
+                if (unit == null)
+                {
+                    dynamic procunit = GetCurrentProcessExecutionUnit();
+                    SimulatorLabel label = program.Labels.Where(x => x.Name.Equals(labelname)).FirstOrDefault();
+                    if (label == null)
+                    {
+                        MessageBox.Show("Invalid Label");
+                        return int.MinValue;
+                    }
+                    procunit.LogicalAddress = label.LogicalAddress;
+                    procunit.CurrentIndex = (label.LogicalAddress / 4);
+                    result = label.LogicalAddress;
+                    procunit.Done = false;
+                    procunit.Stop = false;
+                }
+                else
+                {
+                    SimulatorLabel label = program.Labels.Where(x => x.Name.Equals(labelname)).FirstOrDefault();
+                    if (label == null)
+                    {
+                        MessageBox.Show("Invalid Label");
+                        return int.MinValue;
+                    }
+                    unit.LogicalAddress = label.LogicalAddress;
+                    unit.CurrentIndex = (label.LogicalAddress / 4);
+                    result = lhs.Value;
+                    unit.Done = false;
+                    unit.Stop = false;
+                }
+
+            }
             dynamic window = GetMainWindowInstance();
             unit = window.ActiveUnit;
             SimulatorProgram prog = GetCurrentProgram();
