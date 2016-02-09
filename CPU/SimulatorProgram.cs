@@ -63,6 +63,7 @@ namespace CPU_OS_Simulator.CPU
             unit = new ExecutionUnit(this, 100);
             stack = new ProgramStack();
             Console.WriteLine("Program Created");
+            labels = new List<SimulatorLabel>();
         }
 
 

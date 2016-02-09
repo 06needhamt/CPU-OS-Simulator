@@ -2,8 +2,10 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
+using System.Reflection;
 using System.Windows;
 using System.Windows.Controls;
+using Microsoft.VisualBasic;
 using CPU_OS_Simulator.CPU;
 
 namespace CPU_OS_Simulator
@@ -37,6 +39,8 @@ namespace CPU_OS_Simulator
         private Func<int>[] InstructionCreationFunctions = new Func<int>[7];
 
         private bool isLabel = false;
+
+        private string labelName;
         /// <summary>
         /// Default Constructor for Instruction Window
         /// </summary>
@@ -65,6 +69,12 @@ namespace CPU_OS_Simulator
         public InstructionsWindow(MainWindow owner, EnumInstructionMode instructionMode) : this(owner)
         {
             this.instructionMode = instructionMode;
+        }
+
+        public string LabelName
+        {
+            get { return labelName; }
+            set { labelName = value; }
         }
 
         /// <summary>
@@ -1471,7 +1481,35 @@ namespace CPU_OS_Simulator
 
         private void btn_NewLabel_Click(object sender, RoutedEventArgs e)
         {
+            string name = Interaction.InputBox("Enter a label name", "", "");
+            SimulatorProgram prog = GetCurrentProgram();
+            owner.AddLabel(name,prog.Instructions.Count * 4, prog.Instructions.Count * 4 + prog.BaseAddress);
 
+        }
+
+        /// <summary>
+        /// This function gets the main window instance from the window bridge
+        /// </summary>
+        /// <returns> the active instance of main window </returns>
+        private dynamic GetMainWindowInstance()
+        {
+            Assembly windowBridge = Assembly.LoadFrom("CPU_OS_Simulator.WindowBridge.dll"); // Load the window bridge module
+            Type WindowType = windowBridge.GetType(windowBridge.GetExportedTypes()[1].ToString()); // get the name of the type that contains the window instances
+            dynamic window = WindowType.GetField("MainWindowInstance").GetValue(null); // get the value of the static MainWindowInstance field
+            return window;
+        }
+
+        /// <summary>
+        /// This Function gets the program to be executed by the CPU from the main window
+        /// </summary>
+        /// <returns>the program to be executed by the CPU</returns>
+        private SimulatorProgram GetCurrentProgram()
+        {
+            dynamic window = GetMainWindowInstance();
+            string programName = window.currentProgram; // get the name of the program that is currently loaded
+            List<SimulatorProgram> programs = window.ProgramList; // get a copy of the program list
+            SimulatorProgram prog = programs.Where(x => x.Name.Equals(programName)).FirstOrDefault(); // find the current program in the list
+            return prog; // return the current program
         }
     }
 }

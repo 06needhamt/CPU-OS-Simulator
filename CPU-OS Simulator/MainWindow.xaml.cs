@@ -13,6 +13,7 @@ using System.Threading.Tasks;
 using System.Web.Script.Serialization;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Data;
 using System.Windows.Threading;
 using Microsoft.Win32;
 using CPU_OS_Simulator.Compiler;
@@ -535,7 +536,13 @@ namespace CPU_OS_Simulator
         public void AddLabel(string name, int logicalAddress, int physicalAddress)
         {
             SimulatorProgram prog = ProgramList.Where(x => x.Name.Equals(currentProgram)).FirstOrDefault();
-            prog.Labels.Add(new SimulatorLabel(prog,logicalAddress,physicalAddress,name));
+            if (prog != null)
+            {
+                SimulatorLabel label = new SimulatorLabel(prog, logicalAddress, physicalAddress, name);
+                prog.Labels.Add(label);
+                //lst_InstructionsList.Items.Add(label);
+            }
+            UpdateIntructions();
         }
 
         /// <summary>
@@ -696,7 +703,18 @@ namespace CPU_OS_Simulator
             else
             {
                 lst_InstructionsList.ItemsSource = null;
+                return;
             }
+
+            CompositeCollection c = new CompositeCollection();
+            foreach (Instruction ins in prog.Instructions)
+            {
+                SimulatorLabel label = prog.Labels.Where(x => x.LogicalAddress == ins.LogicalAddress).FirstOrDefault();
+                if (label != null)
+                    c.Add(label);
+                c.Add(ins);
+            }
+            lst_InstructionsList.ItemsSource = c;
             prog.UpdateAddresses();
             saved = false;
             System.Console.WriteLine("Instructions Updated");

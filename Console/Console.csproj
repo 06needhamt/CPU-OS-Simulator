@@ -8,7 +8,7 @@
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>CPU_OS_Simulator.Console</RootNamespace>
-    <AssemblyName>CPU-OS Simulator.Console</AssemblyName>
+    <AssemblyName>CPU-OS_Simulator.Console</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />
@@ -21,7 +21,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <DocumentationFile>bin\Debug\CPU-OS Simulator.Console.XML</DocumentationFile>
+    <DocumentationFile>bin\Debug\CPU-OS_Simulator.Console.xml</DocumentationFile>
     <LangVersion>5</LangVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
