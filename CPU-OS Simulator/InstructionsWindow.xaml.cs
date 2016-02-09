@@ -342,10 +342,6 @@ namespace CPU_OS_Simulator
         private void InstructionsWindow1_Closing(object sender, CancelEventArgs e)
         {
             System.Console.WriteLine("Instruction Window closing");
-            if (instructionMode.Equals(EnumInstructionMode.SHOW))
-            {
-            }
-            CreateInstruction();
         }
 
         #region Instruction Creation Functions
@@ -1456,5 +1452,13 @@ namespace CPU_OS_Simulator
         }
 
         #endregion UI control
+
+        private void btn_NewInstruction_Click(object sender, RoutedEventArgs e)
+        {
+            if (!instructionMode.Equals(EnumInstructionMode.SHOW))
+            {
+                CreateInstruction();
+            }
+        }
     }
 }
