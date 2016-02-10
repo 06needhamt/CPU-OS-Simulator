@@ -369,6 +369,7 @@
                                         <System:String>R19</System:String>
                                         <System:String>R20</System:String>
                                     </ComboBox>
+                                    <ComboBox x:Name="cmb_Label" HorizontalAlignment="Left" Margin="40,46,0,0" VerticalAlignment="Top" Width="90" GotFocus="cmb_SourceRegisterControlTransfer_GotFocus"/>
                                     <!--<ComboBox x:Name="comboBox_Copy" HorizontalAlignment="Left" Margin="75,229,0,-110" VerticalAlignment="Top" Width="58" /> -->
                                 </Grid>
                             </GroupBox>

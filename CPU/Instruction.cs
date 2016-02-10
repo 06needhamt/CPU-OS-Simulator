@@ -3056,6 +3056,8 @@ namespace CPU_OS_Simulator.CPU
             {
                 string labelname = lhs.LabelName;
                 SimulatorProgram program = GetCurrentProgram();
+                dynamic wind = GetMainWindowInstance();
+                unit = wind.ActiveUnit;
                 if (unit == null)
                 {
                     dynamic procunit = GetCurrentProcessExecutionUnit();
@@ -3074,6 +3076,7 @@ namespace CPU_OS_Simulator.CPU
                 else
                 {
                     SimulatorLabel label = program.Labels.Where(x => x.Name.Equals(labelname)).FirstOrDefault();
+                    unit = wind.ActiveUnit;
                     if (label == null)
                     {
                         MessageBox.Show("Invalid Label");

@@ -163,6 +163,13 @@ namespace CPU_OS_Simulator
             InstructionCreationFunctions[5] = () => CreateIOInstruction();
             InstructionCreationFunctions[6] = () => CreateMiscellaneousInstruction();
             InstructionTabs.SelectedItem = DataTransferTab;
+            SimulatorProgram prog = GetCurrentProgram();
+            cmb_Label.Items.Clear();
+            List<string> labelNames = new List<string>();
+            for (int i = 0; i < prog.Labels.Count; i++)
+            {
+                labelNames.Add(prog.Labels[i].Name);
+            }
             PopulateInstructions();
         }
 
@@ -699,6 +706,8 @@ namespace CPU_OS_Simulator
             {
                 op1mem = EnumAddressType.UNKNOWN;
                 op1 = new Operand(txtSourceValueControlTransfer.Text, EnumOperandType.LABEL);
+                owner.AddInstruction(new Instruction((int)opcode, op1, EnumAddressType.UNKNOWN, null, EnumAddressType.UNKNOWN, 4),index);
+                return 0;
             }
 
             if (rdb_SourceValueControlTransfer.IsChecked != null && rdb_SourceValueControlTransfer.IsChecked.Value)
