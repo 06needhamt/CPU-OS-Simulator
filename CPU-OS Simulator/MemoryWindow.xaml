@@ -10,7 +10,7 @@
     <Grid x:Name="RootGrid">
         <GroupBox x:Name="grp_DataMemory" Header="DATA MEMORY" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Height="260" Width="574">
             <Grid x:Name="DataMemoryGrid" HorizontalAlignment="Left" Height="229" Margin="1,1,1,1" VerticalAlignment="Top" Width="564">
-                <ListView x:Name="lst_data" HorizontalAlignment="Left" Height="229" VerticalAlignment="Top" Width="564" Background="#FFFFFCC3">
+                <ListView x:Name="lst_data" HorizontalAlignment="Left" Height="229" VerticalAlignment="Top" Width="564" Background="#FFFFFCC3" ScrollViewer.HorizontalScrollBarVisibility="Visible" ScrollViewer.VerticalScrollBarVisibility="Hidden">
                     <ListView.View>
                         <GridView>
                             <GridViewColumn Header="PAdd" DisplayMemberBinding="{Binding PhysicalAddress}" Width="75" />
@@ -26,7 +26,6 @@
                             <GridViewColumn Header="Data" DisplayMemberBinding="{Binding DataString}" Width="100" />
                         </GridView>
                     </ListView.View>
-                    <ScrollBar x:Name="scrollBar" Height="100" Width="100" />
                 </ListView>
             </Grid>
         </GroupBox>

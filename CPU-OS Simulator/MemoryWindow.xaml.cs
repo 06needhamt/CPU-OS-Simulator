@@ -1,5 +1,6 @@
 ﻿using System;
 using System.ComponentModel;
+using System.Linq;
 using System.Reflection;
 using System.Windows;
 using CPU_OS_Simulator.Memory;
@@ -87,47 +88,43 @@ namespace CPU_OS_Simulator
 
         private void btn_Update_Click(object sender, RoutedEventArgs e)
         {
-            //TODO update to work with new memory manager
-            if (rdb_Integer.IsChecked.Value)
+            if (rdb_Integer.IsChecked != null && rdb_Integer.IsChecked.Value)
             {
                 int value = Convert.ToInt32(txt_IntegerValue.Text);
                 int address = Convert.ToInt32(txt_AddressLocation.Text);
-                int offset = address / MemoryPage.PAGE_SIZE;
+                int pageNumber = address / MemoryPage.PAGE_SIZE;
+                int offset = address % MemoryPage.PAGE_SIZE;
 
-                if (offset == 0)
-                {
-                    offset = address % MemoryPage.PAGE_SIZE;
-                }
                 if (address > currentPage.EndOffset)
                 {
-                    // TODO Swap in required page
-                    MessageBox.Show("Required Page is not in memory");
+                    SwapInPage(pageNumber);
+                    //MessageBox.Show("Required Page is not in memory");
                 }
-                while (value > 255)
+                while (value > Byte.MaxValue)
                 {
-                    currentPage.Data[offset / 8].SetByte(offset % 8, 255);
-                    value -= 255;
-                    offset++;
+                    currentPage.Data[offset / 8].SetByte(offset % 8, Byte.MaxValue);
+                    value -= Byte.MaxValue;
+                    if(value < Byte.MaxValue)
+                        break;
+                    offset++; 
                 }
                 if (value != 0)
                 {
                     currentPage.Data[offset / 8].SetByte(offset % 8, (byte)value);
                 }
             }
-            else if (rdb_String.IsChecked.Value)
+            else if (rdb_String.IsChecked != null && rdb_String.IsChecked.Value)
             {
                 string value = txt_StringValue.Text;
                 int address = Convert.ToInt32(txt_AddressLocation.Text);
-                int offset = address / MemoryPage.PAGE_SIZE;
+                int pageNumber = address / MemoryPage.PAGE_SIZE;
+                int offset = address % MemoryPage.PAGE_SIZE;
                 char[] chars = value.ToCharArray();
-                if (offset == 0)
-                {
-                    offset = address % MemoryPage.PAGE_SIZE;
-                }
+
                 if (address > currentPage.EndOffset)
                 {
-                    // TODO Swap in required page
-                    MessageBox.Show("Required Page is not in memory");
+                    SwapInPage(pageNumber);
+                    //MessageBox.Show("Required Page is not in memory");
                 }
                 for (int i = 0; i < chars.Length; i++)
                 {
@@ -135,19 +132,20 @@ namespace CPU_OS_Simulator
                     offset++;
                 }
             }
-            else if (rdb_Boolean.IsChecked.Value)
+            else if (rdb_Boolean.IsChecked != null && rdb_Boolean.IsChecked.Value)
             {
                 bool value = (bool)cmb_BooleanValue.SelectedItem;
                 int address = Convert.ToInt32(txt_AddressLocation.Text);
-                int offset = address / MemoryPage.PAGE_SIZE;
+                int pageNumber = address / MemoryPage.PAGE_SIZE;
+                int offset = address % MemoryPage.PAGE_SIZE;
                 if (offset == 0)
                 {
                     offset = address % MemoryPage.PAGE_SIZE;
                 }
                 if (address > currentPage.EndOffset)
-                {
-                    // TODO Swap in required page
-                    MessageBox.Show("Required Page is not in memory");
+                { 
+                    SwapInPage(pageNumber);
+                    //MessageBox.Show("Required Page is not in memory");
                 }
                 if (value)
                 {
@@ -163,6 +161,21 @@ namespace CPU_OS_Simulator
                 MessageBox.Show("Please Select a data type");
             }
             UpdateData();
+        }
+
+        private void SwapInPage(int pageNumber)
+        {
+            int progindex =
+                mainParentWindow.ProgramList.IndexOf(
+                    mainParentWindow.ProgramList.Where(x => x.Name == mainParentWindow.currentProgram).FirstOrDefault());
+            int pageIndex = 0;
+            for (int i = 0; i < progindex; i++)
+            {
+                progindex += mainParentWindow.ProgramList[i].Pages;
+            }
+            pageIndex += pageNumber;
+            currentPage = mainParentWindow.Memory.RequestMemoryPage(pageNumber);
+            this.InvalidateVisual();
         }
 
         private void UpdateData()
