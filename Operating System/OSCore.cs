@@ -107,6 +107,22 @@ namespace CPU_OS_Simulator.Operating_System
             return true;
         }
 
+        public bool Suspend()
+        {
+            errorCode = EnumErrorCodes.NO_ERROR;
+            if (scheduler == null)
+            {
+                MessageBox.Show("Can Not Suspend a suspended or non-existent scheduler");
+                return false;
+            }
+            if (!scheduler.Suspend())
+            {
+                MessageBox.Show("An error occurred while suspending the scheduler");
+                return false;
+            }
+            return true;
+        }
+
         private void SetClockSpeed()
         {
             dynamic window = GetOSWindowInstance();

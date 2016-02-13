@@ -152,6 +152,14 @@ namespace CPU_OS_Simulator.Operating_System
             executionWorker.RunWorkerAsync();
             return true;
         }
+
+        public bool Suspend()
+        {
+            if (executionWorker == null)
+                return true;
+            executionWorker.CancelAsync();
+            return true;
+        }
         /// <summary>
         /// Asynchronous function called after every instruction is executed to update required values and user interface asynchronously
         /// </summary>
@@ -201,7 +209,7 @@ namespace CPU_OS_Simulator.Operating_System
         /// </summary>
         private async void RunScheduler()
         {
-            while (readyQueue.Count > 0 && readyQueue.Peek() != null && !suspended)
+            while (readyQueue.Count > 0 && readyQueue.Peek() != null && !suspended && !executionWorker.CancellationPending)
             {
                 switch (schedulingPolicy)
                 {
@@ -209,14 +217,16 @@ namespace CPU_OS_Simulator.Operating_System
                     {
                         long life = CalculateLifetime();
                         ExecuteFirstComeFirstServed(life);
-                        DeallocateProcessMemory(runningProcess);
+                        if(runningProcess.Unit.Done)
+                            DeallocateProcessMemory(runningProcess);
                         break;
                     }
                     case EnumSchedulingPolicies.SHORTEST_JOB_FIRST:
                     {
                         long life = CalculateLifetime();
                         ExecuteShortestJobFirst(life);
-                        DeallocateProcessMemory(runningProcess);
+                        if(runningProcess.Unit.Done)
+                            DeallocateProcessMemory(runningProcess);
                         break;
                     }
                     case EnumSchedulingPolicies.ROUND_ROBIN:
@@ -231,7 +241,8 @@ namespace CPU_OS_Simulator.Operating_System
                                 await CallFromMainThread(UpdateInterface);
                                 await CallFromMainThread(UpdateMainWindowInterface);
                                 ExecuteRoundRobin(timeout,life,false);
-                                DeallocateProcessMemory(runningProcess);
+                                if(runningProcess.Unit.Done)
+                                    DeallocateProcessMemory(runningProcess);
                                 break;
                             }
                             case EnumPriorityPolicy.NO_PRIORITY:
@@ -239,7 +250,8 @@ namespace CPU_OS_Simulator.Operating_System
                                 long life = CalculateLifetime();
                                 int timeout = CalculateTimeSlice();
                                 ExecuteRoundRobin(timeout,life,false);
-                                DeallocateProcessMemory(runningProcess);
+                                if(runningProcess.Unit.Done)
+                                    DeallocateProcessMemory(runningProcess);
                                 break;
                             }
                             case EnumPriorityPolicy.PRE_EMPTIVE:
@@ -250,7 +262,8 @@ namespace CPU_OS_Simulator.Operating_System
                                 await CallFromMainThread(UpdateInterface);
                                 await CallFromMainThread(UpdateMainWindowInterface);
                                 ExecuteRoundRobin(timeout,life,true);
-                                DeallocateProcessMemory(runningProcess);
+                                if (runningProcess.Unit.Done)
+                                    DeallocateProcessMemory(runningProcess);
                                 break;
                             }
                             case EnumPriorityPolicy.UNKNOWN:
@@ -274,8 +287,8 @@ namespace CPU_OS_Simulator.Operating_System
                         await CallFromMainThread(UpdateInterface);
                         await CallFromMainThread(UpdateMainWindowInterface);
                         ExecuteLottery(DateTime.Now.Ticks,life);
-                        DeallocateProcessMemory(runningProcess);
-
+                        if(runningProcess.Unit.Done)
+                            DeallocateProcessMemory(runningProcess);
                         break;
                     }
                     case EnumSchedulingPolicies.FAIR_SHARE_SCEDULING:
@@ -293,6 +306,12 @@ namespace CPU_OS_Simulator.Operating_System
                         return;
                     }
                 }
+            }
+            if (executionWorker.CancellationPending)
+            {
+                await CallFromMainThread(UpdateInterface);
+                await CallFromMainThread(UpdateMainWindowInterface);
+                return;
             }
             MessageBox.Show("OS Execution Complete");
             runningProcess = null;
@@ -313,7 +332,7 @@ namespace CPU_OS_Simulator.Operating_System
             lifetime.Reset();
             lifetime.Start();
             while (runningProcess != null && !runningProcess.Unit.Stop && !runningProcess.Unit.Done &&
-                   !runningProcess.Unit.Process.Terminated && !runningProcess.Unit.TimedOut)
+                   !runningProcess.Unit.Process.Terminated && !runningProcess.Unit.TimedOut && !executionWorker.CancellationPending)
             {
                 if (lifetime.ElapsedMilliseconds > life)
                 {
@@ -323,7 +342,7 @@ namespace CPU_OS_Simulator.Operating_System
                 await CallFromMainThread(UpdateInterface);
                 await CallFromMainThread(UpdateMainWindowInterface);
             }
-            if (runningProcess.Unit.TimedOut)
+            if (runningProcess != null && runningProcess.Unit.TimedOut)
             {
                 runningProcess.CurrentState = EnumProcessState.READY;
                 readyQueue.Enqueue(runningProcess);
@@ -365,6 +384,8 @@ namespace CPU_OS_Simulator.Operating_System
                 else
                     await DrawLottery(r.Next(0, issuedLotteryTickets.Max(x => x.Id)));
             }
+            if(executionWorker.CancellationPending)
+                return;
         }
 
         private async Task<int> DrawLottery(int ticketNumber)
@@ -465,7 +486,7 @@ namespace CPU_OS_Simulator.Operating_System
             lifetime.Reset();
             lifetime.Start();
             while (runningProcess != null && !runningProcess.Unit.Stop && !runningProcess.Unit.Done &&
-                   !runningProcess.Unit.Process.Terminated && !runningProcess.Unit.TimedOut)
+                   !runningProcess.Unit.Process.Terminated && !runningProcess.Unit.TimedOut && !executionWorker.CancellationPending)
             {
                 if (lifetime.ElapsedMilliseconds > life)
                 {
@@ -509,6 +530,8 @@ namespace CPU_OS_Simulator.Operating_System
                 DeallocateProcessMemory(runningProcess);
                 runningProcess = readyQueue.Dequeue();
             }
+            if(executionWorker.CancellationPending)
+                return;
         }
         /// <summary>
         /// This function runs the scheduler in first come first served mode
@@ -522,7 +545,7 @@ namespace CPU_OS_Simulator.Operating_System
             lifetime.Reset();
             lifetime.Start();
             while (runningProcess != null && !runningProcess.Unit.Stop && !runningProcess.Unit.Done &&
-                   !runningProcess.Unit.Process.Terminated && !runningProcess.Unit.TimedOut)
+                   !runningProcess.Unit.Process.Terminated && !runningProcess.Unit.TimedOut && !executionWorker.CancellationPending)
             {
                 if (lifetime.ElapsedMilliseconds > life)
                 {
@@ -566,6 +589,8 @@ namespace CPU_OS_Simulator.Operating_System
                 DeallocateProcessMemory(runningProcess);
                 runningProcess = readyQueue.Dequeue();
             }
+            if(executionWorker.CancellationPending)
+                return;
         }
 
         /// <summary>
@@ -605,7 +630,7 @@ namespace CPU_OS_Simulator.Operating_System
             timeout = new Stopwatch();
             lifetime = new Stopwatch();
 
-            while (readyQueue.Count > 0 && readyQueue.Peek() != null)
+            while (readyQueue.Count > 0 && readyQueue.Peek() != null && !executionWorker.CancellationPending)
             {
                 runningProcess = readyQueue.Dequeue();
                 LoadPCB();
@@ -923,7 +948,12 @@ namespace CPU_OS_Simulator.Operating_System
             get { return runningWithNoProcesses; }
             set { runningWithNoProcesses = value; }
         }
-
-        
+        [ScriptIgnore]
+        [JsonIgnore]
+        public BackgroundWorker ExecutionWorker
+        {
+            get { return executionWorker; }
+            set { executionWorker = value; }
+        }
     }
 }

@@ -902,5 +902,19 @@ namespace CPU_OS_Simulator
             UtilisationWindow window = new UtilisationWindow(this);
             window.Show();
         }
+
+        private void btn_Suspend_Click(object sender, RoutedEventArgs e)
+        {
+            if (osCore == null)
+            {
+                MessageBox.Show("Cannot suspend a non existent OS");
+                return;
+            }
+            if (!osCore.Suspend())
+            {
+                MessageBox.Show("An error occurred while suspending the Operating System");
+                return;
+            }
+        }
     }
 }
