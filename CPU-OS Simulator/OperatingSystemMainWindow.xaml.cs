@@ -678,10 +678,16 @@ namespace CPU_OS_Simulator
                 Stopwatch s = new Stopwatch();
                 int waitTime = (int) cmb_Wait_Period.SelectedItem*1000;
                 osCore.Scheduler.WaitingQueue.Enqueue(selectedProcess);
+                await UpdateInterface();
+                osCore.Scheduler.RunningProcess = null;
                 s.Start();
-                while (s.ElapsedMilliseconds < waitTime) ;
-                selectedProcess = osCore.Scheduler.WaitingQueue.Dequeue();
-                osCore.Scheduler.ReadyQueue.Enqueue(selectedProcess);
+                while (s.ElapsedMilliseconds < waitTime) { await UpdateInterface(); }
+                s.Stop();
+                selectedProcess =
+                    osCore.Scheduler.WaitingQueue.Where(x => x.ProcessID == selectedProcess.ProcessID).FirstOrDefault();
+                await RemoveProcessFromWaitingQueue(selectedProcess);
+                if(selectedProcess != null)
+                    osCore.Scheduler.ReadyQueue.Enqueue(selectedProcess);
                 await UpdateInterface();
             }
             catch (Exception ex)
@@ -689,6 +695,14 @@ namespace CPU_OS_Simulator
                 System.Console.WriteLine(ex.StackTrace);
                 MessageBox.Show("An error occurred while moving the selected process to the waiting state");
             }
+        }
+
+        private async Task<int> RemoveProcessFromWaitingQueue(SimulatorProcess proc)
+        {
+            List<SimulatorProcess> tempList = osCore.Scheduler.WaitingQueue.ToList();
+            tempList.Remove(proc);
+            osCore.Scheduler.WaitingQueue = new Queue<SimulatorProcess>(tempList);
+            return 0;
         }
 
         private void btn_Queue_Click(object sender, RoutedEventArgs e)
