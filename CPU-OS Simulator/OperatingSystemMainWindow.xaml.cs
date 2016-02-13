@@ -705,9 +705,33 @@ namespace CPU_OS_Simulator
             return 0;
         }
 
-        private void btn_Queue_Click(object sender, RoutedEventArgs e)
+        private async Task<int> RemoveProcessFromReadyQueue(SimulatorProcess proc)
         {
+            List<SimulatorProcess> tempList = osCore.Scheduler.ReadyQueue.ToList();
+            tempList.Remove(proc);
+            osCore.Scheduler.ReadyQueue = new Queue<SimulatorProcess>(tempList);
+            return 0;
+        } 
 
+        private async void btn_Queue_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                SimulatorProcess selectedProcess = (SimulatorProcess) lst_RunningProcesses.SelectedItem;
+                if (selectedProcess == null)
+                {
+                    MessageBox.Show("Please Select A Process");
+                    return;
+                }
+                osCore.Scheduler.ReadyQueue.Enqueue(osCore.Scheduler.RunningProcess);
+                osCore.Scheduler.RunningProcess = null;
+                await UpdateInterface();
+            }
+            catch (Exception ex)
+            {
+                System.Console.WriteLine(ex.StackTrace);
+                MessageBox.Show("An error occurred while moving the selected process to the ready state");
+            }
         }
 
         private async void btn_SaveState_Click(object sender, RoutedEventArgs e)
@@ -929,6 +953,120 @@ namespace CPU_OS_Simulator
                 MessageBox.Show("An error occurred while suspending the Operating System");
                 return;
             }
+        }
+
+        private async void btn_Kill_Click(object sender, RoutedEventArgs e)
+        {
+            osCore.DeallocateProcessMemory(osCore.Scheduler.RunningProcess);
+            osCore.Scheduler.RunningProcess = null;
+            await UpdateInterface();
+        }
+
+        private void btn_Show_Memory_Running_Click(object sender, RoutedEventArgs e)
+        {
+            PhysicalMemoryWindow wind = new PhysicalMemoryWindow(this);
+            wind.Show();
+        }
+
+        private void btn_Show_PCB_Running_Click(object sender, RoutedEventArgs e)
+        {
+            SimulatorProcess selectedProcess = (SimulatorProcess) lst_RunningProcesses.SelectedItem;
+            if (selectedProcess == null)
+            {
+                MessageBox.Show("Please Select a Process");
+                return;
+            }
+            ProcessControlBlockWindow window = new ProcessControlBlockWindow(this,new LinkedListNode<ProcessControlBlock>(selectedProcess.ControlBlock));
+            window.Show();
+        }
+
+        private async void btn_Clear_Ready_Click(object sender, RoutedEventArgs e)
+        {
+            osCore.Scheduler.ReadyQueue = new Queue<SimulatorProcess>();
+            await UpdateInterface();
+        }
+
+        private async void btn_Remove_Ready_Click(object sender, RoutedEventArgs e)
+        {
+            SimulatorProcess selectedProcess = (SimulatorProcess) lst_ReadyProcesses.SelectedItem;
+            if (selectedProcess == null)
+            {
+                MessageBox.Show("Please Select a Process");
+                return;
+            }
+            await RemoveProcessFromReadyQueue(selectedProcess);
+            await UpdateInterface();
+        }
+
+        private void btn_Show_Memory_Ready_Click(object sender, RoutedEventArgs e)
+        {
+            PhysicalMemoryWindow wind = new PhysicalMemoryWindow(this);
+            wind.Show();
+        }
+
+        private void btn_Show_PCB_Ready_Click(object sender, RoutedEventArgs e)
+        {
+            SimulatorProcess selectedProcess = (SimulatorProcess)lst_ReadyProcesses.SelectedItem;
+            if (selectedProcess == null)
+            {
+                MessageBox.Show("Please Select a Process");
+                return;
+            }
+            ProcessControlBlockWindow window = new ProcessControlBlockWindow(this, new LinkedListNode<ProcessControlBlock>(selectedProcess.ControlBlock));
+            window.Show();
+        }
+
+        private async void btn_Clear_Waiting_Click(object sender, RoutedEventArgs e)
+        {
+            osCore.Scheduler.WaitingQueue = new Queue<SimulatorProcess>();
+            await UpdateInterface();
+        }
+
+        private async void btn_Remove_Waiting_Click(object sender, RoutedEventArgs e)
+        {
+            SimulatorProcess selectedProcess = (SimulatorProcess)lst_WaitingProcesses.SelectedItem;
+            if (selectedProcess == null)
+            {
+                MessageBox.Show("Please Select a Process");
+                return;
+            }
+            await RemoveProcessFromWaitingQueue(selectedProcess);
+            await UpdateInterface();
+        }
+
+        private async void btn_Resume_Waiting_Click(object sender, RoutedEventArgs e)
+        {
+            SimulatorProcess selectedProcess = (SimulatorProcess) lst_WaitingProcesses.SelectedItem;
+            if (selectedProcess == null)
+            {
+                MessageBox.Show("Please Select a Process");
+                return;
+            }
+            if (osCore.Scheduler.RunningProcess != null)
+            {
+                osCore.Scheduler.ReadyQueue.Enqueue(osCore.Scheduler.RunningProcess);
+            }
+            await RemoveProcessFromWaitingQueue(selectedProcess);
+            osCore.Scheduler.RunningProcess = selectedProcess;
+            await UpdateInterface();
+        }
+
+        private void btn_Show_Memory_Waiting_Click(object sender, RoutedEventArgs e)
+        {
+            PhysicalMemoryWindow wind = new PhysicalMemoryWindow(this);
+            wind.Show();
+        }
+
+        private void btn_Show_PCB_Waiting_Click(object sender, RoutedEventArgs e)
+        {
+            SimulatorProcess selectedProcess = (SimulatorProcess)lst_WaitingProcesses.SelectedItem;
+            if (selectedProcess == null)
+            {
+                MessageBox.Show("Please Select a Process");
+                return;
+            }
+            ProcessControlBlockWindow window = new ProcessControlBlockWindow(this, new LinkedListNode<ProcessControlBlock>(selectedProcess.ControlBlock));
+            window.Show();
         }
     }
 }

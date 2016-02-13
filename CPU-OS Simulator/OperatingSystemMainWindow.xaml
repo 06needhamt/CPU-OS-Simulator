@@ -45,13 +45,13 @@
         </ComboBox>
         <Label x:Name="label1" Content="secs" HorizontalAlignment="Left" Margin="163,196,0,0" VerticalAlignment="Top"/>
         <Button x:Name="btn_Queue" Content="QUEUE" HorizontalAlignment="Left" Margin="200,172,0,0" VerticalAlignment="Top" Width="86" Height="50" Click="btn_Queue_Click"/>
-        <Button x:Name="btn_Kill_Copy" Content="KILL" HorizontalAlignment="Left" Margin="295,172,0,0" VerticalAlignment="Top" Width="86" Height="50"/>
+        <Button x:Name="btn_Kill" Content="KILL" HorizontalAlignment="Left" Margin="295,172,0,0" VerticalAlignment="Top" Width="86" Height="50" Click="btn_Kill_Click"/>
         <CheckBox x:Name="chk_ForceKill" Content="Force Kill" HorizontalAlignment="Left" Margin="401,175,0,0" VerticalAlignment="Top"/>
         <CheckBox x:Name="chk_FaultKill" Content="Fault Kill" HorizontalAlignment="Left" Margin="401,203,0,0" VerticalAlignment="Top" IsEnabled="False"/>
         <CheckBox x:Name="chk_Suspend_On_State_Change_Running" Content="Suspend On State Change" HorizontalAlignment="Left" Margin="485,175,0,0" VerticalAlignment="Top"/>
         <CheckBox x:Name="chk_Suspend_On_Pre_emption" Content="Suspend On Pre-emption" HorizontalAlignment="Left" Margin="485,203,0,0" VerticalAlignment="Top"/>
-        <Button x:Name="btn_Show_Memory_Running" Content="SHOW MEMORY" HorizontalAlignment="Left" Margin="647,172,0,0" VerticalAlignment="Top" Width="95" Height="50"/>
-        <Button x:Name="btn_Show_PCB_Running" Content="SHOW PCB" HorizontalAlignment="Left" Margin="747,172,0,0" VerticalAlignment="Top" Width="81" Height="50"/>
+        <Button x:Name="btn_Show_Memory_Running" Content="SHOW MEMORY" HorizontalAlignment="Left" Margin="647,172,0,0" VerticalAlignment="Top" Width="95" Height="50" Click="btn_Show_Memory_Running_Click"/>
+        <Button x:Name="btn_Show_PCB_Running" Content="SHOW PCB" HorizontalAlignment="Left" Margin="747,172,0,0" VerticalAlignment="Top" Width="81" Height="50" Click="btn_Show_PCB_Running_Click"/>
         <GroupBox x:Name="grp_WaitingProcesses" Header="WAITING PROCESSES" HorizontalAlignment="Left" VerticalAlignment="Top" Height="150" Width="828" Margin="0,504,0,0">
             <Grid x:Name="grid_WaitingProcesses" HorizontalAlignment="Left" Height="140" VerticalAlignment="Top" Width="828" Margin="0,0,-2,-12">
                 <ListView x:Name="lst_WaitingProcesses" x:FieldModifier ="public" HorizontalAlignment="Left" Height="140" VerticalAlignment="Top" Width="828" Background="#FFACFFD2" Margin="0,0,-17,0">
@@ -72,12 +72,12 @@
                 </ListView>
             </Grid>
         </GroupBox>
-        <Button x:Name="btn_Clear_Waiting" Content="CLEAR" HorizontalAlignment="Left" Margin="10,676,0,0" VerticalAlignment="Top" Width="86" Height="50"/>
-        <Button x:Name="btn_Remove_Waiting" Content="REMOVE" HorizontalAlignment="Left" Margin="110,676,0,0" VerticalAlignment="Top" Width="86" Height="50"/>
-        <Button x:Name="btn_Resume_Waiting" Content="RESUME" HorizontalAlignment="Left" Margin="295,676,0,0" VerticalAlignment="Top" Width="86" Height="50"/>
+        <Button x:Name="btn_Clear_Waiting" Content="CLEAR" HorizontalAlignment="Left" Margin="10,676,0,0" VerticalAlignment="Top" Width="86" Height="50" Click="btn_Clear_Waiting_Click"/>
+        <Button x:Name="btn_Remove_Waiting" Content="REMOVE" HorizontalAlignment="Left" Margin="110,676,0,0" VerticalAlignment="Top" Width="86" Height="50" Click="btn_Remove_Waiting_Click"/>
+        <Button x:Name="btn_Resume_Waiting" Content="RESUME" HorizontalAlignment="Left" Margin="295,676,0,0" VerticalAlignment="Top" Width="86" Height="50" Click="btn_Resume_Waiting_Click"/>
         <CheckBox x:Name="chk_Suspend_On_State_Change_Waiting" Content="Suspend On State Change" HorizontalAlignment="Left" Margin="481,688,0,0" VerticalAlignment="Top"/>
-        <Button x:Name="btn_Show_Memory_Waiting" Content="SHOW MEMORY" HorizontalAlignment="Left" Margin="647,676,0,0" VerticalAlignment="Top" Width="95" Height="50"/>
-        <Button x:Name="btn_Show_PCB_Waiting" Content="SHOW PCB" HorizontalAlignment="Left" Margin="747,676,0,0" VerticalAlignment="Top" Width="81" Height="50"/>
+        <Button x:Name="btn_Show_Memory_Waiting" Content="SHOW MEMORY" HorizontalAlignment="Left" Margin="647,676,0,0" VerticalAlignment="Top" Width="95" Height="50" Click="btn_Show_Memory_Waiting_Click"/>
+        <Button x:Name="btn_Show_PCB_Waiting" Content="SHOW PCB" HorizontalAlignment="Left" Margin="747,676,0,0" VerticalAlignment="Top" Width="81" Height="50" Click="btn_Show_PCB_Waiting_Click"/>
         <GroupBox x:Name="grp_ReadyProcesses" Header="READY PROCESSES" HorizontalAlignment="Left" VerticalAlignment="Top" Height="190" Width="828" Margin="0,239,0,0">
             <Grid x:Name="grid_ReadyProcesses" HorizontalAlignment="Left" Height="186" VerticalAlignment="Top" Width="828" Margin="0,0,-2,-12">
                 <ListView x:Name="lst_ReadyProcesses" x:FieldModifier ="public" HorizontalAlignment="Left" Height="186" VerticalAlignment="Top" Width="828" Background="#FF8BF4FF" Margin="0,0,0,-46">
@@ -98,11 +98,11 @@
                 </ListView>
             </Grid>
         </GroupBox>
-        <Button x:Name="btn_Clear_Ready" Content="CLEAR" HorizontalAlignment="Left" Margin="10,445,0,0" VerticalAlignment="Top" Width="86" Height="50"/>
-        <Button x:Name="btn_Remove_Ready" Content="REMOVE" HorizontalAlignment="Left" Margin="110,445,0,0" VerticalAlignment="Top" Width="86" Height="50"/>
+        <Button x:Name="btn_Clear_Ready" Content="CLEAR" HorizontalAlignment="Left" Margin="10,445,0,0" VerticalAlignment="Top" Width="86" Height="50" Click="btn_Clear_Ready_Click"/>
+        <Button x:Name="btn_Remove_Ready" Content="REMOVE" HorizontalAlignment="Left" Margin="110,445,0,0" VerticalAlignment="Top" Width="86" Height="50" Click="btn_Remove_Ready_Click"/>
         <CheckBox x:Name="chk_Suspend_On_State_Change_Ready" Content="Suspend On State Change" HorizontalAlignment="Left" Margin="481,457,0,0" VerticalAlignment="Top"/>
-        <Button x:Name="btn_Show_Memory_Ready" Content="SHOW MEMORY" HorizontalAlignment="Left" Margin="647,445,0,0" VerticalAlignment="Top" Width="95" Height="50"/>
-        <Button x:Name="btn_Show_PCB_Ready" Content="SHOW PCB" HorizontalAlignment="Left" Margin="747,445,0,0" VerticalAlignment="Top" Width="81" Height="50"/>
+        <Button x:Name="btn_Show_Memory_Ready" Content="SHOW MEMORY" HorizontalAlignment="Left" Margin="647,445,0,0" VerticalAlignment="Top" Width="95" Height="50" Click="btn_Show_Memory_Ready_Click"/>
+        <Button x:Name="btn_Show_PCB_Ready" Content="SHOW PCB" HorizontalAlignment="Left" Margin="747,445,0,0" VerticalAlignment="Top" Width="81" Height="50" Click="btn_Show_PCB_Ready_Click"/>
         <TabControl x:Name="Scheduler_Tabs" HorizontalAlignment="Left" Height="229" Margin="828,10,0,0" VerticalAlignment="Top" Width="436">
             <TabItem x:Name="Policies_Tab" Header="Scheduling Policies">
                 <Grid x:Name="grid_Policies" Background="White">
