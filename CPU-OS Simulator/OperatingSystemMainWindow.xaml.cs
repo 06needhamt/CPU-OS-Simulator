@@ -1068,5 +1068,10 @@ namespace CPU_OS_Simulator
             ProcessControlBlockWindow window = new ProcessControlBlockWindow(this, new LinkedListNode<ProcessControlBlock>(selectedProcess.ControlBlock));
             window.Show();
         }
+
+        private void btn_ViewResources_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

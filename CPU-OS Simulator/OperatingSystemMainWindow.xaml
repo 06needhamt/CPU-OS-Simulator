@@ -182,7 +182,7 @@
                     <Button x:Name="btn_ViewProcessStates" HorizontalAlignment="Left" Margin="244,5,0,0" VerticalAlignment="Top" Width="105" Height="39">
                         <TextBlock Text="VIEW PROCESS STATES..." TextWrapping="Wrap" TextAlignment="Center"/>
                     </Button>
-                    <Button x:Name="btn_ViewResources" HorizontalAlignment="Left" Margin="14,49,0,0" VerticalAlignment="Top" Width="105" Height="39">
+                    <Button x:Name="btn_ViewResources" HorizontalAlignment="Left" Margin="14,49,0,0" VerticalAlignment="Top" Width="105" Height="39" Click="btn_ViewResources_Click">
                         <TextBlock Text="VIEW RESOURCES..." TextWrapping="Wrap" TextAlignment="Center"/>
                     </Button>
                     <Button x:Name="btn_ViewMemory" HorizontalAlignment="Left" Margin="129,49,0,0" VerticalAlignment="Top" Width="105" Height="39">

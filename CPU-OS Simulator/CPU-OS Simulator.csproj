@@ -130,6 +130,10 @@
     <Compile Include="Controls\MemoryButton.xaml.cs">
       <DependentUpon>MemoryButton.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Controls\Resource Controls\R1Control.xaml.cs">
+      <DependentUpon>R1Control.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Resource Controls\Shapes\R1Shape.cs" />
     <Compile Include="EnumInstructionMode.cs" />
     <Compile Include="EnumLogLevel.cs" />
     <Compile Include="FontPickerWindow.xaml.cs">
@@ -143,6 +147,9 @@
     </Compile>
     <Compile Include="PhysicalMemoryWindow.xaml.cs">
       <DependentUpon>PhysicalMemoryWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ResourceWindow.xaml.cs">
+      <DependentUpon>ResourceWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="UtilisationWindow.xaml.cs">
       <DependentUpon>UtilisationWindow.xaml</DependentUpon>
@@ -164,6 +171,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Controls\MemoryButton.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\Resource Controls\R1Control.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -220,6 +231,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="ProcessListWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ResourceWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
