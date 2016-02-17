@@ -1071,7 +1071,7 @@ namespace CPU_OS_Simulator
 
         private void btn_ViewResources_Click(object sender, RoutedEventArgs e)
         {
-
+            ResourceWindow window = new ResourceWindow(this);
         }
     }
 }

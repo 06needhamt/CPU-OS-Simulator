@@ -21,11 +21,59 @@ namespace CPU_OS_Simulator.Controls.Resource_Controls
     /// </summary>
     public partial class R1Control : UserControl
     {
+        private R1Shape shape;
+
         public R1Control()
         {
             InitializeComponent();
-            R1Shape shape = new R1Shape();
-            DrawCanvas.Children.Add(shape);
+            shape = new R1Shape(RectangleWidth,RectangleHeight,RectangleColour);
+        }
+
+        public R1Shape Shape
+        {
+            get { return shape; }
+            set { shape = value; }
+        }
+        public static readonly DependencyProperty WidthProperty = DependencyProperty.Register
+        (
+            "RectangleWidth",
+            typeof(double),
+            typeof(R1Control),
+            new PropertyMetadata(75.0)
+        );
+
+        public double RectangleWidth
+        {
+            get { return (double) GetValue(WidthProperty); }
+            set { SetValue(WidthProperty,value);}
+        }
+
+        public static readonly DependencyProperty HeightProperty = DependencyProperty.Register
+        (
+            "RectangleHeight",
+            typeof(double),
+            typeof(R1Control),
+            new PropertyMetadata(50.0)
+        );
+
+        public double RectangleHeight
+        {
+            get { return (double)GetValue(HeightProperty); }
+            set { SetValue(HeightProperty, value); }
+        }
+
+        public static readonly DependencyProperty ColourProperty = DependencyProperty.Register
+        (
+            "RectangleColour",
+            typeof(Color),
+            typeof(R1Control),
+            new PropertyMetadata(Colors.LawnGreen)
+        );
+
+        public Color RectangleColour
+        {
+            get { return (Color)GetValue(ColourProperty); }
+            set { SetValue(ColourProperty, value); }
         }
     }
 }

@@ -133,7 +133,11 @@
     <Compile Include="Controls\Resource Controls\R1Control.xaml.cs">
       <DependentUpon>R1Control.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Controls\Resource Controls\R1Control_OLD.xaml.cs">
+      <DependentUpon>R1Control_OLD.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Controls\Resource Controls\Shapes\R1Shape.cs" />
+    <Compile Include="Controls\Resource Controls\Shapes\R1Shape_OLD.cs" />
     <Compile Include="EnumInstructionMode.cs" />
     <Compile Include="EnumLogLevel.cs" />
     <Compile Include="FontPickerWindow.xaml.cs">
@@ -175,6 +179,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Controls\Resource Controls\R1Control.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\Resource Controls\R1Control_OLD.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

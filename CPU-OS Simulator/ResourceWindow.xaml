@@ -4,11 +4,12 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CPU_OS_Simulator"
+        xmlns:resources ="clr-namespace:CPU_OS_Simulator.Controls.Resource_Controls"
         mc:Ignorable="d"
         Title="ResourceWindow" Height="400" Width="600">
     <Grid x:Name="RootGrid">
         <Grid x:Name="R1_Grid" HorizontalAlignment="Left" Height="75" Margin="10,10,0,0" VerticalAlignment="Top" Width="75">
-            
+            <resources:R1Control RectangleWidth="75.0" RectangleHeight="50.0" RectangleColour="LawnGreen"/>
         </Grid>
     </Grid>
 </Window>

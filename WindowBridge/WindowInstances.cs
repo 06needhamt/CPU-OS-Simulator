@@ -40,8 +40,12 @@
         /// </summary>
         public static UtilisationWindow UtilisationWindowInstance = UtilisationWindow.currentInstance;
         /// <summary>
-        /// This variable represents the active  PhysicalMemoryWindow instance
+        /// This variable represents the active PhysicalMemoryWindow instance
         /// </summary>
         public static PhysicalMemoryWindow PhysicalMemoryWindowInstance = PhysicalMemoryWindow.currentInstance;
+        /// <summary>
+        /// This variable represents the active ResourceWindow instance
+        /// </summary>
+        public static ResourceWindow ResourceWindowInstance = ResourceWindow.currentInstance;
     }
 }
