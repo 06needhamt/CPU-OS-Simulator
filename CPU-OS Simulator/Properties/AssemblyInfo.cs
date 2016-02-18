@@ -11,7 +11,7 @@ using System.Windows;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Edge Hill University UK")]
 [assembly: AssemblyProduct("CPU-OS Simulator")]
-[assembly: AssemblyCopyright("Copyright © Thomas Needham 2015")]
+[assembly: AssemblyCopyright("Copyright © Thomas Needham 2015 - 2016")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
@@ -48,6 +48,6 @@ using System.Windows;
 // You can specify all the values or you can default the Build and Revision Numbers
 // by using the '*' as shown below:
 // [assembly: AssemblyVersion("1.0.*")]
-[assembly: AssemblyVersion("2016.2.18.1157")]
-[assembly: AssemblyFileVersion("2016.2.18.1157")]
+[assembly: AssemblyVersion("2016.2.18.1242")]
+[assembly: AssemblyFileVersion("2016.2.18.1242")]
 [assembly: NeutralResourcesLanguage("en-GB")]
