@@ -17,6 +17,8 @@ namespace CPU_OS_Simulator.Controls.Resource_Controls.Shapes
         private Color colour;
 
 
+        public R1Shape() { }
+
         public R1Shape(double width, double height, Color colour)
         {
             this.width = width;

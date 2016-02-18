@@ -8,6 +8,8 @@
              mc:Ignorable="d" 
              d:DesignHeight="75" d:DesignWidth="75" Background="White">
     <Grid>
-        <shapes:R1Shape/>
+        <Canvas x:Name="R1Canvas" Width="75" Height="75" >
+            
+        </Canvas>
     </Grid>
 </UserControl>

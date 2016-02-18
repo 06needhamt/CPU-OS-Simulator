@@ -27,6 +27,9 @@ namespace CPU_OS_Simulator.Controls.Resource_Controls
         {
             InitializeComponent();
             shape = new R1Shape(RectangleWidth,RectangleHeight,RectangleColour);
+            Canvas.SetLeft(shape, 0);
+            Canvas.SetTop(shape, 0);
+            R1Canvas.Children.Add(shape);
         }
 
         public R1Shape Shape
