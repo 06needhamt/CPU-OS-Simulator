@@ -1,15 +1,16 @@
 ﻿using System.Reflection;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("MemoryTests")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyTitle("CPU-OS Simulator Interrupts Module")]
+[assembly: AssemblyDescription("CPU-OS Simulator Interrupts Module")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("MemoryTests")]
-[assembly: AssemblyCopyright("Copyright ©  2015 - 2016")]
+[assembly: AssemblyCompany("Edge Hill University UK")]
+[assembly: AssemblyProduct("Interrupts")]
+[assembly: AssemblyCopyright("Copyright © Thomas Needham 2015 - 2016")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
@@ -19,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("27e6d686-6a07-4540-80c5-3608e3c44488")]
+[assembly: Guid("c02f9b11-7850-4396-9292-27e0f714170e")]
 
 // Version information for an assembly consists of the following four values:
 //
