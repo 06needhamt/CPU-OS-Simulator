@@ -47,6 +47,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="EnumInterruptSource.cs" />
+    <Compile Include="EnumInterruptType.cs" />
     <Compile Include="Interrupt.cs" />
     <Compile Include="InterruptHandler.cs" />
     <Compile Include="InterruptVectorTable.cs" />

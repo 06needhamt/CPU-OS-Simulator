@@ -11,6 +11,8 @@ namespace CPU_OS_Simulator.Interrupts
         private int logicalAddress;
         private string routineName;
         private InterruptHandler handler;
+        private int id;
+        private EnumInterruptType interruptType;
 
         /// <summary>
         /// This function fires the interrupt
@@ -50,6 +52,14 @@ namespace CPU_OS_Simulator.Interrupts
         }
 
         /// <summary>
+        /// Property For the interrupt ID
+        /// </summary>
+        public override int ID
+        {
+            get { return id; }
+        }
+
+        /// <summary>
         /// Property for the name of the routine
         /// </summary>
         public override string RoutineName
@@ -63,6 +73,14 @@ namespace CPU_OS_Simulator.Interrupts
         public override InterruptHandler Handler
         {
             get { return handler; }
+        }
+
+        /// <summary>
+        /// Property for the interrupt type
+        /// </summary>
+        public override EnumInterruptType InterruptType
+        {
+            get { interruptType = EnumInterruptType.POLLED; return interruptType; }
         }
     }
 }

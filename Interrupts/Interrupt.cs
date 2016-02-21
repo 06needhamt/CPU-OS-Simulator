@@ -41,6 +41,11 @@ namespace CPU_OS_Simulator.Interrupts
         public abstract int LogicalAddress { get; }
 
         /// <summary>
+        /// Property For the interrupt ID
+        /// </summary>
+        public abstract int ID { get; }
+
+        /// <summary>
         /// Property for the name of the routine
         /// </summary>
         public abstract string RoutineName { get; }
@@ -49,5 +54,10 @@ namespace CPU_OS_Simulator.Interrupts
         /// Property for the interrupt handler
         /// </summary>
         public abstract InterruptHandler Handler { get; } 
+
+        /// <summary>
+        /// Property for the interrupt type
+        /// </summary>
+        public abstract EnumInterruptType InterruptType { get; }
     }
 }
