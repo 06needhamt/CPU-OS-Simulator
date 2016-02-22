@@ -405,6 +405,17 @@ namespace CPU_OS_Simulator.Compiler.Frontend
                     {
                         StringLiteral literal = new StringLiteral(currentTokenString.Value);
                         literal.Type = EnumTokenType.STRING_LITERAL;
+                        while (!literal.Value.EndsWith("\""))
+                        {
+                            currentTokenString = nextTokenString;
+                            nextTokenString = currentTokenString.Next;
+                            if (currentTokenString.Value == null)
+                            {
+                                ThrowError(EnumErrorCodes.STRING_NOT_TETMINATED, "\"");
+                                return null;
+                            }
+                            literal.Value += " " + currentTokenString.Value;
+                        }
                         tokens.AddLast(new LinkedListNode<Token>(literal));
                     }
                     else if ((EnumTokenType) token.Type == EnumTokenType.NUMBER)
