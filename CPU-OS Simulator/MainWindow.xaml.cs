@@ -866,6 +866,10 @@ namespace CPU_OS_Simulator
                 {
                     prog.Stack = new ProgramStack();
                 }
+                if (prog.Labels == null)
+                {
+                    prog.Labels = new List<SimulatorLabel>();
+                }
                 for (int i = 0; i < prog.Pages; i++)
                 {
                     MemoryPage memoryPage = new MemoryPage(i, (i*MemoryPage.PAGE_SIZE),prog.Name,-1);
@@ -899,6 +903,10 @@ namespace CPU_OS_Simulator
                 if (prog.Stack == null)
                 {
                     prog.Stack = new ProgramStack();
+                }
+                if (prog.Labels == null)
+                {
+                    prog.Labels = new List<SimulatorLabel>();
                 }
                 for (int i = 0; i < prog.Pages; i++)
                 {

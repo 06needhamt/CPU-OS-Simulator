@@ -1024,7 +1024,50 @@ namespace CPU_OS_Simulator.CPU
         /// <returns> the result of the instruction or int.MINVALUE if no result is returned </returns>
         private int LNS(Operand lhs, Operand rhs)
         {
-            MessageBox.Show("LNS Instruction is not currently implemented", "", MessageBoxButton.OK, MessageBoxImage.Information);
+            if (!lhs.IsRegister)
+            {
+                MessageBox.Show("Left hand operand of LDW bust be a register");
+                return int.MinValue;
+            }
+            if (rhs.Type != EnumOperandType.ADDRESS)
+            {
+                MessageBox.Show("Right hand side of LDW must be a memory Address");
+                return int.MinValue;
+            }
+            int address = 0;
+            int value = 0;
+            int pagenumber = 0;
+            int pageoffset = 0;
+            byte?[] bytes = new byte?[2];
+
+            address = rhs.IsRegister ? Register.FindRegister(rhs.Register.Name).Value : rhs.Value;
+            for (int i = 0; i < 2; i++)
+            {
+                if (op2mem == EnumAddressType.INDIRECT)
+                {
+                    address = GetIndirectAddress(address);
+                }
+
+                pagenumber = (address + i) / MemoryPage.PAGE_SIZE;
+                pageoffset = (address + i) % MemoryPage.PAGE_SIZE;
+                bytes[i] = LoadByte(pagenumber, pageoffset);
+            }
+            Array.Reverse(bytes);
+            if (BitConverter.IsLittleEndian)
+            {
+                Array.Reverse(bytes);
+            }
+            if (bytes[0] != null && bytes[1] != null)
+            {
+                value = (int)BitConverter.ToInt16(bytes.Cast<byte>().ToArray(), 0);
+                Register.FindRegister(lhs.Register.Name)
+                    .SetRegisterValue(value, EnumOperandType.VALUE);
+            }
+            else
+            {
+                MessageBox.Show("There was an error loading a value from memory");
+                return int.MinValue;
+            }
             return 0;
         }
 
@@ -1056,8 +1099,8 @@ namespace CPU_OS_Simulator.CPU
             {
                 address = GetIndirectAddress(address);
             }
-            pagenumber = address / 255;
-            pageoffset = address % 255;
+            pagenumber = address / MemoryPage.PAGE_SIZE;
+            pageoffset = address % MemoryPage.PAGE_SIZE;
             byte? loadedByte = LoadByte(pagenumber, pageoffset);
             if (loadedByte != null)
             {
@@ -1105,8 +1148,8 @@ namespace CPU_OS_Simulator.CPU
                     address = GetIndirectAddress(address);
                 }
 
-                pagenumber = (address + i) / 255;
-                pageoffset = (address + i) % 255;
+                pagenumber = (address + i) / MemoryPage.PAGE_SIZE;
+                pageoffset = (address + i) % MemoryPage.PAGE_SIZE;
                 bytes[i] = LoadByte(pagenumber, pageoffset);
             }
             Array.Reverse(bytes);
@@ -1154,36 +1197,55 @@ namespace CPU_OS_Simulator.CPU
             int value = 0;
             int pagenumber = 0;
             int pageoffset = 0;
-            byte b = 0xFF;
-            address = lhs.IsRegister ? Register.FindRegister(lhs.Register.Name).Value : lhs.Value;
-            if (rhs.IsRegister)
+            value = rhs.IsRegister ? rhs.Register.Value : rhs.Value;
+            if (lhs.Type != EnumOperandType.ADDRESS)
             {
-                SimulatorProgram program = GetCurrentProgram();
-                value = Register.FindRegister(rhs.Register.Name).Value;
-                b = (byte) (value & 0xFF);
-                pagenumber = address/MemoryPage.PAGE_SIZE;
-                pageoffset = address%MemoryPage.PAGE_SIZE;
-            }
-            else
-            {
-                SimulatorProgram program = GetCurrentProgram();
-                pagenumber = address/MemoryPage.PAGE_SIZE;
-                pageoffset = address%MemoryPage.PAGE_SIZE;
-                value = rhs.Value;
-                b = (byte) (value & 0xFF);
-            }
-            dynamic wind = GetMainWindowInstance();
-            PhysicalMemory memory = wind.Memory;
-            int frameNumber = FindRequiredPage(pagenumber);
-            if (memory.RequestMemoryPage(frameNumber) != null)
-            {
-                memory.Pages[frameNumber].Data[pageoffset / 8].SetByte(pageoffset % 8,b);
-            }
-            else
-            {
+                MessageBox.Show("Left hand Side of STB must be a memory address");
                 return int.MinValue;
             }
-            
+            address = lhs.IsRegister ? lhs.Register.Value : lhs.Value;
+            if (op2mem == EnumAddressType.INDIRECT)
+            {
+                address = GetIndirectAddress(address);
+            }
+            pagenumber = address/MemoryPage.PAGE_SIZE;
+            pageoffset = address%MemoryPage.PAGE_SIZE;
+            StoreByte(pagenumber,pageoffset,(byte) value);
+            #region OLD OLD
+            //int address = 0;
+            //int value = 0;
+            //int pagenumber = 0;
+            //int pageoffset = 0;
+            //byte b = 0xFF;
+            //address = lhs.IsRegister ? Register.FindRegister(lhs.Register.Name).Value : lhs.Value;
+            //if (rhs.IsRegister)
+            //{
+            //    SimulatorProgram program = GetCurrentProgram();
+            //    value = Register.FindRegister(rhs.Register.Name).Value;
+            //    b = (byte) (value & 0xFF);
+            //    pagenumber = address/MemoryPage.PAGE_SIZE;
+            //    pageoffset = address%MemoryPage.PAGE_SIZE;
+            //}
+            //else
+            //{
+            //    SimulatorProgram program = GetCurrentProgram();
+            //    pagenumber = address/MemoryPage.PAGE_SIZE;
+            //    pageoffset = address%MemoryPage.PAGE_SIZE;
+            //    value = rhs.Value;
+            //    b = (byte) (value & 0xFF);
+            //}
+            //dynamic wind = GetMainWindowInstance();
+            //PhysicalMemory memory = wind.Memory;
+            //int frameNumber = FindRequiredPage(pagenumber);
+            //if (memory.RequestMemoryPage(frameNumber) != null)
+            //{
+            //    memory.Pages[frameNumber].Data[pageoffset / 8].SetByte(pageoffset % 8,b);
+            //}
+            //else
+            //{
+            //    return int.MinValue;
+            //}
+
             #region OLD
             //int address;
             //byte value;
@@ -1208,8 +1270,9 @@ namespace CPU_OS_Simulator.CPU
 
             //    program.Memory.ElementAt(pagenumber).Data[pageOffset / 8].SetByte(pageOffset % 8, Convert.ToByte(value));
             //}
-            
+
             #endregion OLD
+            #endregion OLD OLD
             return 0;
         }
 
@@ -1231,7 +1294,6 @@ namespace CPU_OS_Simulator.CPU
             address = lhs.IsRegister ? Register.FindRegister(lhs.Register.Name).Value : lhs.Value;
             if (rhs.IsRegister)
             {
-                SimulatorProgram program = GetCurrentProgram();
                 value = Register.FindRegister(rhs.Register.Name).Value;
                 low = (byte)(value & 0xFF);
                 high = (byte)((value >> 8) & 0xFF);
@@ -1242,15 +1304,14 @@ namespace CPU_OS_Simulator.CPU
                     high = templow;
                     low = temphigh;
                 }
-                pagenumber = address/MemoryPage.PAGE_SIZE;
-                pageOffset = address%MemoryPage.PAGE_SIZE;
+                pagenumber = address / MemoryPage.PAGE_SIZE;
+                pageOffset = address % MemoryPage.PAGE_SIZE;
 
             }
             else
             {
-                SimulatorProgram program = GetCurrentProgram();
-                pagenumber = address/MemoryPage.PAGE_SIZE;
-                pageOffset = address%MemoryPage.PAGE_SIZE;
+                pagenumber = address / MemoryPage.PAGE_SIZE;
+                pageOffset = address % MemoryPage.PAGE_SIZE;
                 value = rhs.Value;
                 low = (byte)(value & 0xFF);
                 high = (byte)((value >> 8) & 0xFF);
@@ -1262,31 +1323,81 @@ namespace CPU_OS_Simulator.CPU
                     low = temphigh;
                 }
             }
-            dynamic wind = GetMainWindowInstance();
-            PhysicalMemory memory = wind.Memory;
-            int frameNumber = FindRequiredPage(pagenumber);
-            if (memory.RequestMemoryPage(frameNumber) != null)
+            StoreByte(pagenumber,pageOffset,high);
+            pageOffset++;
+            if (pageOffset > MemoryPage.PAGE_SIZE)
             {
-                memory.Pages[frameNumber].Data[pageOffset / 8].SetByte(pageOffset % 8, high);
-                Console.WriteLine("High Byte value = " + memory.Pages[frameNumber].Data[pageOffset/8].GetByte(pageOffset % 8));
-                if (pageOffset % 8 == 7)
-                {
-                    memory.Pages[frameNumber].Data[pageOffset / 8 + 1].SetByte((pageOffset + 1) % 8, low);
-                    Console.WriteLine("Low Byte value = " + memory.Pages[frameNumber].Data[pageOffset / 8 + 1].GetByte((pageOffset + 1) % 8));
-
-                }
-                else
-                {
-                    memory.Pages[frameNumber].Data[pageOffset / 8].SetByte((pageOffset % 8 + 1), low);
-                    Console.WriteLine("Low Byte value = " + memory.Pages[frameNumber].Data[pageOffset / 8].GetByte(pageOffset % 8 + 1));
-
-                }
+                pagenumber++;
+                pageOffset -= MemoryPage.PAGE_SIZE;
             }
-            else
-            {
-                return int.MinValue;
-            }
+            StoreByte(pagenumber,pageOffset,low);
+            #region OLD OLD
+            //int address = 0;
+            //int value = 0;
+            //int pagenumber = 0;
+            //int pageOffset = 0;
+            //byte low = 0;
+            //byte high = 0;
 
+            //address = lhs.IsRegister ? Register.FindRegister(lhs.Register.Name).Value : lhs.Value;
+            //if (rhs.IsRegister)
+            //{
+            //    SimulatorProgram program = GetCurrentProgram();
+            //    value = Register.FindRegister(rhs.Register.Name).Value;
+            //    low = (byte)(value & 0xFF);
+            //    high = (byte)((value >> 8) & 0xFF);
+            //    if (BitConverter.IsLittleEndian)
+            //    {
+            //        byte templow = low;
+            //        byte temphigh = high;
+            //        high = templow;
+            //        low = temphigh;
+            //    }
+            //    pagenumber = address/MemoryPage.PAGE_SIZE;
+            //    pageOffset = address%MemoryPage.PAGE_SIZE;
+
+            //}
+            //else
+            //{
+            //    SimulatorProgram program = GetCurrentProgram();
+            //    pagenumber = address/MemoryPage.PAGE_SIZE;
+            //    pageOffset = address%MemoryPage.PAGE_SIZE;
+            //    value = rhs.Value;
+            //    low = (byte)(value & 0xFF);
+            //    high = (byte)((value >> 8) & 0xFF);
+            //    if (BitConverter.IsLittleEndian)
+            //    {
+            //        byte templow = low;
+            //        byte temphigh = high;
+            //        high = templow;
+            //        low = temphigh;
+            //    }
+            //}
+            //dynamic wind = GetMainWindowInstance();
+            //PhysicalMemory memory = wind.Memory;
+            //int frameNumber = FindRequiredPage(pagenumber);
+            //if (memory.RequestMemoryPage(frameNumber) != null)
+            //{
+            //    memory.Pages[frameNumber].Data[pageOffset / 8].SetByte(pageOffset % 8, high);
+            //    Console.WriteLine("High Byte value = " + memory.Pages[frameNumber].Data[pageOffset/8].GetByte(pageOffset % 8));
+            //    if (pageOffset % 8 == 7)
+            //    {
+            //        memory.Pages[frameNumber].Data[pageOffset / 8 + 1].SetByte((pageOffset + 1) % 8, low);
+            //        Console.WriteLine("Low Byte value = " + memory.Pages[frameNumber].Data[pageOffset / 8 + 1].GetByte((pageOffset + 1) % 8));
+
+            //    }
+            //    else
+            //    {
+            //        memory.Pages[frameNumber].Data[pageOffset / 8].SetByte((pageOffset % 8 + 1), low);
+            //        Console.WriteLine("Low Byte value = " + memory.Pages[frameNumber].Data[pageOffset / 8].GetByte(pageOffset % 8 + 1));
+
+            //    }
+            //}
+            //else
+            //{
+            //    return int.MinValue;
+            //}
+            #endregion OLD OLD
             #region OLD
             //int address;
             //int value;
@@ -1347,7 +1458,26 @@ namespace CPU_OS_Simulator.CPU
         /// <returns> the result of the instruction or int.MINVALUE if no result is returned </returns>
         private int STBI(Operand lhs, Operand rhs)
         {
-            MessageBox.Show("STBI Instruction is not currently implemented", "", MessageBoxButton.OK, MessageBoxImage.Information);
+            int address = 0;
+            int value = 0;
+            int pagenumber = 0;
+            int pageoffset = 0;
+            value = rhs.IsRegister ? rhs.Register.Value : rhs.Value;
+            if (lhs.Type != EnumOperandType.ADDRESS)
+            {
+                MessageBox.Show("Left hand Side of STB must be a memory address");
+                return int.MinValue;
+            }
+            address = lhs.IsRegister ? lhs.Register.Value : lhs.Value;
+            if (op2mem == EnumAddressType.INDIRECT)
+            {
+                address = GetIndirectAddress(address);
+            }
+            pagenumber = address / MemoryPage.PAGE_SIZE;
+            pageoffset = address % MemoryPage.PAGE_SIZE;
+            StoreByte(pagenumber, pageoffset, (byte)value);
+            if(lhs.IsRegister)
+                Register.FindRegister(lhs.Register.Name).SetRegisterValue(lhs.Register.Value + 1,lhs.Register.Type);
             return 0;
         }
 
@@ -1359,7 +1489,55 @@ namespace CPU_OS_Simulator.CPU
         /// <returns> the result of the instruction or int.MINVALUE if no result is returned </returns>
         private int STWI(Operand lhs, Operand rhs)
         {
-            MessageBox.Show("STWI Instruction is not currently implemented", "", MessageBoxButton.OK, MessageBoxImage.Information);
+            int address = 0;
+            int value = 0;
+            int pagenumber = 0;
+            int pageOffset = 0;
+            byte low = 0;
+            byte high = 0;
+
+            address = lhs.IsRegister ? Register.FindRegister(lhs.Register.Name).Value : lhs.Value;
+            if (rhs.IsRegister)
+            {
+                value = Register.FindRegister(rhs.Register.Name).Value;
+                low = (byte)(value & 0xFF);
+                high = (byte)((value >> 8) & 0xFF);
+                if (BitConverter.IsLittleEndian)
+                {
+                    byte templow = low;
+                    byte temphigh = high;
+                    high = templow;
+                    low = temphigh;
+                }
+                pagenumber = address / MemoryPage.PAGE_SIZE;
+                pageOffset = address % MemoryPage.PAGE_SIZE;
+
+            }
+            else
+            {
+                pagenumber = address / MemoryPage.PAGE_SIZE;
+                pageOffset = address % MemoryPage.PAGE_SIZE;
+                value = rhs.Value;
+                low = (byte)(value & 0xFF);
+                high = (byte)((value >> 8) & 0xFF);
+                if (BitConverter.IsLittleEndian)
+                {
+                    byte templow = low;
+                    byte temphigh = high;
+                    high = templow;
+                    low = temphigh;
+                }
+            }
+            StoreByte(pagenumber, pageOffset, high);
+            pageOffset++;
+            if (pageOffset > MemoryPage.PAGE_SIZE)
+            {
+                pagenumber++;
+                pageOffset -= MemoryPage.PAGE_SIZE;
+            }
+            StoreByte(pagenumber, pageOffset, low);
+            if (lhs.IsRegister)
+                Register.FindRegister(lhs.Register.Name).SetRegisterValue(lhs.Register.Value + 1, lhs.Register.Type);
             return 0;
         }
 
