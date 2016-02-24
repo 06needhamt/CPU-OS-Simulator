@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.ExceptionServices;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -13,6 +14,7 @@ namespace CPU_OS_Simulator.Interrupts
         private InterruptHandler handler;
         private int id;
         private EnumInterruptType interruptType;
+        private bool handled = false;
 
         /// <summary>
         /// This function fires the interrupt
@@ -21,7 +23,8 @@ namespace CPU_OS_Simulator.Interrupts
         /// <param name="logicalAddress"> the logical address of the start of the routine</param>
         public override void Fire(string RoutineName, int logicalAddress)
         {
-            throw new NotImplementedException();
+            handled = true;
+            handler.HandlerFunction();
         }
 
         /// <summary>

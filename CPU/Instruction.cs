@@ -889,7 +889,6 @@ namespace CPU_OS_Simulator.CPU
         /// <returns> the result of the instruction or int.MINVALUE if no result is returned </returns>
         private int MVS(Operand lhs, Operand rhs)
         {
-           
             MessageBox.Show("MVS Instruction is not currently implemented", "", MessageBoxButton.OK, MessageBoxImage.Information);
             return 0;
         }
@@ -926,7 +925,38 @@ namespace CPU_OS_Simulator.CPU
         /// <returns> the result of the instruction or int.MINVALUE if no result is returned </returns>
         private int LDB(Operand lhs, Operand rhs)
         {
-            MessageBox.Show("LDB Instruction is not currently implemented", "", MessageBoxButton.OK, MessageBoxImage.Information);
+            if (!lhs.IsRegister)
+            {
+                MessageBox.Show("Left hand operand of LDB bust be a register");
+                return int.MinValue;
+            }
+            if (rhs.Type != EnumOperandType.ADDRESS)
+            {
+                MessageBox.Show("Right hand side of LDB must be a memory Address");
+                return int.MinValue;
+            }
+            int address = 0;
+            int value = 0;
+            int pagenumber = 0;
+            int pageoffset = 0;
+
+            address = rhs.IsRegister ? Register.FindRegister(rhs.Register.Name).Value : rhs.Value;
+            if (op2mem == EnumAddressType.INDIRECT)
+            {
+                address = GetIndirectAddress(address);
+            }
+            pagenumber = address/255;
+            pageoffset = address%255;
+            byte? loadedByte = LoadByte(pagenumber, pageoffset);
+            if (loadedByte != null)
+            {
+                Register.FindRegister(lhs.Register.Name).SetRegisterValue((int)loadedByte.Value, EnumOperandType.VALUE);
+            }
+            else
+            {
+                MessageBox.Show("There was an error loading a value from memory");
+                return int.MinValue;
+            }
             return 0;
         }
 
@@ -938,7 +968,51 @@ namespace CPU_OS_Simulator.CPU
         /// <returns> the result of the instruction or int.MINVALUE if no result is returned </returns>
         private int LDW(Operand lhs, Operand rhs)
         {
-            MessageBox.Show("LDW Instruction is not currently implemented", "", MessageBoxButton.OK, MessageBoxImage.Information);
+            if (!lhs.IsRegister)
+            {
+                MessageBox.Show("Left hand operand of LDW bust be a register");
+                return int.MinValue;
+            }
+            if (rhs.Type != EnumOperandType.ADDRESS)
+            {
+                MessageBox.Show("Right hand side of LDW must be a memory Address");
+                return int.MinValue;
+            }
+            int address = 0;
+            int value = 0;
+            int pagenumber = 0;
+            int pageoffset = 0;
+            byte?[] bytes = new byte?[2];
+
+            address = rhs.IsRegister ? Register.FindRegister(rhs.Register.Name).Value : rhs.Value;
+            for (int i = 0; i < 2; i++)
+            {
+                if (op2mem == EnumAddressType.INDIRECT)
+                {
+                    address = GetIndirectAddress(address);
+                }
+
+                pagenumber = (address + i)/255;
+                pageoffset = (address + i)%255;
+                bytes[i] = LoadByte(pagenumber, pageoffset);
+            }
+            Array.Reverse(bytes);
+            if (BitConverter.IsLittleEndian)
+            {
+                Array.Reverse(bytes);
+            }
+            if (bytes[0] != null && bytes[1] != null)
+            {
+                value = (int) BitConverter.ToInt16(bytes.Cast<byte>().ToArray(), 0);
+                Register.FindRegister(lhs.Register.Name)
+                    .SetRegisterValue(value, EnumOperandType.VALUE);
+            }
+            else
+            {
+                MessageBox.Show("There was an error loading a value from memory");
+                return int.MinValue;
+            }
+
             return 0;
         }
 
@@ -1031,7 +1105,7 @@ namespace CPU_OS_Simulator.CPU
             {
                 return int.MinValue;
             }
-            //MessageBox.Show("STB Instruction is not currently implemented", "", MessageBoxButton.OK, MessageBoxImage.Information);
+            
             #region OLD
             //int address;
             //byte value;
@@ -1056,7 +1130,7 @@ namespace CPU_OS_Simulator.CPU
 
             //    program.Memory.ElementAt(pagenumber).Data[pageOffset / 8].SetByte(pageOffset % 8, Convert.ToByte(value));
             //}
-            //MessageBox.Show("STB Instruction is not currently implemented", "", MessageBoxButton.OK, MessageBoxImage.Information);
+            
             #endregion OLD
             return 0;
         }

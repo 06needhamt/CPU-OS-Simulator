@@ -15,5 +15,14 @@ namespace CPU_OS_Simulator.Interrupts
         [ScriptIgnore]
         private Func<int> handlerFunction;
 
+        public InterruptHandler(Func<int> handlerFunction)
+        {
+            this.handlerFunction = handlerFunction;
+        }
+
+        public Func<int> HandlerFunction
+        {
+            get { return handlerFunction; }
+        }
     }
 }
