@@ -28,6 +28,8 @@ namespace CPU_OS_Simulator.CPU
         /// </summary>
         private int stackSize;
 
+        public const int BASE_POINTER = 0x2000;
+
         #endregion Global Variables
 
         #region Constructors
@@ -48,7 +50,7 @@ namespace CPU_OS_Simulator.CPU
         /// this function pushes an item onto the stack
         /// </summary>
         /// <param name="item"> the item to be pushed onto the stack</param>
-        public void pushItem(StackItem item)
+        public void PushItem(StackItem item)
         {
             if (stackSize + 1 > maxStackSize)
             {
@@ -58,6 +60,7 @@ namespace CPU_OS_Simulator.CPU
                 return;
             }
             item.Position = stackItems.Count;
+            item.Address = BASE_POINTER + (item.Position*4);
             stackItems.Add(item);
             stackSize++;
             SetAnnotations();
@@ -96,7 +99,7 @@ namespace CPU_OS_Simulator.CPU
         /// This item pops a value off the top of the stack
         /// </summary>
         /// <returns> the value that was popped off the stack</returns>
-        public int popItem()
+        public int PopItem()
         {
             if (stackSize - 1 < 0)
             {

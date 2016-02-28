@@ -9,14 +9,16 @@
         private int value;
         private int position;
         private int address;
+        private bool marked;
 
         /// <summary>
         /// Constructor for stack item
         /// </summary>
         /// <param name="value"> the value to store on the stack</param>
-        public StackItem(int value)
+        public StackItem(int value, bool marked = false)
         {
             this.value = value;
+            this.marked = marked;
         }
         /// <summary>
         /// Property to store the annotation associated with this stack item.
@@ -79,6 +81,12 @@
             {
                 address = value;
             }
+        }
+
+        public bool Marked
+        {
+            get { return marked; }
+            set { marked = value; }
         }
     }
 }

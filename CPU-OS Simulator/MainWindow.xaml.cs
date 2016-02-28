@@ -958,6 +958,9 @@ namespace CPU_OS_Simulator
                     .SetRegisterValue(
                         prog.Instructions.ElementAt(lst_InstructionsList.SelectedIndex).InstructionString,
                         EnumOperandType.VALUE);
+                SpecialRegister.FindSpecialRegister("SP").SetRegisterValue(
+                    ProgramStack.BASE_POINTER + (prog.Stack.StackSize * 4),
+                    EnumOperandType.ADDRESS);
                 SpecialRegister.FindSpecialRegister("MDR")
                     .SetRegisterValue(
                         prog.Instructions.ElementAt(lst_InstructionsList.SelectedIndex).InstructionString,
@@ -1009,10 +1012,21 @@ namespace CPU_OS_Simulator
         {
             SimulatorProgram prog = programList.Where(x => x.Name.Equals(currentProgram)).FirstOrDefault();
             lst_InstructionsList.SelectedIndex = activeUnit.CurrentIndex;
-            SpecialRegister.FindSpecialRegister("PC").SetRegisterValue(prog.Instructions.ElementAt(lst_InstructionsList.SelectedIndex).LogicalAddress, EnumOperandType.VALUE);
-            SpecialRegister.FindSpecialRegister("IR").SetRegisterValue(prog.Instructions.ElementAt(lst_InstructionsList.SelectedIndex).InstructionString, EnumOperandType.VALUE);
-            SpecialRegister.FindSpecialRegister("MDR").SetRegisterValue(prog.Instructions.ElementAt(lst_InstructionsList.SelectedIndex).InstructionString, EnumOperandType.VALUE);
-            SpecialRegister.FindSpecialRegister("MAR").SetRegisterValue(prog.Instructions.ElementAt(lst_InstructionsList.SelectedIndex).PhysicalAddress, EnumOperandType.VALUE);
+            SpecialRegister.FindSpecialRegister("PC").SetRegisterValue(
+                prog.Instructions.ElementAt(lst_InstructionsList.SelectedIndex).LogicalAddress, 
+                EnumOperandType.VALUE);
+            SpecialRegister.FindSpecialRegister("IR").SetRegisterValue(
+                prog.Instructions.ElementAt(lst_InstructionsList.SelectedIndex).InstructionString, 
+                EnumOperandType.VALUE);
+            SpecialRegister.FindSpecialRegister("MDR").SetRegisterValue(
+                prog.Instructions.ElementAt(lst_InstructionsList.SelectedIndex).InstructionString, 
+                EnumOperandType.VALUE);
+            SpecialRegister.FindSpecialRegister("MAR").SetRegisterValue(
+                prog.Instructions.ElementAt(lst_InstructionsList.SelectedIndex).PhysicalAddress,
+                EnumOperandType.VALUE);
+            SpecialRegister.FindSpecialRegister("SP").SetRegisterValue(
+                ProgramStack.BASE_POINTER + (prog.Stack.StackSize * 4),
+                EnumOperandType.ADDRESS);
             UpdateRegisters();
             UpdateStack();
             UpdateSpecialRegisters();
@@ -1217,9 +1231,7 @@ namespace CPU_OS_Simulator
             //MemoryWindow m = new MemoryWindow(this, program.Memory.FirstOrDefault());
             //m.Show();
 
-            //MessageBox.Show("This Button is not implemented yet", "Not implemented", MessageBoxButton.OK,
-            //    MessageBoxImage.Information);
-        }
+            }
 
         private void btn_Console_Click(object sender, RoutedEventArgs e)
         {

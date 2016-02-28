@@ -1292,6 +1292,10 @@ namespace CPU_OS_Simulator.CPU
             byte high = 0;
 
             address = lhs.IsRegister ? Register.FindRegister(lhs.Register.Name).Value : lhs.Value;
+            if (op1mem == EnumAddressType.INDIRECT)
+            {
+                address = GetIndirectAddress(address);
+            }
             if (rhs.IsRegister)
             {
                 value = Register.FindRegister(rhs.Register.Name).Value;
@@ -1325,7 +1329,7 @@ namespace CPU_OS_Simulator.CPU
             }
             StoreByte(pagenumber,pageOffset,high);
             pageOffset++;
-            if (pageOffset > MemoryPage.PAGE_SIZE)
+            while (pageOffset >= MemoryPage.PAGE_SIZE)
             {
                 pagenumber++;
                 pageOffset -= MemoryPage.PAGE_SIZE;
@@ -1445,7 +1449,6 @@ namespace CPU_OS_Simulator.CPU
             //        program.Memory.ElementAt(pagenumber).Data[pageOffset / 8].SetByte(pageOffset % 8, lowbyte);
             //    }
             //}
-            //MessageBox.Show("STW Instruction is not currently implemented", "", MessageBoxButton.OK, MessageBoxImage.Information);
             #endregion OLD
             return 0;
         }
@@ -1465,7 +1468,7 @@ namespace CPU_OS_Simulator.CPU
             value = rhs.IsRegister ? rhs.Register.Value : rhs.Value;
             if (lhs.Type != EnumOperandType.ADDRESS)
             {
-                MessageBox.Show("Left hand Side of STB must be a memory address");
+                MessageBox.Show("Left hand Side of STBI must be a memory address");
                 return int.MinValue;
             }
             address = lhs.IsRegister ? lhs.Register.Value : lhs.Value;
@@ -1497,6 +1500,10 @@ namespace CPU_OS_Simulator.CPU
             byte high = 0;
 
             address = lhs.IsRegister ? Register.FindRegister(lhs.Register.Name).Value : lhs.Value;
+            if (op1mem == EnumAddressType.INDIRECT)
+            {
+                address = GetIndirectAddress(address);
+            }
             if (rhs.IsRegister)
             {
                 value = Register.FindRegister(rhs.Register.Name).Value;
@@ -1530,14 +1537,14 @@ namespace CPU_OS_Simulator.CPU
             }
             StoreByte(pagenumber, pageOffset, high);
             pageOffset++;
-            if (pageOffset > MemoryPage.PAGE_SIZE)
+            while (pageOffset >= MemoryPage.PAGE_SIZE)
             {
                 pagenumber++;
                 pageOffset -= MemoryPage.PAGE_SIZE;
             }
             StoreByte(pagenumber, pageOffset, low);
             if (lhs.IsRegister)
-                Register.FindRegister(lhs.Register.Name).SetRegisterValue(lhs.Register.Value + 1, lhs.Register.Type);
+                Register.FindRegister(lhs.Register.Name).SetRegisterValue(lhs.Register.Value + 2, lhs.Register.Type);
             return 0;
         }
 
@@ -1553,13 +1560,13 @@ namespace CPU_OS_Simulator.CPU
             if (lhs.IsRegister)
             {
                 lhs.Register.Value = Register.FindRegister(lhs.Register.Name).Value;
-                p.Stack.pushItem(new StackItem(lhs.Register.Value));
+                p.Stack.PushItem(new StackItem(lhs.Register.Value));
             }
             else
             {
-                p.Stack.pushItem(new StackItem(lhs.Value));
+                p.Stack.PushItem(new StackItem(lhs.Value));
             }
-            //MessageBox.Show("PUSH Instruction is not currently implemented", "", MessageBoxButton.OK, MessageBoxImage.Information);
+            
             Thread.Sleep(20);
             return 0;
         }
@@ -1578,10 +1585,10 @@ namespace CPU_OS_Simulator.CPU
                 MessageBox.Show("Operand for POP instruction must be a register", "", MessageBoxButton.OK, MessageBoxImage.Information);
                 return int.MinValue;
             }
-            lhs.Register.Value = p.Stack.popItem();
+            lhs.Register.Value = p.Stack.PopItem();
             result = lhs.Register.Value;
             Register.FindRegister(lhs.Register.Name).SetRegisterValue(result, EnumOperandType.VALUE);
-            //MessageBox.Show("POP Instruction is not currently implemented", "", MessageBoxButton.OK, MessageBoxImage.Information);
+            
             Thread.Sleep(20);
             return result;
         }
@@ -1603,8 +1610,8 @@ namespace CPU_OS_Simulator.CPU
             int rightvalue = rhs.Register.Value;
             lhs.Register.Value = rightvalue;
             rhs.Register.Value = leftvalue;
-            Register.FindRegister(rhs.Register.Name).SetRegisterValue(lhs.Register.Value, EnumOperandType.VALUE);
-            Register.FindRegister(lhs.Register.Name).SetRegisterValue(rhs.Register.Value, EnumOperandType.VALUE);
+            Register.FindRegister(rhs.Register.Name).SetRegisterValue(lhs.Register.Value, lhs.Register.Type);
+            Register.FindRegister(lhs.Register.Name).SetRegisterValue(rhs.Register.Value, lhs.Register.Type);
             result = lhs.Register.Value;
             return result;
         }
@@ -1646,6 +1653,11 @@ namespace CPU_OS_Simulator.CPU
                 int pageOffset = address % MemoryPage.PAGE_SIZE;
                 for (int i = 0; i < bytes.Length; i++)
                 {
+                    while (pageOffset + i >= MemoryPage.PAGE_SIZE)
+                    {
+                        pageNumber++;
+                        pageOffset -= MemoryPage.PAGE_SIZE;
+                    }
                     byte? loadByte = LoadByte(pageNumber, pageOffset + i);
                     if (loadByte != null)
                         bytes[i] = loadByte.Value;
@@ -1660,7 +1672,7 @@ namespace CPU_OS_Simulator.CPU
                 return int.MinValue;
             }
 
-            //MessageBox.Show("LDDW Instruction is not currently implemented", "", MessageBoxButton.OK, MessageBoxImage.Information);
+            
             return result;
         }
 
@@ -1671,8 +1683,56 @@ namespace CPU_OS_Simulator.CPU
         /// <param name="rhs"> The right hand operand of the instruction </param>
         /// <returns> the result of the instruction or int.MINVALUE if no result is returned </returns>
         private int LDDWI(Operand lhs, Operand rhs)
-        {   
-            MessageBox.Show("LDDWI Instruction is not currently implemented", "", MessageBoxButton.OK, MessageBoxImage.Information);
+        {
+            int value = 0;
+            int address = 0;
+            byte[] bytes = new byte[4];
+            if (rhs.Type == EnumOperandType.ADDRESS)
+            {
+                if (rhs.IsRegister)
+                {
+                    address = Register.FindRegister(rhs.Register.Name).Value;
+                }
+                else
+                {
+                    address = rhs.Value;
+                }
+                if (op2mem == EnumAddressType.INDIRECT)
+                {
+                    address = GetIndirectAddress(address);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Source operand of LDDW must be an address");
+                return int.MinValue;
+            }
+            if (lhs.IsRegister && lhs.Type != EnumOperandType.ADDRESS)
+            {
+                int pageNumber = address / MemoryPage.PAGE_SIZE;
+                int pageOffset = address % MemoryPage.PAGE_SIZE;
+                for (int i = 0; i < bytes.Length; i++)
+                {
+                    while (pageOffset + i >= MemoryPage.PAGE_SIZE)
+                    {
+                        pageNumber++;
+                        pageOffset -= MemoryPage.PAGE_SIZE;
+                    }
+                    byte? loadByte = LoadByte(pageNumber, pageOffset + i);
+                    if (loadByte != null)
+                        bytes[i] = loadByte.Value;
+                }
+                value = BitConverter.ToInt32(bytes, 0);
+                result = value;
+                Register.FindRegister(lhs.Register.Name).SetRegisterValue(result, EnumOperandType.VALUE);
+            }
+            else
+            {
+                MessageBox.Show("Destination Operand of LDDW must be a value register");
+                return int.MinValue;
+            }
+            if(rhs.IsRegister)
+                Register.FindRegister(rhs.Register.Name).SetRegisterValue(rhs.Register.Value + 4, rhs.Register.Type);
             return 0;
         }
 
@@ -1728,9 +1788,13 @@ namespace CPU_OS_Simulator.CPU
             int pageOffset = address%MemoryPage.PAGE_SIZE;
             for (int i = 0; i < bytes.Length; i++)
             {
+                while (pageOffset + i >= MemoryPage.PAGE_SIZE)
+                {
+                    pageNumber++;
+                    pageOffset -= MemoryPage.PAGE_SIZE;
+                }
                 StoreByte(pageNumber, pageOffset + i, bytes[i]);
             }
-            //MessageBox.Show("STDW Instruction is not currently implemented", "", MessageBoxButton.OK, MessageBoxImage.Information);
             return 0;
         }
 
@@ -1742,7 +1806,59 @@ namespace CPU_OS_Simulator.CPU
         /// <returns> the result of the instruction or int.MINVALUE if no result is returned </returns>
         private int STDWI(Operand lhs, Operand rhs)
         {
-            MessageBox.Show("STDWI Instruction is not currently implemented", "", MessageBoxButton.OK, MessageBoxImage.Information);
+            int value = 0;
+            int address = 0;
+
+            byte[] bytes = new byte[4];
+
+            if (rhs.IsRegister && rhs.Type != EnumOperandType.ADDRESS)
+            {
+                value = Register.FindRegister(rhs.Register.Name).Value;
+                bytes = BitConverter.GetBytes(value);
+                Array.Reverse(bytes);
+                if (BitConverter.IsLittleEndian)
+                {
+                    Array.Reverse(bytes);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Source Operand of STDWI must be a value register");
+                return int.MinValue;
+            }
+            if (lhs.Type == EnumOperandType.ADDRESS)
+            {
+                if (lhs.IsRegister)
+                {
+                    address = Register.FindRegister(lhs.Register.Name).Value;
+                }
+                else
+                {
+                    address = lhs.Value;
+                }
+                if (op1mem == EnumAddressType.INDIRECT)
+                {
+                    address = GetIndirectAddress(address);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Destination Operand of STDW must be a Address");
+                return int.MinValue;
+            }
+            int pageNumber = address / MemoryPage.PAGE_SIZE;
+            int pageOffset = address % MemoryPage.PAGE_SIZE;
+            for (int i = 0; i < bytes.Length; i++)
+            {
+                while (pageOffset + i >= MemoryPage.PAGE_SIZE)
+                {
+                    pageNumber++;
+                    pageOffset -= MemoryPage.PAGE_SIZE;
+                }
+                StoreByte(pageNumber, pageOffset + i, bytes[i]);
+            }
+            if(lhs.IsRegister)
+                Register.FindRegister(lhs.Register.Name).SetRegisterValue(lhs.Register.Value + 4, lhs.Register.Type);
             return 0;
         }
 
@@ -3459,18 +3575,39 @@ namespace CPU_OS_Simulator.CPU
                 dynamic window = GetMainWindowInstance();
                 unit = window.ActiveUnit;
                 SimulatorProgram prog = GetCurrentProgram();
-                unit.LogicalAddress = lhs.Value;
-                unit.CurrentIndex = (lhs.Value/4);
-                result = lhs.Value;
-                unit.Done = false;
-                unit.Stop = false;
+                if (unit == null)
+                {
+                    dynamic procunit = GetCurrentProcessExecutionUnit();
+                    procunit.LogicalAddress = lhs.Value;
+                    procunit.CurrentIndex = (lhs.Value / 4);
+                    result = lhs.Value;
+                    procunit.Done = false;
+                    procunit.Stop = false;
+                }
+                else
+                {
+                    unit.LogicalAddress = lhs.Value;
+                    unit.CurrentIndex = (lhs.Value / 4);
+                    result = lhs.Value;
+                    unit.Done = false;
+                    unit.Stop = false;
+                }
+
                 //window.lst_InstructionsList.SelectedIndex = 0;
                 return result;
             }
             else
             {
-                unit = GetExecutionUnit();
-                unit.CurrentIndex++;
+                if (unit == null)
+                {
+                    dynamic procunit = GetCurrentProcessExecutionUnit();
+                    procunit.CurrentIndex++;
+                }
+                else
+                {
+                    unit = GetExecutionUnit();
+                    unit.CurrentIndex++;
+                }
             }
             return 0;
         }
@@ -3491,18 +3628,39 @@ namespace CPU_OS_Simulator.CPU
                 dynamic window = GetMainWindowInstance();
                 unit = window.ActiveUnit;
                 SimulatorProgram prog = GetCurrentProgram();
-                unit.LogicalAddress = lhs.Value;
-                unit.CurrentIndex = (lhs.Value / 4);
-                result = lhs.Value;
-                unit.Done = false;
-                unit.Stop = false;
+                if (unit == null)
+                {
+                    dynamic procunit = GetCurrentProcessExecutionUnit();
+                    procunit.LogicalAddress = lhs.Value;
+                    procunit.CurrentIndex = (lhs.Value / 4);
+                    result = lhs.Value;
+                    procunit.Done = false;
+                    procunit.Stop = false;
+                }
+                else
+                {
+                    unit.LogicalAddress = lhs.Value;
+                    unit.CurrentIndex = (lhs.Value / 4);
+                    result = lhs.Value;
+                    unit.Done = false;
+                    unit.Stop = false;
+                }
+
                 //window.lst_InstructionsList.SelectedIndex = 0;
                 return result;
             }
             else
             {
-                unit = GetExecutionUnit();
-                unit.CurrentIndex++;
+                if (unit == null)
+                {
+                    dynamic procunit = GetCurrentProcessExecutionUnit();
+                    procunit.CurrentIndex++;
+                }
+                else
+                {
+                    unit = GetExecutionUnit();
+                    unit.CurrentIndex++;
+                }
             }
             return 0;
         }
@@ -3523,18 +3681,39 @@ namespace CPU_OS_Simulator.CPU
                 dynamic window = GetMainWindowInstance();
                 unit = window.ActiveUnit;
                 SimulatorProgram prog = GetCurrentProgram();
-                unit.LogicalAddress = lhs.Value;
-                unit.CurrentIndex = (lhs.Value / 4);
-                result = lhs.Value;
-                unit.Done = false;
-                unit.Stop = false;
+                if (unit == null)
+                {
+                    dynamic procunit = GetCurrentProcessExecutionUnit();
+                    procunit.LogicalAddress = lhs.Value;
+                    procunit.CurrentIndex = (lhs.Value / 4);
+                    result = lhs.Value;
+                    procunit.Done = false;
+                    procunit.Stop = false;
+                }
+                else
+                {
+                    unit.LogicalAddress = lhs.Value;
+                    unit.CurrentIndex = (lhs.Value / 4);
+                    result = lhs.Value;
+                    unit.Done = false;
+                    unit.Stop = false;
+                }
+
                 //window.lst_InstructionsList.SelectedIndex = 0;
                 return result;
             }
             else
             {
-                unit = GetExecutionUnit();
-                unit.CurrentIndex++;
+                if (unit == null)
+                {
+                    dynamic procunit = GetCurrentProcessExecutionUnit();
+                    procunit.CurrentIndex++;
+                }
+                else
+                {
+                    unit = GetExecutionUnit();
+                    unit.CurrentIndex++;
+                }
             }
             return 0;
         }
@@ -3555,18 +3734,39 @@ namespace CPU_OS_Simulator.CPU
                 dynamic window = GetMainWindowInstance();
                 unit = window.ActiveUnit;
                 SimulatorProgram prog = GetCurrentProgram();
-                unit.LogicalAddress = lhs.Value;
-                unit.CurrentIndex = (lhs.Value / 4);
-                result = lhs.Value;
-                unit.Done = false;
-                unit.Stop = false;
+                if (unit == null)
+                {
+                    dynamic procunit = GetCurrentProcessExecutionUnit();
+                    procunit.LogicalAddress = lhs.Value;
+                    procunit.CurrentIndex = (lhs.Value/4);
+                    result = lhs.Value;
+                    procunit.Done = false;
+                    procunit.Stop = false;
+                }
+                else
+                {
+                    unit.LogicalAddress = lhs.Value;
+                    unit.CurrentIndex = (lhs.Value / 4);
+                    result = lhs.Value;
+                    unit.Done = false;
+                    unit.Stop = false;
+                }
+                
                 //window.lst_InstructionsList.SelectedIndex = 0;
                 return result;
             }
             else
             {
-                unit = GetExecutionUnit();
-                unit.CurrentIndex++;
+                if (unit == null)
+                {
+                    dynamic procunit = GetCurrentProcessExecutionUnit();
+                    procunit.CurrentIndex++;
+                }
+                else
+                {
+                    unit = GetExecutionUnit();
+                    unit.CurrentIndex++;
+                }
             }
             return 0;
         }
@@ -3640,18 +3840,39 @@ namespace CPU_OS_Simulator.CPU
                 dynamic window = GetMainWindowInstance();
                 unit = window.ActiveUnit;
                 SimulatorProgram prog = GetCurrentProgram();
-                unit.LogicalAddress = lhs.Value;
-                unit.CurrentIndex = (lhs.Value / 4);
-                result = lhs.Value;
-                unit.Done = false;
-                unit.Stop = false;
+                if (unit == null)
+                {
+                    dynamic procunit = GetCurrentProcessExecutionUnit();
+                    procunit.LogicalAddress = lhs.Value;
+                    procunit.CurrentIndex = (lhs.Value / 4);
+                    result = lhs.Value;
+                    procunit.Done = false;
+                    procunit.Stop = false;
+                }
+                else
+                {
+                    unit.LogicalAddress = lhs.Value;
+                    unit.CurrentIndex = (lhs.Value / 4);
+                    result = lhs.Value;
+                    unit.Done = false;
+                    unit.Stop = false;
+                }
+
                 //window.lst_InstructionsList.SelectedIndex = 0;
                 return result;
             }
             else
             {
-                ExecutionUnit unit = GetExecutionUnit();
-                unit.CurrentIndex++;
+                if (unit == null)
+                {
+                    dynamic procunit = GetCurrentProcessExecutionUnit();
+                    procunit.CurrentIndex++;
+                }
+                else
+                {
+                    unit = GetExecutionUnit();
+                    unit.CurrentIndex++;
+                }
             }
             return 0;
         }
@@ -3672,18 +3893,39 @@ namespace CPU_OS_Simulator.CPU
                 dynamic window = GetMainWindowInstance();
                 unit = window.ActiveUnit;
                 SimulatorProgram prog = GetCurrentProgram();
-                unit.LogicalAddress = lhs.Value;
-                unit.CurrentIndex = (lhs.Value / 4);
-                result = lhs.Value;
-                unit.Done = false;
-                unit.Stop = false;
+                if (unit == null)
+                {
+                    dynamic procunit = GetCurrentProcessExecutionUnit();
+                    procunit.LogicalAddress = lhs.Value;
+                    procunit.CurrentIndex = (lhs.Value / 4);
+                    result = lhs.Value;
+                    procunit.Done = false;
+                    procunit.Stop = false;
+                }
+                else
+                {
+                    unit.LogicalAddress = lhs.Value;
+                    unit.CurrentIndex = (lhs.Value / 4);
+                    result = lhs.Value;
+                    unit.Done = false;
+                    unit.Stop = false;
+                }
+
                 //window.lst_InstructionsList.SelectedIndex = 0;
                 return result;
             }
             else
             {
-                unit = GetExecutionUnit();
-                unit.CurrentIndex++;
+                if (unit == null)
+                {
+                    dynamic procunit = GetCurrentProcessExecutionUnit();
+                    procunit.CurrentIndex++;
+                }
+                else
+                {
+                    unit = GetExecutionUnit();
+                    unit.CurrentIndex++;
+                }
             }
             return 0;
         }
@@ -3704,31 +3946,105 @@ namespace CPU_OS_Simulator.CPU
                 dynamic window = GetMainWindowInstance();
                 unit = window.ActiveUnit;
                 SimulatorProgram prog = GetCurrentProgram();
-                unit.LogicalAddress = lhs.Value;
-                unit.CurrentIndex = (lhs.Value / 4);
-                result = lhs.Value;
-                unit.Done = false;
-                unit.Stop = false;
+                if (unit == null)
+                {
+                    dynamic procunit = GetCurrentProcessExecutionUnit();
+                    procunit.LogicalAddress = lhs.Value;
+                    procunit.CurrentIndex = (lhs.Value / 4);
+                    result = lhs.Value;
+                    procunit.Done = false;
+                    procunit.Stop = false;
+                }
+                else
+                {
+                    unit.LogicalAddress = lhs.Value;
+                    unit.CurrentIndex = (lhs.Value / 4);
+                    result = lhs.Value;
+                    unit.Done = false;
+                    unit.Stop = false;
+                }
+
                 //window.lst_InstructionsList.SelectedIndex = 0;
                 return result;
             }
             else
             {
-                unit = GetExecutionUnit();
-                unit.CurrentIndex++;
+                if (unit == null)
+                {
+                    dynamic procunit = GetCurrentProcessExecutionUnit();
+                    procunit.CurrentIndex++;
+                }
+                else
+                {
+                    unit = GetExecutionUnit();
+                    unit.CurrentIndex++;
+                }
             }
             return 0;
         }
         /// <summary>
-        /// This function is called whenever a STWI instruction is executed
+        /// This function is called whenever a CALL instruction is executed
         /// </summary>
         /// <param name="lhs"> The left hand operand of the instruction </param>
         /// <param name="rhs"> The right hand operand of the instruction </param>
         /// <returns> the result of the instruction or int.MINVALUE if no result is returned </returns>
         private int CALL(Operand lhs, Operand rhs)
         {
-            MessageBox.Show("CALL Instruction is not currently implemented", "", MessageBoxButton.OK, MessageBoxImage.Information);
-            return 0;
+            SimulatorProgram prog = GetCurrentProgram();
+            dynamic window = GetMainWindowInstance();
+            unit = window.ActiveUnit;
+            if (lhs.Type == EnumOperandType.LABEL)
+            {
+                if (unit == null)
+                {
+                    dynamic procunit = GetCurrentProcessExecutionUnit();
+                    prog.Stack.PushItem(new StackItem(procunit.LogicalAddress + 4));
+                    procunit.LogicalAddress =
+                        prog.Labels.Where(x => x.Name.Equals(lhs.LabelName)).FirstOrDefault().LogicalAddress;
+                    procunit.CurrentIndex = (procunit.LogicalAddress/4);
+                    result = procunit.LogicalAddress;
+                    procunit.Done = false;
+                    procunit.Stop = false;
+                }
+                else
+                {
+                    prog.Stack.PushItem(new StackItem(unit.LogicalAddress + 4));
+                    unit.LogicalAddress = 
+                        prog.Labels.Where(x => x.Name.Equals(lhs.LabelName)).FirstOrDefault().LogicalAddress;
+                    unit.CurrentIndex = (unit.LogicalAddress/4);
+                    result = unit.LogicalAddress;
+                    unit.Done = false;
+                    unit.Stop = false;
+
+                }
+            }
+            else
+            {
+                if (unit == null)
+                {
+                    dynamic procunit = GetCurrentProcessExecutionUnit();
+                    prog.Stack.PushItem(new StackItem(procunit.LogicalAddress));
+                    if (lhs.IsRegister)
+                        procunit.LogicalAddress = lhs.Register.Value;
+                    else
+                        procunit.LogicalAddress = lhs.Value;
+                    procunit.CurrentIndex = (procunit.LogicalAddress/4);
+                    procunit.Done = false;
+                    procunit.Stop = false;
+                }
+                else
+                {
+                    prog.Stack.PushItem(new StackItem(unit.LogicalAddress));
+                    if (lhs.IsRegister)
+                        unit.LogicalAddress = lhs.Register.Value;
+                    else
+                        unit.LogicalAddress = lhs.Value;
+                    unit.CurrentIndex = (unit.LogicalAddress/4);
+                    unit.Done = false;
+                    unit.Stop = false;
+                }
+            }
+            return result;
         }
 
         /// <summary>
@@ -3762,7 +4078,7 @@ namespace CPU_OS_Simulator.CPU
         /// <returns> the result of the instruction or int.MINVALUE if no result is returned </returns>
         private int TABE(Operand lhs, Operand rhs)
         {
-            MessageBox.Show("CALL Instruction is not currently used", "", MessageBoxButton.OK, MessageBoxImage.Information);
+            MessageBox.Show("TABE Instruction is not currently used", "", MessageBoxButton.OK, MessageBoxImage.Information);
             return 0;
         }
 
@@ -3796,8 +4112,26 @@ namespace CPU_OS_Simulator.CPU
         /// <returns> the result of the instruction or int.MINVALUE if no result is returned </returns>
         private int RET(Operand lhs, Operand rhs)
         {
-            MessageBox.Show("RET Instruction is not currently implemented", "", MessageBoxButton.OK, MessageBoxImage.Information);
-            return 0;
+            SimulatorProgram prog = GetCurrentProgram();
+            int returnAddress = prog.Stack.PopItem();
+            dynamic window = GetMainWindowInstance();
+            unit = window.ActiveUnit;
+            if (unit == null)
+            {
+                dynamic procunit = GetCurrentProcessExecutionUnit();
+                procunit.LogicalAddress = returnAddress;
+                procunit.CurrentIndex = (returnAddress/4);
+                procunit.Done = false;
+                procunit.Stop = false;
+            }
+            else
+            {
+                unit.LogicalAddress = returnAddress;
+                unit.CurrentIndex = (returnAddress/4);
+                unit.Done = false;
+                unit.Stop = false;
+            }
+            return returnAddress;
         }
         /// <summary>
         /// This function is called whenever a IRET instruction is executed
@@ -3818,7 +4152,7 @@ namespace CPU_OS_Simulator.CPU
         /// <returns> the result of the instruction or int.MINVALUE if no result is returned </returns>
         private int SWI(Operand lhs, Operand rhs)
         {
-            MessageBox.Show("CALL Instruction is not currently implemented", "", MessageBoxButton.OK, MessageBoxImage.Information);
+            MessageBox.Show("SWI Instruction is not currently implemented", "", MessageBoxButton.OK, MessageBoxImage.Information);
             return 0;
         }
         /// <summary>
@@ -4035,6 +4369,7 @@ namespace CPU_OS_Simulator.CPU
         /// <returns> the result of the instruction or int.MINVALUE if no result is returned </returns>
         private int OUT(Operand lhs, Operand rhs)
         {
+            
             MessageBox.Show("OUT Instruction is not currently implemented", "", MessageBoxButton.OK, MessageBoxImage.Information);
             return 0;
         }
@@ -4050,7 +4385,6 @@ namespace CPU_OS_Simulator.CPU
         private int NOP(Operand lhs, Operand rhs)
         {
             Thread.Sleep(unit.ClockSpeed);
-            //MessageBox.Show("NOP Instruction is not currently implemented", "", MessageBoxButton.OK, MessageBoxImage.Information);
             return 0;
         }
         #endregion Miscellaneous

@@ -17,7 +17,7 @@ namespace CPU_OS_Simulator.CPU.Tests
         public void pushItemTest()
         {
             ProgramStack stack = new ProgramStack();
-            stack.pushItem(new StackItem(10));
+            stack.PushItem(new StackItem(10));
             Assert.AreEqual(stack.StackItems.Count, 1);
         }
 
@@ -25,8 +25,8 @@ namespace CPU_OS_Simulator.CPU.Tests
         public void popItemTest()
         {
             ProgramStack stack = new ProgramStack();
-            stack.pushItem(new StackItem(10));
-            Assert.AreEqual(stack.popItem(), 10);
+            stack.PushItem(new StackItem(10));
+            Assert.AreEqual(stack.PopItem(), 10);
         }
     }
 }

@@ -158,7 +158,7 @@
                     <Label x:Name="label4" Content="SR" HorizontalAlignment="Left" Margin="112,10,0,0" VerticalAlignment="Top" />
                     <TextBox x:Name="txt_SR" HorizontalAlignment="Left" Height="23" Margin="141,14,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="59" Background="#FF8BF4FF" />
                     <Label x:Name="label5" Content="SP" HorizontalAlignment="Left" Margin="10,35,0,0" VerticalAlignment="Top" Width="24" />
-                    <TextBox x:Name="txt_SP" HorizontalAlignment="Left" Height="23" Margin="39,39,0,0" TextWrapping="Wrap" Text="8096" VerticalAlignment="Top" Width="59" Background="#FF8BF4FF" />
+                    <TextBox x:Name="txt_SP" HorizontalAlignment="Left" Height="23" Margin="39,39,0,0" TextWrapping="Wrap" Text="8192" VerticalAlignment="Top" Width="59" Background="#FF8BF4FF" />
                     <Label x:Name="label5_Copy" Content="BR" HorizontalAlignment="Left" Margin="112,35,0,0" VerticalAlignment="Top" Width="24" />
                     <TextBox x:Name="txt_BR" HorizontalAlignment="Left" Height="23" Margin="141,39,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="59" Background="#FFFFFBAC" />
                     <GroupBox x:Name="grp_StatusFlags" Header="SR Status Flags" HorizontalAlignment="Left" Margin="10,65,0,0" VerticalAlignment="Top" Height="54" Width="126">
