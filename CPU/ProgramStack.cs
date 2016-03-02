@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
+using System.Threading.Tasks;
 using System.Windows;
 
 namespace CPU_OS_Simulator.CPU
@@ -50,7 +51,7 @@ namespace CPU_OS_Simulator.CPU
         /// this function pushes an item onto the stack
         /// </summary>
         /// <param name="item"> the item to be pushed onto the stack</param>
-        public void PushItem(StackItem item)
+        public async void PushItem(StackItem item)
         {
             if (stackSize + 1 > maxStackSize)
             {
@@ -99,7 +100,7 @@ namespace CPU_OS_Simulator.CPU
         /// This item pops a value off the top of the stack
         /// </summary>
         /// <returns> the value that was popped off the stack</returns>
-        public int PopItem()
+        public async Task<int> PopItem()
         {
             if (stackSize - 1 < 0)
             {

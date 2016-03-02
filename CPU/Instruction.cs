@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 using System.Threading;
+using System.Threading.Tasks;
 using System.Web.Script.Serialization;
 using System.Windows;
 using CPU_OS_Simulator.Memory;
@@ -440,7 +441,7 @@ namespace CPU_OS_Simulator.CPU
                     }
                 case 15:
                     {
-                        execute = () => POP(operand1, operand2); // save the function in memory to call later
+                        execute = () => POP(operand1, operand2).Result; // save the function in memory to call later
                         break;
                     }
                 case 16:
@@ -585,7 +586,7 @@ namespace CPU_OS_Simulator.CPU
                     }
                 case 44:
                     {
-                        execute = () => RET(operand1, operand2); // save the function in memory to call later
+                        execute = () => RET(operand1, operand2).Result; // save the function in memory to call later
                         break;
                     }
                 case 45:
@@ -1577,7 +1578,7 @@ namespace CPU_OS_Simulator.CPU
         /// <param name="lhs"> The left hand operand of the instruction </param>
         /// <param name="rhs"> The right hand operand of the instruction </param>
         /// <returns> the result of the instruction or int.MINVALUE if no result is returned </returns>
-        private int POP(Operand lhs, Operand rhs)
+        private async Task<int> POP(Operand lhs, Operand rhs)
         {
             SimulatorProgram p = GetCurrentProgram();
             if (!lhs.IsRegister)
@@ -1585,7 +1586,7 @@ namespace CPU_OS_Simulator.CPU
                 MessageBox.Show("Operand for POP instruction must be a register", "", MessageBoxButton.OK, MessageBoxImage.Information);
                 return int.MinValue;
             }
-            lhs.Register.Value = p.Stack.PopItem();
+            lhs.Register.Value = await p.Stack.PopItem();
             result = lhs.Register.Value;
             Register.FindRegister(lhs.Register.Name).SetRegisterValue(result, EnumOperandType.VALUE);
             
@@ -4110,10 +4111,10 @@ namespace CPU_OS_Simulator.CPU
         /// <param name="lhs"> The left hand operand of the instruction </param>
         /// <param name="rhs"> The right hand operand of the instruction </param>
         /// <returns> the result of the instruction or int.MINVALUE if no result is returned </returns>
-        private int RET(Operand lhs, Operand rhs)
+        private async Task<int> RET(Operand lhs, Operand rhs)
         {
             SimulatorProgram prog = GetCurrentProgram();
-            int returnAddress = prog.Stack.PopItem();
+            int returnAddress = await prog.Stack.PopItem();
             dynamic window = GetMainWindowInstance();
             unit = window.ActiveUnit;
             if (unit == null)
