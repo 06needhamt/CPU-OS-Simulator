@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CPU_OS_Simulator.CPU
+namespace CPU_OS_Simulator.CPU.Interrupts
 {
-    public class InterruptReciever
+    public class InterruptVectorTableEntry
     {
     }
 }

@@ -64,7 +64,15 @@
     <Compile Include="Extentions.cs" />
     <Compile Include="IAttribute.cs" />
     <Compile Include="Instruction.cs" />
-    <Compile Include="InterruptReciever.cs" />
+    <Compile Include="Interrupts\EnumInterruptSource.cs" />
+    <Compile Include="Interrupts\EnumInterruptType.cs" />
+    <Compile Include="Interrupts\Interrupt.cs" />
+    <Compile Include="Interrupts\InterruptHandler.cs" />
+    <Compile Include="Interrupts\InterruptHandles.cs" />
+    <Compile Include="Interrupts\InterruptVectorTable.cs" />
+    <Compile Include="Interrupts\InterruptVectorTableEntry.cs" />
+    <Compile Include="Interrupts\PolledInterrupt.cs" />
+    <Compile Include="Interrupts\VectoredInterrupt.cs" />
     <Compile Include="NumberOfOperandsAttribute.cs" />
     <Compile Include="Operand.cs" />
     <Compile Include="ProgramStack.cs" />
@@ -80,10 +88,6 @@
     <Resource Include="CPU-OS Simulator 7-5-50_1.ico" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Interrupts\Interrupts.csproj">
-      <Project>{c02f9b11-7850-4396-9292-27e0f714170e}</Project>
-      <Name>Interrupts</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Memory\Memory.csproj">
       <Project>{2fba6a60-9499-4c9e-8b43-abb459a9c0b6}</Project>
       <Name>Memory</Name>

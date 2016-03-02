@@ -7,6 +7,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Web.Script.Serialization;
 using System.Windows;
+using CPU_OS_Simulator.CPU.Interrupts;
 using CPU_OS_Simulator.Memory;
 using Newtonsoft.Json; // See Third Party Libs/Credits.txt for licensing information for JSON.Net
 
@@ -4153,7 +4154,16 @@ namespace CPU_OS_Simulator.CPU
         /// <returns> the result of the instruction or int.MINVALUE if no result is returned </returns>
         private int SWI(Operand lhs, Operand rhs)
         {
-            MessageBox.Show("SWI Instruction is not currently implemented", "", MessageBoxButton.OK, MessageBoxImage.Information);
+            int number = lhs.IsRegister ? lhs.Register.Value : lhs.Value;
+            Interrupt interrupt = InterruptHandles.GetVectoredInterrupt(number);
+            if (interrupt != null) 
+                interrupt.Fire();
+            else
+            {
+                
+            }
+
+            //MessageBox.Show("SWI Instruction is not currently implemented", "", MessageBoxButton.OK, MessageBoxImage.Information);
             return 0;
         }
         /// <summary>
