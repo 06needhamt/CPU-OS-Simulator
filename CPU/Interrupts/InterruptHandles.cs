@@ -117,7 +117,6 @@ namespace CPU_OS_Simulator.CPU.Interrupts
         {
             if (logicalAddress < 0 && handlerFunc == null)
                 throw new InvalidOperationException("Cannot construct a Polled Interrupt Without a logical Address or handler function");
-
             switch (number)
             {
                 case 1:

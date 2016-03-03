@@ -6,7 +6,9 @@ using System.Threading.Tasks;
 
 namespace CPU_OS_Simulator.CPU.Interrupts
 {
+    [Serializable]
     public class InterruptVectorTable
     {
+        private List<InterruptVectorTableEntry> entries;
     }
 }
