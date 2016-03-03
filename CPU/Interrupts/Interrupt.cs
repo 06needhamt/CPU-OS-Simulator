@@ -7,7 +7,7 @@ using System.Web.Script;
 using System.Web.Script.Serialization;
 using Newtonsoft.Json; // See Third Party Libs/Credits.txt for licensing information for JSON.Net
 
-namespace CPU_OS_Simulator.Interrupts
+namespace CPU_OS_Simulator.CPU.Interrupts
 {
     /// <summary>
     /// This Class Represents an interrupt used by the operating system to interrupt the CPU
@@ -18,9 +18,7 @@ namespace CPU_OS_Simulator.Interrupts
         /// <summary>
         /// This function fires the interrupt
         /// </summary>
-        /// <param name="RoutineName"> the name of the interrupt handling routine </param>
-        /// <param name="logicalAddress"> the logical address of the start of the routine</param>
-        public abstract void Fire(string RoutineName, int logicalAddress);
+        public abstract void Fire();
 
         /// <summary>
         /// This function returns from the interrupt routine

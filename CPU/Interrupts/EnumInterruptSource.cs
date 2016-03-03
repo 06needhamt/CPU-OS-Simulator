@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace CPU_OS_Simulator.Interrupts
+namespace CPU_OS_Simulator.CPU.Interrupts
 {
     [Flags]
     public enum EnumInterruptSource : long
