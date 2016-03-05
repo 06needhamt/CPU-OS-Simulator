@@ -1,4 +1,6 @@
 ﻿
+using CPU_OS_Simulator.CPU.Interrupts;
+
 namespace CPU_OS_Simulator.Operating_System
 {
     /// <summary>
@@ -25,5 +27,6 @@ namespace CPU_OS_Simulator.Operating_System
         public bool faultKill;
         public EnumOSState osState;
         public Scheduler scheduler;
+        public InterruptHandles interruptHandles;
     }
 }

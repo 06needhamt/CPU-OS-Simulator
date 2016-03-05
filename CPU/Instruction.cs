@@ -4143,7 +4143,28 @@ namespace CPU_OS_Simulator.CPU
         /// <returns> the result of the instruction or int.MINVALUE if no result is returned </returns>
         private int IRET(Operand lhs, Operand rhs)
         {
-            MessageBox.Show("IRET Instruction is not currently implemented", "", MessageBoxButton.OK, MessageBoxImage.Information);
+            int number = lhs.IsRegister ? lhs.Register.Value : lhs.Value;
+            dynamic osWind = GetOSMainWindowInstance();
+          if (osWind == null)
+          {
+              MessageBox.Show("Interrupts can only be used inside the Operating System");
+              return int.MinValue;
+          }
+          dynamic osCore = osWind.OsCore;
+          InterruptHandles handles = osCore.Handles;
+          Interrupt interrupt = handles.GetVectoredInterrupt(number);
+          if (interrupt != null)
+            {
+                Console.WriteLine("Returning From Interrupt " + number);
+                SimulatorProgram prog = GetCurrentProgram();
+                interrupt.Return(prog.Stack.PopItem().Result);
+            }
+            else
+            {
+                MessageBox.Show("Interrupt " + number + " Has not been registered");
+                return int.MinValue;
+            }
+            //MessageBox.Show("IRET Instruction is not currently implemented", "", MessageBoxButton.OK, MessageBoxImage.Information);
             return 0;
         }
         /// <summary>
@@ -4155,12 +4176,24 @@ namespace CPU_OS_Simulator.CPU
         private int SWI(Operand lhs, Operand rhs)
         {
             int number = lhs.IsRegister ? lhs.Register.Value : lhs.Value;
-            Interrupt interrupt = InterruptHandles.GetVectoredInterrupt(number);
-            if (interrupt != null) 
+            dynamic osWind = GetOSMainWindowInstance();
+            if (osWind == null)
+            {
+                MessageBox.Show("Interrupts can only be used inside the Operating System");
+                return int.MinValue;
+            }
+            dynamic osCore = osWind.OsCore;
+            InterruptHandles handles = osCore.Handles;
+            Interrupt interrupt = handles.GetVectoredInterrupt(number);
+            if (interrupt != null)
+            {
+                Console.WriteLine("Firing Interrupt " + number);
                 interrupt.Fire();
+            }
             else
             {
-                
+                MessageBox.Show("Interrupt " + number + " Has not been registered");
+                return int.MinValue;
             }
 
             //MessageBox.Show("SWI Instruction is not currently implemented", "", MessageBoxButton.OK, MessageBoxImage.Information);

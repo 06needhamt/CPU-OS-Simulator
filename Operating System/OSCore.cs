@@ -4,6 +4,7 @@ using System.Collections.Specialized;
 using System.Linq;
 using System.Reflection;
 using System.Windows;
+using CPU_OS_Simulator.CPU.Interrupts;
 using CPU_OS_Simulator.Memory;
 
 namespace CPU_OS_Simulator.Operating_System
@@ -35,6 +36,8 @@ namespace CPU_OS_Simulator.Operating_System
         private Scheduler scheduler;
         private Queue<SimulatorProcess> readyQueue;
         private Queue<SimulatorProcess> waitingQueue;
+        private InterruptHandles interruptHandles;
+
         /// <summary>
         /// This event is fired whenever any of the queues have been modified
         /// </summary>
@@ -382,5 +385,10 @@ namespace CPU_OS_Simulator.Operating_System
             set { scheduler = value; }
         }
 
+      public InterruptHandles Handles
+      {
+        get { return interruptHandles; }
+        set { interruptHandles = value; }
+      }
     }
 }

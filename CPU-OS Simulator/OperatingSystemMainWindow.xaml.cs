@@ -13,6 +13,7 @@ using System.Web.Script.Serialization;
 using System.Windows;
 using System.Windows.Threading;
 using CPU_OS_Simulator.CPU;
+using CPU_OS_Simulator.CPU.Interrupts;
 using CPU_OS_Simulator.Operating_System;
 using Microsoft.Win32;
 using Newtonsoft.Json;// See Third Party Libs/Credits.txt for licensing information for JSON.Net
@@ -323,6 +324,7 @@ namespace CPU_OS_Simulator
                 return null;
             }
             temp.scheduler = new Scheduler(schedulerFlags.Value);  // create a scheduler
+            temp.interruptHandles = new InterruptHandles();
             return temp; // return the OS flags
         }
         /// <summary>

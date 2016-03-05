@@ -6,23 +6,30 @@ using System.Threading.Tasks;
 
 namespace CPU_OS_Simulator.CPU.Interrupts
 {
-    public static class InterruptHandles
+    [Serializable]
+    public class InterruptHandles
     {
-        public static VectoredInterrupt VINT1;
-        public static VectoredInterrupt VINT2;
-        public static VectoredInterrupt VINT3;
-        public static VectoredInterrupt VINT4;
-        public static VectoredInterrupt VINT5;
-        public static VectoredInterrupt VINT6;
+        public VectoredInterrupt VINT1;
+        public VectoredInterrupt VINT2;
+        public VectoredInterrupt VINT3;
+        public VectoredInterrupt VINT4;
+        public VectoredInterrupt VINT5;
+        public VectoredInterrupt VINT6;
 
-        public static PolledInterrupt PINT1;
-        public static PolledInterrupt PINT2;
-        public static PolledInterrupt PINT3;
-        public static PolledInterrupt PINT4;
-        public static PolledInterrupt PINT5;
-        public static PolledInterrupt PINT6;
+        public PolledInterrupt PINT1;
+        public PolledInterrupt PINT2;
+        public PolledInterrupt PINT3;
+        public PolledInterrupt PINT4;
+        public PolledInterrupt PINT5;
+        public PolledInterrupt PINT6;
 
-        public static PolledInterrupt GetPolledInterrupt(int number)
+
+        public InterruptHandles()
+        {
+
+        }
+
+        public PolledInterrupt GetPolledInterrupt(int number)
         {
             switch (number)
             {
@@ -43,7 +50,7 @@ namespace CPU_OS_Simulator.CPU.Interrupts
             }
         }
 
-        public static VectoredInterrupt GetVectoredInterrupt(int number)
+        public VectoredInterrupt GetVectoredInterrupt(int number)
         {
             switch (number)
             {
@@ -65,7 +72,7 @@ namespace CPU_OS_Simulator.CPU.Interrupts
         }
 
 
-        public static void SetVectoredInterrupt(int number,int logicalAddress = int.MinValue, Func<int> handlerFunc = null )
+        public void SetVectoredInterrupt(int number,int logicalAddress = int.MinValue, Func<int> handlerFunc = null )
         {
             if(logicalAddress < 0 && handlerFunc == null)
                 throw new InvalidOperationException("Cannot construct a Vectored Interrupt Without a logical Address or handler function");
@@ -113,7 +120,7 @@ namespace CPU_OS_Simulator.CPU.Interrupts
             }
         }
 
-        public static void SetPolledInterrupt(int number, int logicalAddress = int.MinValue, Func<int> handlerFunc = null)
+        public void SetPolledInterrupt(int number, int logicalAddress = int.MinValue, Func<int> handlerFunc = null)
         {
             if (logicalAddress < 0 && handlerFunc == null)
                 throw new InvalidOperationException("Cannot construct a Polled Interrupt Without a logical Address or handler function");
