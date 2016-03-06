@@ -146,6 +146,9 @@
     <Compile Include="InstructionsWindow.xaml.cs">
       <DependentUpon>InstructionsWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="InterruptsWindow.xaml.cs">
+      <DependentUpon>InterruptsWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="LabelNameInputWindow.xaml.cs">
       <DependentUpon>LabelNameInputWindow.xaml</DependentUpon>
     </Compile>
@@ -191,6 +194,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="InstructionsWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="InterruptsWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

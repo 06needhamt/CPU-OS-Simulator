@@ -1383,5 +1383,11 @@ namespace CPU_OS_Simulator
             lst_ProgramList.ItemsSource = programList;
             return await UpdateInterface();
         }
+
+        private void btn_Interrupts_Click(object sender, RoutedEventArgs e)
+        {
+            InterruptsWindow wind = new InterruptsWindow(this);
+            wind.Show();
+        }
     }
 }

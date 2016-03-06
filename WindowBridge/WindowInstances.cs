@@ -47,5 +47,9 @@
         /// This variable represents the active ResourceWindow instance
         /// </summary>
         public static ResourceWindow ResourceWindowInstance = ResourceWindow.currentInstance;
+        /// <summary>
+        /// This variable represents the active InterruptsWindow instance
+        /// </summary>
+        public static InterruptsWindow InterruptWindowInstance = InterruptsWindow.currentInstance;
     }
 }

@@ -4057,7 +4057,7 @@ namespace CPU_OS_Simulator.CPU
         /// <returns> the result of the instruction or int.MINVALUE if no result is returned </returns>
         private int LOOP(Operand lhs, Operand rhs)
         {
-            MessageBox.Show("LOOP Instruction is not currently implemented", "", MessageBoxButton.OK, MessageBoxImage.Information);
+         	MessageBox.Show("LOOP Instruction is not currently implemented", "", MessageBoxButton.OK, MessageBoxImage.Information);
             return 0;
         }
 

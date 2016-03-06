@@ -1,0 +1,43 @@
+﻿<Window x:Class="CPU_OS_Simulator.InterruptsWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CPU_OS_Simulator"
+        mc:Ignorable="d"
+        Title="InterruptsWindow" Height="400" Width="400" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" Icon="CPU-OS Simulator 7-5-50_1.ico" Closing="Window_Closing">
+    <Grid x:Name="InterruptsWindow1">
+        <GroupBox x:Name="grp_Interrupts" Header="INTERRUPT VECTORS" HorizontalAlignment="Left" VerticalAlignment="Top" Height="300" Width="394">
+            <Grid x:Name="InterruptsGrid" HorizontalAlignment="Left" Height="300" VerticalAlignment="Top" Width="400">
+                <Label x:Name="label" Content="INT1" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Background="#FFF7F70B" Foreground="Red"/>
+                <TextBox x:Name="txt_Int1Location" HorizontalAlignment="Left" Height="23" Margin="50,10,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="75" TextChanged="txt_Int1Location_TextChanged"/>
+                <CheckBox x:Name="chk_Int1Suspend" Content="Suspend on Interrupt Entry" HorizontalAlignment="Left" Margin="139,16,0,0" VerticalAlignment="Top" Checked="chk_Int1Suspend_Checked" Unchecked="chk_Int1Suspend_Unchecked"/>
+                <Button x:Name="btn_Int1Trigger" Content="TRIGGER" HorizontalAlignment="Left" Margin="307,13,0,0" VerticalAlignment="Top" Width="75" Click="btn_Int1Trigger_Click"/>
+                <Label x:Name="label_Copy" Content="INT2" HorizontalAlignment="Left" Margin="10,45,0,0" VerticalAlignment="Top" Background="#FFF7F70B" Foreground="Red"/>
+                <TextBox x:Name="txt_Int2Location" HorizontalAlignment="Left" Height="23" Margin="50,45,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="75" TextChanged="txt_Int2Location_TextChanged"/>
+                <CheckBox x:Name="chk_Int2Suspend" Content="Suspend on Interrupt Entry" HorizontalAlignment="Left" Margin="139,51,0,0" VerticalAlignment="Top" Checked="chk_Int2Suspend_Checked" Unchecked="chk_Int2Suspend_Unchecked"/>
+                <Button x:Name="btn_Int2Trigger" Content="TRIGGER" HorizontalAlignment="Left" Margin="307,48,0,0" VerticalAlignment="Top" Width="75" Click="btn_Int2Trigger_Click"/>
+                <Label x:Name="label_Copy1" Content="INT3" HorizontalAlignment="Left" Margin="10,79,0,0" VerticalAlignment="Top" Background="#FFF7F70B" Foreground="Red"/>
+                <TextBox x:Name="txt_Int3Location" HorizontalAlignment="Left" Height="23" Margin="50,79,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="75" TextChanged="txt_Int3Location_TextChanged"/>
+                <CheckBox x:Name="chk_Int3Suspend" Content="Suspend on Interrupt Entry" HorizontalAlignment="Left" Margin="139,85,0,0" VerticalAlignment="Top" Checked="chk_Int3Suspend_Checked" Unchecked="chk_Int3Suspend_Unchecked"/>
+                <Button x:Name="btn_Int3Trigger" Content="TRIGGER" HorizontalAlignment="Left" Margin="307,82,0,0" VerticalAlignment="Top" Width="75" Click="btn_Int3Trigger_Click"/>
+                <Label x:Name="label_Copy2" Content="INT4" HorizontalAlignment="Left" Margin="10,112,0,0" VerticalAlignment="Top" Background="#FFF7F70B" Foreground="Red"/>
+                <TextBox x:Name="txt_Int4Location" HorizontalAlignment="Left" Height="23" Margin="50,112,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="75" TextChanged="txt_Int4Location_TextChanged"/>
+                <CheckBox x:Name="chk_Int4Suspend" Content="Suspend on Interrupt Entry" HorizontalAlignment="Left" Margin="139,118,0,0" VerticalAlignment="Top" Checked="chk_Int4Suspend_Checked" Unchecked="chk_Int4Suspend_Unchecked"/>
+                <Button x:Name="btn_Int4Trigger" Content="TRIGGER" HorizontalAlignment="Left" Margin="307,115,0,0" VerticalAlignment="Top" Width="75"/>
+                <Label x:Name="label_Copy3" Content="INT5" HorizontalAlignment="Left" Margin="10,147,0,0" VerticalAlignment="Top" Background="#FFF7F70B" Foreground="#FF0017FF"/>
+                <TextBox x:Name="txt_Int5Location" HorizontalAlignment="Left" Height="23" Margin="50,147,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="75" TextChanged="txt_Int5Location_TextChanged"/>
+                <CheckBox x:Name="chk_Int5Suspend" Content="Suspend on Interrupt Entry" HorizontalAlignment="Left" Margin="139,153,0,0" VerticalAlignment="Top" Checked="chk_Int5Suspend_Checked" Unchecked="chk_Int5Suspend_Unchecked"/>
+                <Button x:Name="btn_Int5Trigger" Content="TRIGGER" HorizontalAlignment="Left" Margin="307,150,0,0" VerticalAlignment="Top" Width="75" Click="btn_Int5Trigger_Click"/>
+                <Label x:Name="label_Copy4" Content="INT6" HorizontalAlignment="Left" Margin="10,181,0,0" VerticalAlignment="Top" Background="#FFF7F70B" Foreground="#FF0017FF"/>
+                <TextBox x:Name="txt_Int6Location" HorizontalAlignment="Left" Height="23" Margin="50,181,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="75" TextChanged="txt_Int6Location_TextChanged"/>
+                <CheckBox x:Name="chk_Int6Suspend" Content="Suspend on Interrupt Entry" HorizontalAlignment="Left" Margin="139,187,0,0" VerticalAlignment="Top" Checked="chk_Int6Suspend_Checked" Unchecked="chk_Int6Suspend_Unchecked"/>
+                <Button x:Name="btn_Int6Trigger" Content="TRIGGER" HorizontalAlignment="Left" Margin="307,184,0,0" VerticalAlignment="Top" Width="75" Click="btn_Int6Trigger_Click"/>
+            </Grid>
+        </GroupBox>
+        <CheckBox x:Name="chk_StayOnTop" Content="Stay On Top" HorizontalAlignment="Left" Margin="38,324,0,0" VerticalAlignment="Top" Checked="chk_StayOnTop_Checked" Unchecked="chk_StayOnTop_Unchecked"/>
+        <Button x:Name="btn_ClearAll" Content="CLEAR ALL..." HorizontalAlignment="Left" Margin="155,314,0,0" VerticalAlignment="Top" Width="101" Height="40" Click="btn_ClearAll_Click"/>
+        <Button x:Name="btn_Close" Content="CLOSE" HorizontalAlignment="Left" Margin="309,324,0,0" VerticalAlignment="Top" Width="75" Height="37" Click="btn_Close_Click"/>
+
+    </Grid>
+</Window>
