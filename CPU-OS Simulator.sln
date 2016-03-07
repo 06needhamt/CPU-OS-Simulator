@@ -49,14 +49,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "OxyPlot", "OxyPlot", "{751A
 		Third Party Libs\OxyPlot\OxyPlot.Wpf.pdb = Third Party Libs\OxyPlot\OxyPlot.Wpf.pdb
 	EndProjectSection
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "XWT", "XWT", "{8BC67432-4CB2-42D5-9C35-8590226B348D}"
-	ProjectSection(SolutionItems) = preProject
-		Third Party Libs\XWT\Xwt.dll = Third Party Libs\XWT\Xwt.dll
-		Third Party Libs\XWT\Xwt.pdb = Third Party Libs\XWT\Xwt.pdb
-		Third Party Libs\XWT\Xwt.WPF.dll = Third Party Libs\XWT\Xwt.WPF.dll
-		Third Party Libs\XWT\Xwt.WPF.pdb = Third Party Libs\XWT\Xwt.WPF.pdb
-	EndProjectSection
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -122,6 +114,5 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{AE88583A-452C-4A99-8081-01DE09BE3D9E} = {14360FE8-C45B-4B96-8E6A-6E41590FB4EF}
 		{751AC38C-E62E-4ADC-9676-4AE6C4B3B097} = {14360FE8-C45B-4B96-8E6A-6E41590FB4EF}
-		{8BC67432-4CB2-42D5-9C35-8590226B348D} = {14360FE8-C45B-4B96-8E6A-6E41590FB4EF}
 	EndGlobalSection
 EndGlobal
