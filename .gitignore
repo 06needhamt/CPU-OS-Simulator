@@ -42,10 +42,6 @@ dlldata.c
 *.meta
 *.obj
 *.pch
-*.pdb
-!Third Party Libs/Newtonsoft.Json/Newtonsoft.Json.pdb
-!Third Party Libs/OxyPlot/OxyPlot.pdb
-!Third Party Libs/OxyPlot/OxyPlot.WPF.pdb
 *.pgc
 *.pgd
 *.rsp
