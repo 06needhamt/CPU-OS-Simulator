@@ -104,7 +104,7 @@ namespace CPU_OS_Simulator
             OperatingSystemMainWindow os = GetOSMainWindowInstance();
             OSCore core = os.OsCore;
             uint address = 0;
-            if (uint.TryParse(txt_Int1Location.Text, out address))
+            if (uint.TryParse(txt_Int2Location.Text, out address))
             {
                 core.Handles.SetPolledInterrupt(2, (int)address);
                 core.Handles.SetVectoredInterrupt(2, (int)address);
@@ -121,7 +121,7 @@ namespace CPU_OS_Simulator
             OperatingSystemMainWindow os = GetOSMainWindowInstance();
             OSCore core = os.OsCore;
             uint address = 0;
-            if (uint.TryParse(txt_Int1Location.Text, out address))
+            if (uint.TryParse(txt_Int3Location.Text, out address))
             {
                 core.Handles.SetPolledInterrupt(3, (int)address);
                 core.Handles.SetVectoredInterrupt(3, (int)address);
@@ -138,7 +138,7 @@ namespace CPU_OS_Simulator
             OperatingSystemMainWindow os = GetOSMainWindowInstance();
             OSCore core = os.OsCore;
             uint address = 0;
-            if (uint.TryParse(txt_Int1Location.Text, out address))
+            if (uint.TryParse(txt_Int4Location.Text, out address))
             {
                 core.Handles.SetPolledInterrupt(4, (int)address);
                 core.Handles.SetVectoredInterrupt(4, (int)address);
@@ -155,7 +155,7 @@ namespace CPU_OS_Simulator
             OperatingSystemMainWindow os = GetOSMainWindowInstance();
             OSCore core = os.OsCore;
             uint address = 0;
-            if (uint.TryParse(txt_Int1Location.Text, out address))
+            if (uint.TryParse(txt_Int5Location.Text, out address))
             {
                 core.Handles.SetPolledInterrupt(5, (int)address);
                 core.Handles.SetVectoredInterrupt(5, (int)address);
@@ -172,7 +172,7 @@ namespace CPU_OS_Simulator
             OperatingSystemMainWindow os = GetOSMainWindowInstance();
             OSCore core = os.OsCore;
             uint address = 0;
-            if (uint.TryParse(txt_Int1Location.Text, out address))
+            if (uint.TryParse(txt_Int6Location.Text, out address))
             {
                 core.Handles.SetPolledInterrupt(6, (int)address);
                 core.Handles.SetVectoredInterrupt(6, (int)address);
@@ -181,27 +181,74 @@ namespace CPU_OS_Simulator
 
         private void btn_Int1Trigger_Click(object sender, RoutedEventArgs e)
         {
-
+            OperatingSystemMainWindow os = GetOSMainWindowInstance();
+            OSCore core = os.OsCore;
+            if (core.Handles.PINT1 == null || core.Handles.VINT1 == null)
+            {
+                MessageBox.Show("Interrupt 1 is not registered");
+                return;
+            }
+            core.Handles.VINT1.Fire();
         }
 
         private void btn_Int2Trigger_Click(object sender, RoutedEventArgs e)
         {
-
+            OperatingSystemMainWindow os = GetOSMainWindowInstance();
+            OSCore core = os.OsCore;
+            if (core.Handles.PINT2 == null || core.Handles.VINT2 == null)
+            {
+                MessageBox.Show("Interrupt 2 is not registered");
+                return;
+            }
+            core.Handles.VINT2.Fire();
         }
 
         private void btn_Int3Trigger_Click(object sender, RoutedEventArgs e)
         {
+            OperatingSystemMainWindow os = GetOSMainWindowInstance();
+            OSCore core = os.OsCore;
+            if (core.Handles.PINT3 == null || core.Handles.VINT3 == null)
+            {
+                MessageBox.Show("Interrupt 3 is not registered");
+                return;
+            }
+            core.Handles.VINT3.Fire();
+        }
 
+        private void btn_Int4Trigger_Click(object sender, RoutedEventArgs e)
+        {
+            OperatingSystemMainWindow os = GetOSMainWindowInstance();
+            OSCore core = os.OsCore;
+            if (core.Handles.PINT4 == null || core.Handles.VINT4 == null)
+            {
+                MessageBox.Show("Interrupt 4 is not registered");
+                return;
+            }
+            core.Handles.VINT4.Fire();
         }
 
         private void btn_Int5Trigger_Click(object sender, RoutedEventArgs e)
         {
-
+            OperatingSystemMainWindow os = GetOSMainWindowInstance();
+            OSCore core = os.OsCore;
+            if (core.Handles.PINT5 == null || core.Handles.VINT5 == null)
+            {
+                MessageBox.Show("Interrupt 5 is not registered");
+                return;
+            }
+            core.Handles.VINT5.Fire();
         }
 
         private void btn_Int6Trigger_Click(object sender, RoutedEventArgs e)
         {
-
+            OperatingSystemMainWindow os = GetOSMainWindowInstance();
+            OSCore core = os.OsCore;
+            if (core.Handles.PINT6 == null || core.Handles.VINT6 == null)
+            {
+                MessageBox.Show("Interrupt 6 is not registered");
+                return;
+            }
+            core.Handles.VINT6.Fire();
         }
 
         private void chk_Int1Suspend_Checked(object sender, RoutedEventArgs e)
@@ -266,12 +313,12 @@ namespace CPU_OS_Simulator
 
         private void chk_StayOnTop_Checked(object sender, RoutedEventArgs e)
         {
-
+            this.Topmost = true;
         }
 
         private void chk_StayOnTop_Unchecked(object sender, RoutedEventArgs e)
         {
-
+            this.Topmost = false;
         }
 
         private void btn_ClearAll_Click(object sender, RoutedEventArgs e)
@@ -315,5 +362,7 @@ namespace CPU_OS_Simulator
             currentInstance = null;
             SetInterruptWindowInstance();
         }
+
+
     }
 }
