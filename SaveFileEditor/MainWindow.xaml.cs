@@ -14,6 +14,7 @@ namespace CPU_OS_Simulator.Save_File_Editor
     public partial class MainWindow : Window
     {
         private string filePath;
+        private string directory;
         private JObject obj;
         private StreamReader file;
         private JsonTextReader reader;
@@ -28,14 +29,15 @@ namespace CPU_OS_Simulator.Save_File_Editor
         private void OpenItem_Click(object sender, RoutedEventArgs e)
         {
             OpenFileDialog ofd = new OpenFileDialog();
-            ofd.Multiselect = false;
-            ofd.DefaultExt = ".sas";
-            ofd.Filter = "Simulator Programs (.sas)|*.sas | Simulator OS State (.soss)|*.soss"; // Filter files by extension
-            bool? result = ofd.ShowDialog(this);
-            if (result.Value)
+            ofd.FileName = "Program";
+            ofd.DefaultExt = "*.sas";
+            ofd.Filter = "Simulator Programs (.sas)|*.sas; | Simulator OS State(.soss)|*.soss"; // Filter files by extension
+            bool? result = ofd.ShowDialog();
+            if (result != null && result.Value)
             {
                 filePath = ofd.FileName;
-                SaveFileParser parser = new SaveFileParser(filePath);
+                directory = Path.GetDirectoryName(filePath);
+                SaveFileParser parser = new SaveFileParser(filePath,directory);
                 parser.ParseFile(filePath); // parse the file
                 parser.Dispose();
             }

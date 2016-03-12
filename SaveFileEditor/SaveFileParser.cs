@@ -14,6 +14,7 @@ namespace CPU_OS_Simulator.Save_File_Editor
     public class SaveFileParser : IDisposable
     {
         private string filePath;
+        private string directory;
         private JObject obj;
         private StreamReader reader;
         private JsonTextReader jsonReader;
@@ -51,9 +52,10 @@ namespace CPU_OS_Simulator.Save_File_Editor
         }
 
 
-        public SaveFileParser(string file)
+        public SaveFileParser(string file, string directory)
         {
             filePath = file;
+            this.directory = directory;
         }
         public void ParseFile(string path)
         {
@@ -61,7 +63,9 @@ namespace CPU_OS_Simulator.Save_File_Editor
             reader = File.OpenText(path);
             jsonReader = new JsonTextReader(reader);
             obj2 = (JObject)JToken.ReadFrom(jsonReader);
-            writer = new StreamWriter("Text.json", false);
+            string filename = Path.GetFileName(filePath);
+            string outfile = directory + @"\" + filename + ".json";
+            writer = new StreamWriter(outfile, false);
             string json = obj2.ToString();
             writer.Write(json);
             reader.Close();
@@ -77,7 +81,9 @@ namespace CPU_OS_Simulator.Save_File_Editor
             reader = File.OpenText(path);
             jsonReader = new JsonTextReader(reader);
             obj2 = (JObject)JToken.ReadFrom(jsonReader);
-            writer = new StreamWriter("Text.json", false);
+            string filename = Path.GetFileName(filePath);
+            string outfile = directory + @"\" + filename + ".json";
+            writer = new StreamWriter(outfile, false);
             string json = obj2.ToString();
             json = Regex.Replace(json, "(\"(?:[^\"\\\\]|\\\\.)*\")|\\s+", "$1");
             writer.Write(json);
