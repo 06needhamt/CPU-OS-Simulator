@@ -1,6 +1,6 @@
 var class_c_p_u___o_s___simulator_1_1_memory_1_1_memory_page =
 [
-    [ "MemoryPage", "class_c_p_u___o_s___simulator_1_1_memory_1_1_memory_page.html#afbd62508d7efb21812708338a3ba96e8", null ],
+    [ "MemoryPage", "class_c_p_u___o_s___simulator_1_1_memory_1_1_memory_page.html#a5befa10c152f468ca7b14157e87a5bd5", null ],
     [ "GetIndexMemory", "class_c_p_u___o_s___simulator_1_1_memory_1_1_memory_page.html#ae2fa532bdd07c5c939602ea5b223a2d2", null ],
     [ "GetIndexSwap", "class_c_p_u___o_s___simulator_1_1_memory_1_1_memory_page.html#a88d1bc7d56177569f81a9d1289022598", null ],
     [ "GetMainWindowInstance", "class_c_p_u___o_s___simulator_1_1_memory_1_1_memory_page.html#a84a305171941df5c3ae72b34ccec5485", null ],
@@ -13,6 +13,7 @@ var class_c_p_u___o_s___simulator_1_1_memory_1_1_memory_page =
     [ "frameNumber", "class_c_p_u___o_s___simulator_1_1_memory_1_1_memory_page.html#aa2201f66e00641ff4eb07f881ac5413f", null ],
     [ "PAGE_SIZE", "class_c_p_u___o_s___simulator_1_1_memory_1_1_memory_page.html#a502abee83030136a808d5b5f0c0fe7ec", null ],
     [ "pageIndex", "class_c_p_u___o_s___simulator_1_1_memory_1_1_memory_page.html#acf60a7bdefab6120fe080854b5f0b38b", null ],
+    [ "processID", "class_c_p_u___o_s___simulator_1_1_memory_1_1_memory_page.html#a9fbfaef488c3267b6db79d40e6ae521b", null ],
     [ "programName", "class_c_p_u___o_s___simulator_1_1_memory_1_1_memory_page.html#a0607c69f1f03e6c8b63186e0b0f13c3c", null ],
     [ "startOffset", "class_c_p_u___o_s___simulator_1_1_memory_1_1_memory_page.html#a6fe2e28385db19a1968a41efe3df3f38", null ],
     [ "startOffsetPhysical", "class_c_p_u___o_s___simulator_1_1_memory_1_1_memory_page.html#a3cecfb0fe2f91def3db5711180442d44", null ],
@@ -20,6 +21,7 @@ var class_c_p_u___o_s___simulator_1_1_memory_1_1_memory_page =
     [ "EndOffset", "class_c_p_u___o_s___simulator_1_1_memory_1_1_memory_page.html#abe850b4a088a820ecf598af1cd9a7deb", null ],
     [ "FrameNumber", "class_c_p_u___o_s___simulator_1_1_memory_1_1_memory_page.html#a89857b70d4065fdc15ce2ea577a7f0ff", null ],
     [ "PageIndex", "class_c_p_u___o_s___simulator_1_1_memory_1_1_memory_page.html#aec80700d036a447e7e6ec204513e3a59", null ],
+    [ "ProcessId", "class_c_p_u___o_s___simulator_1_1_memory_1_1_memory_page.html#ad04c26f23d3be2e3d664ee8982b0f738", null ],
     [ "ProgramName", "class_c_p_u___o_s___simulator_1_1_memory_1_1_memory_page.html#a22a8274576829c0a4e769189a8d10a9e", null ],
     [ "StartOffset", "class_c_p_u___o_s___simulator_1_1_memory_1_1_memory_page.html#ad700979e51dd3d05470c681588c6fa79", null ],
     [ "StartOffsetPhysical", "class_c_p_u___o_s___simulator_1_1_memory_1_1_memory_page.html#af31a2243a3e68ec635315929859fa358", null ]

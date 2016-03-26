@@ -4,5 +4,11 @@ var searchData=
   ['valuestring',['valueString',['../class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_special_register.html#a540a55b17a53591312e76689d051abac',1,'CPU_OS_Simulator::CPU::SpecialRegister']]],
   ['variables',['variables',['../class_c_p_u___o_s___simulator_1_1_compiler_1_1_frontend_1_1_lexer.html#af7e42e63231b352e446b5be89623c74a',1,'CPU_OS_Simulator::Compiler::Frontend::Lexer']]],
   ['viewsgrid',['ViewsGrid',['../class_c_p_u___o_s___simulator_1_1_operating_system_main_window.html#a956a6d8e53d4f47e27b3ba0b237292c7',1,'CPU_OS_Simulator::OperatingSystemMainWindow']]],
-  ['viewstab',['ViewsTab',['../class_c_p_u___o_s___simulator_1_1_operating_system_main_window.html#a212223330899dc87b6dd0b1dd9fbbfd0',1,'CPU_OS_Simulator::OperatingSystemMainWindow']]]
+  ['viewstab',['ViewsTab',['../class_c_p_u___o_s___simulator_1_1_operating_system_main_window.html#a212223330899dc87b6dd0b1dd9fbbfd0',1,'CPU_OS_Simulator::OperatingSystemMainWindow']]],
+  ['vint1',['VINT1',['../class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_interrupts_1_1_interrupt_handles.html#aa768b99ce4a036472c10f60f4857f4f7',1,'CPU_OS_Simulator::CPU::Interrupts::InterruptHandles']]],
+  ['vint2',['VINT2',['../class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_interrupts_1_1_interrupt_handles.html#a14a51a0279d9680066010f4eb1ff9992',1,'CPU_OS_Simulator::CPU::Interrupts::InterruptHandles']]],
+  ['vint3',['VINT3',['../class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_interrupts_1_1_interrupt_handles.html#a303a405a75265ee202a145c9494cc0b6',1,'CPU_OS_Simulator::CPU::Interrupts::InterruptHandles']]],
+  ['vint4',['VINT4',['../class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_interrupts_1_1_interrupt_handles.html#a9e2a580835821c50178f0542d652061f',1,'CPU_OS_Simulator::CPU::Interrupts::InterruptHandles']]],
+  ['vint5',['VINT5',['../class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_interrupts_1_1_interrupt_handles.html#a6bdf3bce2e5b5025ebbae3d957ad3e17',1,'CPU_OS_Simulator::CPU::Interrupts::InterruptHandles']]],
+  ['vint6',['VINT6',['../class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_interrupts_1_1_interrupt_handles.html#a57cd1c044e9a34c629f14b991a58c226',1,'CPU_OS_Simulator::CPU::Interrupts::InterruptHandles']]]
 ];

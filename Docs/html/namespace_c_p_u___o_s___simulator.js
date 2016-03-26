@@ -17,13 +17,17 @@ var namespace_c_p_u___o_s___simulator =
     [ "ConsoleWindow", "class_c_p_u___o_s___simulator_1_1_console_window.html", "class_c_p_u___o_s___simulator_1_1_console_window" ],
     [ "FontPickerWindow", "class_c_p_u___o_s___simulator_1_1_font_picker_window.html", "class_c_p_u___o_s___simulator_1_1_font_picker_window" ],
     [ "InstructionsWindow", "class_c_p_u___o_s___simulator_1_1_instructions_window.html", "class_c_p_u___o_s___simulator_1_1_instructions_window" ],
+    [ "InterruptsWindow", "class_c_p_u___o_s___simulator_1_1_interrupts_window.html", "class_c_p_u___o_s___simulator_1_1_interrupts_window" ],
+    [ "LabelNameInputWindow", "class_c_p_u___o_s___simulator_1_1_label_name_input_window.html", "class_c_p_u___o_s___simulator_1_1_label_name_input_window" ],
     [ "Logger", "class_c_p_u___o_s___simulator_1_1_logger.html", "class_c_p_u___o_s___simulator_1_1_logger" ],
     [ "LogWindow", "class_c_p_u___o_s___simulator_1_1_log_window.html", "class_c_p_u___o_s___simulator_1_1_log_window" ],
     [ "MainWindow", "class_c_p_u___o_s___simulator_1_1_main_window.html", "class_c_p_u___o_s___simulator_1_1_main_window" ],
     [ "MemoryWindow", "class_c_p_u___o_s___simulator_1_1_memory_window.html", "class_c_p_u___o_s___simulator_1_1_memory_window" ],
     [ "OperatingSystemMainWindow", "class_c_p_u___o_s___simulator_1_1_operating_system_main_window.html", "class_c_p_u___o_s___simulator_1_1_operating_system_main_window" ],
     [ "PageTableWindow", "class_c_p_u___o_s___simulator_1_1_page_table_window.html", "class_c_p_u___o_s___simulator_1_1_page_table_window" ],
+    [ "PhysicalMemoryWindow", "class_c_p_u___o_s___simulator_1_1_physical_memory_window.html", "class_c_p_u___o_s___simulator_1_1_physical_memory_window" ],
     [ "ProcessControlBlockWindow", "class_c_p_u___o_s___simulator_1_1_process_control_block_window.html", "class_c_p_u___o_s___simulator_1_1_process_control_block_window" ],
     [ "ProcessListWindow", "class_c_p_u___o_s___simulator_1_1_process_list_window.html", "class_c_p_u___o_s___simulator_1_1_process_list_window" ],
+    [ "ResourceWindow", "class_c_p_u___o_s___simulator_1_1_resource_window.html", "class_c_p_u___o_s___simulator_1_1_resource_window" ],
     [ "UtilisationWindow", "class_c_p_u___o_s___simulator_1_1_utilisation_window.html", "class_c_p_u___o_s___simulator_1_1_utilisation_window" ]
 ];

@@ -9,6 +9,7 @@ var class_c_p_u___o_s___simulator_1_1_save___file___editor_1_1_main_window =
     [ "OpenItem_Click", "class_c_p_u___o_s___simulator_1_1_save___file___editor_1_1_main_window.html#a84d08af3d9741cbfdaca05f983b59dce", null ],
     [ "_contentLoaded", "class_c_p_u___o_s___simulator_1_1_save___file___editor_1_1_main_window.html#a2555c588a1bab654bef42e3a161f6cf6", null ],
     [ "btn_Open", "class_c_p_u___o_s___simulator_1_1_save___file___editor_1_1_main_window.html#a353c2ed525a145ca1034f96605ffeb73", null ],
+    [ "directory", "class_c_p_u___o_s___simulator_1_1_save___file___editor_1_1_main_window.html#a8867f09d94a620533db5c8bad03f0c96", null ],
     [ "file", "class_c_p_u___o_s___simulator_1_1_save___file___editor_1_1_main_window.html#a991061ea935a2bd7571b32b5b2cce64d", null ],
     [ "FileMenuItem", "class_c_p_u___o_s___simulator_1_1_save___file___editor_1_1_main_window.html#af4c6dfeaa4a5e61edfc6999c20789e51", null ],
     [ "filePath", "class_c_p_u___o_s___simulator_1_1_save___file___editor_1_1_main_window.html#adf51ae9c43bb2cea5d6f9cc79d046ba2", null ],

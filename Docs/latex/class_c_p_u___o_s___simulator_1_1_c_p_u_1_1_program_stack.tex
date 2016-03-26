@@ -10,10 +10,15 @@ This class represents a Last in first out (L\+I\+F\+O) stack data structure for 
 \item 
 \hyperlink{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_program_stack_a2a30dfbb7df3408de94c883c44aff090}{Program\+Stack} ()
 \begin{DoxyCompactList}\small\item\em Constructor for program stack objects \end{DoxyCompactList}\item 
-void \hyperlink{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_program_stack_ae52c8a15274b2e86e02572ba13cad60c}{push\+Item} (\hyperlink{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_stack_item}{Stack\+Item} item)
+async void \hyperlink{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_program_stack_adc23c2c33829ad611ae71e507c99d362}{Push\+Item} (\hyperlink{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_stack_item}{Stack\+Item} item)
 \begin{DoxyCompactList}\small\item\em this function pushes an item onto the stack \end{DoxyCompactList}\item 
-int \hyperlink{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_program_stack_a32a272fedcd1d8ac5673b3ef90689519}{pop\+Item} ()
+async Task$<$ int $>$ \hyperlink{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_program_stack_ae960ef2aaad23ca328f91ebdf4c5e046}{Pop\+Item} ()
 \begin{DoxyCompactList}\small\item\em This item pops a value off the top of the stack \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+const int \hyperlink{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_program_stack_a8fd75061f8ea538917fcc3b5718bc0d8}{B\+A\+S\+E\+\_\+\+P\+O\+I\+N\+T\+E\+R} = 0x2000
+\end{DoxyCompactItemize}
 \subsection*{Properties}
 \begin{DoxyCompactItemize}
 \item 
@@ -46,7 +51,7 @@ This class represents a Last in first out (L\+I\+F\+O) stack data structure for 
 
 
 
-Definition at line 12 of file Program\+Stack.\+cs.
+Definition at line 13 of file Program\+Stack.\+cs.
 
 
 
@@ -64,7 +69,7 @@ Constructor for program stack objects
 
 
 
-Definition at line 38 of file Program\+Stack.\+cs.
+Definition at line 41 of file Program\+Stack.\+cs.
 
 
 
@@ -85,15 +90,15 @@ the active instance of main window
 \end{DoxyReturn}
 
 
-Definition at line 118 of file Program\+Stack.\+cs.
+Definition at line 122 of file Program\+Stack.\+cs.
 
-\hypertarget{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_program_stack_a32a272fedcd1d8ac5673b3ef90689519}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Program\+Stack@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Program\+Stack}!pop\+Item@{pop\+Item}}
-\index{pop\+Item@{pop\+Item}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Program\+Stack@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Program\+Stack}}
-\subsubsection[{pop\+Item()}]{\setlength{\rightskip}{0pt plus 5cm}int C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+C\+P\+U.\+Program\+Stack.\+pop\+Item (
+\hypertarget{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_program_stack_ae960ef2aaad23ca328f91ebdf4c5e046}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Program\+Stack@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Program\+Stack}!Pop\+Item@{Pop\+Item}}
+\index{Pop\+Item@{Pop\+Item}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Program\+Stack@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Program\+Stack}}
+\subsubsection[{Pop\+Item()}]{\setlength{\rightskip}{0pt plus 5cm}async Task$<$int$>$ C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+C\+P\+U.\+Program\+Stack.\+Pop\+Item (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
-)}\label{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_program_stack_a32a272fedcd1d8ac5673b3ef90689519}
+)}\label{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_program_stack_ae960ef2aaad23ca328f91ebdf4c5e046}
 
 
 This item pops a value off the top of the stack 
@@ -103,15 +108,15 @@ the value that was popped off the stack
 \end{DoxyReturn}
 
 
-Definition at line 99 of file Program\+Stack.\+cs.
+Definition at line 103 of file Program\+Stack.\+cs.
 
-\hypertarget{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_program_stack_ae52c8a15274b2e86e02572ba13cad60c}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Program\+Stack@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Program\+Stack}!push\+Item@{push\+Item}}
-\index{push\+Item@{push\+Item}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Program\+Stack@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Program\+Stack}}
-\subsubsection[{push\+Item(\+Stack\+Item item)}]{\setlength{\rightskip}{0pt plus 5cm}void C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+C\+P\+U.\+Program\+Stack.\+push\+Item (
+\hypertarget{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_program_stack_adc23c2c33829ad611ae71e507c99d362}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Program\+Stack@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Program\+Stack}!Push\+Item@{Push\+Item}}
+\index{Push\+Item@{Push\+Item}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Program\+Stack@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Program\+Stack}}
+\subsubsection[{Push\+Item(\+Stack\+Item item)}]{\setlength{\rightskip}{0pt plus 5cm}async void C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+C\+P\+U.\+Program\+Stack.\+Push\+Item (
 \begin{DoxyParamCaption}
 \item[{{\bf Stack\+Item}}]{item}
 \end{DoxyParamCaption}
-)}\label{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_program_stack_ae52c8a15274b2e86e02572ba13cad60c}
+)}\label{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_program_stack_adc23c2c33829ad611ae71e507c99d362}
 
 
 this function pushes an item onto the stack 
@@ -123,7 +128,7 @@ this function pushes an item onto the stack
 \end{DoxyParams}
 
 
-Definition at line 51 of file Program\+Stack.\+cs.
+Definition at line 54 of file Program\+Stack.\+cs.
 
 \hypertarget{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_program_stack_a64ba20aa2a49863d1197a9aeb31b4a13}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Program\+Stack@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Program\+Stack}!Set\+Annotations@{Set\+Annotations}}
 \index{Set\+Annotations@{Set\+Annotations}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Program\+Stack@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Program\+Stack}}
@@ -138,11 +143,18 @@ This function sets an annotation to a stack item B\+O\+S if the item is at the b
 
 
 
-Definition at line 72 of file Program\+Stack.\+cs.
+Definition at line 76 of file Program\+Stack.\+cs.
 
 
 
 \subsection{Member Data Documentation}
+\hypertarget{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_program_stack_a8fd75061f8ea538917fcc3b5718bc0d8}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Program\+Stack@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Program\+Stack}!B\+A\+S\+E\+\_\+\+P\+O\+I\+N\+T\+E\+R@{B\+A\+S\+E\+\_\+\+P\+O\+I\+N\+T\+E\+R}}
+\index{B\+A\+S\+E\+\_\+\+P\+O\+I\+N\+T\+E\+R@{B\+A\+S\+E\+\_\+\+P\+O\+I\+N\+T\+E\+R}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Program\+Stack@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Program\+Stack}}
+\subsubsection[{B\+A\+S\+E\+\_\+\+P\+O\+I\+N\+T\+E\+R}]{\setlength{\rightskip}{0pt plus 5cm}const int C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+C\+P\+U.\+Program\+Stack.\+B\+A\+S\+E\+\_\+\+P\+O\+I\+N\+T\+E\+R = 0x2000}\label{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_program_stack_a8fd75061f8ea538917fcc3b5718bc0d8}
+
+
+Definition at line 32 of file Program\+Stack.\+cs.
+
 \hypertarget{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_program_stack_a2e475bb3c8ce48b8b0a86e31b2cb972e}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Program\+Stack@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Program\+Stack}!max\+Stack\+Size@{max\+Stack\+Size}}
 \index{max\+Stack\+Size@{max\+Stack\+Size}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Program\+Stack@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Program\+Stack}}
 \subsubsection[{max\+Stack\+Size}]{\setlength{\rightskip}{0pt plus 5cm}readonly int C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+C\+P\+U.\+Program\+Stack.\+max\+Stack\+Size = 1024\hspace{0.3cm}{\ttfamily [private]}}\label{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_program_stack_a2e475bb3c8ce48b8b0a86e31b2cb972e}
@@ -152,7 +164,7 @@ The maximum size of the stack before it overflows
 
 
 
-Definition at line 24 of file Program\+Stack.\+cs.
+Definition at line 25 of file Program\+Stack.\+cs.
 
 \hypertarget{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_program_stack_ada087487ee69e4e38e2f2591bdc28f37}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Program\+Stack@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Program\+Stack}!stack\+Items@{stack\+Items}}
 \index{stack\+Items@{stack\+Items}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Program\+Stack@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Program\+Stack}}
@@ -163,7 +175,7 @@ The items held within the stack
 
 
 
-Definition at line 19 of file Program\+Stack.\+cs.
+Definition at line 20 of file Program\+Stack.\+cs.
 
 \hypertarget{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_program_stack_ab0667a30e4d6e10c3ffddfdfbc084102}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Program\+Stack@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Program\+Stack}!stack\+Size@{stack\+Size}}
 \index{stack\+Size@{stack\+Size}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Program\+Stack@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Program\+Stack}}
@@ -174,7 +186,7 @@ the current size of the stack
 
 
 
-Definition at line 29 of file Program\+Stack.\+cs.
+Definition at line 30 of file Program\+Stack.\+cs.
 
 
 
@@ -188,7 +200,7 @@ Property for the maximum stack size
 
 
 
-Definition at line 150 of file Program\+Stack.\+cs.
+Definition at line 154 of file Program\+Stack.\+cs.
 
 \hypertarget{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_program_stack_a13eb0a485bbcdba8a38bbf80e78692c7}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Program\+Stack@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Program\+Stack}!Stack\+Items@{Stack\+Items}}
 \index{Stack\+Items@{Stack\+Items}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Program\+Stack@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Program\+Stack}}
@@ -199,7 +211,7 @@ Property for the list of items that are currently on the stack
 
 
 
-Definition at line 134 of file Program\+Stack.\+cs.
+Definition at line 138 of file Program\+Stack.\+cs.
 
 \hypertarget{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_program_stack_ac9cedcbfdf26ffa757042280f21da367}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Program\+Stack@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Program\+Stack}!Stack\+Size@{Stack\+Size}}
 \index{Stack\+Size@{Stack\+Size}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Program\+Stack@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Program\+Stack}}
@@ -210,7 +222,7 @@ Property for the current stack size
 
 
 
-Definition at line 160 of file Program\+Stack.\+cs.
+Definition at line 164 of file Program\+Stack.\+cs.
 
 
 

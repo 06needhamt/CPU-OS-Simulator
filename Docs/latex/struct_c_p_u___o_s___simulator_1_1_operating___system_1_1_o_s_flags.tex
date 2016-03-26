@@ -43,6 +43,8 @@ bool \hyperlink{struct_c_p_u___o_s___simulator_1_1_operating___system_1_1_o_s_fl
 \hyperlink{namespace_c_p_u___o_s___simulator_1_1_operating___system_a03a98a403abc737c106a8f92db5bffc1}{Enum\+O\+S\+State} \hyperlink{struct_c_p_u___o_s___simulator_1_1_operating___system_1_1_o_s_flags_a7337260d7d298a9a195322b2bddb2102}{os\+State}
 \item 
 \hyperlink{class_c_p_u___o_s___simulator_1_1_operating___system_1_1_scheduler}{Scheduler} \hyperlink{struct_c_p_u___o_s___simulator_1_1_operating___system_1_1_o_s_flags_a4f93341c66d459dc18aaaad2df38b71d}{scheduler}
+\item 
+\hyperlink{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_interrupts_1_1_interrupt_handles}{Interrupt\+Handles} \hyperlink{struct_c_p_u___o_s___simulator_1_1_operating___system_1_1_o_s_flags_aaa66a35403429c68aacd46a14825f8c5}{interrupt\+Handles}
 \end{DoxyCompactItemize}
 
 
@@ -51,7 +53,7 @@ This struct represents the flags passed to the operating system
 
 
 
-Definition at line 7 of file O\+S\+Flags.\+cs.
+Definition at line 9 of file O\+S\+Flags.\+cs.
 
 
 
@@ -61,126 +63,133 @@ Definition at line 7 of file O\+S\+Flags.\+cs.
 \subsubsection[{allow\+C\+P\+U\+Affinity}]{\setlength{\rightskip}{0pt plus 5cm}bool C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Operating\+\_\+\+System.\+O\+S\+Flags.\+allow\+C\+P\+U\+Affinity}\label{struct_c_p_u___o_s___simulator_1_1_operating___system_1_1_o_s_flags_ac1d1812ad9ef56ccadacb19831d2e92d}
 
 
-Definition at line 17 of file O\+S\+Flags.\+cs.
+Definition at line 19 of file O\+S\+Flags.\+cs.
 
 \hypertarget{struct_c_p_u___o_s___simulator_1_1_operating___system_1_1_o_s_flags_a51541aa57e2e3114e111faff27a5d4cd}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+O\+S\+Flags@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+O\+S\+Flags}!C\+P\+U\+Clock\+Speed@{C\+P\+U\+Clock\+Speed}}
 \index{C\+P\+U\+Clock\+Speed@{C\+P\+U\+Clock\+Speed}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+O\+S\+Flags@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+O\+S\+Flags}}
 \subsubsection[{C\+P\+U\+Clock\+Speed}]{\setlength{\rightskip}{0pt plus 5cm}int C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Operating\+\_\+\+System.\+O\+S\+Flags.\+C\+P\+U\+Clock\+Speed}\label{struct_c_p_u___o_s___simulator_1_1_operating___system_1_1_o_s_flags_a51541aa57e2e3114e111faff27a5d4cd}
 
 
-Definition at line 19 of file O\+S\+Flags.\+cs.
+Definition at line 21 of file O\+S\+Flags.\+cs.
 
 \hypertarget{struct_c_p_u___o_s___simulator_1_1_operating___system_1_1_o_s_flags_ab6e0543edd30b393255293bccf19c9d1}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+O\+S\+Flags@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+O\+S\+Flags}!fault\+Kill@{fault\+Kill}}
 \index{fault\+Kill@{fault\+Kill}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+O\+S\+Flags@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+O\+S\+Flags}}
 \subsubsection[{fault\+Kill}]{\setlength{\rightskip}{0pt plus 5cm}bool C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Operating\+\_\+\+System.\+O\+S\+Flags.\+fault\+Kill}\label{struct_c_p_u___o_s___simulator_1_1_operating___system_1_1_o_s_flags_ab6e0543edd30b393255293bccf19c9d1}
 
 
-Definition at line 25 of file O\+S\+Flags.\+cs.
+Definition at line 27 of file O\+S\+Flags.\+cs.
 
 \hypertarget{struct_c_p_u___o_s___simulator_1_1_operating___system_1_1_o_s_flags_a36b9fca448bc8bc9d3fa51063b9efce5}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+O\+S\+Flags@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+O\+S\+Flags}!force\+Kill@{force\+Kill}}
 \index{force\+Kill@{force\+Kill}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+O\+S\+Flags@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+O\+S\+Flags}}
 \subsubsection[{force\+Kill}]{\setlength{\rightskip}{0pt plus 5cm}bool C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Operating\+\_\+\+System.\+O\+S\+Flags.\+force\+Kill}\label{struct_c_p_u___o_s___simulator_1_1_operating___system_1_1_o_s_flags_a36b9fca448bc8bc9d3fa51063b9efce5}
 
 
-Definition at line 24 of file O\+S\+Flags.\+cs.
+Definition at line 26 of file O\+S\+Flags.\+cs.
+
+\hypertarget{struct_c_p_u___o_s___simulator_1_1_operating___system_1_1_o_s_flags_aaa66a35403429c68aacd46a14825f8c5}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+O\+S\+Flags@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+O\+S\+Flags}!interrupt\+Handles@{interrupt\+Handles}}
+\index{interrupt\+Handles@{interrupt\+Handles}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+O\+S\+Flags@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+O\+S\+Flags}}
+\subsubsection[{interrupt\+Handles}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Interrupt\+Handles} C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Operating\+\_\+\+System.\+O\+S\+Flags.\+interrupt\+Handles}\label{struct_c_p_u___o_s___simulator_1_1_operating___system_1_1_o_s_flags_aaa66a35403429c68aacd46a14825f8c5}
+
+
+Definition at line 30 of file O\+S\+Flags.\+cs.
 
 \hypertarget{struct_c_p_u___o_s___simulator_1_1_operating___system_1_1_o_s_flags_a7337260d7d298a9a195322b2bddb2102}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+O\+S\+Flags@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+O\+S\+Flags}!os\+State@{os\+State}}
 \index{os\+State@{os\+State}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+O\+S\+Flags@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+O\+S\+Flags}}
 \subsubsection[{os\+State}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Enum\+O\+S\+State} C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Operating\+\_\+\+System.\+O\+S\+Flags.\+os\+State}\label{struct_c_p_u___o_s___simulator_1_1_operating___system_1_1_o_s_flags_a7337260d7d298a9a195322b2bddb2102}
 
 
-Definition at line 26 of file O\+S\+Flags.\+cs.
+Definition at line 28 of file O\+S\+Flags.\+cs.
 
 \hypertarget{struct_c_p_u___o_s___simulator_1_1_operating___system_1_1_o_s_flags_a66a5d4d63f6a7726d65a7f7479df112a}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+O\+S\+Flags@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+O\+S\+Flags}!priority\+Policy@{priority\+Policy}}
 \index{priority\+Policy@{priority\+Policy}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+O\+S\+Flags@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+O\+S\+Flags}}
 \subsubsection[{priority\+Policy}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Enum\+Priority\+Policy} C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Operating\+\_\+\+System.\+O\+S\+Flags.\+priority\+Policy}\label{struct_c_p_u___o_s___simulator_1_1_operating___system_1_1_o_s_flags_a66a5d4d63f6a7726d65a7f7479df112a}
 
 
-Definition at line 13 of file O\+S\+Flags.\+cs.
+Definition at line 15 of file O\+S\+Flags.\+cs.
 
 \hypertarget{struct_c_p_u___o_s___simulator_1_1_operating___system_1_1_o_s_flags_a13e9aec1eaa0f7323ee68b1b006b5601}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+O\+S\+Flags@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+O\+S\+Flags}!round\+Robin\+Type@{round\+Robin\+Type}}
 \index{round\+Robin\+Type@{round\+Robin\+Type}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+O\+S\+Flags@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+O\+S\+Flags}}
 \subsubsection[{round\+Robin\+Type}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Enum\+Round\+Robin\+Type} C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Operating\+\_\+\+System.\+O\+S\+Flags.\+round\+Robin\+Type}\label{struct_c_p_u___o_s___simulator_1_1_operating___system_1_1_o_s_flags_a13e9aec1eaa0f7323ee68b1b006b5601}
 
 
-Definition at line 14 of file O\+S\+Flags.\+cs.
+Definition at line 16 of file O\+S\+Flags.\+cs.
 
 \hypertarget{struct_c_p_u___o_s___simulator_1_1_operating___system_1_1_o_s_flags_a09dda098b4aeab3999d494d2b55d9ffd}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+O\+S\+Flags@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+O\+S\+Flags}!R\+R\+\_\+\+Time\+\_\+\+Slice@{R\+R\+\_\+\+Time\+\_\+\+Slice}}
 \index{R\+R\+\_\+\+Time\+\_\+\+Slice@{R\+R\+\_\+\+Time\+\_\+\+Slice}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+O\+S\+Flags@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+O\+S\+Flags}}
 \subsubsection[{R\+R\+\_\+\+Time\+\_\+\+Slice}]{\setlength{\rightskip}{0pt plus 5cm}double C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Operating\+\_\+\+System.\+O\+S\+Flags.\+R\+R\+\_\+\+Time\+\_\+\+Slice}\label{struct_c_p_u___o_s___simulator_1_1_operating___system_1_1_o_s_flags_a09dda098b4aeab3999d494d2b55d9ffd}
 
 
-Definition at line 11 of file O\+S\+Flags.\+cs.
+Definition at line 13 of file O\+S\+Flags.\+cs.
 
 \hypertarget{struct_c_p_u___o_s___simulator_1_1_operating___system_1_1_o_s_flags_a96998b787c35b22e8ec38d2bb4668001}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+O\+S\+Flags@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+O\+S\+Flags}!R\+R\+\_\+\+Time\+\_\+\+Slice\+\_\+\+Unit@{R\+R\+\_\+\+Time\+\_\+\+Slice\+\_\+\+Unit}}
 \index{R\+R\+\_\+\+Time\+\_\+\+Slice\+\_\+\+Unit@{R\+R\+\_\+\+Time\+\_\+\+Slice\+\_\+\+Unit}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+O\+S\+Flags@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+O\+S\+Flags}}
 \subsubsection[{R\+R\+\_\+\+Time\+\_\+\+Slice\+\_\+\+Unit}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Enum\+Time\+Unit} C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Operating\+\_\+\+System.\+O\+S\+Flags.\+R\+R\+\_\+\+Time\+\_\+\+Slice\+\_\+\+Unit}\label{struct_c_p_u___o_s___simulator_1_1_operating___system_1_1_o_s_flags_a96998b787c35b22e8ec38d2bb4668001}
 
 
-Definition at line 12 of file O\+S\+Flags.\+cs.
+Definition at line 14 of file O\+S\+Flags.\+cs.
 
 \hypertarget{struct_c_p_u___o_s___simulator_1_1_operating___system_1_1_o_s_flags_a95065a05a534116b2d039393f38abffc}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+O\+S\+Flags@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+O\+S\+Flags}!run\+With\+Noprocesses@{run\+With\+Noprocesses}}
 \index{run\+With\+Noprocesses@{run\+With\+Noprocesses}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+O\+S\+Flags@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+O\+S\+Flags}}
 \subsubsection[{run\+With\+Noprocesses}]{\setlength{\rightskip}{0pt plus 5cm}bool C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Operating\+\_\+\+System.\+O\+S\+Flags.\+run\+With\+Noprocesses}\label{struct_c_p_u___o_s___simulator_1_1_operating___system_1_1_o_s_flags_a95065a05a534116b2d039393f38abffc}
 
 
-Definition at line 18 of file O\+S\+Flags.\+cs.
+Definition at line 20 of file O\+S\+Flags.\+cs.
 
 \hypertarget{struct_c_p_u___o_s___simulator_1_1_operating___system_1_1_o_s_flags_a4f93341c66d459dc18aaaad2df38b71d}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+O\+S\+Flags@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+O\+S\+Flags}!scheduler@{scheduler}}
 \index{scheduler@{scheduler}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+O\+S\+Flags@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+O\+S\+Flags}}
 \subsubsection[{scheduler}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Scheduler} C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Operating\+\_\+\+System.\+O\+S\+Flags.\+scheduler}\label{struct_c_p_u___o_s___simulator_1_1_operating___system_1_1_o_s_flags_a4f93341c66d459dc18aaaad2df38b71d}
 
 
-Definition at line 27 of file O\+S\+Flags.\+cs.
+Definition at line 29 of file O\+S\+Flags.\+cs.
 
 \hypertarget{struct_c_p_u___o_s___simulator_1_1_operating___system_1_1_o_s_flags_aad6f9d714b67cfab02eea0ae9acabc04}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+O\+S\+Flags@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+O\+S\+Flags}!scheduling\+Policy@{scheduling\+Policy}}
 \index{scheduling\+Policy@{scheduling\+Policy}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+O\+S\+Flags@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+O\+S\+Flags}}
 \subsubsection[{scheduling\+Policy}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Enum\+Scheduling\+Policies} C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Operating\+\_\+\+System.\+O\+S\+Flags.\+scheduling\+Policy}\label{struct_c_p_u___o_s___simulator_1_1_operating___system_1_1_o_s_flags_aad6f9d714b67cfab02eea0ae9acabc04}
 
 
-Definition at line 10 of file O\+S\+Flags.\+cs.
+Definition at line 12 of file O\+S\+Flags.\+cs.
 
 \hypertarget{struct_c_p_u___o_s___simulator_1_1_operating___system_1_1_o_s_flags_a78836e63be936381215978ac392e1e60}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+O\+S\+Flags@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+O\+S\+Flags}!suspend\+On\+Pre\+Emption@{suspend\+On\+Pre\+Emption}}
 \index{suspend\+On\+Pre\+Emption@{suspend\+On\+Pre\+Emption}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+O\+S\+Flags@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+O\+S\+Flags}}
 \subsubsection[{suspend\+On\+Pre\+Emption}]{\setlength{\rightskip}{0pt plus 5cm}bool C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Operating\+\_\+\+System.\+O\+S\+Flags.\+suspend\+On\+Pre\+Emption}\label{struct_c_p_u___o_s___simulator_1_1_operating___system_1_1_o_s_flags_a78836e63be936381215978ac392e1e60}
 
 
-Definition at line 21 of file O\+S\+Flags.\+cs.
+Definition at line 23 of file O\+S\+Flags.\+cs.
 
 \hypertarget{struct_c_p_u___o_s___simulator_1_1_operating___system_1_1_o_s_flags_af5d6d129b4a04deb745ccb2195cf37b8}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+O\+S\+Flags@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+O\+S\+Flags}!suspend\+On\+State\+Change\+\_\+\+Ready@{suspend\+On\+State\+Change\+\_\+\+Ready}}
 \index{suspend\+On\+State\+Change\+\_\+\+Ready@{suspend\+On\+State\+Change\+\_\+\+Ready}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+O\+S\+Flags@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+O\+S\+Flags}}
 \subsubsection[{suspend\+On\+State\+Change\+\_\+\+Ready}]{\setlength{\rightskip}{0pt plus 5cm}bool C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Operating\+\_\+\+System.\+O\+S\+Flags.\+suspend\+On\+State\+Change\+\_\+\+Ready}\label{struct_c_p_u___o_s___simulator_1_1_operating___system_1_1_o_s_flags_af5d6d129b4a04deb745ccb2195cf37b8}
 
 
-Definition at line 20 of file O\+S\+Flags.\+cs.
+Definition at line 22 of file O\+S\+Flags.\+cs.
 
 \hypertarget{struct_c_p_u___o_s___simulator_1_1_operating___system_1_1_o_s_flags_a828cad0b61448732b96162511e18352f}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+O\+S\+Flags@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+O\+S\+Flags}!suspend\+On\+State\+Change\+\_\+\+Running@{suspend\+On\+State\+Change\+\_\+\+Running}}
 \index{suspend\+On\+State\+Change\+\_\+\+Running@{suspend\+On\+State\+Change\+\_\+\+Running}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+O\+S\+Flags@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+O\+S\+Flags}}
 \subsubsection[{suspend\+On\+State\+Change\+\_\+\+Running}]{\setlength{\rightskip}{0pt plus 5cm}bool C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Operating\+\_\+\+System.\+O\+S\+Flags.\+suspend\+On\+State\+Change\+\_\+\+Running}\label{struct_c_p_u___o_s___simulator_1_1_operating___system_1_1_o_s_flags_a828cad0b61448732b96162511e18352f}
 
 
-Definition at line 22 of file O\+S\+Flags.\+cs.
+Definition at line 24 of file O\+S\+Flags.\+cs.
 
 \hypertarget{struct_c_p_u___o_s___simulator_1_1_operating___system_1_1_o_s_flags_ac3439768b6e151e974a26a35ab0452a2}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+O\+S\+Flags@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+O\+S\+Flags}!suspend\+On\+State\+Change\+\_\+\+Waiting@{suspend\+On\+State\+Change\+\_\+\+Waiting}}
 \index{suspend\+On\+State\+Change\+\_\+\+Waiting@{suspend\+On\+State\+Change\+\_\+\+Waiting}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+O\+S\+Flags@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+O\+S\+Flags}}
 \subsubsection[{suspend\+On\+State\+Change\+\_\+\+Waiting}]{\setlength{\rightskip}{0pt plus 5cm}bool C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Operating\+\_\+\+System.\+O\+S\+Flags.\+suspend\+On\+State\+Change\+\_\+\+Waiting}\label{struct_c_p_u___o_s___simulator_1_1_operating___system_1_1_o_s_flags_ac3439768b6e151e974a26a35ab0452a2}
 
 
-Definition at line 23 of file O\+S\+Flags.\+cs.
+Definition at line 25 of file O\+S\+Flags.\+cs.
 
 \hypertarget{struct_c_p_u___o_s___simulator_1_1_operating___system_1_1_o_s_flags_a2ed45efd842faf68205cecfe73aaf11d}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+O\+S\+Flags@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+O\+S\+Flags}!use\+Default\+Scheduler@{use\+Default\+Scheduler}}
 \index{use\+Default\+Scheduler@{use\+Default\+Scheduler}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+O\+S\+Flags@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+O\+S\+Flags}}
 \subsubsection[{use\+Default\+Scheduler}]{\setlength{\rightskip}{0pt plus 5cm}bool C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Operating\+\_\+\+System.\+O\+S\+Flags.\+use\+Default\+Scheduler}\label{struct_c_p_u___o_s___simulator_1_1_operating___system_1_1_o_s_flags_a2ed45efd842faf68205cecfe73aaf11d}
 
 
-Definition at line 15 of file O\+S\+Flags.\+cs.
+Definition at line 17 of file O\+S\+Flags.\+cs.
 
 \hypertarget{struct_c_p_u___o_s___simulator_1_1_operating___system_1_1_o_s_flags_a49e0bc2c9ec783c9fb0678ace83352cf}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+O\+S\+Flags@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+O\+S\+Flags}!use\+Single\+C\+P\+U@{use\+Single\+C\+P\+U}}
 \index{use\+Single\+C\+P\+U@{use\+Single\+C\+P\+U}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+O\+S\+Flags@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+Operating\+\_\+\+System\+::\+O\+S\+Flags}}
 \subsubsection[{use\+Single\+C\+P\+U}]{\setlength{\rightskip}{0pt plus 5cm}bool C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+Operating\+\_\+\+System.\+O\+S\+Flags.\+use\+Single\+C\+P\+U}\label{struct_c_p_u___o_s___simulator_1_1_operating___system_1_1_o_s_flags_a49e0bc2c9ec783c9fb0678ace83352cf}
 
 
-Definition at line 16 of file O\+S\+Flags.\+cs.
+Definition at line 18 of file O\+S\+Flags.\+cs.
 
 
 

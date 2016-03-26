@@ -1,5 +1,9 @@
 var searchData=
 [
+  ['r1control',['R1Control',['../class_c_p_u___o_s___simulator_1_1_controls_1_1_resource___controls_1_1_r1_control.html',1,'CPU_OS_Simulator::Controls::Resource_Controls']]],
+  ['r1control_5fold',['R1Control_OLD',['../class_c_p_u___o_s___simulator_1_1_controls_1_1_resource___controls_1_1_r1_control___o_l_d.html',1,'CPU_OS_Simulator::Controls::Resource_Controls']]],
+  ['r1shape',['R1Shape',['../class_c_p_u___o_s___simulator_1_1_controls_1_1_resource___controls_1_1_shapes_1_1_r1_shape.html',1,'CPU_OS_Simulator::Controls::Resource_Controls::Shapes']]],
+  ['r1shape_5fold',['R1Shape_OLD',['../class_c_p_u___o_s___simulator_1_1_controls_1_1_resource___controls_1_1_shapes_1_1_r1_shape___o_l_d.html',1,'CPU_OS_Simulator::Controls::Resource_Controls::Shapes']]],
   ['razorhelpercommonattribute',['RazorHelperCommonAttribute',['../class_razor_helper_common_attribute.html',1,'']]],
   ['razorimportnamespaceattribute',['RazorImportNamespaceAttribute',['../class_razor_import_namespace_attribute.html',1,'']]],
   ['razorinjectionattribute',['RazorInjectionAttribute',['../class_razor_injection_attribute.html',1,'']]],
@@ -11,7 +15,8 @@ var searchData=
   ['regexpatternattribute',['RegexPatternAttribute',['../class_regex_pattern_attribute.html',1,'']]],
   ['register',['Register',['../class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_register.html',1,'CPU_OS_Simulator::CPU']]],
   ['registertests',['RegisterTests',['../class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_tests_1_1_register_tests.html',1,'CPU_OS_Simulator::CPU::Tests']]],
+  ['resources',['Resources',['../class_c_p_u___o_s___simulator_1_1_save___file___editor_1_1_properties_1_1_resources.html',1,'CPU_OS_Simulator::Save_File_Editor::Properties']]],
   ['resources',['Resources',['../class_c_p_u___o_s___simulator_1_1_compiler_tester_1_1_properties_1_1_resources.html',1,'CPU_OS_Simulator::CompilerTester::Properties']]],
   ['resources',['Resources',['../class_c_p_u___o_s___simulator_1_1_properties_1_1_resources.html',1,'CPU_OS_Simulator::Properties']]],
-  ['resources',['Resources',['../class_c_p_u___o_s___simulator_1_1_save___file___editor_1_1_properties_1_1_resources.html',1,'CPU_OS_Simulator::Save_File_Editor::Properties']]]
+  ['resourcewindow',['ResourceWindow',['../class_c_p_u___o_s___simulator_1_1_resource_window.html',1,'CPU_OS_Simulator']]]
 ];

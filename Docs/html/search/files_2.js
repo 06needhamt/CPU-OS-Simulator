@@ -14,7 +14,6 @@ var searchData=
   ['consolewindow_2eg_2ecs',['ConsoleWindow.g.cs',['../_console_window_8g_8cs.html',1,'']]],
   ['consolewindow_2eg_2ei_2ecs',['ConsoleWindow.g.i.cs',['../_console_window_8g_8i_8cs.html',1,'']]],
   ['consolewindow_2examl_2ecs',['ConsoleWindow.xaml.cs',['../_console_window_8xaml_8cs.html',1,'']]],
-  ['cpugraph_20_2d_20copy_2eg_2ei_2ecs',['CPUGraph - Copy.g.i.cs',['../_c_p_u_graph_01-_01_copy_8g_8i_8cs.html',1,'']]],
   ['cpugraph_2eg_2ecs',['CPUGraph.g.cs',['../_c_p_u_graph_8g_8cs.html',1,'']]],
   ['cpugraph_2eg_2ei_2ecs',['CPUGraph.g.i.cs',['../_c_p_u_graph_8g_8i_8cs.html',1,'']]],
   ['cpugraph_2examl_2ecs',['CPUGraph.xaml.cs',['../_c_p_u_graph_8xaml_8cs.html',1,'']]],

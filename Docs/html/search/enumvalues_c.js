@@ -1,5 +1,6 @@
 var searchData=
 [
+  ['manual_5fcall',['MANUAL_CALL',['../namespace_c_p_u___o_s___simulator_1_1_c_p_u_1_1_interrupts.html#a97a0f4951d9cfd2f99d166b8fa840c02a9e40b16d89b9a7d60c8609cfac43540f',1,'CPU_OS_Simulator::CPU::Interrupts']]],
   ['medium',['MEDIUM',['../namespace_c_p_u___o_s___simulator.html#ad76442226f076d91d8f4523d7ee3db0fac87f3be66ffc3c0d4249f1c2cc5f3cce',1,'CPU_OS_Simulator']]],
   ['members',['Members',['../_annotations_8cs.html#a59f21202ead30f3d1e2093e42214bf7caef53538ae41a651c7f72ab6cb1135d8c',1,'Annotations.cs']]],
   ['minus',['MINUS',['../namespace_c_p_u___o_s___simulator_1_1_compiler_1_1_frontend_1_1_tokens.html#ac7cabb2de0258fea24dd75768143da51affc0d9b54a1fe677c4c9e6b050e67c81',1,'CPU_OS_Simulator::Compiler::Frontend::Tokens']]],

@@ -8,6 +8,8 @@ var searchData=
   ['enuminstructionmode_2ecs',['EnumInstructionMode.cs',['../_enum_instruction_mode_8cs.html',1,'']]],
   ['enuminstructionsegmentsizes_2ecs',['EnumInstructionSegmentSizes.cs',['../_enum_instruction_segment_sizes_8cs.html',1,'']]],
   ['enuminstructionsize_2ecs',['EnumInstructionSize.cs',['../_enum_instruction_size_8cs.html',1,'']]],
+  ['enuminterruptsource_2ecs',['EnumInterruptSource.cs',['../_enum_interrupt_source_8cs.html',1,'']]],
+  ['enuminterrupttype_2ecs',['EnumInterruptType.cs',['../_enum_interrupt_type_8cs.html',1,'']]],
   ['enumkeywordtype_2ecs',['EnumKeywordType.cs',['../_enum_keyword_type_8cs.html',1,'']]],
   ['enumloglevel_2ecs',['EnumLogLevel.cs',['../_enum_log_level_8cs.html',1,'']]],
   ['enumopcodes_2ecs',['EnumOpcodes.cs',['../_enum_opcodes_8cs.html',1,'']]],

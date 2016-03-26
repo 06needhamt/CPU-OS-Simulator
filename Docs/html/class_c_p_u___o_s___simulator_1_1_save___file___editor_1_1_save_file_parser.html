@@ -126,8 +126,8 @@ Inheritance diagram for CPU_OS_Simulator.Save_File_Editor.SaveFileParser:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a65aa87bc19585e2000605ceb988c2c8b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_p_u___o_s___simulator_1_1_save___file___editor_1_1_save_file_parser.html#a65aa87bc19585e2000605ceb988c2c8b">SaveFileParser</a> (string file)</td></tr>
-<tr class="separator:a65aa87bc19585e2000605ceb988c2c8b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aba2cd09981d18cb3f274dd2cb3e7506e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_p_u___o_s___simulator_1_1_save___file___editor_1_1_save_file_parser.html#aba2cd09981d18cb3f274dd2cb3e7506e">SaveFileParser</a> (string file, string <a class="el" href="class_c_p_u___o_s___simulator_1_1_save___file___editor_1_1_save_file_parser.html#a4da217cd7a49f8a0b3ad09db5b609ab6">directory</a>)</td></tr>
+<tr class="separator:aba2cd09981d18cb3f274dd2cb3e7506e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2c4737d091b4be2e7ea7cd5c13dd500a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_p_u___o_s___simulator_1_1_save___file___editor_1_1_save_file_parser.html#a2c4737d091b4be2e7ea7cd5c13dd500a">ParseFile</a> (string path)</td></tr>
 <tr class="separator:a2c4737d091b4be2e7ea7cd5c13dd500a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a99fbbf56a2c81b54ca06529a0a981b17"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_p_u___o_s___simulator_1_1_save___file___editor_1_1_save_file_parser.html#a99fbbf56a2c81b54ca06529a0a981b17">ParseFileNoWhitespace</a> (string path)</td></tr>
@@ -155,6 +155,8 @@ Properties</h2></td></tr>
 Private Attributes</h2></td></tr>
 <tr class="memitem:a72ee7515830d28ee38f7948be3bc36f8"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_p_u___o_s___simulator_1_1_save___file___editor_1_1_save_file_parser.html#a72ee7515830d28ee38f7948be3bc36f8">filePath</a></td></tr>
 <tr class="separator:a72ee7515830d28ee38f7948be3bc36f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4da217cd7a49f8a0b3ad09db5b609ab6"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_p_u___o_s___simulator_1_1_save___file___editor_1_1_save_file_parser.html#a4da217cd7a49f8a0b3ad09db5b609ab6">directory</a></td></tr>
+<tr class="separator:a4da217cd7a49f8a0b3ad09db5b609ab6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2538a13b548479f69ecfbfbbd7a6352d"><td class="memItemLeft" align="right" valign="top">JObject&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_p_u___o_s___simulator_1_1_save___file___editor_1_1_save_file_parser.html#a2538a13b548479f69ecfbfbbd7a6352d">obj</a></td></tr>
 <tr class="separator:a2538a13b548479f69ecfbfbbd7a6352d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afaaae9bacbb6b3e6bb60e6f2cf56b8fd"><td class="memItemLeft" align="right" valign="top">StreamReader&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_p_u___o_s___simulator_1_1_save___file___editor_1_1_save_file_parser.html#afaaae9bacbb6b3e6bb60e6f2cf56b8fd">reader</a></td></tr>
@@ -170,7 +172,7 @@ Private Attributes</h2></td></tr>
 <div class="textblock">
 <p>Definition at line <a class="el" href="_save_file_parser_8cs_source.html#l00014">14</a> of file <a class="el" href="_save_file_parser_8cs_source.html">SaveFileParser.cs</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a class="anchor" id="a65aa87bc19585e2000605ceb988c2c8b"></a>
+<a class="anchor" id="aba2cd09981d18cb3f274dd2cb3e7506e"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -178,13 +180,23 @@ Private Attributes</h2></td></tr>
           <td class="memname">CPU_OS_Simulator.Save_File_Editor.SaveFileParser.SaveFileParser </td>
           <td>(</td>
           <td class="paramtype">string&#160;</td>
-          <td class="paramname"><em>file</em></td><td>)</td>
+          <td class="paramname"><em>file</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>directory</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_save_file_parser_8cs_source.html#l00054">54</a> of file <a class="el" href="_save_file_parser_8cs_source.html">SaveFileParser.cs</a>.</p>
+<p>Definition at line <a class="el" href="_save_file_parser_8cs_source.html#l00055">55</a> of file <a class="el" href="_save_file_parser_8cs_source.html">SaveFileParser.cs</a>.</p>
 
 </div>
 </div>
@@ -204,7 +216,7 @@ Private Attributes</h2></td></tr>
 
 <p>Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources. </p>
 
-<p>Definition at line <a class="el" href="_save_file_parser_8cs_source.html#l00094">94</a> of file <a class="el" href="_save_file_parser_8cs_source.html">SaveFileParser.cs</a>.</p>
+<p>Definition at line <a class="el" href="_save_file_parser_8cs_source.html#l00100">100</a> of file <a class="el" href="_save_file_parser_8cs_source.html">SaveFileParser.cs</a>.</p>
 
 </div>
 </div>
@@ -222,7 +234,7 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_save_file_parser_8cs_source.html#l00058">58</a> of file <a class="el" href="_save_file_parser_8cs_source.html">SaveFileParser.cs</a>.</p>
+<p>Definition at line <a class="el" href="_save_file_parser_8cs_source.html#l00060">60</a> of file <a class="el" href="_save_file_parser_8cs_source.html">SaveFileParser.cs</a>.</p>
 
 </div>
 </div>
@@ -240,11 +252,33 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_save_file_parser_8cs_source.html#l00074">74</a> of file <a class="el" href="_save_file_parser_8cs_source.html">SaveFileParser.cs</a>.</p>
+<p>Definition at line <a class="el" href="_save_file_parser_8cs_source.html#l00078">78</a> of file <a class="el" href="_save_file_parser_8cs_source.html">SaveFileParser.cs</a>.</p>
 
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
+<a class="anchor" id="a4da217cd7a49f8a0b3ad09db5b609ab6"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">string CPU_OS_Simulator.Save_File_Editor.SaveFileParser.directory</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_save_file_parser_8cs_source.html#l00017">17</a> of file <a class="el" href="_save_file_parser_8cs_source.html">SaveFileParser.cs</a>.</p>
+
+</div>
+</div>
 <a class="anchor" id="a72ee7515830d28ee38f7948be3bc36f8"></a>
 <div class="memitem">
 <div class="memproto">
@@ -285,7 +319,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_save_file_parser_8cs_source.html#l00019">19</a> of file <a class="el" href="_save_file_parser_8cs_source.html">SaveFileParser.cs</a>.</p>
+<p>Definition at line <a class="el" href="_save_file_parser_8cs_source.html#l00020">20</a> of file <a class="el" href="_save_file_parser_8cs_source.html">SaveFileParser.cs</a>.</p>
 
 </div>
 </div>
@@ -307,7 +341,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_save_file_parser_8cs_source.html#l00017">17</a> of file <a class="el" href="_save_file_parser_8cs_source.html">SaveFileParser.cs</a>.</p>
+<p>Definition at line <a class="el" href="_save_file_parser_8cs_source.html#l00018">18</a> of file <a class="el" href="_save_file_parser_8cs_source.html">SaveFileParser.cs</a>.</p>
 
 </div>
 </div>
@@ -329,7 +363,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_save_file_parser_8cs_source.html#l00020">20</a> of file <a class="el" href="_save_file_parser_8cs_source.html">SaveFileParser.cs</a>.</p>
+<p>Definition at line <a class="el" href="_save_file_parser_8cs_source.html#l00021">21</a> of file <a class="el" href="_save_file_parser_8cs_source.html">SaveFileParser.cs</a>.</p>
 
 </div>
 </div>
@@ -351,7 +385,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_save_file_parser_8cs_source.html#l00018">18</a> of file <a class="el" href="_save_file_parser_8cs_source.html">SaveFileParser.cs</a>.</p>
+<p>Definition at line <a class="el" href="_save_file_parser_8cs_source.html#l00019">19</a> of file <a class="el" href="_save_file_parser_8cs_source.html">SaveFileParser.cs</a>.</p>
 
 </div>
 </div>
@@ -373,7 +407,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_save_file_parser_8cs_source.html#l00021">21</a> of file <a class="el" href="_save_file_parser_8cs_source.html">SaveFileParser.cs</a>.</p>
+<p>Definition at line <a class="el" href="_save_file_parser_8cs_source.html#l00022">22</a> of file <a class="el" href="_save_file_parser_8cs_source.html">SaveFileParser.cs</a>.</p>
 
 </div>
 </div>
@@ -396,7 +430,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_save_file_parser_8cs_source.html#l00024">24</a> of file <a class="el" href="_save_file_parser_8cs_source.html">SaveFileParser.cs</a>.</p>
+<p>Definition at line <a class="el" href="_save_file_parser_8cs_source.html#l00025">25</a> of file <a class="el" href="_save_file_parser_8cs_source.html">SaveFileParser.cs</a>.</p>
 
 </div>
 </div>
@@ -418,7 +452,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_save_file_parser_8cs_source.html#l00039">39</a> of file <a class="el" href="_save_file_parser_8cs_source.html">SaveFileParser.cs</a>.</p>
+<p>Definition at line <a class="el" href="_save_file_parser_8cs_source.html#l00040">40</a> of file <a class="el" href="_save_file_parser_8cs_source.html">SaveFileParser.cs</a>.</p>
 
 </div>
 </div>
@@ -440,7 +474,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_save_file_parser_8cs_source.html#l00029">29</a> of file <a class="el" href="_save_file_parser_8cs_source.html">SaveFileParser.cs</a>.</p>
+<p>Definition at line <a class="el" href="_save_file_parser_8cs_source.html#l00030">30</a> of file <a class="el" href="_save_file_parser_8cs_source.html">SaveFileParser.cs</a>.</p>
 
 </div>
 </div>
@@ -462,7 +496,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_save_file_parser_8cs_source.html#l00044">44</a> of file <a class="el" href="_save_file_parser_8cs_source.html">SaveFileParser.cs</a>.</p>
+<p>Definition at line <a class="el" href="_save_file_parser_8cs_source.html#l00045">45</a> of file <a class="el" href="_save_file_parser_8cs_source.html">SaveFileParser.cs</a>.</p>
 
 </div>
 </div>
@@ -484,7 +518,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_save_file_parser_8cs_source.html#l00034">34</a> of file <a class="el" href="_save_file_parser_8cs_source.html">SaveFileParser.cs</a>.</p>
+<p>Definition at line <a class="el" href="_save_file_parser_8cs_source.html#l00035">35</a> of file <a class="el" href="_save_file_parser_8cs_source.html">SaveFileParser.cs</a>.</p>
 
 </div>
 </div>
@@ -506,7 +540,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_save_file_parser_8cs_source.html#l00049">49</a> of file <a class="el" href="_save_file_parser_8cs_source.html">SaveFileParser.cs</a>.</p>
+<p>Definition at line <a class="el" href="_save_file_parser_8cs_source.html#l00050">50</a> of file <a class="el" href="_save_file_parser_8cs_source.html">SaveFileParser.cs</a>.</p>
 
 </div>
 </div>

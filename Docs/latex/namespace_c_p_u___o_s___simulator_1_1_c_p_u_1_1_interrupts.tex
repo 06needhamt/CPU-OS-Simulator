@@ -1,0 +1,79 @@
+\hypertarget{namespace_c_p_u___o_s___simulator_1_1_c_p_u_1_1_interrupts}{}\section{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+C\+P\+U.\+Interrupts Namespace Reference}
+\label{namespace_c_p_u___o_s___simulator_1_1_c_p_u_1_1_interrupts}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+C\+P\+U.\+Interrupts@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+C\+P\+U.\+Interrupts}}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_interrupts_1_1_interrupt}{Interrupt}
+\begin{DoxyCompactList}\small\item\em This Class Represents an interrupt used by the operating system to interrupt the \hyperlink{namespace_c_p_u___o_s___simulator_1_1_c_p_u}{C\+P\+U} \end{DoxyCompactList}\item 
+class \hyperlink{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_interrupts_1_1_interrupt_handler}{Interrupt\+Handler}
+\item 
+class \hyperlink{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_interrupts_1_1_interrupt_handles}{Interrupt\+Handles}
+\item 
+class \hyperlink{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_interrupts_1_1_interrupt_vector_table}{Interrupt\+Vector\+Table}
+\item 
+class \hyperlink{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_interrupts_1_1_interrupt_vector_table_entry}{Interrupt\+Vector\+Table\+Entry}
+\item 
+class \hyperlink{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_interrupts_1_1_polled_interrupt}{Polled\+Interrupt}
+\item 
+class \hyperlink{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_interrupts_1_1_vectored_interrupt}{Vectored\+Interrupt}
+\end{DoxyCompactItemize}
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{namespace_c_p_u___o_s___simulator_1_1_c_p_u_1_1_interrupts_a97a0f4951d9cfd2f99d166b8fa840c02}{Enum\+Interrupt\+Source} \+: long \{ \\*
+\hyperlink{namespace_c_p_u___o_s___simulator_1_1_c_p_u_1_1_interrupts_a97a0f4951d9cfd2f99d166b8fa840c02a696b031073e74bf2cb98e5ef201d4aa3}{Enum\+Interrupt\+Source.\+U\+N\+K\+N\+O\+W\+N} = -\/1, 
+\hyperlink{namespace_c_p_u___o_s___simulator_1_1_c_p_u_1_1_interrupts_a97a0f4951d9cfd2f99d166b8fa840c02af35873b36fc1e059d59cd936284038e0}{Enum\+Interrupt\+Source.\+S\+W\+I\+\_\+\+I\+N\+S\+T\+R\+U\+C\+T\+I\+O\+N} = 1 $<$$<$ 0, 
+\hyperlink{namespace_c_p_u___o_s___simulator_1_1_c_p_u_1_1_interrupts_a97a0f4951d9cfd2f99d166b8fa840c02aa84cc046d48610b05c21fd3670d0c829}{Enum\+Interrupt\+Source.\+I\+N\+P\+U\+T} = 1 $<$$<$ 1, 
+\hyperlink{namespace_c_p_u___o_s___simulator_1_1_c_p_u_1_1_interrupts_a97a0f4951d9cfd2f99d166b8fa840c02add6a9e10b31dee9ea17789094ceb2daf}{Enum\+Interrupt\+Source.\+I\+N\+T\+E\+R\+N\+A\+L\+\_\+\+C\+A\+L\+L} = 1 $<$$<$ 2, 
+\\*
+\hyperlink{namespace_c_p_u___o_s___simulator_1_1_c_p_u_1_1_interrupts_a97a0f4951d9cfd2f99d166b8fa840c02a9e40b16d89b9a7d60c8609cfac43540f}{Enum\+Interrupt\+Source.\+M\+A\+N\+U\+A\+L\+\_\+\+C\+A\+L\+L} = 1 $<$$<$ 3
+ \}
+\item 
+enum \hyperlink{namespace_c_p_u___o_s___simulator_1_1_c_p_u_1_1_interrupts_a575a43213ed6d54083da8956c5a69b39}{Enum\+Interrupt\+Type} \{ \hyperlink{namespace_c_p_u___o_s___simulator_1_1_c_p_u_1_1_interrupts_a575a43213ed6d54083da8956c5a69b39a696b031073e74bf2cb98e5ef201d4aa3}{Enum\+Interrupt\+Type.\+U\+N\+K\+N\+O\+W\+N} = 0, 
+\hyperlink{namespace_c_p_u___o_s___simulator_1_1_c_p_u_1_1_interrupts_a575a43213ed6d54083da8956c5a69b39a397c0d49b5c3c02178a32ff2516ed1df}{Enum\+Interrupt\+Type.\+P\+O\+L\+L\+E\+D} = 1, 
+\hyperlink{namespace_c_p_u___o_s___simulator_1_1_c_p_u_1_1_interrupts_a575a43213ed6d54083da8956c5a69b39a59206d2e5d7114b7fe9511d169d2945e}{Enum\+Interrupt\+Type.\+V\+E\+C\+T\+O\+R\+E\+D} = 2
+ \}
+\end{DoxyCompactItemize}
+
+
+\subsection{Enumeration Type Documentation}
+\hypertarget{namespace_c_p_u___o_s___simulator_1_1_c_p_u_1_1_interrupts_a97a0f4951d9cfd2f99d166b8fa840c02}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Interrupts@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Interrupts}!Enum\+Interrupt\+Source@{Enum\+Interrupt\+Source}}
+\index{Enum\+Interrupt\+Source@{Enum\+Interrupt\+Source}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Interrupts@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Interrupts}}
+\subsubsection[{Enum\+Interrupt\+Source}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+C\+P\+U.\+Interrupts.\+Enum\+Interrupt\+Source} \+: long\hspace{0.3cm}{\ttfamily [strong]}}\label{namespace_c_p_u___o_s___simulator_1_1_c_p_u_1_1_interrupts_a97a0f4951d9cfd2f99d166b8fa840c02}
+\begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{U\+N\+K\+N\+O\+W\+N@{U\+N\+K\+N\+O\+W\+N}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Interrupts@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Interrupts}}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Interrupts@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Interrupts}!U\+N\+K\+N\+O\+W\+N@{U\+N\+K\+N\+O\+W\+N}}\item[{\em 
+\hypertarget{namespace_c_p_u___o_s___simulator_1_1_c_p_u_1_1_interrupts_a97a0f4951d9cfd2f99d166b8fa840c02a696b031073e74bf2cb98e5ef201d4aa3}{}U\+N\+K\+N\+O\+W\+N\label{namespace_c_p_u___o_s___simulator_1_1_c_p_u_1_1_interrupts_a97a0f4951d9cfd2f99d166b8fa840c02a696b031073e74bf2cb98e5ef201d4aa3}
+}]\index{S\+W\+I\+\_\+\+I\+N\+S\+T\+R\+U\+C\+T\+I\+O\+N@{S\+W\+I\+\_\+\+I\+N\+S\+T\+R\+U\+C\+T\+I\+O\+N}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Interrupts@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Interrupts}}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Interrupts@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Interrupts}!S\+W\+I\+\_\+\+I\+N\+S\+T\+R\+U\+C\+T\+I\+O\+N@{S\+W\+I\+\_\+\+I\+N\+S\+T\+R\+U\+C\+T\+I\+O\+N}}\item[{\em 
+\hypertarget{namespace_c_p_u___o_s___simulator_1_1_c_p_u_1_1_interrupts_a97a0f4951d9cfd2f99d166b8fa840c02af35873b36fc1e059d59cd936284038e0}{}S\+W\+I\+\_\+\+I\+N\+S\+T\+R\+U\+C\+T\+I\+O\+N\label{namespace_c_p_u___o_s___simulator_1_1_c_p_u_1_1_interrupts_a97a0f4951d9cfd2f99d166b8fa840c02af35873b36fc1e059d59cd936284038e0}
+}]\index{I\+N\+P\+U\+T@{I\+N\+P\+U\+T}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Interrupts@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Interrupts}}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Interrupts@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Interrupts}!I\+N\+P\+U\+T@{I\+N\+P\+U\+T}}\item[{\em 
+\hypertarget{namespace_c_p_u___o_s___simulator_1_1_c_p_u_1_1_interrupts_a97a0f4951d9cfd2f99d166b8fa840c02aa84cc046d48610b05c21fd3670d0c829}{}I\+N\+P\+U\+T\label{namespace_c_p_u___o_s___simulator_1_1_c_p_u_1_1_interrupts_a97a0f4951d9cfd2f99d166b8fa840c02aa84cc046d48610b05c21fd3670d0c829}
+}]\index{I\+N\+T\+E\+R\+N\+A\+L\+\_\+\+C\+A\+L\+L@{I\+N\+T\+E\+R\+N\+A\+L\+\_\+\+C\+A\+L\+L}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Interrupts@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Interrupts}}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Interrupts@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Interrupts}!I\+N\+T\+E\+R\+N\+A\+L\+\_\+\+C\+A\+L\+L@{I\+N\+T\+E\+R\+N\+A\+L\+\_\+\+C\+A\+L\+L}}\item[{\em 
+\hypertarget{namespace_c_p_u___o_s___simulator_1_1_c_p_u_1_1_interrupts_a97a0f4951d9cfd2f99d166b8fa840c02add6a9e10b31dee9ea17789094ceb2daf}{}I\+N\+T\+E\+R\+N\+A\+L\+\_\+\+C\+A\+L\+L\label{namespace_c_p_u___o_s___simulator_1_1_c_p_u_1_1_interrupts_a97a0f4951d9cfd2f99d166b8fa840c02add6a9e10b31dee9ea17789094ceb2daf}
+}]\index{M\+A\+N\+U\+A\+L\+\_\+\+C\+A\+L\+L@{M\+A\+N\+U\+A\+L\+\_\+\+C\+A\+L\+L}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Interrupts@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Interrupts}}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Interrupts@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Interrupts}!M\+A\+N\+U\+A\+L\+\_\+\+C\+A\+L\+L@{M\+A\+N\+U\+A\+L\+\_\+\+C\+A\+L\+L}}\item[{\em 
+\hypertarget{namespace_c_p_u___o_s___simulator_1_1_c_p_u_1_1_interrupts_a97a0f4951d9cfd2f99d166b8fa840c02a9e40b16d89b9a7d60c8609cfac43540f}{}M\+A\+N\+U\+A\+L\+\_\+\+C\+A\+L\+L\label{namespace_c_p_u___o_s___simulator_1_1_c_p_u_1_1_interrupts_a97a0f4951d9cfd2f99d166b8fa840c02a9e40b16d89b9a7d60c8609cfac43540f}
+}]\end{description}
+\end{Desc}
+
+
+Definition at line 6 of file Enum\+Interrupt\+Source.\+cs.
+
+\hypertarget{namespace_c_p_u___o_s___simulator_1_1_c_p_u_1_1_interrupts_a575a43213ed6d54083da8956c5a69b39}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Interrupts@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Interrupts}!Enum\+Interrupt\+Type@{Enum\+Interrupt\+Type}}
+\index{Enum\+Interrupt\+Type@{Enum\+Interrupt\+Type}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Interrupts@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Interrupts}}
+\subsubsection[{Enum\+Interrupt\+Type}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+C\+P\+U.\+Interrupts.\+Enum\+Interrupt\+Type}\hspace{0.3cm}{\ttfamily [strong]}}\label{namespace_c_p_u___o_s___simulator_1_1_c_p_u_1_1_interrupts_a575a43213ed6d54083da8956c5a69b39}
+\begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{U\+N\+K\+N\+O\+W\+N@{U\+N\+K\+N\+O\+W\+N}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Interrupts@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Interrupts}}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Interrupts@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Interrupts}!U\+N\+K\+N\+O\+W\+N@{U\+N\+K\+N\+O\+W\+N}}\item[{\em 
+\hypertarget{namespace_c_p_u___o_s___simulator_1_1_c_p_u_1_1_interrupts_a575a43213ed6d54083da8956c5a69b39a696b031073e74bf2cb98e5ef201d4aa3}{}U\+N\+K\+N\+O\+W\+N\label{namespace_c_p_u___o_s___simulator_1_1_c_p_u_1_1_interrupts_a575a43213ed6d54083da8956c5a69b39a696b031073e74bf2cb98e5ef201d4aa3}
+}]\index{P\+O\+L\+L\+E\+D@{P\+O\+L\+L\+E\+D}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Interrupts@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Interrupts}}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Interrupts@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Interrupts}!P\+O\+L\+L\+E\+D@{P\+O\+L\+L\+E\+D}}\item[{\em 
+\hypertarget{namespace_c_p_u___o_s___simulator_1_1_c_p_u_1_1_interrupts_a575a43213ed6d54083da8956c5a69b39a397c0d49b5c3c02178a32ff2516ed1df}{}P\+O\+L\+L\+E\+D\label{namespace_c_p_u___o_s___simulator_1_1_c_p_u_1_1_interrupts_a575a43213ed6d54083da8956c5a69b39a397c0d49b5c3c02178a32ff2516ed1df}
+}]\index{V\+E\+C\+T\+O\+R\+E\+D@{V\+E\+C\+T\+O\+R\+E\+D}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Interrupts@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Interrupts}}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Interrupts@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Interrupts}!V\+E\+C\+T\+O\+R\+E\+D@{V\+E\+C\+T\+O\+R\+E\+D}}\item[{\em 
+\hypertarget{namespace_c_p_u___o_s___simulator_1_1_c_p_u_1_1_interrupts_a575a43213ed6d54083da8956c5a69b39a59206d2e5d7114b7fe9511d169d2945e}{}V\+E\+C\+T\+O\+R\+E\+D\label{namespace_c_p_u___o_s___simulator_1_1_c_p_u_1_1_interrupts_a575a43213ed6d54083da8956c5a69b39a59206d2e5d7114b7fe9511d169d2945e}
+}]\end{description}
+\end{Desc}
+
+
+Definition at line 3 of file Enum\+Interrupt\+Type.\+cs.
+

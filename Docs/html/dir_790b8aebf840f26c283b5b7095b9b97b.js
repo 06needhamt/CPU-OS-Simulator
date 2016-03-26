@@ -35,6 +35,18 @@ var dir_790b8aebf840f26c283b5b7095b9b97b =
     [ "InstructionsWindow.g.i.cs", "_instructions_window_8g_8i_8cs.html", [
       [ "InstructionsWindow", "class_c_p_u___o_s___simulator_1_1_instructions_window.html", "class_c_p_u___o_s___simulator_1_1_instructions_window" ]
     ] ],
+    [ "InterruptsWindow.g.cs", "_interrupts_window_8g_8cs.html", [
+      [ "InterruptsWindow", "class_c_p_u___o_s___simulator_1_1_interrupts_window.html", "class_c_p_u___o_s___simulator_1_1_interrupts_window" ]
+    ] ],
+    [ "InterruptsWindow.g.i.cs", "_interrupts_window_8g_8i_8cs.html", [
+      [ "InterruptsWindow", "class_c_p_u___o_s___simulator_1_1_interrupts_window.html", "class_c_p_u___o_s___simulator_1_1_interrupts_window" ]
+    ] ],
+    [ "LabelNameInputWindow.g.cs", "_label_name_input_window_8g_8cs.html", [
+      [ "LabelNameInputWindow", "class_c_p_u___o_s___simulator_1_1_label_name_input_window.html", "class_c_p_u___o_s___simulator_1_1_label_name_input_window" ]
+    ] ],
+    [ "LabelNameInputWindow.g.i.cs", "_label_name_input_window_8g_8i_8cs.html", [
+      [ "LabelNameInputWindow", "class_c_p_u___o_s___simulator_1_1_label_name_input_window.html", "class_c_p_u___o_s___simulator_1_1_label_name_input_window" ]
+    ] ],
     [ "LogWindow.g.cs", "_log_window_8g_8cs.html", [
       [ "LogWindow", "class_c_p_u___o_s___simulator_1_1_log_window.html", "class_c_p_u___o_s___simulator_1_1_log_window" ]
     ] ],
@@ -65,6 +77,12 @@ var dir_790b8aebf840f26c283b5b7095b9b97b =
     [ "PageTableWindow.g.i.cs", "_page_table_window_8g_8i_8cs.html", [
       [ "PageTableWindow", "class_c_p_u___o_s___simulator_1_1_page_table_window.html", "class_c_p_u___o_s___simulator_1_1_page_table_window" ]
     ] ],
+    [ "PhysicalMemoryWindow.g.cs", "_physical_memory_window_8g_8cs.html", [
+      [ "PhysicalMemoryWindow", "class_c_p_u___o_s___simulator_1_1_physical_memory_window.html", "class_c_p_u___o_s___simulator_1_1_physical_memory_window" ]
+    ] ],
+    [ "PhysicalMemoryWindow.g.i.cs", "_physical_memory_window_8g_8i_8cs.html", [
+      [ "PhysicalMemoryWindow", "class_c_p_u___o_s___simulator_1_1_physical_memory_window.html", "class_c_p_u___o_s___simulator_1_1_physical_memory_window" ]
+    ] ],
     [ "ProcessControlBlockWindow.g.cs", "_process_control_block_window_8g_8cs.html", [
       [ "ProcessControlBlockWindow", "class_c_p_u___o_s___simulator_1_1_process_control_block_window.html", "class_c_p_u___o_s___simulator_1_1_process_control_block_window" ]
     ] ],
@@ -76,6 +94,12 @@ var dir_790b8aebf840f26c283b5b7095b9b97b =
     ] ],
     [ "ProcessListWindow.g.i.cs", "_process_list_window_8g_8i_8cs.html", [
       [ "ProcessListWindow", "class_c_p_u___o_s___simulator_1_1_process_list_window.html", "class_c_p_u___o_s___simulator_1_1_process_list_window" ]
+    ] ],
+    [ "ResourceWindow.g.cs", "_resource_window_8g_8cs.html", [
+      [ "ResourceWindow", "class_c_p_u___o_s___simulator_1_1_resource_window.html", "class_c_p_u___o_s___simulator_1_1_resource_window" ]
+    ] ],
+    [ "ResourceWindow.g.i.cs", "_resource_window_8g_8i_8cs.html", [
+      [ "ResourceWindow", "class_c_p_u___o_s___simulator_1_1_resource_window.html", "class_c_p_u___o_s___simulator_1_1_resource_window" ]
     ] ],
     [ "TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs", "_c_p_u-_o_s_01_simulator_2obj_2_debug_2_temporary_generated_file__036_c0_b5_b-1481-4323-8_d20-8_f5_a_d_c_b23_d92_8cs.html", null ],
     [ "TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1.cs", "_c_p_u-_o_s_01_simulator_2obj_2_debug_2_temporary_generated_file__5937a670-0e60-4077-877b-f7221da3dda1_8cs.html", null ],

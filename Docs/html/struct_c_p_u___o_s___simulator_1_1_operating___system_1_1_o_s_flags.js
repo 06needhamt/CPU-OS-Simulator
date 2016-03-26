@@ -4,6 +4,7 @@ var struct_c_p_u___o_s___simulator_1_1_operating___system_1_1_o_s_flags =
     [ "CPUClockSpeed", "struct_c_p_u___o_s___simulator_1_1_operating___system_1_1_o_s_flags.html#a51541aa57e2e3114e111faff27a5d4cd", null ],
     [ "faultKill", "struct_c_p_u___o_s___simulator_1_1_operating___system_1_1_o_s_flags.html#ab6e0543edd30b393255293bccf19c9d1", null ],
     [ "forceKill", "struct_c_p_u___o_s___simulator_1_1_operating___system_1_1_o_s_flags.html#a36b9fca448bc8bc9d3fa51063b9efce5", null ],
+    [ "interruptHandles", "struct_c_p_u___o_s___simulator_1_1_operating___system_1_1_o_s_flags.html#aaa66a35403429c68aacd46a14825f8c5", null ],
     [ "osState", "struct_c_p_u___o_s___simulator_1_1_operating___system_1_1_o_s_flags.html#a7337260d7d298a9a195322b2bddb2102", null ],
     [ "priorityPolicy", "struct_c_p_u___o_s___simulator_1_1_operating___system_1_1_o_s_flags.html#a66a5d4d63f6a7726d65a7f7479df112a", null ],
     [ "roundRobinType", "struct_c_p_u___o_s___simulator_1_1_operating___system_1_1_o_s_flags.html#a13e9aec1eaa0f7323ee68b1b006b5601", null ],

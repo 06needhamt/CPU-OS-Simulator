@@ -16,6 +16,12 @@ var dir_4daeced4ad15aeb075514baefd311898 =
     [ "InstructionsWindow.xaml.cs", "_instructions_window_8xaml_8cs.html", [
       [ "InstructionsWindow", "class_c_p_u___o_s___simulator_1_1_instructions_window.html", "class_c_p_u___o_s___simulator_1_1_instructions_window" ]
     ] ],
+    [ "InterruptsWindow.xaml.cs", "_interrupts_window_8xaml_8cs.html", [
+      [ "InterruptsWindow", "class_c_p_u___o_s___simulator_1_1_interrupts_window.html", "class_c_p_u___o_s___simulator_1_1_interrupts_window" ]
+    ] ],
+    [ "LabelNameInputWindow.xaml.cs", "_label_name_input_window_8xaml_8cs.html", [
+      [ "LabelNameInputWindow", "class_c_p_u___o_s___simulator_1_1_label_name_input_window.html", "class_c_p_u___o_s___simulator_1_1_label_name_input_window" ]
+    ] ],
     [ "Logger.cs", "_logger_8cs.html", [
       [ "Logger", "class_c_p_u___o_s___simulator_1_1_logger.html", "class_c_p_u___o_s___simulator_1_1_logger" ]
     ] ],
@@ -34,11 +40,17 @@ var dir_4daeced4ad15aeb075514baefd311898 =
     [ "PageTableWindow.xaml.cs", "_page_table_window_8xaml_8cs.html", [
       [ "PageTableWindow", "class_c_p_u___o_s___simulator_1_1_page_table_window.html", "class_c_p_u___o_s___simulator_1_1_page_table_window" ]
     ] ],
+    [ "PhysicalMemoryWindow.xaml.cs", "_physical_memory_window_8xaml_8cs.html", [
+      [ "PhysicalMemoryWindow", "class_c_p_u___o_s___simulator_1_1_physical_memory_window.html", "class_c_p_u___o_s___simulator_1_1_physical_memory_window" ]
+    ] ],
     [ "ProcessControlBlockWindow.xaml.cs", "_process_control_block_window_8xaml_8cs.html", [
       [ "ProcessControlBlockWindow", "class_c_p_u___o_s___simulator_1_1_process_control_block_window.html", "class_c_p_u___o_s___simulator_1_1_process_control_block_window" ]
     ] ],
     [ "ProcessListWindow.xaml.cs", "_process_list_window_8xaml_8cs.html", [
       [ "ProcessListWindow", "class_c_p_u___o_s___simulator_1_1_process_list_window.html", "class_c_p_u___o_s___simulator_1_1_process_list_window" ]
+    ] ],
+    [ "ResourceWindow.xaml.cs", "_resource_window_8xaml_8cs.html", [
+      [ "ResourceWindow", "class_c_p_u___o_s___simulator_1_1_resource_window.html", "class_c_p_u___o_s___simulator_1_1_resource_window" ]
     ] ],
     [ "UtilisationWindow.xaml.cs", "_utilisation_window_8xaml_8cs.html", [
       [ "UtilisationWindow", "class_c_p_u___o_s___simulator_1_1_utilisation_window.html", "class_c_p_u___o_s___simulator_1_1_utilisation_window" ]

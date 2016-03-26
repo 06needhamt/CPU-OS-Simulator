@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['read',['Read',['../_annotations_8cs.html#ac934271c5bff522bfe4934d1e7be46a8a7a1a5f3e79fdc91edf2f5ead9d66abb4',1,'Read():&#160;Annotations.cs'],['../namespace_c_p_u___o_s___simulator_1_1_compiler_1_1_frontend_1_1_tokens.html#a86b87efebad08200cebe3075b5812b13a3466fab4975481651940ed328aa990e4',1,'CPU_OS_Simulator.Compiler.Frontend.Tokens.READ()']]],
+  ['read',['READ',['../namespace_c_p_u___o_s___simulator_1_1_compiler_1_1_frontend_1_1_tokens.html#a86b87efebad08200cebe3075b5812b13a3466fab4975481651940ed328aa990e4',1,'CPU_OS_Simulator.Compiler.Frontend.Tokens.READ()'],['../_annotations_8cs.html#ac934271c5bff522bfe4934d1e7be46a8a7a1a5f3e79fdc91edf2f5ead9d66abb4',1,'Read():&#160;Annotations.cs']]],
   ['ready',['READY',['../namespace_c_p_u___o_s___simulator_1_1_operating___system.html#a836ee2204e78fcb3a7dd6c3c942b1a24a2baa69eafc7204f3bd8648eba580c489',1,'CPU_OS_Simulator.Operating_System.READY()'],['../namespace_c_p_u___o_s___simulator_1_1_operating___system_1_1_threading.html#af7d2481e1618940da9be7dcc5aff9472a2baa69eafc7204f3bd8648eba580c489',1,'CPU_OS_Simulator.Operating_System.Threading.READY()']]],
   ['register',['REGISTER',['../namespace_c_p_u___o_s___simulator_1_1_compiler_1_1_backend.html#a39bd0e4034345155514db8f136c9c639ad17455cfcb88a53f1603fb817e09c2d6',1,'CPU_OS_Simulator::Compiler::Backend']]],
   ['resource',['RESOURCE',['../namespace_c_p_u___o_s___simulator_1_1_compiler_1_1_frontend_1_1_tokens.html#a86b87efebad08200cebe3075b5812b13a4f49da9035f276c0947466eb7c42249a',1,'CPU_OS_Simulator::Compiler::Frontend::Tokens']]],

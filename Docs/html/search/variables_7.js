@@ -38,6 +38,7 @@ var searchData=
   ['grp_5finitialisedata',['grp_InitialiseData',['../class_c_p_u___o_s___simulator_1_1_memory_window.html#a6cfa52c953fe5704090e7e9f4ac2c9d1',1,'CPU_OS_Simulator::MemoryWindow']]],
   ['grp_5finput',['grp_Input',['../class_c_p_u___o_s___simulator_1_1_compiler_tester_1_1_main_window.html#a057e72ce888214ee30da5048c8bdae77',1,'CPU_OS_Simulator::CompilerTester::MainWindow']]],
   ['grp_5finstructionsbox',['grp_InstructionsBox',['../class_c_p_u___o_s___simulator_1_1_main_window.html#aebc1256b654d001b7c4ce2bc08522667',1,'CPU_OS_Simulator::MainWindow']]],
+  ['grp_5finterrupts',['grp_Interrupts',['../class_c_p_u___o_s___simulator_1_1_interrupts_window.html#abc6633e210bdae6fbcb0fb057c138c16',1,'CPU_OS_Simulator::InterruptsWindow']]],
   ['grp_5fmemory',['grp_Memory',['../class_c_p_u___o_s___simulator_1_1_utilisation_window.html#a8eb460220e13b601c32417a50f108590',1,'CPU_OS_Simulator::UtilisationWindow']]],
   ['grp_5fnewprogram',['grp_NewProgram',['../class_c_p_u___o_s___simulator_1_1_main_window.html#a1e75e7af485b229372a6aafb84c2ffe0',1,'CPU_OS_Simulator::MainWindow']]],
   ['grp_5foutput',['grp_Output',['../class_c_p_u___o_s___simulator_1_1_compiler_tester_1_1_main_window.html#a94d79540c93d5a8682b5d1a64c2efc48',1,'CPU_OS_Simulator::CompilerTester::MainWindow']]],

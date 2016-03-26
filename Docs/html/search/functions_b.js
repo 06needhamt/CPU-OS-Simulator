@@ -1,32 +1,4 @@
 var searchData=
 [
-  ['ldb',['LDB',['../class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_instruction.html#ae09705d74d57f968b93ba1739832488f',1,'CPU_OS_Simulator::CPU::Instruction']]],
-  ['ldbi',['LDBI',['../class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_instruction.html#a41d94be59f02b4ff381bed811f0c4f2e',1,'CPU_OS_Simulator::CPU::Instruction']]],
-  ['lddw',['LDDW',['../class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_instruction.html#a3c22b47d66b4c92120eba7b2d77eb92f',1,'CPU_OS_Simulator::CPU::Instruction']]],
-  ['lddwi',['LDDWI',['../class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_instruction.html#a2f70d186e9e857881d9dfaf7c4e2cfa8',1,'CPU_OS_Simulator::CPU::Instruction']]],
-  ['ldw',['LDW',['../class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_instruction.html#adc1b564050331c46094af907abb34acb',1,'CPU_OS_Simulator::CPU::Instruction']]],
-  ['ldwi',['LDWI',['../class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_instruction.html#a2a8c6cf1d6f14e9d219fabc5957cd586',1,'CPU_OS_Simulator::CPU::Instruction']]],
-  ['lexer',['Lexer',['../class_c_p_u___o_s___simulator_1_1_compiler_1_1_frontend_1_1_lexer.html#ad1b8ba022e0f486f963bf7f2104ef03d',1,'CPU_OS_Simulator::Compiler::Frontend::Lexer']]],
-  ['lns',['LNS',['../class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_instruction.html#abaa66d00b38349cd8033c8c1428a9ca3',1,'CPU_OS_Simulator::CPU::Instruction']]],
-  ['loadbyte',['LoadByte',['../class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_instruction.html#a494843084219f295941d08e8b0355050',1,'CPU_OS_Simulator::CPU::Instruction']]],
-  ['loadinmemory',['LoadinMemory',['../class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_compiled_program.html#ac046a32b0bd513aa4c7337ac987500c4',1,'CPU_OS_Simulator::CPU::CompiledProgram']]],
-  ['loadosstate',['LoadOSState',['../class_c_p_u___o_s___simulator_1_1_operating_system_main_window.html#a82cf10b3c69de54a4eae248f683447c4',1,'CPU_OS_Simulator::OperatingSystemMainWindow']]],
-  ['loadpcb',['LoadPCB',['../class_c_p_u___o_s___simulator_1_1_operating___system_1_1_scheduler.html#a3624587e4b65412422951fa59e64e885',1,'CPU_OS_Simulator::Operating_System::Scheduler']]],
-  ['loadprogram',['LoadProgram',['../class_c_p_u___o_s___simulator_1_1_main_window.html#ad788d74c9d6582f3302912cbbba410b0',1,'CPU_OS_Simulator::MainWindow']]],
-  ['localizationrequiredattribute',['LocalizationRequiredAttribute',['../class_localization_required_attribute.html#aa2b3c3c66137921e96fd08310066c914',1,'LocalizationRequiredAttribute.LocalizationRequiredAttribute()'],['../class_localization_required_attribute.html#a7d6235d2f8883d6f6311ca2a95156a9c',1,'LocalizationRequiredAttribute.LocalizationRequiredAttribute(bool required)']]],
-  ['lock',['Lock',['../class_c_p_u___o_s___simulator_1_1_operating___system_1_1_threading_1_1_spin_lock.html#ad328ae47673faa145eaa956306f88543',1,'CPU_OS_Simulator::Operating_System::Threading::SpinLock']]],
-  ['logger',['Logger',['../class_c_p_u___o_s___simulator_1_1_logger.html#a23f931daf4bb74e1f38548a1ad1922f7',1,'CPU_OS_Simulator::Logger']]],
-  ['logwindow',['LogWindow',['../class_c_p_u___o_s___simulator_1_1_log_window.html#a364c2f1eeb91fbf4b00b6d252b145304',1,'CPU_OS_Simulator.LogWindow.LogWindow()'],['../class_c_p_u___o_s___simulator_1_1_log_window.html#ae6e4e2c099f86efa4de3272eb732756a',1,'CPU_OS_Simulator.LogWindow.LogWindow(OperatingSystemMainWindow parent)']]],
-  ['loop',['LOOP',['../class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_instruction.html#a5007bf4af18c98a8b2080c506c3d0b83',1,'CPU_OS_Simulator::CPU::Instruction']]],
-  ['lotteryticket',['LotteryTicket',['../class_c_p_u___o_s___simulator_1_1_operating___system_1_1_lottery_ticket.html#ae0d23e5357d910c2ee2cc8bd715face1',1,'CPU_OS_Simulator.Operating_System.LotteryTicket.LotteryTicket()'],['../class_c_p_u___o_s___simulator_1_1_operating___system_1_1_lottery_ticket.html#a119f33191c10a46412927cf4e786f992',1,'CPU_OS_Simulator.Operating_System.LotteryTicket.LotteryTicket(int id, SimulatorProcess owner, int currencyValue)']]],
-  ['lst_5finstructionslist_5fselectionchanged',['lst_InstructionsList_SelectionChanged',['../class_c_p_u___o_s___simulator_1_1_main_window.html#a5013d1984fc170246a5dc0d26c6fc493',1,'CPU_OS_Simulator::MainWindow']]],
-  ['lst_5fopcodelistarithmetic_5fselectionchanged',['lst_OpcodeListArithmetic_SelectionChanged',['../class_c_p_u___o_s___simulator_1_1_instructions_window.html#ab4001352180ad08e3b335bf80c7dd9b8',1,'CPU_OS_Simulator::InstructionsWindow']]],
-  ['lst_5fopcodelistcomparison_5fselectionchanged',['lst_OpcodeListComparison_SelectionChanged',['../class_c_p_u___o_s___simulator_1_1_instructions_window.html#a2533f28aaeacd5ef8b931670e9716e1f',1,'CPU_OS_Simulator::InstructionsWindow']]],
-  ['lst_5fopcodelistcontroltransfer_5fselectionchanged',['lst_OpcodeListControlTransfer_SelectionChanged',['../class_c_p_u___o_s___simulator_1_1_instructions_window.html#a1173e7310199c8312dabdf6905b53b73',1,'CPU_OS_Simulator::InstructionsWindow']]],
-  ['lst_5fopcodelistdatatransfer_5fselectionchanged',['lst_OpcodeListDataTransfer_SelectionChanged',['../class_c_p_u___o_s___simulator_1_1_instructions_window.html#a380aec4afa9900f7dd9ef964a5b86503',1,'CPU_OS_Simulator::InstructionsWindow']]],
-  ['lst_5fopcodelistio_5fselectionchanged',['lst_OpcodeListIO_SelectionChanged',['../class_c_p_u___o_s___simulator_1_1_instructions_window.html#a48ff23d2cce66f2bb2c5219fabfb7f9b',1,'CPU_OS_Simulator::InstructionsWindow']]],
-  ['lst_5fopcodelistlogical_5fselectionchanged',['lst_OpcodeListLogical_SelectionChanged',['../class_c_p_u___o_s___simulator_1_1_instructions_window.html#a245baef3e788a01e6cf752f2c48f1843',1,'CPU_OS_Simulator::InstructionsWindow']]],
-  ['lst_5fopcodelistmiscellaneous_5fselectionchanged',['lst_OpcodeListMiscellaneous_SelectionChanged',['../class_c_p_u___o_s___simulator_1_1_instructions_window.html#aec022b9a8b3fb4d538f674336275dd81',1,'CPU_OS_Simulator::InstructionsWindow']]],
-  ['lst_5fpages_5fselectionchanged',['lst_Pages_SelectionChanged',['../class_c_p_u___o_s___simulator_1_1_page_table_window.html#ab6e40cd99ff3eedb1719774c9a123650',1,'CPU_OS_Simulator::PageTableWindow']]],
-  ['lst_5fprogramlist_5fselectionchanged',['lst_ProgramList_SelectionChanged',['../class_c_p_u___o_s___simulator_1_1_main_window.html#ab563b461cf3d62bd3c88eeb7921bfa75',1,'CPU_OS_Simulator::MainWindow']]]
+  ['keyword',['Keyword',['../class_c_p_u___o_s___simulator_1_1_compiler_1_1_frontend_1_1_tokens_1_1_keyword.html#ad01040755e095dc4f415ec2961cee3aa',1,'CPU_OS_Simulator::Compiler::Frontend::Tokens::Keyword']]]
 ];

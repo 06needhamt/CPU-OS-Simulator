@@ -7,6 +7,8 @@ var searchData=
   ['enuminstructionmode',['EnumInstructionMode',['../namespace_c_p_u___o_s___simulator.html#adc17a5a5e004084f05dc8e4d3f70e31f',1,'CPU_OS_Simulator']]],
   ['enuminstructionsegmentsizes',['EnumInstructionSegmentSizes',['../namespace_c_p_u___o_s___simulator_1_1_compiler_1_1_backend.html#a366a7efa6fcfb05aa404e76da1cf3c5e',1,'CPU_OS_Simulator::Compiler::Backend']]],
   ['enuminstructionsize',['EnumInstructionSize',['../namespace_c_p_u___o_s___simulator_1_1_c_p_u.html#af322082b9b46482202165fb547c052a7',1,'CPU_OS_Simulator::CPU']]],
+  ['enuminterruptsource',['EnumInterruptSource',['../namespace_c_p_u___o_s___simulator_1_1_c_p_u_1_1_interrupts.html#a97a0f4951d9cfd2f99d166b8fa840c02',1,'CPU_OS_Simulator::CPU::Interrupts']]],
+  ['enuminterrupttype',['EnumInterruptType',['../namespace_c_p_u___o_s___simulator_1_1_c_p_u_1_1_interrupts.html#a575a43213ed6d54083da8956c5a69b39',1,'CPU_OS_Simulator::CPU::Interrupts']]],
   ['enumkeywordtype',['EnumKeywordType',['../namespace_c_p_u___o_s___simulator_1_1_compiler_1_1_frontend_1_1_tokens.html#a86b87efebad08200cebe3075b5812b13',1,'CPU_OS_Simulator::Compiler::Frontend::Tokens']]],
   ['enumloglevel',['EnumLogLevel',['../namespace_c_p_u___o_s___simulator.html#ad76442226f076d91d8f4523d7ee3db0f',1,'CPU_OS_Simulator']]],
   ['enumopcodes',['EnumOpcodes',['../namespace_c_p_u___o_s___simulator_1_1_c_p_u.html#ac29c87bff87ad404c953b2581024043e',1,'CPU_OS_Simulator::CPU']]],

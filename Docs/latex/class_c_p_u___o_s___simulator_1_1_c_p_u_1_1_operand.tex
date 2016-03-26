@@ -14,6 +14,8 @@ This class represents an operand which can be passed to an instruction
 \begin{DoxyCompactList}\small\item\em Constructor for an operand which is an intermediate value \end{DoxyCompactList}\item 
 \hyperlink{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_operand_ab1da49c3f7978edcfa8c9b95e5804f08}{Operand} (\hyperlink{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_register}{Register} reg, \hyperlink{namespace_c_p_u___o_s___simulator_1_1_c_p_u_ad49cfe442b74115a326c03b7ae848f76}{Enum\+Operand\+Type} \hyperlink{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_operand_abc8f504a22e9a5c49d91b12f61cc5119}{type})
 \begin{DoxyCompactList}\small\item\em Constructor for an operand which is a register \end{DoxyCompactList}\item 
+\hyperlink{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_operand_a3db75b86d1817bd0e57fc4b7416d03ae}{Operand} (string \hyperlink{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_operand_a85354254d1d98325942048733f33d1ac}{label\+Name}, \hyperlink{namespace_c_p_u___o_s___simulator_1_1_c_p_u_ad49cfe442b74115a326c03b7ae848f76}{Enum\+Operand\+Type} \hyperlink{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_operand_abc8f504a22e9a5c49d91b12f61cc5119}{type})
+\item 
 override bool \hyperlink{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_operand_ac169b353cb0758a106813a77caa5fc18}{Equals} (object obj)
 \begin{DoxyCompactList}\small\item\em Determines whether the specified object is equal to the current object. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Properties}
@@ -26,7 +28,9 @@ int \hyperlink{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_operand_ab109292eba20
 bool \hyperlink{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_operand_a662aacb6eb1aa9cf818181aea695e0c9}{Is\+Register}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
 \begin{DoxyCompactList}\small\item\em Property for whether the operand is a register or not \end{DoxyCompactList}\item 
 \hyperlink{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_register}{Register} \hyperlink{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_operand_a8f08360f0e27922fc0377f5d58a9e67f}{Register}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
-\begin{DoxyCompactList}\small\item\em Property for the register that this operand represents or null if the operand is not a register \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Property for the register that this operand represents or null if the operand is not a register \end{DoxyCompactList}\item 
+string \hyperlink{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_operand_a8605cf5bdf7c0be6b662eb788a4b6393}{Label\+Name}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\end{DoxyCompactItemize}
 \subsection*{Private Attributes}
 \begin{DoxyCompactItemize}
 \item 
@@ -35,6 +39,8 @@ int \hyperlink{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_operand_a59d05c39a450
 \hyperlink{namespace_c_p_u___o_s___simulator_1_1_c_p_u_ad49cfe442b74115a326c03b7ae848f76}{Enum\+Operand\+Type} \hyperlink{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_operand_abc8f504a22e9a5c49d91b12f61cc5119}{type}
 \item 
 bool \hyperlink{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_operand_a16cc03d0d4c600b864d9c189529a473d}{is\+Register}
+\item 
+string \hyperlink{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_operand_a85354254d1d98325942048733f33d1ac}{label\+Name}
 \item 
 \hyperlink{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_register}{Register} \hyperlink{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_operand_a55d446765a50844fcbbc56b757b1b679}{register}
 \end{DoxyCompactItemize}
@@ -63,7 +69,7 @@ Default constructor for an operand used when deserialising an operand N\+O\+T\+E
 
 
 
-Definition at line 27 of file Operand.\+cs.
+Definition at line 28 of file Operand.\+cs.
 
 \hypertarget{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_operand_aaa8877bd8c0018697f49c9f764fbe750}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Operand@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Operand}!Operand@{Operand}}
 \index{Operand@{Operand}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Operand@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Operand}}
@@ -86,7 +92,7 @@ Constructor for an operand which is an intermediate value
 \end{DoxyParams}
 
 
-Definition at line 36 of file Operand.\+cs.
+Definition at line 37 of file Operand.\+cs.
 
 \hypertarget{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_operand_ab1da49c3f7978edcfa8c9b95e5804f08}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Operand@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Operand}!Operand@{Operand}}
 \index{Operand@{Operand}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Operand@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Operand}}
@@ -109,7 +115,19 @@ Constructor for an operand which is a register
 \end{DoxyParams}
 
 
-Definition at line 49 of file Operand.\+cs.
+Definition at line 50 of file Operand.\+cs.
+
+\hypertarget{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_operand_a3db75b86d1817bd0e57fc4b7416d03ae}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Operand@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Operand}!Operand@{Operand}}
+\index{Operand@{Operand}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Operand@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Operand}}
+\subsubsection[{Operand(string label\+Name, Enum\+Operand\+Type type)}]{\setlength{\rightskip}{0pt plus 5cm}C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+C\+P\+U.\+Operand.\+Operand (
+\begin{DoxyParamCaption}
+\item[{string}]{label\+Name, }
+\item[{{\bf Enum\+Operand\+Type}}]{type}
+\end{DoxyParamCaption}
+)}\label{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_operand_a3db75b86d1817bd0e57fc4b7416d03ae}
+
+
+Definition at line 58 of file Operand.\+cs.
 
 
 
@@ -135,7 +153,7 @@ true if the specified object is equal to the current object; otherwise, false.
 \end{DoxyParams}
 
 
-Definition at line 172 of file Operand.\+cs.
+Definition at line 187 of file Operand.\+cs.
 
 
 
@@ -147,12 +165,19 @@ Definition at line 172 of file Operand.\+cs.
 
 Definition at line 15 of file Operand.\+cs.
 
+\hypertarget{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_operand_a85354254d1d98325942048733f33d1ac}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Operand@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Operand}!label\+Name@{label\+Name}}
+\index{label\+Name@{label\+Name}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Operand@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Operand}}
+\subsubsection[{label\+Name}]{\setlength{\rightskip}{0pt plus 5cm}string C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+C\+P\+U.\+Operand.\+label\+Name\hspace{0.3cm}{\ttfamily [private]}}\label{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_operand_a85354254d1d98325942048733f33d1ac}
+
+
+Definition at line 16 of file Operand.\+cs.
+
 \hypertarget{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_operand_a55d446765a50844fcbbc56b757b1b679}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Operand@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Operand}!register@{register}}
 \index{register@{register}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Operand@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Operand}}
 \subsubsection[{register}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Register} C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+C\+P\+U.\+Operand.\+register\hspace{0.3cm}{\ttfamily [private]}}\label{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_operand_a55d446765a50844fcbbc56b757b1b679}
 
 
-Definition at line 17 of file Operand.\+cs.
+Definition at line 18 of file Operand.\+cs.
 
 \hypertarget{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_operand_abc8f504a22e9a5c49d91b12f61cc5119}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Operand@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Operand}!type@{type}}
 \index{type@{type}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Operand@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Operand}}
@@ -180,7 +205,14 @@ Property for whether the operand is a register or not
 
 
 
-Definition at line 94 of file Operand.\+cs.
+Definition at line 104 of file Operand.\+cs.
+
+\hypertarget{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_operand_a8605cf5bdf7c0be6b662eb788a4b6393}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Operand@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Operand}!Label\+Name@{Label\+Name}}
+\index{Label\+Name@{Label\+Name}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Operand@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Operand}}
+\subsubsection[{Label\+Name}]{\setlength{\rightskip}{0pt plus 5cm}string C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+C\+P\+U.\+Operand.\+Label\+Name\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}\label{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_operand_a8605cf5bdf7c0be6b662eb788a4b6393}
+
+
+Definition at line 133 of file Operand.\+cs.
 
 \hypertarget{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_operand_a8f08360f0e27922fc0377f5d58a9e67f}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Operand@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Operand}!Register@{Register}}
 \index{Register@{Register}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Operand@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Operand}}
@@ -191,7 +223,7 @@ Property for the register that this operand represents or null if the operand is
 
 
 
-Definition at line 110 of file Operand.\+cs.
+Definition at line 120 of file Operand.\+cs.
 
 \hypertarget{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_operand_a0b0deae57b760df3a083dc54535b0891}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Operand@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Operand}!Type@{Type}}
 \index{Type@{Type}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Operand@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Operand}}
@@ -202,7 +234,7 @@ Property For the type of the operand
 
 
 
-Definition at line 79 of file Operand.\+cs.
+Definition at line 89 of file Operand.\+cs.
 
 \hypertarget{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_operand_ab109292eba2094db4d7f21cbdbd5bc9e}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Operand@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Operand}!Value@{Value}}
 \index{Value@{Value}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Operand@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Operand}}
@@ -213,7 +245,7 @@ Property for the value of the operand
 
 
 
-Definition at line 64 of file Operand.\+cs.
+Definition at line 74 of file Operand.\+cs.
 
 
 

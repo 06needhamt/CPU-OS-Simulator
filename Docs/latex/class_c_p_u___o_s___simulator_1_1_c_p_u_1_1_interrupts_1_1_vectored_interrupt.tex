@@ -1,0 +1,387 @@
+\hypertarget{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_interrupts_1_1_vectored_interrupt}{}\section{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+C\+P\+U.\+Interrupts.\+Vectored\+Interrupt Class Reference}
+\label{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_interrupts_1_1_vectored_interrupt}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+C\+P\+U.\+Interrupts.\+Vectored\+Interrupt@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+C\+P\+U.\+Interrupts.\+Vectored\+Interrupt}}
+Inheritance diagram for C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+C\+P\+U.\+Interrupts.\+Vectored\+Interrupt\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_interrupts_1_1_vectored_interrupt}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_interrupts_1_1_vectored_interrupt_ab0a936425c3af22d7626b5c5638d3f71}{Vectored\+Interrupt} ()
+\item 
+\hyperlink{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_interrupts_1_1_vectored_interrupt_a45bf2e98f7731480f62b89397c8cef8e}{Vectored\+Interrupt} (int \hyperlink{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_interrupts_1_1_vectored_interrupt_ad59ab75bdd99d70caa63d5ac36b532e8}{logical\+Address})
+\item 
+\hyperlink{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_interrupts_1_1_vectored_interrupt_a14d8bc2e4880fdc90ee401bd8f968068}{Vectored\+Interrupt} (int \hyperlink{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_interrupts_1_1_vectored_interrupt_ad59ab75bdd99d70caa63d5ac36b532e8}{logical\+Address}, string \hyperlink{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_interrupts_1_1_vectored_interrupt_a8f7cd5a533089f96fdc12a97c083a7fe}{routine\+Name})
+\item 
+\hyperlink{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_interrupts_1_1_vectored_interrupt_aaaacef7cdb797f358730aba5225cf0c1}{Vectored\+Interrupt} (\hyperlink{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_interrupts_1_1_interrupt_handler}{Interrupt\+Handler} \hyperlink{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_interrupts_1_1_vectored_interrupt_a13e9b0f3b6f66f67fa510bd9930b3765}{handler})
+\item 
+override void \hyperlink{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_interrupts_1_1_vectored_interrupt_ab787d3cfa491a68a8baa2b121b8fff92}{Fire} ()
+\begin{DoxyCompactList}\small\item\em This function fires the interrupt \end{DoxyCompactList}\item 
+override void \hyperlink{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_interrupts_1_1_vectored_interrupt_a9a07f2283b9ae7f644dbdccb760f82ce}{Return} (int return\+Address)
+\begin{DoxyCompactList}\small\item\em This function returns from the interrupt routine \end{DoxyCompactList}\item 
+override int \hyperlink{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_interrupts_1_1_vectored_interrupt_a79136e3425270dd0862e4556e42ebc38}{Execute} (\hyperlink{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_interrupts_1_1_interrupt_handler}{Interrupt\+Handler} handle)
+\begin{DoxyCompactList}\small\item\em This function executes an interrupt \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+override int \hyperlink{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_interrupts_1_1_vectored_interrupt_aabc866e723b3484d03f7a5eac790a3ce}{Logical\+Address}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Property for the logical address of the interrupt routine \end{DoxyCompactList}\item 
+override int \hyperlink{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_interrupts_1_1_vectored_interrupt_ae6afd6b3fba35d485a7504737ff90d23}{I\+D}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Property For the interrupt I\+D \end{DoxyCompactList}\item 
+override string \hyperlink{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_interrupts_1_1_vectored_interrupt_adf0b02aced85f32cec631b946a6d024d}{Routine\+Name}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Property for the name of the routine \end{DoxyCompactList}\item 
+override \hyperlink{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_interrupts_1_1_interrupt_handler}{Interrupt\+Handler} \hyperlink{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_interrupts_1_1_vectored_interrupt_a0eb71f1e9f97cd4730fc8382e4ff8843}{Handler}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Property for the interrupt handler \end{DoxyCompactList}\item 
+override \hyperlink{namespace_c_p_u___o_s___simulator_1_1_c_p_u_1_1_interrupts_a575a43213ed6d54083da8956c5a69b39}{Enum\+Interrupt\+Type} \hyperlink{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_interrupts_1_1_vectored_interrupt_a736eef5408e4def861c191fb27c04765}{Interrupt\+Type}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Property for the interrupt type \end{DoxyCompactList}\item 
+bool \hyperlink{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_interrupts_1_1_vectored_interrupt_a8bcab1441436677d0e85f1e393368417}{Handled}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+dynamic \hyperlink{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_interrupts_1_1_vectored_interrupt_a1ae10e2559f1f2bbbbb65e3cf3af6079}{Get\+Main\+Window\+Instance} ()
+\begin{DoxyCompactList}\small\item\em This function gets the main window instance from the window bridge \end{DoxyCompactList}\item 
+\hyperlink{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_simulator_program}{Simulator\+Program} \hyperlink{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_interrupts_1_1_vectored_interrupt_a4efaab313e8227ff3dd40db5734299b5}{Get\+Current\+Program} ()
+\begin{DoxyCompactList}\small\item\em This Function gets the program to be executed by the \hyperlink{namespace_c_p_u___o_s___simulator_1_1_c_p_u}{C\+P\+U} from the main window \end{DoxyCompactList}\item 
+\hyperlink{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_execution_unit}{Execution\+Unit} \hyperlink{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_interrupts_1_1_vectored_interrupt_a9ab8f385691cc675f4600efce35ad762}{Get\+Execution\+Unit} ()
+\item 
+dynamic \hyperlink{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_interrupts_1_1_vectored_interrupt_adfc13310ff7194132c7d4d45faaec5d9}{Get\+O\+S\+Main\+Window\+Instance} ()
+\begin{DoxyCompactList}\small\item\em This function gets the operating system main window instance from the window bridge \end{DoxyCompactList}\item 
+dynamic \hyperlink{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_interrupts_1_1_vectored_interrupt_acfa023cdf9c19c9b4725d9f2dee76caa}{Get\+Current\+Process\+Execution\+Unit} ()
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_interrupts_1_1_vectored_interrupt_ad59ab75bdd99d70caa63d5ac36b532e8}{logical\+Address}
+\item 
+string \hyperlink{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_interrupts_1_1_vectored_interrupt_a8f7cd5a533089f96fdc12a97c083a7fe}{routine\+Name}
+\item 
+\hyperlink{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_interrupts_1_1_interrupt_handler}{Interrupt\+Handler} \hyperlink{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_interrupts_1_1_vectored_interrupt_a13e9b0f3b6f66f67fa510bd9930b3765}{handler}
+\item 
+int \hyperlink{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_interrupts_1_1_vectored_interrupt_a799d7985bc1cc6626ee8a39a41897630}{id}
+\item 
+\hyperlink{namespace_c_p_u___o_s___simulator_1_1_c_p_u_1_1_interrupts_a575a43213ed6d54083da8956c5a69b39}{Enum\+Interrupt\+Type} \hyperlink{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_interrupts_1_1_vectored_interrupt_aecc5431f2893b3a30ff4caae5afbf89b}{interrupt\+Type}
+\item 
+bool \hyperlink{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_interrupts_1_1_vectored_interrupt_a12c7df81f02d946f6febbc38240a6460}{handled} = false
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 12 of file Vectored\+Interrupt.\+cs.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_interrupts_1_1_vectored_interrupt_ab0a936425c3af22d7626b5c5638d3f71}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Interrupts\+::\+Vectored\+Interrupt@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Interrupts\+::\+Vectored\+Interrupt}!Vectored\+Interrupt@{Vectored\+Interrupt}}
+\index{Vectored\+Interrupt@{Vectored\+Interrupt}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Interrupts\+::\+Vectored\+Interrupt@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Interrupts\+::\+Vectored\+Interrupt}}
+\subsubsection[{Vectored\+Interrupt()}]{\setlength{\rightskip}{0pt plus 5cm}C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+C\+P\+U.\+Interrupts.\+Vectored\+Interrupt.\+Vectored\+Interrupt (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_interrupts_1_1_vectored_interrupt_ab0a936425c3af22d7626b5c5638d3f71}
+
+
+Definition at line 21 of file Vectored\+Interrupt.\+cs.
+
+\hypertarget{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_interrupts_1_1_vectored_interrupt_a45bf2e98f7731480f62b89397c8cef8e}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Interrupts\+::\+Vectored\+Interrupt@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Interrupts\+::\+Vectored\+Interrupt}!Vectored\+Interrupt@{Vectored\+Interrupt}}
+\index{Vectored\+Interrupt@{Vectored\+Interrupt}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Interrupts\+::\+Vectored\+Interrupt@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Interrupts\+::\+Vectored\+Interrupt}}
+\subsubsection[{Vectored\+Interrupt(int logical\+Address)}]{\setlength{\rightskip}{0pt plus 5cm}C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+C\+P\+U.\+Interrupts.\+Vectored\+Interrupt.\+Vectored\+Interrupt (
+\begin{DoxyParamCaption}
+\item[{int}]{logical\+Address}
+\end{DoxyParamCaption}
+)}\label{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_interrupts_1_1_vectored_interrupt_a45bf2e98f7731480f62b89397c8cef8e}
+
+
+Definition at line 26 of file Vectored\+Interrupt.\+cs.
+
+\hypertarget{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_interrupts_1_1_vectored_interrupt_a14d8bc2e4880fdc90ee401bd8f968068}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Interrupts\+::\+Vectored\+Interrupt@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Interrupts\+::\+Vectored\+Interrupt}!Vectored\+Interrupt@{Vectored\+Interrupt}}
+\index{Vectored\+Interrupt@{Vectored\+Interrupt}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Interrupts\+::\+Vectored\+Interrupt@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Interrupts\+::\+Vectored\+Interrupt}}
+\subsubsection[{Vectored\+Interrupt(int logical\+Address, string routine\+Name)}]{\setlength{\rightskip}{0pt plus 5cm}C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+C\+P\+U.\+Interrupts.\+Vectored\+Interrupt.\+Vectored\+Interrupt (
+\begin{DoxyParamCaption}
+\item[{int}]{logical\+Address, }
+\item[{string}]{routine\+Name}
+\end{DoxyParamCaption}
+)}\label{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_interrupts_1_1_vectored_interrupt_a14d8bc2e4880fdc90ee401bd8f968068}
+
+
+Definition at line 31 of file Vectored\+Interrupt.\+cs.
+
+\hypertarget{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_interrupts_1_1_vectored_interrupt_aaaacef7cdb797f358730aba5225cf0c1}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Interrupts\+::\+Vectored\+Interrupt@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Interrupts\+::\+Vectored\+Interrupt}!Vectored\+Interrupt@{Vectored\+Interrupt}}
+\index{Vectored\+Interrupt@{Vectored\+Interrupt}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Interrupts\+::\+Vectored\+Interrupt@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Interrupts\+::\+Vectored\+Interrupt}}
+\subsubsection[{Vectored\+Interrupt(\+Interrupt\+Handler handler)}]{\setlength{\rightskip}{0pt plus 5cm}C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+C\+P\+U.\+Interrupts.\+Vectored\+Interrupt.\+Vectored\+Interrupt (
+\begin{DoxyParamCaption}
+\item[{{\bf Interrupt\+Handler}}]{handler}
+\end{DoxyParamCaption}
+)}\label{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_interrupts_1_1_vectored_interrupt_aaaacef7cdb797f358730aba5225cf0c1}
+
+
+Definition at line 37 of file Vectored\+Interrupt.\+cs.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_interrupts_1_1_vectored_interrupt_a79136e3425270dd0862e4556e42ebc38}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Interrupts\+::\+Vectored\+Interrupt@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Interrupts\+::\+Vectored\+Interrupt}!Execute@{Execute}}
+\index{Execute@{Execute}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Interrupts\+::\+Vectored\+Interrupt@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Interrupts\+::\+Vectored\+Interrupt}}
+\subsubsection[{Execute(\+Interrupt\+Handler handle)}]{\setlength{\rightskip}{0pt plus 5cm}override int C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+C\+P\+U.\+Interrupts.\+Vectored\+Interrupt.\+Execute (
+\begin{DoxyParamCaption}
+\item[{{\bf Interrupt\+Handler}}]{handle}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_interrupts_1_1_vectored_interrupt_a79136e3425270dd0862e4556e42ebc38}
+
+
+This function executes an interrupt 
+
+
+\begin{DoxyParams}{Parameters}
+{\em handle} & the interrupts handler\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the return value of the interrupt or null if the interrupt did not return a value
+\end{DoxyReturn}
+
+
+Implements \hyperlink{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_interrupts_1_1_interrupt_a8728fdaeedac9a6ce6e83bec5738a963}{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+C\+P\+U.\+Interrupts.\+Interrupt}.
+
+
+
+Definition at line 114 of file Vectored\+Interrupt.\+cs.
+
+\hypertarget{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_interrupts_1_1_vectored_interrupt_ab787d3cfa491a68a8baa2b121b8fff92}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Interrupts\+::\+Vectored\+Interrupt@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Interrupts\+::\+Vectored\+Interrupt}!Fire@{Fire}}
+\index{Fire@{Fire}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Interrupts\+::\+Vectored\+Interrupt@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Interrupts\+::\+Vectored\+Interrupt}}
+\subsubsection[{Fire()}]{\setlength{\rightskip}{0pt plus 5cm}override void C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+C\+P\+U.\+Interrupts.\+Vectored\+Interrupt.\+Fire (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_interrupts_1_1_vectored_interrupt_ab787d3cfa491a68a8baa2b121b8fff92}
+
+
+This function fires the interrupt 
+
+
+
+Implements \hyperlink{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_interrupts_1_1_interrupt_abde7097975761eede85d20ce9f3ea25d}{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+C\+P\+U.\+Interrupts.\+Interrupt}.
+
+
+
+Definition at line 45 of file Vectored\+Interrupt.\+cs.
+
+\hypertarget{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_interrupts_1_1_vectored_interrupt_acfa023cdf9c19c9b4725d9f2dee76caa}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Interrupts\+::\+Vectored\+Interrupt@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Interrupts\+::\+Vectored\+Interrupt}!Get\+Current\+Process\+Execution\+Unit@{Get\+Current\+Process\+Execution\+Unit}}
+\index{Get\+Current\+Process\+Execution\+Unit@{Get\+Current\+Process\+Execution\+Unit}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Interrupts\+::\+Vectored\+Interrupt@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Interrupts\+::\+Vectored\+Interrupt}}
+\subsubsection[{Get\+Current\+Process\+Execution\+Unit()}]{\setlength{\rightskip}{0pt plus 5cm}dynamic C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+C\+P\+U.\+Interrupts.\+Vectored\+Interrupt.\+Get\+Current\+Process\+Execution\+Unit (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_interrupts_1_1_vectored_interrupt_acfa023cdf9c19c9b4725d9f2dee76caa}
+
+
+Definition at line 165 of file Vectored\+Interrupt.\+cs.
+
+\hypertarget{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_interrupts_1_1_vectored_interrupt_a4efaab313e8227ff3dd40db5734299b5}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Interrupts\+::\+Vectored\+Interrupt@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Interrupts\+::\+Vectored\+Interrupt}!Get\+Current\+Program@{Get\+Current\+Program}}
+\index{Get\+Current\+Program@{Get\+Current\+Program}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Interrupts\+::\+Vectored\+Interrupt@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Interrupts\+::\+Vectored\+Interrupt}}
+\subsubsection[{Get\+Current\+Program()}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Simulator\+Program} C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+C\+P\+U.\+Interrupts.\+Vectored\+Interrupt.\+Get\+Current\+Program (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_interrupts_1_1_vectored_interrupt_a4efaab313e8227ff3dd40db5734299b5}
+
+
+This Function gets the program to be executed by the \hyperlink{namespace_c_p_u___o_s___simulator_1_1_c_p_u}{C\+P\+U} from the main window 
+
+\begin{DoxyReturn}{Returns}
+the program to be executed by the \hyperlink{namespace_c_p_u___o_s___simulator_1_1_c_p_u}{C\+P\+U}
+\end{DoxyReturn}
+
+
+Definition at line 136 of file Vectored\+Interrupt.\+cs.
+
+\hypertarget{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_interrupts_1_1_vectored_interrupt_a9ab8f385691cc675f4600efce35ad762}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Interrupts\+::\+Vectored\+Interrupt@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Interrupts\+::\+Vectored\+Interrupt}!Get\+Execution\+Unit@{Get\+Execution\+Unit}}
+\index{Get\+Execution\+Unit@{Get\+Execution\+Unit}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Interrupts\+::\+Vectored\+Interrupt@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Interrupts\+::\+Vectored\+Interrupt}}
+\subsubsection[{Get\+Execution\+Unit()}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Execution\+Unit} C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+C\+P\+U.\+Interrupts.\+Vectored\+Interrupt.\+Get\+Execution\+Unit (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_interrupts_1_1_vectored_interrupt_a9ab8f385691cc675f4600efce35ad762}
+
+
+Definition at line 145 of file Vectored\+Interrupt.\+cs.
+
+\hypertarget{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_interrupts_1_1_vectored_interrupt_a1ae10e2559f1f2bbbbb65e3cf3af6079}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Interrupts\+::\+Vectored\+Interrupt@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Interrupts\+::\+Vectored\+Interrupt}!Get\+Main\+Window\+Instance@{Get\+Main\+Window\+Instance}}
+\index{Get\+Main\+Window\+Instance@{Get\+Main\+Window\+Instance}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Interrupts\+::\+Vectored\+Interrupt@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Interrupts\+::\+Vectored\+Interrupt}}
+\subsubsection[{Get\+Main\+Window\+Instance()}]{\setlength{\rightskip}{0pt plus 5cm}dynamic C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+C\+P\+U.\+Interrupts.\+Vectored\+Interrupt.\+Get\+Main\+Window\+Instance (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_interrupts_1_1_vectored_interrupt_a1ae10e2559f1f2bbbbb65e3cf3af6079}
+
+
+This function gets the main window instance from the window bridge 
+
+\begin{DoxyReturn}{Returns}
+the active instance of main window 
+\end{DoxyReturn}
+
+
+Definition at line 123 of file Vectored\+Interrupt.\+cs.
+
+\hypertarget{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_interrupts_1_1_vectored_interrupt_adfc13310ff7194132c7d4d45faaec5d9}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Interrupts\+::\+Vectored\+Interrupt@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Interrupts\+::\+Vectored\+Interrupt}!Get\+O\+S\+Main\+Window\+Instance@{Get\+O\+S\+Main\+Window\+Instance}}
+\index{Get\+O\+S\+Main\+Window\+Instance@{Get\+O\+S\+Main\+Window\+Instance}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Interrupts\+::\+Vectored\+Interrupt@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Interrupts\+::\+Vectored\+Interrupt}}
+\subsubsection[{Get\+O\+S\+Main\+Window\+Instance()}]{\setlength{\rightskip}{0pt plus 5cm}dynamic C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+C\+P\+U.\+Interrupts.\+Vectored\+Interrupt.\+Get\+O\+S\+Main\+Window\+Instance (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_interrupts_1_1_vectored_interrupt_adfc13310ff7194132c7d4d45faaec5d9}
+
+
+This function gets the operating system main window instance from the window bridge 
+
+\begin{DoxyReturn}{Returns}
+the active instance of operating system main window 
+\end{DoxyReturn}
+
+
+Definition at line 156 of file Vectored\+Interrupt.\+cs.
+
+\hypertarget{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_interrupts_1_1_vectored_interrupt_a9a07f2283b9ae7f644dbdccb760f82ce}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Interrupts\+::\+Vectored\+Interrupt@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Interrupts\+::\+Vectored\+Interrupt}!Return@{Return}}
+\index{Return@{Return}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Interrupts\+::\+Vectored\+Interrupt@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Interrupts\+::\+Vectored\+Interrupt}}
+\subsubsection[{Return(int return\+Address)}]{\setlength{\rightskip}{0pt plus 5cm}override void C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+C\+P\+U.\+Interrupts.\+Vectored\+Interrupt.\+Return (
+\begin{DoxyParamCaption}
+\item[{int}]{return\+Address}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_interrupts_1_1_vectored_interrupt_a9a07f2283b9ae7f644dbdccb760f82ce}
+
+
+This function returns from the interrupt routine 
+
+
+\begin{DoxyParams}{Parameters}
+{\em return\+Address} & the logical address to return back to\\
+\hline
+\end{DoxyParams}
+
+
+Implements \hyperlink{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_interrupts_1_1_interrupt_a2890d737f4bbc4dad7bd5f4842503a16}{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+C\+P\+U.\+Interrupts.\+Interrupt}.
+
+
+
+Definition at line 79 of file Vectored\+Interrupt.\+cs.
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_interrupts_1_1_vectored_interrupt_a12c7df81f02d946f6febbc38240a6460}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Interrupts\+::\+Vectored\+Interrupt@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Interrupts\+::\+Vectored\+Interrupt}!handled@{handled}}
+\index{handled@{handled}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Interrupts\+::\+Vectored\+Interrupt@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Interrupts\+::\+Vectored\+Interrupt}}
+\subsubsection[{handled}]{\setlength{\rightskip}{0pt plus 5cm}bool C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+C\+P\+U.\+Interrupts.\+Vectored\+Interrupt.\+handled = false\hspace{0.3cm}{\ttfamily [private]}}\label{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_interrupts_1_1_vectored_interrupt_a12c7df81f02d946f6febbc38240a6460}
+
+
+Definition at line 19 of file Vectored\+Interrupt.\+cs.
+
+\hypertarget{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_interrupts_1_1_vectored_interrupt_a13e9b0f3b6f66f67fa510bd9930b3765}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Interrupts\+::\+Vectored\+Interrupt@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Interrupts\+::\+Vectored\+Interrupt}!handler@{handler}}
+\index{handler@{handler}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Interrupts\+::\+Vectored\+Interrupt@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Interrupts\+::\+Vectored\+Interrupt}}
+\subsubsection[{handler}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Interrupt\+Handler} C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+C\+P\+U.\+Interrupts.\+Vectored\+Interrupt.\+handler\hspace{0.3cm}{\ttfamily [private]}}\label{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_interrupts_1_1_vectored_interrupt_a13e9b0f3b6f66f67fa510bd9930b3765}
+
+
+Definition at line 16 of file Vectored\+Interrupt.\+cs.
+
+\hypertarget{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_interrupts_1_1_vectored_interrupt_a799d7985bc1cc6626ee8a39a41897630}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Interrupts\+::\+Vectored\+Interrupt@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Interrupts\+::\+Vectored\+Interrupt}!id@{id}}
+\index{id@{id}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Interrupts\+::\+Vectored\+Interrupt@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Interrupts\+::\+Vectored\+Interrupt}}
+\subsubsection[{id}]{\setlength{\rightskip}{0pt plus 5cm}int C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+C\+P\+U.\+Interrupts.\+Vectored\+Interrupt.\+id\hspace{0.3cm}{\ttfamily [private]}}\label{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_interrupts_1_1_vectored_interrupt_a799d7985bc1cc6626ee8a39a41897630}
+
+
+Definition at line 17 of file Vectored\+Interrupt.\+cs.
+
+\hypertarget{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_interrupts_1_1_vectored_interrupt_aecc5431f2893b3a30ff4caae5afbf89b}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Interrupts\+::\+Vectored\+Interrupt@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Interrupts\+::\+Vectored\+Interrupt}!interrupt\+Type@{interrupt\+Type}}
+\index{interrupt\+Type@{interrupt\+Type}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Interrupts\+::\+Vectored\+Interrupt@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Interrupts\+::\+Vectored\+Interrupt}}
+\subsubsection[{interrupt\+Type}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Enum\+Interrupt\+Type} C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+C\+P\+U.\+Interrupts.\+Vectored\+Interrupt.\+interrupt\+Type\hspace{0.3cm}{\ttfamily [private]}}\label{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_interrupts_1_1_vectored_interrupt_aecc5431f2893b3a30ff4caae5afbf89b}
+
+
+Definition at line 18 of file Vectored\+Interrupt.\+cs.
+
+\hypertarget{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_interrupts_1_1_vectored_interrupt_ad59ab75bdd99d70caa63d5ac36b532e8}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Interrupts\+::\+Vectored\+Interrupt@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Interrupts\+::\+Vectored\+Interrupt}!logical\+Address@{logical\+Address}}
+\index{logical\+Address@{logical\+Address}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Interrupts\+::\+Vectored\+Interrupt@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Interrupts\+::\+Vectored\+Interrupt}}
+\subsubsection[{logical\+Address}]{\setlength{\rightskip}{0pt plus 5cm}int C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+C\+P\+U.\+Interrupts.\+Vectored\+Interrupt.\+logical\+Address\hspace{0.3cm}{\ttfamily [private]}}\label{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_interrupts_1_1_vectored_interrupt_ad59ab75bdd99d70caa63d5ac36b532e8}
+
+
+Definition at line 14 of file Vectored\+Interrupt.\+cs.
+
+\hypertarget{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_interrupts_1_1_vectored_interrupt_a8f7cd5a533089f96fdc12a97c083a7fe}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Interrupts\+::\+Vectored\+Interrupt@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Interrupts\+::\+Vectored\+Interrupt}!routine\+Name@{routine\+Name}}
+\index{routine\+Name@{routine\+Name}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Interrupts\+::\+Vectored\+Interrupt@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Interrupts\+::\+Vectored\+Interrupt}}
+\subsubsection[{routine\+Name}]{\setlength{\rightskip}{0pt plus 5cm}string C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+C\+P\+U.\+Interrupts.\+Vectored\+Interrupt.\+routine\+Name\hspace{0.3cm}{\ttfamily [private]}}\label{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_interrupts_1_1_vectored_interrupt_a8f7cd5a533089f96fdc12a97c083a7fe}
+
+
+Definition at line 15 of file Vectored\+Interrupt.\+cs.
+
+
+
+\subsection{Property Documentation}
+\hypertarget{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_interrupts_1_1_vectored_interrupt_a8bcab1441436677d0e85f1e393368417}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Interrupts\+::\+Vectored\+Interrupt@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Interrupts\+::\+Vectored\+Interrupt}!Handled@{Handled}}
+\index{Handled@{Handled}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Interrupts\+::\+Vectored\+Interrupt@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Interrupts\+::\+Vectored\+Interrupt}}
+\subsubsection[{Handled}]{\setlength{\rightskip}{0pt plus 5cm}bool C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+C\+P\+U.\+Interrupts.\+Vectored\+Interrupt.\+Handled\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}\label{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_interrupts_1_1_vectored_interrupt_a8bcab1441436677d0e85f1e393368417}
+
+
+Definition at line 218 of file Vectored\+Interrupt.\+cs.
+
+\hypertarget{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_interrupts_1_1_vectored_interrupt_a0eb71f1e9f97cd4730fc8382e4ff8843}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Interrupts\+::\+Vectored\+Interrupt@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Interrupts\+::\+Vectored\+Interrupt}!Handler@{Handler}}
+\index{Handler@{Handler}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Interrupts\+::\+Vectored\+Interrupt@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Interrupts\+::\+Vectored\+Interrupt}}
+\subsubsection[{Handler}]{\setlength{\rightskip}{0pt plus 5cm}override {\bf Interrupt\+Handler} C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+C\+P\+U.\+Interrupts.\+Vectored\+Interrupt.\+Handler\hspace{0.3cm}{\ttfamily [get]}}\label{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_interrupts_1_1_vectored_interrupt_a0eb71f1e9f97cd4730fc8382e4ff8843}
+
+
+Property for the interrupt handler 
+
+
+
+Definition at line 205 of file Vectored\+Interrupt.\+cs.
+
+\hypertarget{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_interrupts_1_1_vectored_interrupt_ae6afd6b3fba35d485a7504737ff90d23}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Interrupts\+::\+Vectored\+Interrupt@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Interrupts\+::\+Vectored\+Interrupt}!I\+D@{I\+D}}
+\index{I\+D@{I\+D}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Interrupts\+::\+Vectored\+Interrupt@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Interrupts\+::\+Vectored\+Interrupt}}
+\subsubsection[{I\+D}]{\setlength{\rightskip}{0pt plus 5cm}override int C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+C\+P\+U.\+Interrupts.\+Vectored\+Interrupt.\+I\+D\hspace{0.3cm}{\ttfamily [get]}}\label{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_interrupts_1_1_vectored_interrupt_ae6afd6b3fba35d485a7504737ff90d23}
+
+
+Property For the interrupt I\+D 
+
+
+
+Definition at line 189 of file Vectored\+Interrupt.\+cs.
+
+\hypertarget{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_interrupts_1_1_vectored_interrupt_a736eef5408e4def861c191fb27c04765}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Interrupts\+::\+Vectored\+Interrupt@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Interrupts\+::\+Vectored\+Interrupt}!Interrupt\+Type@{Interrupt\+Type}}
+\index{Interrupt\+Type@{Interrupt\+Type}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Interrupts\+::\+Vectored\+Interrupt@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Interrupts\+::\+Vectored\+Interrupt}}
+\subsubsection[{Interrupt\+Type}]{\setlength{\rightskip}{0pt plus 5cm}override {\bf Enum\+Interrupt\+Type} C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+C\+P\+U.\+Interrupts.\+Vectored\+Interrupt.\+Interrupt\+Type\hspace{0.3cm}{\ttfamily [get]}}\label{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_interrupts_1_1_vectored_interrupt_a736eef5408e4def861c191fb27c04765}
+
+
+Property for the interrupt type 
+
+
+
+Definition at line 213 of file Vectored\+Interrupt.\+cs.
+
+\hypertarget{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_interrupts_1_1_vectored_interrupt_aabc866e723b3484d03f7a5eac790a3ce}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Interrupts\+::\+Vectored\+Interrupt@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Interrupts\+::\+Vectored\+Interrupt}!Logical\+Address@{Logical\+Address}}
+\index{Logical\+Address@{Logical\+Address}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Interrupts\+::\+Vectored\+Interrupt@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Interrupts\+::\+Vectored\+Interrupt}}
+\subsubsection[{Logical\+Address}]{\setlength{\rightskip}{0pt plus 5cm}override int C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+C\+P\+U.\+Interrupts.\+Vectored\+Interrupt.\+Logical\+Address\hspace{0.3cm}{\ttfamily [get]}}\label{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_interrupts_1_1_vectored_interrupt_aabc866e723b3484d03f7a5eac790a3ce}
+
+
+Property for the logical address of the interrupt routine 
+
+
+
+Definition at line 181 of file Vectored\+Interrupt.\+cs.
+
+\hypertarget{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_interrupts_1_1_vectored_interrupt_adf0b02aced85f32cec631b946a6d024d}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Interrupts\+::\+Vectored\+Interrupt@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Interrupts\+::\+Vectored\+Interrupt}!Routine\+Name@{Routine\+Name}}
+\index{Routine\+Name@{Routine\+Name}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Interrupts\+::\+Vectored\+Interrupt@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Interrupts\+::\+Vectored\+Interrupt}}
+\subsubsection[{Routine\+Name}]{\setlength{\rightskip}{0pt plus 5cm}override string C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+C\+P\+U.\+Interrupts.\+Vectored\+Interrupt.\+Routine\+Name\hspace{0.3cm}{\ttfamily [get]}}\label{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_interrupts_1_1_vectored_interrupt_adf0b02aced85f32cec631b946a6d024d}
+
+
+Property for the name of the routine 
+
+
+
+Definition at line 197 of file Vectored\+Interrupt.\+cs.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+P\+U/\+Interrupts/\hyperlink{_vectored_interrupt_8cs}{Vectored\+Interrupt.\+cs}\end{DoxyCompactItemize}

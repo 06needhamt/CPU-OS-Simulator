@@ -1,6 +1,7 @@
 var struct_c_p_u___o_s___simulator_1_1_operating___system_1_1_scheduler_flags =
 [
     [ "allowCPUAffinity", "struct_c_p_u___o_s___simulator_1_1_operating___system_1_1_scheduler_flags.html#ad2d1f81a34e9cce1553bfdf8e8a719ea", null ],
+    [ "core", "struct_c_p_u___o_s___simulator_1_1_operating___system_1_1_scheduler_flags.html#a8640b28c0b54ac561e0b6b3882763471", null ],
     [ "cpuClockSpeed", "struct_c_p_u___o_s___simulator_1_1_operating___system_1_1_scheduler_flags.html#a3ce064f3abe5ac1762f0e7bbfab2eee5", null ],
     [ "defaultScheduler", "struct_c_p_u___o_s___simulator_1_1_operating___system_1_1_scheduler_flags.html#a3ccbd91b280afcd060460a7668d75d0f", null ],
     [ "drawnLotteryTickets", "struct_c_p_u___o_s___simulator_1_1_operating___system_1_1_scheduler_flags.html#a215ea3393e8df669cbe8c2133ba768c8", null ],

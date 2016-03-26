@@ -1,0 +1,168 @@
+\hypertarget{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_interrupts_1_1_interrupt}{}\section{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+C\+P\+U.\+Interrupts.\+Interrupt Class Reference}
+\label{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_interrupts_1_1_interrupt}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+C\+P\+U.\+Interrupts.\+Interrupt@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+C\+P\+U.\+Interrupts.\+Interrupt}}
+
+
+This Class Represents an interrupt used by the operating system to interrupt the \hyperlink{namespace_c_p_u___o_s___simulator_1_1_c_p_u}{C\+P\+U}  
+
+
+Inheritance diagram for C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+C\+P\+U.\+Interrupts.\+Interrupt\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=1.761006cm]{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_interrupts_1_1_interrupt}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+abstract void \hyperlink{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_interrupts_1_1_interrupt_abde7097975761eede85d20ce9f3ea25d}{Fire} ()
+\begin{DoxyCompactList}\small\item\em This function fires the interrupt \end{DoxyCompactList}\item 
+abstract void \hyperlink{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_interrupts_1_1_interrupt_a2890d737f4bbc4dad7bd5f4842503a16}{Return} (int return\+Address)
+\begin{DoxyCompactList}\small\item\em This function returns from the interrupt routine \end{DoxyCompactList}\item 
+abstract int \hyperlink{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_interrupts_1_1_interrupt_a8728fdaeedac9a6ce6e83bec5738a963}{Execute} (\hyperlink{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_interrupts_1_1_interrupt_handler}{Interrupt\+Handler} handle)
+\begin{DoxyCompactList}\small\item\em This function executes an interrupt \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+abstract int \hyperlink{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_interrupts_1_1_interrupt_a5d863371dc3db28878f8f818cdd003fc}{Logical\+Address}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Property for the logical address of the interrupt routine \end{DoxyCompactList}\item 
+abstract int \hyperlink{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_interrupts_1_1_interrupt_a8974e3bbe2504027b3a4f8aa64496c11}{I\+D}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Property For the interrupt I\+D \end{DoxyCompactList}\item 
+abstract string \hyperlink{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_interrupts_1_1_interrupt_a71517440db47453739db9398108b5b74}{Routine\+Name}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Property for the name of the routine \end{DoxyCompactList}\item 
+abstract \hyperlink{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_interrupts_1_1_interrupt_handler}{Interrupt\+Handler} \hyperlink{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_interrupts_1_1_interrupt_a7d95dcc2cb3e77723328b64172eddeae}{Handler}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Property for the interrupt handler \end{DoxyCompactList}\item 
+abstract \hyperlink{namespace_c_p_u___o_s___simulator_1_1_c_p_u_1_1_interrupts_a575a43213ed6d54083da8956c5a69b39}{Enum\+Interrupt\+Type} \hyperlink{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_interrupts_1_1_interrupt_acb3df6a95e1ae7a8d389e84161288a1b}{Interrupt\+Type}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Property for the interrupt type \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This Class Represents an interrupt used by the operating system to interrupt the \hyperlink{namespace_c_p_u___o_s___simulator_1_1_c_p_u}{C\+P\+U} 
+
+
+
+Definition at line 16 of file Interrupt.\+cs.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_interrupts_1_1_interrupt_a8728fdaeedac9a6ce6e83bec5738a963}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Interrupts\+::\+Interrupt@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Interrupts\+::\+Interrupt}!Execute@{Execute}}
+\index{Execute@{Execute}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Interrupts\+::\+Interrupt@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Interrupts\+::\+Interrupt}}
+\subsubsection[{Execute(\+Interrupt\+Handler handle)}]{\setlength{\rightskip}{0pt plus 5cm}abstract int C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+C\+P\+U.\+Interrupts.\+Interrupt.\+Execute (
+\begin{DoxyParamCaption}
+\item[{{\bf Interrupt\+Handler}}]{handle}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\label{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_interrupts_1_1_interrupt_a8728fdaeedac9a6ce6e83bec5738a963}
+
+
+This function executes an interrupt 
+
+
+\begin{DoxyParams}{Parameters}
+{\em handle} & the interrupts handler\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the return value of the interrupt or null if the interrupt did not return a value
+\end{DoxyReturn}
+
+
+Implemented in \hyperlink{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_interrupts_1_1_vectored_interrupt_a79136e3425270dd0862e4556e42ebc38}{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+C\+P\+U.\+Interrupts.\+Vectored\+Interrupt}, and \hyperlink{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_interrupts_1_1_polled_interrupt_ae53fdc5d42eee44061cc45f67bda9909}{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+C\+P\+U.\+Interrupts.\+Polled\+Interrupt}.
+
+\hypertarget{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_interrupts_1_1_interrupt_abde7097975761eede85d20ce9f3ea25d}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Interrupts\+::\+Interrupt@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Interrupts\+::\+Interrupt}!Fire@{Fire}}
+\index{Fire@{Fire}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Interrupts\+::\+Interrupt@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Interrupts\+::\+Interrupt}}
+\subsubsection[{Fire()}]{\setlength{\rightskip}{0pt plus 5cm}abstract void C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+C\+P\+U.\+Interrupts.\+Interrupt.\+Fire (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\label{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_interrupts_1_1_interrupt_abde7097975761eede85d20ce9f3ea25d}
+
+
+This function fires the interrupt 
+
+
+
+Implemented in \hyperlink{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_interrupts_1_1_vectored_interrupt_ab787d3cfa491a68a8baa2b121b8fff92}{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+C\+P\+U.\+Interrupts.\+Vectored\+Interrupt}, and \hyperlink{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_interrupts_1_1_polled_interrupt_a903fa1b1c14ccf05f37a2b671628fa6e}{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+C\+P\+U.\+Interrupts.\+Polled\+Interrupt}.
+
+\hypertarget{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_interrupts_1_1_interrupt_a2890d737f4bbc4dad7bd5f4842503a16}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Interrupts\+::\+Interrupt@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Interrupts\+::\+Interrupt}!Return@{Return}}
+\index{Return@{Return}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Interrupts\+::\+Interrupt@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Interrupts\+::\+Interrupt}}
+\subsubsection[{Return(int return\+Address)}]{\setlength{\rightskip}{0pt plus 5cm}abstract void C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+C\+P\+U.\+Interrupts.\+Interrupt.\+Return (
+\begin{DoxyParamCaption}
+\item[{int}]{return\+Address}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\label{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_interrupts_1_1_interrupt_a2890d737f4bbc4dad7bd5f4842503a16}
+
+
+This function returns from the interrupt routine 
+
+
+\begin{DoxyParams}{Parameters}
+{\em return\+Address} & the logical address to return back to\\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \hyperlink{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_interrupts_1_1_vectored_interrupt_a9a07f2283b9ae7f644dbdccb760f82ce}{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+C\+P\+U.\+Interrupts.\+Vectored\+Interrupt}, and \hyperlink{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_interrupts_1_1_polled_interrupt_a1d9e899d937f97808acaef3060e9e950}{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+C\+P\+U.\+Interrupts.\+Polled\+Interrupt}.
+
+
+
+\subsection{Property Documentation}
+\hypertarget{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_interrupts_1_1_interrupt_a7d95dcc2cb3e77723328b64172eddeae}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Interrupts\+::\+Interrupt@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Interrupts\+::\+Interrupt}!Handler@{Handler}}
+\index{Handler@{Handler}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Interrupts\+::\+Interrupt@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Interrupts\+::\+Interrupt}}
+\subsubsection[{Handler}]{\setlength{\rightskip}{0pt plus 5cm}abstract {\bf Interrupt\+Handler} C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+C\+P\+U.\+Interrupts.\+Interrupt.\+Handler\hspace{0.3cm}{\ttfamily [get]}}\label{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_interrupts_1_1_interrupt_a7d95dcc2cb3e77723328b64172eddeae}
+
+
+Property for the interrupt handler 
+
+
+
+Definition at line 54 of file Interrupt.\+cs.
+
+\hypertarget{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_interrupts_1_1_interrupt_a8974e3bbe2504027b3a4f8aa64496c11}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Interrupts\+::\+Interrupt@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Interrupts\+::\+Interrupt}!I\+D@{I\+D}}
+\index{I\+D@{I\+D}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Interrupts\+::\+Interrupt@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Interrupts\+::\+Interrupt}}
+\subsubsection[{I\+D}]{\setlength{\rightskip}{0pt plus 5cm}abstract int C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+C\+P\+U.\+Interrupts.\+Interrupt.\+I\+D\hspace{0.3cm}{\ttfamily [get]}}\label{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_interrupts_1_1_interrupt_a8974e3bbe2504027b3a4f8aa64496c11}
+
+
+Property For the interrupt I\+D 
+
+
+
+Definition at line 44 of file Interrupt.\+cs.
+
+\hypertarget{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_interrupts_1_1_interrupt_acb3df6a95e1ae7a8d389e84161288a1b}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Interrupts\+::\+Interrupt@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Interrupts\+::\+Interrupt}!Interrupt\+Type@{Interrupt\+Type}}
+\index{Interrupt\+Type@{Interrupt\+Type}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Interrupts\+::\+Interrupt@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Interrupts\+::\+Interrupt}}
+\subsubsection[{Interrupt\+Type}]{\setlength{\rightskip}{0pt plus 5cm}abstract {\bf Enum\+Interrupt\+Type} C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+C\+P\+U.\+Interrupts.\+Interrupt.\+Interrupt\+Type\hspace{0.3cm}{\ttfamily [get]}}\label{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_interrupts_1_1_interrupt_acb3df6a95e1ae7a8d389e84161288a1b}
+
+
+Property for the interrupt type 
+
+
+
+Definition at line 59 of file Interrupt.\+cs.
+
+\hypertarget{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_interrupts_1_1_interrupt_a5d863371dc3db28878f8f818cdd003fc}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Interrupts\+::\+Interrupt@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Interrupts\+::\+Interrupt}!Logical\+Address@{Logical\+Address}}
+\index{Logical\+Address@{Logical\+Address}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Interrupts\+::\+Interrupt@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Interrupts\+::\+Interrupt}}
+\subsubsection[{Logical\+Address}]{\setlength{\rightskip}{0pt plus 5cm}abstract int C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+C\+P\+U.\+Interrupts.\+Interrupt.\+Logical\+Address\hspace{0.3cm}{\ttfamily [get]}}\label{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_interrupts_1_1_interrupt_a5d863371dc3db28878f8f818cdd003fc}
+
+
+Property for the logical address of the interrupt routine 
+
+
+
+Definition at line 39 of file Interrupt.\+cs.
+
+\hypertarget{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_interrupts_1_1_interrupt_a71517440db47453739db9398108b5b74}{}\index{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Interrupts\+::\+Interrupt@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Interrupts\+::\+Interrupt}!Routine\+Name@{Routine\+Name}}
+\index{Routine\+Name@{Routine\+Name}!C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Interrupts\+::\+Interrupt@{C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator\+::\+C\+P\+U\+::\+Interrupts\+::\+Interrupt}}
+\subsubsection[{Routine\+Name}]{\setlength{\rightskip}{0pt plus 5cm}abstract string C\+P\+U\+\_\+\+O\+S\+\_\+\+Simulator.\+C\+P\+U.\+Interrupts.\+Interrupt.\+Routine\+Name\hspace{0.3cm}{\ttfamily [get]}}\label{class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_interrupts_1_1_interrupt_a71517440db47453739db9398108b5b74}
+
+
+Property for the name of the routine 
+
+
+
+Definition at line 49 of file Interrupt.\+cs.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+P\+U/\+Interrupts/\hyperlink{_interrupt_8cs}{Interrupt.\+cs}\end{DoxyCompactItemize}

@@ -1,8 +1,19 @@
 var searchData=
 [
+  ['r1control_2eg_2ecs',['R1Control.g.cs',['../_r1_control_8g_8cs.html',1,'']]],
+  ['r1control_2eg_2ei_2ecs',['R1Control.g.i.cs',['../_r1_control_8g_8i_8cs.html',1,'']]],
+  ['r1control_2examl_2ecs',['R1Control.xaml.cs',['../_r1_control_8xaml_8cs.html',1,'']]],
+  ['r1control_5fold_2eg_2ecs',['R1Control_OLD.g.cs',['../_r1_control___o_l_d_8g_8cs.html',1,'']]],
+  ['r1control_5fold_2eg_2ei_2ecs',['R1Control_OLD.g.i.cs',['../_r1_control___o_l_d_8g_8i_8cs.html',1,'']]],
+  ['r1control_5fold_2examl_2ecs',['R1Control_OLD.xaml.cs',['../_r1_control___o_l_d_8xaml_8cs.html',1,'']]],
+  ['r1shape_2ecs',['R1Shape.cs',['../_r1_shape_8cs.html',1,'']]],
+  ['r1shape_5fold_2ecs',['R1Shape_OLD.cs',['../_r1_shape___o_l_d_8cs.html',1,'']]],
   ['register_2ecs',['Register.cs',['../_register_8cs.html',1,'']]],
   ['registertests_2ecs',['RegisterTests.cs',['../_register_tests_8cs.html',1,'']]],
   ['resources_2edesigner_2ecs',['Resources.Designer.cs',['../_c_p_u-_o_s_01_simulator_2_properties_2_resources_8_designer_8cs.html',1,'']]],
+  ['resources_2edesigner_2ecs',['Resources.Designer.cs',['../_compiler_tester_2_properties_2_resources_8_designer_8cs.html',1,'']]],
   ['resources_2edesigner_2ecs',['Resources.Designer.cs',['../_save_file_editor_2_properties_2_resources_8_designer_8cs.html',1,'']]],
-  ['resources_2edesigner_2ecs',['Resources.Designer.cs',['../_compiler_tester_2_properties_2_resources_8_designer_8cs.html',1,'']]]
+  ['resourcewindow_2eg_2ecs',['ResourceWindow.g.cs',['../_resource_window_8g_8cs.html',1,'']]],
+  ['resourcewindow_2eg_2ei_2ecs',['ResourceWindow.g.i.cs',['../_resource_window_8g_8i_8cs.html',1,'']]],
+  ['resourcewindow_2examl_2ecs',['ResourceWindow.xaml.cs',['../_resource_window_8xaml_8cs.html',1,'']]]
 ];

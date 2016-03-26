@@ -5,6 +5,7 @@ var searchData=
   ['selected',['Selected',['../class_c_p_u___o_s___simulator_1_1_operating___system_1_1_lottery_ticket.html#aedda5be8ac6feb49a7a140af4e99a7ad',1,'CPU_OS_Simulator::Operating_System::LotteryTicket']]],
   ['selectedcolor',['SelectedColor',['../class_c_p_u___o_s___simulator_1_1_colour_picker_window.html#a4e51070f2e58d178bf773acb4200e76e',1,'CPU_OS_Simulator::ColourPickerWindow']]],
   ['semaphore',['Semaphore',['../class_c_p_u___o_s___simulator_1_1_operating___system_1_1_simulator_resource.html#a4d036101fc7fe264c6b7a4533def8cfe',1,'CPU_OS_Simulator::Operating_System::SimulatorResource']]],
+  ['shape',['Shape',['../class_c_p_u___o_s___simulator_1_1_controls_1_1_resource___controls_1_1_r1_control.html#a700f297e01c70f960fde694275f61250',1,'CPU_OS_Simulator::Controls::Resource_Controls::R1Control']]],
   ['size',['Size',['../class_c_p_u___o_s___simulator_1_1_compiler_1_1_backend_1_1_instruction_segment.html#a7790c585f15f68011143819aa3ccd9e5',1,'CPU_OS_Simulator.Compiler.Backend.InstructionSegment.Size()'],['../class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_instruction.html#a7c60418808e7bd6cb1964a227dcd9dac',1,'CPU_OS_Simulator.CPU.Instruction.Size()']]],
   ['source',['Source',['../class_c_p_u___o_s___simulator_1_1_console_1_1_console_output.html#a9772128aaf7ca7854af11b63ae6e1579',1,'CPU_OS_Simulator::Console::ConsoleOutput']]],
   ['space',['Space',['../class_c_p_u___o_s___simulator_1_1_memory_1_1_physical_memory.html#a5d0fceb09f51edcfb4f483b5e8a9508a',1,'CPU_OS_Simulator::Memory::PhysicalMemory']]],

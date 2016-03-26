@@ -10,6 +10,8 @@ var searchData=
   ['pcbflags',['PCBFlags',['../struct_c_p_u___o_s___simulator_1_1_operating___system_1_1_p_c_b_flags.html',1,'CPU_OS_Simulator::Operating_System']]],
   ['physicalmemory',['PhysicalMemory',['../class_c_p_u___o_s___simulator_1_1_memory_1_1_physical_memory.html',1,'CPU_OS_Simulator::Memory']]],
   ['physicalmemorytests',['PhysicalMemoryTests',['../class_c_p_u___o_s___simulator_1_1_memory_1_1_tests_1_1_physical_memory_tests.html',1,'CPU_OS_Simulator::Memory::Tests']]],
+  ['physicalmemorywindow',['PhysicalMemoryWindow',['../class_c_p_u___o_s___simulator_1_1_physical_memory_window.html',1,'CPU_OS_Simulator']]],
+  ['polledinterrupt',['PolledInterrupt',['../class_c_p_u___o_s___simulator_1_1_c_p_u_1_1_interrupts_1_1_polled_interrupt.html',1,'CPU_OS_Simulator::CPU::Interrupts']]],
   ['printabledocument',['PrintableDocument',['../class_c_p_u___o_s___simulator_1_1_console_1_1_printable_document.html',1,'CPU_OS_Simulator::Console']]],
   ['processcontrolblock',['ProcessControlBlock',['../class_c_p_u___o_s___simulator_1_1_operating___system_1_1_process_control_block.html',1,'CPU_OS_Simulator::Operating_System']]],
   ['processcontrolblockwindow',['ProcessControlBlockWindow',['../class_c_p_u___o_s___simulator_1_1_process_control_block_window.html',1,'CPU_OS_Simulator']]],
