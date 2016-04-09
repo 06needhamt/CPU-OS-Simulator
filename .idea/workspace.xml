@@ -2,22 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="11a3c681-12b7-4a83-a22a-9f29959391c9" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CPU-OS Simulator/CPU-OS Simulator.csproj" afterPath="$PROJECT_DIR$/CPU-OS Simulator/CPU-OS Simulator.csproj" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CPU-OS Simulator/Properties/AssemblyInfo.cs" afterPath="$PROJECT_DIR$/CPU-OS Simulator/Properties/AssemblyInfo.cs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CPU-OS SimulatorTests/Properties/AssemblyInfo.cs" afterPath="$PROJECT_DIR$/CPU-OS SimulatorTests/Properties/AssemblyInfo.cs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CPU/Instruction.cs" afterPath="$PROJECT_DIR$/CPU/Instruction.cs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CPU/Properties/AssemblyInfo.cs" afterPath="$PROJECT_DIR$/CPU/Properties/AssemblyInfo.cs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CPUTests/Properties/AssemblyInfo.cs" afterPath="$PROJECT_DIR$/CPUTests/Properties/AssemblyInfo.cs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Compiler/Properties/AssemblyInfo.cs" afterPath="$PROJECT_DIR$/Compiler/Properties/AssemblyInfo.cs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CompilerTester/Properties/AssemblyInfo.cs" afterPath="$PROJECT_DIR$/CompilerTester/Properties/AssemblyInfo.cs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Console/Properties/AssemblyInfo.cs" afterPath="$PROJECT_DIR$/Console/Properties/AssemblyInfo.cs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ConsoleTests/Properties/AssemblyInfo.cs" afterPath="$PROJECT_DIR$/ConsoleTests/Properties/AssemblyInfo.cs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Memory/Properties/AssemblyInfo.cs" afterPath="$PROJECT_DIR$/Memory/Properties/AssemblyInfo.cs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MemoryTests/Properties/AssemblyInfo.cs" afterPath="$PROJECT_DIR$/MemoryTests/Properties/AssemblyInfo.cs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Operating System/Properties/AssemblyInfo.cs" afterPath="$PROJECT_DIR$/Operating System/Properties/AssemblyInfo.cs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SaveFileEditor/Properties/AssemblyInfo.cs" afterPath="$PROJECT_DIR$/SaveFileEditor/Properties/AssemblyInfo.cs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WindowBridge/Properties/AssemblyInfo.cs" afterPath="$PROJECT_DIR$/WindowBridge/Properties/AssemblyInfo.cs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WindowBridge/WindowInstances.cs" afterPath="$PROJECT_DIR$/WindowBridge/WindowInstances.cs" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="CPU-OS-Simulator.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -41,7 +26,7 @@
       <file leaf-file-name="Instruction.cs" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/CPU/Instruction.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="824">
+            <state relative-caret-position="81180">
               <caret line="4059" column="12" selection-start-line="4059" selection-start-column="12" selection-end-line="4059" selection-end-column="12" />
               <folding />
             </state>
@@ -51,8 +36,8 @@
       <file leaf-file-name="InterruptsWindow.xaml.cs" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/CPU-OS Simulator/InterruptsWindow.xaml.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="664">
-              <caret line="46" column="35" selection-start-line="46" selection-start-column="35" selection-end-line="46" selection-end-column="35" />
+            <state relative-caret-position="1020">
+              <caret line="51" column="35" selection-start-line="51" selection-start-column="35" selection-end-line="51" selection-end-column="35" />
               <folding />
             </state>
           </provider>
@@ -62,7 +47,7 @@
         <entry file="file://$PROJECT_DIR$/WindowBridge/WindowInstances.cs">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="704">
-              <caret line="48" column="93" selection-start-line="48" selection-start-column="93" selection-end-line="48" selection-end-column="93" />
+              <caret line="47" column="22" selection-start-line="47" selection-start-column="22" selection-end-line="47" selection-end-column="22" />
               <folding />
             </state>
           </provider>
@@ -88,10 +73,9 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-8" />
-    <option name="y" value="-8" />
-    <option name="width" value="1858" />
-    <option name="height" value="1002" />
+    <option name="x" value="-7" />
+    <option name="width" value="935" />
+    <option name="height" value="993" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -127,11 +111,7 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="CPU-OS Simulator" />
-              <option name="myItemType" value="com.jetbrains.resharper.projectView.nodes.RiderProjectViewNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="WindowBridge" />
-              <option name="myItemType" value="com.jetbrains.resharper.projectView.nodes.RiderProjectViewNode" />
+              <option name="myItemType" value="com.jetbrains.resharper.projectView.solutionExplorer.SolutionExplorerNode" />
             </PATH_ELEMENT>
           </PATH>
           <PATH>
@@ -141,89 +121,11 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="CPU-OS Simulator" />
-              <option name="myItemType" value="com.jetbrains.resharper.projectView.nodes.RiderProjectViewNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="WindowBridge" />
-              <option name="myItemType" value="com.jetbrains.resharper.projectView.nodes.RiderProjectViewNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Properties" />
-              <option name="myItemType" value="com.jetbrains.resharper.projectView.nodes.RiderProjectViewNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="AssemblyInfo.cs" />
-              <option name="myItemType" value="com.jetbrains.resharper.projectView.nodes.RiderProjectViewNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="CPU-OS-Simulator" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="CPU-OS Simulator" />
-              <option name="myItemType" value="com.jetbrains.resharper.projectView.nodes.RiderProjectViewNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="CPU-OS-Simulator" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="CPU-OS Simulator" />
-              <option name="myItemType" value="com.jetbrains.resharper.projectView.nodes.RiderProjectViewNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Operating System" />
-              <option name="myItemType" value="com.jetbrains.resharper.projectView.nodes.RiderProjectViewNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="CPU-OS-Simulator" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="CPU-OS Simulator" />
-              <option name="myItemType" value="com.jetbrains.resharper.projectView.nodes.RiderProjectViewNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="CPU-OS Simulator" />
-              <option name="myItemType" value="com.jetbrains.resharper.projectView.nodes.RiderProjectViewNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="CPU-OS-Simulator" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="CPU-OS Simulator" />
-              <option name="myItemType" value="com.jetbrains.resharper.projectView.nodes.RiderProjectViewNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="CPU-OS Simulator" />
-              <option name="myItemType" value="com.jetbrains.resharper.projectView.nodes.RiderProjectViewNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="InterruptsWindow.xaml" />
-              <option name="myItemType" value="com.jetbrains.resharper.projectView.nodes.RiderProjectViewNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="CPU-OS-Simulator" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="CPU-OS Simulator" />
-              <option name="myItemType" value="com.jetbrains.resharper.projectView.nodes.RiderProjectViewNode" />
+              <option name="myItemType" value="com.jetbrains.resharper.projectView.solutionExplorer.SolutionExplorerNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="CPU" />
-              <option name="myItemType" value="com.jetbrains.resharper.projectView.nodes.RiderProjectViewNode" />
+              <option name="myItemType" value="com.jetbrains.resharper.projectView.solutionExplorer.SolutionExplorerNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
@@ -236,16 +138,7 @@
     <property name="settings.editor.splitter.proportion" value="0.2" />
     <property name="SearchEverywhereHistoryKey" value="CreateOS&#9;null&#9;null" />
   </component>
-  <component name="RunManager" selected=".Net Project.CPU-OS Simulator">
-    <configuration default="true" type="RunDnxProject" factoryName=".DNX Project">
-      <option name="dnxArguments" value="run" />
-      <option name="workingDirectory" value="" />
-      <method />
-    </configuration>
-    <configuration default="true" type="RunProject" factoryName=".Net Project">
-      <option name="ARGUMENTS" value="" />
-      <method />
-    </configuration>
+  <component name="RunManager">
     <configuration default="false" name="CPU-OS Simulator" type="RunProject" factoryName=".Net Project">
       <option name="ARGUMENTS" value="" />
       <option name="projectName" value="CPU-OS Simulator" />
@@ -261,11 +154,6 @@
       <option name="projectName" value="Save File Editor" />
       <method />
     </configuration>
-    <list size="3">
-      <item index="0" class="java.lang.String" itemvalue=".Net Project.CPU-OS Simulator" />
-      <item index="1" class="java.lang.String" itemvalue=".Net Project.CompilerTester" />
-      <item index="2" class="java.lang.String" itemvalue=".Net Project.Save File Editor" />
-    </list>
   </component>
   <component name="ShelveChangesManager" show_recycled="false">
     <option name="remove_strategy" value="false" />
@@ -278,15 +166,16 @@
       <changelist id="11a3c681-12b7-4a83-a22a-9f29959391c9" name="Default" comment="" />
       <created>1456910263058</created>
       <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
       <updated>1456910263058</updated>
     </task>
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1858" height="1002" extended-state="6" />
-    <editor active="true" />
+    <frame x="-7" y="0" width="935" height="993" extended-state="1" />
+    <editor active="false" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21606949" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.43307942" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Errors in solution" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.16395223" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" x="515" y="712" width="607" height="892" />
       <window_info id="Build" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32894737" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295964" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -322,6 +211,30 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/CPU/Instruction.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="81180">
+          <caret line="4059" column="12" selection-start-line="4059" selection-start-column="12" selection-end-line="4059" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CPU-OS Simulator/InterruptsWindow.xaml.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="920">
+          <caret line="46" column="35" selection-start-line="46" selection-start-column="35" selection-end-line="46" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WindowBridge/WindowInstances.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/CPU/Instruction.cs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -461,7 +374,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/CPU/Instruction.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="824">
+        <state relative-caret-position="81180">
           <caret line="4059" column="12" selection-start-line="4059" selection-start-column="12" selection-end-line="4059" selection-end-column="12" />
           <folding />
         </state>
@@ -469,8 +382,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/CPU-OS Simulator/InterruptsWindow.xaml.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="664">
-          <caret line="46" column="35" selection-start-line="46" selection-start-column="35" selection-end-line="46" selection-end-column="35" />
+        <state relative-caret-position="1020">
+          <caret line="51" column="35" selection-start-line="51" selection-start-column="35" selection-end-line="51" selection-end-column="35" />
           <folding />
         </state>
       </provider>
@@ -478,7 +391,7 @@
     <entry file="file://$PROJECT_DIR$/WindowBridge/WindowInstances.cs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="704">
-          <caret line="48" column="93" selection-start-line="48" selection-start-column="93" selection-end-line="48" selection-end-column="93" />
+          <caret line="47" column="22" selection-start-line="47" selection-start-column="22" selection-end-line="47" selection-end-column="22" />
           <folding />
         </state>
       </provider>
