@@ -49,6 +49,10 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Frontend\EnumTokenType.cs" />
+    <Compile Include="Frontend\Lexer.cs" />
+    <Compile Include="Frontend\Token.cs" />
+    <Compile Include="Frontend\TokenRegistry.cs" />
     <Compile Include="Old\CompilerMain.cs" />
     <Compile Include="Old\EnumCompilerMode.cs" />
     <Compile Include="Old\Backend\EnumInstructionSegmentSizes.cs" />
@@ -104,7 +108,9 @@
       <Name>Memory</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Backend\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

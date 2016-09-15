@@ -30,7 +30,9 @@ namespace CPU_OS_Simulator.Compiler.Old.Frontend.Tokens
                     return EnumTokenType.OPENING_CURLY_BRACE;
                 case "}":
                     return EnumTokenType.CLOSING_CURLY_BRACE;
-                case "\n": case "\r":
+                case "\n":
+                    return EnumTokenType.NEW_LINE;
+                case "\r":
                     return EnumTokenType.NEW_LINE;
                 case ",": 
                     return EnumTokenType.COMMA;
