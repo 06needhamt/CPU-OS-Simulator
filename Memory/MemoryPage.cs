@@ -169,7 +169,7 @@ namespace CPU_OS_Simulator.Memory
             }
             else
             {
-                MessageBox.Show("Cannot swap in page that is already swapped out", "ERROR", MessageBoxButton.OK,
+                MessageBox.Show("Cannot swap out page that is already swapped out", "ERROR", MessageBoxButton.OK,
                     MessageBoxImage.Error);
             }
         }
