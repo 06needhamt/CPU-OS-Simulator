@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Reflection;
 using System.Windows;
-using CPU_OS_Simulator.Compiler;
-using CPU_OS_Simulator.Compiler.Frontend;
-using CPU_OS_Simulator.Compiler.Frontend.Symbols;
-using CPU_OS_Simulator.Compiler.Frontend.Tokens;
+using CPU_OS_Simulator.Compiler.Old;
+using CPU_OS_Simulator.Compiler.Old.Frontend;
+using CPU_OS_Simulator.Compiler.Old.Frontend.Symbols;
+using CPU_OS_Simulator.Compiler.Old.Frontend.Tokens;
 
 namespace CPU_OS_Simulator.CompilerTester
 {
@@ -32,39 +32,42 @@ namespace CPU_OS_Simulator.CompilerTester
 
         private void btn_Compile_Click(object sender, RoutedEventArgs e)
         {
-            //CompilerMain compiler = new CompilerMain(new SourceFile(ref txt_Input));
-            SourceFile source = new SourceFile(ref txt_Input);
-            Lexer lexical = new Lexer(source.FileContents);
-            lexical.WritingToCompilerTester = true;
-            lexical.Output = txt_Output;
-            txt_Output.Text = String.Empty;
-            if (!lexical.Start())
-            {
-                MessageBox.Show("Lexer Error Occurred: " + lexical.Error + " Compilation Terminated");
-                return;
-            }
-            MessageBox.Show("Lexing Completed Successfully");
-            symbolTable = new SymbolTable(lexical.Output);
-            List<Tuple<string, EnumTypes, string>> vars = lexical.Variables;
-            List<Tuple<string, EnumTypes, string>> subs = lexical.Subroutines;
-            List<Tuple<string, EnumTypes, string>> funs = lexical.Functions;
+            // TODO Replace With New Compiler
+            #region old
+            ////CompilerMain compiler = new CompilerMain(new SourceFile(ref txt_Input));
+            //SourceFile source = new SourceFile(ref txt_Input);
+            //Lexer lexical = new Lexer(source.FileContents);
+            //lexical.WritingToCompilerTester = true;
+            //lexical.Output = txt_Output;
+            //txt_Output.Text = String.Empty;
+            //if (!lexical.Start())
+            //{
+            //    MessageBox.Show("Lexer Error Occurred: " + lexical.Error + " Compilation Terminated");
+            //    return;
+            //}
+            //MessageBox.Show("Lexing Completed Successfully");
+            //symbolTable = new SymbolTable(lexical.Output);
+            //List<Tuple<string, EnumTypes, string>> vars = lexical.Variables;
+            //List<Tuple<string, EnumTypes, string>> subs = lexical.Subroutines;
+            //List<Tuple<string, EnumTypes, string>> funs = lexical.Functions;
 
-            foreach (Tuple<string, EnumTypes, string> var in vars)
-            {
-                Symbol s = new Symbol(var.Item1,var.Item2,var.Item3,Scope.GLOBAL_SCOPE,false,false);
-                symbolTable.AddSymbol(new LinkedListNode<Symbol>(s));
-            }
-            foreach (Tuple<string, EnumTypes, string> sub in subs)
-            {
-                Subroutine subroutine = new Subroutine(sub.Item1,sub.Item2,sub.Item3,Scope.GLOBAL_SCOPE);
-                symbolTable.AddSymbol((new LinkedListNode<Symbol>(subroutine)));
-            }
-            foreach (Tuple<string, EnumTypes, string> fun in funs)
-            {
-                Function func = new Function(fun.Item1,fun.Item2,fun.Item3,Scope.GLOBAL_SCOPE);
-                symbolTable.AddSymbol(new LinkedListNode<Symbol>(func));
-            }
-            symbolTable.PrintSymbols();
+            //foreach (Tuple<string, EnumTypes, string> var in vars)
+            //{
+            //    Symbol s = new Symbol(var.Item1,var.Item2,var.Item3,Scope.GLOBAL_SCOPE,false,false);
+            //    symbolTable.AddSymbol(new LinkedListNode<Symbol>(s));
+            //}
+            //foreach (Tuple<string, EnumTypes, string> sub in subs)
+            //{
+            //    Subroutine subroutine = new Subroutine(sub.Item1,sub.Item2,sub.Item3,Scope.GLOBAL_SCOPE);
+            //    symbolTable.AddSymbol((new LinkedListNode<Symbol>(subroutine)));
+            //}
+            //foreach (Tuple<string, EnumTypes, string> fun in funs)
+            //{
+            //    Function func = new Function(fun.Item1,fun.Item2,fun.Item3,Scope.GLOBAL_SCOPE);
+            //    symbolTable.AddSymbol(new LinkedListNode<Symbol>(func));
+            //}
+            //symbolTable.PrintSymbols();
+            #endregion old
 
         }
 

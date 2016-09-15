@@ -15,9 +15,9 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
 using System.Windows.Threading;
+using CPU_OS_Simulator.Compiler.Old.Backend;
 using Microsoft.Win32;
-using CPU_OS_Simulator.Compiler;
-using CPU_OS_Simulator.Compiler.Backend;
+using CPU_OS_Simulator.Compiler.Old;
 using CPU_OS_Simulator.CPU;
 using CPU_OS_Simulator.Memory;
 using Newtonsoft.Json; // See Third Party Libs/Credits.txt for licensing information for JSON.Net
@@ -279,22 +279,22 @@ namespace CPU_OS_Simulator
             MemoryWindow wind = new MemoryWindow(this, m);
             wind.Show();
         }
-
+        [Obsolete("Rewritten for new compiler", true)]
         private void DebugCompilingProgram()
         {
             SimulatorProgram program = CreateNewProgram("Debug", 0, 1);
-            program.Instructions.Add(new Instruction((int) EnumOpcodes.MOV,new Operand(Register.R01, EnumOperandType.VALUE),EnumAddressType.UNKNOWN, new Operand(13,EnumOperandType.VALUE),EnumAddressType.UNKNOWN, 4));
+            program.Instructions.Add(new Instruction((int)EnumOpcodes.MOV, new Operand(Register.R01, EnumOperandType.VALUE), EnumAddressType.UNKNOWN, new Operand(13, EnumOperandType.VALUE), EnumAddressType.UNKNOWN, 4));
             if (program == null) return;
             lst_ProgramList.Items.Add(program);
             programList.Add(program);
             currentProgram = program.Name;
-            CompilerMain compiler = new CompilerMain(program.Instructions,program.Name);
+            CompilerMain compiler = new CompilerMain(program.Instructions, program.Name);
             List<List<InstructionSegment>> segmentList = compiler.CompileFromInstructions();
             List<byte> bytes = compiler.CompileToBytes(segmentList);
-            CompiledProgram compiledProgram = new CompiledProgram(bytes,program.Name,bytes.Count);
-            MemoryPage m = new MemoryPage(0, 0,program.Name,-1);
+            CompiledProgram compiledProgram = new CompiledProgram(bytes, program.Name, bytes.Count);
+            MemoryPage m = new MemoryPage(0, 0, program.Name, -1);
             m.ZeroMemory();
-            memory.AddPage(m,0);
+            memory.AddPage(m, 0);
             compiledProgram.LoadinMemory(0);
             MemoryWindow wind = new MemoryWindow(this, memory.Pages[0]);
             wind.Show();
@@ -1263,17 +1263,17 @@ namespace CPU_OS_Simulator
 
         private void btn_LoadCode_Click(object sender, RoutedEventArgs e)
         {
-            CompileProgramFromInstructions();
+            //CompileProgramFromInstructions(); Replace With New Compiler
         }
 
         /// <summary>
-        /// This function compiles the currently selected program's instructions into their binary equivalent
+        /// DEPRECIATED This function compiles the currently selected program's instructions into their binary equivalent
         /// </summary>
+        [Obsolete("Rewritten for new compiler", true)]
         private void CompileProgramFromInstructions()
         {
             try
             {
-                //TODO Not Fully Working because compiler is not complete
                 SimulatorProgram p = programList.Where(x => x.Name.Equals(currentProgram)).FirstOrDefault();
                 CompilerMain compiler = new CompilerMain(p.Instructions, p.Name);
                 List<List<InstructionSegment>> compiledInstructions = compiler.CompileFromInstructions();
