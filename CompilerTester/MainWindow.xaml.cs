@@ -3,10 +3,8 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Reflection;
 using System.Windows;
-using CPU_OS_Simulator.Compiler.Old;
-using CPU_OS_Simulator.Compiler.Old.Frontend;
-using CPU_OS_Simulator.Compiler.Old.Frontend.Symbols;
-using CPU_OS_Simulator.Compiler.Old.Frontend.Tokens;
+using CPU_OS_Simulator.Compiler.Frontend;
+
 
 namespace CPU_OS_Simulator.CompilerTester
 {
@@ -15,7 +13,7 @@ namespace CPU_OS_Simulator.CompilerTester
     /// </summary>
     public partial class MainWindow : Window
     {
-        private SymbolTable symbolTable;
+        //private SymbolTable symbolTable;
 
         /// <summary>
         /// Default Constructor for Compiler Tester Main Window
@@ -68,8 +66,14 @@ namespace CPU_OS_Simulator.CompilerTester
             //}
             //symbolTable.PrintSymbols();
             #endregion old
-
+            Lexer l = new Lexer(txt_Input.Text);
+            if (!l.TokeniseSourceCode())
+            {
+                MessageBox.Show("Compiler Error Occurred");
+            }
+            Debugger.Break();
         }
+
 
         private void CompilerTesterWindow_Loaded(object sender, RoutedEventArgs e)
         {

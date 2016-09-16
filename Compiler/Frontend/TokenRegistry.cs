@@ -67,6 +67,7 @@ namespace CPU_OS_Simulator.Compiler.Frontend
                 new Token("}", EnumTokenType.RIGHT_BRACE_TOKEN),
                 new Token("\n", EnumTokenType.WHITESPACE_TOKEN),
                 new Token("\r", EnumTokenType.WHITESPACE_TOKEN),
+                new Token(" ", EnumTokenType.WHITESPACE_TOKEN), 
                 new Token(",", EnumTokenType.COMMA_TOKEN),
                 new Token(".", EnumTokenType.DOT_TOKEN),
                 new Token("\t", EnumTokenType.WHITESPACE_TOKEN),
@@ -97,10 +98,21 @@ namespace CPU_OS_Simulator.Compiler.Frontend
                     MessageBox.Show("Found Unknown Token ", value);
                     return false;
                 }
+                registeredTokens.Add(temp);
             }
-            registeredTokens.Add(temp);
+          
             return true;
         }
 
+        public List<Token> PredefinedTokens
+        {
+            get { return predefinedTokens; }
+        }
+
+        public List<Token> RegisteredTokens
+        {
+            get { return registeredTokens; }
+            set { registeredTokens = value; }
+        }
     }
 }
