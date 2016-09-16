@@ -71,7 +71,8 @@ namespace CPU_OS_Simulator.Compiler.Frontend
                 new Token(",", EnumTokenType.COMMA_TOKEN),
                 new Token(".", EnumTokenType.DOT_TOKEN),
                 new Token("\t", EnumTokenType.WHITESPACE_TOKEN),
-                new Token("", EnumTokenType.END_OF_FILE_TOKEN)
+                new Token("", EnumTokenType.END_OF_FILE_TOKEN),
+                new Token("\0", EnumTokenType.END_OF_FILE_TOKEN), 
         }.ToList();
 
         private List<Token> registeredTokens = new List<Token>();

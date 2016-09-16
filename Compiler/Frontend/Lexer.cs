@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics;
 using System.Text;
 using System.Windows;
 
@@ -17,14 +18,16 @@ namespace CPU_OS_Simulator.Compiler.Frontend
 
         public bool TokeniseSourceCode()
         {
-            char[] sourceChars = sourceString.ToCharArray();
+            char[] sourceChars = (sourceString + "\0").ToCharArray(); // add a null terminator to mark the end of the source 
             int idx = 0;
             StringBuilder currentToken = new StringBuilder();
-            while (idx < sourceChars.Length - 1)
+            while (idx < sourceChars.Length)
             {
+                //if(idx == 78)
+                //    Debugger.Break();
                 if(!isControlCharacter(sourceChars[idx]))
                 {
-                    if (sourceChars[idx] == '\r')
+                    if (sourceChars[idx] == '\r' || sourceChars[idx] == '\t')
                     {
                         idx++;
                         continue;
@@ -55,7 +58,7 @@ namespace CPU_OS_Simulator.Compiler.Frontend
                    ch != '\t' && ch != '(' &&
                    ch != ')' && ch != '[' &&
                    ch != ']' && ch != '{' &&
-                   ch != '}');
+                   ch != '}' && ch != '\0');
         }
 
         private bool TerminateString(ref int idx, ref StringBuilder currentToken, ref char[] sourceChars)
