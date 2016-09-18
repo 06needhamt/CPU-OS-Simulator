@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿#pragma warning disable 1591
+using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Controls;
 using CPU_OS_Simulator.Compiler.Old.Frontend.Tokens;

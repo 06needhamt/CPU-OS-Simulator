@@ -1,4 +1,4 @@
-﻿
+﻿#pragma warning disable 1591
 namespace CPU_OS_Simulator.Compiler.Old.Frontend.Symbols
 {
     public class Scope

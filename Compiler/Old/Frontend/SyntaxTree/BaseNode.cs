@@ -1,4 +1,7 @@
-﻿using System;
+﻿#pragma warning disable 1591
+#pragma warning disable 0108
+
+using System;
 
 namespace CPU_OS_Simulator.Compiler.Old.Frontend.SyntaxTree
 {

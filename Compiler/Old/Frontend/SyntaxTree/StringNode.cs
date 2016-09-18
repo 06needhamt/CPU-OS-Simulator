@@ -1,4 +1,7 @@
-﻿namespace CPU_OS_Simulator.Compiler.Old.Frontend.SyntaxTree
+﻿#pragma warning disable 1591
+#pragma warning disable 0108
+
+namespace CPU_OS_Simulator.Compiler.Old.Frontend.SyntaxTree
 {
     public class StringNode : BaseNode
     {

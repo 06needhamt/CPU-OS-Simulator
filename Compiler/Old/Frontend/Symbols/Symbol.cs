@@ -1,4 +1,5 @@
-﻿using System;
+﻿#pragma warning disable 1591
+using System;
 using CPU_OS_Simulator.Compiler.Old.Frontend.Tokens;
 
 namespace CPU_OS_Simulator.Compiler.Old.Frontend.Symbols

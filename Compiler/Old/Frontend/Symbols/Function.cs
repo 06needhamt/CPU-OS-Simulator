@@ -1,4 +1,5 @@
-﻿using CPU_OS_Simulator.Compiler.Old.Frontend.Tokens;
+﻿#pragma warning disable 1591
+using CPU_OS_Simulator.Compiler.Old.Frontend.Tokens;
 
 namespace CPU_OS_Simulator.Compiler.Old.Frontend.Symbols
 {
