@@ -71,7 +71,10 @@ namespace CPU_OS_Simulator.CompilerTester
             {
                 MessageBox.Show("Compiler Error Occurred");
             }
-            Debugger.Break();
+            #if DEBUG
+                Debugger.Break();
+            #endif
+            MessageBox.Show("Compilation Completed Successfully");
         }
 
 

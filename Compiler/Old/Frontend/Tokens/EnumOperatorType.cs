@@ -8,7 +8,7 @@
         #pragma warning disable 1591
         UNKNOWN = -1,
         PLUS = 1,
-        MINUS =2,
+        MINUS = 2,
         ASSIGNMENT =3,
         MULTIPLY = 4,
         DIVIDE = 5,
