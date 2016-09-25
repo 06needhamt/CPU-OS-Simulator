@@ -1,14 +1,17 @@
 ﻿using System;
 using System.Linq;
 using System.Windows;
+using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using CPU_OS_Simulator.Compiler.Frontend.AST;
+using CPU_OS_Simulator.Compiler.Symbols;
 
 namespace CPU_OS_Simulator.Compiler.Frontend
 {
     public class Parser
     {
         private TokenRegistry tokens;
+        private SymbolRegistry symbols;
         private int index = 0;
         private AST.AST ast;
         private BaseASTNode pCurrentASTNode;
@@ -17,6 +20,7 @@ namespace CPU_OS_Simulator.Compiler.Frontend
         public Parser(TokenRegistry tokens)
         {
             this.tokens = tokens;
+            this.symbols = new SymbolRegistry();
             this.ast = new AST.AST();
         }
 
@@ -26,18 +30,47 @@ namespace CPU_OS_Simulator.Compiler.Frontend
             {
                 if (tokens.RegisteredTokens[index].Type == EnumTokenType.END_OF_FILE_TOKEN)
                     return true;
-                else if (!ParseProgramDefinition(out pCurrentASTNode))
+                if (!ParseProgramDefinition(out pCurrentASTNode) && pCurrentASTNode == null 
+                    && symbols.RegisteredSymbols.All(x => x.Type != EnumSymbolType.PROGRAM))
                     return false;
-                else if (!ParseVariableDeclaration(out pCurrentASTNode) && pCurrentASTNode == null)
+                if (!ParseVariableDeclaration(out pCurrentASTNode) && pCurrentASTNode == null)
                     return false;
-                Advance();
+                AdvanceWhitespace();
             }
             return true;
         }
 
-        private bool ParseProgramDefinition(out BaseASTNode baseASTNode)
+        private bool ParseProgramDefinition(out BaseASTNode pCurrentASTNode)
         {
-            throw new NotImplementedException();
+            ProgramDeclarationASTNode node = null;
+            Token name = null;
+            pCurrentASTNode = null;
+            if (tokens.RegisteredTokens[index].Type == EnumTokenType.KEYWORD_TOKEN &&
+                tokens.RegisteredTokens[index].Value.Equals("program"))
+            {
+                Advance();
+                AdvanceWhitespace();
+                if (tokens.RegisteredTokens[index].Type == EnumTokenType.IDENTIFIER_TOKEN)
+                {
+                    name = tokens.RegisteredTokens[index];
+                    node = new ProgramDeclarationASTNode(name.Value);
+                    pCurrentASTNode = (BaseASTNode) node;
+                    Symbol sym = new Symbol(name.Value, EnumSymbolType.PROGRAM, null);
+                    symbols.RegisterSymbol(ref sym);
+                    Advance();
+                    AdvanceWhitespace();
+                    return true;
+                }
+            }
+            pCurrentASTNode = null;
+            return false;
+        }
+
+        private Token AdvanceWhitespace()
+        {
+            while (tokens.RegisteredTokens[index].Type == EnumTokenType.WHITESPACE_TOKEN)
+                Advance();
+            return tokens.RegisteredTokens[index];
         }
 
         private bool ParseVariableDeclaration(out BaseASTNode pCurrentASTNode)
@@ -51,15 +84,14 @@ namespace CPU_OS_Simulator.Compiler.Frontend
                 !tokens.RegisteredTokens[index].Value.Equals("var"))
                 return false;
             Advance();
-
+            AdvanceWhitespace();
             if (tokens.RegisteredTokens[index].Type != EnumTokenType.IDENTIFIER_TOKEN)
                 return false;
             name = tokens.RegisteredTokens[index];
             Advance();
-
+            AdvanceWhitespace();
             if (tokens.RegisteredTokens[index].Type == EnumTokenType.OPERATOR_TOKEN)
             {
-                Advance(-1);
                 if (!ParseValueExpression(out pCurrentASTNode))
                     return false;
             }
@@ -68,6 +100,7 @@ namespace CPU_OS_Simulator.Compiler.Frontend
                 return false;
             type = tokens.RegisteredTokens[index];
             Advance();
+            AdvanceWhitespace();
             node = new VariableDeclarationASTNode(name.Value, type.Value, pCurrentASTNode);
             pCurrentASTNode = (BaseASTNode) node;
             
@@ -83,13 +116,14 @@ namespace CPU_OS_Simulator.Compiler.Frontend
             ValueExpressionASTNode node = null;
             pCurrentAstNode = null;
             Advance();
+            AdvanceWhitespace();
             switch (@operator.Value)
             {
                 case "=":
                 {
                     if (tokens.RegisteredTokens[index].Type == EnumTokenType.IDENTIFIER_TOKEN)
                     {
-                        Advance(-1);
+                        Advance(-2);
                         if (!ParseReferenceExpression(out pCurrentAstNode))
                             return true;
                     }
@@ -99,6 +133,7 @@ namespace CPU_OS_Simulator.Compiler.Frontend
                         value = tokens.RegisteredTokens[index];
                     }
                     Advance();
+                    AdvanceWhitespace();
                     if (tokens.RegisteredTokens[index].Type == EnumTokenType.OPERATOR_TOKEN)
                     {
                         //TODO Implement Chained Expressions
@@ -113,7 +148,7 @@ namespace CPU_OS_Simulator.Compiler.Frontend
                     if (Enum.TryParse<EnumTypes>(type.Value, true, out outT))
                     {
                         string ty = outT.ToString().ToLower();
-                        if (ty.Substring(0, ty.IndexOf('_')).Equals(type.Value))
+                        if (ty.Equals(type.Value))
                         {
                             node = new ValueExpressionASTNode(outT, value.Value, pCurrentAstNode);
                         }

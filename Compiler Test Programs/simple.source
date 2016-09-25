@@ -1,5 +1,5 @@
 program main
-	i = 0 integer
+	var i = 0 integer
 	sub add(num integer)
 		num += 1
 	end sub

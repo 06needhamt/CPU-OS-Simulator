@@ -51,6 +51,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Frontend\AST\ArithmeticExpressionASTNode.cs" />
+    <Compile Include="Frontend\AST\ProgramDeclarationASTNode.cs" />
     <Compile Include="Frontend\EnumErrorCodes.cs" />
     <Compile Include="Frontend\EnumOperatorType.cs" />
     <Compile Include="Frontend\AST\AST.cs" />
