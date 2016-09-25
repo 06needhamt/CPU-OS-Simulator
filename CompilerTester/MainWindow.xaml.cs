@@ -69,7 +69,12 @@ namespace CPU_OS_Simulator.CompilerTester
             Lexer l = new Lexer(txt_Input.Text);
             if (!l.TokeniseSourceCode())
             {
-                MessageBox.Show("Compiler Error Occurred");
+                MessageBox.Show("Lexer Error Occurred");
+            }
+            Parser p = new Parser(l.Registry);
+            if (!p.ParseTokens())
+            {
+                MessageBox.Show("Parser Error Occurred");
             }
             #if DEBUG
                 Debugger.Break();

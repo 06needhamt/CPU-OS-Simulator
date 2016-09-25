@@ -41,11 +41,11 @@ namespace CPU_OS_Simulator.Compiler.Frontend
                 new Token("call",EnumTokenType.KEYWORD_TOKEN),
                 new Token("goto",EnumTokenType.KEYWORD_TOKEN),
                 new Token("as",EnumTokenType.KEYWORD_TOKEN),
-                new Token("integer",EnumTokenType.KEYWORD_TOKEN),
-                new Token("boolean",EnumTokenType.KEYWORD_TOKEN),
-                new Token("byte",EnumTokenType.KEYWORD_TOKEN),
-                new Token("object",EnumTokenType.KEYWORD_TOKEN),
-                new Token("string",EnumTokenType.KEYWORD_TOKEN),
+                new Token("integer",EnumTokenType.TYPE_TOKEN),
+                new Token("boolean",EnumTokenType.TYPE_TOKEN),
+                new Token("byte",EnumTokenType.TYPE_TOKEN),
+                new Token("object",EnumTokenType.TYPE_TOKEN),
+                new Token("string",EnumTokenType.TYPE_TOKEN),
                 new Token("array",EnumTokenType.KEYWORD_TOKEN),
                 new Token("+", EnumTokenType.OPERATOR_TOKEN),
                 new Token("-", EnumTokenType.OPERATOR_TOKEN),
@@ -77,6 +77,11 @@ namespace CPU_OS_Simulator.Compiler.Frontend
 
         private List<Token> registeredTokens = new List<Token>();
 
+        public TokenRegistry()
+        {
+
+        }
+
         public bool RegisterToken(string value)
         {
             Token temp = predefinedTokens.FirstOrDefault(x => x.Value.Equals(value));
@@ -89,7 +94,7 @@ namespace CPU_OS_Simulator.Compiler.Frontend
             {
                 double outD = 0.0;
                 if(double.TryParse(value,out outD))
-                    temp = new Token(value,EnumTokenType.NUMERIC_LITERAL);
+                    temp = new Token(value,EnumTokenType.INTEGER_LITERAL);
                 else if(value.StartsWith("\"") && value.EndsWith("\""))
                     temp = new Token(value,EnumTokenType.STRING_LITERAL);
                 else if (!String.IsNullOrEmpty(value))

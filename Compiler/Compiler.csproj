@@ -51,6 +51,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Frontend\AST\ArithmeticExpressionASTNode.cs" />
+    <Compile Include="Frontend\EnumErrorCodes.cs" />
     <Compile Include="Frontend\EnumOperatorType.cs" />
     <Compile Include="Frontend\AST\AST.cs" />
     <Compile Include="Frontend\AST\BaseASTNode.cs" />
@@ -64,6 +65,9 @@
     <Compile Include="Frontend\EnumTokenType.cs" />
     <Compile Include="Frontend\Lexer.cs" />
     <Compile Include="Frontend\Parser.cs" />
+    <Compile Include="Frontend\Symbols\EnumSymbolType.cs" />
+    <Compile Include="Frontend\Symbols\RegisterAllocationTable.cs" />
+    <Compile Include="Frontend\Symbols\VariableSymbol.cs" />
     <Compile Include="Frontend\Token.cs" />
     <Compile Include="Frontend\TokenRegistry.cs" />
     <Compile Include="Old\CompilerBomb.cs" />
@@ -111,6 +115,8 @@
     <Compile Include="Old\Frontend\Tokens\Typename.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Old\SourceFile.cs" />
+    <Compile Include="Frontend\Symbols\Symbol.cs" />
+    <Compile Include="Frontend\Symbols\SymbolRegistry.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\CPU\CPU.csproj">
@@ -124,6 +130,9 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Backend\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="CPU-OS Simulator 7-5-50_1.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

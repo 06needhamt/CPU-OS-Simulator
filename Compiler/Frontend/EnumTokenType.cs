@@ -17,11 +17,12 @@ namespace CPU_OS_Simulator.Compiler.Frontend
         WHITESPACE_TOKEN = 1 << 8,
         END_OF_FILE_TOKEN = 1 << 9,
         IDENTIFIER_TOKEN = 1 << 10,
-        NUMERIC_LITERAL = 1 << 11,
+        INTEGER_LITERAL = 1 << 11,
         STRING_LITERAL = 1 << 12,
         COMMENT_TOKEN = 1 << 13,
         COMMA_TOKEN = 1 << 14,
         DOT_TOKEN = 1 << 15,
+        TYPE_TOKEN = 1 << 16,
         UNKNOWN_TOKEN = 1 << 32
     }
 }
