@@ -33,10 +33,22 @@ namespace CPU_OS_Simulator.Compiler.Frontend
                 if (!ParseProgramDefinition(out pCurrentASTNode) && pCurrentASTNode == null 
                     && symbols.RegisteredSymbols.All(x => x.Type != EnumSymbolType.PROGRAM))
                     return false;
+                if (!ParseSubroutineDeclaration(out pCurrentASTNode) && pCurrentASTNode == null &&
+                    tokens.RegisteredTokens[index].Type == EnumTokenType.KEYWORD_TOKEN &&
+                    tokens.RegisteredTokens[index].Value.Equals("sub"))
+                    return false;
+                    
                 if (!ParseVariableDeclaration(out pCurrentASTNode) && pCurrentASTNode == null)
                     return false;
                 AdvanceWhitespace();
             }
+            return true;
+        }
+
+        private bool ParseSubroutineDeclaration(out BaseASTNode pCurrentAstNode)
+        {
+            //TODO Implement
+            pCurrentAstNode = null;
             return true;
         }
 
@@ -56,7 +68,7 @@ namespace CPU_OS_Simulator.Compiler.Frontend
                     node = new ProgramDeclarationASTNode(name.Value);
                     pCurrentASTNode = (BaseASTNode) node;
                     Symbol sym = new Symbol(name.Value, EnumSymbolType.PROGRAM, null);
-                    symbols.RegisterSymbol(ref sym);
+                    symbols.RegisterSymbol(sym);
                     Advance();
                     AdvanceWhitespace();
                     return true;
@@ -64,13 +76,6 @@ namespace CPU_OS_Simulator.Compiler.Frontend
             }
             pCurrentASTNode = null;
             return false;
-        }
-
-        private Token AdvanceWhitespace()
-        {
-            while (tokens.RegisteredTokens[index].Type == EnumTokenType.WHITESPACE_TOKEN)
-                Advance();
-            return tokens.RegisteredTokens[index];
         }
 
         private bool ParseVariableDeclaration(out BaseASTNode pCurrentASTNode)
@@ -103,7 +108,8 @@ namespace CPU_OS_Simulator.Compiler.Frontend
             AdvanceWhitespace();
             node = new VariableDeclarationASTNode(name.Value, type.Value, pCurrentASTNode);
             pCurrentASTNode = (BaseASTNode) node;
-            
+            Symbol sym = new Symbol(name.Value, EnumSymbolType.VARIABLE);
+            symbols.RegisterSymbol(sym);
             return true;
         }
 
@@ -123,7 +129,10 @@ namespace CPU_OS_Simulator.Compiler.Frontend
                 {
                     if (tokens.RegisteredTokens[index].Type == EnumTokenType.IDENTIFIER_TOKEN)
                     {
-                        Advance(-2);
+                        Advance(-1);
+                        AdvanceWhitespaceReverse();
+                        //Advance(-1);
+                        //AdvanceWhitespaceReverse();
                         if (!ParseReferenceExpression(out pCurrentAstNode))
                             return true;
                     }
@@ -172,7 +181,22 @@ namespace CPU_OS_Simulator.Compiler.Frontend
 
         private bool ParseReferenceExpression(out BaseASTNode pCurrentAstNode)
         {
-            throw new NotImplementedException();
+            Token @operator = tokens.RegisteredTokens[index];
+            Token identifier = null;
+            Token type = null;
+            EnumTypes outT;
+            ReferenceExpressionASTNode node = null;
+            pCurrentAstNode = null;
+            Advance();
+            AdvanceWhitespace();
+
+            if (tokens.RegisteredTokens[index].Type != EnumTokenType.IDENTIFIER_TOKEN)
+            {
+                ThrowError(EnumErrorCodes.UNEXPECTED_TOKEN, "Expected Identifier Found: " + tokens.RegisteredTokens[index].Type.ToString());
+                return false;
+            }
+
+            return true;
         }
 
         public Token Advance()
@@ -190,5 +214,20 @@ namespace CPU_OS_Simulator.Compiler.Frontend
             }
             return tokens.RegisteredTokens[index];
         }
+
+        public Token AdvanceWhitespace()
+        {
+            while (tokens.RegisteredTokens[index].Type == EnumTokenType.WHITESPACE_TOKEN)
+                Advance();
+            return tokens.RegisteredTokens[index];
+        }
+
+        public Token AdvanceWhitespaceReverse()
+        {
+            while (tokens.RegisteredTokens[index].Type == EnumTokenType.WHITESPACE_TOKEN)
+                Advance(-1);
+            return tokens.RegisteredTokens[index];
+        }
+
     }
 }

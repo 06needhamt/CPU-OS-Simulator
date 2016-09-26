@@ -70,11 +70,13 @@ namespace CPU_OS_Simulator.CompilerTester
             if (!l.TokeniseSourceCode())
             {
                 MessageBox.Show("Lexer Error Occurred");
+                return;
             }
             Parser p = new Parser(l.Registry);
             if (!p.ParseTokens())
             {
                 MessageBox.Show("Parser Error Occurred");
+                return;
             }
             #if DEBUG
                 Debugger.Break();

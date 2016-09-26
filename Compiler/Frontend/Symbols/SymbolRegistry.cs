@@ -23,7 +23,7 @@ namespace CPU_OS_Simulator.Compiler.Symbols
             registeredSymbols = new List<Symbol>();
         }
 
-        public Symbol RegisterSymbol(ref Symbol symbol)
+        public Symbol RegisterSymbol(Symbol symbol)
         {
             string name = symbol.Name; // Needed Because of ref parameter
             Symbol temp = predefinedSymbols.Concat(registeredSymbols).FirstOrDefault(x => x.Name.Equals(name));
@@ -38,6 +38,13 @@ namespace CPU_OS_Simulator.Compiler.Symbols
                 while (registeredSymbols.Any(x => x.Id == id))
                     id = r.Next();
                 symbol.Id = id;
+                if (symbol.Parent == null)
+                {
+                    Symbol parentScope = RegisteredSymbols.LastOrDefault<Symbol>(x => 
+                        (x.Type & (EnumSymbolType.SUBROUTINE | EnumSymbolType.FUNCTION | EnumSymbolType.PROGRAM)) > 0);
+                    if (parentScope != null)
+                        symbol.Parent = parentScope;
+                }
                 registeredSymbols.Add(symbol);
             }
             return symbol;
